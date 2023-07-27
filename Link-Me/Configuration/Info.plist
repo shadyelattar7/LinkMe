@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Madani Arabic Bold 400.ttf</string>
+		<string>Madani Arabic Black 400.tff</string>
+		<string>Madani Arabic ExtraBold 400.tff</string>
+		<string>Madani Arabic ExtraLight 400.tff</string>
+		<string>Madani Arabic Light 400.ttf</string>
+		<string>Madani Arabic Medium 400.ttf</string>
+		<string>Madani Arabic Regular 400.ttf</string>
+		<string>Madani Arabic SemiBold 400.ttf</string>
+		<string>Madani Arabic Thin 400.ttf</string>
+		<string>Madani Arabic Variable 400.ttf</string>
+		<string>Poppins-Black.ttf</string>
+		<string>Poppins-BlackItalic.ttf</string>
+		<string>Poppins-Bold.ttf</string>
+		<string>Poppins-BoldItalic.ttf</string>
+		<string>Poppins-ExtraLight.ttf</string>
+		<string>Poppins-ExtraLightItalic.ttf</string>
+		<string>Poppins-Italic.ttf</string>
+		<string>Poppins-Light.ttf</string>
+		<string>Poppins-LightItalic.ttf</string>
+		<string>Poppins-Regular.ttf</string>
+		<string>Poppins-Medium.ttf</string>
+		<string>Poppins-SemiBold.ttf</string>
+		<string>Poppins-SemiBoldItalic.ttf</string>
+		<string>Poppins-Thin.ttf</string>
+		<string>Poppins-ThinItalic.ttf</string>
+	</array>
+</dict>
+</plist>

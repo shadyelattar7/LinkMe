@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  Link-Me
+
+  Created by Al-attar on 23/05/2023.
+  
+*/
+
+"lang" = "en";
+"Language Check" = "Language Check";
+
+//MARK: - TabBar -
+
+"Link Me" = "Link Me";
+"Stories" = "Stories";
+"Message" = "Message";
+"Profile" = "Profile";
+
+//MARK: - Main Profile -
+
+"Profile" = "Profile";
+"SETTINGS AND MORE" = "SETTINGS AND MORE";
+"Complete Your Profile" = "Complete Your Profile";
+"Links" = "Links";
+"Followers" = "Followers";
+"Likes" = "Likes";
+
+//MARK: - Complete Your Profile -
+
+"Complete Your Profile" = "Complete Your Profile";
+"Your County" = "Your County";
+"Gender" = "Gender";
+"Bio" = "Bio";
+"Mal" = "Mal";
+"Femal" = "Femal";
+"Save" = "Save";
+"Tell Something About You" = "Tell Something About You";
+
+//MARK: - Edit Profile -
+
+"Edit Profile" = "Edit Profile";
+"Your Name" = "Your Name";
+"Your Username" = "Your Username";
+"Your Age" = "Your Age";
+"Save changes" = "Save changes";
+"Wrirte Your Name" = "Wrirte Your Name";
+"Wrirte Your Username" = "Wrirte Your Username";
+"Wrirte Your Age" = "Wrirte Your Age";
+
+//MARK: - Settings -
+
+"Settings" = "Settings";
+
+//MARK: - Other Setting -
+
+"OtherCanSee" = "Enable Or Disable What Other
+Can See";
+"Other Settings" = "Other Settings";
+"Chats" = "Chats";

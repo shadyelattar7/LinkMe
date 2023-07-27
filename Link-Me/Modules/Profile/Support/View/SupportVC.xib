@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SupportVC" customModule="Link_Me" customModuleProvider="target">
+            <connections>
+                <outlet property="counterBox_lbl" destination="no2-3M-Ffq" id="x9V-0y-VUm"/>
+                <outlet property="navBar" destination="Tup-Oc-Bo1" id="EJe-96-C4x"/>
+                <outlet property="segmentControler" destination="DCg-cC-lvM" id="xEV-bg-5Wb"/>
+                <outlet property="tableView" destination="JsA-Ph-Zld" id="UuM-R2-z33"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4Un-gj-ybr">
+                    <rect key="frame" x="0.0" y="67" width="355" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tup-Oc-Bo1" customClass="NavigationBarView" customModule="Link_Me" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="316" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLarge" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNt-ol-PAA">
+                            <rect key="frame" x="324" y="0.0" width="31" height="50"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="add-circle1"/>
+                            <connections>
+                                <action selector="addTapped:" destination="-1" eventType="touchUpInside" id="06z-8A-cVC"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="4e2-Ta-HCt"/>
+                    </constraints>
+                </stackView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DCg-cC-lvM">
+                    <rect key="frame" x="20" y="137" width="335" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="umC-eS-lC0"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Box"/>
+                        <segment title="Sent"/>
+                    </segments>
+                    <connections>
+                        <action selector="supportSegment:" destination="-1" eventType="valueChanged" id="z9M-oW-1r0"/>
+                    </connections>
+                </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no2-3M-Ffq">
+                    <rect key="frame" x="145" y="149.66666666666666" width="16.666666666666657" height="16.666666666666657"/>
+                    <color key="backgroundColor" name="errorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16.670000000000002" id="GU3-DI-oKJ"/>
+                        <constraint firstAttribute="width" constant="16.670000000000002" id="bth-qq-Woe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8.4000000000000004"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JsA-Ph-Zld">
+                    <rect key="frame" x="8" y="199" width="359" height="559"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="no2-3M-Ffq" firstAttribute="leading" secondItem="DCg-cC-lvM" secondAttribute="leading" constant="125" id="5pO-1g-qD2"/>
+                <constraint firstItem="DCg-cC-lvM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="IlR-tH-Vj0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JsA-Ph-Zld" secondAttribute="trailing" constant="8" id="OE8-9t-Ybg"/>
+                <constraint firstItem="JsA-Ph-Zld" firstAttribute="top" secondItem="DCg-cC-lvM" secondAttribute="bottom" constant="20" id="Swr-Wv-Lq2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DCg-cC-lvM" secondAttribute="trailing" constant="20" id="Uec-Yl-lm2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Un-gj-ybr" secondAttribute="trailing" constant="20" id="VBU-mp-ljN"/>
+                <constraint firstItem="4Un-gj-ybr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WmK-G2-Y4y"/>
+                <constraint firstItem="no2-3M-Ffq" firstAttribute="centerY" secondItem="DCg-cC-lvM" secondAttribute="centerY" id="Yyd-8w-B4J"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JsA-Ph-Zld" secondAttribute="bottom" constant="20" id="fqA-G5-FsF"/>
+                <constraint firstItem="4Un-gj-ybr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="het-cp-QHe"/>
+                <constraint firstItem="JsA-Ph-Zld" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="nag-xx-3sD"/>
+                <constraint firstItem="DCg-cC-lvM" firstAttribute="top" secondItem="4Un-gj-ybr" secondAttribute="bottom" constant="20" id="ylj-Ba-MXn"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add-circle1" width="31" height="31.333333969116211"/>
+        <namedColor name="errorColor">
+            <color red="1" green="0.18799999356269836" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

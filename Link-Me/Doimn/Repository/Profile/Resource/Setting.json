@@ -1,0 +1,169 @@
+{
+    "status": 200,
+    "data": [
+        {
+            "title": "PREMIUM SETTINGS",
+            "title_ar": "إعدادات متميزة",
+            "type": 0,
+            "options": [
+                {
+                    "name": "Online",
+                    "name_ar": "اونلاين",
+                    "icon": "Online",
+                    "isToggle": true,
+                    "isLabel": false,
+                    "isArrow": false,
+                    "isNotificationLabel": false
+                    
+                },
+                {
+                    "name": "Available Now",
+                    "name_ar": "متوفر الآن",
+                    "icon": "Available Now",
+                    "isToggle": true,
+                    "isLabel": false,
+                    "isArrow": false,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Blocked Users",
+                    "name_ar": "المستخدمون المحظورون",
+                    "icon": "Blocked Users",
+                    "isToggle": false,
+                    "isLabel": true,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Other Settings",
+                    "name_ar": "إعدادات أخرى",
+                    "icon": "Other Settings",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                }
+            ]
+        },
+        {
+            "title": "GENERAL SETTINGS",
+            "title_ar": "الإعدادات العامة",
+            "type": 1,
+            "options": [
+                {
+                    "name": "Change Password",
+                    "name_ar": "تغيير كلمة المرور",
+                    "icon": "Change Password",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Change Email",
+                    "name_ar": "تغيير البريد الإلكتروني",
+                    "icon": "Change Email",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Language",
+                    "name_ar": "اللغة",
+                    "icon": "Language",
+                    "isToggle": false,
+                    "isLabel": true,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                }
+            ]
+        },
+        {
+            "title": "COMPANY SUPPORT",
+            "title_ar": "دعم الشركة",
+            "type": 2,
+            "options": [
+                {
+                    "name": "Support",
+                    "name_ar": "الدعم",
+                    "icon": "Support",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": true
+                },
+                {
+                    "name": "Feedback",
+                    "name_ar": "ردود الفعل",
+                    "icon": "Feedback",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "About Us",
+                    "name_ar": "معلومات عنا",
+                    "icon": "About Us",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Terms Of Services",
+                    "name_ar": "شروط الخدمات",
+                    "icon": "TermsOfServices",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Privacy Policy",
+                    "name_ar": "سياسة الخصوصية",
+                    "icon": "Privacy Policy",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Share The App",
+                    "name_ar": "مشاركة التطبيق",
+                    "icon": "Share The App",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": false,
+                    "isNotificationLabel": false
+                }
+            ]
+        },
+        {
+            "title": "LOG OUT",
+            "title_ar": "تسجيل الخروج",
+            "type": 3,
+            "options": [
+                {
+                    "name": "Log Out",
+                    "name_ar": "تسجيل الخروج",
+                    "icon": "Log Out",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Remove Account",
+                    "name_ar": "إزالة الحساب",
+                    "icon": "Remove Account",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                }
+            ]
+        }
+    ]
+}

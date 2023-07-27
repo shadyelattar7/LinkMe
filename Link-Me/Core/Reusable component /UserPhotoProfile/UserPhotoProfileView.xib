@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserPhotoProfileView" customModule="Link_Me" customModuleProvider="target">
+            <connections>
+                <outlet property="precntage_lbl" destination="i2c-AW-tIl" id="TNR-va-31E"/>
+                <outlet property="userImg_iv" destination="eli-Yf-Esr" id="dZH-IG-WGg"/>
+                <outlet property="viewContainer" destination="iN0-l3-epB" id="3yB-EV-ARL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="163" height="161"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eli-Yf-Esr" customClass="CircleImageView" customModule="Link_Me" customModuleProvider="target">
+                    <rect key="frame" x="44" y="43" width="75" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="YCJ-RA-Zfo"/>
+                        <constraint firstAttribute="width" constant="75" id="ha0-Xb-p6X"/>
+                    </constraints>
+                </imageView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-AW-tIl">
+                    <rect key="frame" x="62" y="116" width="39" height="21"/>
+                    <color key="backgroundColor" name="mainColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38.810000000000002" id="CM7-gE-QqO"/>
+                        <constraint firstAttribute="height" constant="20.960000000000001" id="hMH-z6-6qM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="i2c-AW-tIl" firstAttribute="centerX" secondItem="eli-Yf-Esr" secondAttribute="centerX" id="ASv-ek-jxQ"/>
+                <constraint firstItem="eli-Yf-Esr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Fdy-fB-SYZ"/>
+                <constraint firstItem="i2c-AW-tIl" firstAttribute="bottom" secondItem="eli-Yf-Esr" secondAttribute="bottom" constant="19" id="Jq5-wy-0HS"/>
+                <constraint firstItem="eli-Yf-Esr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VqH-sY-WCY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-165.59999999999999" y="363.86806596701655"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="mainColor">
+            <color red="0.46299999952316284" green="0.3059999942779541" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

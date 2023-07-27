@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileNotCompleteViewController" customModule="Link_Me" customModuleProvider="target">
+            <connections>
+                <outlet property="completeProfile_btn" destination="xBI-Fu-VTg" id="Y4c-hQ-zVF"/>
+                <outlet property="profileImgView" destination="mHA-SI-pYJ" id="ye9-Gz-I7V"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tNx-el-QD8">
+                    <rect key="frame" x="20" y="527" width="335" height="120"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBI-Fu-VTg" customClass="MainButton" customModule="Link_Me" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="56"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="UI4-oM-ISq"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="textTitle" value="Complete Your Profile"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIV-Nd-Lyc">
+                            <rect key="frame" x="0.0" y="64" width="335" height="56"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Later">
+                                <color key="titleColor" name="strongGray"/>
+                            </state>
+                            <connections>
+                                <action selector="laterTapped:" destination="-1" eventType="touchUpInside" id="BlU-XL-kcp"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 63273" translatesAutoresizingMaskIntoConstraints="NO" id="Kr4-e4-vrH">
+                    <rect key="frame" x="67.5" y="50" width="240" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="240" id="Uck-Md-KJG"/>
+                        <constraint firstAttribute="width" constant="240" id="at6-Rg-vCJ"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHA-SI-pYJ" customClass="UserPhotoProfileView" customModule="Link_Me" customModuleProvider="target">
+                    <rect key="frame" x="152.5" y="135" width="70" height="70"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="JsM-p4-bKR"/>
+                        <constraint firstAttribute="width" constant="70" id="aHr-NS-lma"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8rf-xE-IMd">
+                    <rect key="frame" x="66.5" y="321" width="242" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Your Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzB-FU-AMa">
+                            <rect key="frame" x="0.0" y="0.0" width="242" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-Vp-KdO">
+                            <rect key="frame" x="0.0" y="30.5" width="242" height="33.5"/>
+                            <string key="text">Please Complete Your Profile To Get 
+Access To All Futures</string>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="8rf-xE-IMd" firstAttribute="top" secondItem="Kr4-e4-vrH" secondAttribute="bottom" constant="31" id="8Eg-t1-a4t"/>
+                <constraint firstItem="mHA-SI-pYJ" firstAttribute="centerY" secondItem="Kr4-e4-vrH" secondAttribute="centerY" id="8la-4N-Btb"/>
+                <constraint firstItem="Kr4-e4-vrH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="CqR-hb-DJX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tNx-el-QD8" secondAttribute="bottom" constant="20" id="Ho4-IB-qS2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tNx-el-QD8" secondAttribute="trailing" constant="20" id="Y9p-vN-s6b"/>
+                <constraint firstItem="8rf-xE-IMd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="glK-M0-I4w"/>
+                <constraint firstItem="tNx-el-QD8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="hns-1f-efL"/>
+                <constraint firstItem="Kr4-e4-vrH" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="qg0-ZR-foC"/>
+                <constraint firstItem="mHA-SI-pYJ" firstAttribute="centerX" secondItem="Kr4-e4-vrH" secondAttribute="centerX" id="ypV-Od-K0l"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Group 63273" width="272" height="272"/>
+        <namedColor name="strongGray">
+            <color red="0.37299999594688416" green="0.42399999499320984" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

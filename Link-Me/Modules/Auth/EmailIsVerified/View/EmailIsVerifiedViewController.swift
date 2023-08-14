@@ -34,7 +34,7 @@ class EmailIsVerifiedViewController: BaseWireFrame<EmailIsVerifiedViewModel> {
         
         switch self.viewModel.source{
         case .signUp:
-            self.coordinator.Auth.navigate(for: .Register(code: viewModel.code ?? "", email: viewModel.email ?? ""))
+            self.coordinator.Auth.navigate(for: .register(code: viewModel.code ?? "", email: viewModel.email ?? ""))
         case .resetPassword:
             self.coordinator.Auth.navigate(for: .CreatePassword(code: viewModel.code ?? "", email: viewModel.email ?? ""))
         case .changeEmail:

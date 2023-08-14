@@ -63,7 +63,7 @@ class OnboardingViewController: BaseWireFrame<OnboardingViewModel>, UIScrollView
         if currentPage == viewModel.countOnboardingItems() - 1{
             print("Go To Auth")
              UDHelper.isAppOpenedBefor = true
-            self.coordinator.Auth.navigate(for: .Login)
+            self.coordinator.Auth.navigate(for: .login)
         }else{
             currentPage += 1
             let indexPath = IndexPath.init(row: currentPage, section: 0)

@@ -77,7 +77,7 @@ class AppCoordinator: Coordinator{
             if UDHelper.token != "" || UDHelper.isSkip == true || UDHelper.isCompleteProfile == true  {
                 return tabbar
             }else{
-                let loginVC = self.Auth.viewcontroller(for: .Login)
+                let loginVC = self.Auth.viewcontroller(for: .login)
                 let nav = UINavigationController(rootViewController: loginVC)
                 return nav
             }

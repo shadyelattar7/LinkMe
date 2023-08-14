@@ -28,14 +28,14 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
     //MARK: - Private func
     
     private func setupView(){
-        let layout = AnimatedCollectionViewLayout()
-        layout.animator = CubeAttributesAnimator()
-        //CubeAttributesAnimator()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0.0
-        layout.minimumInteritemSpacing = 0.0
-        layout.sectionInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-        storiesCollView.collectionViewLayout = layout
+//        let layout = AnimatedCollectionViewLayout()
+//        layout.animator = CubeAttributesAnimator()
+//        //CubeAttributesAnimator()
+//        layout.scrollDirection = .horizontal
+//        layout.minimumLineSpacing = 0.0
+//        layout.minimumInteritemSpacing = 0.0
+//        layout.sectionInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+//        storiesCollView.collectionViewLayout = layout
     }
     
     private func setupStoriesCollV(){
@@ -61,7 +61,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             
             let vc = self.coordinator.Main.viewcontroller(for: .StoryPreview) as! StoryPreviewVC
             let data = self.viewModel.storiesData.value
-            vc.stories = data[indexPath.row].stories
+            vc.indexPath = indexPath.row
             self.present(vc, animated: true)
             
           //  self.coordinator.Main.navigate(for: .StoryPreview, navigtorTypes: .present())

@@ -37,7 +37,7 @@ class MainStoriesViewModel: BaseViewModel{
     var storiesData: BehaviorRelay<[Stories]> = .init(value: [
         Stories(name: "Add", image: UIImage(named: "blank")!, stories: []),
         Stories(name: "Shady", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab")!]),
-        Stories(name: "G3fry", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab 1")!]),
+        Stories(name: "G3fry", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab 1")!,UIImage(named: "AmrDiab 5")!]),
         Stories(name: "Ta7", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab 2")!]),
         Stories(name: "Fathy", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab 3")!]),
         Stories(name: "Elmkyma", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab 4")!]),

@@ -22,9 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="504"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab" translatesAutoresizingMaskIntoConstraints="NO" id="w5d-n3-5fd">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal3" translatesAutoresizingMaskIntoConstraints="NO" id="w5d-n3-5fd">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="504"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojA-i8-4Lz">
+                        <rect key="frame" x="0.0" y="0.0" width="87" height="504"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                        <connections>
+                            <action selector="previousStoryTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="53g-Q2-6oh"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -35,8 +43,12 @@
                 <constraint firstAttribute="trailing" secondItem="Jox-pV-iGZ" secondAttribute="trailing" id="JwK-uU-sv6"/>
                 <constraint firstItem="Jox-pV-iGZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XGd-se-Oa6"/>
                 <constraint firstAttribute="bottom" secondItem="Jox-pV-iGZ" secondAttribute="bottom" id="aEa-aF-qb1"/>
+                <constraint firstAttribute="bottom" secondItem="ojA-i8-4Lz" secondAttribute="bottom" id="eK5-eA-gbq"/>
+                <constraint firstItem="ojA-i8-4Lz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fWC-6j-AgA"/>
                 <constraint firstItem="w5d-n3-5fd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lSS-Yt-gxc"/>
+                <constraint firstItem="ojA-i8-4Lz" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.202326" id="mgK-kf-zyO"/>
                 <constraint firstItem="w5d-n3-5fd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nTa-l9-w7J"/>
+                <constraint firstItem="ojA-i8-4Lz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="z3N-xT-gVw"/>
             </constraints>
             <size key="customSize" width="430" height="504"/>
             <connections>
@@ -47,7 +59,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="AmrDiab" width="600" height="900"/>
+        <image name="animal3" width="750" height="1334"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

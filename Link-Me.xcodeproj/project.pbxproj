@@ -148,7 +148,6 @@
 		82A2FC912A0BEB8400BA7BD3 /* LinkMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A2FC8F2A0BEB8400BA7BD3 /* LinkMeViewController.swift */; };
 		82A2FC922A0BEB8400BA7BD3 /* LinkMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A2FC902A0BEB8400BA7BD3 /* LinkMeViewController.xib */; };
 		82AB6A782A11268B0005DEF6 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB6A772A11268B0005DEF6 /* NavigationBarView.swift */; };
-		82AB6A7B2A1139920005DEF6 /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB6A7A2A1139920005DEF6 /* AuthNavigator.swift */; };
 		82AB6A812A115B380005DEF6 /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB6A7F2A115B380005DEF6 /* EnterCodeViewController.swift */; };
 		82AB6A822A115B380005DEF6 /* EnterCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AB6A802A115B380005DEF6 /* EnterCodeViewController.xib */; };
 		82AB6A842A115B4F0005DEF6 /* EnterCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB6A832A115B4F0005DEF6 /* EnterCodeViewModel.swift */; };
@@ -231,6 +230,9 @@
 		82FB795A2A19475B006644EE /* Madani Arabic Light 400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82FB79502A19475B006644EE /* Madani Arabic Light 400.ttf */; };
 		82FB795C2A194877006644EE /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82FB795B2A194876006644EE /* Poppins-Medium.ttf */; };
 		82FB79662A194B6F006644EE /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FB79652A194B6F006644EE /* UITextFieldEx.swift */; };
+		8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */; };
+		8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */; };
+		8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -377,7 +379,6 @@
 		82A2FC8F2A0BEB8400BA7BD3 /* LinkMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkMeViewController.swift; sourceTree = "<group>"; };
 		82A2FC902A0BEB8400BA7BD3 /* LinkMeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkMeViewController.xib; sourceTree = "<group>"; };
 		82AB6A772A11268B0005DEF6 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
-		82AB6A7A2A1139920005DEF6 /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthNavigator.swift; path = ../../../../../../../../Documents/AuthNavigator.swift; sourceTree = "<group>"; };
 		82AB6A7F2A115B380005DEF6 /* EnterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
 		82AB6A802A115B380005DEF6 /* EnterCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterCodeViewController.xib; sourceTree = "<group>"; };
 		82AB6A832A115B4F0005DEF6 /* EnterCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewModel.swift; sourceTree = "<group>"; };
@@ -462,6 +463,9 @@
 		82FB79502A19475B006644EE /* Madani Arabic Light 400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Madani Arabic Light 400.ttf"; sourceTree = "<group>"; };
 		82FB795B2A194876006644EE /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		82FB79652A194B6F006644EE /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
+		8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
+		8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreviewCell.swift; sourceTree = "<group>"; };
+		8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPreviewCell.xib; sourceTree = "<group>"; };
 		E1B07EE9E042E4890BEFD488 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -738,6 +742,8 @@
 		825557382A68C22300E00AA5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */,
+				8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */,
 				825557582A6975F800E00AA5 /* StoryPreviewCell.swift */,
 				825557592A6975F800E00AA5 /* StoryPreviewCell.xib */,
 			);
@@ -1496,7 +1502,7 @@
 			isa = PBXGroup;
 			children = (
 				8252A6A72A0FDD14004989A1 /* OnboardingNavigator.swift */,
-				82AB6A7A2A1139920005DEF6 /* AuthNavigator.swift */,
+				8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */,
 				82A2FC7B2A0BDA2D00BA7BD3 /* MainNavigator.swift */,
 			);
 			path = Navigator;
@@ -2141,6 +2147,7 @@
 				825CF37F2A48A3A600BA5DDA /* ChangeEmailVC.xib in Resources */,
 				82CAF0472A3CB9EE00311600 /* CompleteProfileVC.xib in Resources */,
 				827B839F2A11211700E634A9 /* NavigationBarView.xib in Resources */,
+				8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */,
 				82D914552A10D9FF005FAF36 /* InputView.xib in Resources */,
 				8228829B2A0D1D4600019216 /* Poppins-Thin.ttf in Resources */,
 				82FB79572A19475B006644EE /* Madani Arabic ExtraBold 400.ttf in Resources */,
@@ -2225,6 +2232,7 @@
 				82D9143C2A102459005FAF36 /* UsageExamples.swift in Sources */,
 				827356952A59FF8500634EA4 /* DeleteAccount.swift in Sources */,
 				827B83992A11146000E634A9 /* VerifyEmailViewController.swift in Sources */,
+				8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */,
 				825CF3BE2A4E642C00BA5DDA /* FeedbackViewModel.swift in Sources */,
 				82C0E3A02A6768B6008B72ED /* MainStoriesVC.swift in Sources */,
 				82A2FC8E2A0BEA5500BA7BD3 /* BaseWireFrame.swift in Sources */,
@@ -2336,7 +2344,7 @@
 				82A2FC5E2A0BB05D00BA7BD3 /* OnboardingViewController.swift in Sources */,
 				822AD2DA2A1414CC0037D8E0 /* VerifyEmail .swift in Sources */,
 				82A2FC352A0B9CF000BA7BD3 /* ToastView.swift in Sources */,
-				82AB6A7B2A1139920005DEF6 /* AuthNavigator.swift in Sources */,
+				8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */,
 				822AD2D52A14113B0037D8E0 /* VerifyEmailWorker.swift in Sources */,
 				82A2FC452A0B9D1600BA7BD3 /* Extenions.swift in Sources */,
 				827356922A59E73200634EA4 /* DeleteAccountViewModel.swift in Sources */,

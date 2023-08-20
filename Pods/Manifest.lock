@@ -22,6 +22,7 @@ PODS:
   - SDWebImage (5.14.1):
     - SDWebImage/Core (= 5.14.1)
   - SDWebImage/Core (5.14.1)
+  - SGSegmentedProgressBarLibrary (0.0.5)
   - SkeletonView (1.30.4)
   - SVProgressHUD (2.2.5)
   - "UITextView+Placeholder (1.4.0)"
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - RxReachability
   - RxSwift
   - SDWebImage
+  - SGSegmentedProgressBarLibrary
   - SkeletonView
   - SVProgressHUD
   - "UITextView+Placeholder"
@@ -53,6 +55,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SDWebImage
+    - SGSegmentedProgressBarLibrary
     - SkeletonView
     - SVProgressHUD
     - "UITextView+Placeholder"
@@ -69,10 +72,11 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: e1b3c38f170c6100130fce6856e423ed9e5f4fce
+  SGSegmentedProgressBarLibrary: 2b7f2dc518cd19c5d7d42ae6a8e9ec5610c334f1
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: b43a4a6c3737fee5052b9de6c7991318132103d0
+PODFILE CHECKSUM: 37eb0560f73b686c084d87fa96b500655be4861f
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

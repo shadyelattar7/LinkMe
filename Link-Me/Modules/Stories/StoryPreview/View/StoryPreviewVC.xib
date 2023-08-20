@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoryPreviewVC" customModule="Link_Me" customModuleProvider="target">
             <connections>
-                <outlet property="userPreviewCollV" destination="6jw-3Z-w5P" id="wzY-Hp-zqp"/>
+                <outlet property="userPreviewCollV" destination="rl4-Oq-Slc" id="jV5-Yp-mbB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,10 +20,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6jw-3Z-w5P">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rl4-Oq-Slc">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Duo-dc-Uyo">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TCr-gf-R6T">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -34,12 +34,12 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6jw-3Z-w5P" secondAttribute="trailing" id="PaZ-PZ-aUd"/>
-                <constraint firstItem="6jw-3Z-w5P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZmD-sG-0nH"/>
-                <constraint firstItem="6jw-3Z-w5P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dow-B4-gHG"/>
-                <constraint firstAttribute="bottom" secondItem="6jw-3Z-w5P" secondAttribute="bottom" id="pW0-t3-qMR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rl4-Oq-Slc" secondAttribute="trailing" id="F9r-s5-yDP"/>
+                <constraint firstItem="rl4-Oq-Slc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LUJ-Fe-lfn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rl4-Oq-Slc" secondAttribute="bottom" constant="-34" id="NcL-El-gQP"/>
+                <constraint firstItem="rl4-Oq-Slc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UYx-TG-sbd"/>
             </constraints>
-            <point key="canvasLocation" x="140" y="20"/>
+            <point key="canvasLocation" x="139.13043478260872" y="19.419642857142858"/>
         </view>
     </objects>
     <resources>

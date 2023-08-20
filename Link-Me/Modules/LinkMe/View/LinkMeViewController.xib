@@ -81,6 +81,27 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="UdJ-pf-wVk">
+                    <rect key="frame" x="143" y="286" width="89.5" height="95"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFE-vf-CF8">
+                            <rect key="frame" x="0.0" y="0.0" width="89.5" height="34.5"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="next"/>
+                            <connections>
+                                <action selector="nextTapped:" destination="-1" eventType="touchUpInside" id="Zol-AJ-gU4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-oz-Zcd">
+                            <rect key="frame" x="0.0" y="60.5" width="89.5" height="34.5"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="pervious"/>
+                            <connections>
+                                <action selector="periousTapped:" destination="-1" eventType="touchUpInside" id="LmS-St-NEj"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ9-dA-Fda">
                     <rect key="frame" x="0.0" y="81" width="375" height="586"/>
                     <subviews>
@@ -97,6 +118,7 @@
             <constraints>
                 <constraint firstItem="xj1-UY-oeu" firstAttribute="centerY" secondItem="lSL-fF-USE" secondAttribute="centerY" id="0Ch-zY-B95"/>
                 <constraint firstItem="0NI-Vi-aaf" firstAttribute="leading" secondItem="oDh-Su-7KO" secondAttribute="leading" id="0LB-2K-C6n"/>
+                <constraint firstItem="UdJ-pf-wVk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="2OT-1v-Nbc"/>
                 <constraint firstItem="Qra-Cl-TWD" firstAttribute="top" secondItem="lSL-fF-USE" secondAttribute="top" constant="-5" id="3fg-4t-NPN"/>
                 <constraint firstItem="hQ9-dA-Fda" firstAttribute="top" secondItem="oDh-Su-7KO" secondAttribute="bottom" constant="20" id="71X-7X-SYU"/>
                 <constraint firstItem="hQ9-dA-Fda" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9PE-Rx-2Ox"/>
@@ -105,6 +127,7 @@
                 <constraint firstItem="oDh-Su-7KO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="Bl0-vn-mXN"/>
                 <constraint firstItem="1eh-wn-tqF" firstAttribute="centerY" secondItem="oDh-Su-7KO" secondAttribute="centerY" id="Ftd-cw-bhm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hQ9-dA-Fda" secondAttribute="trailing" id="GLy-2m-57l"/>
+                <constraint firstItem="UdJ-pf-wVk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="I1d-1i-9Mw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lSL-fF-USE" secondAttribute="trailing" constant="20" id="IZL-im-BrP"/>
                 <constraint firstItem="0NI-Vi-aaf" firstAttribute="bottom" secondItem="oDh-Su-7KO" secondAttribute="bottom" id="aqZ-Tw-Gka"/>
                 <constraint firstItem="lSL-fF-USE" firstAttribute="leading" secondItem="xj1-UY-oeu" secondAttribute="trailing" constant="15" id="cZH-aM-Muj"/>

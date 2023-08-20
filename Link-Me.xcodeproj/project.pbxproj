@@ -48,9 +48,6 @@
 		8255573B2A68C23A00E00AA5 /* StoryPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825557392A68C23A00E00AA5 /* StoryPreviewVC.swift */; };
 		8255573C2A68C23A00E00AA5 /* StoryPreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255573A2A68C23A00E00AA5 /* StoryPreviewVC.xib */; };
 		825557412A68C4CE00E00AA5 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825557402A68C4CE00E00AA5 /* TransitionAnimator.swift */; };
-		8255574D2A69742B00E00AA5 /* SnapProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255574C2A69742B00E00AA5 /* SnapProgressView.swift */; };
-		8255574F2A69744300E00AA5 /* StoryPreviewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255574E2A69744300E00AA5 /* StoryPreviewHeaderView.swift */; };
-		825557522A69752400E00AA5 /* IGStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825557512A69752400E00AA5 /* IGStory.swift */; };
 		8255575A2A6975F800E00AA5 /* StoryPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825557582A6975F800E00AA5 /* StoryPreviewCell.swift */; };
 		8255575B2A6975F800E00AA5 /* StoryPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 825557592A6975F800E00AA5 /* StoryPreviewCell.xib */; };
 		825557632A69822300E00AA5 /* AnimatedCollectionViewLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 825557622A69822300E00AA5 /* AnimatedCollectionViewLayout */; };
@@ -233,6 +230,7 @@
 		8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */; };
 		8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */; };
 		8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */; };
+		8A7516842A92920D00B0C6D5 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7516832A92920D00B0C6D5 /* UITextField+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -278,9 +276,6 @@
 		825557392A68C23A00E00AA5 /* StoryPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPreviewVC.swift; sourceTree = "<group>"; };
 		8255573A2A68C23A00E00AA5 /* StoryPreviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryPreviewVC.xib; sourceTree = "<group>"; };
 		825557402A68C4CE00E00AA5 /* TransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
-		8255574C2A69742B00E00AA5 /* SnapProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapProgressView.swift; sourceTree = "<group>"; };
-		8255574E2A69744300E00AA5 /* StoryPreviewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPreviewHeaderView.swift; sourceTree = "<group>"; };
-		825557512A69752400E00AA5 /* IGStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGStory.swift; sourceTree = "<group>"; };
 		825557582A6975F800E00AA5 /* StoryPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPreviewCell.swift; sourceTree = "<group>"; };
 		825557592A6975F800E00AA5 /* StoryPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryPreviewCell.xib; sourceTree = "<group>"; };
 		825CF37C2A48A3A600BA5DDA /* ChangeEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailVC.swift; sourceTree = "<group>"; };
@@ -466,6 +461,7 @@
 		8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
 		8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreviewCell.swift; sourceTree = "<group>"; };
 		8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPreviewCell.xib; sourceTree = "<group>"; };
+		8A7516832A92920D00B0C6D5 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		E1B07EE9E042E4890BEFD488 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -722,8 +718,6 @@
 		825557352A68C1A100E00AA5 /* StoryPreview */ = {
 			isa = PBXGroup;
 			children = (
-				825557502A69751400E00AA5 /* Model */,
-				8255574B2A69741600E00AA5 /* StoryHeaderView & ProgressView */,
 				825557382A68C22300E00AA5 /* Cell */,
 				825557372A68C21A00E00AA5 /* View */,
 			);
@@ -756,23 +750,6 @@
 				825557402A68C4CE00E00AA5 /* TransitionAnimator.swift */,
 			);
 			path = TransitionAnimator;
-			sourceTree = "<group>";
-		};
-		8255574B2A69741600E00AA5 /* StoryHeaderView & ProgressView */ = {
-			isa = PBXGroup;
-			children = (
-				8255574C2A69742B00E00AA5 /* SnapProgressView.swift */,
-				8255574E2A69744300E00AA5 /* StoryPreviewHeaderView.swift */,
-			);
-			path = "StoryHeaderView & ProgressView";
-			sourceTree = "<group>";
-		};
-		825557502A69751400E00AA5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				825557512A69752400E00AA5 /* IGStory.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		825CF3792A48A31F00BA5DDA /* ChangeEmail */ = {
@@ -1468,6 +1445,7 @@
 				827B83922A10ECA500E634A9 /* String+Extension.swift */,
 				827B83902A10EC9F00E634A9 /* Date+Extensions.swift */,
 				82FB792E2A16E386006644EE /* urlEX.swift */,
+				8A7516832A92920D00B0C6D5 /* UITextField+Extensions.swift */,
 			);
 			path = Extenions;
 			sourceTree = "<group>";
@@ -2255,7 +2233,6 @@
 				82A2FC7C2A0BDA2D00BA7BD3 /* MainNavigator.swift in Sources */,
 				827B83932A10ECA500E634A9 /* String+Extension.swift in Sources */,
 				829A79572A1281DA001A137B /* CreatePasswordViewController.swift in Sources */,
-				8255574D2A69742B00E00AA5 /* SnapProgressView.swift in Sources */,
 				825039412A412F250006EAD3 /* SettingsViewModel.swift in Sources */,
 				82FB79332A16FF45006644EE /* LocalStorageManager.swift in Sources */,
 				82FB79392A17E8F9006644EE /* LoginWorker.swift in Sources */,
@@ -2361,7 +2338,6 @@
 				825CF3B52A4DC4E100BA5DDA /* SendEmailViewModel.swift in Sources */,
 				825CF3902A4953F000BA5DDA /* UIImageEx.swift in Sources */,
 				82A2FC712A0BD3B500BA7BD3 /* TargetType.swift in Sources */,
-				8255574F2A69744300E00AA5 /* StoryPreviewHeaderView.swift in Sources */,
 				825CF3962A49DFDA00BA5DDA /* SupportVC.swift in Sources */,
 				827356702A59C37900634EA4 /* RemoveAccountReasonVC.swift in Sources */,
 				8292767C2A2D6133000F49E0 /* ProfileNotCompleteViewController.swift in Sources */,
@@ -2370,12 +2346,12 @@
 				82AB6A8D2A1219310005DEF6 /* RegisterViewModel.swift in Sources */,
 				827ED7422A3A20D30056EE37 /* ProfileVC.swift in Sources */,
 				825CF37E2A48A3A600BA5DDA /* ChangeEmailVC.swift in Sources */,
-				825557522A69752400E00AA5 /* IGStory.swift in Sources */,
 				82DB7E182A1383DB00F9096B /* EmailIsVerifiedViewModel.swift in Sources */,
 				82A2FC8A2A0BE22200BA7BD3 /* LinkMeViewModel.swift in Sources */,
 				82952B952A479F8D00548634 /* OtherSeeCell.swift in Sources */,
 				8292767F2A2D613F000F49E0 /* ProfileNotCompleteViewModel.swift in Sources */,
 				82FB79222A169AB4006644EE /* VerifyCodeWorkering.swift in Sources */,
+				8A7516842A92920D00B0C6D5 /* UITextField+Extensions.swift in Sources */,
 				82A2FC742A0BD3DA00BA7BD3 /* APIClient.swift in Sources */,
 				8273568F2A59E72500634EA4 /* DeleteAccountVC.swift in Sources */,
 				827356892A59E4ED00634EA4 /* RemoveAccountViewModel.swift in Sources */,
@@ -2541,7 +2517,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = KQHYATWG2S;
+				DEVELOPMENT_TEAM = 554KYQ2YA3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2574,7 +2550,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = KQHYATWG2S;
+				DEVELOPMENT_TEAM = 554KYQ2YA3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

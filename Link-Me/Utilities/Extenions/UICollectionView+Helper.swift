@@ -28,3 +28,16 @@ extension UICollectionView {
     
     
 }
+
+extension UICollectionView{
+    func resizeItem(width: CGFloat? = nil, height: CGFloat? = nil){
+            if let layout = self.collectionViewLayout as? UICollectionViewFlowLayout{
+                if let width = width {
+                    layout.itemSize.width = width
+                }
+                if let height = height {
+                    layout.itemSize.height = height
+                }
+            }
+        }
+}

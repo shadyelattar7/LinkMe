@@ -17,7 +17,7 @@ class AuthNavigator: Navigator{
         case login
         case VerifyEmail(source: PhoneVerificationEnum)
         case EnterCode(source: PhoneVerificationEnum, email: String)
-        case  EmailIsVerified(source: PhoneVerificationEnum,  code: String, email: String)
+        case EmailIsVerified(source: PhoneVerificationEnum,  code: String, email: String)
         case register(code: String, email: String)
         case ProfileNotComplete
         case CreatePassword(code: String,email: String)

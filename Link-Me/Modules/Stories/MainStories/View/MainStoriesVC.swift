@@ -64,7 +64,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             vc.indexPath = indexPath.row
             self.present(vc, animated: true)
             
-          //  self.coordinator.Main.navigate(for: .StoryPreview, navigtorTypes: .present())
+//            self.coordinator.Main.navigate(for: .StoryPreview, navigtorTypes: .present())
             
             
         }.disposed(by: disposeBag)

@@ -7,18 +7,32 @@
 
 import UIKit
 import AnimatedCollectionViewLayout
-
+import RxSwift
+import RxCocoa
+import SGSegmentedProgressBarLibrary
+import IQKeyboardManagerSwift
 class UserPreviewCell: UICollectionViewCell {
     
+    //MARK: - @IBOutlet -
+    
     @IBOutlet weak var storyPreviewCollV: UICollectionView!
+    @IBOutlet weak var muteSoundBtn: UIButton!
+    @IBOutlet weak var comment_tf: UITextField!
+    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
+    
+    //MARK: - Properties -
     
     var currentStory: Int = 0
-    var stories: [UIImage] = []{
-        didSet{
-            storyPreviewCollV.reloadData()
-        }
-    }
-
+    var disposedBag = DisposeBag()
+    var stories: BehaviorRelay<[UIImage]> = .init(value: [])
+    var segmentbar: SGSegmentedProgressBar!
+    var previousContentOffset: CGFloat = 0.0
+    var closeBtn: (()->())?
+    var moreMenuBtn: (()->())?
+    var muteSound: (()->())?
+    var likeBtn: (()->())?
+    
+    // MARK: - Life Cycle -
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,20 +40,85 @@ class UserPreviewCell: UICollectionViewCell {
         setupStoriesCollV()
     }
     
-    private func setupView(){
-        storyPreviewCollV.isScrollEnabled = false
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposedBag = DisposeBag()
+        stories.accept([])
+        self.contentView.subviews.forEach { view in
+            if view == segmentbar{
+                view.removeFromSuperview()
+            }
+        }
+        setupStoriesCollV()
+        
+        
     }
     
-    private func setupStoriesCollV(){
-        self.storyPreviewCollV.delegate = self
-        self.storyPreviewCollV.dataSource = self
-        storyPreviewCollV.registerNIB(StoryPreviewCell.self)
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.storyPreviewCollV.resizeItem(width: self.frame.size.width, height: self.frame.size.height)
     }
+    
+    
+    //MARK: - Private Func -
+    
+    private func setupView(){
+        IQKeyboardManager.shared.enable = false
+     
+        if "lang".localized == "en"{
+            comment_tf.setLeftPaddingPoints(5)
+        }else{
+            comment_tf.setRightPaddingPoints(5)
+        }
+        
+        comment_tf.attributedPlaceholder = NSAttributedString(
+            string: "Write Comment ..",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+        )
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+        
+        storyPreviewCollV.registerNIB(StoryPreviewCell.self)
+        storyPreviewCollV.isScrollEnabled = false
+        muteSoundBtn.isHidden = true
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        IQKeyboardManager.shared.enable = true
+    }
+    
+    @objc func keyboardNotification(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        
+        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let endFrameY = endFrame?.origin.y ?? 0
+        let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+        
+        if endFrameY >= UIScreen.main.bounds.size.height {
+            self.keyboardHeightLayoutConstraint?.constant = 30
+        } else {
+            self.keyboardHeightLayoutConstraint?.constant = (endFrame?.size.height ?? 0.0) + 10
+        }
+        
+        UIView.animate(
+            withDuration: duration,
+            delay: TimeInterval(0),
+            options: animationCurve,
+            animations: { self.contentView.layoutIfNeeded() },
+            completion: nil)
+    }
+    
     
     private func CrossFadeAnimationCollectionView(){
         let layout = AnimatedCollectionViewLayout()
         layout.animator = CrossFadeAttributesAnimator()
-        //CubeAttributesAnimator()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0.0
         layout.minimumInteritemSpacing = 0.0
@@ -47,57 +126,163 @@ class UserPreviewCell: UICollectionViewCell {
         storyPreviewCollV.collectionViewLayout = layout
     }
     
-  
+    private func setupStoriesCollV(){
+        
+        self.stories.bind(to: storyPreviewCollV.rx.items(cellIdentifier: String(describing: StoryPreviewCell.self), cellType: StoryPreviewCell.self)){ (row,item,cell) in
+            cell.imageView_iv.image = item
+            cell.storysCount = self.stories.value.count
+            
+            
+            cell.nextStory = { [weak self] in
+                guard let self = self else {return}
+                if self.currentStory == self.stories.value.count - 1{
+                    
+                }else{
+                    self.currentStory += 1
+                    print("currentStory: \(self.currentStory)")
+                    let indexPath = IndexPath.init(row: self.currentStory, section: 0)
+                    self.storyPreviewCollV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+                    self.segmentbar.nextSegment()
+                    self.storyPreviewCollV.reloadData()
+                }
+            }
+            
+            
+            cell.previousStory = { [weak self] in
+                guard let self = self else {return}
+                
+                if self.currentStory == 0{
+                    
+                }else{
+                    self.currentStory -= 1
+                    let indexPath = IndexPath.init(row: self.currentStory, section: 0)
+                    self.storyPreviewCollV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+                    self.segmentbar.previousSegment()
+                    self.storyPreviewCollV.reloadData()
+                }
+            }
+        }.disposed(by: disposedBag)
+    }
+    
+    //MARK: - Actoins -
+    
+    @IBAction func closeTapped(_ sender: Any) {
+        closeBtn?()
+    }
+    
+    @IBAction func muteSoundTapped(_ sender: Any) {
+        muteSound?()
+    }
+    
+    @IBAction func moreMeunTapped(_ sender: Any) {
+        moreMenuBtn?()
+    }
+    
+    @IBAction func likeTapped(_ sender: Any) {
+        likeBtn?()
+    }
     
 }
 
-//MARK: - storyPreviewCollV Configuration -
+//MARK: - SGSegmented Progress Bar Library Configuration -
 
-extension UserPreviewCell: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout , UIScrollViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.stories.count
+extension UserPreviewCell: SGSegmentedProgressBarDelegate, SGSegmentedProgressBarDataSource{
+    func segmentedProgressBarFinished(finishedIndex: Int, isLastIndex: Bool) {
+        print("Finish index: \(finishedIndex)")
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeue(cell: StoryPreviewCell.self, for: indexPath)
-        cell.imageView_iv.image = self.stories[indexPath.row]
-        
-        
-        cell.nextStory = { [weak self] in
-            guard let self = self else {return}
-            if self.currentStory == self.stories.count - 1{
-
-            }else{
-                self.currentStory += 1
-                print("currentStory: \(self.currentStory)")
-                let indexPath = IndexPath.init(row: self.currentStory, section: 0)
-                self.storyPreviewCollV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
-                self.storyPreviewCollV.reloadData()
-            }
-        }
-
-
-        cell.previousStory = { [weak self] in
-            guard let self = self else {return}
-
-            if self.currentStory == 0{
-
-            }else{
-                self.currentStory -= 1
-                let indexPath = IndexPath.init(row: self.currentStory, section: 0)
-                self.storyPreviewCollV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
-                self.storyPreviewCollV.reloadData()
-            }
-        }
-        return cell
+    var numberOfSegments: Int {
+        return stories.value.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    var segmentDuration: TimeInterval {
+        return 15
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.bounds.size
+    var paddingBetweenSegments: CGFloat {
+        return 3
     }
     
-   
+    var trackColor: UIColor {
+        return UIColor.systemGray2.withAlphaComponent(0.2)
+    }
+    
+    var progressColor: UIColor {
+        return UIColor.systemGray2
+    }
+    
+    var roundCornerType: SGSegmentedProgressBarLibrary.SGCornerType {
+        return .roundCornerBar(cornerRadious: 2)
+    }
 }
+
+
+
+//MARK: - StoryPreviewCollV Configuration -
+
+//extension UserPreviewCell: UIScrollViewDelegate{
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        self.stories.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeue(cell: StoryPreviewCell.self, for: indexPath)
+//        cell.imageView_iv.image = self.stories[indexPath.row]
+//
+//        cell.nextStory = { [weak self] in
+//            guard let self = self else {return}
+//            if self.currentStory == self.stories.count - 1{
+//
+//            }else{
+//                self.currentStory += 1
+//                print("currentStory: \(self.currentStory)")
+//                let indexPath = IndexPath.init(row: self.currentStory, section: 0)
+//                self.storyPreviewCollV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+//              //  self.storyPreviewCollV.reloadData()
+//            }
+//        }
+//
+//
+//        cell.previousStory = { [weak self] in
+//            guard let self = self else {return}
+//
+//            if self.currentStory == 0{
+//
+//            }else{
+//                self.currentStory -= 1
+//                let indexPath = IndexPath.init(row: self.currentStory, section: 0)
+//                self.storyPreviewCollV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+//              //  self.storyPreviewCollV.reloadData()
+//            }
+//        }
+//        return cell
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//      //  storyPreviewCollV.reloadData()
+//    }
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return collectionView.bounds.size
+//    }
+//
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        let currentOffset = (scrollView.contentOffset.x)
+//
+//        print("currentOffset: \(currentOffset)")
+//        if currentOffset > previousContentOffset {
+//            // Scrolling Right Increase ++
+//            print("Scrolling Right Increase ++")
+//
+//
+//        } else if currentOffset < previousContentOffset {
+//            // Scrolling Left Decrease --
+//            print("Scrolling Left Decrease --")
+//
+//        }
+//        previousContentOffset = currentOffset
+//    }
+
+//}
+

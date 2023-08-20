@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class StoryPreviewCell: UICollectionViewCell {
 
@@ -14,21 +16,28 @@ class StoryPreviewCell: UICollectionViewCell {
     
     var nextStory: (()->())?
     var previousStory: (()->())?
-
+    var storysCount: Int = 0
+    var isScrolled: Bool = false
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         self.addGestureRecognizer(tap)
-
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
+    override func layoutSubviews(){
+        super.layoutSubviews()
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         print("next story")
         nextStory?()
     }
-
 
     @IBAction func previousStoryTapped(_ sender: Any) {
         print("previousStoryTapped")

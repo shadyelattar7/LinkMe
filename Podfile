@@ -23,9 +23,7 @@ target 'Link-Me' do
   pod 'BEMCheckBox'
 
   pod 'MOLH'
-
-
-
+  pod 'SGSegmentedProgressBarLibrary'
 
 
 end

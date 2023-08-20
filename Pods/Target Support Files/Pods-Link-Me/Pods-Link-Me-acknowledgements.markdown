@@ -234,6 +234,11 @@ THE SOFTWARE.
 
 
 
+## SGSegmentedProgressBarLibrary
+
+Copyright 2020 Sanjeev Gautam
+
+
 ## SVProgressHUD
 
 MIT License

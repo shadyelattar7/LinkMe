@@ -32,7 +32,7 @@ class MediaPreviewVC: BaseWireFrame<MediaPreviewViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        
+        subscribeToMediaPreviewState()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -108,7 +108,7 @@ class MediaPreviewVC: BaseWireFrame<MediaPreviewViewModel> {
     //MARK: - Actions -
     
     @IBAction func sendTapped(_ sender: Any) {
-        
+        viewModel.addNewStory()
     }
     
     @IBAction func backTapped(_ sender: Any) {
@@ -117,5 +117,27 @@ class MediaPreviewVC: BaseWireFrame<MediaPreviewViewModel> {
     
     @IBAction func playTapped(_ sender: Any) {
         
+    }
+}
+
+// MARK: viewModel Outputs
+
+extension MediaPreviewVC {
+    private func subscribeToMediaPreviewState() {
+        viewModel.mediaPreviewStateObserver.subscribe { [weak self] state in
+            guard let self = self else { return }
+            
+            switch state.element {
+            case .success:
+                // TODO: Success need to navigate.
+                print("success add to new story")
+                
+            case .error(let errorMessage):
+                ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+            default:
+                break
+            }
+            
+        }.disposed(by: disposeBag)
     }
 }

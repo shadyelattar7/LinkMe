@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6B5F67D95E15147E4727506A /* Pods_Link_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B07EE9E042E4890BEFD488 /* Pods_Link_Me.framework */; };
+		79FA7F422ABB24640043B6BA /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */; };
+		79FA7F432ABB24640043B6BA /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */; };
+		79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F452ABB26300043B6BA /* UIView+extension.swift */; };
 		8228827D2A0C011D00019216 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228827C2A0C011D00019216 /* UIColor+Extension.swift */; };
 		822882902A0D1D4600019216 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 822882812A0D1D4600019216 /* Poppins-Italic.ttf */; };
 		822882912A0D1D4600019216 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 822882822A0D1D4600019216 /* Poppins-Regular.ttf */; };
@@ -238,6 +241,9 @@
 
 /* Begin PBXFileReference section */
 		016774B839AE256296EE21C2 /* Pods-Link-Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link-Me.debug.xcconfig"; path = "Target Support Files/Pods-Link-Me/Pods-Link-Me.debug.xcconfig"; sourceTree = "<group>"; };
+		79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		79FA7F452ABB26300043B6BA /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		7B6D39B12E9B5B1A0281DDBE /* Pods-Link-Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link-Me.release.xcconfig"; path = "Target Support Files/Pods-Link-Me/Pods-Link-Me.release.xcconfig"; sourceTree = "<group>"; };
 		8228827C2A0C011D00019216 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		822882812A0D1D4600019216 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
@@ -500,6 +506,23 @@
 				7B6D39B12E9B5B1A0281DDBE /* Pods-Link-Me.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		79FA7F3F2ABB24460043B6BA /* StoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */,
+				79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */,
+			);
+			path = StoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		79FA7F442ABB261D0043B6BA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				79FA7F452ABB26300043B6BA /* UIView+extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		8228827B2A0C010D00019216 /* UI Extensions */ = {
@@ -1257,6 +1280,7 @@
 				82A2FC212A0B9AFC00BA7BD3 /* Network */,
 				82A2FC1E2A0B9ADB00BA7BD3 /* Doimn */,
 				82A2FC222A0B9B0300BA7BD3 /* Modules */,
+				79FA7F442ABB261D0043B6BA /* Extension */,
 				82A2FC232A0B9B0B00BA7BD3 /* Core */,
 				82A2FC242A0B9B1E00BA7BD3 /* Classes */,
 				82A2FC252A0B9B2300BA7BD3 /* Configuration */,
@@ -1668,6 +1692,7 @@
 		82C0E3A42A676A10008B72ED /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				79FA7F3F2ABB24460043B6BA /* StoryCollectionViewCell */,
 				82C0E3A52A676A18008B72ED /* StoryCell */,
 			);
 			path = Cell;
@@ -2121,6 +2146,7 @@
 				82C0E3A12A6768B6008B72ED /* MainStoriesVC.xib in Resources */,
 				82FB795A2A19475B006644EE /* Madani Arabic Light 400.ttf in Resources */,
 				82A2FC6F2A0BCBE400BA7BD3 /* OnboardingCell.xib in Resources */,
+				79FA7F432ABB24640043B6BA /* StoryCollectionViewCell.xib in Resources */,
 				82FB79592A19475B006644EE /* Madani Arabic ExtraLight 400.ttf in Resources */,
 				82A2FC362A0B9CF000BA7BD3 /* ToastView.xib in Resources */,
 				825039442A4133580006EAD3 /* Setting.json in Resources */,
@@ -2308,6 +2334,7 @@
 				82A2FC482A0B9D1600BA7BD3 /* CircleImageView.swift in Sources */,
 				8A3E179D2AB080B5007D6FE2 /* MediaPreviewViewModel.swift in Sources */,
 				82D914412A102459005FAF36 /* AgeValidator.swift in Sources */,
+				79FA7F422ABB24640043B6BA /* StoryCollectionViewCell.swift in Sources */,
 				82D914402A102459005FAF36 /* CharCountValidator.swift in Sources */,
 				82A2FC342A0B9CF000BA7BD3 /* KeyboardStateManager.swift in Sources */,
 				82CAF0552A3E458800311600 /* CompleteProfile.swift in Sources */,
@@ -2374,6 +2401,7 @@
 				825CF3B52A4DC4E100BA5DDA /* SendEmailViewModel.swift in Sources */,
 				825CF3902A4953F000BA5DDA /* UIImageEx.swift in Sources */,
 				82A2FC712A0BD3B500BA7BD3 /* TargetType.swift in Sources */,
+				79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */,
 				825CF3962A49DFDA00BA5DDA /* SupportVC.swift in Sources */,
 				827356702A59C37900634EA4 /* RemoveAccountReasonVC.swift in Sources */,
 				8292767C2A2D6133000F49E0 /* ProfileNotCompleteViewController.swift in Sources */,

@@ -14,6 +14,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
     //MARK: - @IBOutlet -
     
     @IBOutlet weak var storiesCollView: UICollectionView!
+    @IBOutlet private weak var othersStoriesCollectionView: UICollectionView!
     
     //MARK: - Variables -
     
@@ -23,6 +24,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
     override func bind(viewModel: MainStoriesViewModel) {
         setupView()
         setupStoriesCollV()
+        configureOthersStoriesCollectionView()
     }
     
     
@@ -90,7 +92,11 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
 
 extension MainStoriesVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 66, height: 88)
+        if collectionView == storiesCollView {
+            return CGSize(width: 66, height: 88)
+        } else {
+            return CGSize(width: 110, height: 180)
+        }
     }
 }
 
@@ -121,3 +127,34 @@ extension MainStoriesVC: UIImagePickerControllerDelegate, UINavigationController
        }
 }
  
+// MARK: Configure others stories
+
+extension MainStoriesVC {
+    private func configureOthersStoriesCollectionView() {
+        othersStoriesCollectionView.registerNIB(StoryCollectionViewCell.self)
+        othersStoriesCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        subscribeToStoriesDate()
+        didSelectOtherStories()
+    }
+    
+    private func subscribeToStoriesDate() {
+        viewModel.storiesData.bind(to: othersStoriesCollectionView.rx.items(cellIdentifier: String(describing: StoryCollectionViewCell.self), cellType: StoryCollectionViewCell.self)) { (row, item, cell) in
+           
+            if row != 0 {
+                cell.update(item)
+            }
+
+        }.disposed(by: disposeBag)
+    }
+    
+    private func didSelectOtherStories() {
+        othersStoriesCollectionView.rx.itemSelected.subscribe { [weak self] indexPath in
+            guard let self = self else {return}
+            
+            let vc = self.coordinator.Main.viewcontroller(for: .StoryPreview) as! StoryPreviewVC
+            vc.indexPath = indexPath.row
+            self.present(vc, animated: true)
+            
+        }.disposed(by: disposeBag)
+    }
+}

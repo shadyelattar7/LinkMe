@@ -29,9 +29,9 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
     private func setupView(){
         UDHelper.isChangeLang = false
         
-//        let rect = CGRect(x: 10, y: 100, width: self.view.frame.size.width - 20, height: 3)
-//        self.segmentbar = SGSegmentedProgressBar(frame: rect, delegate: self, dataSource: self)
-//        self.view.addSubview(self.segmentbar!)
+        let rect = CGRect(x: 10, y: 100, width: self.view.frame.size.width - 20, height: 3)
+        self.segmentbar = SGSegmentedProgressBar(frame: rect, delegate: self, dataSource: self)
+        self.view.addSubview(self.segmentbar!)
     }
     
     

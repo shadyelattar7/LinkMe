@@ -227,6 +227,9 @@
 		82FB795A2A19475B006644EE /* Madani Arabic Light 400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82FB79502A19475B006644EE /* Madani Arabic Light 400.ttf */; };
 		82FB795C2A194877006644EE /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82FB795B2A194876006644EE /* Poppins-Medium.ttf */; };
 		82FB79662A194B6F006644EE /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FB79652A194B6F006644EE /* UITextFieldEx.swift */; };
+		8A3E17992AAFDB26007D6FE2 /* MediaPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E17972AAFDB26007D6FE2 /* MediaPreviewVC.swift */; };
+		8A3E179A2AAFDB26007D6FE2 /* MediaPreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E17982AAFDB26007D6FE2 /* MediaPreviewVC.xib */; };
+		8A3E179D2AB080B5007D6FE2 /* MediaPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E179C2AB080B5007D6FE2 /* MediaPreviewViewModel.swift */; };
 		8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */; };
 		8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */; };
 		8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */; };
@@ -458,6 +461,9 @@
 		82FB79502A19475B006644EE /* Madani Arabic Light 400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Madani Arabic Light 400.ttf"; sourceTree = "<group>"; };
 		82FB795B2A194876006644EE /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		82FB79652A194B6F006644EE /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
+		8A3E17972AAFDB26007D6FE2 /* MediaPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewVC.swift; sourceTree = "<group>"; };
+		8A3E17982AAFDB26007D6FE2 /* MediaPreviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaPreviewVC.xib; sourceTree = "<group>"; };
+		8A3E179C2AB080B5007D6FE2 /* MediaPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewViewModel.swift; sourceTree = "<group>"; };
 		8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
 		8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreviewCell.swift; sourceTree = "<group>"; };
 		8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPreviewCell.xib; sourceTree = "<group>"; };
@@ -1626,6 +1632,7 @@
 			children = (
 				8255573F2A68C4C600E00AA5 /* TransitionAnimator */,
 				82C0E39B2A676898008B72ED /* MainStories */,
+				8A3E17952AAFD994007D6FE2 /* MediaPreview */,
 				825557352A68C1A100E00AA5 /* StoryPreview */,
 			);
 			path = Stories;
@@ -2015,6 +2022,32 @@
 			path = Arabic;
 			sourceTree = "<group>";
 		};
+		8A3E17952AAFD994007D6FE2 /* MediaPreview */ = {
+			isa = PBXGroup;
+			children = (
+				8A3E179B2AB080A1007D6FE2 /* ViewModel  */,
+				8A3E17962AAFDA2C007D6FE2 /* View */,
+			);
+			path = MediaPreview;
+			sourceTree = "<group>";
+		};
+		8A3E17962AAFDA2C007D6FE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A3E17972AAFDB26007D6FE2 /* MediaPreviewVC.swift */,
+				8A3E17982AAFDB26007D6FE2 /* MediaPreviewVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A3E179B2AB080A1007D6FE2 /* ViewModel  */ = {
+			isa = PBXGroup;
+			children = (
+				8A3E179C2AB080B5007D6FE2 /* MediaPreviewViewModel.swift */,
+			);
+			path = "ViewModel ";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2099,6 +2132,7 @@
 				82FB79522A19475B006644EE /* Madani Arabic SemiBold 400.ttf in Resources */,
 				8228829D2A0D1D4600019216 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				822882902A0D1D4600019216 /* Poppins-Italic.ttf in Resources */,
+				8A3E179A2AAFDB26007D6FE2 /* MediaPreviewVC.xib in Resources */,
 				8255573C2A68C23A00E00AA5 /* StoryPreviewVC.xib in Resources */,
 				82952B962A479F8D00548634 /* OtherSeeCell.xib in Resources */,
 				82DB7E162A1383A800F9096B /* EmailIsVerifiedViewController.xib in Resources */,
@@ -2216,6 +2250,7 @@
 				82A2FC8E2A0BEA5500BA7BD3 /* BaseWireFrame.swift in Sources */,
 				82FB791D2A169A6D006644EE /* VerifyCode.swift in Sources */,
 				827B83912A10EC9F00E634A9 /* Date+Extensions.swift in Sources */,
+				8A3E17992AAFDB26007D6FE2 /* MediaPreviewVC.swift in Sources */,
 				82FB79342A16FF45006644EE /* LocalDataManager.swift in Sources */,
 				82D914392A102459005FAF36 /* Validatable.swift in Sources */,
 				82AB6A812A115B380005DEF6 /* EnterCodeViewController.swift in Sources */,
@@ -2271,6 +2306,7 @@
 				827ED73F2A3A20B50056EE37 /* ProfileViewModel.swift in Sources */,
 				8252A6AB2A0FF02B004989A1 /* UDHelper.swift in Sources */,
 				82A2FC482A0B9D1600BA7BD3 /* CircleImageView.swift in Sources */,
+				8A3E179D2AB080B5007D6FE2 /* MediaPreviewViewModel.swift in Sources */,
 				82D914412A102459005FAF36 /* AgeValidator.swift in Sources */,
 				82D914402A102459005FAF36 /* CharCountValidator.swift in Sources */,
 				82A2FC342A0B9CF000BA7BD3 /* KeyboardStateManager.swift in Sources */,
@@ -2515,9 +2551,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = 554KYQ2YA3;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2533,6 +2570,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SmartSA.Link-me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2548,9 +2586,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = 554KYQ2YA3;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2566,6 +2605,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SmartSA.Link-me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -15,4 +15,5 @@ class UDKeys {
     static let isSkip = "IsSkip"
     static let isChangeLang = "changeLang"
     static let isCompleteProfile = "isCompleteProfile"
+    static let isDrag = "isDrag"
 }

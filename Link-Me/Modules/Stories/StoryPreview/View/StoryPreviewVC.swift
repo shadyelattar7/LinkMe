@@ -8,7 +8,7 @@
 import UIKit
 import AnimatedCollectionViewLayout
 import SGSegmentedProgressBarLibrary
-
+import RxSwift
 
 class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate {
     
@@ -20,7 +20,7 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
     var previousContentOffset: CGFloat = 0.0
     var isScrolled: Bool = false
     var segmentbar: SGSegmentedProgressBar!
-    
+    var indexpathRow = 0
     
     //MARK: - Life Cycle -
     
@@ -62,13 +62,18 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
     }
     
     private func rgisterCell(){
+        
         userPreviewCollV.registerNIB(UserPreviewCell.self)
     }
     
     private func setupUserPreviewCollV(){
+        userPreviewCollV.rx.setDelegate(self).disposed(by: disposeBag)
+        
+        
         viewModel.storiesData.bind(to: userPreviewCollV.rx.items(cellIdentifier: String(describing: UserPreviewCell.self), cellType: UserPreviewCell.self)){ (row,item,cell) in
             
             cell.stories.accept(item.stories)
+            cell.storyCount = self.viewModel.storiesData.value[row].stories.count
             
             let rect = CGRect(x: 10, y: 10, width: self.view.width - 20  , height: 3)
             cell.segmentbar = SGSegmentedProgressBar(frame: rect, delegate: cell.self, dataSource: cell.self)
@@ -91,17 +96,36 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
                 print("muteSound")
             }
             
+            cell.segmentedProgressBarFinished = { [weak self] isFinished in
+                guard let self = self else {return}
+                if isFinished{
+                    print("Finish all storeis: \(isFinished)")
+                    if row == self.viewModel.storiesData.value.count - 1{
+                        print("End of Increase ++ End of Sotries")
+                        self.dismiss(animated: true)
+                    }else{
+                        let index = IndexPath(row: row + 1, section: 0)
+                        self.userPreviewCollV.scrollToItem(at: index, at:  .centeredHorizontally, animated: true)
+                    }
+                }
+            }
+            
         }.disposed(by: disposeBag)
         
         
         userPreviewCollV.rx
             .willDisplayCell
             .subscribe(onNext: { cell, indexPath in
+                self.currentUser = indexPath.row
+                print("122 indexPath: \(indexPath.row)")
+                self.indexpathRow = indexPath.row
                 let cell = cell as! UserPreviewCell
-                cell.segmentbar.restart()
-                cell.segmentbar.start()
-            })
-            .disposed(by: disposeBag)
+                if indexPath.row < 1{
+                    self.dismiss(animated: true)
+                }else{
+                    cell.segmentbar.restartCurrentSegment()
+                }
+            }).disposed(by: disposeBag)
     }
     
     
@@ -124,10 +148,6 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
             print("User click Dismiss button")
         }))
         
-        
-        //uncomment for iPad Support
-        //alert.popoverPresentationController?.sourceView = self.view
-        
         self.present(alert, animated: true, completion: {
             print("completion block")
         })
@@ -139,57 +159,35 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
 
 // MARK: - Collection View Configuration -
 
-//UICollectionViewDelegate,UICollectionViewDataSource,
-//extension StoryPreviewVC: UICollectionViewDelegate,UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout{
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        self.viewModel.storiesData.value.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeue(cell: UserPreviewCell.self, for: indexPath)
-//        cell.stories.accept(viewModel.storiesData.value[indexPath.row].stories)
-//        print("viewModel.storiesData: \(indexPath.row)")
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        let cell = cell as? UserPreviewCell
-//        cell?.stories.accept(viewModel.storiesData.value[self.indexPath].stories)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return collectionView.bounds.size
-//    }
-//
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        let currentOffset = (scrollView.contentOffset.x)
-//
-//        print("currentOffset: \(currentOffset)")
-//        if currentOffset > previousContentOffset {
-//            // Scrolling Right Increase ++
-//            print("Scrolling Right Increase ++")
-//            if self.indexPath == viewModel.storiesData.value.count - 1{
-//               print("End of Increase ++ End of Sotries")
-//            }else{
-//                self.indexPath += 1
-//                self.userPreviewCollV.reloadData()
-//            }
-//
-//        } else if currentOffset < previousContentOffset {
-//            // Scrolling Left Decrease --
-//            print("Scrolling Left Decrease --")
-//            if self.indexPath == 0{
-//                print("End of Decrease -- End of Sotries")
-//            }else{
-//                self.indexPath -= 1
-//                self.userPreviewCollV.reloadData()
-//            }
-//        }
-//        previousContentOffset = currentOffset
-//    }
+extension StoryPreviewVC{
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        // Pause the segmented progress bar timer when dragging starts.
+        if let cell = getCurrentVisibleCell() {
+            cell.segmentbar.pause()
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // Calculate the progress made during manual dragging and update the segmented progress bar.
+        if !decelerate, let cell = getCurrentVisibleCell() {
+            let contentOffsetX = scrollView.contentOffset.x
+            let cellWidth = cell.frame.width
+            let progressPercentage = contentOffsetX / cellWidth
+            cell.segmentbar.setProgressManually(index: cell.currentIndex, progressPercentage: progressPercentage)
+        }
+    }
+    
+    // Helper function to get the currently visible cell.
+    private func getCurrentVisibleCell() -> UserPreviewCell? {
+        let visibleRect = CGRect(origin: userPreviewCollV.contentOffset, size: userPreviewCollV.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        if let indexPath = userPreviewCollV.indexPathForItem(at: visiblePoint) {
+            if let cell = userPreviewCollV.cellForItem(at: indexPath) as? UserPreviewCell {
+                return cell
+            }
+        }
+        return nil
+    }
+}
 
-//
-//}
-//
-//
-//

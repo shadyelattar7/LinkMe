@@ -16,7 +16,6 @@ class StoryPreviewCell: UICollectionViewCell {
     
     var nextStory: (()->())?
     var previousStory: (()->())?
-    var storysCount: Int = 0
     var isScrolled: Bool = false
    
     
@@ -24,10 +23,14 @@ class StoryPreviewCell: UICollectionViewCell {
         super.awakeFromNib()
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         self.addGestureRecognizer(tap)
+        
+
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        imageView_iv.image = nil
+
     }
     
     override func layoutSubviews(){

@@ -45,6 +45,11 @@ class UDHelper {
         get { UDHelper.userDefaults.bool(forKey: UDKeys.isCompleteProfile) }
     }
     
+    static var isDrag: Bool{
+        set { UDHelper.userDefaults.set(newValue, forKey: UDKeys.isDrag) }
+        get { UDHelper.userDefaults.bool(forKey: UDKeys.isDrag) }
+    }
+    
     
     static func saveUserData(obj: User?){
         do{

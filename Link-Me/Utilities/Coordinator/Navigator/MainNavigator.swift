@@ -19,7 +19,9 @@ class MainNavigator: Navigator{
         case LinkMe
         
         //MARK: - Stories -
+        case MediaPreview(mediaType: MediaType, image: UIImage = UIImage(), video: URL = URL(fileURLWithPath: ""))
         case StoryPreview
+        
         
         //MARK: - Profile -
         case Profile
@@ -53,9 +55,13 @@ class MainNavigator: Navigator{
             
             //MARK: - Stories -
             
+        case .MediaPreview(let mediaType, let image, let video):
+            let viewModel = MediaPreviewViewModel(mediaType: mediaType, image: image, video: video)
+            return MediaPreviewVC(viewModel: viewModel, coordinator: coordinator)
         case .StoryPreview:
             let viewModel = MainStoriesViewModel()
             return StoryPreviewVC(viewModel: viewModel, coordinator: coordinator)
+            
             
             //MARK: - Profile -
             
@@ -114,6 +120,8 @@ class MainNavigator: Navigator{
             let DeleteAccountProfileRepo = ProfileWorker()
             let viewModel = DeleteAccountViewModel(DeleteAccount: DeleteAccountProfileRepo, reason: reason)
             return DeleteAccountVC(viewModel: viewModel, coordinator: coordinator)
+            
+            
             
         }
     }

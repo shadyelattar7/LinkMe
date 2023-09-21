@@ -99,7 +99,7 @@ extension MainStoriesVC: UICollectionViewDelegateFlowLayout{
         if collectionView == storiesCollView {
             return CGSize(width: 66, height: 88)
         } else {
-            return CGSize(width: 110, height: 180)
+            return indexPath.row == 0 ? CGSize(width: self.view.frame.width, height: 0) : CGSize(width: 110, height: 180)
         }
     }
 }

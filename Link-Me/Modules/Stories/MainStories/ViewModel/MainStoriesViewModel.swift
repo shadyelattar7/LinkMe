@@ -50,8 +50,6 @@ class MainStoriesViewModel: BaseViewModel{
     
     init(storiesApi: StoriesAPIProtocol = StoriesAPI()) {
         self.storiesApi = storiesApi
-        super.init()
-        self.fetchStories()
     }
 }
 

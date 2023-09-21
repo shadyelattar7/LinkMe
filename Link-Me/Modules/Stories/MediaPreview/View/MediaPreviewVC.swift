@@ -130,7 +130,7 @@ extension MediaPreviewVC {
             switch state.element {
             case .success:
                 // TODO: Success need to navigate.
-                print("success add to new story")
+                self.navigationController?.popViewController(animated: true)
                 
             case .error(let errorMessage):
                 ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)

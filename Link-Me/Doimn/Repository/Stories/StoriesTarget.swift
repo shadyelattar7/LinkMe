@@ -9,7 +9,8 @@ import Foundation
 import Alamofire
 
 enum StoriesTarget {
-    case addNewStory (Parameters: AddNewStoryRequestModel, fileModel: [MultiPartData])
+    case addNewStory(Parameters: AddNewStoryRequestModel, fileModel: [MultiPartData])
+    case fetchStories
 }
 
 extension StoriesTarget: TargetType {
@@ -17,6 +18,8 @@ extension StoriesTarget: TargetType {
         switch self {
         case .addNewStory:
             return "/story/add"
+        case .fetchStories:
+            return "/story/all"
         }
     }
     
@@ -24,6 +27,8 @@ extension StoriesTarget: TargetType {
         switch self {
         case .addNewStory:
             return .post
+        case .fetchStories:
+            return .get
         }
     }
     
@@ -31,6 +36,8 @@ extension StoriesTarget: TargetType {
         switch self {
         case .addNewStory(let Parameters, let fileModel):
             return .multiPart(Parameters, fileModel)
+        case .fetchStories:
+            return .requestPlain
         }
     }
     

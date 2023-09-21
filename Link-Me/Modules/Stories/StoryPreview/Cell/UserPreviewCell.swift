@@ -25,7 +25,7 @@ class UserPreviewCell: UICollectionViewCell {
     
     var currentStory: Int = 0
     var disposedBag = DisposeBag()
-    var stories: BehaviorRelay<[UIImage]> = .init(value: [])
+    var stories: BehaviorRelay<[Story]> = .init(value: [])
     var segmentbar: SGSegmentedProgressBar!
     var previousContentOffset: CGFloat = 0.0
     var closeBtn: (()->())?
@@ -144,8 +144,8 @@ class UserPreviewCell: UICollectionViewCell {
         storyPreviewCollV.rx.setDelegate(self).disposed(by: disposedBag)
                 
         self.stories.bind(to: storyPreviewCollV.rx.items(cellIdentifier: String(describing: StoryPreviewCell.self), cellType: StoryPreviewCell.self)){ (row,item,cell) in
-            cell.imageView_iv.image = item
             
+            cell.update(item)
             
             self.segmentbar.currentIndex = row
             

@@ -15,10 +15,19 @@ protocol StoriesAPIProtocol {
     ///   - params: story text and story image or story video.
     /// - Returns: baseResponse model.
     func addNewStory(model: AddNewStoryRequestModel, fileModel: [MultiPartData]) -> Observable<Result<BaseResponse, NSError>>
+    
+    /// it is the method used to fetch all stories
+    /// - Parameters:
+    /// - Returns: Stories model.
+    func fetchStories() -> Observable<Result<StoriesModel, NSError>>
 }
 
 class StoriesAPI: APIClient<StoriesTarget>, StoriesAPIProtocol {
     func addNewStory(model: AddNewStoryRequestModel, fileModel: [MultiPartData]) -> RxSwift.Observable<Result<BaseResponse, NSError>> {
         self.performMultipartRequest(target: .addNewStory(Parameters: model, fileModel: fileModel))
+    }
+    
+    func fetchStories() -> Observable<Result<StoriesModel, NSError>> {
+        self.performRequest(target: .fetchStories)
     }
 }

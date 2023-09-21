@@ -20,15 +20,15 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Or1-fJ-EtI">
                         <rect key="frame" x="0.0" y="0.0" width="66" height="87"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab" translatesAutoresizingMaskIntoConstraints="NO" id="mjI-xJ-QFX" customClass="CircleImageView" customModule="Link_Me" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mjI-xJ-QFX" customClass="CircleImageView" customModule="Link_Me" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="sg6-6K-6Al"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnq-Ip-FF0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnq-Ip-FF0">
                                 <rect key="frame" x="0.0" y="72" width="66" height="15"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -62,7 +62,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="AmrDiab" width="600" height="900"/>
         <image name="Plus" width="12" height="12"/>
     </resources>
 </document>

@@ -25,6 +25,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
         setupView()
         setupStoriesCollV()
         configureOthersStoriesCollectionView()
+        subscribeToErrorMessage()
     }
     
     
@@ -51,18 +52,14 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
                 cell.add_btn.isHidden = true
             }
             
-            cell.userImage_iv.image = item.image
-            cell.userName_lbl.text = item.name
+            cell.update(item)
             
-            
-            //cell.configure(item)
         }.disposed(by: disposeBag)
         
         storiesCollView.rx.itemSelected.subscribe { [weak self] indexPath in
             guard let self = self, let indexPath = indexPath.element else {return}
             
             let vc = self.coordinator.Main.viewcontroller(for: .StoryPreview) as! StoryPreviewVC
-            let data = self.viewModel.storiesData.value
             
             if indexPath.row == 0{
                 print("Add Store")
@@ -70,6 +67,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
                 
             }else{
                 vc.indexPath = indexPath.row
+                vc.myStoriesDate = self.viewModel.storiesData
                 self.present(vc, animated: true)
             }
             
@@ -139,22 +137,34 @@ extension MainStoriesVC {
     
     private func subscribeToStoriesDate() {
         viewModel.storiesData.bind(to: othersStoriesCollectionView.rx.items(cellIdentifier: String(describing: StoryCollectionViewCell.self), cellType: StoryCollectionViewCell.self)) { (row, item, cell) in
-           
+
             if row != 0 {
                 cell.update(item)
             }
 
         }.disposed(by: disposeBag)
     }
-    
+
     private func didSelectOtherStories() {
         othersStoriesCollectionView.rx.itemSelected.subscribe { [weak self] indexPath in
             guard let self = self else {return}
-            
+
             let vc = self.coordinator.Main.viewcontroller(for: .StoryPreview) as! StoryPreviewVC
             vc.indexPath = indexPath.row
+            vc.myStoriesDate = self.viewModel.storiesData
             self.present(vc, animated: true)
-            
+
+        }.disposed(by: disposeBag)
+    }
+}
+
+// MARK: Private Handlers
+
+extension MainStoriesVC {
+    private func subscribeToErrorMessage() {
+        viewModel.errorMessageObservable.subscribe { [weak self] errorMessage in
+            guard let self = self else { return }
+            ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
         }.disposed(by: disposeBag)
     }
 }

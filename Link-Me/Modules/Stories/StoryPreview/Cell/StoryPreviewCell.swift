@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 import RxSwift
 import RxCocoa
 
@@ -45,5 +46,47 @@ class StoryPreviewCell: UICollectionViewCell {
     @IBAction func previousStoryTapped(_ sender: Any) {
         print("previousStoryTapped")
         previousStory?()
+    }
+}
+
+
+// MARK: Configuration
+
+extension StoryPreviewCell {
+    func update(_ item: Story) {
+        switch item.video?.getPathExtensionType() {
+        case .video:
+            configureVideoStory(item)
+        case .image:
+            configureImageStory(item)
+        default:
+            // TODO: - Need to handle if path extension is not valid.
+            break
+        }
+    }
+}
+
+
+// MARK: Private Handlers
+
+extension StoryPreviewCell {
+    private func configureVideoStory(_ item: Story) {
+        self.imageView_iv.isHidden = true
+        self.videoView.isHidden = false
+        guard let videoStr = item.video , let videoUrl = URL(string: videoStr) else {return}
+        let player = AVPlayer(url: videoUrl)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.videoView.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        videoView.backgroundColor = UIColor.black
+        self.videoView.layer.addSublayer(playerLayer)
+        player.play()
+    }
+    
+    private func configureImageStory(_ item: Story) {
+        self.videoView.isHidden = true
+        self.imageView_iv.isHidden = false
+        guard let imageStr = item.video, let imageUrl = URL(string: imageStr) else { return }
+        self.imageView_iv.setImage(url: imageUrl)
     }
 }

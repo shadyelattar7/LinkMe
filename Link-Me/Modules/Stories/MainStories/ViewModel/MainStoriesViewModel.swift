@@ -32,21 +32,48 @@ protocol MainStoriesOutputs{
 
 class MainStoriesViewModel: BaseViewModel{
     
-    //MARK: - Properties -
-        
-    var storiesData: BehaviorRelay<[Stories]> = .init(value: [
-        Stories(name: "Add", image: UIImage(named: "blank")!, stories: []),
-        Stories(name: "A", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab")!]),
-        Stories(name: "B", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab 1")!,UIImage(named: "AmrDiab 5")!]),
-        Stories(name: "C", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab 2")!]),
-        Stories(name: "D", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab 3")!]),
-        Stories(name: "F", image: UIImage(named: "AmrDiab")!, stories: [UIImage(named: "AmrDiab 4")!]),
-    ])
+    // MARK: Properties
     
+    private let storiesApi: StoriesAPIProtocol
+    private let disposedBag = DisposeBag()
 
-         
+    // MARK: Outputs
     
-    //MARK: - API Call -
+    var storiesData: BehaviorRelay<[UserStoryData]> = .init(value: [])
+    
+    private var errorMessage = PublishSubject<String>()
+    var errorMessageObservable: Observable<String> {
+        return errorMessage.asObservable()
+    }
+    
+    // MARK: Init
+    
+    init(storiesApi: StoriesAPIProtocol = StoriesAPI()) {
+        self.storiesApi = storiesApi
+        super.init()
+        self.fetchStories()
+    }
+}
 
-    
+// MARK: Fetch stories
+
+extension MainStoriesViewModel {
+    func fetchStories() {
+        storiesApi.fetchStories().subscribe(onNext:{ [weak self] result in
+            guard let self = self else {return}
+
+            switch result{
+            case .success(let model):
+                guard let stories = model.dats?.data else { return }
+                // Why add first item as dummy data ?
+                // -> because handle first item to add new story cell.
+                self.storiesData.accept([UserStoryData.example])
+                self.storiesData.accept(self.storiesData.value + stories)
+                
+            case .failure(let error):
+                let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
+                self.errorMessage.onNext(errorMessage ?? "")
+            }
+        }).disposed(by: disposedBag)
+    }
 }

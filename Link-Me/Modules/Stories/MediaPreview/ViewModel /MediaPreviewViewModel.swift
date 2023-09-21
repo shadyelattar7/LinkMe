@@ -85,14 +85,14 @@ extension MediaPreviewViewModel {
         switch mediaType {
         case .image:
             guard let image = self.image, let imageData = image.jpegData(compressionQuality: 0.6) else { return nil }
-            let multiPart = MultiPartData(keyName: "video", fileData: imageData, mimeType: "image/png", fileName: "image")
+            let multiPart = MultiPartData(keyName: "video", fileData: imageData, mimeType: "image/jpeg", fileName: "image.jpeg")
             resultOfMultiPart = [multiPart]
             
         case .video:
             do {
                 guard let video = video else { return nil }
                 let data = try Data(contentsOf: video)
-                let multiPart = MultiPartData(keyName: "video", fileData: data, mimeType: video.mimeType(), fileName: "video")
+                let multiPart = MultiPartData(keyName: "video", fileData: data, mimeType: video.mimeType(), fileName: "video.mp4")
                 resultOfMultiPart = [multiPart]
             } catch {
                 self.mediaPreviewState.onNext(.error("Error When catch video."))

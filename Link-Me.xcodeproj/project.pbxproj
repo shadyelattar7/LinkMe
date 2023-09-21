@@ -14,6 +14,9 @@
 		79FA7F492ABB30350043B6BA /* AddNewStoryRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F482ABB30350043B6BA /* AddNewStoryRequestModel.swift */; };
 		79FA7F4D2ABB30D50043B6BA /* StoriesTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F4C2ABB30D50043B6BA /* StoriesTarget.swift */; };
 		79FA7F4F2ABB30E70043B6BA /* StoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F4E2ABB30E70043B6BA /* StoriesAPI.swift */; };
+		79FA7F522ABB4DA40043B6BA /* StoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F512ABB4DA40043B6BA /* StoriesModel.swift */; };
+		79FA7F542ABB541E0043B6BA /* UIImageView+SDWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F532ABB541E0043B6BA /* UIImageView+SDWebImage.swift */; };
+		79FA7F562ABC66880043B6BA /* String+PathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F552ABC66880043B6BA /* String+PathExtension.swift */; };
 		8228827D2A0C011D00019216 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228827C2A0C011D00019216 /* UIColor+Extension.swift */; };
 		822882902A0D1D4600019216 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 822882812A0D1D4600019216 /* Poppins-Italic.ttf */; };
 		822882912A0D1D4600019216 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 822882822A0D1D4600019216 /* Poppins-Regular.ttf */; };
@@ -250,6 +253,9 @@
 		79FA7F482ABB30350043B6BA /* AddNewStoryRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStoryRequestModel.swift; sourceTree = "<group>"; };
 		79FA7F4C2ABB30D50043B6BA /* StoriesTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTarget.swift; sourceTree = "<group>"; };
 		79FA7F4E2ABB30E70043B6BA /* StoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesAPI.swift; sourceTree = "<group>"; };
+		79FA7F512ABB4DA40043B6BA /* StoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesModel.swift; sourceTree = "<group>"; };
+		79FA7F532ABB541E0043B6BA /* UIImageView+SDWebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SDWebImage.swift"; sourceTree = "<group>"; };
+		79FA7F552ABC66880043B6BA /* String+PathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PathExtension.swift"; sourceTree = "<group>"; };
 		7B6D39B12E9B5B1A0281DDBE /* Pods-Link-Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link-Me.release.xcconfig"; path = "Target Support Files/Pods-Link-Me/Pods-Link-Me.release.xcconfig"; sourceTree = "<group>"; };
 		8228827C2A0C011D00019216 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		822882812A0D1D4600019216 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
@@ -527,6 +533,8 @@
 			isa = PBXGroup;
 			children = (
 				79FA7F452ABB26300043B6BA /* UIView+extension.swift */,
+				79FA7F532ABB541E0043B6BA /* UIImageView+SDWebImage.swift */,
+				79FA7F552ABC66880043B6BA /* String+PathExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -544,6 +552,14 @@
 			children = (
 				79FA7F4C2ABB30D50043B6BA /* StoriesTarget.swift */,
 				79FA7F4E2ABB30E70043B6BA /* StoriesAPI.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		79FA7F502ABB4D270043B6BA /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				79FA7F512ABB4DA40043B6BA /* StoriesModel.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -646,6 +662,7 @@
 				82CAF04A2A3E01AE00311600 /* General */,
 				822AD2D22A1410F40037D8E0 /* Auth */,
 				825039452A413F3F0006EAD3 /* Profile */,
+				79FA7F502ABB4D270043B6BA /* Stories */,
 			);
 			path = ResponesModel;
 			sourceTree = "<group>";
@@ -2322,6 +2339,7 @@
 				825039412A412F250006EAD3 /* SettingsViewModel.swift in Sources */,
 				82FB79332A16FF45006644EE /* LocalStorageManager.swift in Sources */,
 				82FB79392A17E8F9006644EE /* LoginWorker.swift in Sources */,
+				79FA7F562ABC66880043B6BA /* String+PathExtension.swift in Sources */,
 				82A2FC6E2A0BCBE400BA7BD3 /* OnboardingCell.swift in Sources */,
 				82952B9F2A47B9CD00548634 /* ChangePasswordViewModel.swift in Sources */,
 				827356792A59CB1600634EA4 /* RemoveReasonCell.swift in Sources */,
@@ -2406,6 +2424,7 @@
 				827B839C2A11147400E634A9 /* VerifyEmailViewModel.swift in Sources */,
 				825CF3B22A4DC4D700BA5DDA /* SendEmailVC.swift in Sources */,
 				82FB79452A1939B9006644EE /* UIButtonEx.swift in Sources */,
+				79FA7F522ABB4DA40043B6BA /* StoriesModel.swift in Sources */,
 				82D914522A1028C6005FAF36 /* LoginViewModel.swift in Sources */,
 				825CF38B2A494A9B00BA5DDA /* LanguageVC.swift in Sources */,
 				82A2FC5E2A0BB05D00BA7BD3 /* OnboardingViewController.swift in Sources */,
@@ -2440,6 +2459,7 @@
 				825CF37E2A48A3A600BA5DDA /* ChangeEmailVC.swift in Sources */,
 				82DB7E182A1383DB00F9096B /* EmailIsVerifiedViewModel.swift in Sources */,
 				82A2FC8A2A0BE22200BA7BD3 /* LinkMeViewModel.swift in Sources */,
+				79FA7F542ABB541E0043B6BA /* UIImageView+SDWebImage.swift in Sources */,
 				82952B952A479F8D00548634 /* OtherSeeCell.swift in Sources */,
 				8292767F2A2D613F000F49E0 /* ProfileNotCompleteViewModel.swift in Sources */,
 				82FB79222A169AB4006644EE /* VerifyCodeWorkering.swift in Sources */,

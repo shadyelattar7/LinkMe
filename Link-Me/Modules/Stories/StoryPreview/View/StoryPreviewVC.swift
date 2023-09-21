@@ -9,6 +9,7 @@ import UIKit
 import AnimatedCollectionViewLayout
 import SGSegmentedProgressBarLibrary
 import RxSwift
+import RxCocoa
 
 class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate {
     
@@ -21,6 +22,7 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
     var isScrolled: Bool = false
     var segmentbar: SGSegmentedProgressBar!
     var indexpathRow = 0
+    var myStoriesDate = BehaviorRelay<[UserStoryData]>(value: [])
     
     //MARK: - Life Cycle -
     
@@ -68,12 +70,11 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
     
     private func setupUserPreviewCollV(){
         userPreviewCollV.rx.setDelegate(self).disposed(by: disposeBag)
-        
-        
-        viewModel.storiesData.bind(to: userPreviewCollV.rx.items(cellIdentifier: String(describing: UserPreviewCell.self), cellType: UserPreviewCell.self)){ (row,item,cell) in
+        self.myStoriesDate.bind(to: userPreviewCollV.rx.items(cellIdentifier: String(describing: UserPreviewCell.self), cellType: UserPreviewCell.self)){ (row, item, cell) in
             
-            cell.stories.accept(item.stories)
-            cell.storyCount = self.viewModel.storiesData.value[row].stories.count
+            guard let stories = self.myStoriesDate.value[row].stories else { return }
+            cell.stories.accept(stories)
+            cell.storyCount = stories.count
             
             let rect = CGRect(x: 10, y: 10, width: self.view.width - 20  , height: 3)
             cell.segmentbar = SGSegmentedProgressBar(frame: rect, delegate: cell.self, dataSource: cell.self)
@@ -100,7 +101,7 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
                 guard let self = self else {return}
                 if isFinished{
                     print("Finish all storeis: \(isFinished)")
-                    if row == self.viewModel.storiesData.value.count - 1{
+                    if row == self.myStoriesDate.value.count - 1 {
                         print("End of Increase ++ End of Sotries")
                         self.dismiss(animated: true)
                     }else{

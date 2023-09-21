@@ -25,4 +25,10 @@ class StoryCell: UICollectionViewCell {
         let borderWidth: CGFloat = 4.0
         userImage_iv.addGradientBorder(colors: borderColors, width: borderWidth)
     }
+    
+    func update(_ item: UserStoryData) {
+        userName_lbl.text = item.name
+        guard let imageStr = item.imagePath else { return }
+        userImage_iv.setImage(url: URL(string: imageStr))
+    }
 }

@@ -21,7 +21,8 @@ class MainNavigator: Navigator{
         //MARK: - Stories -
         case MediaPreview(mediaType: MediaType, image: UIImage = UIImage(), video: URL = URL(fileURLWithPath: ""))
         case StoryPreview
-        
+        case ReportStory(storyID: Int)
+        case BottomListItem(listItems: [ItemList], storyID: Int)
         
         //MARK: - Profile -
         case Profile
@@ -61,7 +62,13 @@ class MainNavigator: Navigator{
         case .StoryPreview:
             let viewModel = MainStoriesViewModel()
             return StoryPreviewVC(viewModel: viewModel, coordinator: coordinator)
+        case .ReportStory(let storyID):
+            let viewModel = ReportStoryViewModel(storyID: storyID)
+            return ReportStoryViewController(viewModel: viewModel)
             
+        case .BottomListItem(let listItems, let storyID):
+            let viewModel = BottomListSheetViewModel(listItems:  listItems, storyID: storyID)
+            return BottomListSheet(viewModel: viewModel, coordinator: coordinator)
             
             //MARK: - Profile -
             

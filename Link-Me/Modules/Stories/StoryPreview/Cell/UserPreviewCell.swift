@@ -45,7 +45,7 @@ class UserPreviewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupView()
         setupStoriesCollV()
-        
+        ListenToNotificationCenter()
     }
     
     override func prepareForReuse() {
@@ -68,6 +68,19 @@ class UserPreviewCell: UICollectionViewCell {
     }
     
     
+    private func ListenToNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.NotificationPauseSegment(_:)), name: NSNotification.Name(rawValue: StaticKeys.pauseSegmentController), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.NotificationResumeSegment(_:)), name: NSNotification.Name(rawValue: StaticKeys.resumeSegmentController), object: nil)
+    }
+    
+    @objc func NotificationPauseSegment(_ notification: NSNotification) {
+        segmentbar.pause()
+    }
+    
+    @objc func NotificationResumeSegment(_ notification: NSNotification) {
+        segmentbar.resume()
+    }
 
     
     

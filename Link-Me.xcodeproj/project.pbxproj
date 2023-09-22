@@ -12,6 +12,8 @@
 		794B890B2ABE10B700FE5F0D /* ReportStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794B89092ABE10B700FE5F0D /* ReportStoryViewController.xib */; };
 		794B89102ABE164300FE5F0D /* ReportStoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B890F2ABE164300FE5F0D /* ReportStoryViewModel.swift */; };
 		794B89122ABE228B00FE5F0D /* ReportStoryRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */; };
+		794B89142ABE2B5A00FE5F0D /* StaticKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */; };
+		794B89172ABE2D8900FE5F0D /* BottomListSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */; };
 		79FA7F422ABB24640043B6BA /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */; };
 		79FA7F432ABB24640043B6BA /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */; };
 		79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F452ABB26300043B6BA /* UIView+extension.swift */; };
@@ -262,6 +264,8 @@
 		794B89092ABE10B700FE5F0D /* ReportStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportStoryViewController.xib; sourceTree = "<group>"; };
 		794B890F2ABE164300FE5F0D /* ReportStoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportStoryViewModel.swift; sourceTree = "<group>"; };
 		794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportStoryRequestModel.swift; sourceTree = "<group>"; };
+		794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticKeys.swift; sourceTree = "<group>"; };
+		794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomListSheetViewModel.swift; sourceTree = "<group>"; };
 		79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		79FA7F452ABB26300043B6BA /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
@@ -568,6 +572,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		794B89152ABE2D7500FE5F0D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		79FA7F3F2ABB24460043B6BA /* StoryCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +621,7 @@
 			children = (
 				79FA7F652ABDD3130043B6BA /* Resources */,
 				79FA7F5C2ABDC3C90043B6BA /* Cell */,
+				794B89152ABE2D7500FE5F0D /* ViewModel */,
 				79FA7F5D2ABDC3CE0043B6BA /* ViewController */,
 			);
 			path = BottomListSheet;
@@ -856,6 +869,7 @@
 				82FB79302A16FF45006644EE /* Local Manager */,
 				8252A6AA2A0FF02B004989A1 /* UDHelper.swift */,
 				8252A6AC2A0FF072004989A1 /* UDKeys.swift */,
+				794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -2468,6 +2482,7 @@
 				82A2FC442A0B9D1600BA7BD3 /* UITableView+Helper.swift in Sources */,
 				82D9143F2A102459005FAF36 /* CofrimPasswordValidator.swift in Sources */,
 				827ED73F2A3A20B50056EE37 /* ProfileViewModel.swift in Sources */,
+				794B89172ABE2D8900FE5F0D /* BottomListSheetViewModel.swift in Sources */,
 				8252A6AB2A0FF02B004989A1 /* UDHelper.swift in Sources */,
 				82A2FC482A0B9D1600BA7BD3 /* CircleImageView.swift in Sources */,
 				8A3E179D2AB080B5007D6FE2 /* MediaPreviewViewModel.swift in Sources */,
@@ -2561,6 +2576,7 @@
 				82A2FC8A2A0BE22200BA7BD3 /* LinkMeViewModel.swift in Sources */,
 				79FA7F542ABB541E0043B6BA /* UIImageView+SDWebImage.swift in Sources */,
 				82952B952A479F8D00548634 /* OtherSeeCell.swift in Sources */,
+				794B89142ABE2B5A00FE5F0D /* StaticKeys.swift in Sources */,
 				8292767F2A2D613F000F49E0 /* ProfileNotCompleteViewModel.swift in Sources */,
 				82FB79222A169AB4006644EE /* VerifyCodeWorkering.swift in Sources */,
 				8A7516842A92920D00B0C6D5 /* UITextField+Extensions.swift in Sources */,

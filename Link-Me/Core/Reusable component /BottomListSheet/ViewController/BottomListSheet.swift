@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class BottomListSheet: UIViewController {
 
@@ -19,13 +21,15 @@ class BottomListSheet: UIViewController {
     
     // MARK: Properties
     
-    private let listItems: [ItemList]
-    var onClicked: ((ItemList) -> ()) = { _ in }
+    private let viewModel: BottomListSheetViewModel
+    private let coordinator: Coordinator
+    private let disposeBag = DisposeBag()
     
     // MARK: Init
     
-    init(listItems: [ItemList]) {
-        self.listItems = listItems
+    init(viewModel: BottomListSheetViewModel, coordinator: Coordinator) {
+        self.viewModel = viewModel
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
@@ -38,8 +42,18 @@ class BottomListSheet: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureTableView()
-//        addTappedOnContentView()
-//        addTappedOnItemsParent()
+        subscribeToScreenState()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        openBottomListSheet()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dismissBottomListSheet()
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillLayoutSubviews() {
@@ -64,28 +78,36 @@ extension BottomListSheet {
     }
 }
 
-// MARK: Private Handlers
+// MARK: Fire NotificationCenter
 
 extension BottomListSheet {
-    private func addTappedOnContentView() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedOnContentView))
-        tap.numberOfTapsRequired = 1
-        contentView.isUserInteractionEnabled = true
-        contentView.addGestureRecognizer(tap)
+    private func openBottomListSheet() {
+        NotificationCenter.default.post(name: NSNotification.Name(StaticKeys.pauseSegmentController), object: self, userInfo: nil)
     }
     
-    @objc private func didTappedOnContentView() {
-        self.dismiss(animated: true)
+    private func dismissBottomListSheet() {
+        NotificationCenter.default.post(name: NSNotification.Name(StaticKeys.resumeSegmentController), object: self, userInfo: nil)
     }
-    
-    private func addTappedOnItemsParent() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedOnItemsParent))
-        tap.numberOfTapsRequired = 1
-        itemsParentView.isUserInteractionEnabled = true
-        itemsParentView.addGestureRecognizer(tap)
-    }
-    
-    @objc private func didTappedOnItemsParent() {
+}
+
+// MARK: ViewModel Outputs
+
+extension BottomListSheet {
+    private func subscribeToScreenState() {
+        viewModel.screenStateObserver.subscribe { [weak self] state in
+            guard let self = self else { return }
+            
+            switch state.element {
+            case .success:
+                self.dismiss(animated: true)
+                
+            case .error(let errorMessage):
+                ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+            default:
+                break
+            }
+            
+        }.disposed(by: disposeBag)
     }
 }
 
@@ -104,13 +126,14 @@ extension BottomListSheet {
 
 extension BottomListSheet: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listItems.count
+        return viewModel.getNumberOfCells()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemListTableViewCell", for: indexPath) as? ItemListTableViewCell else { return UITableViewCell() }
         
-        cell.update(listItems[indexPath.row])
+        cell.update(viewModel.getItems(indexPath: indexPath))
+        
         return cell
     }
     
@@ -119,6 +142,14 @@ extension BottomListSheet: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onClicked(listItems[indexPath.row])
+        switch viewModel.getItems(indexPath: indexPath) {
+        case .deleteStory:
+            viewModel.deleteStory(storyID: viewModel.getStoryID())
+        case .report:
+            let vc = coordinator.Main.viewcontroller(for: .ReportStory(storyID: viewModel.getStoryID()))
+            self.present(vc, animated: true)
+        default:
+            break
+        }
     }
 }

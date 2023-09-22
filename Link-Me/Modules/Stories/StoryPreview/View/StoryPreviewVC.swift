@@ -88,8 +88,7 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
             
             cell.moreMenuBtn = { [weak self] in
                 guard let self = self else {return}
-                print("moreMenuBtn")
-                self.showAlert()
+                self.showBottomListSheet(userIDForStory: self.myStoriesDate.value[row].id ?? -1)
             }
             
             cell.muteSound = { [weak self] in
@@ -130,30 +129,17 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
     }
     
     
-    private func showAlert(){
-        let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
+    private func showBottomListSheet(userIDForStory: Int) {
         
-        alert.addAction(UIAlertAction(title: "Approve", style: .default , handler:{ (UIAlertAction)in
-            print("User click Approve button")
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Edit", style: .default , handler:{ (UIAlertAction)in
-            print("User click Edit button")
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive , handler:{ (UIAlertAction)in
-            print("User click Delete button")
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
-            print("User click Dismiss button")
-        }))
-        
-        self.present(alert, animated: true, completion: {
-            print("completion block")
-        })
+        if userIDForStory == UDHelper.fetchUserData?.id {
+            let vc = BottomListSheet(listItems: [.deleteStory, .editStory])
+            self.present(vc, animated: true)
+            
+        } else {
+            let vc = BottomListSheet(listItems: [.report, .unfriend, .blockUser])
+            self.present(vc, animated: true)
+        }
     }
-    
 }
 
 

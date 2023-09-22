@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6B5F67D95E15147E4727506A /* Pods_Link_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B07EE9E042E4890BEFD488 /* Pods_Link_Me.framework */; };
+		794B890A2ABE10B700FE5F0D /* ReportStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89082ABE10B700FE5F0D /* ReportStoryViewController.swift */; };
+		794B890B2ABE10B700FE5F0D /* ReportStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794B89092ABE10B700FE5F0D /* ReportStoryViewController.xib */; };
+		794B89102ABE164300FE5F0D /* ReportStoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B890F2ABE164300FE5F0D /* ReportStoryViewModel.swift */; };
+		794B89122ABE228B00FE5F0D /* ReportStoryRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */; };
 		79FA7F422ABB24640043B6BA /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */; };
 		79FA7F432ABB24640043B6BA /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */; };
 		79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F452ABB26300043B6BA /* UIView+extension.swift */; };
@@ -254,6 +258,10 @@
 
 /* Begin PBXFileReference section */
 		016774B839AE256296EE21C2 /* Pods-Link-Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link-Me.debug.xcconfig"; path = "Target Support Files/Pods-Link-Me/Pods-Link-Me.debug.xcconfig"; sourceTree = "<group>"; };
+		794B89082ABE10B700FE5F0D /* ReportStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportStoryViewController.swift; sourceTree = "<group>"; };
+		794B89092ABE10B700FE5F0D /* ReportStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportStoryViewController.xib; sourceTree = "<group>"; };
+		794B890F2ABE164300FE5F0D /* ReportStoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportStoryViewModel.swift; sourceTree = "<group>"; };
+		794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportStoryRequestModel.swift; sourceTree = "<group>"; };
 		79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		79FA7F452ABB26300043B6BA /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
@@ -534,6 +542,32 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		794B89072ABE109300FE5F0D /* ReportStory */ = {
+			isa = PBXGroup;
+			children = (
+				794B890E2ABE162F00FE5F0D /* ViewModel */,
+				794B890D2ABE162700FE5F0D /* ViewController */,
+			);
+			path = ReportStory;
+			sourceTree = "<group>";
+		};
+		794B890D2ABE162700FE5F0D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				794B89082ABE10B700FE5F0D /* ReportStoryViewController.swift */,
+				794B89092ABE10B700FE5F0D /* ReportStoryViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		794B890E2ABE162F00FE5F0D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				794B890F2ABE164300FE5F0D /* ReportStoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		79FA7F3F2ABB24460043B6BA /* StoryCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -548,6 +582,7 @@
 			children = (
 				79FA7F482ABB30350043B6BA /* AddNewStoryRequestModel.swift */,
 				79FA7F682ABDE22A0043B6BA /* DeleteStoryRequestModel.swift */,
+				794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -1752,6 +1787,7 @@
 				82C0E39B2A676898008B72ED /* MainStories */,
 				8A3E17952AAFD994007D6FE2 /* MediaPreview */,
 				825557352A68C1A100E00AA5 /* StoryPreview */,
+				794B89072ABE109300FE5F0D /* ReportStory */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -2287,6 +2323,7 @@
 				8228829B2A0D1D4600019216 /* Poppins-Thin.ttf in Resources */,
 				82FB79572A19475B006644EE /* Madani Arabic ExtraBold 400.ttf in Resources */,
 				82FB79512A19475B006644EE /* Madani Arabic Bold 400.ttf in Resources */,
+				794B890B2ABE10B700FE5F0D /* ReportStoryViewController.xib in Resources */,
 				82A2FC5F2A0BB05D00BA7BD3 /* OnboardingViewController.xib in Resources */,
 				825CF3B32A4DC4D700BA5DDA /* SendEmailVC.xib in Resources */,
 				82A2FC142A0B9A1C00BA7BD3 /* Assets.xcassets in Resources */,
@@ -2489,6 +2526,7 @@
 				82A2FC5E2A0BB05D00BA7BD3 /* OnboardingViewController.swift in Sources */,
 				822AD2DA2A1414CC0037D8E0 /* VerifyEmail .swift in Sources */,
 				82A2FC352A0B9CF000BA7BD3 /* ToastView.swift in Sources */,
+				794B89102ABE164300FE5F0D /* ReportStoryViewModel.swift in Sources */,
 				8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */,
 				822AD2D52A14113B0037D8E0 /* VerifyEmailWorker.swift in Sources */,
 				82A2FC452A0B9D1600BA7BD3 /* Extenions.swift in Sources */,
@@ -2503,12 +2541,14 @@
 				8252A6AD2A0FF072004989A1 /* UDKeys.swift in Sources */,
 				82469AAC2A19912900A47C5F /* Fonts.swift in Sources */,
 				825CF3A92A4D01EF00BA5DDA /* SupportCell.swift in Sources */,
+				794B89122ABE228B00FE5F0D /* ReportStoryRequestModel.swift in Sources */,
 				82952B852A472AF500548634 /* MyAccountWorking.swift in Sources */,
 				827356752A59C65500634EA4 /* RemoveAccReason.swift in Sources */,
 				825CF3B52A4DC4E100BA5DDA /* SendEmailViewModel.swift in Sources */,
 				825CF3902A4953F000BA5DDA /* UIImageEx.swift in Sources */,
 				82A2FC712A0BD3B500BA7BD3 /* TargetType.swift in Sources */,
 				79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */,
+				794B890A2ABE10B700FE5F0D /* ReportStoryViewController.swift in Sources */,
 				825CF3962A49DFDA00BA5DDA /* SupportVC.swift in Sources */,
 				827356702A59C37900634EA4 /* RemoveAccountReasonVC.swift in Sources */,
 				8292767C2A2D6133000F49E0 /* ProfileNotCompleteViewController.swift in Sources */,

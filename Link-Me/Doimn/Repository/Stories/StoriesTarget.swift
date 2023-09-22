@@ -12,6 +12,7 @@ enum StoriesTarget {
     case addNewStory(Parameters: AddNewStoryRequestModel, fileModel: [MultiPartData])
     case fetchStories
     case deleteStory(Parameters: DeleteStoryRequestModel)
+    case reportStory(Parameters: ReportStoryRequestModel)
 }
 
 extension StoriesTarget: TargetType {
@@ -23,12 +24,14 @@ extension StoriesTarget: TargetType {
             return "/story/all"
         case .deleteStory:
             return "/story/delete"
+        case .reportStory:
+            return "/story/report"
         }
     }
     
     var method: Alamofire.HTTPMethod {
         switch self {
-        case .addNewStory, .deleteStory:
+        case .addNewStory, .deleteStory, .reportStory:
             return .post
         case .fetchStories:
             return .get
@@ -43,6 +46,8 @@ extension StoriesTarget: TargetType {
             return .requestPlain
         case .deleteStory(let Parameters):
             return .request(Parameters)
+        case .reportStory(let parameters):
+            return .request(parameters)
         }
     }
     

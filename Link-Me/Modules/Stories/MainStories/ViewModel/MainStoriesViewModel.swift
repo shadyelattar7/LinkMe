@@ -81,7 +81,7 @@ extension MainStoriesViewModel {
     }
 }
 
-// MARK: Report story
+// MARK: Delete story
 
 extension MainStoriesViewModel {
     func deleteStory(storyID: Int) {

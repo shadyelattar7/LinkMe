@@ -25,6 +25,11 @@ protocol StoriesAPIProtocol {
     /// - Parameters:
     /// - Returns: baseResponse model.
     func deleteStory(model: DeleteStoryRequestModel) -> Observable<Result<BaseResponse, NSError>>
+    
+    /// it is the method used to report story.
+    /// - Parameters:
+    /// - Returns: baseResponse model.
+    func reportStory(model: ReportStoryRequestModel) -> Observable<Result<BaseResponse, NSError>>
 }
 
 class StoriesAPI: APIClient<StoriesTarget>, StoriesAPIProtocol {
@@ -38,5 +43,9 @@ class StoriesAPI: APIClient<StoriesTarget>, StoriesAPIProtocol {
     
     func deleteStory(model: DeleteStoryRequestModel) -> Observable<Result<BaseResponse, NSError>> {
         self.performRequest(target: .deleteStory(Parameters: model), requestModel: model)
+    }
+    
+    func reportStory(model: ReportStoryRequestModel) -> Observable<Result<BaseResponse, NSError>> {
+        self.performRequest(target: .reportStory(Parameters: model), requestModel: model)
     }
 }

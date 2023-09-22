@@ -29,14 +29,14 @@ class UserPreviewCell: UICollectionViewCell {
     var segmentbar: SGSegmentedProgressBar!
     var previousContentOffset: CGFloat = 0.0
     var closeBtn: (()->())?
-    var moreMenuBtn: (()->())?
+    var moreMenuBtn: ((Int?)->())?
     var muteSound: (()->())?
     var likeBtn: (()->())?
     var segmentedProgressBarFinished: ((Bool)->())?
     var isDarg: Bool = false
     var storyCount: Int = 0
     var currentIndex: Int = 0
-    
+    private var storyID: Int?
     
     
     // MARK: - Life Cycle -
@@ -146,6 +146,7 @@ class UserPreviewCell: UICollectionViewCell {
         self.stories.bind(to: storyPreviewCollV.rx.items(cellIdentifier: String(describing: StoryPreviewCell.self), cellType: StoryPreviewCell.self)){ (row,item,cell) in
             
             cell.update(item)
+            self.storyID = self.stories.value[row].id
             
             self.segmentbar.currentIndex = row
             
@@ -194,7 +195,7 @@ class UserPreviewCell: UICollectionViewCell {
     }
     
     @IBAction func moreMeunTapped(_ sender: Any) {
-        moreMenuBtn?()
+        moreMenuBtn?(storyID)
     }
     
     @IBAction func likeTapped(_ sender: Any) {

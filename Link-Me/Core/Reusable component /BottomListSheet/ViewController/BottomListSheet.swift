@@ -20,6 +20,7 @@ class BottomListSheet: UIViewController {
     // MARK: Properties
     
     private let listItems: [ItemList]
+    var onClicked: ((ItemList) -> ()) = { _ in }
     
     // MARK: Init
     
@@ -36,8 +37,9 @@ class BottomListSheet: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        addTappedOnContentView()
         configureTableView()
+//        addTappedOnContentView()
+//        addTappedOnItemsParent()
     }
     
     override func viewWillLayoutSubviews() {
@@ -75,6 +77,16 @@ extension BottomListSheet {
     @objc private func didTappedOnContentView() {
         self.dismiss(animated: true)
     }
+    
+    private func addTappedOnItemsParent() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedOnItemsParent))
+        tap.numberOfTapsRequired = 1
+        itemsParentView.isUserInteractionEnabled = true
+        itemsParentView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func didTappedOnItemsParent() {
+    }
 }
 
 // MARK: Configure tableView
@@ -104,5 +116,9 @@ extension BottomListSheet: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        onClicked(listItems[indexPath.row])
     }
 }

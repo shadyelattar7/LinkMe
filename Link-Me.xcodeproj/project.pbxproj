@@ -23,6 +23,7 @@
 		79FA7F612ABDC3ED0043B6BA /* ItemListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FA7F5F2ABDC3ED0043B6BA /* ItemListTableViewCell.xib */; };
 		79FA7F642ABDC72E0043B6BA /* UIColor+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F632ABDC72E0043B6BA /* UIColor+DesignSystem.swift */; };
 		79FA7F672ABDD3270043B6BA /* BottomListSheet+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F662ABDD3270043B6BA /* BottomListSheet+Resources.swift */; };
+		79FA7F692ABDE22A0043B6BA /* DeleteStoryRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F682ABDE22A0043B6BA /* DeleteStoryRequestModel.swift */; };
 		8228827D2A0C011D00019216 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228827C2A0C011D00019216 /* UIColor+Extension.swift */; };
 		822882902A0D1D4600019216 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 822882812A0D1D4600019216 /* Poppins-Italic.ttf */; };
 		822882912A0D1D4600019216 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 822882822A0D1D4600019216 /* Poppins-Regular.ttf */; };
@@ -268,6 +269,7 @@
 		79FA7F5F2ABDC3ED0043B6BA /* ItemListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemListTableViewCell.xib; sourceTree = "<group>"; };
 		79FA7F632ABDC72E0043B6BA /* UIColor+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+DesignSystem.swift"; sourceTree = "<group>"; };
 		79FA7F662ABDD3270043B6BA /* BottomListSheet+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomListSheet+Resources.swift"; sourceTree = "<group>"; };
+		79FA7F682ABDE22A0043B6BA /* DeleteStoryRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStoryRequestModel.swift; sourceTree = "<group>"; };
 		7B6D39B12E9B5B1A0281DDBE /* Pods-Link-Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link-Me.release.xcconfig"; path = "Target Support Files/Pods-Link-Me/Pods-Link-Me.release.xcconfig"; sourceTree = "<group>"; };
 		8228827C2A0C011D00019216 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		822882812A0D1D4600019216 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 			isa = PBXGroup;
 			children = (
 				79FA7F482ABB30350043B6BA /* AddNewStoryRequestModel.swift */,
+				79FA7F682ABDE22A0043B6BA /* DeleteStoryRequestModel.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -2408,6 +2411,7 @@
 				82A2FC912A0BEB8400BA7BD3 /* LinkMeViewController.swift in Sources */,
 				8228827D2A0C011D00019216 /* UIColor+Extension.swift in Sources */,
 				825CF38E2A494AAE00BA5DDA /* LanguageViewModel.swift in Sources */,
+				79FA7F692ABDE22A0043B6BA /* DeleteStoryRequestModel.swift in Sources */,
 				8255573B2A68C23A00E00AA5 /* StoryPreviewVC.swift in Sources */,
 				82AB6A782A11268B0005DEF6 /* NavigationBarView.swift in Sources */,
 				822AD2CE2A140F1C0037D8E0 /* BaseResponse.swift in Sources */,

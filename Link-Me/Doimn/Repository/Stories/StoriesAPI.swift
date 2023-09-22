@@ -20,6 +20,11 @@ protocol StoriesAPIProtocol {
     /// - Parameters:
     /// - Returns: Stories model.
     func fetchStories() -> Observable<Result<StoriesModel, NSError>>
+    
+    /// it is the method used to delete story.
+    /// - Parameters:
+    /// - Returns: baseResponse model.
+    func deleteStory(model: DeleteStoryRequestModel) -> Observable<Result<BaseResponse, NSError>>
 }
 
 class StoriesAPI: APIClient<StoriesTarget>, StoriesAPIProtocol {
@@ -29,5 +34,9 @@ class StoriesAPI: APIClient<StoriesTarget>, StoriesAPIProtocol {
     
     func fetchStories() -> Observable<Result<StoriesModel, NSError>> {
         self.performRequest(target: .fetchStories)
+    }
+    
+    func deleteStory(model: DeleteStoryRequestModel) -> Observable<Result<BaseResponse, NSError>> {
+        self.performRequest(target: .deleteStory(Parameters: model), requestModel: model)
     }
 }

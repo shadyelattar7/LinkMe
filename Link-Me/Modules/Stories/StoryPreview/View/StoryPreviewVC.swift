@@ -45,6 +45,7 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
         setupView()
         setupUserPreviewCollV()
         CubeAnimationCollectionView()
+        subscribe()
     }
     
     //MARK: - Private Func -
@@ -86,9 +87,11 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
                 self.dismiss(animated: true)
             }
             
-            cell.moreMenuBtn = { [weak self] in
+            cell.moreMenuBtn = { [weak self] storyID in
                 guard let self = self else {return}
-                self.showBottomListSheet(userIDForStory: self.myStoriesDate.value[row].id ?? -1)
+                cell.segmentbar.pause()
+                guard let id = storyID else { return }
+                self.showBottomListSheet(storyUserID: self.myStoriesDate.value[row].id ?? -1, storyID: id)
             }
             
             cell.muteSound = { [weak self] in
@@ -129,16 +132,25 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
     }
     
     
-    private func showBottomListSheet(userIDForStory: Int) {
+    private func showBottomListSheet(storyUserID: Int, storyID: Int) {
+        let vc: BottomListSheet
         
-        if userIDForStory == UDHelper.fetchUserData?.id {
-            let vc = BottomListSheet(listItems: [.deleteStory, .editStory])
-            self.present(vc, animated: true)
-            
+        if storyUserID == UDHelper.fetchUserData?.id {
+            vc = BottomListSheet(listItems: [.deleteStory, .editStory])
         } else {
-            let vc = BottomListSheet(listItems: [.report, .unfriend, .blockUser])
-            self.present(vc, animated: true)
+            vc = BottomListSheet(listItems: [.report, .unfriend, .blockUser])
         }
+        
+        vc.onClicked = { [weak self] type in
+            guard let self else { return }
+            switch type {
+            case .deleteStory:
+                self.viewModel.deleteStory(storyID: storyID)
+            default:
+                break
+            }
+        }
+        self.present(vc, animated: true)
     }
 }
 
@@ -178,3 +190,32 @@ extension StoryPreviewVC{
     }
 }
 
+// MARK: Private Handlers
+
+extension StoryPreviewVC {
+    private func subscribe() {
+        subscribeToDeleteStorySuccess()
+        subscribeToErrorMessage()
+    }
+    
+    private func subscribeToDeleteStorySuccess() {
+        viewModel.deleteStorySuccessObservable.subscribe { [weak self] isSuccess in
+            guard let self = self else { return }
+            switch isSuccess.element {
+            case true:
+                self.dismiss(animated: true)
+            case false:
+                ToastManager.shared.showToast(message: "Error When delete story", view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+            default:
+                break
+            }
+        }.disposed(by: disposeBag)
+    }
+    
+    private func subscribeToErrorMessage() {
+        viewModel.errorMessageObservable.subscribe { [weak self] errorMessage in
+            guard let self = self else { return }
+            ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+        }.disposed(by: disposeBag)
+    }
+}

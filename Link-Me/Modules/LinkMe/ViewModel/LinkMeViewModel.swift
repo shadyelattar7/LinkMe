@@ -6,7 +6,52 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
-class LinkMeViewModel: BaseViewModel{
+class LinkMeViewModel: BaseViewModel {
     
+    // MARK: Properties
+
+    private let linkMeApi: LinkMeAPIProtocol
+    private let disposeBag = DisposeBag()
+
+    // MARK: Outputs
+
+    private var topUsers = PublishSubject<[TopUserData]>()
+    var topUsersObservable: Observable<[TopUserData]> {
+        return topUsers.asObservable()
+    }
+
+    private var errorMessage = PublishSubject<String>()
+    var errorMessageObservable: Observable<String> {
+        return errorMessage.asObservable()
+    }
+
+    // MARK: Init
+
+    init(linkMeApi: LinkMeAPIProtocol = LinkMeAPI()) {
+        self.linkMeApi = linkMeApi
+    }
+}
+
+// MARK: Fetch top users
+
+extension LinkMeViewModel {
+    func fetchTopUsers() {
+        linkMeApi.fetchTopUsers().subscribe(onNext:{ [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let model):
+                guard let users = model.data else { return }
+                self.topUsers.onNext(users)
+                
+            case .failure(let error):
+                let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
+                self.errorMessage.onNext(errorMessage ?? "")
+            }
+            
+        }).disposed(by: disposeBag)
+    }
 }

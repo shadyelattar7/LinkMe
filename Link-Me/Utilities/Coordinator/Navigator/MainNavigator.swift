@@ -64,7 +64,7 @@ class MainNavigator: Navigator{
             return StoryPreviewVC(viewModel: viewModel, coordinator: coordinator)
         case .ReportStory(let storyID):
             let viewModel = ReportStoryViewModel(storyID: storyID)
-            return ReportStoryViewController(viewModel: viewModel)
+            return ReportStoryViewController(viewModel: viewModel, coordinator: coordinator)
             
         case .BottomListItem(let listItems, let storyID):
             let viewModel = BottomListSheetViewModel(listItems:  listItems, storyID: storyID)

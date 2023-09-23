@@ -21,12 +21,14 @@ class ReportStoryViewController: UIViewController {
     // MARK: Properties
     
     private let viewModel: ReportStoryViewModel
+    private let coordinator: Coordinator
     private let disposeBag = DisposeBag()
     
     // MARK: Init
     
-    init(viewModel: ReportStoryViewModel) {
+    init(viewModel: ReportStoryViewModel, coordinator: Coordinator) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {

@@ -256,6 +256,12 @@
 		8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */; };
 		8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */; };
 		8A7516842A92920D00B0C6D5 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7516832A92920D00B0C6D5 /* UITextField+Extensions.swift */; };
+		8AF8CE4A2ABF49BD00676366 /* GoPremiumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8CE402ABF49BD00676366 /* GoPremiumViewModel.swift */; };
+		8AF8CE4B2ABF49BD00676366 /* GoPremiumVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8CE422ABF49BD00676366 /* GoPremiumVC.xib */; };
+		8AF8CE4C2ABF49BD00676366 /* GoPremiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8CE432ABF49BD00676366 /* GoPremiumVC.swift */; };
+		8AF8CE4D2ABF49BD00676366 /* FeaturesPremiumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8CE462ABF49BD00676366 /* FeaturesPremiumViewModel.swift */; };
+		8AF8CE4E2ABF49BD00676366 /* FeaturesPremiumVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8CE482ABF49BD00676366 /* FeaturesPremiumVC.xib */; };
+		8AF8CE4F2ABF49BD00676366 /* FeaturesPremiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8CE492ABF49BD00676366 /* FeaturesPremiumVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -512,6 +518,12 @@
 		8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreviewCell.swift; sourceTree = "<group>"; };
 		8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPreviewCell.xib; sourceTree = "<group>"; };
 		8A7516832A92920D00B0C6D5 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		8AF8CE402ABF49BD00676366 /* GoPremiumViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoPremiumViewModel.swift; sourceTree = "<group>"; };
+		8AF8CE422ABF49BD00676366 /* GoPremiumVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoPremiumVC.xib; sourceTree = "<group>"; };
+		8AF8CE432ABF49BD00676366 /* GoPremiumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoPremiumVC.swift; sourceTree = "<group>"; };
+		8AF8CE462ABF49BD00676366 /* FeaturesPremiumViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesPremiumViewModel.swift; sourceTree = "<group>"; };
+		8AF8CE482ABF49BD00676366 /* FeaturesPremiumVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeaturesPremiumVC.xib; sourceTree = "<group>"; };
+		8AF8CE492ABF49BD00676366 /* FeaturesPremiumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesPremiumVC.swift; sourceTree = "<group>"; };
 		E1B07EE9E042E4890BEFD488 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1479,6 +1491,7 @@
 				82A2FC7D2A0BDBD700BA7BD3 /* TabBarController */,
 				82A2FC822A0BDF6500BA7BD3 /* LinkMe */,
 				82C0E39A2A67684A008B72ED /* Stories */,
+				8AF8CE3D2ABF49BD00676366 /* Purchases */,
 				827ED73B2A3A20920056EE37 /* Profile */,
 			);
 			path = Modules;
@@ -2218,6 +2231,67 @@
 			path = "ViewModel ";
 			sourceTree = "<group>";
 		};
+		8AF8CE3D2ABF49BD00676366 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				8AF8CE3E2ABF49BD00676366 /* GoPremium */,
+				8AF8CE442ABF49BD00676366 /* FeaturesPremium */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
+		8AF8CE3E2ABF49BD00676366 /* GoPremium */ = {
+			isa = PBXGroup;
+			children = (
+				8AF8CE3F2ABF49BD00676366 /* ViewModel */,
+				8AF8CE412ABF49BD00676366 /* View */,
+			);
+			path = GoPremium;
+			sourceTree = "<group>";
+		};
+		8AF8CE3F2ABF49BD00676366 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8AF8CE402ABF49BD00676366 /* GoPremiumViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8AF8CE412ABF49BD00676366 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8AF8CE422ABF49BD00676366 /* GoPremiumVC.xib */,
+				8AF8CE432ABF49BD00676366 /* GoPremiumVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8AF8CE442ABF49BD00676366 /* FeaturesPremium */ = {
+			isa = PBXGroup;
+			children = (
+				8AF8CE452ABF49BD00676366 /* ViewModel */,
+				8AF8CE472ABF49BD00676366 /* View */,
+			);
+			path = FeaturesPremium;
+			sourceTree = "<group>";
+		};
+		8AF8CE452ABF49BD00676366 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8AF8CE462ABF49BD00676366 /* FeaturesPremiumViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8AF8CE472ABF49BD00676366 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8AF8CE482ABF49BD00676366 /* FeaturesPremiumVC.xib */,
+				8AF8CE492ABF49BD00676366 /* FeaturesPremiumVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2310,6 +2384,7 @@
 				82DB7E162A1383A800F9096B /* EmailIsVerifiedViewController.xib in Resources */,
 				825557342A68B7BC00E00AA5 /* StoryCell.xib in Resources */,
 				79FA7F5B2ABDC3B80043B6BA /* BottomListSheet.xib in Resources */,
+				8AF8CE4E2ABF49BD00676366 /* FeaturesPremiumVC.xib in Resources */,
 				82A2FC172A0B9A1C00BA7BD3 /* LaunchScreen.storyboard in Resources */,
 				82FB79542A19475B006644EE /* Madani Arabic Variable 400.ttf in Resources */,
 				825CF3BC2A4E642300BA5DDA /* FeedbackVC.xib in Resources */,
@@ -2333,6 +2408,7 @@
 				82CAF0472A3CB9EE00311600 /* CompleteProfileVC.xib in Resources */,
 				827B839F2A11211700E634A9 /* NavigationBarView.xib in Resources */,
 				8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */,
+				8AF8CE4B2ABF49BD00676366 /* GoPremiumVC.xib in Resources */,
 				82D914552A10D9FF005FAF36 /* InputView.xib in Resources */,
 				8228829B2A0D1D4600019216 /* Poppins-Thin.ttf in Resources */,
 				82FB79572A19475B006644EE /* Madani Arabic ExtraBold 400.ttf in Resources */,
@@ -2430,6 +2506,7 @@
 				82AB6A812A115B380005DEF6 /* EnterCodeViewController.swift in Sources */,
 				82C94EDA2A1EB8E1003FB504 /* ForgetPasswordWorker.swift in Sources */,
 				825CF3992A49DFE800BA5DDA /* SupportViewModel.swift in Sources */,
+				8AF8CE4A2ABF49BD00676366 /* GoPremiumViewModel.swift in Sources */,
 				825CF3842A4919C100BA5DDA /* ChangeEmailRequestModel.swift in Sources */,
 				8252A6A62A0FA8C6004989A1 /* MainButton.swift in Sources */,
 				82952B872A472B0000548634 /* MyAccountWorker.swift in Sources */,
@@ -2444,6 +2521,7 @@
 				829A79572A1281DA001A137B /* CreatePasswordViewController.swift in Sources */,
 				825039412A412F250006EAD3 /* SettingsViewModel.swift in Sources */,
 				82FB79332A16FF45006644EE /* LocalStorageManager.swift in Sources */,
+				8AF8CE4D2ABF49BD00676366 /* FeaturesPremiumViewModel.swift in Sources */,
 				82FB79392A17E8F9006644EE /* LoginWorker.swift in Sources */,
 				79FA7F562ABC66880043B6BA /* String+PathExtension.swift in Sources */,
 				82A2FC6E2A0BCBE400BA7BD3 /* OnboardingCell.swift in Sources */,
@@ -2552,6 +2630,7 @@
 				79FA7F4F2ABB30E70043B6BA /* StoriesAPI.swift in Sources */,
 				79FA7F672ABDD3270043B6BA /* BottomListSheet+Resources.swift in Sources */,
 				82C94EDC2A1EB8F0003FB504 /* ForgetPasswordWorking.swift in Sources */,
+				8AF8CE4C2ABF49BD00676366 /* GoPremiumVC.swift in Sources */,
 				82FB79292A16BB8F006644EE /* RegisterWorkering.swift in Sources */,
 				8252A6AD2A0FF072004989A1 /* UDKeys.swift in Sources */,
 				82469AAC2A19912900A47C5F /* Fonts.swift in Sources */,
@@ -2577,6 +2656,7 @@
 				79FA7F542ABB541E0043B6BA /* UIImageView+SDWebImage.swift in Sources */,
 				82952B952A479F8D00548634 /* OtherSeeCell.swift in Sources */,
 				794B89142ABE2B5A00FE5F0D /* StaticKeys.swift in Sources */,
+				8AF8CE4F2ABF49BD00676366 /* FeaturesPremiumVC.swift in Sources */,
 				8292767F2A2D613F000F49E0 /* ProfileNotCompleteViewModel.swift in Sources */,
 				82FB79222A169AB4006644EE /* VerifyCodeWorkering.swift in Sources */,
 				8A7516842A92920D00B0C6D5 /* UITextField+Extensions.swift in Sources */,

@@ -26,6 +26,7 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
     override func bind(viewModel: LinkMeViewModel) {
         configureTableView()
         subscribe()
+        didTappedOnNotificationButton()
     }
     
     override func viewWillLayoutSubviews() {
@@ -44,6 +45,14 @@ extension LinkMeViewController {
     private func subscribe() {
         subscribeToTopUsersData()
         subscribeToErrorMessage()
+    }
+    
+    private func didTappedOnNotificationButton() {
+        headerView.clickOnNotificationButton = { [weak self] in
+            guard let self = self else { return }
+            
+            self.coordinator.Main.navigate(for: .notificationList)
+        }
     }
 }
 

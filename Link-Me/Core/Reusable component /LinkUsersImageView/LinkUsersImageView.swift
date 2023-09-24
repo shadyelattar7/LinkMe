@@ -60,10 +60,19 @@ extension LinkUsersImageView {
     func setSizeOfRightImage(_ size: CGFloat) {
         heightOfRightImageConstraint.constant = size
         widthOfRightImageConstraint.constant = size
+        rightImageView.makeCircleView()
     }
     
     func setSizeOfLeftImage(_ size: CGFloat) {
         heightOfLeftImageConstraint.constant = size
         widthOfLeftImageConstraint.constant = size
+        leftImageView.makeCircleView()
+    }
+    
+    func applyBorder(borderColor: UIColor = .white, borderWidth: CGFloat = 2) {
+        rightImageView.layer.borderColor = borderColor.cgColor
+        rightImageView.layer.borderWidth = borderWidth
+        leftImageView.layer.borderColor = borderColor.cgColor
+        leftImageView.layer.borderWidth = borderWidth
     }
 }

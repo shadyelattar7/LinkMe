@@ -277,6 +277,10 @@
 		A2190C622AC07A320031F1D6 /* NewLinkCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C602AC07A320031F1D6 /* NewLinkCardViewController.xib */; };
 		A2190C652AC09D6A0031F1D6 /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C642AC09D6A0031F1D6 /* UIButton+Style.swift */; };
 		A2190C672AC0A0CA0031F1D6 /* UIViewController+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C662AC0A0CA0031F1D6 /* UIViewController+Animation.swift */; };
+		A2190C6B2AC0A8570031F1D6 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C692AC0A8570031F1D6 /* NotificationListViewController.swift */; };
+		A2190C6C2AC0A8570031F1D6 /* NotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C6A2AC0A8570031F1D6 /* NotificationListViewController.xib */; };
+		A2190C712AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C6F2AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift */; };
+		A2190C722AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C702AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -554,6 +558,10 @@
 		A2190C602AC07A320031F1D6 /* NewLinkCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewLinkCardViewController.xib; sourceTree = "<group>"; };
 		A2190C642AC09D6A0031F1D6 /* UIButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Style.swift"; sourceTree = "<group>"; };
 		A2190C662AC0A0CA0031F1D6 /* UIViewController+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Animation.swift"; sourceTree = "<group>"; };
+		A2190C692AC0A8570031F1D6 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
+		A2190C6A2AC0A8570031F1D6 /* NotificationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationListViewController.xib; sourceTree = "<group>"; };
+		A2190C6F2AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemTableViewCell.swift; sourceTree = "<group>"; };
+		A2190C702AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationItemTableViewCell.xib; sourceTree = "<group>"; };
 		E1B07EE9E042E4890BEFD488 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1826,6 +1834,7 @@
 				A2190C442AC043D00031F1D6 /* LinkMe */,
 				A2190C452AC043E70031F1D6 /* UserCard */,
 				A2190C5E2AC07A170031F1D6 /* NewLinkCard */,
+				A2190C682AC0A8440031F1D6 /* NotificationList */,
 			);
 			path = LinkMe;
 			sourceTree = "<group>";
@@ -2393,6 +2402,33 @@
 			path = UIStyle;
 			sourceTree = "<group>";
 		};
+		A2190C682AC0A8440031F1D6 /* NotificationList */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C6E2AC0A8740031F1D6 /* Cell */,
+				A2190C6D2AC0A86F0031F1D6 /* View */,
+			);
+			path = NotificationList;
+			sourceTree = "<group>";
+		};
+		A2190C6D2AC0A86F0031F1D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C692AC0A8570031F1D6 /* NotificationListViewController.swift */,
+				A2190C6A2AC0A8570031F1D6 /* NotificationListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2190C6E2AC0A8740031F1D6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C6F2AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift */,
+				A2190C702AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2523,6 +2559,7 @@
 				82A2FC122A0B9A1A00BA7BD3 /* Main.storyboard in Resources */,
 				827356712A59C37900634EA4 /* RemoveAccountReasonVC.xib in Resources */,
 				822882932A0D1D4600019216 /* Poppins-ThinItalic.ttf in Resources */,
+				A2190C722AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib in Resources */,
 				825CF3AA2A4D01EF00BA5DDA /* SupportCell.xib in Resources */,
 				82FB79532A19475B006644EE /* Madani Arabic Thin 400.ttf in Resources */,
 				8252A6A52A0FA8C6004989A1 /* MainButton.xib in Resources */,
@@ -2537,6 +2574,7 @@
 				82FB79582A19475B006644EE /* Madani Arabic Regular 400.ttf in Resources */,
 				8292767D2A2D6133000F49E0 /* ProfileNotCompleteViewController.xib in Resources */,
 				822882912A0D1D4600019216 /* Poppins-Regular.ttf in Resources */,
+				A2190C6C2AC0A8570031F1D6 /* NotificationListViewController.xib in Resources */,
 				82CAF0672A3FC5FD00311600 /* EditProfileVC.xib in Resources */,
 				823BDC5A2A3B2FC600171C7E /* SettingCell.xib in Resources */,
 				825CF38C2A494A9B00BA5DDA /* LanguageVC.xib in Resources */,
@@ -2712,6 +2750,7 @@
 				82FB79192A164168006644EE /* Support.swift in Sources */,
 				825557332A68B7BC00E00AA5 /* StoryCell.swift in Sources */,
 				82CB13C22A51F49600439CD7 /* FeedbackRequestModel.swift in Sources */,
+				A2190C712AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift in Sources */,
 				82A2FC412A0B9D1600BA7BD3 /* NibLoadingView.swift in Sources */,
 				82C94ECA2A1D30D1003FB504 /* LocalizationManager.swift in Sources */,
 				A2190C672AC0A0CA0031F1D6 /* UIViewController+Animation.swift in Sources */,
@@ -2749,6 +2788,7 @@
 				82469AAC2A19912900A47C5F /* Fonts.swift in Sources */,
 				825CF3A92A4D01EF00BA5DDA /* SupportCell.swift in Sources */,
 				794B89122ABE228B00FE5F0D /* ReportStoryRequestModel.swift in Sources */,
+				A2190C6B2AC0A8570031F1D6 /* NotificationListViewController.swift in Sources */,
 				82952B852A472AF500548634 /* MyAccountWorking.swift in Sources */,
 				827356752A59C65500634EA4 /* RemoveAccReason.swift in Sources */,
 				825CF3B52A4DC4E100BA5DDA /* SendEmailViewModel.swift in Sources */,

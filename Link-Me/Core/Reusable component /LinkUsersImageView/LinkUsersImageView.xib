@@ -26,14 +26,14 @@
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFC-2U-KQK">
                     <rect key="frame" x="22.666666666666671" y="14" width="110.00000000000001" height="55"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab 4" translatesAutoresizingMaskIntoConstraints="NO" id="MEp-57-LpD">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab 4" translatesAutoresizingMaskIntoConstraints="NO" id="MEp-57-LpD">
                             <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="55" id="LRd-fW-FQB"/>
                                 <constraint firstAttribute="width" constant="55" id="hhy-iM-Zov"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab 4" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-m6-LrB">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab 4" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-m6-LrB">
                             <rect key="frame" x="55" y="0.0" width="55" height="55"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="55" id="Fdo-52-oqo"/>

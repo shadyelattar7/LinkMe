@@ -18,6 +18,8 @@ class MainNavigator: Navigator{
         
         case LinkMe
         case userCard(direction: UserCardDirection)
+        case newLink
+        case notificationList
         
         //MARK: - Stories -
         case MediaPreview(mediaType: MediaType, image: UIImage = UIImage(), video: URL = URL(fileURLWithPath: ""))
@@ -58,6 +60,12 @@ class MainNavigator: Navigator{
         case .userCard(let direction):
             let viewModel = UserCardViewModel()
             return UserCardViewController(viewModel: viewModel, coordinator: coordinator, direction: direction)
+            
+        case .newLink:
+            return NewLinkCardViewController(coordinator: self.coordinator)
+            
+        case .notificationList:
+            return NotificationListViewController()
             
             //MARK: - Stories -
             

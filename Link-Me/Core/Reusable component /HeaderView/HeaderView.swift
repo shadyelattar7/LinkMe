@@ -14,6 +14,10 @@ class HeaderView: UIView {
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var notificationBadgeButton: UILabel!
     
+    // MARK: - Properties
+    
+    var clickOnNotificationButton: ()->() = { }
+    
     //MARK: - init
     
     override init(frame: CGRect) {
@@ -29,6 +33,12 @@ class HeaderView: UIView {
     private func initView() {
         loadViewFromNib()
         configureUI()
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction private func didTappedOnNotificationButton(_ sender: Any) {
+        clickOnNotificationButton()
     }
 }
 

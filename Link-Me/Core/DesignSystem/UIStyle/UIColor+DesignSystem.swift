@@ -9,6 +9,11 @@ import UIKit
 
 
 extension UIColor {
+    
+    static var mainColor: UIColor {
+        return UIColor(named: "mainColor")!
+    }
+    
     static var lightGray: UIColor {
         return UIColor(named: "lightGray")!
     }

@@ -271,6 +271,12 @@
 		A2190C542AC05D130031F1D6 /* ReactCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C532AC05D130031F1D6 /* ReactCardView.xib */; };
 		A2190C562AC05D220031F1D6 /* ReactCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C552AC05D220031F1D6 /* ReactCardView.swift */; };
 		A2190C582AC05F6D0031F1D6 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C572AC05F6D0031F1D6 /* UIButton+extension.swift */; };
+		A2190C5B2AC076690031F1D6 /* LinkUsersImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C5A2AC076690031F1D6 /* LinkUsersImageView.swift */; };
+		A2190C5D2AC0767B0031F1D6 /* LinkUsersImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C5C2AC0767B0031F1D6 /* LinkUsersImageView.xib */; };
+		A2190C612AC07A320031F1D6 /* NewLinkCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C5F2AC07A320031F1D6 /* NewLinkCardViewController.swift */; };
+		A2190C622AC07A320031F1D6 /* NewLinkCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C602AC07A320031F1D6 /* NewLinkCardViewController.xib */; };
+		A2190C652AC09D6A0031F1D6 /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C642AC09D6A0031F1D6 /* UIButton+Style.swift */; };
+		A2190C672AC0A0CA0031F1D6 /* UIViewController+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C662AC0A0CA0031F1D6 /* UIViewController+Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -542,6 +548,12 @@
 		A2190C532AC05D130031F1D6 /* ReactCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReactCardView.xib; sourceTree = "<group>"; };
 		A2190C552AC05D220031F1D6 /* ReactCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactCardView.swift; sourceTree = "<group>"; };
 		A2190C572AC05F6D0031F1D6 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		A2190C5A2AC076690031F1D6 /* LinkUsersImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkUsersImageView.swift; sourceTree = "<group>"; };
+		A2190C5C2AC0767B0031F1D6 /* LinkUsersImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkUsersImageView.xib; sourceTree = "<group>"; };
+		A2190C5F2AC07A320031F1D6 /* NewLinkCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLinkCardViewController.swift; sourceTree = "<group>"; };
+		A2190C602AC07A320031F1D6 /* NewLinkCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewLinkCardViewController.xib; sourceTree = "<group>"; };
+		A2190C642AC09D6A0031F1D6 /* UIButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Style.swift"; sourceTree = "<group>"; };
+		A2190C662AC0A0CA0031F1D6 /* UIViewController+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Animation.swift"; sourceTree = "<group>"; };
 		E1B07EE9E042E4890BEFD488 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -747,6 +759,7 @@
 			isa = PBXGroup;
 			children = (
 				8228827C2A0C011D00019216 /* UIColor+Extension.swift */,
+				A2190C662AC0A0CA0031F1D6 /* UIViewController+Animation.swift */,
 			);
 			path = "UI Extensions";
 			sourceTree = "<group>";
@@ -1687,6 +1700,7 @@
 		82A2FC392A0B9D1600BA7BD3 /* Extenions */ = {
 			isa = PBXGroup;
 			children = (
+				A2190C632AC09D5A0031F1D6 /* UIStyle */,
 				8228827B2A0C010D00019216 /* UI Extensions */,
 				82A2FC3B2A0B9D1600BA7BD3 /* AppStoryboards.swift */,
 				8252A6B32A102204004989A1 /* UIView+Extensions.swift */,
@@ -1782,6 +1796,7 @@
 		82A2FC602A0BC5DF00BA7BD3 /* Reusable component  */ = {
 			isa = PBXGroup;
 			children = (
+				A2190C592AC076450031F1D6 /* LinkUsersImageView */,
 				A2190C4E2AC045ED0031F1D6 /* reactView */,
 				793F55C32ABF620C004635C5 /* BeInTopView */,
 				793F55B62ABF4E8D004635C5 /* HeaderView */,
@@ -1810,6 +1825,7 @@
 				793F55BB2ABF5059004635C5 /* Cell */,
 				A2190C442AC043D00031F1D6 /* LinkMe */,
 				A2190C452AC043E70031F1D6 /* UserCard */,
+				A2190C5E2AC07A170031F1D6 /* NewLinkCard */,
 			);
 			path = LinkMe;
 			sourceTree = "<group>";
@@ -2351,6 +2367,32 @@
 			path = reactView;
 			sourceTree = "<group>";
 		};
+		A2190C592AC076450031F1D6 /* LinkUsersImageView */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C5A2AC076690031F1D6 /* LinkUsersImageView.swift */,
+				A2190C5C2AC0767B0031F1D6 /* LinkUsersImageView.xib */,
+			);
+			path = LinkUsersImageView;
+			sourceTree = "<group>";
+		};
+		A2190C5E2AC07A170031F1D6 /* NewLinkCard */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C5F2AC07A320031F1D6 /* NewLinkCardViewController.swift */,
+				A2190C602AC07A320031F1D6 /* NewLinkCardViewController.xib */,
+			);
+			path = NewLinkCard;
+			sourceTree = "<group>";
+		};
+		A2190C632AC09D5A0031F1D6 /* UIStyle */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C642AC09D6A0031F1D6 /* UIButton+Style.swift */,
+			);
+			path = UIStyle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2477,6 +2519,7 @@
 				A2190C542AC05D130031F1D6 /* ReactCardView.xib in Resources */,
 				825CF3B32A4DC4D700BA5DDA /* SendEmailVC.xib in Resources */,
 				82A2FC142A0B9A1C00BA7BD3 /* Assets.xcassets in Resources */,
+				A2190C622AC07A320031F1D6 /* NewLinkCardViewController.xib in Resources */,
 				82A2FC122A0B9A1A00BA7BD3 /* Main.storyboard in Resources */,
 				827356712A59C37900634EA4 /* RemoveAccountReasonVC.xib in Resources */,
 				822882932A0D1D4600019216 /* Poppins-ThinItalic.ttf in Resources */,
@@ -2497,6 +2540,7 @@
 				82CAF0672A3FC5FD00311600 /* EditProfileVC.xib in Resources */,
 				823BDC5A2A3B2FC600171C7E /* SettingCell.xib in Resources */,
 				825CF38C2A494A9B00BA5DDA /* LanguageVC.xib in Resources */,
+				A2190C5D2AC0767B0031F1D6 /* LinkUsersImageView.xib in Resources */,
 				82FB79562A19475B006644EE /* Madani Arabic Medium 400.ttf in Resources */,
 				822882992A0D1D4600019216 /* Poppins-BlackItalic.ttf in Resources */,
 				822882982A0D1D4600019216 /* Poppins-SemiBold.ttf in Resources */,
@@ -2581,6 +2625,7 @@
 				82A2FC7C2A0BDA2D00BA7BD3 /* MainNavigator.swift in Sources */,
 				827B83932A10ECA500E634A9 /* String+Extension.swift in Sources */,
 				829A79572A1281DA001A137B /* CreatePasswordViewController.swift in Sources */,
+				A2190C652AC09D6A0031F1D6 /* UIButton+Style.swift in Sources */,
 				825039412A412F250006EAD3 /* SettingsViewModel.swift in Sources */,
 				82FB79332A16FF45006644EE /* LocalStorageManager.swift in Sources */,
 				82FB79392A17E8F9006644EE /* LoginWorker.swift in Sources */,
@@ -2591,6 +2636,7 @@
 				82A2FC462A0B9D1600BA7BD3 /* UIStackView+Extensions.swift in Sources */,
 				825CF3812A48A3B900BA5DDA /* ChangeEmailViewModel.swift in Sources */,
 				82EDF6962A4FC883004D8071 /* CompanySupportVC.swift in Sources */,
+				A2190C612AC07A320031F1D6 /* NewLinkCardViewController.swift in Sources */,
 				79FA7F5A2ABDC3B80043B6BA /* BottomListSheet.swift in Sources */,
 				79FA7F602ABDC3ED0043B6BA /* ItemListTableViewCell.swift in Sources */,
 				827356972A5B8BFF00634EA4 /* UITextViewEx.swift in Sources */,
@@ -2601,6 +2647,7 @@
 				8228827D2A0C011D00019216 /* UIColor+Extension.swift in Sources */,
 				825CF38E2A494AAE00BA5DDA /* LanguageViewModel.swift in Sources */,
 				79FA7F692ABDE22A0043B6BA /* DeleteStoryRequestModel.swift in Sources */,
+				A2190C5B2AC076690031F1D6 /* LinkUsersImageView.swift in Sources */,
 				8255573B2A68C23A00E00AA5 /* StoryPreviewVC.swift in Sources */,
 				82AB6A782A11268B0005DEF6 /* NavigationBarView.swift in Sources */,
 				822AD2CE2A140F1C0037D8E0 /* BaseResponse.swift in Sources */,
@@ -2667,6 +2714,7 @@
 				82CB13C22A51F49600439CD7 /* FeedbackRequestModel.swift in Sources */,
 				82A2FC412A0B9D1600BA7BD3 /* NibLoadingView.swift in Sources */,
 				82C94ECA2A1D30D1003FB504 /* LocalizationManager.swift in Sources */,
+				A2190C672AC0A0CA0031F1D6 /* UIViewController+Animation.swift in Sources */,
 				82FB792D2A16C058006644EE /* User.swift in Sources */,
 				82C94ED72A1EB7E7003FB504 /* ForgetPassword.swift in Sources */,
 				82A2FC7A2A0BD99700BA7BD3 /* Navigator.swift in Sources */,

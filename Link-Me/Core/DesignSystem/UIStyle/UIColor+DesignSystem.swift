@@ -16,4 +16,12 @@ extension UIColor {
     static var darkGray: UIColor {
         return UIColor(named: "DarkGray")!
     }
+    
+    static var yellow: UIColor {
+        return UIColor(named: "yellow")!
+    }
+    
+    static var yellowLight: UIColor {
+        return UIColor(named: "yellowLight")!
+    }
 }

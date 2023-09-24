@@ -11,7 +11,8 @@ class HeaderView: UIView {
     
     // MARK: Outlets
     
-    @IBOutlet private var contentView: UIView!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var notificationBadgeButton: UILabel!
     
     //MARK: - init
     
@@ -27,5 +28,15 @@ class HeaderView: UIView {
     
     private func initView() {
         loadViewFromNib()
+        configureUI()
     }
 }
+
+// MARK: Private Handlers
+
+extension HeaderView {
+    private func configureUI() {
+        notificationBadgeButton.makeCircleView()
+    }
+}
+

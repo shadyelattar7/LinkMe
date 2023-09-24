@@ -43,7 +43,7 @@ extension StoryCollectionViewCell {
         let borderColors = [UIColor.rgb(red: 118, green: 78, blue: 232).cgColor,
                             UIColor.rgb(red: 255, green: 35, blue: 130).cgColor]
         let borderWidth: CGFloat = 4
-        userImageView.addGradientBorder(colors: borderColors, width: borderWidth)
+        userImageView.applyGradientBorder(colors: borderColors, width: borderWidth)
         userImageView.layer.cornerRadius = 18
     }
 }

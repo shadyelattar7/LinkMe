@@ -23,7 +23,7 @@ class StoryCell: UICollectionViewCell {
         let borderColors = [UIColor.rgb(red: 118, green: 78, blue: 232).cgColor,
                             UIColor.rgb(red: 255, green: 35, blue: 130).cgColor]
         let borderWidth: CGFloat = 4.0
-        userImage_iv.addGradientBorder(colors: borderColors, width: borderWidth)
+        userImage_iv.applyGradientBorder(colors: borderColors, width: borderWidth)
     }
     
     func update(_ item: UserStoryData) {

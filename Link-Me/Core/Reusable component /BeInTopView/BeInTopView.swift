@@ -40,9 +40,8 @@ class BeInTopView: UIView {
 
 extension BeInTopView {
     private func configureUI() {
-        parentView.layer.cornerRadius = 12
+        parentView.layer.cornerRadius = 8
+        parentView.applyGradient(colors: [UIColor.yellow.cgColor, UIColor.yellowLight.cgColor])
         starView.makeCircleView()
     }
 }
-
-

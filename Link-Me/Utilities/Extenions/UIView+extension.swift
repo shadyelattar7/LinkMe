@@ -11,7 +11,7 @@ import UIKit
 /// Add gradient to view.
 /// 
 extension UIView {
-    func addGradientBorder(colors: [CGColor], width: CGFloat) {
+    func applyGradientBorder(colors: [CGColor], width: CGFloat) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.bounds
         gradientLayer.colors = colors
@@ -26,6 +26,21 @@ extension UIView {
     }
 }
 
+/// Add gradient.
+///
+extension UIView {
+    func applyGradient(colors: [CGColor]) {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = colors
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.cornerRadius = self.layer.cornerRadius
+        gradient.frame = self.layer.frame
+        self.clipsToBounds = true
+        self.layer.insertSublayer(gradient, at: 0)
+    }
+}
 
 // MARK: add corner radius
 

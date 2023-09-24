@@ -33,7 +33,7 @@
                     <rect key="frame" x="20" y="59" width="353" height="759"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="7UB-r5-2O7">
-                            <rect key="frame" x="0.0" y="0.0" width="353" height="908"/>
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="907"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4N-N0-TOC" customClass="HeaderView" customModule="Link_Me" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
@@ -43,14 +43,14 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mh2-Aq-AlZ" customClass="BeInTopView" customModule="Link_Me" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="104" width="353" height="55"/>
+                                    <rect key="frame" x="0.0" y="104" width="353" height="54"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="55" id="AKy-1i-4wi"/>
+                                        <constraint firstAttribute="height" constant="54" id="AKy-1i-4wi"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OWe-lP-K5m">
-                                    <rect key="frame" x="0.0" y="183" width="353" height="725"/>
+                                    <rect key="frame" x="0.0" y="182" width="353" height="725"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top 10 Users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-8u-xsR">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="21"/>
@@ -92,7 +92,7 @@
     </objects>
     <resources>
         <namedColor name="strongGray">
-            <color red="0.37299999594688416" green="0.42399999499320984" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.37254901960784315" green="0.42352941176470588" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

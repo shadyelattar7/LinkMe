@@ -17,7 +17,7 @@ class MainNavigator: Navigator{
         //MARK: - LinkMe -
         
         case LinkMe
-        case userCard(direction: UserCardDirection)
+        case userCard(direction: UserCardDirection, userModel: UserCardModel)
         case newLink
         case notificationList
         
@@ -57,9 +57,9 @@ class MainNavigator: Navigator{
         case .LinkMe:
             return LinkMeViewController(viewModel: LinkMeViewModel(), coordinator: coordinator)
             
-        case .userCard(let direction):
+        case .userCard(let direction, let userModel):
             let viewModel = UserCardViewModel()
-            return UserCardViewController(viewModel: viewModel, coordinator: coordinator, direction: direction)
+            return UserCardViewController(viewModel: viewModel, coordinator: coordinator, direction: direction, userModel: userModel)
             
         case .newLink:
             return NewLinkCardViewController(coordinator: self.coordinator)

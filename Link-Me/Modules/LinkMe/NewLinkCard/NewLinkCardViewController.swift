@@ -73,12 +73,9 @@ extension NewLinkCardViewController {
     
     private func subscribeToSeeProfileButton() {
         seeProfileButton.rx.tap.throttle(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance).subscribe { [weak self] _ in
-            guard let self = self else {return}
+            guard let _ = self else {return}
             
             // TODO: Need first dismiss this view then show userCard (can make this with delegate pattern).
-            
-            let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .whenSendAddRequest))
-            self.present(vc, animated: true)
             
         }.disposed(by: disposeBag)
     }

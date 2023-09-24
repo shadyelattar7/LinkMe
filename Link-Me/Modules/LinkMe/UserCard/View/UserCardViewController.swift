@@ -25,6 +25,7 @@ class UserCardViewController: UIViewController {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var reactCardView: ReactCardView!
     @IBOutlet private weak var youLinkWithStackView: UIStackView!
     @IBOutlet private weak var activeButton: UIButton!
     @IBOutlet private weak var unlikeButton: UIButton!
@@ -34,13 +35,16 @@ class UserCardViewController: UIViewController {
     private let viewModel: UserCardViewModel
     private let coordinator: Coordinator
     private let direction: UserCardDirection
+    private let userModel: UserCardModel
     
     // MARK: - Init
     
-    init( viewModel: UserCardViewModel, coordinator: Coordinator, direction: UserCardDirection) {
+    init(viewModel: UserCardViewModel, coordinator: Coordinator,
+         direction: UserCardDirection, userModel: UserCardModel) {
         self.viewModel = viewModel
         self.coordinator = coordinator
         self.direction = direction
+        self.userModel = userModel
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
@@ -57,6 +61,7 @@ class UserCardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handleTypeOfUserCard()
+        fillUserData()
     }
 }
 
@@ -86,5 +91,14 @@ extension UserCardViewController {
         unlikeButton.isHidden = true
         youLinkWithStackView.isHidden = true
         heightOfParentViewConstraint.constant = 450
+    }
+    
+    private func fillUserData() {
+        nameLabel.text = userModel.name
+        usernameLabel.text = "@\(String(describing: userModel.username ?? ""))"
+        userImageView.setImage(url: URL(string: userModel.imagePath ?? ""))
+        reactCardView.setNumberOfLinks(userModel.numberOfLinks)
+        reactCardView.setNumberOfFollowing(userModel.numberOfFollowing)
+        reactCardView.setNumberOfLikes(userModel.numberOfLikes)
     }
 }

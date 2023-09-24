@@ -69,11 +69,21 @@
                                 </stackView>
                             </subviews>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGp-qa-f55">
+                            <rect key="frame" x="278" y="708" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="KSo-P1-AQC"/>
+                                <constraint firstAttribute="height" constant="70" id="Su0-W5-eml"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="linkeCircle"/>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="7UB-r5-2O7" secondAttribute="trailing" id="Ixx-cF-0af"/>
                         <constraint firstAttribute="bottom" secondItem="7UB-r5-2O7" secondAttribute="bottom" id="KPu-Ep-0pk"/>
                         <constraint firstItem="7UB-r5-2O7" firstAttribute="width" secondItem="qgO-cD-SB8" secondAttribute="width" id="USf-cX-zDK"/>
+                        <constraint firstAttribute="trailing" secondItem="cGp-qa-f55" secondAttribute="trailing" constant="5" id="VWR-pf-rwh"/>
                         <constraint firstItem="7UB-r5-2O7" firstAttribute="top" secondItem="qgO-cD-SB8" secondAttribute="top" id="WYQ-2e-Rlz"/>
                         <constraint firstItem="7UB-r5-2O7" firstAttribute="leading" secondItem="qgO-cD-SB8" secondAttribute="leading" id="gdT-s9-VBD"/>
                     </constraints>
@@ -83,6 +93,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="qgO-cD-SB8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="IC6-Ew-hJl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cGp-qa-f55" secondAttribute="bottom" constant="40" id="LOX-ob-WU4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qgO-cD-SB8" secondAttribute="bottom" id="cj8-4P-xvh"/>
                 <constraint firstItem="qgO-cD-SB8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cuw-1U-RPc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qgO-cD-SB8" secondAttribute="trailing" constant="20" id="qZr-wJ-RNW"/>
@@ -91,6 +102,7 @@
         </view>
     </objects>
     <resources>
+        <image name="linkeCircle" width="72" height="72"/>
         <namedColor name="strongGray">
             <color red="0.37254901960784315" green="0.42352941176470588" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

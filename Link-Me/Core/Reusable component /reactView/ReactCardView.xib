@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReactCardView" customModule="Link_Me" customModuleProvider="target">
             <connections>
+                <outlet property="numberOfFollowingLabel" destination="byA-BY-6sD" id="z4q-SU-tKP"/>
+                <outlet property="numberOfLikesLabel" destination="iQe-2F-RMH" id="FWf-dz-gI7"/>
+                <outlet property="numberOfLinksLabel" destination="5Yk-2J-sp0" id="pyg-Df-iWv"/>
                 <outlet property="parentView" destination="Rtn-HE-VWs" id="Vhz-gT-W7B"/>
             </connections>
         </placeholder>

@@ -33,7 +33,7 @@
                                 <constraint firstAttribute="width" constant="55" id="hhy-iM-Zov"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab 4" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-m6-LrB">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab 2" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-m6-LrB">
                             <rect key="frame" x="55" y="0.0" width="55" height="55"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="55" id="Fdo-52-oqo"/>
@@ -62,6 +62,7 @@
         </view>
     </objects>
     <resources>
+        <image name="AmrDiab 2" width="600" height="900"/>
         <image name="AmrDiab 4" width="640" height="640"/>
         <image name="Group 61741" width="80" height="79.666664123535156"/>
     </resources>

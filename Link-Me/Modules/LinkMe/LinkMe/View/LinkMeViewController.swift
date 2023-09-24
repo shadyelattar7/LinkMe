@@ -81,7 +81,12 @@ extension LinkMeViewController {
         topUsersTableView.rx.itemSelected.subscribe { [weak self] indexPath in
             guard let self = self else {return}
 
-            let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .normal))
+            // TODO: - Need to handle number of [Links, Following, Likes]
+            
+            let user = self.viewModel.getUserModel(indexPath.row)
+            let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.userName, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0)
+            
+            let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .normal, userModel: userModel))
             self.present(vc, animated: true)
             
         }.disposed(by: disposeBag)

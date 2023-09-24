@@ -28,6 +28,7 @@
                 <outlet property="heightOfParentViewConstraint" destination="U8C-Yc-AHX" id="YAV-MB-oVF"/>
                 <outlet property="nameLabel" destination="SYj-ga-JZz" id="tOB-zw-JmC"/>
                 <outlet property="parentView" destination="7kq-xU-61k" id="3Gs-qk-SU5"/>
+                <outlet property="reactCardView" destination="r23-8v-xNc" id="c4Q-of-sdB"/>
                 <outlet property="unlikeButton" destination="0nT-Op-ep0" id="WGr-ZU-noX"/>
                 <outlet property="userImageView" destination="VIr-VQ-ql3" id="tbE-To-g1l"/>
                 <outlet property="usernameLabel" destination="sh1-Tw-aHA" id="p6q-el-DV2"/>
@@ -62,8 +63,8 @@
                                                                 <constraint firstAttribute="height" constant="85" id="tKk-Om-c6M"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="il3-oe-HmB">
-                                                            <rect key="frame" x="97" y="14.000000000000004" width="256" height="57.333333333333343"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="il3-oe-HmB">
+                                                            <rect key="frame" x="97" y="18.000000000000004" width="256" height="49.333333333333343"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYj-ga-JZz">
                                                                     <rect key="frame" x="0.0" y="0.0" width="256" height="26.666666666666668"/>
@@ -72,7 +73,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh1-Tw-aHA">
-                                                                    <rect key="frame" x="0.0" y="34.666666666666686" width="256" height="22.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="26.666666666666686" width="256" height="22.666666666666671"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                                     <color key="textColor" name="strongGray"/>
                                                                     <nil key="highlightedColor"/>

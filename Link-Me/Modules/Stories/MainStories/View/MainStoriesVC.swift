@@ -54,8 +54,10 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
         viewModel.storiesData.bind(to: storiesCollView.rx.items(cellIdentifier: String(describing: StoryCell.self), cellType: StoryCell.self)){ (row,item,cell) in
             if row == 0{
                 cell.add_btn.isHidden = false
+                cell.circleView.backgroundColor = .white
             }else{
                 cell.add_btn.isHidden = true
+                cell.circleView.backgroundColor = .clear
             }
             
             cell.update(item)

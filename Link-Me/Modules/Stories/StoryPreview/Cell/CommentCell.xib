@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="CommentCell" customModule="Link_Me" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ef1-aU-QMM" customClass="CircleImageView" customModule="Link_Me" customModuleProvider="target">
+                        <rect key="frame" x="15" y="27.666666666666671" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="Lr0-B7-Rq9"/>
+                            <constraint firstAttribute="width" constant="40" id="byE-Qq-562"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enx-Ah-30e">
+                        <rect key="frame" x="67" y="37.333333333333336" width="231" height="20.333333333333336"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJH-fi-Tbp">
+                        <rect key="frame" x="310" y="32.666666666666664" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="iSO-0t-eQa"/>
+                            <constraint firstAttribute="height" constant="30" id="odd-le-abz"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="Group 63312"/>
+                        <connections>
+                            <action selector="deleteTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qXT-aN-V9z"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="enx-Ah-30e" firstAttribute="leading" secondItem="Ef1-aU-QMM" secondAttribute="trailing" constant="12" id="4oM-qG-719"/>
+                    <constraint firstItem="Ef1-aU-QMM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DoE-VY-FEf"/>
+                    <constraint firstItem="BJH-fi-Tbp" firstAttribute="leading" secondItem="enx-Ah-30e" secondAttribute="trailing" constant="12" id="NBK-2h-unE"/>
+                    <constraint firstAttribute="trailing" secondItem="BJH-fi-Tbp" secondAttribute="trailing" constant="20" id="SlP-AO-lwn"/>
+                    <constraint firstItem="Ef1-aU-QMM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="UAL-4i-1IJ"/>
+                    <constraint firstItem="enx-Ah-30e" firstAttribute="centerY" secondItem="Ef1-aU-QMM" secondAttribute="centerY" id="UWw-F5-dIL"/>
+                    <constraint firstItem="BJH-fi-Tbp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dFt-Dj-Tbu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentLabel" destination="enx-Ah-30e" id="znh-0u-tQe"/>
+                <outlet property="userImage" destination="Ef1-aU-QMM" id="ve4-bT-nYB"/>
+            </connections>
+            <point key="canvasLocation" x="108.3969465648855" y="36.971830985915496"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Group 63312" width="66" height="66"/>
+    </resources>
+</document>

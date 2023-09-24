@@ -12,6 +12,12 @@ import RxCocoa
 import SGSegmentedProgressBarLibrary
 import IQKeyboardManagerSwift
 
+enum ButtonState {
+    case liked
+    case unliked
+}
+
+
 class UserPreviewCell: UICollectionViewCell {
     
     //MARK: - @IBOutlet -
@@ -20,6 +26,10 @@ class UserPreviewCell: UICollectionViewCell {
     @IBOutlet weak var muteSoundBtn: UIButton!
     @IBOutlet weak var comment_tf: UITextField!
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var userImage: CircleImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentsTableView: UITableView!
     
     //MARK: - Properties -
     
@@ -32,13 +42,14 @@ class UserPreviewCell: UICollectionViewCell {
     var moreMenuBtn: ((Int?)->())?
     var muteSound: (()->())?
     var likeBtn: (()->())?
+    var chatBtn: (()->())?
     var segmentedProgressBarFinished: ((Bool)->())?
     var isDarg: Bool = false
     var storyCount: Int = 0
     var currentIndex: Int = 0
     private var storyID: Int?
-    
-    
+    var buttonState: ButtonState = .unliked
+
     // MARK: - Life Cycle -
     
     override func awakeFromNib() {
@@ -46,6 +57,8 @@ class UserPreviewCell: UICollectionViewCell {
         setupView()
         setupStoriesCollV()
         ListenToNotificationCenter()
+        configureButton()
+
     }
     
     override func prepareForReuse() {
@@ -57,9 +70,8 @@ class UserPreviewCell: UICollectionViewCell {
                 view.removeFromSuperview()
             }
         }
-        
         setupStoriesCollV()
-        
+        configureButton()
     }
     
     override func layoutSubviews() {
@@ -105,10 +117,18 @@ class UserPreviewCell: UICollectionViewCell {
                                                name: UIResponder.keyboardWillChangeFrameNotification,
                                                object: nil)
         
+        comment_tf.delegate = self
+        comment_tf.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(self.doneButtonClicked))
+
+        
         storyPreviewCollV.registerNIB(StoryPreviewCell.self)
         storyPreviewCollV.isScrollEnabled = false
         muteSoundBtn.isHidden = true
             
+        commentsTableView.isHidden = true
+        commentsTableView.clipsToBounds = true
+        commentsTableView.layer.cornerRadius = 8
+        commentsTableView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
     deinit {
@@ -151,7 +171,6 @@ class UserPreviewCell: UICollectionViewCell {
         storyPreviewCollV.collectionViewLayout = layout
     }
     
-    
     func setupStoriesCollV(){
         
         storyPreviewCollV.rx.setDelegate(self).disposed(by: disposedBag)
@@ -192,10 +211,24 @@ class UserPreviewCell: UICollectionViewCell {
                 }
             }
         }.disposed(by: disposedBag)
-        
-        
-        
     }
+    
+    @objc func doneButtonClicked(_ sender: Any) {
+        segmentbar.resume()
+        self.commentsTableView.isHidden = true
+    }
+    
+    func configureButton() {
+        switch buttonState {
+        case .liked:
+            likeButton.setImage(UIImage(named: "selectheart"), for: .normal)
+            likeButton.tintColor = UIColor.red
+        case .unliked:
+            likeButton.setImage(UIImage(named: "heart"), for: .normal)
+            likeButton.tintColor = UIColor.gray
+        }
+    }
+
     
     //MARK: - Actoins -
     
@@ -213,6 +246,19 @@ class UserPreviewCell: UICollectionViewCell {
     
     @IBAction func likeTapped(_ sender: Any) {
         likeBtn?()
+        
+        switch buttonState {
+        case .liked:
+            buttonState = .unliked
+        case .unliked:
+            buttonState = .liked
+        }
+        
+        configureButton()
+    }
+    
+    @IBAction func messageTapped(_ sender: Any) {
+        chatBtn?()
     }
     
 }
@@ -220,29 +266,6 @@ class UserPreviewCell: UICollectionViewCell {
 //MARK: - SGSegmented Progress Bar Library Configuration -
 extension UserPreviewCell: SGSegmentedProgressBarDelegate, SGSegmentedProgressBarDataSource{
     func segmentedProgressBarFinished(finishedIndex: Int, isLastIndex: Bool) {
-    
-        
-//        guard finishedIndex < stories.value.count - 1 else {
-//            if storyCount == segmentbar.numberOfSegments {
-//                print("Last segment reached")
-//                self.segmentedProgressBarFinished?(true)
-//            }
-//            return
-//        }
-//        
-//        if UDHelper.isDrag {
-//            if finishedIndex != storyCount {
-//                scrollToNextItemIfNeeded(at: finishedIndex + 1)
-//            }
-//            UDHelper.isDrag = false
-//        } else {
-//            self.segmentedProgressBarFinished?(true)
-//            UDHelper.isDrag = false
-//             scrollToNextItemIfNeeded(at: finishedIndex + 1)
-//        }
-        
-        print("227 finishedIndex: \(finishedIndex),isLastIndex: \(isLastIndex) ")
-        
         if finishedIndex != self.stories.value.count - 1{
             if UDHelper.isDrag{
                 if finishedIndex != storyCount{
@@ -263,8 +286,6 @@ extension UserPreviewCell: SGSegmentedProgressBarDelegate, SGSegmentedProgressBa
             }
             print("number of segment: \(segmentbar.numberOfSegments)")
         }
-        
-        
     }
     
     private func scrollToNextItemIfNeeded(at index: Int) {
@@ -278,7 +299,7 @@ extension UserPreviewCell: SGSegmentedProgressBarDelegate, SGSegmentedProgressBa
     }
     
     var segmentDuration: TimeInterval {
-        return 5
+        return 10
     }
     
     var paddingBetweenSegments: CGFloat {
@@ -290,7 +311,7 @@ extension UserPreviewCell: SGSegmentedProgressBarDelegate, SGSegmentedProgressBa
     }
     
     var progressColor: UIColor {
-        return UIColor.systemGreen
+        return UIColor.gray
     }
     
     var roundCornerType: SGSegmentedProgressBarLibrary.SGCornerType {
@@ -306,25 +327,14 @@ extension UserPreviewCell: UIScrollViewDelegate{
     }
 }
 
-// this old version to solve segmentedProgressBarFinished
-/*
- //        if finishedIndex != self.stories.value.count - 1{
- //            if UDHelper.isDrag{
- //                if finishedIndex != storyCount{
- //                    let indexPath = IndexPath.init(row: finishedIndex + 1, section: 0)
- //                    self.storyPreviewCollV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
- //                    self.storyPreviewCollV.reloadData()
- //                }
- //                UDHelper.isDrag = false
- //            }else{
- //                let indexPath = IndexPath.init(row: finishedIndex + 1, section: 0)
- //                self.storyPreviewCollV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
- //                self.storyPreviewCollV.reloadData()
- //            }
- //        }else{
- //            if storyCount == segmentbar.numberOfSegments{
- //                print("is last ya basha")
- //            }
- //            print("number of segment: \(segmentbar.numberOfSegments)")
- //        }
- */
+//MARK: - Detect Text field events
+
+extension UserPreviewCell: UITextFieldDelegate{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == comment_tf{
+            self.segmentbar.pause()
+            self.commentsTableView.isHidden = true
+
+        }
+    }
+}

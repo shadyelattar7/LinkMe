@@ -252,6 +252,8 @@
 		8A3E17992AAFDB26007D6FE2 /* MediaPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E17972AAFDB26007D6FE2 /* MediaPreviewVC.swift */; };
 		8A3E179A2AAFDB26007D6FE2 /* MediaPreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E17982AAFDB26007D6FE2 /* MediaPreviewVC.xib */; };
 		8A3E179D2AB080B5007D6FE2 /* MediaPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E179C2AB080B5007D6FE2 /* MediaPreviewViewModel.swift */; };
+		8A42EB962AC0CA1C009D8239 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A42EB942AC0CA1C009D8239 /* CommentCell.swift */; };
+		8A42EB972AC0CA1C009D8239 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A42EB952AC0CA1C009D8239 /* CommentCell.xib */; };
 		8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */; };
 		8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */; };
 		8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */; };
@@ -514,6 +516,8 @@
 		8A3E17972AAFDB26007D6FE2 /* MediaPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewVC.swift; sourceTree = "<group>"; };
 		8A3E17982AAFDB26007D6FE2 /* MediaPreviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaPreviewVC.xib; sourceTree = "<group>"; };
 		8A3E179C2AB080B5007D6FE2 /* MediaPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewViewModel.swift; sourceTree = "<group>"; };
+		8A42EB942AC0CA1C009D8239 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		8A42EB952AC0CA1C009D8239 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
 		8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreviewCell.swift; sourceTree = "<group>"; };
 		8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPreviewCell.xib; sourceTree = "<group>"; };
@@ -920,6 +924,8 @@
 				8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */,
 				825557582A6975F800E00AA5 /* StoryPreviewCell.swift */,
 				825557592A6975F800E00AA5 /* StoryPreviewCell.xib */,
+				8A42EB942AC0CA1C009D8239 /* CommentCell.swift */,
+				8A42EB952AC0CA1C009D8239 /* CommentCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2424,6 +2430,7 @@
 				82FB79532A19475B006644EE /* Madani Arabic Thin 400.ttf in Resources */,
 				8252A6A52A0FA8C6004989A1 /* MainButton.xib in Resources */,
 				822882922A0D1D4600019216 /* Poppins-Light.ttf in Resources */,
+				8A42EB972AC0CA1C009D8239 /* CommentCell.xib in Resources */,
 				82AB6A822A115B380005DEF6 /* EnterCodeViewController.xib in Resources */,
 				82D914502A1028B7005FAF36 /* LoginViewController.xib in Resources */,
 				82EDF6972A4FC883004D8071 /* CompanySupportVC.xib in Resources */,
@@ -2537,6 +2544,7 @@
 				824E60622A48962400D6FCCD /* ChangePasswordRequestModel.swift in Sources */,
 				827356732A59C38C00634EA4 /* RemoveAccountReasonViewModel.swift in Sources */,
 				82D9143A2A102459005FAF36 /* ValidationError.swift in Sources */,
+				8A42EB962AC0CA1C009D8239 /* CommentCell.swift in Sources */,
 				82A2FC912A0BEB8400BA7BD3 /* LinkMeViewController.swift in Sources */,
 				8228827D2A0C011D00019216 /* UIColor+Extension.swift in Sources */,
 				825CF38E2A494AAE00BA5DDA /* LanguageViewModel.swift in Sources */,

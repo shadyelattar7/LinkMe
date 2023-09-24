@@ -55,6 +55,7 @@ extension LinkMeViewController {
         topUsersTableView.registerNIB(cell: TopUserTableViewCell.self)
         topUsersTableView.separatorStyle = .none
         topUsersTableView.rx.rowHeight.onNext(90)
+        didSelectTopUserItem()
     }
     
     private func subscribeToTopUsersData() {
@@ -69,10 +70,11 @@ extension LinkMeViewController {
 
     private func didSelectTopUserItem() {
         topUsersTableView.rx.itemSelected.subscribe { [weak self] indexPath in
-            guard let _ = self else {return}
+            guard let self = self else {return}
 
-            // MARK: Handle if click on user item.
-
+            let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .normal))
+            self.present(vc, animated: true)
+            
         }.disposed(by: disposeBag)
     }
     

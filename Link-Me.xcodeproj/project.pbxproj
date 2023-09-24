@@ -265,6 +265,12 @@
 		8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */; };
 		8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */; };
 		8A7516842A92920D00B0C6D5 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7516832A92920D00B0C6D5 /* UITextField+Extensions.swift */; };
+		A2190C492AC044230031F1D6 /* UserCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C472AC044230031F1D6 /* UserCardViewController.swift */; };
+		A2190C4A2AC044230031F1D6 /* UserCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C482AC044230031F1D6 /* UserCardViewController.xib */; };
+		A2190C4D2AC044390031F1D6 /* UserCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C4C2AC044390031F1D6 /* UserCardViewModel.swift */; };
+		A2190C542AC05D130031F1D6 /* ReactCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C532AC05D130031F1D6 /* ReactCardView.xib */; };
+		A2190C562AC05D220031F1D6 /* ReactCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C552AC05D220031F1D6 /* ReactCardView.swift */; };
+		A2190C582AC05F6D0031F1D6 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C572AC05F6D0031F1D6 /* UIButton+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -530,6 +536,12 @@
 		8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreviewCell.swift; sourceTree = "<group>"; };
 		8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPreviewCell.xib; sourceTree = "<group>"; };
 		8A7516832A92920D00B0C6D5 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		A2190C472AC044230031F1D6 /* UserCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardViewController.swift; sourceTree = "<group>"; };
+		A2190C482AC044230031F1D6 /* UserCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCardViewController.xib; sourceTree = "<group>"; };
+		A2190C4C2AC044390031F1D6 /* UserCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardViewModel.swift; sourceTree = "<group>"; };
+		A2190C532AC05D130031F1D6 /* ReactCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReactCardView.xib; sourceTree = "<group>"; };
+		A2190C552AC05D220031F1D6 /* ReactCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactCardView.swift; sourceTree = "<group>"; };
+		A2190C572AC05F6D0031F1D6 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 		E1B07EE9E042E4890BEFD488 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1690,6 +1702,7 @@
 				79FA7F452ABB26300043B6BA /* UIView+extension.swift */,
 				79FA7F532ABB541E0043B6BA /* UIImageView+SDWebImage.swift */,
 				79FA7F552ABC66880043B6BA /* String+PathExtension.swift */,
+				A2190C572AC05F6D0031F1D6 /* UIButton+extension.swift */,
 			);
 			path = Extenions;
 			sourceTree = "<group>";
@@ -1769,6 +1782,7 @@
 		82A2FC602A0BC5DF00BA7BD3 /* Reusable component  */ = {
 			isa = PBXGroup;
 			children = (
+				A2190C4E2AC045ED0031F1D6 /* reactView */,
 				793F55C32ABF620C004635C5 /* BeInTopView */,
 				793F55B62ABF4E8D004635C5 /* HeaderView */,
 				79FA7F572ABDC38C0043B6BA /* BottomListSheet */,
@@ -1794,8 +1808,8 @@
 			isa = PBXGroup;
 			children = (
 				793F55BB2ABF5059004635C5 /* Cell */,
-				82A2FC842A0BE1AC00BA7BD3 /* ViewModel */,
-				82A2FC832A0BE1A800BA7BD3 /* View */,
+				A2190C442AC043D00031F1D6 /* LinkMe */,
+				A2190C452AC043E70031F1D6 /* UserCard */,
 			);
 			path = LinkMe;
 			sourceTree = "<group>";
@@ -2293,6 +2307,50 @@
 			path = "ViewModel ";
 			sourceTree = "<group>";
 		};
+		A2190C442AC043D00031F1D6 /* LinkMe */ = {
+			isa = PBXGroup;
+			children = (
+				82A2FC842A0BE1AC00BA7BD3 /* ViewModel */,
+				82A2FC832A0BE1A800BA7BD3 /* View */,
+			);
+			path = LinkMe;
+			sourceTree = "<group>";
+		};
+		A2190C452AC043E70031F1D6 /* UserCard */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C4B2AC0442C0031F1D6 /* ViewModel */,
+				A2190C462AC0440D0031F1D6 /* View */,
+			);
+			path = UserCard;
+			sourceTree = "<group>";
+		};
+		A2190C462AC0440D0031F1D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C472AC044230031F1D6 /* UserCardViewController.swift */,
+				A2190C482AC044230031F1D6 /* UserCardViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2190C4B2AC0442C0031F1D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C4C2AC044390031F1D6 /* UserCardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A2190C4E2AC045ED0031F1D6 /* reactView */ = {
+			isa = PBXGroup;
+			children = (
+				A2190C532AC05D130031F1D6 /* ReactCardView.xib */,
+				A2190C552AC05D220031F1D6 /* ReactCardView.swift */,
+			);
+			path = reactView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2416,6 +2474,7 @@
 				82FB79512A19475B006644EE /* Madani Arabic Bold 400.ttf in Resources */,
 				794B890B2ABE10B700FE5F0D /* ReportStoryViewController.xib in Resources */,
 				82A2FC5F2A0BB05D00BA7BD3 /* OnboardingViewController.xib in Resources */,
+				A2190C542AC05D130031F1D6 /* ReactCardView.xib in Resources */,
 				825CF3B32A4DC4D700BA5DDA /* SendEmailVC.xib in Resources */,
 				82A2FC142A0B9A1C00BA7BD3 /* Assets.xcassets in Resources */,
 				82A2FC122A0B9A1A00BA7BD3 /* Main.storyboard in Resources */,
@@ -2427,6 +2486,7 @@
 				822882922A0D1D4600019216 /* Poppins-Light.ttf in Resources */,
 				82AB6A822A115B380005DEF6 /* EnterCodeViewController.xib in Resources */,
 				82D914502A1028B7005FAF36 /* LoginViewController.xib in Resources */,
+				A2190C4A2AC044230031F1D6 /* UserCardViewController.xib in Resources */,
 				82EDF6972A4FC883004D8071 /* CompanySupportVC.xib in Resources */,
 				82FB79552A19475B006644EE /* Madani Arabic Black 400.ttf in Resources */,
 				825CF3972A49DFDA00BA5DDA /* SupportVC.xib in Resources */,
@@ -2503,6 +2563,7 @@
 				82FB791D2A169A6D006644EE /* VerifyCode.swift in Sources */,
 				827B83912A10EC9F00E634A9 /* Date+Extensions.swift in Sources */,
 				8A3E17992AAFDB26007D6FE2 /* MediaPreviewVC.swift in Sources */,
+				A2190C492AC044230031F1D6 /* UserCardViewController.swift in Sources */,
 				82FB79342A16FF45006644EE /* LocalDataManager.swift in Sources */,
 				82D914392A102459005FAF36 /* Validatable.swift in Sources */,
 				82AB6A812A115B380005DEF6 /* EnterCodeViewController.swift in Sources */,
@@ -2579,6 +2640,7 @@
 				82AB6A842A115B4F0005DEF6 /* EnterCodeViewModel.swift in Sources */,
 				82952B902A47990B00548634 /* OtherSettingsVC.swift in Sources */,
 				82952B8D2A4798D400548634 /* OtherSettingsViewModel.swift in Sources */,
+				A2190C582AC05F6D0031F1D6 /* UIButton+extension.swift in Sources */,
 				79FA7F4D2ABB30D50043B6BA /* StoriesTarget.swift in Sources */,
 				82A2FC432A0B9D1600BA7BD3 /* AppStoryboards.swift in Sources */,
 				8252A6A12A0DCEF3004989A1 /* OnboardingViewModel.swift in Sources */,
@@ -2587,6 +2649,7 @@
 				82D914422A102459005FAF36 /* PasswordValidator.swift in Sources */,
 				82CAF04C2A3E020100311600 /* Countries.swift in Sources */,
 				82CAF0462A3CB9EE00311600 /* CompleteProfileVC.swift in Sources */,
+				A2190C4D2AC044390031F1D6 /* UserCardViewModel.swift in Sources */,
 				82FB79362A17E860006644EE /* Login.swift in Sources */,
 				82952B9C2A47B9B800548634 /* ChangePasswordVC.swift in Sources */,
 				82CAF0632A3FC5EB00311600 /* EditProfileViewModel.swift in Sources */,
@@ -2660,6 +2723,7 @@
 				79FA7F542ABB541E0043B6BA /* UIImageView+SDWebImage.swift in Sources */,
 				82952B952A479F8D00548634 /* OtherSeeCell.swift in Sources */,
 				794B89142ABE2B5A00FE5F0D /* StaticKeys.swift in Sources */,
+				A2190C562AC05D220031F1D6 /* ReactCardView.swift in Sources */,
 				8292767F2A2D613F000F49E0 /* ProfileNotCompleteViewModel.swift in Sources */,
 				82FB79222A169AB4006644EE /* VerifyCodeWorkering.swift in Sources */,
 				8A7516842A92920D00B0C6D5 /* UITextField+Extensions.swift in Sources */,

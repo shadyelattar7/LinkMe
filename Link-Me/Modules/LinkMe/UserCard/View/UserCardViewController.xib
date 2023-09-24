@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserCardViewController" customModule="Link_Me" customModuleProvider="target">
+            <connections>
+                <outlet property="activeButton" destination="wed-FC-Jz9" id="H6S-pj-RYz"/>
+                <outlet property="descriptionLabel" destination="Nln-Eq-FZ9" id="xtl-VU-X4H"/>
+                <outlet property="heightOfParentViewConstraint" destination="U8C-Yc-AHX" id="YAV-MB-oVF"/>
+                <outlet property="nameLabel" destination="SYj-ga-JZz" id="tOB-zw-JmC"/>
+                <outlet property="parentView" destination="7kq-xU-61k" id="3Gs-qk-SU5"/>
+                <outlet property="unlikeButton" destination="0nT-Op-ep0" id="WGr-ZU-noX"/>
+                <outlet property="userImageView" destination="VIr-VQ-ql3" id="tbE-To-g1l"/>
+                <outlet property="usernameLabel" destination="sh1-Tw-aHA" id="p6q-el-DV2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="youLinkWithStackView" destination="hHk-uL-AYm" id="XwM-dN-bcQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kq-xU-61k">
+                    <rect key="frame" x="0.0" y="272" width="393" height="580"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="M7W-Go-RFI">
+                            <rect key="frame" x="20" y="19.999999999999972" width="353" height="496.33333333333326"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Cyd-4d-Kv9">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="283.33333333333331"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YSF-cp-x3o">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="231.33333333333334"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="baz-QD-zTv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="85"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab 3" translatesAutoresizingMaskIntoConstraints="NO" id="VIr-VQ-ql3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="85" id="rYj-x2-SXf"/>
+                                                                <constraint firstAttribute="height" constant="85" id="tKk-Om-c6M"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="il3-oe-HmB">
+                                                            <rect key="frame" x="97" y="14.000000000000004" width="256" height="57.333333333333343"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYj-ga-JZz">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="256" height="26.666666666666668"/>
+                                                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="19"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh1-Tw-aHA">
+                                                                    <rect key="frame" x="0.0" y="34.666666666666686" width="256" height="22.666666666666671"/>
+                                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                                                    <color key="textColor" name="strongGray"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-Eq-FZ9">
+                                                    <rect key="frame" x="0.0" y="105" width="353" height="39.333333333333343"/>
+                                                    <string key="text">Lorem Ipsum Dolor Sit Amet, Consetetur 
+Sadipscing Elitr, Sed Diam </string>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r23-8v-xNc" customClass="ReactCardView" customModule="Link_Me" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="164.33333333333331" width="353" height="67"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="67" id="HT8-8Q-kLd"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hHk-uL-AYm">
+                                            <rect key="frame" x="0.0" y="261.33333333333337" width="353" height="22"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-circle" translatesAutoresizingMaskIntoConstraints="NO" id="Eit-U4-ZGc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="Xbm-6m-mPI"/>
+                                                        <constraint firstAttribute="height" constant="22" id="z2V-Th-Acx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You linked with Doris Cook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Op-3K-iVc">
+                                                    <rect key="frame" x="34" y="0.0" width="319" height="22"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
+                                                    <color key="textColor" name="strongGray"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ggf-4b-mYg">
+                                    <rect key="frame" x="0.0" y="364.33333333333337" width="353" height="132"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wed-FC-Jz9">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="56"/>
+                                            <color key="backgroundColor" name="mainColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="3st-ho-bna"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Say Hello" image="yellowHand"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nT-Op-ep0">
+                                            <rect key="frame" x="0.0" y="76" width="353" height="56"/>
+                                            <color key="backgroundColor" name="lightPink"/>
+                                            <color key="tintColor" name="DarkBlue"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Unlink">
+                                                <color key="titleColor" name="strongPink"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="M7W-Go-RFI" secondAttribute="trailing" constant="20" id="8VG-Zk-4ek"/>
+                        <constraint firstAttribute="height" constant="580" id="U8C-Yc-AHX"/>
+                        <constraint firstItem="M7W-Go-RFI" firstAttribute="leading" secondItem="7kq-xU-61k" secondAttribute="leading" constant="20" id="aOi-MB-ZwC"/>
+                        <constraint firstItem="M7W-Go-RFI" firstAttribute="top" secondItem="7kq-xU-61k" secondAttribute="top" constant="20" id="hUQ-L0-Tgm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="7kq-xU-61k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XnO-Bg-b0g"/>
+                <constraint firstAttribute="bottom" secondItem="7kq-xU-61k" secondAttribute="bottom" id="mPy-6J-2c5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7kq-xU-61k" secondAttribute="trailing" id="ocG-Xi-Bfl"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="AmrDiab 3" width="640" height="640"/>
+        <image name="tick-circle" width="20" height="20"/>
+        <image name="yellowHand" width="20" height="20"/>
+        <namedColor name="DarkBlue">
+            <color red="0.035000000149011612" green="0.25099998712539673" blue="0.40400001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightPink">
+            <color red="1" green="0.8784313725490196" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainColor">
+            <color red="0.46274509803921571" green="0.30588235294117649" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="strongGray">
+            <color red="0.37254901960784315" green="0.42352941176470588" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="strongPink">
+            <color red="1" green="0.13699999451637268" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

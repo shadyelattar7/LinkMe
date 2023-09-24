@@ -17,6 +17,7 @@ class MainNavigator: Navigator{
         //MARK: - LinkMe -
         
         case LinkMe
+        case userCard(direction: UserCardDirection)
         
         //MARK: - Stories -
         case MediaPreview(mediaType: MediaType, image: UIImage = UIImage(), video: URL = URL(fileURLWithPath: ""))
@@ -53,6 +54,10 @@ class MainNavigator: Navigator{
         switch destination{
         case .LinkMe:
             return LinkMeViewController(viewModel: LinkMeViewModel(), coordinator: coordinator)
+            
+        case .userCard(let direction):
+            let viewModel = UserCardViewModel()
+            return UserCardViewController(viewModel: viewModel, coordinator: coordinator, direction: direction)
             
             //MARK: - Stories -
             

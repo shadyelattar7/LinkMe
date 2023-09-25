@@ -29,4 +29,8 @@ extension UIColor {
     static var yellowLight: UIColor {
         return UIColor(named: "yellowLight")!
     }
+    
+    static var lightYellow: UIColor {
+        return UIColor(named: "lightYellow")!
+    }
 }

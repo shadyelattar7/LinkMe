@@ -27,6 +27,7 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
         configureTableView()
         subscribe()
         didTappedOnNotificationButton()
+        addTappedOnBeInTopView()
     }
     
     override func viewWillLayoutSubviews() {
@@ -53,6 +54,18 @@ extension LinkMeViewController {
             
             self.coordinator.Main.navigate(for: .notificationList)
         }
+    }
+    
+    private func addTappedOnBeInTopView() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedOnBeInTopView))
+        tap.numberOfTapsRequired = 1
+        topYellowView.isUserInteractionEnabled = true
+        topYellowView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func didTappedOnBeInTopView() {
+        let vc = coordinator.Main.viewcontroller(for: .beInTheTop)
+        self.present(vc, animated: true)
     }
 }
 

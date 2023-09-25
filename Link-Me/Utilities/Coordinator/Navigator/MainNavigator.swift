@@ -20,6 +20,7 @@ class MainNavigator: Navigator{
         case userCard(direction: UserCardDirection, userModel: UserCardModel)
         case newLink
         case notificationList
+        case beInTheTop
         
         //MARK: - Stories -
         case MediaPreview(mediaType: MediaType, image: UIImage = UIImage(), video: URL = URL(fileURLWithPath: ""))
@@ -66,6 +67,9 @@ class MainNavigator: Navigator{
             
         case .notificationList:
             return NotificationListViewController()
+            
+        case .beInTheTop:
+            return BeInTopViewController()
             
             //MARK: - Stories -
             

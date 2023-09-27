@@ -29,12 +29,19 @@ extension UIView {
 /// Add gradient.
 ///
 extension UIView {
-    func applyGradient(colors: [CGColor]) {
+    enum Direction {
+        case vertical
+        case horizontal
+    }
+    
+    func applyGradient(colors: [CGColor], direction: Direction = .horizontal) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.colors = colors
-        gradient.locations = [0.0 , 1.0]
-        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
-        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        if direction == .horizontal {
+            gradient.locations = [0.0 , 1.0]
+            gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
+            gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        }
         gradient.cornerRadius = self.layer.cornerRadius
         gradient.frame = self.layer.frame
         self.clipsToBounds = true

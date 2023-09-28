@@ -82,7 +82,7 @@ class MainNavigator: Navigator{
         case .BottomListItem(let listItems, let storyID):
             let viewModel = BottomListSheetViewModel(listItems:  listItems, storyID: storyID)
             return BottomListSheet(viewModel: viewModel, coordinator: coordinator)
-            
+        
             //MARK: - Profile -
             
         case .Profile:
@@ -140,9 +140,7 @@ class MainNavigator: Navigator{
             let DeleteAccountProfileRepo = ProfileWorker()
             let viewModel = DeleteAccountViewModel(DeleteAccount: DeleteAccountProfileRepo, reason: reason)
             return DeleteAccountVC(viewModel: viewModel, coordinator: coordinator)
-            
-            
-            
+
         }
     }
 }

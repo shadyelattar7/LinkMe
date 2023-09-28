@@ -74,5 +74,51 @@ extension MainStoriesViewModel {
             }
         }).disposed(by: disposedBag)
     }
+    
+    func likeStore(storyId: Int, view: UIView){
+        storiesApi.likeStory(model: LikeStoryRequestModel(storyID: storyId)).subscribe(onNext:{ [weak self] result in
+            guard let self = self else {return}
+
+            switch result{
+            case .success(let model):
+                ToastManager.shared.showToast(message: model.message ?? "", view: view, postion: .top, backgroundColor: .systemGreen)
+                
+            case .failure(let error):
+                let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
+                self.errorMessage.onNext(errorMessage ?? "")
+            }
+        }).disposed(by: disposedBag)
+    }
+    
+    
+    func addComment(storyId: Int, comment: String, view: UIView){
+        storiesApi.commentStory(model: AddCommentRequestModel(story_id: storyId, comment: comment)).subscribe(onNext:{ [weak self] result in
+            guard let self = self else {return}
+
+            switch result{
+            case .success(let model):
+                ToastManager.shared.showToast(message: model.message ?? "", view: view, postion: .top, backgroundColor: .systemGreen)
+                
+            case .failure(let error):
+                let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
+                self.errorMessage.onNext(errorMessage ?? "")
+            }
+        }).disposed(by: disposedBag)
+    }
+    
+    func removeComment(commentId: Int){
+        storiesApi.removeCommentStory(model: RemoveCommentRequestModel(comment_id: commentId)).subscribe(onNext:{ [weak self] result in
+            guard let self = self else {return}
+
+            switch result{
+            case .success(let model):
+               // ToastManager.shared.showToast(message: model.message ?? "", view: view, postion: .top, backgroundColor: .systemGreen)
+                print("Model: \(model)")
+            case .failure(let error):
+                let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
+                self.errorMessage.onNext(errorMessage ?? "")
+            }
+        }).disposed(by: disposedBag)
+    }
 }
 

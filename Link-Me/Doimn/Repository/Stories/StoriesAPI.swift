@@ -30,9 +30,25 @@ protocol StoriesAPIProtocol {
     /// - Parameters:
     /// - Returns: baseResponse model.
     func reportStory(model: ReportStoryRequestModel) -> Observable<Result<BaseResponse, NSError>>
+    
+    /// it is the method used to report story.
+    /// - Parameters:
+    /// - Returns: baseResponse model.
+    func likeStory(model: LikeStoryRequestModel) -> Observable<Result<BaseResponse, NSError>>
+    
+    /// it is the method used to report story.
+    /// - Parameters:
+    /// - Returns: baseResponse model.
+    func commentStory(model: AddCommentRequestModel) -> Observable<Result<BaseResponse, NSError>>
+    
+    /// it is the method used to report story.
+    /// - Parameters:
+    /// - Returns: baseResponse model.
+    func removeCommentStory(model: RemoveCommentRequestModel) -> Observable<Result<BaseResponse, NSError>>
 }
 
 class StoriesAPI: APIClient<StoriesTarget>, StoriesAPIProtocol {
+   
     func addNewStory(model: AddNewStoryRequestModel, fileModel: [MultiPartData]) -> RxSwift.Observable<Result<BaseResponse, NSError>> {
         self.performMultipartRequest(target: .addNewStory(Parameters: model, fileModel: fileModel))
     }
@@ -48,4 +64,17 @@ class StoriesAPI: APIClient<StoriesTarget>, StoriesAPIProtocol {
     func reportStory(model: ReportStoryRequestModel) -> Observable<Result<BaseResponse, NSError>> {
         self.performRequest(target: .reportStory(Parameters: model), requestModel: model)
     }
+    
+    func likeStory(model: LikeStoryRequestModel) -> RxSwift.Observable<Result<BaseResponse, NSError>> {
+        self.performRequest(target: .likeStory(Parameters: model), requestModel: model)
+    }
+    
+    func commentStory(model: AddCommentRequestModel) -> RxSwift.Observable<Result<BaseResponse, NSError>> {
+        self.performRequest(target: .comment(Parameters: model), requestModel: model)
+    }
+    
+    func removeCommentStory(model: RemoveCommentRequestModel) -> RxSwift.Observable<Result<BaseResponse, NSError>> {
+        self.performRequest(target: .removeComment(Parameters: model), requestModel: model)
+    }
+   
 }

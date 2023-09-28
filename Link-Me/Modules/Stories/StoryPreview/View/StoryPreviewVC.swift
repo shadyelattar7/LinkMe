@@ -73,6 +73,7 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
         self.myStoriesDate.bind(to: userPreviewCollV.rx.items(cellIdentifier: String(describing: UserPreviewCell.self), cellType: UserPreviewCell.self)){ (row, item, cell) in
             
             guard let stories = self.myStoriesDate.value[row].stories else { return }
+            
             cell.userImage.getImage(imageUrl: self.myStoriesDate.value[row].imagePath ?? "")
             cell.usernameLabel.text = self.myStoriesDate.value[row].userName ?? ""
             cell.stories.accept(stories)
@@ -98,6 +99,20 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
                 guard let self = self else {return}
                 print("muteSound")
             }
+            
+            cell.likeBtn = { [weak self] storyID in
+                guard let self = self else {return}
+                print("storyID: \(storyID)")
+                self.viewModel.likeStore(storyId: storyID, view: self.view)
+            }
+            
+            cell.addCommentBtn = { [weak self] storyID, comment in
+                guard let self = self else {return}
+               print("Comment: \(comment), Story Id: \(storyID)")
+                self.viewModel.addComment(storyId: storyID, comment: comment, view: self.view)
+            }
+            
+            
             
             cell.segmentedProgressBarFinished = { [weak self] isFinished in
                 guard let self = self else {return}

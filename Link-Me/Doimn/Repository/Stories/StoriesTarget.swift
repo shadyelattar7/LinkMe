@@ -13,6 +13,9 @@ enum StoriesTarget {
     case fetchStories
     case deleteStory(Parameters: DeleteStoryRequestModel)
     case reportStory(Parameters: ReportStoryRequestModel)
+    case likeStory(Parameters: LikeStoryRequestModel)
+    case comment(Parameters: AddCommentRequestModel)
+    case removeComment(Parameters: RemoveCommentRequestModel)
 }
 
 extension StoriesTarget: TargetType {
@@ -26,6 +29,12 @@ extension StoriesTarget: TargetType {
             return "/story/delete"
         case .reportStory:
             return "/story/report"
+        case .likeStory:
+            return "/story/toggle-like"
+        case .comment:
+            return "/story/add-comment"
+        case .removeComment:
+            return "/story/delete-comment"
         }
     }
     
@@ -35,6 +44,12 @@ extension StoriesTarget: TargetType {
             return .post
         case .fetchStories:
             return .get
+        case .likeStory:
+            return .post
+        case .comment:
+            return .post
+        case .removeComment:
+            return .post
         }
     }
     
@@ -48,6 +63,12 @@ extension StoriesTarget: TargetType {
             return .request(Parameters)
         case .reportStory(let parameters):
             return .request(parameters)
+        case .likeStory(let Parameters):
+            return .request(Parameters)
+        case .comment(let Parameters):
+            return .request(Parameters)
+        case .removeComment(let Parameters):
+            return .request(Parameters)
         }
     }
     

@@ -85,7 +85,7 @@ struct Story: Codable {
     let description: String?
     let video: String?
     let likes: Int?
-//    let comments: [JSONAny]?
+    let comments: [Comments]?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -95,7 +95,7 @@ struct Story: Codable {
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case description, video, likes
-//        case comments
+        case comments
     }
 }
 
@@ -104,4 +104,26 @@ struct Link: Codable {
     let url: String?
     let label: String?
     let active: Bool?
+}
+
+//MARK: - Comments
+struct Comments : Codable {
+    let id : Int?
+    let user_id : Int?
+    let story_id : Int?
+    let comment : String?
+    let created_at : String?
+    let updated_at : String?
+    let user : User?
+
+    enum CodingKeys: String, CodingKey {
+
+        case id = "id"
+        case user_id = "user_id"
+        case story_id = "story_id"
+        case comment = "comment"
+        case created_at = "created_at"
+        case updated_at = "updated_at"
+        case user = "user"
+    }
 }

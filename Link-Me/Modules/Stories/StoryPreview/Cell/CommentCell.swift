@@ -11,6 +11,7 @@ class CommentCell: UITableViewCell {
 
     @IBOutlet weak var userImage: CircleImageView!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var datelabel: UILabel!
     
     var deleteTap: (() ->())?
     

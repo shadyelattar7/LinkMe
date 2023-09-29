@@ -26,9 +26,9 @@ class TopUserTableViewCell: UITableViewCell {
         configureUI()
     }
     
-    func update(_ item: TopUserData) {
+    func update(_ item: User) {
         nameLabel.text = item.name
-        descriptionLabel.text = item.email
+        descriptionLabel.text = item.bio ?? ""
         guard let imageStr = item.imagePath, let imageUrl = URL(string: imageStr) else { return }
         userImageView.setImage(url: imageUrl)
     }

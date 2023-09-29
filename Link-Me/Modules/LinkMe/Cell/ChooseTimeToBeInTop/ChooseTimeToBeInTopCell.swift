@@ -13,7 +13,7 @@ class ChooseTimeToBeInTopCell: UITableViewCell {
     
     @IBOutlet private weak var parentView: UIView!
     @IBOutlet private weak var timeLabel: UILabel!
-    @IBOutlet private weak var NumberOfDiamondLabel: UILabel!
+    @IBOutlet private weak var numberOfDiamondLabel: UILabel!
     @IBOutlet private weak var activeButton: UIButton!
     
     // MARK: - Proprites
@@ -30,6 +30,12 @@ class ChooseTimeToBeInTopCell: UITableViewCell {
         onChange(type)
     }
 
+    func update(_ model: StarModel) {
+        timeLabel.text = model.titleEn
+        numberOfDiamondLabel.text = "\(model.diamonds ?? 0) Diamond"
+        updateUI(true)
+    }
+    
     func updateUI(_ isAvailableChooseIt: Bool) {
         checkIfAvailableChooseIt(isAvailableChooseIt)
     }

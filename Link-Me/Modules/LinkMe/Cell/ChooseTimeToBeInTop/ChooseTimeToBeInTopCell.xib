@@ -83,8 +83,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="NumberOfDiamondLabel" destination="ecH-GS-YIZ" id="o27-Fe-hnf"/>
                 <outlet property="activeButton" destination="CaX-Pw-yRi" id="z8Z-Fh-6e4"/>
+                <outlet property="numberOfDiamondLabel" destination="ecH-GS-YIZ" id="kTQ-wP-nY1"/>
                 <outlet property="parentView" destination="V92-ll-P45" id="PKC-fa-jOT"/>
                 <outlet property="timeLabel" destination="RuO-n2-Yfm" id="kVa-vm-Ymk"/>
             </connections>

@@ -18,8 +18,13 @@ class LinkMeViewModel: BaseViewModel {
 
     // MARK: Outputs
 
-    private var topUsers = BehaviorRelay<[TopUserData]>(value: [])
-    var topUsersObservable: Observable<[TopUserData]> {
+    private var topUsersModel = BehaviorRelay<TopUserData?>(value: nil)
+    var topUsersModelObservable: Observable<TopUserData?> {
+        return topUsersModel.asObservable()
+    }
+    
+    private var topUsers = BehaviorRelay<[User]>(value: [])
+    var topUsersObservable: Observable<[User]> {
         return topUsers.asObservable()
     }
 
@@ -28,8 +33,19 @@ class LinkMeViewModel: BaseViewModel {
         return errorMessage.asObservable()
     }
     
-    func getUserModel(_ row: Int) -> TopUserData {
+    func getUserModel(_ row: Int) -> User {
         return topUsers.value[row]
+    }
+    
+    func getBeInTopModel() -> BeInTopModel {
+        var startsModel: [StarModel] = []
+        
+        topUsersModel.value?.stars?.forEach({ star in
+            startsModel.append(StarModel(id: star.id, diamonds: star.diamonds, titleAr: star.titleAr, titleEn: star.titleEn))
+        })
+        
+        let model = BeInTopModel(numberOfUsers: topUsers.value.count, stars: startsModel)
+        return model
     }
 
     // MARK: Init
@@ -48,7 +64,8 @@ extension LinkMeViewModel {
             
             switch result {
             case .success(let model):
-                guard let users = model.data else { return }
+                guard let data = model.data, let users = data.users else { return }
+                self.topUsersModel.accept(data)
                 self.topUsers.accept(users)
                 
             case .failure(let error):

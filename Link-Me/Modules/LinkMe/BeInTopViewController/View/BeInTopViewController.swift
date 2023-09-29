@@ -21,6 +21,8 @@ class BeInTopViewController: UIViewController {
     @IBOutlet private weak var widthOfUserImageConstraint: NSLayoutConstraint!
     @IBOutlet private weak var beInTheTopLabel: UILabel!
     @IBOutlet private weak var infoSectionView: UIView!
+    @IBOutlet private weak var yourTurnAfterLabel: UILabel!
+    @IBOutlet private weak var numberOfUsersLabel: UILabel!
     @IBOutlet private weak var chooseTimeStackView: UIStackView!
     @IBOutlet private weak var chooseTimeLabel: UILabel!
     @IBOutlet private weak var optionsTableView: UITableView!
@@ -34,6 +36,18 @@ class BeInTopViewController: UIViewController {
     // MARK: - Properties
     
     private let disposeBag = DisposeBag()
+    private let cardModel: BeInTopModel
+    
+    // MARK: Init
+    
+    init(cardModel: BeInTopModel) {
+        self.cardModel = cardModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     // MARK: - LifeCycle
     
@@ -41,6 +55,7 @@ class BeInTopViewController: UIViewController {
         super.viewDidLoad()
         configureFirstViewUI()
         configureTableView()
+        setCardData()
         subscribes()
     }
 
@@ -66,7 +81,7 @@ extension BeInTopViewController {
         thanksButtonView.isHidden = true
     }
     
-    private func configureSecondViewUI() {
+    private func configureSecondViewUI(numberOfDiamond: Int) {
         heightOfParentViewConstraint.constant = 580
         heightOfUserImageConstraint.constant = 100
         widthOfUserImageConstraint.constant = 100
@@ -75,6 +90,7 @@ extension BeInTopViewController {
         chooseTimeStackView.isHidden = true
         niceYouWillBeInTopView.isHidden = false
         numberOfDiamondView.isHidden = false
+        numberOfDiamondLabel.text = "-\(numberOfDiamond)"
         thanksButtonView.isHidden = false
         thanksButton.applyDefaultStyle(cornerRadius: 10, backgroundColor: .yellow, textColor: UIColor.white)
     }
@@ -83,6 +99,10 @@ extension BeInTopViewController {
 // MARK: - Private handlers
 
 extension BeInTopViewController {
+    private func setCardData() {
+        self.numberOfUsersLabel.text = "\(cardModel.numberOfUsers ?? 0) user"
+    }
+    
     private func subscribes() {
         subscribeToThanksButton()
     }
@@ -95,7 +115,6 @@ extension BeInTopViewController {
             
         }.disposed(by: disposeBag)
     }
-
 }
 
 // MARK: Configure tableView
@@ -113,24 +132,21 @@ extension BeInTopViewController {
 
 extension BeInTopViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return cardModel.stars?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as ChooseTimeToBeInTopCell
         
-        if indexPath.row == 0 {
-            cell.updateUI(true)
-        } else {
-            cell.updateUI(false)
-        }
+        guard let model = cardModel.stars?[indexPath.row] else { return UITableViewCell() }
+        cell.update(model)
         
         cell.onChange = { [weak self] type in
             guard let self = self else { return }
             switch type {
             case .choose:
                 // TODO: - Need to call api that make this user in the top after that change view ui.
-                self.configureSecondViewUI()
+                self.configureSecondViewUI(numberOfDiamond: model.diamonds ?? 0)
                 
             case .buy:
                 // TODO: - Need to go to market to buy diamond.

@@ -64,7 +64,8 @@ extension LinkMeViewController {
     }
     
     @objc private func didTappedOnBeInTopView() {
-        let vc = coordinator.Main.viewcontroller(for: .beInTheTop)
+        let model = viewModel.getBeInTopModel()
+        let vc = coordinator.Main.viewcontroller(for: .beInTheTop(cardModel: model))
         self.present(vc, animated: true)
     }
 }
@@ -96,8 +97,9 @@ extension LinkMeViewController {
 
             // TODO: - Need to handle number of [Links, Following, Likes]
             
-            let user = self.viewModel.getUserModel(indexPath.row)
-            let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.userName, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0)
+            guard let row = indexPath.element?.row else { return }
+            let user = self.viewModel.getUserModel(row)
+            let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.user_name, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0)
             
             let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .normal, userModel: userModel))
             self.present(vc, animated: true)

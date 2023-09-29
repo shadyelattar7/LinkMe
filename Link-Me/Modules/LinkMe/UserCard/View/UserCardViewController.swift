@@ -96,6 +96,7 @@ extension UserCardViewController {
     private func fillUserData() {
         nameLabel.text = userModel.name
         usernameLabel.text = "@\(String(describing: userModel.username ?? ""))"
+        descriptionLabel.text = userModel.bio
         userImageView.setImage(url: URL(string: userModel.imagePath ?? ""))
         reactCardView.setNumberOfLinks(userModel.numberOfLinks)
         reactCardView.setNumberOfFollowing(userModel.numberOfFollowing)

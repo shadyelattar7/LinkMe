@@ -31,6 +31,7 @@
                 <outlet property="niceYouWillBeInTopView" destination="a0W-1Y-b12" id="sCH-41-kbt"/>
                 <outlet property="numberOfDiamondLabel" destination="cKP-VG-1Kk" id="KJi-Cw-Mc2"/>
                 <outlet property="numberOfDiamondView" destination="maS-oj-XfY" id="VPY-Ib-ma6"/>
+                <outlet property="numberOfUsersLabel" destination="3a8-qF-35i" id="2dL-K7-KpZ"/>
                 <outlet property="optionsTableView" destination="eNL-52-W1n" id="CbT-FA-JLE"/>
                 <outlet property="parentView" destination="ACQ-Wk-CFU" id="vxQ-Cr-ufD"/>
                 <outlet property="thanksButton" destination="gd7-BY-YZ2" id="VEM-rc-d4u"/>
@@ -38,6 +39,7 @@
                 <outlet property="userImageView" destination="iNe-VA-Zol" id="8nd-7a-2Nq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="widthOfUserImageConstraint" destination="HYJ-g8-zPt" id="H3s-zD-HRg"/>
+                <outlet property="yourTurnAfterLabel" destination="wQe-h5-qPx" id="BfA-rp-7hA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

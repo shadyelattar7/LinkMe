@@ -242,7 +242,8 @@ class UserPreviewCell: UICollectionViewCell {
             
             cell.deleteTap = { [weak self] in
                 guard let self = self else {return}
-                let viewModel = MainStoriesViewModel()
+                let repoMyAcc = MyAccountWorker()
+                let viewModel = MainStoriesViewModel(myAccount: repoMyAcc)
                 print("Row: \(row)")
                 
                 self.commentTableView.beginUpdates()

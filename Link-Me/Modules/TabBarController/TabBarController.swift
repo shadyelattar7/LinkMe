@@ -57,7 +57,7 @@ class TabBarController: UITabBarController {
             view.tabBarItem = tabBarItem(for: item)
             return view
         case .Stories:
-            let view = MainStoriesVC(viewModel: MainStoriesViewModel(), coordinator: coordinator)
+            let view = coordinator.Main.viewcontroller(for: .MainStory)
             view.tabBarItem = tabBarItem(for: item)
             return view
         case .Message:

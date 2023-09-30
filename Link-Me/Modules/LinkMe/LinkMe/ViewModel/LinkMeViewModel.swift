@@ -18,8 +18,10 @@ class LinkMeViewModel: BaseViewModel {
 
     // MARK: Outputs
 
-    private var topUsers = BehaviorRelay<[TopUserData]>(value: [])
-    var topUsersObservable: Observable<[TopUserData]> {
+    private var topUsers: PublishSubject<TopUserData> = .init()
+     var users = BehaviorRelay<[User]>(value: [])
+
+    var topUsersObservable: Observable<TopUserData> {
         return topUsers.asObservable()
     }
 
@@ -28,9 +30,9 @@ class LinkMeViewModel: BaseViewModel {
         return errorMessage.asObservable()
     }
     
-    func getUserModel(_ row: Int) -> TopUserData {
-        return topUsers.value[row]
-    }
+//    func getUserModel(_ row: Int) -> user {
+//        return topUsers.value.[row]
+//    }
 
     // MARK: Init
 
@@ -48,8 +50,9 @@ extension LinkMeViewModel {
             
             switch result {
             case .success(let model):
-                guard let users = model.data else { return }
-                self.topUsers.accept(users)
+                guard let users = model.data?.users else { return }
+              //  self.topUsers.accept(users)
+                self.users.accept(users)
                 
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String

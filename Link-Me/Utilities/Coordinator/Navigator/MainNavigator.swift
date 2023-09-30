@@ -22,10 +22,14 @@ class MainNavigator: Navigator{
         case notificationList
         
         //MARK: - Stories -
+        case MainStory
         case MediaPreview(mediaType: MediaType, image: UIImage = UIImage(), video: URL = URL(fileURLWithPath: ""))
         case StoryPreview
         case ReportStory(storyID: Int)
         case BottomListItem(listItems: [ItemList], storyID: Int)
+        case FeaturesPremium
+        case GoPremium
+        case TestPremuim
         
         //MARK: - Profile -
         case Profile
@@ -69,11 +73,16 @@ class MainNavigator: Navigator{
             
             //MARK: - Stories -
             
+        case .MainStory:
+            let myAccountRepo = MyAccountWorker()
+            let viewModel = MainStoriesViewModel(myAccount: myAccountRepo)
+            return MainStoriesVC(viewModel: viewModel, coordinator: coordinator)
         case .MediaPreview(let mediaType, let image, let video):
             let viewModel = MediaPreviewViewModel(mediaType: mediaType, image: image, video: video)
             return MediaPreviewVC(viewModel: viewModel, coordinator: coordinator)
         case .StoryPreview:
-            let viewModel = MainStoriesViewModel()
+            let repoMyAcc = MyAccountWorker()
+            let viewModel = MainStoriesViewModel(myAccount: repoMyAcc)
             return StoryPreviewVC(viewModel: viewModel, coordinator: coordinator)
         case .ReportStory(let storyID):
             let viewModel = ReportStoryViewModel(storyID: storyID)
@@ -140,7 +149,17 @@ class MainNavigator: Navigator{
             let DeleteAccountProfileRepo = ProfileWorker()
             let viewModel = DeleteAccountViewModel(DeleteAccount: DeleteAccountProfileRepo, reason: reason)
             return DeleteAccountVC(viewModel: viewModel, coordinator: coordinator)
-
+        case .TestPremuim:
+            let viewModel = TestPremuimViewModel()
+            return TestPremuimViewController(viewModel: viewModel, coordinator: coordinator)
+        case .FeaturesPremium:
+            let viewModel = FeaturesPremiumViewModel()
+            return FeaturesPremiumVC(viewModel: viewModel, coordinator: coordinator)
+        case .GoPremium:
+            let subscribeApi = SubscribeAPI()
+            let viewModel = GoPremiumViewModel(subscribeApi: subscribeApi)
+            return GoPremiumVC(viewModel: viewModel, coordinator: coordinator)
+        
         }
     }
 }

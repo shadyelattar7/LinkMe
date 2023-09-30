@@ -68,7 +68,7 @@ extension LinkMeViewController {
     }
     
     private func subscribeToTopUsersData() {
-        viewModel.topUsersObservable.bind(to: topUsersTableView.rx.items(cellIdentifier: String(describing: TopUserTableViewCell.self), cellType: TopUserTableViewCell.self)) { [weak self] (row, item, cell) in
+        viewModel.users.bind(to: topUsersTableView.rx.items(cellIdentifier: String(describing: TopUserTableViewCell.self), cellType: TopUserTableViewCell.self)) { [weak self] (row, item, cell) in
 
             guard let self = self else { return }
             self.configureTableViewHeight()
@@ -79,12 +79,12 @@ extension LinkMeViewController {
 
     private func didSelectTopUserItem() {
         topUsersTableView.rx.itemSelected.subscribe { [weak self] indexPath in
-            guard let self = self else {return}
+            guard let self = self, let indexPath = indexPath.element else {return}
 
             // TODO: - Need to handle number of [Links, Following, Likes]
             
-            let user = self.viewModel.getUserModel(indexPath.row)
-            let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.userName, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0)
+            let user = self.viewModel.users.value[indexPath.row]
+            let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.user_name, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0)
             
             let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .normal, userModel: userModel))
             self.present(vc, animated: true)

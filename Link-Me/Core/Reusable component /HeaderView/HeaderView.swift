@@ -17,6 +17,7 @@ class HeaderView: UIView {
     // MARK: - Properties
     
     var clickOnNotificationButton: ()->() = { }
+    var clickOnPurchasesButton: ()->() = { }
     
     //MARK: - init
     
@@ -39,6 +40,10 @@ class HeaderView: UIView {
     
     @IBAction private func didTappedOnNotificationButton(_ sender: Any) {
         clickOnNotificationButton()
+    }
+    
+    @IBAction private func didTappedOnPurchasesButton(_ sender: Any) {
+        clickOnPurchasesButton()
     }
 }
 

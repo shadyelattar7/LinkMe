@@ -20,6 +20,7 @@ class MainNavigator: Navigator{
         case userCard(direction: UserCardDirection, userModel: UserCardModel)
         case newLink
         case notificationList
+        case purchases
         case beInTheTop(cardModel: BeInTopModel)
         
         //MARK: - Stories -
@@ -71,6 +72,9 @@ class MainNavigator: Navigator{
             
         case .notificationList:
             return NotificationListViewController()
+            
+        case .purchases:
+            return PurchasesViewController()
             
         case .beInTheTop(let cardModel):
             return BeInTopViewController(cardModel: cardModel)

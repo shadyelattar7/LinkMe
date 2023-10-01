@@ -27,6 +27,7 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
         configureTableView()
         subscribe()
         didTappedOnNotificationButton()
+        didTappedOnPurchasesButton()
         addTappedOnBeInTopView()
     }
     
@@ -56,6 +57,14 @@ extension LinkMeViewController {
         }
     }
     
+    private func didTappedOnPurchasesButton() {
+        headerView.clickOnPurchasesButton = { [weak self] in
+            guard let self = self else { return }
+            
+            self.coordinator.Main.navigate(for: .purchases)
+        }
+    }
+    
     private func addTappedOnBeInTopView() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedOnBeInTopView))
         tap.numberOfTapsRequired = 1
@@ -82,7 +91,7 @@ extension LinkMeViewController {
     }
     
     private func subscribeToTopUsersData() {
-        viewModel.users.bind(to: topUsersTableView.rx.items(cellIdentifier: String(describing: TopUserTableViewCell.self), cellType: TopUserTableViewCell.self)) { [weak self] (row, item, cell) in
+        viewModel.topUsersObservable.bind(to: topUsersTableView.rx.items(cellIdentifier: String(describing: TopUserTableViewCell.self), cellType: TopUserTableViewCell.self)) { [weak self] (row, item, cell) in
 
             guard let self = self else { return }
             self.configureTableViewHeight()
@@ -93,7 +102,7 @@ extension LinkMeViewController {
 
     private func didSelectTopUserItem() {
         topUsersTableView.rx.itemSelected.subscribe { [weak self] indexPath in
-            guard let self = self, let indexPath = indexPath.element else {return}
+            guard let self = self else { return }
 
             // TODO: - Need to handle number of [Links, Following, Likes]
             

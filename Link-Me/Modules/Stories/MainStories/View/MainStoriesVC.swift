@@ -23,6 +23,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchStories()
+        viewModel.ViewDidLoad()
     }
     
     //MARK: - Bind -
@@ -71,8 +72,12 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             
             if indexPath.row == 0{
                 print("Add Store")
-                self.getMedia()
                 
+                if UDHelper.fetchUserData?.canAddStory == 0{
+                    self.coordinator.Main.navigate(for: .FeaturesPremium,navigtorTypes: .present())
+                }else{
+                    self.getMedia()
+                }
             }else{
                 vc.indexPath = indexPath.row
                 vc.myStoriesDate = self.viewModel.storiesData

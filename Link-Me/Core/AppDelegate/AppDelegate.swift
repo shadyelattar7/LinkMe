@@ -9,7 +9,6 @@ import UIKit
 import IQKeyboardManagerSwift
 import MOLH
 
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable{
   

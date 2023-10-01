@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-
-
 protocol Coordinator{
     var Onboarding: OnboardingNavigator {get}
     var Auth: AuthNavigator {get}

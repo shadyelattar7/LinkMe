@@ -18,20 +18,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ef1-aU-QMM" customClass="CircleImageView" customModule="Link_Me" customModuleProvider="target">
-                        <rect key="frame" x="15" y="27.666666666666671" width="40" height="40"/>
+                        <rect key="frame" x="15" y="33.666666666666664" width="40" height="39.999999999999993"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="Lr0-B7-Rq9"/>
                             <constraint firstAttribute="width" constant="40" id="byE-Qq-562"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enx-Ah-30e">
-                        <rect key="frame" x="67" y="37.333333333333336" width="231" height="20.333333333333336"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="67" y="45.333333333333336" width="239" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJH-fi-Tbp">
-                        <rect key="frame" x="310" y="32.666666666666664" width="30" height="30"/>
+                        <rect key="frame" x="318" y="38.666666666666664" width="30" height="29.999999999999993"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="iSO-0t-eQa"/>
                             <constraint firstAttribute="height" constant="30" id="odd-le-abz"/>
@@ -42,20 +42,29 @@
                             <action selector="deleteTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qXT-aN-V9z"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2B-Ea-21M">
+                        <rect key="frame" x="315" y="15" width="33" height="15.666666666666664"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="enx-Ah-30e" firstAttribute="leading" secondItem="Ef1-aU-QMM" secondAttribute="trailing" constant="12" id="4oM-qG-719"/>
-                    <constraint firstItem="Ef1-aU-QMM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DoE-VY-FEf"/>
+                    <constraint firstItem="Ef1-aU-QMM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="6.1666666666666714" id="DoE-VY-FEf"/>
                     <constraint firstItem="BJH-fi-Tbp" firstAttribute="leading" secondItem="enx-Ah-30e" secondAttribute="trailing" constant="12" id="NBK-2h-unE"/>
-                    <constraint firstAttribute="trailing" secondItem="BJH-fi-Tbp" secondAttribute="trailing" constant="20" id="SlP-AO-lwn"/>
+                    <constraint firstAttribute="trailing" secondItem="BJH-fi-Tbp" secondAttribute="trailing" constant="12" id="SlP-AO-lwn"/>
                     <constraint firstItem="Ef1-aU-QMM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="UAL-4i-1IJ"/>
                     <constraint firstItem="enx-Ah-30e" firstAttribute="centerY" secondItem="Ef1-aU-QMM" secondAttribute="centerY" id="UWw-F5-dIL"/>
-                    <constraint firstItem="BJH-fi-Tbp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dFt-Dj-Tbu"/>
+                    <constraint firstAttribute="trailing" secondItem="j2B-Ea-21M" secondAttribute="trailing" constant="12" id="a3M-E5-ANn"/>
+                    <constraint firstItem="BJH-fi-Tbp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="6.1666666666666572" id="dFt-Dj-Tbu"/>
+                    <constraint firstItem="BJH-fi-Tbp" firstAttribute="top" secondItem="j2B-Ea-21M" secondAttribute="bottom" constant="8" id="rEC-b5-g1F"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentLabel" destination="enx-Ah-30e" id="znh-0u-tQe"/>
+                <outlet property="datelabel" destination="j2B-Ea-21M" id="mdT-Tu-cPy"/>
                 <outlet property="userImage" destination="Ef1-aU-QMM" id="ve4-bT-nYB"/>
             </connections>
             <point key="canvasLocation" x="108.3969465648855" y="36.971830985915496"/>

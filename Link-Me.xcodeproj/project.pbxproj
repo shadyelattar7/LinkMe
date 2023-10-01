@@ -260,15 +260,31 @@
 		82FB795A2A19475B006644EE /* Madani Arabic Light 400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82FB79502A19475B006644EE /* Madani Arabic Light 400.ttf */; };
 		82FB795C2A194877006644EE /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82FB795B2A194876006644EE /* Poppins-Medium.ttf */; };
 		82FB79662A194B6F006644EE /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FB79652A194B6F006644EE /* UITextFieldEx.swift */; };
+		8A3AD2512AC59BC900BF8358 /* AddCommentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AD2502AC59BC900BF8358 /* AddCommentRequestModel.swift */; };
+		8A3AD2552AC5A77500BF8358 /* RemoveCommentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AD2542AC5A77500BF8358 /* RemoveCommentRequestModel.swift */; };
+		8A3AD2572AC63EE300BF8358 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3AD2562AC63EE300BF8358 /* StoreKit.framework */; };
+		8A3AD25C2AC64F3400BF8358 /* TestPremuimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AD25A2AC64F3400BF8358 /* TestPremuimViewController.swift */; };
+		8A3AD25D2AC64F3400BF8358 /* TestPremuimViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3AD25B2AC64F3400BF8358 /* TestPremuimViewController.xib */; };
 		8A3E17992AAFDB26007D6FE2 /* MediaPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E17972AAFDB26007D6FE2 /* MediaPreviewVC.swift */; };
 		8A3E179A2AAFDB26007D6FE2 /* MediaPreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3E17982AAFDB26007D6FE2 /* MediaPreviewVC.xib */; };
 		8A3E179D2AB080B5007D6FE2 /* MediaPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E179C2AB080B5007D6FE2 /* MediaPreviewViewModel.swift */; };
 		8A42EB962AC0CA1C009D8239 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A42EB942AC0CA1C009D8239 /* CommentCell.swift */; };
 		8A42EB972AC0CA1C009D8239 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A42EB952AC0CA1C009D8239 /* CommentCell.xib */; };
+		8A4B20E32AC653B10078F4E4 /* TestPremuimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B20E22AC653B10078F4E4 /* TestPremuimViewModel.swift */; };
+		8A4B20E52AC6FF700078F4E4 /* PKIAPHandlerAlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B20E42AC6FF700078F4E4 /* PKIAPHandlerAlertType.swift */; };
+		8A4B20E72AC702C70078F4E4 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B20E62AC702C70078F4E4 /* Configuration.storekit */; };
+		8A4B20EB2AC70EB80078F4E4 /* PurchasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B20E92AC70EB80078F4E4 /* PurchasesCell.swift */; };
+		8A4B20EC2AC70EB80078F4E4 /* PurchasesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B20EA2AC70EB80078F4E4 /* PurchasesCell.xib */; };
+		8A4B20F12AC86AC30078F4E4 /* SubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B20EF2AC86AC30078F4E4 /* SubscriptionCell.swift */; };
+		8A4B20F22AC86AC30078F4E4 /* SubscriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B20F02AC86AC30078F4E4 /* SubscriptionCell.xib */; };
+		8A4B20F52AC8DB7C0078F4E4 /* SupscriptionSubscribeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B20F42AC8DB7C0078F4E4 /* SupscriptionSubscribeRequestModel.swift */; };
+		8A4B20F92AC8DC0B0078F4E4 /* SubscribeTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B20F82AC8DC0B0078F4E4 /* SubscribeTarget.swift */; };
+		8A4B20FB2AC8DC1B0078F4E4 /* SubscribeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B20FA2AC8DC1B0078F4E4 /* SubscribeAPI.swift */; };
 		8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */; };
 		8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */; };
 		8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */; };
 		8A7516842A92920D00B0C6D5 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7516832A92920D00B0C6D5 /* UITextField+Extensions.swift */; };
+		8AF6F44E2AC23923002FB4E7 /* LikeStoryRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF6F44D2AC23923002FB4E7 /* LikeStoryRequestModel.swift */; };
 		8AF8CE4A2ABF49BD00676366 /* GoPremiumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8CE402ABF49BD00676366 /* GoPremiumViewModel.swift */; };
 		8AF8CE4B2ABF49BD00676366 /* GoPremiumVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF8CE422ABF49BD00676366 /* GoPremiumVC.xib */; };
 		8AF8CE4C2ABF49BD00676366 /* GoPremiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8CE432ABF49BD00676366 /* GoPremiumVC.swift */; };
@@ -556,15 +572,31 @@
 		82FB79502A19475B006644EE /* Madani Arabic Light 400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Madani Arabic Light 400.ttf"; sourceTree = "<group>"; };
 		82FB795B2A194876006644EE /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		82FB79652A194B6F006644EE /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
+		8A3AD2502AC59BC900BF8358 /* AddCommentRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentRequestModel.swift; sourceTree = "<group>"; };
+		8A3AD2542AC5A77500BF8358 /* RemoveCommentRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCommentRequestModel.swift; sourceTree = "<group>"; };
+		8A3AD2562AC63EE300BF8358 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8A3AD25A2AC64F3400BF8358 /* TestPremuimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPremuimViewController.swift; sourceTree = "<group>"; };
+		8A3AD25B2AC64F3400BF8358 /* TestPremuimViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestPremuimViewController.xib; sourceTree = "<group>"; };
 		8A3E17972AAFDB26007D6FE2 /* MediaPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewVC.swift; sourceTree = "<group>"; };
 		8A3E17982AAFDB26007D6FE2 /* MediaPreviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaPreviewVC.xib; sourceTree = "<group>"; };
 		8A3E179C2AB080B5007D6FE2 /* MediaPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewViewModel.swift; sourceTree = "<group>"; };
 		8A42EB942AC0CA1C009D8239 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		8A42EB952AC0CA1C009D8239 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		8A4B20E22AC653B10078F4E4 /* TestPremuimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPremuimViewModel.swift; sourceTree = "<group>"; };
+		8A4B20E42AC6FF700078F4E4 /* PKIAPHandlerAlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKIAPHandlerAlertType.swift; sourceTree = "<group>"; };
+		8A4B20E62AC702C70078F4E4 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		8A4B20E92AC70EB80078F4E4 /* PurchasesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesCell.swift; sourceTree = "<group>"; };
+		8A4B20EA2AC70EB80078F4E4 /* PurchasesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchasesCell.xib; sourceTree = "<group>"; };
+		8A4B20EF2AC86AC30078F4E4 /* SubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCell.swift; sourceTree = "<group>"; };
+		8A4B20F02AC86AC30078F4E4 /* SubscriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionCell.xib; sourceTree = "<group>"; };
+		8A4B20F42AC8DB7C0078F4E4 /* SupscriptionSubscribeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupscriptionSubscribeRequestModel.swift; sourceTree = "<group>"; };
+		8A4B20F82AC8DC0B0078F4E4 /* SubscribeTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeTarget.swift; sourceTree = "<group>"; };
+		8A4B20FA2AC8DC1B0078F4E4 /* SubscribeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeAPI.swift; sourceTree = "<group>"; };
 		8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
 		8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreviewCell.swift; sourceTree = "<group>"; };
 		8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPreviewCell.xib; sourceTree = "<group>"; };
 		8A7516832A92920D00B0C6D5 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		8AF6F44D2AC23923002FB4E7 /* LikeStoryRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeStoryRequestModel.swift; sourceTree = "<group>"; };
 		8AF8CE402ABF49BD00676366 /* GoPremiumViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoPremiumViewModel.swift; sourceTree = "<group>"; };
 		8AF8CE422ABF49BD00676366 /* GoPremiumVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoPremiumVC.xib; sourceTree = "<group>"; };
 		8AF8CE432ABF49BD00676366 /* GoPremiumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoPremiumVC.swift; sourceTree = "<group>"; };
@@ -603,6 +635,7 @@
 				6B5F67D95E15147E4727506A /* Pods_Link_Me.framework in Frameworks */,
 				825557632A69822300E00AA5 /* AnimatedCollectionViewLayout in Frameworks */,
 				82C94ECD2A1E4AB0003FB504 /* CountryPicker in Frameworks */,
+				8A3AD2572AC63EE300BF8358 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +645,7 @@
 		11AC8CDCD4EA54DF942F566C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A3AD2562AC63EE300BF8358 /* StoreKit.framework */,
 				E1B07EE9E042E4890BEFD488 /* Pods_Link_Me.framework */,
 			);
 			name = Frameworks;
@@ -744,6 +778,9 @@
 				79FA7F482ABB30350043B6BA /* AddNewStoryRequestModel.swift */,
 				79FA7F682ABDE22A0043B6BA /* DeleteStoryRequestModel.swift */,
 				794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */,
+				8AF6F44D2AC23923002FB4E7 /* LikeStoryRequestModel.swift */,
+				8A3AD2502AC59BC900BF8358 /* AddCommentRequestModel.swift */,
+				8A3AD2542AC5A77500BF8358 /* RemoveCommentRequestModel.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -898,6 +935,7 @@
 				82CB13C02A51F47300439CD7 /* Feedback */,
 				827356932A59FF5800634EA4 /* DeleteAccount */,
 				79FA7F472ABB30140043B6BA /* Stories */,
+				8A4B20F32AC8DB210078F4E4 /* Subscribe */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -1610,6 +1648,7 @@
 				82CAF04D2A3E042F00311600 /* Profile */,
 				793F55CB2ABF666B004635C5 /* LinkMe */,
 				79FA7F4A2ABB30960043B6BA /* Stories */,
+				8A4B20F72AC8DBF20078F4E4 /* Subscribe */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1663,6 +1702,7 @@
 		82A2FC252A0B9B2300BA7BD3 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				8A4B20E62AC702C70078F4E4 /* Configuration.storekit */,
 				82A2FC182A0B9A1C00BA7BD3 /* Info.plist */,
 			);
 			path = Configuration;
@@ -2357,6 +2397,26 @@
 			path = Arabic;
 			sourceTree = "<group>";
 		};
+		8A3AD2582AC64F1500BF8358 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				8A4B20E82AC70EA10078F4E4 /* Cell */,
+				8A4B20E12AC653A40078F4E4 /* ViewModel */,
+				8A3AD2592AC64F1D00BF8358 /* View */,
+				8A4B20E42AC6FF700078F4E4 /* PKIAPHandlerAlertType.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		8A3AD2592AC64F1D00BF8358 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A3AD25A2AC64F3400BF8358 /* TestPremuimViewController.swift */,
+				8A3AD25B2AC64F3400BF8358 /* TestPremuimViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8A3E17952AAFD994007D6FE2 /* MediaPreview */ = {
 			isa = PBXGroup;
 			children = (
@@ -2383,9 +2443,53 @@
 			path = "ViewModel ";
 			sourceTree = "<group>";
 		};
+		8A4B20E12AC653A40078F4E4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8A4B20E22AC653B10078F4E4 /* TestPremuimViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8A4B20E82AC70EA10078F4E4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A4B20E92AC70EB80078F4E4 /* PurchasesCell.swift */,
+				8A4B20EA2AC70EB80078F4E4 /* PurchasesCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8A4B20EE2AC86A810078F4E4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A4B20EF2AC86AC30078F4E4 /* SubscriptionCell.swift */,
+				8A4B20F02AC86AC30078F4E4 /* SubscriptionCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8A4B20F32AC8DB210078F4E4 /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				8A4B20F42AC8DB7C0078F4E4 /* SupscriptionSubscribeRequestModel.swift */,
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		8A4B20F72AC8DBF20078F4E4 /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				8A4B20F82AC8DC0B0078F4E4 /* SubscribeTarget.swift */,
+				8A4B20FA2AC8DC1B0078F4E4 /* SubscribeAPI.swift */,
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
 		8AF8CE3D2ABF49BD00676366 /* Purchases */ = {
 			isa = PBXGroup;
 			children = (
+				8A3AD2582AC64F1500BF8358 /* Test */,
 				8AF8CE3E2ABF49BD00676366 /* GoPremium */,
 				8AF8CE442ABF49BD00676366 /* FeaturesPremium */,
 			);
@@ -2395,6 +2499,7 @@
 		8AF8CE3E2ABF49BD00676366 /* GoPremium */ = {
 			isa = PBXGroup;
 			children = (
+				8A4B20EE2AC86A810078F4E4 /* Cell */,
 				8AF8CE3F2ABF49BD00676366 /* ViewModel */,
 				8AF8CE412ABF49BD00676366 /* View */,
 			);
@@ -2676,6 +2781,7 @@
 				A2DA71112AC1957B001BE903 /* BeInTopViewController.xib in Resources */,
 				8A3E179A2AAFDB26007D6FE2 /* MediaPreviewVC.xib in Resources */,
 				8255573C2A68C23A00E00AA5 /* StoryPreviewVC.xib in Resources */,
+				8A3AD25D2AC64F3400BF8358 /* TestPremuimViewController.xib in Resources */,
 				82952B962A479F8D00548634 /* OtherSeeCell.xib in Resources */,
 				82DB7E162A1383A800F9096B /* EmailIsVerifiedViewController.xib in Resources */,
 				825557342A68B7BC00E00AA5 /* StoryCell.xib in Resources */,
@@ -2683,6 +2789,7 @@
 				8AF8CE4E2ABF49BD00676366 /* FeaturesPremiumVC.xib in Resources */,
 				82A2FC172A0B9A1C00BA7BD3 /* LaunchScreen.storyboard in Resources */,
 				82FB79542A19475B006644EE /* Madani Arabic Variable 400.ttf in Resources */,
+				8A4B20EC2AC70EB80078F4E4 /* PurchasesCell.xib in Resources */,
 				825CF3BC2A4E642300BA5DDA /* FeedbackVC.xib in Resources */,
 				82FB795C2A194877006644EE /* Poppins-Medium.ttf in Resources */,
 				8273567A2A59CB1600634EA4 /* RemoveReasonCell.xib in Resources */,
@@ -2712,6 +2819,7 @@
 				82FB79512A19475B006644EE /* Madani Arabic Bold 400.ttf in Resources */,
 				794B890B2ABE10B700FE5F0D /* ReportStoryViewController.xib in Resources */,
 				82A2FC5F2A0BB05D00BA7BD3 /* OnboardingViewController.xib in Resources */,
+				8A4B20E72AC702C70078F4E4 /* Configuration.storekit in Resources */,
 				A2190C542AC05D130031F1D6 /* ReactCardView.xib in Resources */,
 				825CF3B32A4DC4D700BA5DDA /* SendEmailVC.xib in Resources */,
 				82A2FC142A0B9A1C00BA7BD3 /* Assets.xcassets in Resources */,
@@ -2728,6 +2836,7 @@
 				82AB6A822A115B380005DEF6 /* EnterCodeViewController.xib in Resources */,
 				82D914502A1028B7005FAF36 /* LoginViewController.xib in Resources */,
 				A2190C4A2AC044230031F1D6 /* UserCardViewController.xib in Resources */,
+				8A4B20F22AC86AC30078F4E4 /* SubscriptionCell.xib in Resources */,
 				82EDF6972A4FC883004D8071 /* CompanySupportVC.xib in Resources */,
 				82FB79552A19475B006644EE /* Madani Arabic Black 400.ttf in Resources */,
 				825CF3972A49DFDA00BA5DDA /* SupportVC.xib in Resources */,
@@ -2809,14 +2918,17 @@
 				7983B47A2AC0D31000F34A83 /* UserCardResources.swift in Sources */,
 				8A3E17992AAFDB26007D6FE2 /* MediaPreviewVC.swift in Sources */,
 				A2190C492AC044230031F1D6 /* UserCardViewController.swift in Sources */,
+				8A4B20F12AC86AC30078F4E4 /* SubscriptionCell.swift in Sources */,
 				82FB79342A16FF45006644EE /* LocalDataManager.swift in Sources */,
 				82D914392A102459005FAF36 /* Validatable.swift in Sources */,
 				82AB6A812A115B380005DEF6 /* EnterCodeViewController.swift in Sources */,
 				82C94EDA2A1EB8E1003FB504 /* ForgetPasswordWorker.swift in Sources */,
 				825CF3992A49DFE800BA5DDA /* SupportViewModel.swift in Sources */,
+				8A3AD25C2AC64F3400BF8358 /* TestPremuimViewController.swift in Sources */,
 				8AF8CE4A2ABF49BD00676366 /* GoPremiumViewModel.swift in Sources */,
 				825CF3842A4919C100BA5DDA /* ChangeEmailRequestModel.swift in Sources */,
 				8252A6A62A0FA8C6004989A1 /* MainButton.swift in Sources */,
+				8A4B20F52AC8DB7C0078F4E4 /* SupscriptionSubscribeRequestModel.swift in Sources */,
 				82952B872A472B0000548634 /* MyAccountWorker.swift in Sources */,
 				82FB793B2A17E907006644EE /* LoginWorkering.swift in Sources */,
 				82A2FC472A0B9D1600BA7BD3 /* UICollectionView+Helper.swift in Sources */,
@@ -2824,6 +2936,7 @@
 				82CAF0492A3CB9F700311600 /* CompleteProfileViewModel.swift in Sources */,
 				82CAF0522A3E04D600311600 /* ProfileWorking.swift in Sources */,
 				82D9143D2A102459005FAF36 /* EmailValidator.swift in Sources */,
+				8AF6F44E2AC23923002FB4E7 /* LikeStoryRequestModel.swift in Sources */,
 				82A2FC7C2A0BDA2D00BA7BD3 /* MainNavigator.swift in Sources */,
 				827B83932A10ECA500E634A9 /* String+Extension.swift in Sources */,
 				829A79572A1281DA001A137B /* CreatePasswordViewController.swift in Sources */,
@@ -2832,6 +2945,7 @@
 				82FB79332A16FF45006644EE /* LocalStorageManager.swift in Sources */,
 				8AF8CE4D2ABF49BD00676366 /* FeaturesPremiumViewModel.swift in Sources */,
 				82FB79392A17E8F9006644EE /* LoginWorker.swift in Sources */,
+				8A3AD2552AC5A77500BF8358 /* RemoveCommentRequestModel.swift in Sources */,
 				79FA7F562ABC66880043B6BA /* String+PathExtension.swift in Sources */,
 				82A2FC6E2A0BCBE400BA7BD3 /* OnboardingCell.swift in Sources */,
 				82952B9F2A47B9CD00548634 /* ChangePasswordViewModel.swift in Sources */,
@@ -2858,6 +2972,7 @@
 				822AD2CE2A140F1C0037D8E0 /* BaseResponse.swift in Sources */,
 				82A2FC812A0BDC6700BA7BD3 /* TabBarController.swift in Sources */,
 				823BDC5B2A3B2FC600171C7E /* SettingCell.swift in Sources */,
+				8A3AD2512AC59BC900BF8358 /* AddCommentRequestModel.swift in Sources */,
 				8255575A2A6975F800E00AA5 /* StoryPreviewCell.swift in Sources */,
 				82DB7E152A1383A800F9096B /* EmailIsVerifiedViewController.swift in Sources */,
 				825CF3AC2A4DC2A100BA5DDA /* MyTickets.swift in Sources */,
@@ -2900,6 +3015,7 @@
 				793F55C72ABF6226004635C5 /* BeInTopView.swift in Sources */,
 				82D914422A102459005FAF36 /* PasswordValidator.swift in Sources */,
 				82CAF04C2A3E020100311600 /* Countries.swift in Sources */,
+				8A4B20FB2AC8DC1B0078F4E4 /* SubscribeAPI.swift in Sources */,
 				82CAF0462A3CB9EE00311600 /* CompleteProfileVC.swift in Sources */,
 				A2190C4D2AC044390031F1D6 /* UserCardViewModel.swift in Sources */,
 				82FB79362A17E860006644EE /* Login.swift in Sources */,
@@ -2909,6 +3025,7 @@
 				8252A6A82A0FDD14004989A1 /* OnboardingNavigator.swift in Sources */,
 				82D914432A102459005FAF36 /* RequiredFieldValidator.swift in Sources */,
 				82FB79182A164168006644EE /* LoadingManager.swift in Sources */,
+				8A4B20EB2AC70EB80078F4E4 /* PurchasesCell.swift in Sources */,
 				82D9143E2A102459005FAF36 /* ConfirmEmailValidator.swift in Sources */,
 				8252A6B42A102204004989A1 /* UIView+Extensions.swift in Sources */,
 				82CB13C42A53A82000439CD7 /* SplashVC.swift in Sources */,
@@ -2917,6 +3034,7 @@
 				82FB79192A164168006644EE /* Support.swift in Sources */,
 				825557332A68B7BC00E00AA5 /* StoryCell.swift in Sources */,
 				82CB13C22A51F49600439CD7 /* FeedbackRequestModel.swift in Sources */,
+				8A4B20E32AC653B10078F4E4 /* TestPremuimViewModel.swift in Sources */,
 				A2190C712AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift in Sources */,
 				82A2FC412A0B9D1600BA7BD3 /* NibLoadingView.swift in Sources */,
 				82C94ECA2A1D30D1003FB504 /* LocalizationManager.swift in Sources */,
@@ -2961,6 +3079,7 @@
 				A2190C6B2AC0A8570031F1D6 /* NotificationListViewController.swift in Sources */,
 				82952B852A472AF500548634 /* MyAccountWorking.swift in Sources */,
 				827356752A59C65500634EA4 /* RemoveAccReason.swift in Sources */,
+				8A4B20F92AC8DC0B0078F4E4 /* SubscribeTarget.swift in Sources */,
 				825CF3B52A4DC4E100BA5DDA /* SendEmailViewModel.swift in Sources */,
 				825CF3902A4953F000BA5DDA /* UIImageEx.swift in Sources */,
 				82A2FC712A0BD3B500BA7BD3 /* TargetType.swift in Sources */,
@@ -2968,6 +3087,7 @@
 				794B890A2ABE10B700FE5F0D /* ReportStoryViewController.swift in Sources */,
 				825CF3962A49DFDA00BA5DDA /* SupportVC.swift in Sources */,
 				793F55B82ABF4EA4004635C5 /* HeaderView.swift in Sources */,
+				8A4B20E52AC6FF700078F4E4 /* PKIAPHandlerAlertType.swift in Sources */,
 				827356702A59C37900634EA4 /* RemoveAccountReasonVC.swift in Sources */,
 				8292767C2A2D6133000F49E0 /* ProfileNotCompleteViewController.swift in Sources */,
 				82EDF6992A4FC89E004D8071 /* CompanySupportViewModel.swift in Sources */,
@@ -3154,7 +3274,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KQHYATWG2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3189,7 +3309,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KQHYATWG2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

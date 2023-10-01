@@ -27,7 +27,9 @@ struct User : Codable {
     let country : String?
     let sent_tickets : Int?
     let unread_tickets : Int?
-
+    let canAddStory: Int?
+    let diamonds: Int?
+    
     enum CodingKeys: String, CodingKey {
 
         case id = "id"
@@ -49,6 +51,8 @@ struct User : Codable {
         case country = "country"
         case sent_tickets = "sent_tickets"
         case unread_tickets = "unread_tickets"
+        case canAddStory = "canAddStory"
+        case diamonds = "diamonds"
     }
 
 }

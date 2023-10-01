@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - TopUserData
+
 struct TopUserData: Codable {
     let users: [User]?
     let stars: [Star]?

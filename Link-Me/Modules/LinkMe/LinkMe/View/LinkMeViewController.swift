@@ -82,7 +82,7 @@ extension LinkMeViewController {
     }
     
     private func subscribeToTopUsersData() {
-        viewModel.topUsersObservable.bind(to: topUsersTableView.rx.items(cellIdentifier: String(describing: TopUserTableViewCell.self), cellType: TopUserTableViewCell.self)) { [weak self] (row, item, cell) in
+        viewModel.users.bind(to: topUsersTableView.rx.items(cellIdentifier: String(describing: TopUserTableViewCell.self), cellType: TopUserTableViewCell.self)) { [weak self] (row, item, cell) in
 
             guard let self = self else { return }
             self.configureTableViewHeight()
@@ -93,7 +93,7 @@ extension LinkMeViewController {
 
     private func didSelectTopUserItem() {
         topUsersTableView.rx.itemSelected.subscribe { [weak self] indexPath in
-            guard let self = self else {return}
+            guard let self = self, let indexPath = indexPath.element else {return}
 
             // TODO: - Need to handle number of [Links, Following, Likes]
             

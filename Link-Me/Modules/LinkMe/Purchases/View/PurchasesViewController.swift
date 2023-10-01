@@ -15,6 +15,8 @@ class PurchasesViewController: UIViewController {
     @IBOutlet private weak var availableDiamondsView: UIView!
     @IBOutlet private weak var diamondView: UIView!
     @IBOutlet private weak var numberOfDiamondLabel: UILabel!
+    @IBOutlet private weak var mySubscriptionView: UIView!
+    @IBOutlet private weak var linkView: UIView!
     
     // MARK: - LifeCyele
     
@@ -36,6 +38,8 @@ extension PurchasesViewController: NavigationBarDelegate {
         headerView.configure(with: NavigationBarViewModel(navBarTitle: "Purchases"), and: self)
         availableDiamondsView.layer.cornerRadius = 8
         diamondView.makeCircleView()
+        mySubscriptionView.layer.cornerRadius = 8
+        linkView.makeCircleView()
     }
     
     func backButtonPressed() {

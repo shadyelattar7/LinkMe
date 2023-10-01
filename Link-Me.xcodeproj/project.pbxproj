@@ -27,6 +27,8 @@
 		794B89142ABE2B5A00FE5F0D /* StaticKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */; };
 		794B89172ABE2D8900FE5F0D /* BottomListSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */; };
 		7983B47A2AC0D31000F34A83 /* UserCardResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983B4792AC0D31000F34A83 /* UserCardResources.swift */; };
+		79D816242AC9E51D007B92DA /* CardStoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D816222AC9E51D007B92DA /* CardStoreCollectionViewCell.swift */; };
+		79D816252AC9E51D007B92DA /* CardStoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D816232AC9E51D007B92DA /* CardStoreCollectionViewCell.xib */; };
 		79FA7F422ABB24640043B6BA /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */; };
 		79FA7F432ABB24640043B6BA /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */; };
 		79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F452ABB26300043B6BA /* UIView+extension.swift */; };
@@ -336,6 +338,8 @@
 		794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticKeys.swift; sourceTree = "<group>"; };
 		794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomListSheetViewModel.swift; sourceTree = "<group>"; };
 		7983B4792AC0D31000F34A83 /* UserCardResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardResources.swift; sourceTree = "<group>"; };
+		79D816222AC9E51D007B92DA /* CardStoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		79D816232AC9E51D007B92DA /* CardStoreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardStoreCollectionViewCell.xib; sourceTree = "<group>"; };
 		79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		79FA7F452ABB26300043B6BA /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
@@ -682,6 +686,7 @@
 		793F55BB2ABF5059004635C5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				79D816212AC9E500007B92DA /* CardStoreCollectionViewCell */,
 				A2D1DA0F2AC997CF0057D61D /* NotificationItemTableViewCell */,
 				A2DA71122AC1A347001BE903 /* ChooseTimeToBeInTop */,
 				793F55BC2ABF5067004635C5 /* TopUserTableViewCell */,
@@ -764,6 +769,15 @@
 				7983B4792AC0D31000F34A83 /* UserCardResources.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		79D816212AC9E500007B92DA /* CardStoreCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				79D816222AC9E51D007B92DA /* CardStoreCollectionViewCell.swift */,
+				79D816232AC9E51D007B92DA /* CardStoreCollectionViewCell.xib */,
+			);
+			path = CardStoreCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		79FA7F3F2ABB24460043B6BA /* StoryCollectionViewCell */ = {
@@ -2789,6 +2803,7 @@
 				825039442A4133580006EAD3 /* Setting.json in Resources */,
 				822882952A0D1D4600019216 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				793F55C02ABF507E004635C5 /* TopUserTableViewCell.xib in Resources */,
+				79D816252AC9E51D007B92DA /* CardStoreCollectionViewCell.xib in Resources */,
 				822882972A0D1D4600019216 /* Poppins-ExtraLight.ttf in Resources */,
 				793F55BA2ABF4EAC004635C5 /* HeaderView.xib in Resources */,
 				829A79582A1281DA001A137B /* CreatePasswordViewController.xib in Resources */,
@@ -3016,6 +3031,7 @@
 				82D914402A102459005FAF36 /* CharCountValidator.swift in Sources */,
 				82A2FC342A0B9CF000BA7BD3 /* KeyboardStateManager.swift in Sources */,
 				82CAF0552A3E458800311600 /* CompleteProfile.swift in Sources */,
+				79D816242AC9E51D007B92DA /* CardStoreCollectionViewCell.swift in Sources */,
 				827ED7462A3A235C0056EE37 /* UserPhotoProfileView.swift in Sources */,
 				82CAF0662A3FC5FD00311600 /* EditProfileVC.swift in Sources */,
 				79FA7F492ABB30350043B6BA /* AddNewStoryRequestModel.swift in Sources */,

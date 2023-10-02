@@ -70,13 +70,16 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGp-qa-f55">
-                            <rect key="frame" x="278" y="708" width="70" height="70"/>
+                            <rect key="frame" x="278" y="649" width="70" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="KSo-P1-AQC"/>
                                 <constraint firstAttribute="height" constant="70" id="Su0-W5-eml"/>
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="linkeCircle"/>
+                            <connections>
+                                <action selector="didTappedOnSearchButton:" destination="-1" eventType="touchUpInside" id="kyR-2F-qBK"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

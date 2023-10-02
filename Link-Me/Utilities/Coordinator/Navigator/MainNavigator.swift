@@ -22,6 +22,7 @@ class MainNavigator: Navigator{
         case notificationList
         case purchases
         case beInTheTop(cardModel: BeInTopModel)
+        case letsGoSearch
         
         //MARK: - Stories -
         case MainStory
@@ -78,6 +79,9 @@ class MainNavigator: Navigator{
             
         case .beInTheTop(let cardModel):
             return BeInTopViewController(cardModel: cardModel)
+            
+        case .letsGoSearch:
+            return LetsSearchViewController()
             
             //MARK: - Stories -
             

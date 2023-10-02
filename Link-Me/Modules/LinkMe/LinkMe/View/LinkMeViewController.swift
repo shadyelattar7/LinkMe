@@ -38,6 +38,15 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
             self.heightOfTableViewConstraint.constant = self.topUsersTableView.contentSize.height + 120
         }
     }
+    
+    // MARK: - Actions
+    
+    @IBAction private func didTappedOnSearchButton(_ sender: Any) {
+        let vc = coordinator.Main.viewcontroller(for: .letsGoSearch)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
 }
 
 

@@ -88,7 +88,7 @@ extension PurchasesViewController: UICollectionViewDataSource, UICollectionViewD
         case diamondsStoreCollectionView:
             return 4
         default:
-            return 4
+            return 6
         }
     }
     

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LetsSearchViewController" customModule="Link_Me" customModuleProvider="target">
+            <connections>
+                <outlet property="letsGoButton" destination="LZQ-LE-WM7" id="Km4-2K-Jhl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchGroup" translatesAutoresizingMaskIntoConstraints="NO" id="FVR-Z3-CEZ">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4HZ-jB-bxl">
+                    <rect key="frame" x="34" y="446" width="325" height="145"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fW2-6A-kg6">
+                            <rect key="frame" x="45.666666666666686" y="0.0" width="234" height="85.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8h-ch-EVf">
+                                    <rect key="frame" x="0.0" y="0.0" width="234" height="52"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="37"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Me Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80a-Ba-Jvk">
+                                    <rect key="frame" x="25" y="52" width="183.66666666666666" height="33.666666666666657"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="24"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-o3-fQ0">
+                            <rect key="frame" x="22" y="105.66666666666663" width="281" height="39.333333333333343"/>
+                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZQ-LE-WM7">
+                    <rect key="frame" x="20" y="712" width="353" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="Dfh-yp-yPV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Lets Go!"/>
+                    <connections>
+                        <action selector="didTappedOnLetsGoButton:" destination="-1" eventType="touchUpInside" id="U2Y-io-QAw"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="mainColor"/>
+            <constraints>
+                <constraint firstItem="FVR-Z3-CEZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="28k-fs-3tO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LZQ-LE-WM7" secondAttribute="trailing" constant="20" id="CuH-l3-vhq"/>
+                <constraint firstItem="4HZ-jB-bxl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="M12-28-GbQ"/>
+                <constraint firstItem="FVR-Z3-CEZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OkR-TD-lHk"/>
+                <constraint firstAttribute="trailing" secondItem="4HZ-jB-bxl" secondAttribute="trailing" constant="34" id="QzA-U5-f24"/>
+                <constraint firstItem="LZQ-LE-WM7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Zw4-3p-Dh1"/>
+                <constraint firstItem="FVR-Z3-CEZ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="g9E-J7-d6F"/>
+                <constraint firstItem="4HZ-jB-bxl" firstAttribute="top" secondItem="FVR-Z3-CEZ" secondAttribute="bottom" constant="20" id="gQg-J4-2eg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LZQ-LE-WM7" secondAttribute="bottom" constant="50" id="neo-Km-0g1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FVR-Z3-CEZ" secondAttribute="trailing" id="oxd-c0-uW1"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="searchGroup" width="375" height="406"/>
+        <namedColor name="mainColor">
+            <color red="0.46274509803921571" green="0.30588235294117649" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

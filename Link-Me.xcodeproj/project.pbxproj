@@ -307,8 +307,10 @@
 		A2190C6C2AC0A8570031F1D6 /* NotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C6A2AC0A8570031F1D6 /* NotificationListViewController.xib */; };
 		A2190C712AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C6F2AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift */; };
 		A2190C722AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C702AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib */; };
-		A2B81F132ACAEFBA0070BED9 /* LetsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B81F112ACAEFBA0070BED9 /* LetsSearchViewController.swift */; };
-		A2B81F142ACAEFBA0070BED9 /* LetsSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2B81F122ACAEFBA0070BED9 /* LetsSearchViewController.xib */; };
+		A2B81F292ACB0A630070BED9 /* StartSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B81F272ACB0A630070BED9 /* StartSearchViewController.swift */; };
+		A2B81F2A2ACB0A630070BED9 /* StartSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2B81F282ACB0A630070BED9 /* StartSearchViewController.xib */; };
+		A2B81F2E2ACB0A820070BED9 /* LetsSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2B81F2C2ACB0A820070BED9 /* LetsSearchViewController.xib */; };
+		A2B81F2F2ACB0A820070BED9 /* LetsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B81F2D2ACB0A820070BED9 /* LetsSearchViewController.swift */; };
 		A2D1DA0D2AC994EE0057D61D /* SupscriptionSubscribeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D1DA0C2AC994EE0057D61D /* SupscriptionSubscribeRequestModel.swift */; };
 		A2D1DA132AC997FE0057D61D /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D1DA112AC997FE0057D61D /* PurchasesViewController.swift */; };
 		A2D1DA142AC997FE0057D61D /* PurchasesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2D1DA122AC997FE0057D61D /* PurchasesViewController.xib */; };
@@ -624,8 +626,10 @@
 		A2190C6A2AC0A8570031F1D6 /* NotificationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationListViewController.xib; sourceTree = "<group>"; };
 		A2190C6F2AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemTableViewCell.swift; sourceTree = "<group>"; };
 		A2190C702AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationItemTableViewCell.xib; sourceTree = "<group>"; };
-		A2B81F112ACAEFBA0070BED9 /* LetsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LetsSearchViewController.swift; path = ../../../../../../../LetsSearchViewController.swift; sourceTree = "<group>"; };
-		A2B81F122ACAEFBA0070BED9 /* LetsSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LetsSearchViewController.xib; path = ../../../../../../../LetsSearchViewController.xib; sourceTree = "<group>"; };
+		A2B81F272ACB0A630070BED9 /* StartSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartSearchViewController.swift; sourceTree = "<group>"; };
+		A2B81F282ACB0A630070BED9 /* StartSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartSearchViewController.xib; sourceTree = "<group>"; };
+		A2B81F2C2ACB0A820070BED9 /* LetsSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LetsSearchViewController.xib; sourceTree = "<group>"; };
+		A2B81F2D2ACB0A820070BED9 /* LetsSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsSearchViewController.swift; sourceTree = "<group>"; };
 		A2D1DA0C2AC994EE0057D61D /* SupscriptionSubscribeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupscriptionSubscribeRequestModel.swift; sourceTree = "<group>"; };
 		A2D1DA112AC997FE0057D61D /* PurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesViewController.swift; sourceTree = "<group>"; };
 		A2D1DA122AC997FE0057D61D /* PurchasesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchasesViewController.xib; sourceTree = "<group>"; };
@@ -1947,7 +1951,7 @@
 				A2190C5E2AC07A170031F1D6 /* NewLinkCard */,
 				A2190C682AC0A8440031F1D6 /* NotificationList */,
 				A2D1DA0E2AC997BE0057D61D /* Purchases */,
-				A2B81F0F2ACAEF370070BED9 /* LinkMeSearch */,
+				A2B81F262ACB0A2C0070BED9 /* Search */,
 			);
 			path = LinkMe;
 			sourceTree = "<group>";
@@ -2660,19 +2664,29 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A2B81F0F2ACAEF370070BED9 /* LinkMeSearch */ = {
+		A2B81F262ACB0A2C0070BED9 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				A2B81F102ACAEF7C0070BED9 /* LetsSearch */,
+				A2B81F302ACB0A8B0070BED9 /* LetsSearch */,
+				A2B81F2B2ACB0A6F0070BED9 /* StartSearch */,
 			);
-			path = LinkMeSearch;
+			path = Search;
 			sourceTree = "<group>";
 		};
-		A2B81F102ACAEF7C0070BED9 /* LetsSearch */ = {
+		A2B81F2B2ACB0A6F0070BED9 /* StartSearch */ = {
 			isa = PBXGroup;
 			children = (
-				A2B81F112ACAEFBA0070BED9 /* LetsSearchViewController.swift */,
-				A2B81F122ACAEFBA0070BED9 /* LetsSearchViewController.xib */,
+				A2B81F272ACB0A630070BED9 /* StartSearchViewController.swift */,
+				A2B81F282ACB0A630070BED9 /* StartSearchViewController.xib */,
+			);
+			path = StartSearch;
+			sourceTree = "<group>";
+		};
+		A2B81F302ACB0A8B0070BED9 /* LetsSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A2B81F2D2ACB0A820070BED9 /* LetsSearchViewController.swift */,
+				A2B81F2C2ACB0A820070BED9 /* LetsSearchViewController.xib */,
 			);
 			path = LetsSearch;
 			sourceTree = "<group>";
@@ -2841,6 +2855,7 @@
 				8A3AD25D2AC64F3400BF8358 /* TestPremuimViewController.xib in Resources */,
 				82952B962A479F8D00548634 /* OtherSeeCell.xib in Resources */,
 				82DB7E162A1383A800F9096B /* EmailIsVerifiedViewController.xib in Resources */,
+				A2B81F2E2ACB0A820070BED9 /* LetsSearchViewController.xib in Resources */,
 				825557342A68B7BC00E00AA5 /* StoryCell.xib in Resources */,
 				79FA7F5B2ABDC3B80043B6BA /* BottomListSheet.xib in Resources */,
 				8AF8CE4E2ABF49BD00676366 /* FeaturesPremiumVC.xib in Resources */,
@@ -2849,9 +2864,9 @@
 				8A4B20EC2AC70EB80078F4E4 /* PurchasesCell.xib in Resources */,
 				825CF3BC2A4E642300BA5DDA /* FeedbackVC.xib in Resources */,
 				82FB795C2A194877006644EE /* Poppins-Medium.ttf in Resources */,
-				A2B81F142ACAEFBA0070BED9 /* LetsSearchViewController.xib in Resources */,
 				8273567A2A59CB1600634EA4 /* RemoveReasonCell.xib in Resources */,
 				8228829E2A0D1D4600019216 /* Poppins-LightItalic.ttf in Resources */,
+				A2B81F2A2ACB0A630070BED9 /* StartSearchViewController.xib in Resources */,
 				822882962A0D1D4600019216 /* Poppins-Bold.ttf in Resources */,
 				827356902A59E72500634EA4 /* DeleteAccountVC.xib in Resources */,
 				82952B9D2A47B9B800548634 /* ChangePasswordVC.xib in Resources */,
@@ -2989,7 +3004,6 @@
 				82FB793B2A17E907006644EE /* LoginWorkering.swift in Sources */,
 				82A2FC472A0B9D1600BA7BD3 /* UICollectionView+Helper.swift in Sources */,
 				8250393E2A412F1B0006EAD3 /* SettingsVC.swift in Sources */,
-				A2B81F132ACAEFBA0070BED9 /* LetsSearchViewController.swift in Sources */,
 				82CAF0492A3CB9F700311600 /* CompleteProfileViewModel.swift in Sources */,
 				82CAF0522A3E04D600311600 /* ProfileWorking.swift in Sources */,
 				82D9143D2A102459005FAF36 /* EmailValidator.swift in Sources */,
@@ -3105,6 +3119,7 @@
 				82FB79272A16BB83006644EE /* RegisterWorker.swift in Sources */,
 				82A2FC0B2A0B9A1A00BA7BD3 /* AppDelegate.swift in Sources */,
 				827B839C2A11147400E634A9 /* VerifyEmailViewModel.swift in Sources */,
+				A2B81F292ACB0A630070BED9 /* StartSearchViewController.swift in Sources */,
 				79FA7F642ABDC72E0043B6BA /* UIColor+DesignSystem.swift in Sources */,
 				825CF3B22A4DC4D700BA5DDA /* SendEmailVC.swift in Sources */,
 				82FB79452A1939B9006644EE /* UIButtonEx.swift in Sources */,
@@ -3132,6 +3147,7 @@
 				8AF8CE4C2ABF49BD00676366 /* GoPremiumVC.swift in Sources */,
 				A2DA711C2AC1A790001BE903 /* UIView+Style.swift in Sources */,
 				82FB79292A16BB8F006644EE /* RegisterWorkering.swift in Sources */,
+				A2B81F2F2ACB0A820070BED9 /* LetsSearchViewController.swift in Sources */,
 				8252A6AD2A0FF072004989A1 /* UDKeys.swift in Sources */,
 				82469AAC2A19912900A47C5F /* Fonts.swift in Sources */,
 				825CF3A92A4D01EF00BA5DDA /* SupportCell.swift in Sources */,

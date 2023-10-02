@@ -23,6 +23,7 @@ class MainNavigator: Navigator{
         case purchases
         case beInTheTop(cardModel: BeInTopModel)
         case letsGoSearch
+        case startSearch
         
         //MARK: - Stories -
         case MainStory
@@ -81,7 +82,10 @@ class MainNavigator: Navigator{
             return BeInTopViewController(cardModel: cardModel)
             
         case .letsGoSearch:
-            return LetsSearchViewController()
+            return LetsSearchViewController(coordinator: self.coordinator)
+            
+        case .startSearch:
+            return StartSearchViewController(coordinator: self.coordinator)
             
             //MARK: - Stories -
             

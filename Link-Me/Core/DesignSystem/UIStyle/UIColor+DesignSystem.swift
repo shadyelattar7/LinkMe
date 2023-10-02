@@ -33,4 +33,8 @@ extension UIColor {
     static var lightYellow: UIColor {
         return UIColor(named: "lightYellow")!
     }
+    
+    static var strongGray: UIColor {
+        return UIColor(named: "strongGray")!
+    }
 }

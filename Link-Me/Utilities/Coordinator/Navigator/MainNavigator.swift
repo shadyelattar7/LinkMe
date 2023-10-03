@@ -89,7 +89,7 @@ class MainNavigator: Navigator{
             return StartSearchViewController(coordinator: self.coordinator)
             
         case .searchType:
-            return SearchTypeViewController()
+            return SearchTypeViewController(coordinator: coordinator)
             
             //MARK: - Stories -
             

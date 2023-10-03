@@ -16,11 +16,40 @@ class SearchTypeViewController: UIViewController {
     @IBOutlet private weak var startNormalSearchButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     
+    // MARK: - Properties
+    
+    private let coordinator: Coordinator
+    
+    // MARK: - Init
+    
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction private func didTappedOnAdvancedSearchButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction private func didTappedOnNormalSearchButton(_ sender: Any) {
+    }
+    
+    @IBAction private func didTappedOnCancelButton(_ sender: Any) {
+        coordinator.start()
+//        dismiss(animated: true)
     }
 }
 

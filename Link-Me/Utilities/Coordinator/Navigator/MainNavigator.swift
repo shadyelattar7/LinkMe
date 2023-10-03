@@ -25,6 +25,7 @@ class MainNavigator: Navigator{
         case letsGoSearch
         case startSearch
         case searchType
+        case filterSearch
         
         //MARK: - Stories -
         case MainStory
@@ -83,13 +84,17 @@ class MainNavigator: Navigator{
             return BeInTopViewController(cardModel: cardModel)
             
         case .letsGoSearch:
-            return LetsSearchViewController(coordinator: self.coordinator)
+            return LetsSearchViewController(coordinator: coordinator)
             
         case .startSearch:
-            return StartSearchViewController(coordinator: self.coordinator)
+            return StartSearchViewController(coordinator: coordinator)
             
         case .searchType:
             return SearchTypeViewController(coordinator: coordinator)
+            
+        case .filterSearch:
+            let viewModel = FilterSearchViewModel()
+            return FilterSearchViewController(viewModel: viewModel, coordinator: coordinator)
             
             //MARK: - Stories -
             

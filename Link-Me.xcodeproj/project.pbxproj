@@ -27,6 +27,13 @@
 		794B89142ABE2B5A00FE5F0D /* StaticKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */; };
 		794B89172ABE2D8900FE5F0D /* BottomListSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */; };
 		7983B47A2AC0D31000F34A83 /* UserCardResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983B4792AC0D31000F34A83 /* UserCardResources.swift */; };
+		79D6105C2ACC8ACB00961837 /* FilterSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6105A2ACC8ACB00961837 /* FilterSearchViewController.swift */; };
+		79D6105D2ACC8ACB00961837 /* FilterSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D6105B2ACC8ACB00961837 /* FilterSearchViewController.xib */; };
+		79D610612ACC92D100961837 /* FilterSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D610602ACC92D100961837 /* FilterSearchViewModel.swift */; };
+		79D610642ACC992700961837 /* AgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D610632ACC992700961837 /* AgeView.xib */; };
+		79D610662ACC992B00961837 /* AgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D610652ACC992B00961837 /* AgeView.swift */; };
+		79D6106B2ACC9A5E00961837 /* AgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D610692ACC9A5E00961837 /* AgeCollectionViewCell.swift */; };
+		79D6106C2ACC9A5E00961837 /* AgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D6106A2ACC9A5E00961837 /* AgeCollectionViewCell.xib */; };
 		79D816242AC9E51D007B92DA /* CardStoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D816222AC9E51D007B92DA /* CardStoreCollectionViewCell.swift */; };
 		79D816252AC9E51D007B92DA /* CardStoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D816232AC9E51D007B92DA /* CardStoreCollectionViewCell.xib */; };
 		79FA7F422ABB24640043B6BA /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */; };
@@ -344,6 +351,13 @@
 		794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticKeys.swift; sourceTree = "<group>"; };
 		794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomListSheetViewModel.swift; sourceTree = "<group>"; };
 		7983B4792AC0D31000F34A83 /* UserCardResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardResources.swift; sourceTree = "<group>"; };
+		79D6105A2ACC8ACB00961837 /* FilterSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSearchViewController.swift; sourceTree = "<group>"; };
+		79D6105B2ACC8ACB00961837 /* FilterSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSearchViewController.xib; sourceTree = "<group>"; };
+		79D610602ACC92D100961837 /* FilterSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSearchViewModel.swift; sourceTree = "<group>"; };
+		79D610632ACC992700961837 /* AgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeView.xib; sourceTree = "<group>"; };
+		79D610652ACC992B00961837 /* AgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeView.swift; sourceTree = "<group>"; };
+		79D610692ACC9A5E00961837 /* AgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeCollectionViewCell.swift; sourceTree = "<group>"; };
+		79D6106A2ACC9A5E00961837 /* AgeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeCollectionViewCell.xib; sourceTree = "<group>"; };
 		79D816222AC9E51D007B92DA /* CardStoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		79D816232AC9E51D007B92DA /* CardStoreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardStoreCollectionViewCell.xib; sourceTree = "<group>"; };
 		79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -781,6 +795,59 @@
 				7983B4792AC0D31000F34A83 /* UserCardResources.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		79D610592ACC8A8300961837 /* FilterSearch */ = {
+			isa = PBXGroup;
+			children = (
+				79D6105F2ACC92C000961837 /* ViewModel */,
+				79D6105E2ACC92BA00961837 /* View */,
+			);
+			path = FilterSearch;
+			sourceTree = "<group>";
+		};
+		79D6105E2ACC92BA00961837 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79D6105A2ACC8ACB00961837 /* FilterSearchViewController.swift */,
+				79D6105B2ACC8ACB00961837 /* FilterSearchViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79D6105F2ACC92C000961837 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				79D610602ACC92D100961837 /* FilterSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		79D610622ACC991200961837 /* AgeView */ = {
+			isa = PBXGroup;
+			children = (
+				79D610682ACC9A4C00961837 /* Cell */,
+				79D610672ACC9A4800961837 /* View */,
+			);
+			path = AgeView;
+			sourceTree = "<group>";
+		};
+		79D610672ACC9A4800961837 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79D610632ACC992700961837 /* AgeView.xib */,
+				79D610652ACC992B00961837 /* AgeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79D610682ACC9A4C00961837 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79D610692ACC9A5E00961837 /* AgeCollectionViewCell.swift */,
+				79D6106A2ACC9A5E00961837 /* AgeCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		79D816212AC9E500007B92DA /* CardStoreCollectionViewCell */ = {
@@ -1922,6 +1989,7 @@
 		82A2FC602A0BC5DF00BA7BD3 /* Reusable component  */ = {
 			isa = PBXGroup;
 			children = (
+				79D610622ACC991200961837 /* AgeView */,
 				A2190C592AC076450031F1D6 /* LinkUsersImageView */,
 				A2190C4E2AC045ED0031F1D6 /* reactView */,
 				793F55C32ABF620C004635C5 /* BeInTopView */,
@@ -2683,6 +2751,7 @@
 				A2B81F302ACB0A8B0070BED9 /* LetsSearch */,
 				A2B81F2B2ACB0A6F0070BED9 /* StartSearch */,
 				A22B9F492ACC2E7A007D224F /* SearchType */,
+				79D610592ACC8A8300961837 /* FilterSearch */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -2843,6 +2912,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D610642ACC992700961837 /* AgeView.xib in Resources */,
 				79FA7F612ABDC3ED0043B6BA /* ItemListTableViewCell.xib in Resources */,
 				82C0E3A12A6768B6008B72ED /* MainStoriesVC.xib in Resources */,
 				82FB795A2A19475B006644EE /* Madani Arabic Light 400.ttf in Resources */,
@@ -2877,6 +2947,7 @@
 				82A2FC172A0B9A1C00BA7BD3 /* LaunchScreen.storyboard in Resources */,
 				82FB79542A19475B006644EE /* Madani Arabic Variable 400.ttf in Resources */,
 				8A4B20EC2AC70EB80078F4E4 /* PurchasesCell.xib in Resources */,
+				79D6105D2ACC8ACB00961837 /* FilterSearchViewController.xib in Resources */,
 				825CF3BC2A4E642300BA5DDA /* FeedbackVC.xib in Resources */,
 				82FB795C2A194877006644EE /* Poppins-Medium.ttf in Resources */,
 				8273567A2A59CB1600634EA4 /* RemoveReasonCell.xib in Resources */,
@@ -2907,6 +2978,7 @@
 				82FB79512A19475B006644EE /* Madani Arabic Bold 400.ttf in Resources */,
 				794B890B2ABE10B700FE5F0D /* ReportStoryViewController.xib in Resources */,
 				82A2FC5F2A0BB05D00BA7BD3 /* OnboardingViewController.xib in Resources */,
+				79D6106C2ACC9A5E00961837 /* AgeCollectionViewCell.xib in Resources */,
 				A2190C542AC05D130031F1D6 /* ReactCardView.xib in Resources */,
 				825CF3B32A4DC4D700BA5DDA /* SendEmailVC.xib in Resources */,
 				82A2FC142A0B9A1C00BA7BD3 /* Assets.xcassets in Resources */,
@@ -3024,9 +3096,11 @@
 				82D9143D2A102459005FAF36 /* EmailValidator.swift in Sources */,
 				8AF6F44E2AC23923002FB4E7 /* LikeStoryRequestModel.swift in Sources */,
 				82A2FC7C2A0BDA2D00BA7BD3 /* MainNavigator.swift in Sources */,
+				79D610662ACC992B00961837 /* AgeView.swift in Sources */,
 				827B83932A10ECA500E634A9 /* String+Extension.swift in Sources */,
 				829A79572A1281DA001A137B /* CreatePasswordViewController.swift in Sources */,
 				A2190C652AC09D6A0031F1D6 /* UIButton+Style.swift in Sources */,
+				79D610612ACC92D100961837 /* FilterSearchViewModel.swift in Sources */,
 				825039412A412F250006EAD3 /* SettingsViewModel.swift in Sources */,
 				82FB79332A16FF45006644EE /* LocalStorageManager.swift in Sources */,
 				8AF8CE4D2ABF49BD00676366 /* FeaturesPremiumViewModel.swift in Sources */,
@@ -3184,6 +3258,7 @@
 				8292767C2A2D6133000F49E0 /* ProfileNotCompleteViewController.swift in Sources */,
 				82EDF6992A4FC89E004D8071 /* CompanySupportViewModel.swift in Sources */,
 				82D914372A102459005FAF36 /* ValidatorType.swift in Sources */,
+				79D6105C2ACC8ACB00961837 /* FilterSearchViewController.swift in Sources */,
 				793F55CD2ABF667D004635C5 /* LinkMeTarget.swift in Sources */,
 				82AB6A8D2A1219310005DEF6 /* RegisterViewModel.swift in Sources */,
 				827ED7422A3A20D30056EE37 /* ProfileVC.swift in Sources */,
@@ -3192,6 +3267,7 @@
 				82A2FC8A2A0BE22200BA7BD3 /* LinkMeViewModel.swift in Sources */,
 				79FA7F542ABB541E0043B6BA /* UIImageView+SDWebImage.swift in Sources */,
 				82952B952A479F8D00548634 /* OtherSeeCell.swift in Sources */,
+				79D6106B2ACC9A5E00961837 /* AgeCollectionViewCell.swift in Sources */,
 				794B89142ABE2B5A00FE5F0D /* StaticKeys.swift in Sources */,
 				A2190C562AC05D220031F1D6 /* ReactCardView.swift in Sources */,
 				8AF8CE4F2ABF49BD00676366 /* FeaturesPremiumVC.swift in Sources */,

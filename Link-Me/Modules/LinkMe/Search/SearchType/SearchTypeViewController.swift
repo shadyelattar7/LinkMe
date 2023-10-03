@@ -41,6 +41,9 @@ class SearchTypeViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction private func didTappedOnAdvancedSearchButton(_ sender: Any) {
+        let vc = coordinator.Main.viewcontroller(for: .filterSearch)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     
@@ -57,7 +60,7 @@ class SearchTypeViewController: UIViewController {
 
 extension SearchTypeViewController {
     private func configureUI() {
-        parentView.layer.cornerRadius = 8
+        parentView.layer.cornerRadius = 12
         startAdvancedSearchButton.applyDefaultStyle(cornerRadius: 8, backgroundColor: .mainColor, textColor: .white)
         startAdvancedSearchButton.centerTextAndImage(spacing: -8)
         startNormalSearchButton.applyBorderStyle(borderColor: .strongGray, borderWidth: 2, cornerRadius: 8, textColor: .strongGray)

@@ -52,8 +52,6 @@ extension FilterSearchViewModel {
             case .failure(let error):
                 let error = error.userInfo["NSLocalizedDescription"] as! String
                 self.errorMessage.onNext(error)
-//                ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
-//                print("ERROR: \(error)")
             }
         }).disposed(by: disposedBag)
     }

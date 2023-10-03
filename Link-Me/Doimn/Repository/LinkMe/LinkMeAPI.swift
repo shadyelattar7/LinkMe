@@ -14,10 +14,19 @@ protocol LinkMeAPIProtocol {
     /// - Parameters:
     /// - Returns: TopUserData.
     func fetchTopUsers() -> Observable<Result<BaseResponseGen<TopUserData>, NSError>>
+    
+    /// it is the method used to searching for users
+    /// - Parameters:
+    /// - Returns: users.
+    func searchingForUsers(model: SearchRequestModel?) -> Observable<Result<BaseResponseGen<[User]>, NSError>>
 }
 
 class LinkMeAPI: APIClient<LinkMeTarget>, LinkMeAPIProtocol {
     func fetchTopUsers() -> Observable<Result<BaseResponseGen<TopUserData>, NSError>> {
         self.performRequest(target: .topUsers)
+    }
+    
+    func searchingForUsers(model: SearchRequestModel?) -> Observable<Result<BaseResponseGen<[User]>, NSError>> {
+        self.performRequest(target: .searchingForUsers(Parameters: model), requestModel: model)
     }
 }

@@ -26,6 +26,7 @@ class MainNavigator: Navigator{
         case startSearch
         case searchType
         case filterSearch
+        case SearchingForUsers(requestModel: SearchRequestModel?)
         
         //MARK: - Stories -
         case MainStory
@@ -95,6 +96,10 @@ class MainNavigator: Navigator{
         case .filterSearch:
             let viewModel = FilterSearchViewModel()
             return FilterSearchViewController(viewModel: viewModel, coordinator: coordinator)
+            
+        case .SearchingForUsers(let model):
+            let viewModel = SearchingForUsersViewModel(requestModel: model)
+            return SearchingForUsersViewController(viewModel: viewModel, coordinator: coordinator)
             
             //MARK: - Stories -
             

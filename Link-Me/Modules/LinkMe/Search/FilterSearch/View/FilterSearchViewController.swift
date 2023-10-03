@@ -32,10 +32,10 @@ class FilterSearchViewController: BaseWireFrame<FilterSearchViewModel> {
     
     // MARK: Properties
     
-    private var age: String?
+    private var age: Int?
     private let picker = UIImagePickerController()
     private let countryPicker = UIPickerView()
-    private var countryID: Int = 0
+    private var countryID: Int?
     private var gender: GenderType?
     
     // MARK: LifeCycle
@@ -44,6 +44,7 @@ class FilterSearchViewController: BaseWireFrame<FilterSearchViewModel> {
         configureUI()
         configureAgeView()
         createPickerView()
+        subscribeToErrorMessage()
         configureActiveButtonTitle()
         addActionToActiveButton()
     }
@@ -68,6 +69,13 @@ extension FilterSearchViewController {
         diamondView.layer.cornerRadius = 10
         buyMoreButton.layer.cornerRadius = 16
         activeButton.applyDefaultStyle(cornerRadius: 8, backgroundColor: .mainColor, textColor: .white)
+    }
+    
+    private func subscribeToErrorMessage() {
+        viewModel.errorMessageObserver.subscribe { [weak self] errorMessage in
+            guard let self = self else { return }
+            ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+        }.disposed(by: disposeBag)
     }
 }
 
@@ -169,5 +177,8 @@ extension FilterSearchViewController {
     @objc private func didTappedOnActiveButton() {
         // TODO: Need flag to handle action of button [go to market or Start Searching].
         
+        let model = SearchRequestModel(gander: self.gender?.rawValue, timePeriod: self.age, countryID: self.countryID)
+        let vc = coordinator.Main.viewcontroller(for: .SearchingForUsers(requestModel: model))
+        self.present(vc, animated: true)
     }
 }

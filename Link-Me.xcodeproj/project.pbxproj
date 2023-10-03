@@ -307,6 +307,8 @@
 		A2190C6C2AC0A8570031F1D6 /* NotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C6A2AC0A8570031F1D6 /* NotificationListViewController.xib */; };
 		A2190C712AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2190C6F2AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift */; };
 		A2190C722AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C702AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib */; };
+		A22B9F4C2ACC2E91007D224F /* SearchTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B9F4A2ACC2E91007D224F /* SearchTypeViewController.swift */; };
+		A22B9F4D2ACC2E91007D224F /* SearchTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A22B9F4B2ACC2E91007D224F /* SearchTypeViewController.xib */; };
 		A2B81F292ACB0A630070BED9 /* StartSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B81F272ACB0A630070BED9 /* StartSearchViewController.swift */; };
 		A2B81F2A2ACB0A630070BED9 /* StartSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2B81F282ACB0A630070BED9 /* StartSearchViewController.xib */; };
 		A2B81F2E2ACB0A820070BED9 /* LetsSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2B81F2C2ACB0A820070BED9 /* LetsSearchViewController.xib */; };
@@ -626,6 +628,8 @@
 		A2190C6A2AC0A8570031F1D6 /* NotificationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationListViewController.xib; sourceTree = "<group>"; };
 		A2190C6F2AC0A8B30031F1D6 /* NotificationItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemTableViewCell.swift; sourceTree = "<group>"; };
 		A2190C702AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationItemTableViewCell.xib; sourceTree = "<group>"; };
+		A22B9F4A2ACC2E91007D224F /* SearchTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTypeViewController.swift; sourceTree = "<group>"; };
+		A22B9F4B2ACC2E91007D224F /* SearchTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTypeViewController.xib; sourceTree = "<group>"; };
 		A2B81F272ACB0A630070BED9 /* StartSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartSearchViewController.swift; sourceTree = "<group>"; };
 		A2B81F282ACB0A630070BED9 /* StartSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartSearchViewController.xib; sourceTree = "<group>"; };
 		A2B81F2C2ACB0A820070BED9 /* LetsSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LetsSearchViewController.xib; sourceTree = "<group>"; };
@@ -2664,11 +2668,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A22B9F492ACC2E7A007D224F /* SearchType */ = {
+			isa = PBXGroup;
+			children = (
+				A22B9F4A2ACC2E91007D224F /* SearchTypeViewController.swift */,
+				A22B9F4B2ACC2E91007D224F /* SearchTypeViewController.xib */,
+			);
+			path = SearchType;
+			sourceTree = "<group>";
+		};
 		A2B81F262ACB0A2C0070BED9 /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				A2B81F302ACB0A8B0070BED9 /* LetsSearch */,
 				A2B81F2B2ACB0A6F0070BED9 /* StartSearch */,
+				A22B9F492ACC2E7A007D224F /* SearchType */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -2838,6 +2852,7 @@
 				82A2FC362A0B9CF000BA7BD3 /* ToastView.xib in Resources */,
 				825039442A4133580006EAD3 /* Setting.json in Resources */,
 				822882952A0D1D4600019216 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				A22B9F4D2ACC2E91007D224F /* SearchTypeViewController.xib in Resources */,
 				793F55C02ABF507E004635C5 /* TopUserTableViewCell.xib in Resources */,
 				79D816252AC9E51D007B92DA /* CardStoreCollectionViewCell.xib in Resources */,
 				822882972A0D1D4600019216 /* Poppins-ExtraLight.ttf in Resources */,
@@ -3083,6 +3098,7 @@
 				A2190C582AC05F6D0031F1D6 /* UIButton+extension.swift in Sources */,
 				79FA7F4D2ABB30D50043B6BA /* StoriesTarget.swift in Sources */,
 				82A2FC432A0B9D1600BA7BD3 /* AppStoryboards.swift in Sources */,
+				A22B9F4C2ACC2E91007D224F /* SearchTypeViewController.swift in Sources */,
 				8252A6A12A0DCEF3004989A1 /* OnboardingViewModel.swift in Sources */,
 				82A2FC762A0BD42200BA7BD3 /* NetworkErrors.swift in Sources */,
 				793F55C72ABF6226004635C5 /* BeInTopView.swift in Sources */,

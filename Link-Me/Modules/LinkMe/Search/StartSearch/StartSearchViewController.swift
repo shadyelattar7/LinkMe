@@ -37,6 +37,8 @@ class StartSearchViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction private func didTappedOnStartSearchingButton(_ sender: Any) {
+        let vc = coordinator.Main.viewcontroller(for: .searchType)
+        self.present(vc, animated: true)
     }
     
     @IBAction private func didTappedOnExitButton(_ sender: Any) {

@@ -11,10 +11,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LinkUsersImageView" customModule="Link_Me" customModuleProvider="target">
             <connections>
                 <outlet property="heightOfLeftImageConstraint" destination="jtQ-4G-zip" id="WJC-Ia-oPN"/>
+                <outlet property="heightOfLinkImageViewConstraint" destination="t9x-zZ-f7P" id="30y-Ed-VS1"/>
                 <outlet property="heightOfRightImageConstraint" destination="LRd-fW-FQB" id="Bx9-uT-KIL"/>
                 <outlet property="leftImageView" destination="QUH-m6-LrB" id="gJ0-V7-IVV"/>
                 <outlet property="rightImageView" destination="MEp-57-LpD" id="G4t-Vo-Zzv"/>
                 <outlet property="widthOfLeftImageConstraint" destination="Fdo-52-oqo" id="8xI-au-DT5"/>
+                <outlet property="widthOfLinkImageViewConstraint" destination="mYY-yt-pBp" id="cTm-DC-twO"/>
                 <outlet property="widthOfRightImageConstraint" destination="hhy-iM-Zov" id="Y9Q-2y-lEp"/>
             </connections>
         </placeholder>

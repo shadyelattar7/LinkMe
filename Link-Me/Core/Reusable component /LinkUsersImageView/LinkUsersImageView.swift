@@ -18,6 +18,8 @@ class LinkUsersImageView: UIView {
     @IBOutlet private weak var widthOfRightImageConstraint: NSLayoutConstraint!
     @IBOutlet private weak var heightOfLeftImageConstraint: NSLayoutConstraint!
     @IBOutlet private weak var widthOfLeftImageConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var heightOfLinkImageViewConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var widthOfLinkImageViewConstraint: NSLayoutConstraint!
     
     //MARK: - init
     
@@ -60,13 +62,13 @@ extension LinkUsersImageView {
     func setSizeOfRightImage(_ size: CGFloat) {
         heightOfRightImageConstraint.constant = size
         widthOfRightImageConstraint.constant = size
-        rightImageView.makeCircleView()
+        rightImageView.layer.cornerRadius = size / 2
     }
     
     func setSizeOfLeftImage(_ size: CGFloat) {
         heightOfLeftImageConstraint.constant = size
         widthOfLeftImageConstraint.constant = size
-        leftImageView.makeCircleView()
+        leftImageView.layer.cornerRadius = size / 2
     }
     
     func applyBorder(borderColor: UIColor = .white, borderWidth: CGFloat = 2) {
@@ -74,5 +76,10 @@ extension LinkUsersImageView {
         rightImageView.layer.borderWidth = borderWidth
         leftImageView.layer.borderColor = borderColor.cgColor
         leftImageView.layer.borderWidth = borderWidth
+    }
+    
+    func setSizeOfLinkImage(_ size: CGFloat) {
+        heightOfLinkImageViewConstraint.constant = size
+        widthOfLinkImageViewConstraint.constant = size
     }
 }

@@ -38,7 +38,6 @@ class SearchingForUsersViewModel: BaseViewModel {
 
 extension SearchingForUsersViewModel {
     private func searchingForUsers() {
-        print("searchingForUsers model", self.requestModel)
         worker.searchingForUsers(model: requestModel).subscribe(onNext:{ [weak self] result in
             guard let self = self else {return}
             switch result{

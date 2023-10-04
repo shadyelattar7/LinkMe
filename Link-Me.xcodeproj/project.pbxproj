@@ -40,6 +40,11 @@
 		79F632532ACCA9020069D8DE /* SearchingForUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F632512ACCA9020069D8DE /* SearchingForUsersViewController.swift */; };
 		79F632542ACCA9020069D8DE /* SearchingForUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F632522ACCA9020069D8DE /* SearchingForUsersViewController.xib */; };
 		79F632572ACCABD70069D8DE /* SearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F632562ACCABD70069D8DE /* SearchRequestModel.swift */; };
+		79F632602ACE04D50069D8DE /* RequestChatStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F6325F2ACE04D50069D8DE /* RequestChatStateViewModel.swift */; };
+		79F632632ACE09BD0069D8DE /* RequestChatStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F632612ACE09BD0069D8DE /* RequestChatStateViewController.swift */; };
+		79F632642ACE09BD0069D8DE /* RequestChatStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F632622ACE09BD0069D8DE /* RequestChatStateViewController.xib */; };
+		79F632672ACE109C0069D8DE /* RequestChatStateResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F632662ACE109C0069D8DE /* RequestChatStateResources.swift */; };
+		79F632692ACE1AB40069D8DE /* UIImage+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F632682ACE1AB40069D8DE /* UIImage+DesignSystem.swift */; };
 		79FA7F422ABB24640043B6BA /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */; };
 		79FA7F432ABB24640043B6BA /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */; };
 		79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FA7F452ABB26300043B6BA /* UIView+extension.swift */; };
@@ -368,6 +373,11 @@
 		79F632512ACCA9020069D8DE /* SearchingForUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingForUsersViewController.swift; sourceTree = "<group>"; };
 		79F632522ACCA9020069D8DE /* SearchingForUsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchingForUsersViewController.xib; sourceTree = "<group>"; };
 		79F632562ACCABD70069D8DE /* SearchRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestModel.swift; sourceTree = "<group>"; };
+		79F6325F2ACE04D50069D8DE /* RequestChatStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestChatStateViewModel.swift; sourceTree = "<group>"; };
+		79F632612ACE09BD0069D8DE /* RequestChatStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestChatStateViewController.swift; sourceTree = "<group>"; };
+		79F632622ACE09BD0069D8DE /* RequestChatStateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestChatStateViewController.xib; sourceTree = "<group>"; };
+		79F632662ACE109C0069D8DE /* RequestChatStateResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestChatStateResources.swift; sourceTree = "<group>"; };
+		79F632682ACE1AB40069D8DE /* UIImage+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DesignSystem.swift"; sourceTree = "<group>"; };
 		79FA7F402ABB24640043B6BA /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		79FA7F412ABB24640043B6BA /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		79FA7F452ABB26300043B6BA /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
@@ -901,6 +911,41 @@
 			path = LinkMe;
 			sourceTree = "<group>";
 		};
+		79F632582ACE04940069D8DE /* RequestChatState */ = {
+			isa = PBXGroup;
+			children = (
+				79F632652ACE108E0069D8DE /* Resources */,
+				79F6325E2ACE04C80069D8DE /* ViewModel */,
+				79F632592ACE04AD0069D8DE /* View */,
+			);
+			path = RequestChatState;
+			sourceTree = "<group>";
+		};
+		79F632592ACE04AD0069D8DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79F632612ACE09BD0069D8DE /* RequestChatStateViewController.swift */,
+				79F632622ACE09BD0069D8DE /* RequestChatStateViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79F6325E2ACE04C80069D8DE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				79F6325F2ACE04D50069D8DE /* RequestChatStateViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		79F632652ACE108E0069D8DE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				79F632662ACE109C0069D8DE /* RequestChatStateResources.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		79FA7F3F2ABB24460043B6BA /* StoryCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,6 +1018,7 @@
 			isa = PBXGroup;
 			children = (
 				79FA7F632ABDC72E0043B6BA /* UIColor+DesignSystem.swift */,
+				79F632682ACE1AB40069D8DE /* UIImage+DesignSystem.swift */,
 			);
 			path = UIStyle;
 			sourceTree = "<group>";
@@ -2796,6 +2842,7 @@
 				A22B9F492ACC2E7A007D224F /* SearchType */,
 				79D610592ACC8A8300961837 /* FilterSearch */,
 				79F6324C2ACCA48E0069D8DE /* SearchingForUsers */,
+				79F632582ACE04940069D8DE /* RequestChatState */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -3036,6 +3083,7 @@
 				82FB79532A19475B006644EE /* Madani Arabic Thin 400.ttf in Resources */,
 				8252A6A52A0FA8C6004989A1 /* MainButton.xib in Resources */,
 				822882922A0D1D4600019216 /* Poppins-Light.ttf in Resources */,
+				79F632642ACE09BD0069D8DE /* RequestChatStateViewController.xib in Resources */,
 				8A42EB972AC0CA1C009D8239 /* CommentCell.xib in Resources */,
 				82AB6A822A115B380005DEF6 /* EnterCodeViewController.xib in Resources */,
 				82D914502A1028B7005FAF36 /* LoginViewController.xib in Resources */,
@@ -3207,6 +3255,7 @@
 				82CAF0552A3E458800311600 /* CompleteProfile.swift in Sources */,
 				79D816242AC9E51D007B92DA /* CardStoreCollectionViewCell.swift in Sources */,
 				827ED7462A3A235C0056EE37 /* UserPhotoProfileView.swift in Sources */,
+				79F632632ACE09BD0069D8DE /* RequestChatStateViewController.swift in Sources */,
 				82CAF0662A3FC5FD00311600 /* EditProfileVC.swift in Sources */,
 				79FA7F492ABB30350043B6BA /* AddNewStoryRequestModel.swift in Sources */,
 				82952B822A46FCC100548634 /* EditProfileRequestModel.swift in Sources */,
@@ -3217,9 +3266,11 @@
 				82952B902A47990B00548634 /* OtherSettingsVC.swift in Sources */,
 				82952B8D2A4798D400548634 /* OtherSettingsViewModel.swift in Sources */,
 				A2190C582AC05F6D0031F1D6 /* UIButton+extension.swift in Sources */,
+				79F632672ACE109C0069D8DE /* RequestChatStateResources.swift in Sources */,
 				79FA7F4D2ABB30D50043B6BA /* StoriesTarget.swift in Sources */,
 				82A2FC432A0B9D1600BA7BD3 /* AppStoryboards.swift in Sources */,
 				A22B9F4C2ACC2E91007D224F /* SearchTypeViewController.swift in Sources */,
+				79F632602ACE04D50069D8DE /* RequestChatStateViewModel.swift in Sources */,
 				8252A6A12A0DCEF3004989A1 /* OnboardingViewModel.swift in Sources */,
 				82A2FC762A0BD42200BA7BD3 /* NetworkErrors.swift in Sources */,
 				793F55C72ABF6226004635C5 /* BeInTopView.swift in Sources */,
@@ -3266,6 +3317,7 @@
 				825CF38B2A494A9B00BA5DDA /* LanguageVC.swift in Sources */,
 				793F55CA2ABF65F4004635C5 /* TopUsers.swift in Sources */,
 				82A2FC5E2A0BB05D00BA7BD3 /* OnboardingViewController.swift in Sources */,
+				79F632692ACE1AB40069D8DE /* UIImage+DesignSystem.swift in Sources */,
 				822AD2DA2A1414CC0037D8E0 /* VerifyEmail .swift in Sources */,
 				82A2FC352A0B9CF000BA7BD3 /* ToastView.swift in Sources */,
 				794B89102ABE164300FE5F0D /* ReportStoryViewModel.swift in Sources */,

@@ -178,7 +178,7 @@ extension FilterSearchViewController {
         // TODO: Need flag to handle action of button [go to market or Start Searching].
         
         let model = SearchRequestModel(gander: self.gender?.rawValue, timePeriod: self.age, countryID: self.countryID)
-        let vc = coordinator.Main.viewcontroller(for: .SearchingForUsers(requestModel: model))
+        let vc = coordinator.Main.viewcontroller(for: .searchingForUsers(requestModel: model))
         self.present(vc, animated: true)
     }
 }

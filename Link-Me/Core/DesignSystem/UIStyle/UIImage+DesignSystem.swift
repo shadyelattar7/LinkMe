@@ -1,0 +1,19 @@
+//
+//  UIImage+DesignSystem.swift
+//  Link-Me
+//
+//  Created by Ahmed Nasr on 05/10/2023.
+//
+
+import UIKit
+
+extension UIImage {
+ 
+    static var waitingForResponse: UIImage {
+        return UIImage(named: "waitingForResponse")!
+    }
+    
+    static var chat: UIImage {
+        return UIImage(named: "Chat")!
+    }
+}

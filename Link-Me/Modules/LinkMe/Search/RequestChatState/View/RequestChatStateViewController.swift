@@ -41,26 +41,13 @@ class RequestChatStateViewController: BaseWireFrame<RequestChatStateViewModel> {
     override func bind(viewModel: RequestChatStateViewModel) {
         configureUI()
         
-        let model = RequestChatModel(userImageView: UIImage(named: "AmrDiab 5")!, userName: "Mohamed Ansaru", userAge: "32", userCountry: "Sandfa")
+        let model = RequestChatModel(userImageView: UIImage(named: "Group 62726")!, otherImageView: UIImage(named: "Group 62726")!, userName: "Ahmed Nasr", userAge: "25", userCountry: "Egypt")
         
-            currentState = .beforeSendRequest(model: model)
-        
-        configureCardBasedOnCurrentSate()
-        
-        
-        
-        
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-////            let model = RequestChatModel(userImageView: UIImage(named: "AmrDiab 5")!, userName: "Mohamed Ansaru", userAge: "32", userCountry: "Sandfa")
-//
-//            let model = RequestChatModel(userImageView: UIImage(named: "AmrDiab 5")!, otherImageView: UIImage(named: "AmrDiab 2")!, userName: "Ahmed Nas", userAge: "89", userCountry: "egypt")
-//            self.currentState = .acceptYourRequest(model: model)
-//        }
+        currentState = .beforeSendRequest(model: model)
     }
 }
 
-// MARK: Configure UI
+// MARK: Configure UI.
 
 extension RequestChatStateViewController {
     private func configureUI() {
@@ -68,10 +55,7 @@ extension RequestChatStateViewController {
         userImageView.makeCircleView()
         stateView.makeCircleView()
         configureLinkUsersView()
-        requestChatButton.applyDefaultStyle(cornerRadius: 8, backgroundColor: .mainColor, textColor: .white)
-        requestChatButton.centerTextAndImage(spacing: -8)
-        searchAgainButton.applyBorderStyle(borderColor: .mainColor, borderWidth: 1.5, cornerRadius: 8, textColor: .mainColor)
-        searchAgainButton.centerTextAndImage(spacing: -8)
+        configureButtonUI()
     }
     
     private func configureLinkUsersView() {
@@ -79,9 +63,18 @@ extension RequestChatStateViewController {
         linkUsersView.setSizeOfRightImage(80)
         linkUsersView.setSizeOfLinkImage(28)
     }
+    
+    private func configureButtonUI() {
+        requestChatButton.applyDefaultStyle(cornerRadius: 8,
+                                            backgroundColor: .mainColor, textColor: .white)
+        requestChatButton.centerTextAndImage(spacing: -8)
+        searchAgainButton.applyBorderStyle(borderColor: .mainColor,
+                                           borderWidth: 1.5, cornerRadius: 8, textColor: .mainColor)
+        searchAgainButton.centerTextAndImage(spacing: -8)
+    }
 }
 
-// MARK: Handle UI detect request chat state
+// MARK: Handle UI detect request chat state.
 
 extension RequestChatStateViewController {
     private func configureCardBasedOnCurrentSate() {

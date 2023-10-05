@@ -13,6 +13,10 @@ extension UIImage {
         return UIImage(named: "waitingForResponse")!
     }
     
+    static var brokenHeart: UIImage {
+        return UIImage(named: "brokenHeart")!
+    }
+    
     static var chat: UIImage {
         return UIImage(named: "Chat")!
     }

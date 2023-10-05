@@ -55,7 +55,7 @@ enum RequestChatState {
         switch self {
         case .beforeSendRequest: return nil
         case .waitingForResponse: return .waitingForResponse
-        case .ignoreYourRequest: return .waitingForResponse
+        case .ignoreYourRequest: return .brokenHeart
         case .acceptYourRequest(let model): return model.otherImageView
         }
     }
@@ -105,7 +105,7 @@ enum RequestChatState {
         case .beforeSendRequest: return nil
         case .waitingForResponse: return .black
         case .ignoreYourRequest: return .LinkMeUIColor.strongPink
-        case .acceptYourRequest: return .LinkMeUIColor.successColor
+        case .acceptYourRequest: return .LinkMeUIColor.strongGreen
         }
     }
     

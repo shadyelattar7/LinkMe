@@ -12,6 +12,7 @@ class RequestChatStateViewController: BaseWireFrame<RequestChatStateViewModel> {
     
     // MARK: Outlets
     
+    @IBOutlet private weak var parentView: UIView!
     @IBOutlet private weak var parentImageUserView: UIView!
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var stateView: UIView!
@@ -22,6 +23,7 @@ class RequestChatStateViewController: BaseWireFrame<RequestChatStateViewModel> {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var diamondView: UIView!
     @IBOutlet private weak var requestChatButton: UIButton!
+    @IBOutlet private weak var searchAgainButton: UIButton!
     @IBOutlet private weak var diamondCountLabel: UILabel!
     @IBOutlet private weak var timerView: UIView!
     @IBOutlet private weak var activeButton: UIButton!
@@ -48,10 +50,10 @@ class RequestChatStateViewController: BaseWireFrame<RequestChatStateViewModel> {
         
         
         
-//        
+//
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
 ////            let model = RequestChatModel(userImageView: UIImage(named: "AmrDiab 5")!, userName: "Mohamed Ansaru", userAge: "32", userCountry: "Sandfa")
-//            
+//
 //            let model = RequestChatModel(userImageView: UIImage(named: "AmrDiab 5")!, otherImageView: UIImage(named: "AmrDiab 2")!, userName: "Ahmed Nas", userAge: "89", userCountry: "egypt")
 //            self.currentState = .acceptYourRequest(model: model)
 //        }
@@ -62,11 +64,14 @@ class RequestChatStateViewController: BaseWireFrame<RequestChatStateViewModel> {
 
 extension RequestChatStateViewController {
     private func configureUI() {
+        parentView.layer.cornerRadius = 12
         userImageView.makeCircleView()
         stateView.makeCircleView()
         configureLinkUsersView()
         requestChatButton.applyDefaultStyle(cornerRadius: 8, backgroundColor: .mainColor, textColor: .white)
         requestChatButton.centerTextAndImage(spacing: -8)
+        searchAgainButton.applyBorderStyle(borderColor: .mainColor, borderWidth: 1.5, cornerRadius: 8, textColor: .mainColor)
+        searchAgainButton.centerTextAndImage(spacing: -8)
     }
     
     private func configureLinkUsersView() {

@@ -8,6 +8,6 @@
 import Foundation
 
 
-class RequestChatStateViewModel: BaseViewModel {
+class RequestChatStateViewModel {
     
 }

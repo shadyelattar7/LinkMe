@@ -20,4 +20,8 @@ extension UIImage {
     static var chat: UIImage {
         return UIImage(named: "Chat")!
     }
+    
+    static var placeholder: UIImage {
+        return UIImage(named: "Group 62726")!
+    }
 }

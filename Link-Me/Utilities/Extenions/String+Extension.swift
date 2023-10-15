@@ -74,3 +74,18 @@ extension String {
     }
 
 }
+
+// MARK: Calculate age form birthdate
+
+extension String {
+    func calculateAge() -> Int {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-dd-MM"
+        let birthdayDate = dateFormater.date(from: self)
+        let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
+        let now = Date()
+        let calcAge = calendar.components(.year, from: birthdayDate!, to: now, options: [])
+        let age = calcAge.year
+        return age ?? 0
+    }
+}

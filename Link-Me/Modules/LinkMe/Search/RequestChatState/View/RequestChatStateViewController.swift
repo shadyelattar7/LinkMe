@@ -6,9 +6,16 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class RequestChatStateViewController: BaseWireFrame<RequestChatStateViewModel> {
+/// Protocol to make action when view controller is dismiss.
+///
+protocol ViewControllerDismiss: AnyObject {
+    func dismiss()
+}
 
+class RequestChatStateViewController: UIViewController {
     
     // MARK: Outlets
     
@@ -30,20 +37,48 @@ class RequestChatStateViewController: BaseWireFrame<RequestChatStateViewModel> {
     
     // MARK: Properties
     
+    private let disposeBag = DisposeBag()
+    private let viewModel: RequestChatStateViewModel
+    private let coordinator: Coordinator
+    private let requestChatModel: RequestChatModel
+    weak var delegate: ViewControllerDismiss?
     private var currentState: RequestChatState? {
         didSet {
             configureCardBasedOnCurrentSate()
         }
     }
     
+    // MARK: Init
+    
+    init(viewModel: RequestChatStateViewModel, coordinator: Coordinator,
+         requestChatModel: RequestChatModel) {
+        self.viewModel = viewModel
+        self.coordinator = coordinator
+        self.requestChatModel = requestChatModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: LifeCycle
     
-    override func bind(viewModel: RequestChatStateViewModel) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         configureUI()
-        
-        let model = RequestChatModel(userImageView: UIImage(named: "Group 62726")!, otherImageView: UIImage(named: "Group 62726")!, userName: "Ahmed Nasr", userAge: "25", userCountry: "Egypt")
-        
-        currentState = .beforeSendRequest(model: model)
+        currentState = .beforeSendRequest(model: self.requestChatModel)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.dismiss()
+    }
+    
+    // MARK: Actions
+    
+    @IBAction private func didTappedOnSearchAgainButton(_ sender: Any) {
+        delegate?.dismiss()
+        dismiss(animated: true)
     }
 }
 

@@ -48,7 +48,7 @@ class SearchTypeViewController: UIViewController {
     
     
     @IBAction private func didTappedOnNormalSearchButton(_ sender: Any) {
-        let vc = coordinator.Main.viewcontroller(for: .SearchingForUsers(requestModel: nil))
+        let vc = coordinator.Main.viewcontroller(for: .searchingForUsers(requestModel: nil))
         self.present(vc, animated: true)
     }
     

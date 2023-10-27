@@ -44,6 +44,7 @@ class FilterSearchViewController: BaseWireFrame<FilterSearchViewModel> {
         configureUI()
         configureAgeView()
         createPickerView()
+        setDiamondsCount()
         subscribeToErrorMessage()
         configureActiveButtonTitle()
         addActionToActiveButton()
@@ -69,6 +70,14 @@ extension FilterSearchViewController {
         diamondView.layer.cornerRadius = 10
         buyMoreButton.layer.cornerRadius = 16
         activeButton.applyDefaultStyle(cornerRadius: 8, backgroundColor: .mainColor, textColor: .white)
+    }
+    
+    private func setDiamondsCount() {
+        viewModel.numberOfDiamonds.subscribe { [weak self] diamonds in
+            guard let self = self else { return }
+            self.countOfDiamondLabel.text = "\(diamonds.element ?? 0)"
+        }.disposed(by: disposeBag)
+        
     }
     
     private func subscribeToErrorMessage() {

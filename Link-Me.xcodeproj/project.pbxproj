@@ -26,6 +26,8 @@
 		794B89122ABE228B00FE5F0D /* ReportStoryRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */; };
 		794B89142ABE2B5A00FE5F0D /* StaticKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */; };
 		794B89172ABE2D8900FE5F0D /* BottomListSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */; };
+		797CF3902AEC480200771B5E /* RequestChatRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CF38F2AEC480200771B5E /* RequestChatRequestModel.swift */; };
+		797CF3922AEC488300771B5E /* RequestChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CF3912AEC488300771B5E /* RequestChat.swift */; };
 		7983B47A2AC0D31000F34A83 /* UserCardResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983B4792AC0D31000F34A83 /* UserCardResources.swift */; };
 		79D6105C2ACC8ACB00961837 /* FilterSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6105A2ACC8ACB00961837 /* FilterSearchViewController.swift */; };
 		79D6105D2ACC8ACB00961837 /* FilterSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D6105B2ACC8ACB00961837 /* FilterSearchViewController.xib */; };
@@ -359,6 +361,8 @@
 		794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportStoryRequestModel.swift; sourceTree = "<group>"; };
 		794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticKeys.swift; sourceTree = "<group>"; };
 		794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomListSheetViewModel.swift; sourceTree = "<group>"; };
+		797CF38F2AEC480200771B5E /* RequestChatRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestChatRequestModel.swift; sourceTree = "<group>"; };
+		797CF3912AEC488300771B5E /* RequestChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestChat.swift; sourceTree = "<group>"; };
 		7983B4792AC0D31000F34A83 /* UserCardResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardResources.swift; sourceTree = "<group>"; };
 		79D6105A2ACC8ACB00961837 /* FilterSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSearchViewController.swift; sourceTree = "<group>"; };
 		79D6105B2ACC8ACB00961837 /* FilterSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSearchViewController.xib; sourceTree = "<group>"; };
@@ -760,6 +764,7 @@
 			isa = PBXGroup;
 			children = (
 				793F55C92ABF65F4004635C5 /* TopUsers.swift */,
+				797CF3912AEC488300771B5E /* RequestChat.swift */,
 			);
 			path = LinkMe;
 			sourceTree = "<group>";
@@ -907,6 +912,7 @@
 			isa = PBXGroup;
 			children = (
 				79F632562ACCABD70069D8DE /* SearchRequestModel.swift */,
+				797CF38F2AEC480200771B5E /* RequestChatRequestModel.swift */,
 			);
 			path = LinkMe;
 			sourceTree = "<group>";
@@ -3264,10 +3270,12 @@
 				82D914382A102459005FAF36 /* ValidatorFactory.swift in Sources */,
 				82AB6A842A115B4F0005DEF6 /* EnterCodeViewModel.swift in Sources */,
 				82952B902A47990B00548634 /* OtherSettingsVC.swift in Sources */,
+				797CF3922AEC488300771B5E /* RequestChat.swift in Sources */,
 				82952B8D2A4798D400548634 /* OtherSettingsViewModel.swift in Sources */,
 				A2190C582AC05F6D0031F1D6 /* UIButton+extension.swift in Sources */,
 				79F632672ACE109C0069D8DE /* RequestChatStateResources.swift in Sources */,
 				79FA7F4D2ABB30D50043B6BA /* StoriesTarget.swift in Sources */,
+				797CF3902AEC480200771B5E /* RequestChatRequestModel.swift in Sources */,
 				82A2FC432A0B9D1600BA7BD3 /* AppStoryboards.swift in Sources */,
 				A22B9F4C2ACC2E91007D224F /* SearchTypeViewController.swift in Sources */,
 				79F632602ACE04D50069D8DE /* RequestChatStateViewModel.swift in Sources */,

@@ -36,11 +36,22 @@ class SearchingForUsersViewModel {
     }
     
     func generateRequestChatModel() -> RequestChatModel {
-        let imageView = UIImageView()
-        let imageViewUrl = URL(string: user?.imagePath ?? "")
-        imageView.setImage(url: imageViewUrl)
+        let targetUserImageView = UIImageView()
+        let targetUserImageViewUrl = URL(string: user?.imagePath ?? "")
+        targetUserImageView.setImage(url: targetUserImageViewUrl)
+        
+        let currentUserImageView = UIImageView()
+        let currentUserImageViewUrl = URL(string: user?.imagePath ?? "")
+        currentUserImageView.setImage(url: currentUserImageViewUrl)
 
-        let model = RequestChatModel(userImageView: imageView.image ?? UIImage(), otherImageView: .placeholder, userName: user?.name ?? "", userAge: String(user?.birth_date?.calculateAge() ?? 0), userCountry: user?.country ?? "")
+        let isSpacialRequest: Int = self.requestModel == nil ? 0 : 1
+        let model = RequestChatModel(userId: user?.id ?? -0,
+                                     isSpecialSearch: isSpacialRequest,
+                                     currentUserImageView: currentUserImageView.image ?? .placeholder,
+                                     targetUserImageView: targetUserImageView.image ?? .placeholder,
+                                     userName:  user?.name ?? "",
+                                     userAge: String(user?.birth_date?.calculateAge() ?? 0),
+                                     userCountry: user?.country ?? "")
         
         return model
     }
@@ -57,15 +68,11 @@ extension SearchingForUsersViewModel {
     private func searchingForUsers() {
         worker.searchingForUsers(model: requestModel).subscribe(onNext:{ [weak self] result in
             guard let self = self else {return}
-            switch result{
+            switch result {
             case .success(let model):
-                guard let _ = model.data else { return }
+                guard let users = model.data else { return }
                 
-                // MARK: Just dummy data to test cases.
-                
-                let myUsers = [User(id: 21, name: "Ahmed Nasr", email: nil, birth_date: "2000-01-11", image: nil, email_verified_at: nil, created_at: nil, country_id: nil, gander: nil, bio: nil, is_online: nil, is_following: nil, is_available: nil, user_name: nil, imagePath: "https://www.w3schools.com/w3css/img_avatar2.png", is_profile_completed: nil, country: nil, sent_tickets: nil, unread_tickets: nil, canAddStory: nil, diamonds: nil), User(id: 40, name: "Ahmed Nasr2", email: nil, birth_date: "2013-01-11", image: nil, email_verified_at: nil, created_at: nil, country_id: nil, gander: nil, bio: nil, is_online: nil, is_following: nil, is_available: nil, user_name: nil, imagePath: "https://www.w3schools.com/w3css/img_avatar2.png", is_profile_completed: nil, country: nil, sent_tickets: nil, unread_tickets: nil, canAddStory: nil, diamonds: nil), User(id: 65, name: "Ahmed Nasr3", email: nil, birth_date: "1990-01-11", image: nil, email_verified_at: nil, created_at: nil, country_id: nil, gander: nil, bio: nil, is_online: nil, is_following: nil, is_available: nil, user_name: nil, imagePath: "https://www.w3schools.com/w3css/img_avatar2.png", is_profile_completed: nil, country: nil, sent_tickets: nil, unread_tickets: nil, canAddStory: nil, diamonds: nil)]
-                
-                self.users = myUsers
+                self.users = users
                 self.fetchRandomUser()
 
             case .failure(let error):

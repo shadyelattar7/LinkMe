@@ -80,7 +80,7 @@ extension String {
 extension String {
     func calculateAge() -> Int {
         let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "yyyy-dd-MM"
+        dateFormater.dateFormat = "yyyy-MM-dd"
         let birthdayDate = dateFormater.date(from: self)
         let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
         let now = Date()

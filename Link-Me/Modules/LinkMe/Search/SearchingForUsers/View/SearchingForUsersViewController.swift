@@ -47,7 +47,9 @@ class SearchingForUsersViewController: UIViewController {
 extension SearchingForUsersViewController {
     private func configureUI() {
         parentView.layer.cornerRadius = 12
-        stopSearchingButton.applyDefaultStyle(cornerRadius: 8, backgroundColor: .LinkMeUIColor.lightPurple, textColor: .mainColor)
+        stopSearchingButton.applyDefaultStyle(cornerRadius: 8,
+                                              backgroundColor: .LinkMeUIColor.lightPurple,
+                                              textColor: .mainColor)
     }
     
     private func subscribe() {

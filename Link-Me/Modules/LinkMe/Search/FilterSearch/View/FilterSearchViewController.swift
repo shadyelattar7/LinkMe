@@ -176,6 +176,11 @@ extension FilterSearchViewController {
     private func configureActiveButtonTitle() {
         // TODO: Need flag to handle title of button ["Buy Diamonds" or "Start Searching"].
         
+        /*
+         if countOfDiamondLabel.text == "0" or user's diamonds less than advanced search diamonds.
+         // Go to market (to buy diamonds to continue advanced search)
+         */
+        
         self.activeButton.setTitle("Start Searching", for: .normal)
     }
     
@@ -185,6 +190,11 @@ extension FilterSearchViewController {
     
     @objc private func didTappedOnActiveButton() {
         // TODO: Need flag to handle action of button [go to market or Start Searching].
+        
+        /*
+         if countOfDiamondLabel.text == "0" or user's diamonds less than advanced search diamonds.
+         // Go to market (to buy diamonds to continue advanced search)
+         */
         
         let model = SearchRequestModel(gander: self.gender?.rawValue, timePeriod: self.age, countryID: self.countryID)
         let vc = coordinator.Main.viewcontroller(for: .searchingForUsers(requestModel: model))

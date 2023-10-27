@@ -10,24 +10,30 @@ import UIKit
 /// Model That need to add it for handle card info.
 ///
 struct RequestChatModel {
-    let userImageView: UIImage
-    let otherImageView: UIImage?
+    let userId: Int?
+    let isSpecialSearch: Int?
+    let currentUserImageView: UIImage
+    let targetUserImageView: UIImage?
     let userName: String
     let userAge: String
     let userCountry: String
    
     
-    init(userImageView: UIImage, otherImageView: UIImage, userName: String, userAge: String, userCountry: String) {
-        self.userImageView = userImageView
-        self.otherImageView = otherImageView
+    init(userId: Int, isSpecialSearch: Int, currentUserImageView: UIImage, targetUserImageView: UIImage, userName: String, userAge: String, userCountry: String) {
+        self.userId = userId
+        self.isSpecialSearch = isSpecialSearch
+        self.currentUserImageView = currentUserImageView
+        self.targetUserImageView = targetUserImageView
         self.userName = userName
         self.userAge = userAge
         self.userCountry = userCountry
     }
     
-    init(userImageView: UIImage, userName: String, userAge: String, userCountry: String) {
-        self.userImageView = userImageView
-        self.otherImageView = nil
+    init(userId: Int, isSpecialSearch: Int, currentUserImageView: UIImage, userName: String, userAge: String, userCountry: String) {
+        self.userId = userId
+        self.isSpecialSearch = isSpecialSearch
+        self.currentUserImageView = currentUserImageView
+        self.targetUserImageView = nil
         self.userName = userName
         self.userAge = userAge
         self.userCountry = userCountry
@@ -42,21 +48,21 @@ enum RequestChatState {
     case ignoreYourRequest(model: RequestChatModel)
     case acceptYourRequest(model: RequestChatModel)
     
-    var userImageView: UIImage? {
+    var targetUserImageView: UIImage? {
         switch self {
-        case .beforeSendRequest(let model): return model.userImageView
-        case .waitingForResponse(let model): return model.userImageView
-        case .ignoreYourRequest(let model): return model.userImageView
-        case .acceptYourRequest(let model): return model.userImageView
+        case .beforeSendRequest(let model): return model.targetUserImageView
+        case .waitingForResponse(let model): return model.targetUserImageView
+        case .ignoreYourRequest(let model): return model.targetUserImageView
+        case .acceptYourRequest(let model): return model.targetUserImageView
         }
     }
     
-    var otherUserImageView: UIImage? {
+    var currentUserImageView: UIImage? {
         switch self {
         case .beforeSendRequest: return nil
         case .waitingForResponse: return .waitingForResponse
         case .ignoreYourRequest: return .brokenHeart
-        case .acceptYourRequest(let model): return model.otherImageView
+        case .acceptYourRequest(let model): return model.currentUserImageView
         }
     }
     

@@ -11,6 +11,7 @@ import Alamofire
 enum LinkMeTarget {
     case topUsers
     case searchingForUsers(Parameters: SearchRequestModel?)
+    case requestChat(Parameters: RequestChatRequestModel)
 }
 
 extension LinkMeTarget: TargetType {
@@ -20,6 +21,8 @@ extension LinkMeTarget: TargetType {
             return "/top-users"
         case .searchingForUsers:
             return "/search"
+        case .requestChat:
+            return "/submit-request"
         }
     }
     
@@ -27,7 +30,7 @@ extension LinkMeTarget: TargetType {
         switch self {
         case .topUsers:
             return .get
-        case .searchingForUsers:
+        case .searchingForUsers, .requestChat:
             return .post
         }
     }
@@ -37,6 +40,8 @@ extension LinkMeTarget: TargetType {
         case .topUsers:
             return .requestPlain
         case .searchingForUsers(let Parameters):
+            return .request(Parameters)
+        case .requestChat(let Parameters):
             return .request(Parameters)
         }
     }

@@ -67,6 +67,8 @@ class RequestChatStateViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         currentState = .beforeSendRequest(model: self.requestChatModel)
+        updateRequestChatModel()
+        subscribe()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,13 +78,22 @@ class RequestChatStateViewController: UIViewController {
     
     // MARK: Actions
     
+    
+    @IBAction private func didTappedOnRequestChatButton(_ sender: Any) {
+        currentState = .waitingForResponse(model: self.requestChatModel)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.requestChat()
+        }
+    }
+    
     @IBAction private func didTappedOnSearchAgainButton(_ sender: Any) {
         delegate?.dismiss()
         dismiss(animated: true)
     }
 }
 
-// MARK: Configure UI.
+// MARK: Configurations.
 
 extension RequestChatStateViewController {
     private func configureUI() {
@@ -91,6 +102,11 @@ extension RequestChatStateViewController {
         stateView.makeCircleView()
         configureLinkUsersView()
         configureButtonUI()
+    }
+    
+    private func updateRequestChatModel() {
+        let model = RequestChatRequestModel(userId: requestChatModel.userId, message: "", isSpecial: requestChatModel.isSpecialSearch)
+        viewModel.updateRequestChatRequestModel(model)
     }
     
     private func configureLinkUsersView() {
@@ -132,9 +148,9 @@ extension RequestChatStateViewController {
     }
     
     private func configureCardInfo() {
-        userImageView.image = currentState?.userImageView
-        linkUsersView.setRightImage(currentState?.userImageView ?? UIImage())
-        linkUsersView.setLeftImage(currentState?.otherUserImageView ?? UIImage())
+        userImageView.image = currentState?.targetUserImageView
+        linkUsersView.setRightImage(currentState?.currentUserImageView ?? UIImage())
+        linkUsersView.setLeftImage(currentState?.targetUserImageView ?? UIImage())
         userNameLabel.text = currentState?.userName
         userAgeLabel.text = "\(currentState?.userAge ?? "") y.o"
         userCountryLabel.text = currentState?.userCountry
@@ -168,5 +184,34 @@ extension RequestChatStateViewController {
         activeButton.centerTextAndImage(spacing: -8)
         activeButton.backgroundColor = currentState?.activeButtonBackground
         activeButton.setTitleColor(currentState?.activeButtonTextColor, for: .normal)
+    }
+}
+
+
+// MARK: Handle api
+
+extension RequestChatStateViewController {
+    private func subscribe() {
+        subscribeToErrorMessage()
+        subscribeToRequestChatResponse()
+    }
+    
+    private func subscribeToErrorMessage() {
+        viewModel.errorMessageObserver.subscribe { [weak self] errorMessage in
+            guard let self = self else { return }
+            ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+        }.disposed(by: disposeBag)
+    }
+    
+    private func subscribeToRequestChatResponse() {
+        viewModel.bindToResponseClosure = { [weak self] in
+            guard let self = self else { return }
+            
+            if self.viewModel.getRequestChatResponse()?.isAccepted == 0 {
+                self.currentState = .acceptYourRequest(model: self.requestChatModel)
+            } else if self.viewModel.getRequestChatResponse()?.isAccepted == 1 {
+                self.currentState = .ignoreYourRequest(model: self.requestChatModel)
+            }
+        }
     }
 }

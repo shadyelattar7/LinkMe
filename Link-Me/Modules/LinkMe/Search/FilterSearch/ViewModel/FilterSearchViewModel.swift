@@ -13,9 +13,9 @@ class FilterSearchViewModel: BaseViewModel {
     
     // MARK: Properties
     
-    let myAccountWorker: MyAccountWorkerProtocol
-    let worker: ProfileWorkerProtocol
-    let disposedBag = DisposeBag()
+    private let myAccountWorker: MyAccountWorkerProtocol
+    private let worker: ProfileWorkerProtocol
+    private let disposedBag = DisposeBag()
     var countries: BehaviorRelay<[Countries]> = .init(value: [])
     var numberOfDiamonds: BehaviorRelay<Int> = .init(value: 0)
     

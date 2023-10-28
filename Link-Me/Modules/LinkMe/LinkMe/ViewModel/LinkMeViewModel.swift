@@ -13,11 +13,14 @@ class LinkMeViewModel: BaseViewModel {
     
     // MARK: Properties
 
+    private let myAccountWorker: MyAccountWorkerProtocol
     private let linkMeApi: LinkMeAPIProtocol
     private let disposeBag = DisposeBag()
 
     // MARK: Outputs
 
+    var numberOfDiamonds: BehaviorRelay<Int> = .init(value: 0)
+    
     private var topUsersModel = BehaviorRelay<TopUserData?>(value: nil)
     var topUsersModelObservable: Observable<TopUserData?> {
         return topUsersModel.asObservable()
@@ -41,7 +44,8 @@ class LinkMeViewModel: BaseViewModel {
         var startsModel: [StarModel] = []
         
         topUsersModel.value?.stars?.forEach({ star in
-            startsModel.append(StarModel(id: star.id, diamonds: star.diamonds, titleAr: star.titleAr, titleEn: star.titleEn))
+            let isAvailable = numberOfDiamonds.value >= star.diamonds ?? 0 ? true : false
+            startsModel.append(StarModel(id: star.id, diamonds: star.diamonds, titleAr: star.titleAr, titleEn: star.titleEn, isAvailableToChoose: isAvailable))
         })
         
         let model = BeInTopModel(numberOfUsers: topUsers.value.count, stars: startsModel)
@@ -50,8 +54,9 @@ class LinkMeViewModel: BaseViewModel {
 
     // MARK: Init
 
-    init(linkMeApi: LinkMeAPIProtocol = LinkMeAPI()) {
+    init(linkMeApi: LinkMeAPIProtocol = LinkMeAPI(), myAccountWorker: MyAccountWorkerProtocol = MyAccountWorker()) {
         self.linkMeApi = linkMeApi
+        self.myAccountWorker = myAccountWorker
     }
 }
 
@@ -73,6 +78,24 @@ extension LinkMeViewModel {
                 self.errorMessage.onNext(errorMessage ?? "")
             }
             
+        }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: Fetch Diamonds
+
+extension LinkMeViewModel {
+    private func getMyAccountData() {
+        myAccountWorker.myAccount().subscribe(onNext:{ [weak self] result in
+            guard let self = self else {return}
+            switch result{
+            case .success(let model):
+                self.numberOfDiamonds.accept(model.data?.diamonds ?? 0)
+                
+            case .failure(let error):
+                let error = error.userInfo["NSLocalizedDescription"] as! String
+                self.errorMessage.onNext(error)
+            }
         }).disposed(by: disposeBag)
     }
 }

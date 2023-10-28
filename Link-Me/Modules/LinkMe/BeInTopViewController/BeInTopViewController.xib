@@ -59,7 +59,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulq-4X-I1P">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="116"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab 4" translatesAutoresizingMaskIntoConstraints="NO" id="iNe-VA-Zol">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iNe-VA-Zol">
                                                     <rect key="frame" x="136.66666666666666" y="25" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="HYJ-g8-zPt"/>
@@ -323,7 +323,6 @@
         </view>
     </objects>
     <resources>
-        <image name="AmrDiab 4" width="640" height="640"/>
         <image name="diamond" width="32" height="30"/>
         <image name="profileCircle" width="20" height="20"/>
         <image name="timer" width="19" height="21"/>

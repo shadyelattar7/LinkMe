@@ -35,12 +35,17 @@ class BeInTopViewController: UIViewController {
     
     // MARK: - Properties
     
+    private let viewModel: BeInTopViewModel
+    private let coordinator: Coordinator
     private let disposeBag = DisposeBag()
     private let cardModel: BeInTopModel
-    
+    private var numberOfDiamonds: Int?
+
     // MARK: Init
     
-    init(cardModel: BeInTopModel) {
+    init(viewModel: BeInTopViewModel, coordinator: Coordinator, cardModel: BeInTopModel) {
+        self.viewModel = viewModel
+        self.coordinator = coordinator
         self.cardModel = cardModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -100,11 +105,16 @@ extension BeInTopViewController {
 
 extension BeInTopViewController {
     private func setCardData() {
+        let url = URL(string: UDHelper.fetchUserData?.imagePath ?? "")
+        self.userImageView.setImage(url: url)
         self.numberOfUsersLabel.text = "\(cardModel.numberOfUsers ?? 0) user"
     }
     
     private func subscribes() {
         subscribeToThanksButton()
+        subscribeToErrorMessage()
+        subscribeToSuccessToBeInTop()
+        subscribeToRemaining()
     }
     
     private func subscribeToThanksButton() {
@@ -114,6 +124,27 @@ extension BeInTopViewController {
             self.dismiss(animated: true)
             
         }.disposed(by: disposeBag)
+    }
+    
+    private func subscribeToErrorMessage() {
+        viewModel.errorMessageObserver.subscribe { [weak self] errorMessage in
+            guard let self = self else { return }
+            ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+        }.disposed(by: disposeBag)
+    }
+    
+    private func subscribeToSuccessToBeInTop() {
+        viewModel.onSuccessToBeInTop = { [weak self] in
+            guard let self = self else { return }
+            self.configureSecondViewUI(numberOfDiamond: self.numberOfDiamonds ?? 0)
+        }
+    }
+    
+    private func subscribeToRemaining() {
+        viewModel.onRemainingChange = { [weak self] in
+            guard let self = self else { return }
+            self.yourTurnAfterLabel.text = "\(self.viewModel.getRemaining() ?? 0.0)"
+        }
     }
 }
 
@@ -145,12 +176,15 @@ extension BeInTopViewController: UITableViewDataSource, UITableViewDelegate {
             guard let self = self else { return }
             switch type {
             case .choose:
-                // TODO: - Need to call api that make this user in the top after that change view ui.
-                self.configureSecondViewUI(numberOfDiamond: model.diamonds ?? 0)
+                guard let id = model.id else { return }
+                self.numberOfDiamonds = model.diamonds
+                self.viewModel.updateStarPriceId(id)
                 
             case .buy:
-                // TODO: - Need to go to market to buy diamond.
-                break
+                self.dismiss(animated: true) { [weak self] in
+                    guard let self = self else { return }
+                    self.coordinator.Main.navigate(for: .purchases)
+                }
             }
         }
         

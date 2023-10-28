@@ -68,15 +68,16 @@ class MainStoriesViewModel: BaseViewModel{
 
 extension MainStoriesViewModel {
     func fetchStories() {
+        // Why add first item as dummy data ?
+        // -> because handle first item to add new story cell.
+        self.storiesData.accept([UserStoryData.example])
+        
         storiesApi.fetchStories().subscribe(onNext:{ [weak self] result in
             guard let self = self else {return}
             
             switch result{
             case .success(let model):
                 guard let stories = model.dats?.data else { return }
-                // Why add first item as dummy data ?
-                // -> because handle first item to add new story cell.
-                self.storiesData.accept([UserStoryData.example])
                 self.storiesData.accept(self.storiesData.value + stories)
                 
             case .failure(let error):

@@ -83,7 +83,8 @@ extension LinkMeViewController {
     
     @objc private func didTappedOnBeInTopView() {
         let model = viewModel.getBeInTopModel()
-        let vc = coordinator.Main.viewcontroller(for: .beInTheTop(cardModel: model))
+        let viewModel = BeInTopViewModel()
+        let vc = coordinator.Main.viewcontroller(for: .beInTheTop(viewModel: viewModel, cardModel: model))
         self.present(vc, animated: true)
     }
 }

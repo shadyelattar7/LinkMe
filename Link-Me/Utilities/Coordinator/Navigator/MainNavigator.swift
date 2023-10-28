@@ -21,7 +21,7 @@ class MainNavigator: Navigator{
         case newLink
         case notificationList
         case purchases
-        case beInTheTop(cardModel: BeInTopModel)
+        case beInTheTop(viewModel: BeInTopViewModel, cardModel: BeInTopModel)
         case letsGoSearch
         case startSearch
         case searchType
@@ -82,8 +82,8 @@ class MainNavigator: Navigator{
         case .purchases:
             return PurchasesViewController()
             
-        case .beInTheTop(let cardModel):
-            return BeInTopViewController(cardModel: cardModel)
+        case .beInTheTop(let viewModel, let cardModel):
+            return BeInTopViewController(viewModel: viewModel, coordinator: coordinator, cardModel: cardModel)
             
         case .letsGoSearch:
             return LetsSearchViewController(coordinator: coordinator)

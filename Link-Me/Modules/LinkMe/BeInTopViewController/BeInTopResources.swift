@@ -17,4 +17,5 @@ struct BeInTopModel {
 struct StarModel {
     let id, diamonds: Int?
     let titleAr, titleEn: String?
+    let isAvailableToChoose: Bool?
 }

@@ -24,6 +24,16 @@ protocol LinkMeAPIProtocol {
     /// - Parameters:
     /// - Returns: users.
     func requestChat(model: RequestChatRequestModel) -> Observable<Result<BaseResponseGen<RequestChatData>, NSError>>
+    
+    /// it is the method used to fetch top users remaining
+    /// - Parameters:
+    /// - Returns: remaining count.
+    func fetchTopUsersRemaining() -> Observable<Result<BaseResponseGen<Double>, NSError>>
+    
+    /// it is the method used to buy starts
+    /// - Parameters:
+    /// - Returns: .
+    func buyStars(model: buyStarsRequestModel) -> Observable<Result<BaseResponse, NSError>>
 }
 
 class LinkMeAPI: APIClient<LinkMeTarget>, LinkMeAPIProtocol {
@@ -37,5 +47,13 @@ class LinkMeAPI: APIClient<LinkMeTarget>, LinkMeAPIProtocol {
     
     func requestChat(model: RequestChatRequestModel) -> Observable<Result<BaseResponseGen<RequestChatData>, NSError>> {
         self.performRequest(target: .requestChat(Parameters: model), requestModel: model)
+    }
+    
+    func fetchTopUsersRemaining() -> Observable<Result<BaseResponseGen<Double>, NSError>> {
+        self.performRequest(target: .topUsersRemaining)
+    }
+    
+    func buyStars(model: buyStarsRequestModel) -> Observable<Result<BaseResponse, NSError>> {
+        self.performRequest(target: .buyStarts(Parameters: model), requestModel: model)
     }
 }

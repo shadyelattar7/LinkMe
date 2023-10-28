@@ -30,14 +30,10 @@ class ChooseTimeToBeInTopCell: UITableViewCell {
         onChange(type)
     }
 
-    func update(_ model: StarModel) {
-        timeLabel.text = model.titleEn
-        numberOfDiamondLabel.text = "\(model.diamonds ?? 0) Diamond"
-        updateUI(true)
-    }
-    
-    func updateUI(_ isAvailableChooseIt: Bool) {
-        checkIfAvailableChooseIt(isAvailableChooseIt)
+    func update(_ item: StarModel) {
+        timeLabel.text = item.titleEn
+        numberOfDiamondLabel.text = "\(item.diamonds ?? 0) Diamond"
+        checkIfAvailableChooseIt(item.isAvailableToChoose ?? false)
     }
 }
 

@@ -28,6 +28,7 @@ class MainNavigator: Navigator{
         case filterSearch
         case searchingForUsers(requestModel: SearchRequestModel?)
         case requestChatState(requestChatModel: RequestChatModel)
+        case aboutStars
         
         //MARK: - Stories -
         case MainStory
@@ -68,43 +69,38 @@ class MainNavigator: Navigator{
         switch destination{
         case .LinkMe:
             return LinkMeViewController(viewModel: LinkMeViewModel(), coordinator: coordinator)
-            
         case .userCard(let direction, let userModel):
             let viewModel = UserCardViewModel()
             return UserCardViewController(viewModel: viewModel, coordinator: coordinator, direction: direction, userModel: userModel)
-            
         case .newLink:
             return NewLinkCardViewController(coordinator: self.coordinator)
-            
         case .notificationList:
             return NotificationListViewController()
-            
         case .purchases:
-            return PurchasesViewController()
-            
+            let myAccountRepo = MyAccountWorker()
+            let purchaseStoreRepo = PurchaseStoreAPI()
+            let viewModel = PurchaseStoreViewModel(PurchaseStore: purchaseStoreRepo, myAccount: myAccountRepo)
+            return PurchaseStoreViewController(viewModel: viewModel, coordinator: coordinator)
         case .beInTheTop(let viewModel, let cardModel):
             return BeInTopViewController(viewModel: viewModel, coordinator: coordinator, cardModel: cardModel)
-            
         case .letsGoSearch:
             return LetsSearchViewController(coordinator: coordinator)
-            
         case .startSearch:
             return StartSearchViewController(coordinator: coordinator)
-            
         case .searchType:
             return SearchTypeViewController(coordinator: coordinator)
-            
         case .filterSearch:
             let viewModel = FilterSearchViewModel()
             return FilterSearchViewController(viewModel: viewModel, coordinator: coordinator)
-            
         case .searchingForUsers(let model):
             let viewModel = SearchingForUsersViewModel(requestModel: model)
             return SearchingForUsersViewController(viewModel: viewModel, coordinator: coordinator)
-            
         case .requestChatState(let requestChatModel):
             let viewModel = RequestChatStateViewModel()
             return RequestChatStateViewController(viewModel: viewModel, coordinator: coordinator, requestChatModel: requestChatModel)
+        case .aboutStars:
+            let viewModel = AboutStarsViewModel()
+            return AboutStarsViewController(viewModel: viewModel, coordinator: coordinator)
             
             //MARK: - Stories -
             
@@ -126,9 +122,9 @@ class MainNavigator: Navigator{
         case .BottomListItem(let listItems, let storyID):
             let viewModel = BottomListSheetViewModel(listItems:  listItems, storyID: storyID)
             return BottomListSheet(viewModel: viewModel, coordinator: coordinator)
-        
-            //MARK: - Profile -
             
+            //MARK: - Profile -
+
         case .Profile:
             let myAccountRepo = MyAccountWorker()
             let viewModel = ProfileViewModel(myAccount: myAccountRepo)
@@ -194,7 +190,6 @@ class MainNavigator: Navigator{
             let subscribeApi = SubscribeAPI()
             let viewModel = GoPremiumViewModel(subscribeApi: subscribeApi)
             return GoPremiumVC(viewModel: viewModel, coordinator: coordinator)
-        
         }
     }
 }

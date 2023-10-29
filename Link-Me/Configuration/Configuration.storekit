@@ -1,0 +1,183 @@
+{
+  "identifier" : "A945E482",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6470710230",
+      "localizations" : [
+        {
+          "description" : "70 + 30 جوهره هديه",
+          "displayName" : "100",
+          "locale" : "ar"
+        }
+      ],
+      "productID" : "Diamonds_100",
+      "referenceName" : "100 Diamonds",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6470702748",
+      "localizations" : [
+        {
+          "description" : "700 + 300 جوهره هديه",
+          "displayName" : "1000",
+          "locale" : "ar"
+        }
+      ],
+      "productID" : "Diamonds_1000",
+      "referenceName" : "1000 Diamonds ",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "6470710316",
+      "localizations" : [
+        {
+          "description" : "140 + 60 جوهره هديه",
+          "displayName" : "200",
+          "locale" : "ar"
+        }
+      ],
+      "productID" : "Diamonds_200",
+      "referenceName" : "200 Diamonds",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "39.99",
+      "familyShareable" : false,
+      "internalID" : "6470710284",
+      "localizations" : [
+        {
+          "description" : "280 + 120 جوهره هديه",
+          "displayName" : "400",
+          "locale" : "ar"
+        }
+      ],
+      "productID" : "Diamonds_400",
+      "referenceName" : "400 Diamonds ",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6470710232",
+      "localizations" : [
+        {
+          "description" : "35 + 15 جوهره هديه",
+          "displayName" : "50",
+          "locale" : "ar"
+        }
+      ],
+      "productID" : "Diamonds_50",
+      "referenceName" : "50 Diamonds ",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6470710257",
+      "localizations" : [
+        {
+          "description" : "7 جواهر",
+          "displayName" : "07",
+          "locale" : "ar"
+        }
+      ],
+      "productID" : "Diamonds_7",
+      "referenceName" : "7 Diamonds",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "79.99",
+      "familyShareable" : false,
+      "internalID" : "6470702607",
+      "localizations" : [
+        {
+          "description" : "560 + 240 جوهره هديه",
+          "displayName" : "800",
+          "locale" : "ar"
+        }
+      ],
+      "productID" : "Diamonds_800",
+      "referenceName" : "800 Diamonds",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6449260699",
+    "_developerTeamID" : "KQHYATWG2S",
+    "_lastSynchronizedDate" : 720196430.14911103
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21394128",
+      "localizations" : [
+
+      ],
+      "name" : "LinkMe Annual",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6468154852",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlock pro access ",
+              "displayName" : "Pro Access ",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "lm_20_1m",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "LinkMe annual 14.99$ pre month",
+          "subscriptionGroupID" : "21394128",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6468159864",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Pro access",
+              "displayName" : "Pro access",
+              "locale" : "en_GB"
+            }
+          ],
+          "productID" : "lm_499_1w",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "LinkMe annual 4.99$ pre week",
+          "subscriptionGroupID" : "21394128",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

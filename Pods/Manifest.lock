@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (5.6.2)
+  - Alamofire (5.8.1)
   - BEMCheckBox (1.4.1)
-  - IQKeyboardManagerSwift (6.5.10)
+  - IQKeyboardManagerSwift (6.5.16)
   - MOLH (1.4.3)
   - ReachabilitySwift (5.0.0)
   - RxAlamofire (6.1.1):
@@ -9,19 +9,19 @@ PODS:
   - RxAlamofire/Core (6.1.1):
     - Alamofire (~> 5.4)
     - RxSwift (~> 6.0)
-  - RxCocoa (6.5.0):
-    - RxRelay (= 6.5.0)
-    - RxSwift (= 6.5.0)
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
   - RxReachability (1.2.1):
     - ReachabilitySwift (< 6.0, >= 5.0)
     - RxCocoa (~> 6)
     - RxSwift (~> 6)
-  - RxRelay (6.5.0):
-    - RxSwift (= 6.5.0)
-  - RxSwift (6.5.0)
-  - SDWebImage (5.14.1):
-    - SDWebImage/Core (= 5.14.1)
-  - SDWebImage/Core (5.14.1)
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxSwift (6.6.0)
+  - SDWebImage (5.18.3):
+    - SDWebImage/Core (= 5.18.3)
+  - SDWebImage/Core (5.18.3)
   - SGSegmentedProgressBarLibrary (0.0.5)
   - SkeletonView (1.30.4)
   - SVProgressHUD (2.2.5)
@@ -61,17 +61,17 @@ SPEC REPOS:
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
-  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
-  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
-  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxReachability: bfd13548bf1dac7a877082d13918a9f39bdb5c18
-  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
-  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SDWebImage: e1b3c38f170c6100130fce6856e423ed9e5f4fce
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
   SGSegmentedProgressBarLibrary: 2b7f2dc518cd19c5d7d42ae6a8e9ec5610c334f1
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
@@ -79,4 +79,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 564dfd8b6d70fe628344024acb69300e548d162c
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

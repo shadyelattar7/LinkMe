@@ -14,11 +14,12 @@ protocol Coordinator{
     var Main: MainNavigator {get}
     var navgationController: UINavigationController? {get}
     func start()
+    func switchToTabBar()
 }
 
 class AppCoordinator: Coordinator{
     
-    let window: UIWindow
+    var window: UIWindow
     
     lazy private var tabbar: TabBarController = {
         return TabBarController(coordinator: self)
@@ -49,14 +50,21 @@ class AppCoordinator: Coordinator{
             print("Error to navgation in app coordinator")
             return nil
         }
-               
+        
     }
     
     init(window: UIWindow = UIWindow()){
         self.window = window
-        
     }
     
+    func switchToTabBar(){
+        let vc = TabBarController(coordinator: self)
+        vc.window = window
+        window.rootViewController = vc
+        let options: UIView.AnimationOptions = .transitionCrossDissolve
+        let duration: TimeInterval  = 0.3
+        UIView.transition(with: window, duration: duration,options: options, animations: nil)
+    }
     
     func start(){
         if UDHelper.isAfterLoginOrRegister == true  {

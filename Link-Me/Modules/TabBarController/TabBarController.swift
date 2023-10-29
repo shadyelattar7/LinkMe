@@ -10,6 +10,8 @@ import UIKit
 class TabBarController: UITabBarController {
 
     let coordinator: Coordinator!
+    var window: UIWindow?
+
     
     init(coordinator: Coordinator){
         self.coordinator = coordinator

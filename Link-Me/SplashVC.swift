@@ -12,8 +12,8 @@ class SplashVC: UIViewController {
     
     
     var timer: Timer!
-    var  coordinator: AppCoordinator!
-    var  window: UIWindow?
+    var coordinator: AppCoordinator!
+    var window: UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()

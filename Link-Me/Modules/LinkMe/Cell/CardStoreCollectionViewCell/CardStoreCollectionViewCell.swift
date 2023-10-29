@@ -8,15 +8,15 @@
 import UIKit
 
 class CardStoreCollectionViewCell: UICollectionViewCell {
-
+    
     // MARK: Outlets
     
     @IBOutlet private weak var parentView: UIView!
     @IBOutlet private weak var imageParentView: UIView!
     @IBOutlet private weak var mainImageView: UIImageView!
-    @IBOutlet private weak var countLabel: UILabel!
-    @IBOutlet private weak var hintLabel: UILabel!
-    @IBOutlet private weak var subLabel: UILabel!
+    @IBOutlet  weak var countLabel: UILabel!
+    @IBOutlet  weak var hintLabel: UILabel!
+    @IBOutlet  weak var subLabel: UILabel!
     
     // MARK: LifeCycle
     

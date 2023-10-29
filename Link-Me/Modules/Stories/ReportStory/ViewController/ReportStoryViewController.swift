@@ -101,7 +101,7 @@ extension ReportStoryViewController {
             
             switch state.element {
             case .success:
-                self.dismiss(animated: true)
+                self.coordinator.switchToTabBar()
                 
             case .error(let errorMessage):
                 ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)

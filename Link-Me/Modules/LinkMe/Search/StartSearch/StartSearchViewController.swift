@@ -42,6 +42,7 @@ class StartSearchViewController: UIViewController {
     }
     
     @IBAction private func didTappedOnExitButton(_ sender: Any) {
+        coordinator.switchToTabBar()
     }
 }
 

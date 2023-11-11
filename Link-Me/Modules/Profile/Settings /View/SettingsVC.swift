@@ -17,7 +17,7 @@ class SettingsVC: BaseWireFrame<SettingsViewModel>, UIScrollViewDelegate,Navigat
     
     //MARK: - Variables
     
-      var sections: [SettingData] = []
+    var sections: [SettingData] = []
     
     
     //MARK: - Bind
@@ -46,19 +46,131 @@ class SettingsVC: BaseWireFrame<SettingsViewModel>, UIScrollViewDelegate,Navigat
         self.navigationController?.popViewController(animated: true)
     }
     
-        private func getSettings(){
-            LocalDataManager.getData(BaseSettingData.self, "Setting", "json").subscribe(onNext: {[weak self] result in
-                guard let self = self else {return}
-                switch result{
-                case .success(let response):
-                    self.sections = response.data
-                    print("Data: \(self.sections)")
-                    self.settingTableView.reloadData()
-                case .failure(let error):
-                    print("ERROR: \(error)")
-                }
-            }).disposed(by: disposeBag)
+    private func getSettings(){
+        let settingFile = UDHelper.isVistor ? "VestorSetting" : "Setting"
+        LocalDataManager.getData(BaseSettingData.self, settingFile, "json").subscribe(onNext: {[weak self] result in
+            guard let self = self else {return}
+            switch result{
+            case .success(let response):
+                self.sections = response.data
+                print("Data: \(self.sections)")
+                self.settingTableView.reloadData()
+            case .failure(let error):
+                print("ERROR: \(error)")
+            }
+        }).disposed(by: disposeBag)
+    }
+    
+    
+    func setting(section: Int , row: Int){
+        
+        if sections[section].type == 0{ //PREMIUM SETTINGS
+            print("PREMIUM SETTINGS")
+            switch row{
+            case 2:
+                print("Blocked Users")
+            case 3:
+                print("Other Settings")
+                self.coordinator.Main.navigate(for: .OtherSettings)
+            default:
+                print("ERROR IN SECTION PREMIUM SETTINGS")
+            }
+            
+        }else if sections[section].type == 1{ //GENERAL SETTINGS
+            print("GENERAL SETTINGS")
+            switch row{
+            case 0:
+                print("Change Password")
+                self.coordinator.Main.navigate(for: .changePassword)
+            case 1:
+                print("Change Email")
+                self.coordinator.Main.navigate(for: .changeEmail)
+            case 2:
+                print("Language")
+                self.coordinator.Main.navigate(for: .changeLanguage)
+            default:
+                print("ERROR IN SECTION GENERAL SETTINGS")
+            }
+        }else if sections[section].type == 2{ //COMPANY SUPPORT
+            print("COMPANY SUPPORT")
+            switch row{
+            case 0:
+                print("Support")
+                self.coordinator.Main.navigate(for: .Support)
+            case 1:
+                print("Feedback")
+                self.coordinator.Main.navigate(for: .Feedback)
+            case 2:
+                print("About Us")
+                self.coordinator.Main.navigate(for: .CompanySupport(source: .AboutUs))
+            case 3:
+                print("Terms Of Services ")
+                self.coordinator.Main.navigate(for: .CompanySupport(source: .TermsOfServices))
+            case 4:
+                print("Privacy Policy")
+                self.coordinator.Main.navigate(for: .CompanySupport(source: .PrivacyPolicy))
+                
+            default:
+                print("ERROR IN SECTION COMPANY SUPPORT")
+            }
+            
+            
+        }else{ //LOG OUT
+            print("LOG OUT")
+            switch row{
+            case 0:
+                print("Log Out")
+                UserDefaults.standard.removeObject(forKey: UDKeys.token)
+                self.coordinator.start()
+            case 1:
+                print("Remove Account")
+                self.coordinator.Main.navigate(for: .RemoveAccountReason)
+            default:
+                print("ERROR IN SECTION LOG OUT")
+            }
         }
+    }
+    
+    func vestorSetting(section: Int , row: Int){
+        if sections[section].type == 0{ //GENERAL SETTINGS
+            print("GENERAL SETTINGS")
+            switch row{
+            case 0:
+                print("Language")
+                self.coordinator.Main.navigate(for: .changeLanguage)
+            default:
+                print("ERROR IN SECTION GENERAL SETTINGS")
+            }
+        }else if sections[section].type == 1{ //COMPANY SUPPORT
+            print("COMPANY SUPPORT")
+            switch row{
+            case 0:
+                print("About Us")
+                self.coordinator.Main.navigate(for: .CompanySupport(source: .AboutUs))
+            case 1:
+                print("Terms Of Services ")
+                self.coordinator.Main.navigate(for: .CompanySupport(source: .TermsOfServices))
+            case 2:
+                print("Privacy Policy")
+                self.coordinator.Main.navigate(for: .CompanySupport(source: .PrivacyPolicy))
+                
+            default:
+                print("ERROR IN SECTION COMPANY SUPPORT")
+            }
+            
+            
+        }else{ //LOG OUT
+            print("LOG OUT")
+            switch row{
+            case 0:
+                print("Log in")
+                UDHelper.isVistorLoggedIn = true
+                coordinator.Auth.navigate(for: .login, navigtorTypes: .presentNavgation)
+            default:
+                print("ERROR IN SECTION LOG OUT")
+            }
+        }
+    }
     
 }
 
@@ -98,86 +210,36 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
             }
         }
         
-        if sections[indexPath.section].type == 1{
-            switch indexPath.row{
-            case 2:
-                cell.title_lbl.text = "lang".localized == "en" ? "English" : "Arabic"
-            default:
-                print("N/A")
+        if UDHelper.isVistor {
+            if sections[indexPath.section].type == 0{
+                switch indexPath.row {
+                case 0:
+                    cell.title_lbl.text = "lang".localized == "en" ? "English" : "Arabic"
+                default:
+                    print("N/A")
+                }
+            }
+
+        } else {
+            if sections[indexPath.section].type == 1{
+                switch indexPath.row {
+                case 2:
+                    cell.title_lbl.text = "lang".localized == "en" ? "English" : "Arabic"
+                default:
+                    print("N/A")
+                }
             }
         }
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if sections[indexPath.section].type == 0{ //PREMIUM SETTINGS
-           print("PREMIUM SETTINGS")
-            switch indexPath.row{
-            case 2:
-                print("Blocked Users")
-            case 3:
-                print("Other Settings")
-                self.coordinator.Main.navigate(for: .OtherSettings)
-            default:
-                print("ERROR IN SECTION PREMIUM SETTINGS")
-            }
-            
-        }else if sections[indexPath.section].type == 1{ //GENERAL SETTINGS
-            print("GENERAL SETTINGS")
-            switch indexPath.row{
-            case 0:
-                print("Change Password")
-                self.coordinator.Main.navigate(for: .changePassword)
-            case 1:
-                print("Change Email")
-                self.coordinator.Main.navigate(for: .changeEmail)
-            case 2:
-                print("Language")
-                self.coordinator.Main.navigate(for: .changeLanguage)
-            default:
-                print("ERROR IN SECTION GENERAL SETTINGS")
-            }
-        }else if sections[indexPath.section].type == 2{ //COMPANY SUPPORT
-            print("COMPANY SUPPORT")
-            switch indexPath.row{
-            case 0:
-                print("Support")
-                self.coordinator.Main.navigate(for: .Support)
-            case 1:
-                print("Feedback")
-                self.coordinator.Main.navigate(for: .Feedback)
-            case 2:
-                print("About Us")
-                self.coordinator.Main.navigate(for: .CompanySupport(source: .AboutUs))
-            case 3:
-                print("Terms Of Services ")
-                self.coordinator.Main.navigate(for: .CompanySupport(source: .TermsOfServices))
-            case 4:
-                print("Privacy Policy")
-                self.coordinator.Main.navigate(for: .CompanySupport(source: .PrivacyPolicy))
-
-            default:
-                print("ERROR IN SECTION COMPANY SUPPORT")
-            }
-           
-            
-        }else{ //LOG OUT
-            print("LOG OUT")
-            switch indexPath.row{
-            case 0:
-                print("Log Out")
-                UserDefaults.standard.removeObject(forKey: UDKeys.token)
-                self.coordinator.start()
-            case 1:
-                print("Remove Account")
-                self.coordinator.Main.navigate(for: .RemoveAccountReason)
-            default:
-                print("ERROR IN SECTION LOG OUT")
-            }
+        if UDHelper.isVistor {
+            vestorSetting(section: indexPath.section, row: indexPath.row)
+        } else {
+            setting(section: indexPath.section, row: indexPath.row)
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -197,6 +259,6 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 30
+        return 30
     }
 }

@@ -300,6 +300,8 @@
 		8A4B20F22AC86AC30078F4E4 /* SubscriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B20F02AC86AC30078F4E4 /* SubscriptionCell.xib */; };
 		8A4B20F92AC8DC0B0078F4E4 /* SubscribeTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B20F82AC8DC0B0078F4E4 /* SubscribeTarget.swift */; };
 		8A4B20FB2AC8DC1B0078F4E4 /* SubscribeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B20FA2AC8DC1B0078F4E4 /* SubscribeAPI.swift */; };
+		8A5949A12AFEBBAB0061AFA1 /* LoginAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5949A02AFEBBAB0061AFA1 /* LoginAlertManager.swift */; };
+		8A5949AB2AFEEFC70061AFA1 /* VestorSetting.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A5949AA2AFEEFC60061AFA1 /* VestorSetting.json */; };
 		8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */; };
 		8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */; };
 		8A6092202A7FA88100ECB1FA /* UserPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */; };
@@ -652,6 +654,8 @@
 		8A4B20F02AC86AC30078F4E4 /* SubscriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionCell.xib; sourceTree = "<group>"; };
 		8A4B20F82AC8DC0B0078F4E4 /* SubscribeTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeTarget.swift; sourceTree = "<group>"; };
 		8A4B20FA2AC8DC1B0078F4E4 /* SubscribeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeAPI.swift; sourceTree = "<group>"; };
+		8A5949A02AFEBBAB0061AFA1 /* LoginAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAlertManager.swift; sourceTree = "<group>"; };
+		8A5949AA2AFEEFC60061AFA1 /* VestorSetting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VestorSetting.json; sourceTree = "<group>"; };
 		8A60921A2A7DDDA200ECB1FA /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
 		8A60921D2A7FA88100ECB1FA /* UserPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreviewCell.swift; sourceTree = "<group>"; };
 		8A60921E2A7FA88100ECB1FA /* UserPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPreviewCell.xib; sourceTree = "<group>"; };
@@ -1232,6 +1236,7 @@
 			isa = PBXGroup;
 			children = (
 				825039432A4133580006EAD3 /* Setting.json */,
+				8A5949AA2AFEEFC60061AFA1 /* VestorSetting.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1270,6 +1275,7 @@
 				8252A6AA2A0FF02B004989A1 /* UDHelper.swift */,
 				8252A6AC2A0FF072004989A1 /* UDKeys.swift */,
 				794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */,
+				8A5949A02AFEBBAB0061AFA1 /* LoginAlertManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -3090,6 +3096,7 @@
 			files = (
 				79D610642ACC992700961837 /* AgeView.xib in Resources */,
 				79FA7F612ABDC3ED0043B6BA /* ItemListTableViewCell.xib in Resources */,
+				8A5949AB2AFEEFC70061AFA1 /* VestorSetting.json in Resources */,
 				8A99B0502AEC4F02001AF933 /* Configuration.storekit in Resources */,
 				82C0E3A12A6768B6008B72ED /* MainStoriesVC.xib in Resources */,
 				82FB795A2A19475B006644EE /* Madani Arabic Light 400.ttf in Resources */,
@@ -3462,6 +3469,7 @@
 				827ED7422A3A20D30056EE37 /* ProfileVC.swift in Sources */,
 				825CF37E2A48A3A600BA5DDA /* ChangeEmailVC.swift in Sources */,
 				82DB7E182A1383DB00F9096B /* EmailIsVerifiedViewModel.swift in Sources */,
+				8A5949A12AFEBBAB0061AFA1 /* LoginAlertManager.swift in Sources */,
 				82A2FC8A2A0BE22200BA7BD3 /* LinkMeViewModel.swift in Sources */,
 				79FA7F542ABB541E0043B6BA /* UIImageView+SDWebImage.swift in Sources */,
 				82952B952A479F8D00548634 /* OtherSeeCell.swift in Sources */,
@@ -3641,7 +3649,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = KQHYATWG2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";
@@ -3676,7 +3684,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = KQHYATWG2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";

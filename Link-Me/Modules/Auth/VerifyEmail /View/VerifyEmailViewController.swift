@@ -53,9 +53,11 @@ class VerifyEmailViewController: BaseWireFrame<VerifyEmailViewModel>, Navigation
                 
                 switch self.viewModel.source{
                 case .signUp:
-                    self.coordinator.Auth.navigate(for: .EnterCode(source: .signUp, email: self.email_tf.text))
+                    let createAccount = self.coordinator.Auth.viewcontroller(for: .EnterCode(source: .signUp, email: self.email_tf.text))
+                    self.navigationController?.pushViewController(createAccount, animated: true)
                 case .resetPassword:
-                    self.coordinator.Auth.navigate(for: .EnterCode(source: .resetPassword, email: self.email_tf.text))
+                    let resetPassword = self.coordinator.Auth.viewcontroller(for: .EnterCode(source: .resetPassword, email: self.email_tf.text))
+                    self.navigationController?.pushViewController(resetPassword, animated: true)
                 case .changeEmail:
                     print("changeEmail")
                 case .none:

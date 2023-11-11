@@ -34,10 +34,29 @@ class LoginViewController: BaseWireFrame<LoginViewModel> {
         skip_btn.underline()
         login_btn.MainBtn.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         create_btn.MainBtn.addTarget(self, action: #selector(createTapped), for: .touchUpInside)
+
+        skip_btn.isHidden = UDHelper.isVistor
     }
     
     private func subscriptions(){
         viewModel.loginStatus.subscribe { [weak self] model in
+            guard let self = self, let model = model.element else {return}
+            if model.status ?? false{
+                print("GOOOOOOOO!! 🚀🚀🚀")
+                if UDHelper.isVistorLoggedIn {
+                    self.dismiss(animated: true) {
+                        self.coordinator.switchToTabBar()
+                        UDHelper.isVistorLoggedIn = false
+                    }
+                } else {
+                    self.coordinator.start()
+                }
+            }else{
+                ToastManager.shared.showToast(message: model.message ?? "", view: self.view, postion: .top, backgroundColor: .LinkMeUIColor.errorColor)
+            }
+        }.disposed(by: disposeBag)
+        
+        viewModel.loginAsVistorStatus.subscribe { [weak self] model in
             guard let self = self, let model = model.element else {return}
             if model.status ?? false{
                 print("GOOOOOOOO!! 🚀🚀🚀")
@@ -46,18 +65,20 @@ class LoginViewController: BaseWireFrame<LoginViewModel> {
                 ToastManager.shared.showToast(message: model.message ?? "", view: self.view, postion: .top, backgroundColor: .LinkMeUIColor.errorColor)
             }
         }.disposed(by: disposeBag)
+        
     }
     
     //MARK: - Actions
     
     @IBAction func skipTapped(_ sender: Any) {
         UDHelper.isSkip = true
-        self.coordinator.start()
+        self.viewModel.loginAsVistor(view: self.view)
     }
     
     
     @IBAction func forgetTapped(_ sender: Any) {
-        self.coordinator.Auth.navigate(for: .VerifyEmail(source: .resetPassword))
+        let forgetPassword = self.coordinator.Auth.viewcontroller(for: .VerifyEmail(source: .resetPassword))
+        self.navigationController?.pushViewController(forgetPassword, animated: true)
     }
     
     @objc func loginTapped(){
@@ -67,6 +88,7 @@ class LoginViewController: BaseWireFrame<LoginViewModel> {
     }
     
     @objc func createTapped(){
-        self.coordinator.Auth.navigate(for: .VerifyEmail(source: .signUp))
+        let createAccount = self.coordinator.Auth.viewcontroller(for: .VerifyEmail(source: .signUp))
+        self.navigationController?.pushViewController(createAccount, animated: true)
     }
 }

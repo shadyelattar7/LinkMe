@@ -69,6 +69,7 @@ class RegisterViewModel: BaseViewModel, RegisterVInputs, RegisterOutputs{
                 UDHelper.saveUserData(obj: model.data)
                 UDHelper.isAfterLoginOrRegister = true
                 UDHelper.isSkip = false
+                UDHelper.isVistor = false
                 self.RegisterStatus.onNext(model)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as! String

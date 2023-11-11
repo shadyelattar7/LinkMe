@@ -20,7 +20,7 @@ protocol LoginVInputs{
 
 protocol LoginOutputs{
     var loginStatus: PublishSubject<BaseResponseGen<User>> {get set}
-
+    var loginAsVistorStatus: PublishSubject<BaseResponseGen<User>> {get set}
 }
 
 class LoginViewModel: BaseViewModel, LoginVInputs,LoginOutputs {
@@ -31,20 +31,20 @@ class LoginViewModel: BaseViewModel, LoginVInputs,LoginOutputs {
     
     init(login: LoginWorkerProtocol) {
         self.login = login
- 
+        
     }
     
     
     // MARK: - Outputs
     
-   //  var loginStatus: PublishSubject<BaseResponseGen<User>> = .init()
-     var loginStatus: PublishSubject<BaseResponseGen<User>> = .init()
-
+    //  var loginStatus: PublishSubject<BaseResponseGen<User>> = .init()
+    var loginStatus: PublishSubject<BaseResponseGen<User>> = .init()
+    var loginAsVistorStatus: PublishSubject<BaseResponseGen<User>> = .init()
     
     //MARK: - API Call
     
     func login(email: String, password: String,view: UIView){
-         login.Login(model: LoginRequestModel(email: email, password: password)).subscribe(onNext:{ [weak self] result in
+        login.Login(model: LoginRequestModel(email: email, password: password)).subscribe(onNext:{ [weak self] result in
             guard let self = self else {return}
             switch result{
             case .success(let model):
@@ -52,6 +52,7 @@ class LoginViewModel: BaseViewModel, LoginVInputs,LoginOutputs {
                 UDHelper.saveUserData(obj: model.data)
                 UDHelper.isAfterLoginOrRegister = true
                 UDHelper.isSkip = false
+                UDHelper.isVistor = false
                 self.loginStatus.onNext(model)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as! String
@@ -60,5 +61,24 @@ class LoginViewModel: BaseViewModel, LoginVInputs,LoginOutputs {
             }
         }).disposed(by: disposedBag)
     }
-
+    
+    
+    func loginAsVistor(view: UIView){
+        login.Vistor().subscribe(onNext:{ [weak self] result in
+            guard let self = self else {return}
+            switch result{
+            case .success(let model):
+                UDHelper.token = model.token ?? ""
+                UDHelper.saveUserData(obj: model.data)
+                UDHelper.isAfterLoginOrRegister = true
+                UDHelper.isSkip = false
+                UDHelper.isVistor = true
+                self.loginAsVistorStatus.onNext(model)
+            case .failure(let error):
+                let errorMessage = error.userInfo["NSLocalizedDescription"] as! String
+                ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+                print("ERROR: \(error)")
+            }
+        }).disposed(by: disposedBag)
+    }
 }

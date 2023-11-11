@@ -11,6 +11,7 @@ import Alamofire
 
 enum LoginNetworking: TargetType{
     case Login (Parameters: LoginRequestModel)
+    case vistor
 }
 
 extension LoginNetworking{
@@ -18,12 +19,16 @@ extension LoginNetworking{
         switch self {
         case .Login:
             return "/login"
+        case .vistor:
+            return "/visitor/register"
         }
     }
     
     var method: HTTPMethod{
         switch self{
         case .Login:
+            return .post
+        case .vistor:
             return .post
         }
     }
@@ -32,6 +37,8 @@ extension LoginNetworking{
         switch self{
         case .Login(let Parameters):
             return .request(Parameters)
+        case .vistor:
+            return .requestPlain
         }
     }
     
@@ -39,6 +46,8 @@ extension LoginNetworking{
         switch self {
         case .Login:
             return ["Accept":"application/json"]
+        case .vistor:
+            return [:]
         }
         
     }

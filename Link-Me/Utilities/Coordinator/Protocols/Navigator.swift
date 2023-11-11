@@ -40,5 +40,4 @@ extension Navigator{
             coordinator.navgationController?.present(nav, animated: true, completion: nil)
         }
     }
-
 }

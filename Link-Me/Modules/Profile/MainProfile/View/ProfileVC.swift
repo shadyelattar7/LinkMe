@@ -51,9 +51,16 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
         mail_lbl.text = UDHelper.fetchUserData?.email ?? ""
         bio_lbl.text = UDHelper.fetchUserData?.bio ?? "No Bio"
         
+        
+        
         if UDHelper.fetchUserData?.is_profile_completed == 0{
-            profileIsCompleteView.isHidden = false
-            profileImgView.configure(with: UserPhotoProfileViewViewModel(userPhoto: UDHelper.fetchUserData?.imagePath ?? "", precntage: 50, radiusCircular: 45), precntage: .half)
+            if UDHelper.isVistor {
+                profileIsCompleteView.isHidden = true
+                profileImgView.configure(with: UserPhotoProfileViewViewModel(userPhoto: UDHelper.fetchUserData?.imagePath ?? "", precntage: 50, radiusCircular: 45), precntage: .half)
+            } else {
+                profileIsCompleteView.isHidden = false
+                profileImgView.configure(with: UserPhotoProfileViewViewModel(userPhoto: UDHelper.fetchUserData?.imagePath ?? "", precntage: 50, radiusCircular: 45), precntage: .half)
+            }
         }else{
             profileIsCompleteView.isHidden = true
             profileImgView.configure(with: UserPhotoProfileViewViewModel(userPhoto: UDHelper.fetchUserData?.imagePath ?? "", precntage: 100, radiusCircular: 45), precntage: .complete)
@@ -97,10 +104,19 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
             case 0: //Settings
                 self.coordinator.Main.navigate(for: .Settings)
             case 1: //Edit Profile
+                if UDHelper.isVistor {
+                    QuickAlert.showWith(in: self, coordentor: self.coordinator)
+                }
                 self.coordinator.Main.navigate(for: .EditProfile)
             case 2: //Share App
+                if UDHelper.isVistor {
+                    QuickAlert.showWith(in: self, coordentor: self.coordinator)
+                }
                 self.coordinator.Main.navigate(for: .EditProfile)
             case 3: //Get All Feature
+                if UDHelper.isVistor {
+                    QuickAlert.showWith(in: self, coordentor: self.coordinator)
+                }
                 self.coordinator.Main.navigate(for: .EditProfile)
             default:
                 self.coordinator.Main.navigate(for: .EditProfile)

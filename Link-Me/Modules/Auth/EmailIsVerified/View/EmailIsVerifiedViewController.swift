@@ -15,7 +15,7 @@ class EmailIsVerifiedViewController: BaseWireFrame<EmailIsVerifiedViewModel> {
     
     //MARK: - Variables
     
-
+    
     //MARK: - Bind
     
     override func bind(viewModel: EmailIsVerifiedViewModel) {
@@ -29,19 +29,21 @@ class EmailIsVerifiedViewController: BaseWireFrame<EmailIsVerifiedViewModel> {
         continue_btn.MainBtn.addTarget(self, action: #selector(continueTapped), for: .touchUpInside)
     }
     //MARK: - Actions
-
+    
     @objc func continueTapped(){
         
         switch self.viewModel.source{
         case .signUp:
-            self.coordinator.Auth.navigate(for: .register(code: viewModel.code ?? "", email: viewModel.email ?? ""))
+            let signUp = self.coordinator.Auth.viewcontroller(for: .register(code: viewModel.code ?? "", email: viewModel.email ?? ""))
+            self.navigationController?.pushViewController(signUp, animated: true)
         case .resetPassword:
-            self.coordinator.Auth.navigate(for: .CreatePassword(code: viewModel.code ?? "", email: viewModel.email ?? ""))
+            let resetPassword = self.coordinator.Auth.viewcontroller(for: .CreatePassword(code: viewModel.code ?? "", email: viewModel.email ?? ""))
+            self.navigationController?.pushViewController(resetPassword, animated: true)
         case .changeEmail:
             print("changeEmail")
         case .none:
             print("ERROR")
-        
+            
         }
     }
 }

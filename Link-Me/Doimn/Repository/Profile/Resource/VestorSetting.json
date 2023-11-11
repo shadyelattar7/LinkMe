@@ -1,0 +1,80 @@
+{
+    "status": 200,
+    "data": [
+        {
+            "title": "GENERAL SETTINGS",
+            "title_ar": "الإعدادات العامة",
+            "type": 0,
+            "options": [
+                {
+                    "name": "Language",
+                    "name_ar": "اللغة",
+                    "icon": "Language",
+                    "isToggle": false,
+                    "isLabel": true,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                }
+            ]
+        },
+        {
+            "title": "COMPANY SUPPORT",
+            "title_ar": "دعم الشركة",
+            "type": 1,
+            "options": [
+                {
+                    "name": "About Us",
+                    "name_ar": "معلومات عنا",
+                    "icon": "About Us",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Terms Of Services",
+                    "name_ar": "شروط الخدمات",
+                    "icon": "TermsOfServices",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Privacy Policy",
+                    "name_ar": "سياسة الخصوصية",
+                    "icon": "Privacy Policy",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                },
+                {
+                    "name": "Share The App",
+                    "name_ar": "مشاركة التطبيق",
+                    "icon": "Share The App",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": false,
+                    "isNotificationLabel": false
+                }
+            ]
+        },
+        {
+            "title": "LOG IN",
+            "title_ar": "تسجيل الخروج",
+            "type": 2,
+            "options": [
+                {
+                    "name": "Log in",
+                    "name_ar": "تسجيل الدخول",
+                    "icon": "Log Out",
+                    "isToggle": false,
+                    "isLabel": false,
+                    "isArrow": true,
+                    "isNotificationLabel": false
+                }
+            ]
+        }
+    ]
+}

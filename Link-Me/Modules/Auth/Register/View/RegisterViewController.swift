@@ -54,7 +54,8 @@ class RegisterViewController: BaseWireFrame<RegisterViewModel>, BEMCheckBoxDeleg
             guard let self = self, let model = model.element else {return}
             if model.status ?? false{
                 print("GOOOOOOOO!! 🚀🚀🚀")
-                self.coordinator.Auth.navigate(for: .ProfileNotComplete)
+                let profileNotComplete = self.coordinator.Auth.viewcontroller(for: .ProfileNotComplete)
+                self.navigationController?.pushViewController(profileNotComplete, animated: true)
             }else{
                 ToastManager.shared.showToast(message: model.message ?? "", view: self.view, postion: .top, backgroundColor: .LinkMeUIColor.errorColor)
             }

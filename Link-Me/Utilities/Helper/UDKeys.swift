@@ -16,4 +16,7 @@ class UDKeys {
     static let isChangeLang = "changeLang"
     static let isCompleteProfile = "isCompleteProfile"
     static let isDrag = "isDrag"
+    static let isVistor = "isVistor"
+    static let isVistorLoggedIn = "isVistorLoggedIn"
+
 }

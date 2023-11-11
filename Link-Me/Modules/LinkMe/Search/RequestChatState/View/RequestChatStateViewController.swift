@@ -91,6 +91,14 @@ class RequestChatStateViewController: UIViewController {
         delegate?.dismiss()
         dismiss(animated: true)
     }
+    
+
+    @IBAction func didTappedActiveButton(_ sender: Any) {
+        if UDHelper.isVistor {
+            QuickAlert.showWith(in: self, coordentor: self.coordinator)
+        }
+    }
+    
 }
 
 // MARK: Configurations.

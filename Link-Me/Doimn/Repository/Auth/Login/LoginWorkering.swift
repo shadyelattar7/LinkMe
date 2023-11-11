@@ -16,6 +16,12 @@ protocol LoginWorkerProtocol{
     /// - Returns: merchant model
     func Login(model: LoginRequestModel) -> Observable<Result<BaseResponseGen<User>, NSError>>
     
+    /// it is the method used to Update Personal Info
+    /// - Parameters:
+    ///   - params: the user image and store page url
+    /// - Returns: merchant model
+    func Vistor() -> Observable<Result<BaseResponseGen<User>, NSError>>
+    
 }
 
 
@@ -24,4 +30,7 @@ class LoginWorker: APIClient<LoginNetworking>, LoginWorkerProtocol{
         self.performRequest(target: .Login(Parameters: model), requestModel: model)
     }
     
+    func Vistor() -> RxSwift.Observable<Result<BaseResponseGen<User>, NSError>> {
+        self.performRequest(target: .vistor)
+    }
 }

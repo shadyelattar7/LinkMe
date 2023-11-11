@@ -61,7 +61,6 @@ extension LinkMeViewController {
     private func didTappedOnNotificationButton() {
         headerView.clickOnNotificationButton = { [weak self] in
             guard let self = self else { return }
-            
             self.coordinator.Main.navigate(for: .notificationList)
         }
     }
@@ -69,7 +68,9 @@ extension LinkMeViewController {
     private func didTappedOnPurchasesButton() {
         headerView.clickOnPurchasesButton = { [weak self] in
             guard let self = self else { return }
-            
+            if UDHelper.isVistor {
+                QuickAlert.showWith(in: self, coordentor: self.coordinator)
+            }
             self.coordinator.Main.navigate(for: .purchases)
         }
     }

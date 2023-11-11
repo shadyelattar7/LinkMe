@@ -15,6 +15,7 @@ protocol Coordinator{
     var navgationController: UINavigationController? {get}
     func start()
     func switchToTabBar()
+    func presentLogin(viewController: UIViewController)
 }
 
 class AppCoordinator: Coordinator{
@@ -55,6 +56,12 @@ class AppCoordinator: Coordinator{
     
     init(window: UIWindow = UIWindow()){
         self.window = window
+    }
+    
+    func presentLogin(viewController: UIViewController) {
+        let loginVC = self.Auth.viewcontroller(for: .login)
+        let nav = UINavigationController(rootViewController: loginVC)
+        viewController.present(nav, animated: true)
     }
     
     func switchToTabBar(){

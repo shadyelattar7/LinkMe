@@ -50,6 +50,15 @@ class UDHelper {
         get { UDHelper.userDefaults.bool(forKey: UDKeys.isDrag) }
     }
     
+    static var isVistor: Bool{
+        set { UDHelper.userDefaults.set(newValue, forKey: UDKeys.isVistor) }
+        get { UDHelper.userDefaults.bool(forKey: UDKeys.isVistor) }
+    }
+
+    static var isVistorLoggedIn: Bool{
+        set { UDHelper.userDefaults.set(newValue, forKey: UDKeys.isVistorLoggedIn) }
+        get { UDHelper.userDefaults.bool(forKey: UDKeys.isVistorLoggedIn) }
+    }
     
     static func saveUserData(obj: User?){
         do{

@@ -15,8 +15,8 @@ protocol VerifyEmailData: AnyObject {
 }
 
 class EnterCodeViewController: BaseWireFrame<EnterCodeViewModel>, NavigationBarDelegate {
-  
-
+    
+    
     //MARK: - @IBOutlet
     
     @IBOutlet weak var navBar: NavigationBarView!
@@ -43,16 +43,16 @@ class EnterCodeViewController: BaseWireFrame<EnterCodeViewModel>, NavigationBarD
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-            self.timer.invalidate()
+        self.timer.invalidate()
     }
     
     //MARK: - Bind
-
+    
     override func bind(viewModel: EnterCodeViewModel) {
         setupView()
         subscriptions()
     }
-
+    
     //MARK: - Private func
     
     private func setupView(){
@@ -79,14 +79,15 @@ class EnterCodeViewController: BaseWireFrame<EnterCodeViewModel>, NavigationBarD
                         self.delegate.VerifyEmailData(isVerifyEmail: true, otp: self.verificationCode.text!)
                     }
                 }else{
-                    self.coordinator.Auth.navigate(for: .EmailIsVerified(source: self.viewModel.source, code: self.verificationCode.text! ,email: self.viewModel.email ?? ""))
+                    let emailIsVerified = self.coordinator.Auth.viewcontroller(for: .EmailIsVerified(source: self.viewModel.source, code: self.verificationCode.text! ,email: self.viewModel.email ?? ""))
+                    self.navigationController?.pushViewController(emailIsVerified, animated: true)
                 }
             }else{
                 ToastManager.shared.showToast(message: model.message ?? "", view: self.view, postion: .top, backgroundColor: .LinkMeUIColor.errorColor)
             }
         }.disposed(by: disposeBag)
     }
-
+    
     // Timer Setup
     private func setupResendCodeTimer(){
         count = 120
@@ -121,7 +122,7 @@ class EnterCodeViewController: BaseWireFrame<EnterCodeViewModel>, NavigationBarD
     }
     
     //MARK: - Actions
-
+    
     func backButtonPressed() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -153,16 +154,16 @@ class EnterCodeViewController: BaseWireFrame<EnterCodeViewModel>, NavigationBarD
         
         
         if sender.text?.count == 4{
-        //TODO: - check the code
-//            switch source!{
-//            case .signUp(let vm, _):
-//                vm.verifyOTP(otp: sender.text!)
-//                break
-//                
-//            case .resetPassword(let vm, _):
-//                vm.verifyResetPasswordOTP(otp: sender.text!)
-//                break
-//            }
+            //TODO: - check the code
+            //            switch source!{
+            //            case .signUp(let vm, _):
+            //                vm.verifyOTP(otp: sender.text!)
+            //                break
+            //                
+            //            case .resetPassword(let vm, _):
+            //                vm.verifyResetPasswordOTP(otp: sender.text!)
+            //                break
+            //            }
         }
     }
 }

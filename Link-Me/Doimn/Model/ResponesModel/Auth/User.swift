@@ -31,7 +31,7 @@ struct User : Codable {
     let diamonds: Int?
     
     enum CodingKeys: String, CodingKey {
-
+        
         case id = "id"
         case name = "name"
         case email = "email"
@@ -54,5 +54,5 @@ struct User : Codable {
         case canAddStory = "canAddStory"
         case diamonds = "diamonds"
     }
-
+    
 }

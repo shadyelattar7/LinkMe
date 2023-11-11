@@ -76,6 +76,9 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
                 if UDHelper.fetchUserData?.canAddStory == 0{
                     self.coordinator.Main.navigate(for: .FeaturesPremium,navigtorTypes: .present())
                 }else{
+                    if UDHelper.isVistor {
+                        QuickAlert.showWith(in: self, coordentor: self.coordinator)
+                    }
                     self.getMedia()
                 }
             }else{

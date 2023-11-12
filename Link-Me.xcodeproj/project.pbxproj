@@ -26,6 +26,12 @@
 		794B89122ABE228B00FE5F0D /* ReportStoryRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */; };
 		794B89142ABE2B5A00FE5F0D /* StaticKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */; };
 		794B89172ABE2D8900FE5F0D /* BottomListSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */; };
+		794DC1522B015141006DE897 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794DC1512B015141006DE897 /* ChatViewModel.swift */; };
+		794DC1552B015164006DE897 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794DC1532B015164006DE897 /* ChatViewController.swift */; };
+		794DC1562B015164006DE897 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794DC1542B015164006DE897 /* ChatViewController.xib */; };
+		794DC1592B01536A006DE897 /* HeaderChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794DC1582B01536A006DE897 /* HeaderChatView.swift */; };
+		794DC15B2B015378006DE897 /* HeaderChatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794DC15A2B015378006DE897 /* HeaderChatView.xib */; };
+		794DC15D2B015A12006DE897 /* HeaderChatResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794DC15C2B015A12006DE897 /* HeaderChatResources.swift */; };
 		797CF3902AEC480200771B5E /* RequestChatRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CF38F2AEC480200771B5E /* RequestChatRequestModel.swift */; };
 		797CF3922AEC488300771B5E /* RequestChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CF3912AEC488300771B5E /* RequestChat.swift */; };
 		79807DF02AED5D3F002192AC /* BeInTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807DEF2AED5D3F002192AC /* BeInTopViewModel.swift */; };
@@ -376,6 +382,12 @@
 		794B89112ABE228B00FE5F0D /* ReportStoryRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportStoryRequestModel.swift; sourceTree = "<group>"; };
 		794B89132ABE2B5A00FE5F0D /* StaticKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticKeys.swift; sourceTree = "<group>"; };
 		794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomListSheetViewModel.swift; sourceTree = "<group>"; };
+		794DC1512B015141006DE897 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		794DC1532B015164006DE897 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		794DC1542B015164006DE897 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		794DC1582B01536A006DE897 /* HeaderChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderChatView.swift; sourceTree = "<group>"; };
+		794DC15A2B015378006DE897 /* HeaderChatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderChatView.xib; sourceTree = "<group>"; };
+		794DC15C2B015A12006DE897 /* HeaderChatResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderChatResources.swift; sourceTree = "<group>"; };
 		797CF38F2AEC480200771B5E /* RequestChatRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestChatRequestModel.swift; sourceTree = "<group>"; };
 		797CF3912AEC488300771B5E /* RequestChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestChat.swift; sourceTree = "<group>"; };
 		79807DEF2AED5D3F002192AC /* BeInTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeInTopViewModel.swift; sourceTree = "<group>"; };
@@ -832,6 +844,51 @@
 				794B89162ABE2D8900FE5F0D /* BottomListSheetViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		794DC14D2B014FF1006DE897 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				794DC14F2B015129006DE897 /* ViewModel */,
+				794DC1502B01512F006DE897 /* Views */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		794DC14E2B015123006DE897 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				794DC1532B015164006DE897 /* ChatViewController.swift */,
+				794DC1542B015164006DE897 /* ChatViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		794DC14F2B015129006DE897 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				794DC1512B015141006DE897 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		794DC1502B01512F006DE897 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				794DC1572B01534F006DE897 /* HeaderChatView */,
+				794DC14E2B015123006DE897 /* Controller */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		794DC1572B01534F006DE897 /* HeaderChatView */ = {
+			isa = PBXGroup;
+			children = (
+				794DC15C2B015A12006DE897 /* HeaderChatResources.swift */,
+				794DC1582B01536A006DE897 /* HeaderChatView.swift */,
+				794DC15A2B015378006DE897 /* HeaderChatView.xib */,
+			);
+			path = HeaderChatView;
 			sourceTree = "<group>";
 		};
 		7983B4782AC0D30000F34A83 /* Resources */ = {
@@ -2147,6 +2204,7 @@
 				A2D1DA0E2AC997BE0057D61D /* Purchases */,
 				8A8C7EAB2AED2395009265C4 /* AboutStars */,
 				A2B81F262ACB0A2C0070BED9 /* Search */,
+				794DC14D2B014FF1006DE897 /* Chat */,
 			);
 			path = LinkMe;
 			sourceTree = "<group>";
@@ -3144,8 +3202,10 @@
 				82952B9D2A47B9B800548634 /* ChangePasswordVC.xib in Resources */,
 				827356872A59E34C00634EA4 /* RemoveAccountVC.xib in Resources */,
 				82952B912A47990B00548634 /* OtherSettingsVC.xib in Resources */,
+				794DC1562B015164006DE897 /* ChatViewController.xib in Resources */,
 				8250393F2A412F1B0006EAD3 /* SettingsVC.xib in Resources */,
 				827ED7432A3A20D30056EE37 /* ProfileVC.xib in Resources */,
+				794DC15B2B015378006DE897 /* HeaderChatView.xib in Resources */,
 				827ED7482A3A23630056EE37 /* UserPhotoProfileView.xib in Resources */,
 				82AB6A8B2A1219240005DEF6 /* RegisterViewController.xib in Resources */,
 				8228829C2A0D1D4600019216 /* Poppins-BoldItalic.ttf in Resources */,
@@ -3275,6 +3335,7 @@
 				825CF3842A4919C100BA5DDA /* ChangeEmailRequestModel.swift in Sources */,
 				8252A6A62A0FA8C6004989A1 /* MainButton.swift in Sources */,
 				82952B872A472B0000548634 /* MyAccountWorker.swift in Sources */,
+				794DC1592B01536A006DE897 /* HeaderChatView.swift in Sources */,
 				82FB793B2A17E907006644EE /* LoginWorkering.swift in Sources */,
 				8A9363FC2AED63C2001E7811 /* BuyDiamondsRequestModel.swift in Sources */,
 				82A2FC472A0B9D1600BA7BD3 /* UICollectionView+Helper.swift in Sources */,
@@ -3284,6 +3345,7 @@
 				82CAF0522A3E04D600311600 /* ProfileWorking.swift in Sources */,
 				82D9143D2A102459005FAF36 /* EmailValidator.swift in Sources */,
 				8A8C7EB32AED23D0009265C4 /* AboutStarsViewModel.swift in Sources */,
+				794DC15D2B015A12006DE897 /* HeaderChatResources.swift in Sources */,
 				8AF6F44E2AC23923002FB4E7 /* LikeStoryRequestModel.swift in Sources */,
 				82A2FC7C2A0BDA2D00BA7BD3 /* MainNavigator.swift in Sources */,
 				79D610662ACC992B00961837 /* AgeView.swift in Sources */,
@@ -3429,9 +3491,11 @@
 				8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */,
 				822AD2D52A14113B0037D8E0 /* VerifyEmailWorker.swift in Sources */,
 				82A2FC452A0B9D1600BA7BD3 /* Extenions.swift in Sources */,
+				794DC1552B015164006DE897 /* ChatViewController.swift in Sources */,
 				827356922A59E73200634EA4 /* DeleteAccountViewModel.swift in Sources */,
 				825039472A413F570006EAD3 /* Settings.swift in Sources */,
 				793F55D22ABF701B004635C5 /* LinkMeViewController.swift in Sources */,
+				794DC1522B015141006DE897 /* ChatViewModel.swift in Sources */,
 				82FB792F2A16E386006644EE /* urlEX.swift in Sources */,
 				82CB13BF2A511A9B00439CD7 /* SendEmailRequestModel.swift in Sources */,
 				79FA7F4F2ABB30E70043B6BA /* StoriesAPI.swift in Sources */,

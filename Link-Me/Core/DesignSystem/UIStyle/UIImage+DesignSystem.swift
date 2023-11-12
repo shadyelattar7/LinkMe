@@ -24,4 +24,16 @@ extension UIImage {
     static var placeholder: UIImage {
         return UIImage(named: "Group 62726")!
     }
+    
+    static var iconPlus: UIImage {
+        return UIImage(named: "icon-plus")!
+    }
+    
+    static var exit: UIImage {
+        return UIImage(named: "exit")!
+    }
+    
+    static var iconCheck: UIImage {
+        return UIImage(named: "icon-check")!
+    }
 }

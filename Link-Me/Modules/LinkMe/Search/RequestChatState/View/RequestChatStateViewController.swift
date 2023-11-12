@@ -97,8 +97,15 @@ class RequestChatStateViewController: UIViewController {
         if UDHelper.isVistor {
             QuickAlert.showWith(in: self, coordentor: self.coordinator)
         }
+        switch currentState {
+        case .acceptYourRequest:
+            let vc = coordinator.Main.viewcontroller(for: .chat)
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        default:
+            break
+        }
     }
-    
 }
 
 // MARK: Configurations.

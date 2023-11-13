@@ -355,6 +355,8 @@
 		A2D1DA0D2AC994EE0057D61D /* SupscriptionSubscribeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D1DA0C2AC994EE0057D61D /* SupscriptionSubscribeRequestModel.swift */; };
 		A2D1DA132AC997FE0057D61D /* PurchaseStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D1DA112AC997FE0057D61D /* PurchaseStoreViewController.swift */; };
 		A2D1DA142AC997FE0057D61D /* PurchaseStoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2D1DA122AC997FE0057D61D /* PurchaseStoreViewController.xib */; };
+		A2D65FC22B0229F7007BC08C /* SendOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D65FC12B0229F7007BC08C /* SendOptionView.swift */; };
+		A2D65FC42B022A08007BC08C /* SendOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2D65FC32B022A08007BC08C /* SendOptionView.xib */; };
 		A2DA71102AC1957B001BE903 /* BeInTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA710E2AC1957B001BE903 /* BeInTopViewController.swift */; };
 		A2DA71112AC1957B001BE903 /* BeInTopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2DA710F2AC1957B001BE903 /* BeInTopViewController.xib */; };
 		A2DA71152AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */; };
@@ -715,6 +717,8 @@
 		A2D1DA0C2AC994EE0057D61D /* SupscriptionSubscribeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupscriptionSubscribeRequestModel.swift; sourceTree = "<group>"; };
 		A2D1DA112AC997FE0057D61D /* PurchaseStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseStoreViewController.swift; sourceTree = "<group>"; };
 		A2D1DA122AC997FE0057D61D /* PurchaseStoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseStoreViewController.xib; sourceTree = "<group>"; };
+		A2D65FC12B0229F7007BC08C /* SendOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOptionView.swift; sourceTree = "<group>"; };
+		A2D65FC32B022A08007BC08C /* SendOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendOptionView.xib; sourceTree = "<group>"; };
 		A2DA710E2AC1957B001BE903 /* BeInTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeInTopViewController.swift; sourceTree = "<group>"; };
 		A2DA710F2AC1957B001BE903 /* BeInTopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeInTopViewController.xib; sourceTree = "<group>"; };
 		A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeToBeInTopCell.swift; sourceTree = "<group>"; };
@@ -875,6 +879,7 @@
 		794DC1502B01512F006DE897 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A2D65FC02B0229B4007BC08C /* SendOptionView */,
 				794DC1572B01534F006DE897 /* HeaderChatView */,
 				794DC14E2B015123006DE897 /* Controller */,
 			);
@@ -3047,6 +3052,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A2D65FC02B0229B4007BC08C /* SendOptionView */ = {
+			isa = PBXGroup;
+			children = (
+				A2D65FC12B0229F7007BC08C /* SendOptionView.swift */,
+				A2D65FC32B022A08007BC08C /* SendOptionView.xib */,
+			);
+			path = SendOptionView;
+			sourceTree = "<group>";
+		};
 		A2DA710C2AC19539001BE903 /* BeInTopViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3205,6 +3219,7 @@
 				794DC1562B015164006DE897 /* ChatViewController.xib in Resources */,
 				8250393F2A412F1B0006EAD3 /* SettingsVC.xib in Resources */,
 				827ED7432A3A20D30056EE37 /* ProfileVC.xib in Resources */,
+				A2D65FC42B022A08007BC08C /* SendOptionView.xib in Resources */,
 				794DC15B2B015378006DE897 /* HeaderChatView.xib in Resources */,
 				827ED7482A3A23630056EE37 /* UserPhotoProfileView.xib in Resources */,
 				82AB6A8B2A1219240005DEF6 /* RegisterViewController.xib in Resources */,
@@ -3402,6 +3417,7 @@
 				82FB792B2A16BBDD006644EE /* Register.swift in Sources */,
 				82A2FC442A0B9D1600BA7BD3 /* UITableView+Helper.swift in Sources */,
 				8A8C7EA82AEC77F7009265C4 /* PurchaseStoreAPI.swift in Sources */,
+				A2D65FC22B0229F7007BC08C /* SendOptionView.swift in Sources */,
 				82D9143F2A102459005FAF36 /* CofrimPasswordValidator.swift in Sources */,
 				827ED73F2A3A20B50056EE37 /* ProfileViewModel.swift in Sources */,
 				794B89172ABE2D8900FE5F0D /* BottomListSheetViewModel.swift in Sources */,

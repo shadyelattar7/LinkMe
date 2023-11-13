@@ -20,13 +20,13 @@ class HeaderChatView: UIView {
     
     // MARK: Proprites
     
-    private var type: HeaderViewType = .ignoreAddRequest {
+    private var type: HeaderViewType = .acceptOrIgnoreAddRequest {
         didSet {
             configureHeaderViewType()
         }
     }
     
-    //MARK: - init
+    // MARK: - init
     
     override init(frame: CGRect) {
         super.init(frame: frame)

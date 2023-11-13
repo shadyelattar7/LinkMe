@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="Link_Me" customModuleProvider="target">
             <connections>
+                <outlet property="sendOptionChatView" destination="ATQ-uL-NxG" id="5rU-a1-n7m"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,20 +22,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdG-MV-Dqk">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="758"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="asm-YF-13M">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="758"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-lf-1R1" customClass="HeaderChatView" customModule="Link_Me" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="240"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="274"/>
+                                    <color key="backgroundColor" name="lightGray"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="240" id="KSE-80-TGs"/>
+                                        <constraint firstAttribute="height" constant="274" id="KSE-80-TGs"/>
                                     </constraints>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Tc-bx-Syx">
-                                    <rect key="frame" x="0.0" y="240" width="393" height="519"/>
+                                    <rect key="frame" x="0.0" y="274" width="393" height="484"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                             </subviews>
@@ -49,16 +50,26 @@
                         <constraint firstAttribute="bottom" secondItem="asm-YF-13M" secondAttribute="bottom" id="zwo-Mo-Y7R"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATQ-uL-NxG" customClass="SendOptionView" customModule="Link_Me" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="758" width="393" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="fwb-8c-8Yb"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="lightGray"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NdG-MV-Dqk" secondAttribute="bottom" id="FCG-G8-X1H"/>
+                <constraint firstItem="ATQ-uL-NxG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0of-Pn-HJX"/>
+                <constraint firstItem="ATQ-uL-NxG" firstAttribute="top" secondItem="NdG-MV-Dqk" secondAttribute="bottom" id="KaX-lU-YGn"/>
                 <constraint firstItem="NdG-MV-Dqk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Yma-Kz-kOQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ATQ-uL-NxG" secondAttribute="bottom" id="kQ7-pg-evC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NdG-MV-Dqk" secondAttribute="trailing" id="m4z-y6-ML0"/>
-                <constraint firstItem="NdG-MV-Dqk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="o0S-do-hEI"/>
+                <constraint firstItem="ATQ-uL-NxG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nu7-jj-vfq"/>
+                <constraint firstItem="NdG-MV-Dqk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="o0S-do-hEI"/>
             </constraints>
-            <point key="canvasLocation" x="4" y="20"/>
+            <point key="canvasLocation" x="3.8167938931297707" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>

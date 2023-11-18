@@ -11,7 +11,8 @@ import Foundation
 struct StoriesModel: Codable {
     let status: Bool?
     let code: Int?
-    let dats: StoryDats?
+    let data: StoryDats?
+    let post: Post?
 }
 
 // MARK: - StoryDats
@@ -25,7 +26,7 @@ struct StoryDats: Codable {
     let path: String?
     let perPage: Int?
     let to, total: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case currentPage = "current_page"
         case data
@@ -53,7 +54,7 @@ struct UserStoryData: Codable {
     let country: String?
     let sentTickets, unreadTickets, canAddStory: Int?
     let stories: [Story]?
-
+    
     enum CodingKeys: String, CodingKey {
         case id, name, email
         case birthDate = "birth_date"
@@ -73,7 +74,7 @@ struct UserStoryData: Codable {
     }
     
     /// Initial value for example
-    /// 
+    ///
     static let example = UserStoryData(id: nil, name: nil, email: nil, birthDate: nil, image: nil, createdAt: nil, gander: nil, isOnline: nil, isFollowing: nil, isAvailable: nil, userName: nil, imagePath: nil, isProfileCompleted: nil, country: nil, sentTickets: nil, unreadTickets: nil, canAddStory: nil, stories: nil)
     
 }
@@ -86,7 +87,7 @@ struct Story: Codable {
     let video: String?
     let likes: Int?
     let comments: [Comments]?
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case userID = "user_id"
@@ -115,9 +116,9 @@ struct Comments : Codable {
     let created_at : String?
     let updated_at : String?
     let user : User?
-
+    
     enum CodingKeys: String, CodingKey {
-
+        
         case id = "id"
         case user_id = "user_id"
         case story_id = "story_id"
@@ -125,5 +126,55 @@ struct Comments : Codable {
         case created_at = "created_at"
         case updated_at = "updated_at"
         case user = "user"
+    }
+}
+
+// MARK: - Post
+struct Post: Codable {
+    let currentPage: Int?
+    let data: [StoryElement]?
+    let firstPageURL: String?
+    let from, lastPage: Int?
+    let lastPageURL: String?
+    let links: [Link]?
+    let nextPageURL: Int?
+    let path: String?
+    let perPage: Int?
+    let prevPageURL: Int?
+    let to, total: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case currentPage = "current_page"
+        case data
+        case firstPageURL = "first_page_url"
+        case from
+        case lastPage = "last_page"
+        case lastPageURL = "last_page_url"
+        case links
+        case nextPageURL = "next_page_url"
+        case path
+        case perPage = "per_page"
+        case prevPageURL = "prev_page_url"
+        case to, total
+    }
+}
+
+// MARK: - StoryElement
+struct StoryElement: Codable {
+    let id, userID: Int?
+    let file, expireAt, createdAt, updatedAt: String?
+    let description: String?
+    let video: String?
+    let likes: Int?
+    let comments: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case userID = "user_id"
+        case file
+        case expireAt = "expire_at"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case description, video, likes, comments
     }
 }

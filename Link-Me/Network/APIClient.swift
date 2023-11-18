@@ -24,7 +24,7 @@ class APIClient<T: TargetType> {
     
     var loadingCheck: Bool?
     
-    private let baseURL: String = "http://link-me.live/api"
+    private let baseURL: String = "https://link-me.live/api"
     
     /// a generic method to perform requests with requestModels
     /// - Parameters:

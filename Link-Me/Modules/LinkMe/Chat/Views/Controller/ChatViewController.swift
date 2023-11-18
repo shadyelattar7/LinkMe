@@ -19,6 +19,7 @@ class ChatViewController: UIViewController {
     private let viewModel: ChatViewModelType
     private let coordinator: Coordinator
     private var selectedImage: UIImage?
+    let audioRecorder = AudioRecorder()
     
     // MARK: Init
     
@@ -39,6 +40,7 @@ class ChatViewController: UIViewController {
         sendOptionChatViewOutputs()
         configureTableView()
         viewModelOutputs()
+        audioRecorder.setupAudioRecorder()
     }
 }
 
@@ -79,19 +81,19 @@ extension ChatViewController {
     private func onClickCameraButton() {
         sendOptionChatView.onClickCamera { [weak self] in
             guard let self = self else { return }
-            // TODO: Need to add action when click on camera button.
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.allowsEditing = true
-            
-            self.present(imagePickerController, animated: true, completion: nil)
+            self.openGallery()
         }
     }
     
     private func onClickMicButton() {
         sendOptionChatView.onClickMic { [weak self] in
-            guard let _ = self else { return }
-            // TODO: Need to add action when click on mic button.
+            guard let self = self else { return }
+            self.audioRecorder.startRecording()
+            /// Just for testing.
+            ///
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.audioRecorder.stopRecording()
+            }
         }
     }
 }
@@ -100,6 +102,13 @@ extension ChatViewController {
 // MARK: Configure Image
 
 extension ChatViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    private func openGallery() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let editedImage = info[.editedImage] as? UIImage {

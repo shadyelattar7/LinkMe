@@ -52,6 +52,10 @@ class FilterSearchViewController: BaseWireFrame<FilterSearchViewModel> {
     
     // MARK: Actions
     
+    @IBAction private func didTappedOnExitButton(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     @IBAction private func didTappedOnMaleViewButton(_ sender: Any) {
         selectMale()
     }

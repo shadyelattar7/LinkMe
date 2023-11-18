@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		509ABC786A24D3146446236C /* Pods_Link_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE62B092A4E2A039DB368CC0 /* Pods_Link_Me.framework */; };
+		790E42D52B08F0060025D315 /* TextMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E42D32B08F0060025D315 /* TextMessageTableViewCell.swift */; };
+		790E42D62B08F0060025D315 /* TextMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 790E42D42B08F0060025D315 /* TextMessageTableViewCell.xib */; };
+		790E42D92B08F1680025D315 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E42D82B08F1680025D315 /* MessageModel.swift */; };
+		790E42DD2B0904BA0025D315 /* ChatViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E42DC2B0904BA0025D315 /* ChatViewModelType.swift */; };
 		793016CA2AC7456000AA0F9C /* BeInTopResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793016C92AC7456000AA0F9C /* BeInTopResources.swift */; };
 		793F55B82ABF4EA4004635C5 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F55B72ABF4EA4004635C5 /* HeaderView.swift */; };
 		793F55BA2ABF4EAC004635C5 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 793F55B92ABF4EAC004635C5 /* HeaderView.xib */; };
@@ -366,6 +370,10 @@
 
 /* Begin PBXFileReference section */
 		2A309C640B64FBD4F99AF9D6 /* Pods-Link-Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link-Me.debug.xcconfig"; path = "Target Support Files/Pods-Link-Me/Pods-Link-Me.debug.xcconfig"; sourceTree = "<group>"; };
+		790E42D32B08F0060025D315 /* TextMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageTableViewCell.swift; sourceTree = "<group>"; };
+		790E42D42B08F0060025D315 /* TextMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextMessageTableViewCell.xib; sourceTree = "<group>"; };
+		790E42D82B08F1680025D315 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		790E42DC2B0904BA0025D315 /* ChatViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModelType.swift; sourceTree = "<group>"; };
 		793016C92AC7456000AA0F9C /* BeInTopResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeInTopResources.swift; sourceTree = "<group>"; };
 		793F55B72ABF4EA4004635C5 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		793F55B92ABF4EAC004635C5 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -760,6 +768,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		790E42D12B08EFE40025D315 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				790E42D22B08EFF10025D315 /* TextMessageCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		790E42D22B08EFF10025D315 /* TextMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				790E42D32B08F0060025D315 /* TextMessageTableViewCell.swift */,
+				790E42D42B08F0060025D315 /* TextMessageTableViewCell.xib */,
+			);
+			path = TextMessageCell;
+			sourceTree = "<group>";
+		};
+		790E42D72B08F15D0025D315 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				790E42D82B08F1680025D315 /* MessageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		793F55B62ABF4E8D004635C5 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
@@ -853,6 +886,7 @@
 		794DC14D2B014FF1006DE897 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				790E42D72B08F15D0025D315 /* Model */,
 				794DC14F2B015129006DE897 /* ViewModel */,
 				794DC1502B01512F006DE897 /* Views */,
 			);
@@ -871,6 +905,7 @@
 		794DC14F2B015129006DE897 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				790E42DC2B0904BA0025D315 /* ChatViewModelType.swift */,
 				794DC1512B015141006DE897 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
@@ -879,6 +914,7 @@
 		794DC1502B01512F006DE897 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				790E42D12B08EFE40025D315 /* Cells */,
 				A2D65FC02B0229B4007BC08C /* SendOptionView */,
 				794DC1572B01534F006DE897 /* HeaderChatView */,
 				794DC14E2B015123006DE897 /* Controller */,
@@ -3184,6 +3220,7 @@
 				822882972A0D1D4600019216 /* Poppins-ExtraLight.ttf in Resources */,
 				793F55BA2ABF4EAC004635C5 /* HeaderView.xib in Resources */,
 				829A79582A1281DA001A137B /* CreatePasswordViewController.xib in Resources */,
+				790E42D62B08F0060025D315 /* TextMessageTableViewCell.xib in Resources */,
 				82C94EC42A1D309F003FB504 /* Localizable.strings in Resources */,
 				822882942A0D1D4600019216 /* Poppins-Black.ttf in Resources */,
 				82FB79522A19475B006644EE /* Madani Arabic SemiBold 400.ttf in Resources */,
@@ -3371,6 +3408,7 @@
 				825039412A412F250006EAD3 /* SettingsViewModel.swift in Sources */,
 				82FB79332A16FF45006644EE /* LocalStorageManager.swift in Sources */,
 				8AF8CE4D2ABF49BD00676366 /* FeaturesPremiumViewModel.swift in Sources */,
+				790E42D52B08F0060025D315 /* TextMessageTableViewCell.swift in Sources */,
 				82FB79392A17E8F9006644EE /* LoginWorker.swift in Sources */,
 				8A3AD2552AC5A77500BF8358 /* RemoveCommentRequestModel.swift in Sources */,
 				79F632502ACCA8750069D8DE /* SearchingForUsersViewModel.swift in Sources */,
@@ -3460,6 +3498,7 @@
 				82CAF0462A3CB9EE00311600 /* CompleteProfileVC.swift in Sources */,
 				A2190C4D2AC044390031F1D6 /* UserCardViewModel.swift in Sources */,
 				82FB79362A17E860006644EE /* Login.swift in Sources */,
+				790E42D92B08F1680025D315 /* MessageModel.swift in Sources */,
 				82952B9C2A47B9B800548634 /* ChangePasswordVC.swift in Sources */,
 				82CAF0632A3FC5EB00311600 /* EditProfileViewModel.swift in Sources */,
 				82A2FC782A0BD96500BA7BD3 /* AppCoordinator.swift in Sources */,
@@ -3568,6 +3607,7 @@
 				827356892A59E4ED00634EA4 /* RemoveAccountViewModel.swift in Sources */,
 				793F55BF2ABF507E004635C5 /* TopUserTableViewCell.swift in Sources */,
 				825CF3BB2A4E642300BA5DDA /* FeedbackVC.swift in Sources */,
+				790E42DD2B0904BA0025D315 /* ChatViewModelType.swift in Sources */,
 				82C0E3A32A6768C4008B72ED /* MainStoriesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -75,6 +75,10 @@ extension SendOptionView {
     func onClickAdd(_ onClick: @escaping () -> Void) {
         onClickAdd = onClick
     }
+    
+    func makeTextFieldEmpty() {
+        inputTextField.text = ""
+    }
 }
 
 // MARK: Private handlers

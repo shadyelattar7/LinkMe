@@ -73,6 +73,9 @@
                                                     <state key="normal" title="Exit" image="exit">
                                                         <color key="titleColor" name="errorColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTappedOnExitButton:" destination="-1" eventType="touchUpInside" id="3Ye-iJ-Nfi"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>

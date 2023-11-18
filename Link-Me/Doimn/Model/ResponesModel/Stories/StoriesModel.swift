@@ -177,4 +177,8 @@ struct StoryElement: Codable {
         case updatedAt = "updated_at"
         case description, video, likes, comments
     }
+    
+    /// Initial value for example
+    ///
+    static let example = StoryElement(id: nil, userID: nil, file: nil, expireAt: nil, createdAt: nil, updatedAt: nil, description: nil, video: nil, likes: nil, comments: nil)
 }

@@ -32,9 +32,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
     override func bind(viewModel: MainStoriesViewModel) {
         setupView()
         setupStoriesCollV()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.configureStoriesPostsCollectionView()
-        }
+        configureStoriesPostsCollectionView()
         subscribeToErrorMessage()
     }
     
@@ -155,7 +153,6 @@ extension MainStoriesVC {
     }
     
     private func subscribeToStoriesPostsDate() {
-        print("Post Count: \(self.viewModel.storiesPost.value.count)")
         viewModel.storiesPost.bind(to: othersStoriesCollectionView.rx.items(cellIdentifier: String(describing: StoryCollectionViewCell.self), cellType: StoryCollectionViewCell.self)) { (row, item, cell) in
             if row != 0 {
                 cell.update(item)

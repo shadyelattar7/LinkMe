@@ -18,6 +18,7 @@ class ChatViewController: UIViewController {
     
     private let viewModel: ChatViewModelType
     private let coordinator: Coordinator
+    private var selectedImage: UIImage?
     
     // MARK: Init
     
@@ -77,8 +78,13 @@ extension ChatViewController {
     
     private func onClickCameraButton() {
         sendOptionChatView.onClickCamera { [weak self] in
-            guard let _ = self else { return }
+            guard let self = self else { return }
             // TODO: Need to add action when click on camera button.
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.allowsEditing = true
+            
+            self.present(imagePickerController, animated: true, completion: nil)
         }
     }
     
@@ -91,6 +97,29 @@ extension ChatViewController {
 }
 
 
+// MARK: Configure Image
+
+extension ChatViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let editedImage = info[.editedImage] as? UIImage {
+            self.selectedImage = editedImage
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            self.selectedImage = originalImage
+        }
+        
+        dismiss(animated: true, completion: { [weak self] in
+            guard let self = self else { return }
+            /// Update image data.
+            ///
+            let imageData = self.selectedImage?.jpegData(compressionQuality: 0.3)
+            self.viewModel.updateMessageType(.image)
+            self.viewModel.updateImageData(imageData)
+            self.viewModel.uploadImageToStorage()
+        })
+    }
+}
+
 // MARK: Configure table view
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
@@ -99,6 +128,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         chatTableView.dataSource = self
         chatTableView.separatorStyle = .none
         chatTableView.registerNIB(cell: TextMessageTableViewCell.self)
+        chatTableView.registerNIB(cell: ImageMessageTableViewCell.self)
         chatTableView.rowHeight = UITableView.automaticDimension
     }
     
@@ -115,9 +145,21 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue() as TextMessageTableViewCell
-        cell.update(viewModel.getItemCell(indexPath: indexPath))
-        return cell
+        
+        switch viewModel.getItemCell(indexPath: indexPath).messages?.type {
+        case .text:
+            let cell = tableView.dequeue() as TextMessageTableViewCell
+            cell.update(viewModel.getItemCell(indexPath: indexPath))
+            return cell
+            
+        case .image:
+            let cell = tableView.dequeue() as ImageMessageTableViewCell
+            cell.update(viewModel.getItemCell(indexPath: indexPath))
+            return cell
+            
+        default:
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

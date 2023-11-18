@@ -12,6 +12,8 @@
 		790E42D62B08F0060025D315 /* TextMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 790E42D42B08F0060025D315 /* TextMessageTableViewCell.xib */; };
 		790E42D92B08F1680025D315 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E42D82B08F1680025D315 /* MessageModel.swift */; };
 		790E42DD2B0904BA0025D315 /* ChatViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E42DC2B0904BA0025D315 /* ChatViewModelType.swift */; };
+		790E42E12B0912AA0025D315 /* ImageMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E42DF2B0912AA0025D315 /* ImageMessageTableViewCell.swift */; };
+		790E42E22B0912AA0025D315 /* ImageMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 790E42E02B0912AA0025D315 /* ImageMessageTableViewCell.xib */; };
 		793016CA2AC7456000AA0F9C /* BeInTopResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793016C92AC7456000AA0F9C /* BeInTopResources.swift */; };
 		793F55B82ABF4EA4004635C5 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F55B72ABF4EA4004635C5 /* HeaderView.swift */; };
 		793F55BA2ABF4EAC004635C5 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 793F55B92ABF4EAC004635C5 /* HeaderView.xib */; };
@@ -374,6 +376,8 @@
 		790E42D42B08F0060025D315 /* TextMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextMessageTableViewCell.xib; sourceTree = "<group>"; };
 		790E42D82B08F1680025D315 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		790E42DC2B0904BA0025D315 /* ChatViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModelType.swift; sourceTree = "<group>"; };
+		790E42DF2B0912AA0025D315 /* ImageMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessageTableViewCell.swift; sourceTree = "<group>"; };
+		790E42E02B0912AA0025D315 /* ImageMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageMessageTableViewCell.xib; sourceTree = "<group>"; };
 		793016C92AC7456000AA0F9C /* BeInTopResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeInTopResources.swift; sourceTree = "<group>"; };
 		793F55B72ABF4EA4004635C5 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		793F55B92ABF4EAC004635C5 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -771,6 +775,7 @@
 		790E42D12B08EFE40025D315 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				790E42DE2B0912500025D315 /* ImageMessageCell */,
 				790E42D22B08EFF10025D315 /* TextMessageCell */,
 			);
 			path = Cells;
@@ -791,6 +796,15 @@
 				790E42D82B08F1680025D315 /* MessageModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		790E42DE2B0912500025D315 /* ImageMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				790E42DF2B0912AA0025D315 /* ImageMessageTableViewCell.swift */,
+				790E42E02B0912AA0025D315 /* ImageMessageTableViewCell.xib */,
+			);
+			path = ImageMessageCell;
 			sourceTree = "<group>";
 		};
 		793F55B62ABF4E8D004635C5 /* HeaderView */ = {
@@ -3295,6 +3309,7 @@
 				82D914502A1028B7005FAF36 /* LoginViewController.xib in Resources */,
 				A2190C4A2AC044230031F1D6 /* UserCardViewController.xib in Resources */,
 				8A4B20F22AC86AC30078F4E4 /* SubscriptionCell.xib in Resources */,
+				790E42E22B0912AA0025D315 /* ImageMessageTableViewCell.xib in Resources */,
 				82EDF6972A4FC883004D8071 /* CompanySupportVC.xib in Resources */,
 				82FB79552A19475B006644EE /* Madani Arabic Black 400.ttf in Resources */,
 				825CF3972A49DFDA00BA5DDA /* SupportVC.xib in Resources */,
@@ -3478,6 +3493,7 @@
 				825557412A68C4CE00E00AA5 /* TransitionAnimator.swift in Sources */,
 				82D914442A102459005FAF36 /* MobileNumberValidator.swift in Sources */,
 				82D914382A102459005FAF36 /* ValidatorFactory.swift in Sources */,
+				790E42E12B0912AA0025D315 /* ImageMessageTableViewCell.swift in Sources */,
 				82AB6A842A115B4F0005DEF6 /* EnterCodeViewModel.swift in Sources */,
 				82952B902A47990B00548634 /* OtherSettingsVC.swift in Sources */,
 				797CF3922AEC488300771B5E /* RequestChat.swift in Sources */,

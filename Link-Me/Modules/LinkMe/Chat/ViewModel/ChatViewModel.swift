@@ -15,6 +15,8 @@ class ChatViewModel: BaseViewModel {
     
     private var messageType: MessageType?
     private var messageText: String?
+    private var imageData: Data?
+    private var imagePath: String?
     
     private var onReloadTableViewClosure: (() -> Void) = { }
     private var messages: [MessageModel] = [] {
@@ -41,6 +43,10 @@ extension ChatViewModel: ChatViewModelInputs {
     
     func updateMessageText(_ text: String?) {
         messageText = text
+    }
+    
+    func updateImageData(_ data: Data?) {
+        imageData = data
     }
 }
 
@@ -133,6 +139,11 @@ extension ChatViewModel {
         case .text:
             guard messageText != nil else { return nil }
             contentMessage = MessageContentModel(content: messageText, createdAt: date, path: nil, receiverId: nil, senderId: "\(senderId)",type: .text)
+            
+        case .image:
+            guard imagePath != nil else { return nil }
+            contentMessage = MessageContentModel(content: nil, createdAt: date, path: imagePath, receiverId: nil, senderId: "\(senderId)",type: .image)
+            
         default:
             break
         }
@@ -142,3 +153,17 @@ extension ChatViewModel {
     }
 }
 
+
+// MARK: Upload image
+
+extension ChatViewModel {
+    func uploadImageToStorage() {
+        // TODO: - Need to upload image to firebase storage.
+        
+        
+        /// Just assume successfully upload image to store and send this as message.
+        ///
+        self.imagePath = "https://link-me.live/uploads/10-2023/rjiqC94DBy."
+        self.sendMessage()
+    }
+}

@@ -1,33 +1,36 @@
 //
-//  TextMessageTableViewCell.swift
+//  ImageMessageTableViewCell.swift
 //  Link-Me
 //
 //  Created by Ahmed Nasr on 18/11/2023.
 //
 
 import UIKit
+import SDWebImage
 
-class TextMessageTableViewCell: UITableViewCell {
-
+class ImageMessageTableViewCell: UITableViewCell {
+    
     // MARK: Outlets
     
     @IBOutlet private weak var messageStackView: UIStackView!
-    @IBOutlet private weak var messageView: UIView!
-    @IBOutlet private weak var messageTextView: UITextView!
+    @IBOutlet private weak var messageImageView: UIImageView!
+    @IBOutlet private weak var heightOfImageViewConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var widthOfImageViewConstraint: NSLayoutConstraint!
     @IBOutlet private weak var timeLabel: UILabel!
     
     // MARK: Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     
     // MARK: Updates
     
     func update(_ item: MessageModel) {
-        messageTextView.text = item.messages?.content
+        messageImageView.image = nil
+        messageImageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+        messageImageView.sd_setImage(with: URL(string: item.messages?.path ?? ""))
         updateUI(item)
     }
     
@@ -37,18 +40,11 @@ class TextMessageTableViewCell: UITableViewCell {
         if "\(senderID)" == item.SenderID {
             
             semanticContentAttribute = .forceRightToLeft
-            messageTextView.textAlignment = .right
-            messageTextView.textColor = .white
-            messageView.backgroundColor = .mainColor
             messageStackView.alignment = .trailing
             
         } else {
             semanticContentAttribute = .forceLeftToRight
-            messageTextView.textAlignment = .left
-            messageTextView.textColor = .strongGray
-            messageView.backgroundColor = .lightGray
             messageStackView.alignment = .leading
         }
     }
 }
-

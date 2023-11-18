@@ -15,6 +15,7 @@ typealias ChatViewModelType = ChatViewModelInputs & ChatViewModelOutputs
 protocol ChatViewModelInputs {
     func updateMessageType(_ type: MessageType)
     func updateMessageText(_ text: String?)
+    func updateImageData(_ data: Data?)
 }
 
 // MARK: ChatViewModel Outputs
@@ -25,4 +26,5 @@ protocol ChatViewModelOutputs {
     func onReloadTableView(reload: @escaping () -> Void)
     func fetchMessages()
     func sendMessage()
+    func uploadImageToStorage()
 }

@@ -36,8 +36,12 @@ class LetsSearchViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction private func didTappedOnLetsGoButton(_ sender: Any) {
-        let vc = coordinator.Main.viewcontroller(for: .startSearch)
-        vc.modalPresentationStyle = .fullScreen
+//        let vc = coordinator.Main.viewcontroller(for: .startSearch)
+//        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: true)
+        
+        let vc = coordinator.Main.viewcontroller(for: .chat)
+        vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
     }
 }

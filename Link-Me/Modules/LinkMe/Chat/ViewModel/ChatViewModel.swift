@@ -101,8 +101,22 @@ extension ChatViewModel {
                                     timeStamp: 0)
         
         
+        let content3 = MessageContentModel(content: "Hello, i am good and you?",
+                                           createdAt: "",
+                                           path: "sunrise-groove-176565",
+                                           receiverId: "",
+                                           senderId: "",
+                                           type: .audio)
+        let message3 = MessageModel(ReceiverID: "",
+                                    SenderID: "",
+                                    chatId: "",
+                                    messages: content3,
+                                    timeStamp: 0)
+        
+        
         messages.append(message1)
         messages.append(message2)
+        messages.append(message3)
     }
 }
 

@@ -138,6 +138,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         chatTableView.separatorStyle = .none
         chatTableView.registerNIB(cell: TextMessageTableViewCell.self)
         chatTableView.registerNIB(cell: ImageMessageTableViewCell.self)
+        chatTableView.registerNIB(cell: AudioMessageTableViewCell.self)
         chatTableView.rowHeight = UITableView.automaticDimension
     }
     
@@ -164,6 +165,12 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         case .image:
             let cell = tableView.dequeue() as ImageMessageTableViewCell
             cell.update(viewModel.getItemCell(indexPath: indexPath))
+            return cell
+            
+        case .audio:
+            let cell = tableView.dequeue() as AudioMessageTableViewCell
+//            cell.update(viewModel.getItemCell(indexPath: indexPath))
+            cell.path = viewModel.getItemCell(indexPath: indexPath).messages?.path
             return cell
             
         default:

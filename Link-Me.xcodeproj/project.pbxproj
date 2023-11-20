@@ -355,6 +355,9 @@
 		A2190C722AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2190C702AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib */; };
 		A22B9F4C2ACC2E91007D224F /* SearchTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B9F4A2ACC2E91007D224F /* SearchTypeViewController.swift */; };
 		A22B9F4D2ACC2E91007D224F /* SearchTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A22B9F4B2ACC2E91007D224F /* SearchTypeViewController.xib */; };
+		A23F7A8F2B0B73D100F16EBF /* AudioMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F7A8D2B0B73D100F16EBF /* AudioMessageTableViewCell.swift */; };
+		A23F7A902B0B73D100F16EBF /* AudioMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23F7A8E2B0B73D100F16EBF /* AudioMessageTableViewCell.xib */; };
+		A23F7A922B0B74B900F16EBF /* sunrise-groove-176565.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A23F7A912B0B74B900F16EBF /* sunrise-groove-176565.mp3 */; };
 		A2B81F292ACB0A630070BED9 /* StartSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B81F272ACB0A630070BED9 /* StartSearchViewController.swift */; };
 		A2B81F2A2ACB0A630070BED9 /* StartSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2B81F282ACB0A630070BED9 /* StartSearchViewController.xib */; };
 		A2B81F2E2ACB0A820070BED9 /* LetsSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2B81F2C2ACB0A820070BED9 /* LetsSearchViewController.xib */; };
@@ -724,6 +727,9 @@
 		A2190C702AC0A8B30031F1D6 /* NotificationItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationItemTableViewCell.xib; sourceTree = "<group>"; };
 		A22B9F4A2ACC2E91007D224F /* SearchTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTypeViewController.swift; sourceTree = "<group>"; };
 		A22B9F4B2ACC2E91007D224F /* SearchTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTypeViewController.xib; sourceTree = "<group>"; };
+		A23F7A8D2B0B73D100F16EBF /* AudioMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMessageTableViewCell.swift; sourceTree = "<group>"; };
+		A23F7A8E2B0B73D100F16EBF /* AudioMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioMessageTableViewCell.xib; sourceTree = "<group>"; };
+		A23F7A912B0B74B900F16EBF /* sunrise-groove-176565.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sunrise-groove-176565.mp3"; sourceTree = "<group>"; };
 		A2B81F272ACB0A630070BED9 /* StartSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartSearchViewController.swift; sourceTree = "<group>"; };
 		A2B81F282ACB0A630070BED9 /* StartSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartSearchViewController.xib; sourceTree = "<group>"; };
 		A2B81F2C2ACB0A820070BED9 /* LetsSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LetsSearchViewController.xib; sourceTree = "<group>"; };
@@ -777,6 +783,7 @@
 		790E42D12B08EFE40025D315 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A23F7A8C2B0B708B00F16EBF /* AudioMessageCell */,
 				790E42DE2B0912500025D315 /* ImageMessageCell */,
 				790E42D22B08EFF10025D315 /* TextMessageCell */,
 			);
@@ -3055,6 +3062,16 @@
 			path = SearchType;
 			sourceTree = "<group>";
 		};
+		A23F7A8C2B0B708B00F16EBF /* AudioMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				A23F7A912B0B74B900F16EBF /* sunrise-groove-176565.mp3 */,
+				A23F7A8D2B0B73D100F16EBF /* AudioMessageTableViewCell.swift */,
+				A23F7A8E2B0B73D100F16EBF /* AudioMessageTableViewCell.xib */,
+			);
+			path = AudioMessageCell;
+			sourceTree = "<group>";
+		};
 		A2B81F262ACB0A2C0070BED9 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -3237,6 +3254,7 @@
 				79FA7F432ABB24640043B6BA /* StoryCollectionViewCell.xib in Resources */,
 				82FB79592A19475B006644EE /* Madani Arabic ExtraLight 400.ttf in Resources */,
 				82A2FC362A0B9CF000BA7BD3 /* ToastView.xib in Resources */,
+				A23F7A922B0B74B900F16EBF /* sunrise-groove-176565.mp3 in Resources */,
 				825039442A4133580006EAD3 /* Setting.json in Resources */,
 				822882952A0D1D4600019216 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				A22B9F4D2ACC2E91007D224F /* SearchTypeViewController.xib in Resources */,
@@ -3334,6 +3352,7 @@
 				825CF38C2A494A9B00BA5DDA /* LanguageVC.xib in Resources */,
 				A2190C5D2AC0767B0031F1D6 /* LinkUsersImageView.xib in Resources */,
 				82FB79562A19475B006644EE /* Madani Arabic Medium 400.ttf in Resources */,
+				A23F7A902B0B73D100F16EBF /* AudioMessageTableViewCell.xib in Resources */,
 				822882992A0D1D4600019216 /* Poppins-BlackItalic.ttf in Resources */,
 				822882982A0D1D4600019216 /* Poppins-SemiBold.ttf in Resources */,
 				A2DA71162AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib in Resources */,
@@ -3599,6 +3618,7 @@
 				827356752A59C65500634EA4 /* RemoveAccReason.swift in Sources */,
 				8A4B20F92AC8DC0B0078F4E4 /* SubscribeTarget.swift in Sources */,
 				825CF3B52A4DC4E100BA5DDA /* SendEmailViewModel.swift in Sources */,
+				A23F7A8F2B0B73D100F16EBF /* AudioMessageTableViewCell.swift in Sources */,
 				825CF3902A4953F000BA5DDA /* UIImageEx.swift in Sources */,
 				82A2FC712A0BD3B500BA7BD3 /* TargetType.swift in Sources */,
 				79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */,

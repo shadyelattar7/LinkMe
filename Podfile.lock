@@ -24,6 +24,7 @@ PODS:
   - SDWebImage/Core (5.18.3)
   - SGSegmentedProgressBarLibrary (0.0.5)
   - SkeletonView (1.30.4)
+  - SoundWave (0.1.4)
   - SVProgressHUD (2.2.5)
   - "UITextView+Placeholder (1.4.0)"
 
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - SDWebImage
   - SGSegmentedProgressBarLibrary
   - SkeletonView
+  - SoundWave
   - SVProgressHUD
   - "UITextView+Placeholder"
 
@@ -57,6 +59,7 @@ SPEC REPOS:
     - SDWebImage
     - SGSegmentedProgressBarLibrary
     - SkeletonView
+    - SoundWave
     - SVProgressHUD
     - "UITextView+Placeholder"
 
@@ -74,9 +77,10 @@ SPEC CHECKSUMS:
   SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
   SGSegmentedProgressBarLibrary: 2b7f2dc518cd19c5d7d42ae6a8e9ec5610c334f1
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+  SoundWave: d98ffaa863570b29d991da32a09b7ce1b4aaf2d4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 564dfd8b6d70fe628344024acb69300e548d162c
+PODFILE CHECKSUM: 8fb371852b9c333f2e1e7c69d9507709f94ce50a
 
 COCOAPODS: 1.12.1

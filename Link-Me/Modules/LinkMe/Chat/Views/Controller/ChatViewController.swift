@@ -169,8 +169,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .audio:
             let cell = tableView.dequeue() as AudioMessageTableViewCell
-//            cell.update(viewModel.getItemCell(indexPath: indexPath))
-            cell.path = viewModel.getItemCell(indexPath: indexPath).messages?.path
+            cell.update(viewModel.getItemCell(indexPath: indexPath))
             return cell
             
         default:

@@ -63,6 +63,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" name="errorColor"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Lte-8e-yBV" secondAttribute="bottom" constant="8" id="KKm-yx-Lko"/>
                     <constraint firstItem="Lte-8e-yBV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="XJB-oj-hWn"/>
@@ -81,6 +82,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="errorColor">
+            <color red="1" green="0.18799999356269836" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="mainColor">
             <color red="0.46274509803921571" green="0.30588235294117649" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

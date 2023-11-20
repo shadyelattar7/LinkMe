@@ -11,6 +11,7 @@ target 'Link-Me' do
   pod 'IQKeyboardManagerSwift'
 
   pod 'SVProgressHUD'
+  pod 'SoundWave'
 
   pod 'RxSwift'
   pod 'RxCocoa'

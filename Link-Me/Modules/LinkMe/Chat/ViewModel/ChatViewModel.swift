@@ -101,9 +101,9 @@ extension ChatViewModel {
                                     timeStamp: 0)
         
         
-        let content3 = MessageContentModel(content: "Hello, i am good and you?",
+        let content3 = MessageContentModel(content: "",
                                            createdAt: "",
-                                           path: "sunrise-groove-176565",
+                                           path: "https://file-examples.com/storage/fe02dbc794655b5e699ae4d/2017/11/file_example_MP3_700KB.mp3",
                                            receiverId: "",
                                            senderId: "",
                                            type: .audio)
@@ -113,10 +113,23 @@ extension ChatViewModel {
                                     messages: content3,
                                     timeStamp: 0)
         
+        let content4 = MessageContentModel(content: "",
+                                           createdAt: "",
+                                           path: "https://file-examples.com/storage/fe02dbc794655b5e699ae4d/2017/11/file_example_MP3_700KB.mp3",
+                                           receiverId: "",
+                                           senderId: "\(UDHelper.fetchUserData?.id ?? 0)",
+                                           type: .audio)
+        let message4 = MessageModel(ReceiverID: "",
+                                    SenderID: "\(UDHelper.fetchUserData?.id ?? 0)",
+                                    chatId: "",
+                                    messages: content4,
+                                    timeStamp: 0)
+        
         
         messages.append(message1)
         messages.append(message2)
         messages.append(message3)
+        messages.append(message4)
     }
 }
 

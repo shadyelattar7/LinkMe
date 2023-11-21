@@ -15,8 +15,9 @@ class AudioMessageTableViewCell: UITableViewCell {
     // MARK: Outlets
     
     @IBOutlet private weak var messageStackView: UIStackView!
-//    @IBOutlet private weak var activeButton: UIButton!
+    @IBOutlet private weak var activeButton: UIButton!
     @IBOutlet private weak var audioVisualizationView: AudioVisualizationView!
+    @IBOutlet private weak var recordDurationLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
    
     // MARK: Proprites
@@ -37,7 +38,10 @@ class AudioMessageTableViewCell: UITableViewCell {
     
     func update(_ item: MessageModel) {
         guard let audioPath = item.messages?.path else { return }
-        audioURL = Bundle.main.url(forResource: audioPath, withExtension: "mp3")
+        downloadFileFromURL(url: NSURL(string: audioPath)!)
+        guard let url = audioURL else { return }
+        player = try! AVAudioPlayer(contentsOf: url)
+        configureAudioVisualization()
         updateUI(item)
     }
     
@@ -54,13 +58,20 @@ class AudioMessageTableViewCell: UITableViewCell {
             messageStackView.alignment = .leading
         }
     }
+    
+    func downloadFileFromURL(url:NSURL){
+
+        var downloadTask: URLSessionDownloadTask
+        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { [weak self](URL, response, error) -> Void in
+            self?.audioURL = URL //self?.play(URL)
+        })
+        downloadTask.resume()
+    }
 
     // MARK: Actions
     
     @IBAction private func didTappedOnActiveButton(_ sender: Any) {
-       
         playAudio()
-        
     }
 }
 
@@ -69,34 +80,33 @@ class AudioMessageTableViewCell: UITableViewCell {
 
 extension AudioMessageTableViewCell {
     private func playAudio() {
-        guard let url = audioURL else { return }
-        player = try! AVAudioPlayer(contentsOf: url)
         guard let player = player else { return }
         
         if audioIsPlayed {
             audioCurrentTime = player.currentTime
             player.pause()
-//            activeButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            activeButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             self.audioVisualizationView.pause()
             self.audioIsPlayed = false
         }
         else {
             player.play()
-//            activeButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            activeButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
             self.audioVisualizationView.play(for: player.duration)
             self.audioIsPlayed = true
         }
     }
     
     private func configureAudioVisualization() {
-        self.audioVisualizationView.meteringLevelBarWidth = 5.0
-        self.audioVisualizationView.meteringLevelBarInterItem = 1.0
-        self.audioVisualizationView.meteringLevelBarCornerRadius = 0.0
+        self.audioVisualizationView.meteringLevelBarWidth = 2.8
+        self.audioVisualizationView.meteringLevelBarInterItem = 3.0
+        self.audioVisualizationView.meteringLevelBarCornerRadius = 3.0
         
-        self.audioVisualizationView.gradientStartColor = .green
-        self.audioVisualizationView.gradientEndColor = .mainColor
+        self.audioVisualizationView.gradientStartColor = UIColor(hexString: "#A88DF3")
+        self.audioVisualizationView.gradientEndColor = .white
         
         self.audioVisualizationView.audioVisualizationMode = .read
-        self.audioVisualizationView.meteringLevels = [0.1, 0.67, 0.13, 0.78, 0.31, 0.1, 0.67, 0.13, 0.78, 0.31, 0.1, 0.67, 0.13, 0.78, 0.31, 0.1, 0.67, 0.13, 0.78, 0.31, 0.1, 0.67, 0.13, 0.78, 0.31, 0.1, 0.67, 0.13, 0.78, 0.31, 0.1, 0.67, 0.13, 0.78, 0.31, 0.1, 0.67, 0.13, 0.78]
+//        self.audioVisualizationView.audioVisualizationTimeInterval = player?.duration ?? 0
+        self.audioVisualizationView.meteringLevels = [0.40, 0.67, 0.40, 0.56, 0.84, 0.48, 0.53, 0.56, 0.62, 0.40, 0.40, 0.67, 0.56, 0.84, 0.48, 0.53, 0.56, 0.62, 0.40, 0.40, 0.67, 0.40, 0.23]
     }
 }

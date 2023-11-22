@@ -79,6 +79,14 @@ extension SendOptionView {
     func makeTextFieldEmpty() {
         inputTextField.text = ""
     }
+    
+    func startRecored() {
+        microphoneButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
+    }
+    
+    func stopRecored() {
+        microphoneButton.setImage(UIImage(named: "microphone"), for: .normal)
+    }
 }
 
 // MARK: Private handlers

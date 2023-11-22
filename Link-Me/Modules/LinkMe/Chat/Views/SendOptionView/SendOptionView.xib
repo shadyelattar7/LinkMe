@@ -79,8 +79,11 @@
                                         <constraint firstAttribute="height" constant="45" id="UsJ-j5-T6K"/>
                                         <constraint firstAttribute="width" constant="45" id="WRH-dn-yKX"/>
                                     </constraints>
+                                    <color key="tintColor" name="strongPink"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="microphone"/>
+                                    <state key="normal" image="microphone">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                    </state>
                                     <connections>
                                         <action selector="didTappedOnMicrophoneButton:" destination="-1" eventType="touchUpInside" id="b2L-VD-q5I"/>
                                     </connections>
@@ -107,6 +110,9 @@
         <image name="microphone" width="17" height="19"/>
         <namedColor name="lightGray">
             <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="strongPink">
+            <color red="1" green="0.13699999451637268" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

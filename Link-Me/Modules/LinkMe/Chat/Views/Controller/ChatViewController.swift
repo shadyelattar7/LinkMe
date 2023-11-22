@@ -19,7 +19,8 @@ class ChatViewController: UIViewController {
     private let viewModel: ChatViewModelType
     private let coordinator: Coordinator
     private var selectedImage: UIImage?
-    let audioRecorder = AudioRecorder()
+    private let audioRecorder = AudioRecorder()
+    private var isRecording: Bool = false
     
     // MARK: Init
     
@@ -88,17 +89,19 @@ extension ChatViewController {
     private func onClickMicButton() {
         sendOptionChatView.onClickMic { [weak self] in
             guard let self = self else { return }
-//            self.audioRecorder.startRecording()
-//            /// Just for testing.
-//            ///
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//                self.audioRecorder.stopRecording()
-//            }
-//
-            /// Assume start record and fished it then we have a path for url.
-            ///
-            self.viewModel.updateMessageType(.audio)
-            self.viewModel.uploadAudioToStorage()
+            if self.isRecording {
+                self.audioRecorder.stopRecording()
+                self.sendOptionChatView.stopRecored()
+                self.isRecording = false
+                /// Assume start record and fished it then we have a path for url.
+                ///
+                self.viewModel.updateMessageType(.audio)
+                self.viewModel.uploadAudioToStorage()
+            } else {
+                self.audioRecorder.startRecording()
+                self.sendOptionChatView.startRecored()
+                self.isRecording = true
+            }
         }
     }
 }

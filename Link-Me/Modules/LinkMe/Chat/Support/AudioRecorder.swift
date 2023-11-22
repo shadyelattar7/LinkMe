@@ -19,7 +19,7 @@ class AudioRecorder: NSObject {
     ///
     private let audioFilename = FileManager.default
         .urls(for: .documentDirectory, in: .userDomainMask)[0]
-        .appendingPathComponent("audioRecording.mp3")
+        .appendingPathComponent("audioRecording.m4a")
     
     
     /// Method for setup audio recorder.

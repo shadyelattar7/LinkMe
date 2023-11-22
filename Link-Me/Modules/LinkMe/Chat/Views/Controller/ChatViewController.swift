@@ -88,12 +88,17 @@ extension ChatViewController {
     private func onClickMicButton() {
         sendOptionChatView.onClickMic { [weak self] in
             guard let self = self else { return }
-            self.audioRecorder.startRecording()
-            /// Just for testing.
+//            self.audioRecorder.startRecording()
+//            /// Just for testing.
+//            ///
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                self.audioRecorder.stopRecording()
+//            }
+//
+            /// Assume start record and fished it then we have a path for url.
             ///
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.audioRecorder.stopRecording()
-            }
+            self.viewModel.updateMessageType(.audio)
+            self.viewModel.uploadAudioToStorage()
         }
     }
 }

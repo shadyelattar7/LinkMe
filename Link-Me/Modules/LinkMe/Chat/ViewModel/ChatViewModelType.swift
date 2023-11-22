@@ -16,6 +16,7 @@ protocol ChatViewModelInputs {
     func updateMessageType(_ type: MessageType)
     func updateMessageText(_ text: String?)
     func updateImageData(_ data: Data?)
+    func updateAudioPath(_ path: String?)
 }
 
 // MARK: ChatViewModel Outputs
@@ -27,4 +28,5 @@ protocol ChatViewModelOutputs {
     func fetchMessages()
     func sendMessage()
     func uploadImageToStorage()
+    func uploadAudioToStorage()
 }

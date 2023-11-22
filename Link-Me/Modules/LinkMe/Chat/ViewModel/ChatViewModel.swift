@@ -17,6 +17,7 @@ class ChatViewModel: BaseViewModel {
     private var messageText: String?
     private var imageData: Data?
     private var imagePath: String?
+    private var audioPath: String?
     
     private var onReloadTableViewClosure: (() -> Void) = { }
     private var messages: [MessageModel] = [] {
@@ -47,6 +48,10 @@ extension ChatViewModel: ChatViewModelInputs {
     
     func updateImageData(_ data: Data?) {
         imageData = data
+    }
+    
+    func updateAudioPath(_ path: String?) {
+        audioPath = path
     }
 }
 
@@ -113,23 +118,10 @@ extension ChatViewModel {
                                     messages: content3,
                                     timeStamp: 0)
         
-        let content4 = MessageContentModel(content: "",
-                                           createdAt: "",
-                                           path: "https://file-examples.com/storage/fe02dbc794655b5e699ae4d/2017/11/file_example_MP3_700KB.mp3",
-                                           receiverId: "",
-                                           senderId: "\(UDHelper.fetchUserData?.id ?? 0)",
-                                           type: .audio)
-        let message4 = MessageModel(ReceiverID: "",
-                                    SenderID: "\(UDHelper.fetchUserData?.id ?? 0)",
-                                    chatId: "",
-                                    messages: content4,
-                                    timeStamp: 0)
-        
         
         messages.append(message1)
         messages.append(message2)
         messages.append(message3)
-        messages.append(message4)
     }
 }
 
@@ -171,6 +163,10 @@ extension ChatViewModel {
             guard imagePath != nil else { return nil }
             contentMessage = MessageContentModel(content: nil, createdAt: date, path: imagePath, receiverId: nil, senderId: "\(senderId)",type: .image)
             
+        case .audio:
+            guard audioPath != nil else { return nil }
+            contentMessage = MessageContentModel(content: nil, createdAt: date, path: audioPath, receiverId: nil, senderId: "\(senderId)",type: .audio)
+            
         default:
             break
         }
@@ -191,6 +187,20 @@ extension ChatViewModel {
         /// Just assume successfully upload image to store and send this as message.
         ///
         self.imagePath = "https://link-me.live/uploads/10-2023/rjiqC94DBy."
+        self.sendMessage()
+    }
+}
+
+
+// MARK: Upload audio
+
+extension ChatViewModel {
+    func uploadAudioToStorage() {
+        // TODO: - Need to upload audio to firebase storage.
+        
+        /// Just assume successfully upload audio to store and send this as message.
+        ///
+        self.audioPath = "https://file-examples.com/storage/fe02dbc794655b5e699ae4d/2017/11/file_example_MP3_700KB.mp3"
         self.sendMessage()
     }
 }

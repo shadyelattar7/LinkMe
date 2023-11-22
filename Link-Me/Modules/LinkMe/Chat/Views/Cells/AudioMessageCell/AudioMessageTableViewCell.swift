@@ -22,10 +22,8 @@ class AudioMessageTableViewCell: UITableViewCell {
    
     // MARK: Proprites
     
-    private var player: AVAudioPlayer?
-    private var audioURL: URL?
+    private var player: AVPlayer?
     private var audioIsPlayed: Bool = false
-    private var audioCurrentTime: TimeInterval = 0.0
     
     // MARK: Lifecycle
     
@@ -37,11 +35,9 @@ class AudioMessageTableViewCell: UITableViewCell {
     // MARK: Updates
     
     func update(_ item: MessageModel) {
-        guard let audioPath = item.messages?.path else { return }
-        downloadFileFromURL(url: NSURL(string: audioPath)!)
-        guard let url = audioURL else { return }
-        player = try! AVAudioPlayer(contentsOf: url)
-        configureAudioVisualization()
+        guard let audioPath = item.messages?.path,
+              let url = NSURL(string: audioPath) else { return }
+        player = AVPlayer(url: url as URL)
         updateUI(item)
     }
     
@@ -58,16 +54,8 @@ class AudioMessageTableViewCell: UITableViewCell {
             messageStackView.alignment = .leading
         }
     }
+  
     
-    func downloadFileFromURL(url:NSURL){
-
-        var downloadTask: URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { [weak self](URL, response, error) -> Void in
-            self?.audioURL = URL //self?.play(URL)
-        })
-        downloadTask.resume()
-    }
-
     // MARK: Actions
     
     @IBAction private func didTappedOnActiveButton(_ sender: Any) {
@@ -80,10 +68,18 @@ class AudioMessageTableViewCell: UITableViewCell {
 
 extension AudioMessageTableViewCell {
     private func playAudio() {
-        guard let player = player else { return }
+       
+        guard let player = player, let cmTimeDuration = player.currentItem?.duration else { return }
+        let duration = Float(CMTimeGetSeconds((cmTimeDuration)))
+        
+        NotificationCenter.default
+            .addObserver(self,
+            selector: #selector(playerDidFinishPlaying),
+            name: .AVPlayerItemDidPlayToEndTime,
+            object: player.currentItem
+        )
         
         if audioIsPlayed {
-            audioCurrentTime = player.currentTime
             player.pause()
             activeButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             self.audioVisualizationView.pause()
@@ -92,9 +88,15 @@ extension AudioMessageTableViewCell {
         else {
             player.play()
             activeButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-            self.audioVisualizationView.play(for: player.duration)
+            self.audioVisualizationView.play(for: TimeInterval(duration))
             self.audioIsPlayed = true
         }
+    }
+    
+    
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+        print("playerDidFinishPlaying")
+        audioIsPlayed = false
     }
     
     private func configureAudioVisualization() {
@@ -106,7 +108,6 @@ extension AudioMessageTableViewCell {
         self.audioVisualizationView.gradientEndColor = .white
         
         self.audioVisualizationView.audioVisualizationMode = .read
-//        self.audioVisualizationView.audioVisualizationTimeInterval = player?.duration ?? 0
         self.audioVisualizationView.meteringLevels = [0.40, 0.67, 0.40, 0.56, 0.84, 0.48, 0.53, 0.56, 0.62, 0.40, 0.40, 0.67, 0.56, 0.84, 0.48, 0.53, 0.56, 0.62, 0.40, 0.40, 0.67, 0.40, 0.23]
     }
 }

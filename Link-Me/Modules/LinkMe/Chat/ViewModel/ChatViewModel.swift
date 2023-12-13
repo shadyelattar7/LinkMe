@@ -6,19 +6,21 @@
 //
 
 import Foundation
-
+import RxSwift
 
 
 class ChatViewModel: BaseViewModel {
     
     // MARK:  proprites
     
-    private var messageType: MessageType?
+    private let worker: ChatWorkerProtocol = ChatWorker()
+    private let disposeBag = DisposeBag()
+    private var error: (String) -> Void = { _ in }
+    private var messageType: ChatMessageType?
+    private var mediaMessageType: ChatMessageMediaType?
     private var messageText: String?
-    private var imageData: Data?
-    private var imagePath: String?
-    private var audioPath: String?
-    
+    private var mediaData: Data?
+
     private var onReloadTableViewClosure: (() -> Void) = { }
     private var messages: [MessageModel] = [] {
         didSet {
@@ -38,20 +40,20 @@ class ChatViewModel: BaseViewModel {
 // MARK: ViewModel inputs
 
 extension ChatViewModel: ChatViewModelInputs {
-    func updateMessageType(_ type: MessageType) {
+    func updateMessageType(_ type: ChatMessageType) {
         messageType = type
+    }
+    
+    func updateMediaMessageType(_ type: ChatMessageMediaType) {
+        mediaMessageType = type
     }
     
     func updateMessageText(_ text: String?) {
         messageText = text
     }
     
-    func updateImageData(_ data: Data?) {
-        imageData = data
-    }
-    
-    func updateAudioPath(_ path: String?) {
-        audioPath = path
+    func updateMediaData(_ data: Data?) {
+        mediaData = data
     }
 }
 
@@ -68,6 +70,10 @@ extension ChatViewModel: ChatViewModelOutputs {
     
     func onReloadTableView(reload: @escaping () -> Void) {
         onReloadTableViewClosure = reload
+    }
+    
+    func onChangeError(error: @escaping (String) -> Void) {
+        self.error = error
     }
 }
 
@@ -131,76 +137,42 @@ extension ChatViewModel {
 extension ChatViewModel {
     func sendMessage() {
         
-        // TODO: - Need to contact with firebase to send message.
+        let model = ChatMessageRequestModel(chatId: "1", message: messageText, type: messageType?.rawValue, mediaType: mediaMessageType?.rawValue)
         
-        /// Just dummy data for testing....
-        ///
-        guard let message = createMessage() else { return }
-        self.messages.append(message)
+        let multiPartList = createMultiPartData()
+        
+        worker.sendMessage(model: model, fileModel: multiPartList).subscribe(onNext:{ [weak self] result in
+            guard let self = self else { return }
+
+            switch result {
+            case .success(let model):
+                print("model", model.data?.message)
+
+            case .failure(let error):
+                self.error(error.localizedDescription)
+            }
+        }).disposed(by: disposeBag)
     }
     
-    private func createMessage() -> MessageModel? {
-        /// Fetch send id.
-        ///
-        guard let senderId = UDHelper.fetchUserData?.id else { return nil }
+    
+    private func createMultiPartData()-> [MultiPartData] {
+        guard let mediaData = self.mediaData, messageType == .file else { return [] }
         
+        var multiPartList = [MultiPartData]()
         
-        /// Current time for createdAt filed.
-        ///
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        let date = formatter.string(from: Date())
-        
-        
-        var contentMessage: MessageContentModel?
-        
-        switch messageType {
-        case .text:
-            guard messageText != nil else { return nil }
-            contentMessage = MessageContentModel(content: messageText, createdAt: date, path: nil, receiverId: nil, senderId: "\(senderId)",type: .text)
-            
+        switch mediaMessageType {
         case .image:
-            guard imagePath != nil else { return nil }
-            contentMessage = MessageContentModel(content: nil, createdAt: date, path: imagePath, receiverId: nil, senderId: "\(senderId)",type: .image)
+            let multiPart = MultiPartData(keyName: "media", fileData: mediaData, mimeType: "image/jpeg", fileName: "image.jpeg")
+            multiPartList = [multiPart]
             
-        case .audio:
-            guard audioPath != nil else { return nil }
-            contentMessage = MessageContentModel(content: nil, createdAt: date, path: audioPath, receiverId: nil, senderId: "\(senderId)",type: .audio)
+        case .sound:
+            let multiPart = MultiPartData(keyName: "media", fileData: mediaData, mimeType: "audio/m4a", fileName: "audio.m4a")
+            multiPartList = [multiPart]
             
         default:
             break
         }
-        
-        let message = MessageModel(ReceiverID: "", SenderID: "\(senderId)", chatId: "", messages: contentMessage, timeStamp: 0)
-       return message
-    }
-}
-
-
-// MARK: Upload image
-
-extension ChatViewModel {
-    func uploadImageToStorage() {
-        // TODO: - Need to upload image to firebase storage.
-        
-        
-        /// Just assume successfully upload image to store and send this as message.
-        ///
-        self.imagePath = "https://link-me.live/uploads/10-2023/rjiqC94DBy."
-        self.sendMessage()
-    }
-}
-
-
-// MARK: Upload audio
-
-extension ChatViewModel {
-    func uploadAudioToStorage() {
-        // TODO: - Need to upload audio to firebase storage.
-        
-        /// Just assume successfully upload audio to store and send this as message.
-        ///
-        self.audioPath = "https://file-examples.com/storage/fe02dbc794655b5e699ae4d/2017/11/file_example_MP3_700KB.mp3"
-        self.sendMessage()
+       
+        return multiPartList
     }
 }

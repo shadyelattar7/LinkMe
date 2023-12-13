@@ -162,8 +162,12 @@ class APIClient<T: TargetType> {
     /// - Parameter target: it carries the data of the request you are performing
     /// - Returns: an observable of type Result --> may carry a success or failure response
     func performMultipartRequest<X: Decodable>(target: T) -> Observable<Result<X, NSError>>{
+        if self.loadingCheck ?? true {
+            Loading.shared.showLoading()
+        }
         
         return Observable.create { observer in
+            
             let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
             let headers = Alamofire.HTTPHeaders(target.headers)
             let filesModel = self.buildParams(task: target.task).1 ?? []
@@ -175,10 +179,7 @@ class APIClient<T: TargetType> {
                 let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: err])
                 observer.onNext(.failure(error))
             }
-            
-            if self.loadingCheck ?? true{
-                Loading.shared.showLoading()
-            }
+                       
             
             AF.upload(multipartFormData: { (multipartFormData) in
                 guard let params = params else { return}
@@ -196,6 +197,8 @@ class APIClient<T: TargetType> {
             }, to: self.baseURL+target.path, method: method, headers: headers)
             .responseDecodable (decoder: JSONDecoder()){ (response: DataResponse<X, AFError>) in
                 // PrintHelper.debugPrint(response)
+                self.hideLoading()
+                
                 if let data = response.data{
                     let statusCode = response.response?.statusCode ?? 500
                     if statusCode == 200 || statusCode == 201{

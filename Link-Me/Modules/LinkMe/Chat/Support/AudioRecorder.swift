@@ -21,6 +21,14 @@ class AudioRecorder: NSObject {
         .urls(for: .documentDirectory, in: .userDomainMask)[0]
         .appendingPathComponent("audioRecording.m4a")
     
+    /// Bind to audio path.
+    ///
+    var onChangeAudioFileUrl: ((URL?)->()) = { _ in }
+    private var audioFileUrl: URL? {
+        didSet {
+            onChangeAudioFileUrl(audioFileUrl)
+        }
+    }
     
     /// Method for setup audio recorder.
     ///
@@ -75,9 +83,7 @@ class AudioRecorder: NSObject {
 extension AudioRecorder: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
-            print("Recording finished successfully. Recorded file: \(audioFilename.path)")
-        } else {
-            print("Recording failed")
+            self.audioFileUrl = recorder.url
         }
     }
 }

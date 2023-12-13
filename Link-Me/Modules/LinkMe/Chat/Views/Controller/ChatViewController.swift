@@ -39,6 +39,7 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sendOptionChatViewOutputs()
+        onChangeAudioFile()
         configureTableView()
         viewModelOutputs()
         audioRecorder.setupAudioRecorder()
@@ -93,14 +94,32 @@ extension ChatViewController {
                 self.audioRecorder.stopRecording()
                 self.sendOptionChatView.stopRecored()
                 self.isRecording = false
-                /// Assume start record and fished it then we have a path for url.
-                ///
-                self.viewModel.updateMessageType(.audio)
-                self.viewModel.uploadAudioToStorage()
+        
             } else {
                 self.audioRecorder.startRecording()
                 self.sendOptionChatView.startRecored()
                 self.isRecording = true
+            }
+        }
+    }
+}
+
+
+// MARK: Configure audio
+
+extension ChatViewController {
+    private func onChangeAudioFile() {
+        audioRecorder.onChangeAudioFileUrl = { [weak self] url in
+            guard let self = self, let url = url else { return }
+            
+            do {
+                let data = try Data(contentsOf: url)
+                self.viewModel.updateMediaData(data)
+                self.viewModel.updateMessageType(.file)
+                self.viewModel.updateMediaMessageType(.sound)
+                self.viewModel.sendMessage()
+            } catch let error {
+                print("error when get data form audio url", error)
             }
         }
     }
@@ -130,9 +149,10 @@ extension ChatViewController: UINavigationControllerDelegate, UIImagePickerContr
             /// Update image data.
             ///
             let imageData = self.selectedImage?.jpegData(compressionQuality: 0.3)
-            self.viewModel.updateMessageType(.image)
-            self.viewModel.updateImageData(imageData)
-            self.viewModel.uploadImageToStorage()
+            self.viewModel.updateMediaData(imageData)
+            self.viewModel.updateMessageType(.file)
+            self.viewModel.updateMediaMessageType(.image)
+            self.viewModel.sendMessage()
         })
     }
 }
@@ -196,12 +216,23 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
 extension ChatViewController {
     func viewModelOutputs() {
         onReloadTableView()
+        onChangeError()
     }
     
     private func onReloadTableView() {
         viewModel.onReloadTableView { [weak self] in
             guard let self = self else { return }
             self.reloadTableView()
+        }
+    }
+    
+    private func onChangeError() {
+        viewModel.onChangeError { [weak self] errorMessage in
+            guard let self = self else { return }
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ import Alamofire
 
 enum ChatTarget: TargetType {
     case sendMessage(Parameters: ChatMessageRequestModel, fileModel: [MultiPartData])
+    case chatRequests
 }
 
 extension ChatTarget {
@@ -17,12 +18,14 @@ extension ChatTarget {
         switch self {
         case .sendMessage:
             return "/chat-request/send-message"
+        case .chatRequests:
+            return "/chat-requests"
         }
     }
     
     var method: HTTPMethod {
         switch self{
-        case .sendMessage:
+        case .sendMessage, .chatRequests:
             return .post
         }
     }
@@ -31,12 +34,14 @@ extension ChatTarget {
         switch self {
         case .sendMessage(let Parameters, let fileModel):
             return .multiPart(Parameters, fileModel)
+        case .chatRequests:
+            return .requestPlain
         }
     }
     
     var headers: [String : String] {
         switch self {
-        case .sendMessage:
+        case .sendMessage, .chatRequests:
             return ["Authorization": "Bearer \(UDHelper.token)"]
         }
     }

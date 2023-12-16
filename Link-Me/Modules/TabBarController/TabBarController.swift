@@ -63,7 +63,7 @@ class TabBarController: UITabBarController {
             view.tabBarItem = tabBarItem(for: item)
             return view
         case .Message:
-            let view = LinkMeViewController(viewModel: LinkMeViewModel(), coordinator: coordinator)
+            let view = coordinator.Main.viewcontroller(for: .messageList)
             view.tabBarItem = tabBarItem(for: item)
             return view
         case .Profile:

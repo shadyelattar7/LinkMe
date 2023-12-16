@@ -57,6 +57,12 @@
 		79D6106C2ACC9A5E00961837 /* AgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D6106A2ACC9A5E00961837 /* AgeCollectionViewCell.xib */; };
 		79D816242AC9E51D007B92DA /* CardStoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D816222AC9E51D007B92DA /* CardStoreCollectionViewCell.swift */; };
 		79D816252AC9E51D007B92DA /* CardStoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D816232AC9E51D007B92DA /* CardStoreCollectionViewCell.xib */; };
+		79F5E7C52B2E1D330029CFBC /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F5E7C32B2E1D330029CFBC /* MessageListViewController.swift */; };
+		79F5E7C62B2E1D330029CFBC /* MessageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F5E7C42B2E1D330029CFBC /* MessageListViewController.xib */; };
+		79F5E7CC2B2E1D6D0029CFBC /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F5E7CB2B2E1D6D0029CFBC /* MessageListViewModel.swift */; };
+		79F5E7D32B2E242F0029CFBC /* MessageListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F5E7D12B2E242F0029CFBC /* MessageListItemCell.swift */; };
+		79F5E7D42B2E242F0029CFBC /* MessageListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F5E7D22B2E242F0029CFBC /* MessageListItemCell.xib */; };
+		79F5E7D62B2E28FB0029CFBC /* ChatRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F5E7D52B2E28FB0029CFBC /* ChatRequests.swift */; };
 		79F632502ACCA8750069D8DE /* SearchingForUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F6324F2ACCA8750069D8DE /* SearchingForUsersViewModel.swift */; };
 		79F632532ACCA9020069D8DE /* SearchingForUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F632512ACCA9020069D8DE /* SearchingForUsersViewController.swift */; };
 		79F632542ACCA9020069D8DE /* SearchingForUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F632522ACCA9020069D8DE /* SearchingForUsersViewController.xib */; };
@@ -429,6 +435,12 @@
 		79D6106A2ACC9A5E00961837 /* AgeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeCollectionViewCell.xib; sourceTree = "<group>"; };
 		79D816222AC9E51D007B92DA /* CardStoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		79D816232AC9E51D007B92DA /* CardStoreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardStoreCollectionViewCell.xib; sourceTree = "<group>"; };
+		79F5E7C32B2E1D330029CFBC /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
+		79F5E7C42B2E1D330029CFBC /* MessageListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageListViewController.xib; sourceTree = "<group>"; };
+		79F5E7CB2B2E1D6D0029CFBC /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
+		79F5E7D12B2E242F0029CFBC /* MessageListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListItemCell.swift; sourceTree = "<group>"; };
+		79F5E7D22B2E242F0029CFBC /* MessageListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageListItemCell.xib; sourceTree = "<group>"; };
+		79F5E7D52B2E28FB0029CFBC /* ChatRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequests.swift; sourceTree = "<group>"; };
 		79F6324F2ACCA8750069D8DE /* SearchingForUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingForUsersViewModel.swift; sourceTree = "<group>"; };
 		79F632512ACCA9020069D8DE /* SearchingForUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingForUsersViewController.swift; sourceTree = "<group>"; };
 		79F632522ACCA9020069D8DE /* SearchingForUsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchingForUsersViewController.xib; sourceTree = "<group>"; };
@@ -983,6 +995,7 @@
 		79D472142B2A2C4200A7D17F /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				79F5E7D52B2E28FB0029CFBC /* ChatRequests.swift */,
 				79D472152B2A2C5B00A7D17F /* SendMessageModel.swift */,
 			);
 			path = Chat;
@@ -1065,6 +1078,50 @@
 				79D816232AC9E51D007B92DA /* CardStoreCollectionViewCell.xib */,
 			);
 			path = CardStoreCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		79F5E7C22B2E1D0A0029CFBC /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				79F5E7CD2B2E24080029CFBC /* Cell */,
+				79F5E7CA2B2E1D610029CFBC /* ViewModel */,
+				79F5E7C72B2E1D4C0029CFBC /* View */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		79F5E7C72B2E1D4C0029CFBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79F5E7C32B2E1D330029CFBC /* MessageListViewController.swift */,
+				79F5E7C42B2E1D330029CFBC /* MessageListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79F5E7CA2B2E1D610029CFBC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				79F5E7CB2B2E1D6D0029CFBC /* MessageListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		79F5E7CD2B2E24080029CFBC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79F5E7D02B2E241E0029CFBC /* MessageListItemCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		79F5E7D02B2E241E0029CFBC /* MessageListItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				79F5E7D12B2E242F0029CFBC /* MessageListItemCell.swift */,
+				79F5E7D22B2E242F0029CFBC /* MessageListItemCell.xib */,
+			);
+			path = MessageListItemCell;
 			sourceTree = "<group>";
 		};
 		79F6324C2ACCA48E0069D8DE /* SearchingForUsers */ = {
@@ -2055,6 +2112,7 @@
 				82A2FC7D2A0BDBD700BA7BD3 /* TabBarController */,
 				82A2FC822A0BDF6500BA7BD3 /* LinkMe */,
 				82C0E39A2A67684A008B72ED /* Stories */,
+				79F5E7C22B2E1D0A0029CFBC /* Messages */,
 				8AF8CE3D2ABF49BD00676366 /* Purchases */,
 				827ED73B2A3A20920056EE37 /* Profile */,
 			);
@@ -3292,6 +3350,7 @@
 				82A2FC362A0B9CF000BA7BD3 /* ToastView.xib in Resources */,
 				A23F7A922B0B74B900F16EBF /* sunrise-groove-176565.mp3 in Resources */,
 				825039442A4133580006EAD3 /* Setting.json in Resources */,
+				79F5E7D42B2E242F0029CFBC /* MessageListItemCell.xib in Resources */,
 				822882952A0D1D4600019216 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				A22B9F4D2ACC2E91007D224F /* SearchTypeViewController.xib in Resources */,
 				793F55C02ABF507E004635C5 /* TopUserTableViewCell.xib in Resources */,
@@ -3326,6 +3385,7 @@
 				82FB795C2A194877006644EE /* Poppins-Medium.ttf in Resources */,
 				8273567A2A59CB1600634EA4 /* RemoveReasonCell.xib in Resources */,
 				8228829E2A0D1D4600019216 /* Poppins-LightItalic.ttf in Resources */,
+				79F5E7C62B2E1D330029CFBC /* MessageListViewController.xib in Resources */,
 				A2B81F2A2ACB0A630070BED9 /* StartSearchViewController.xib in Resources */,
 				822882962A0D1D4600019216 /* Poppins-Bold.ttf in Resources */,
 				827356902A59E72500634EA4 /* DeleteAccountVC.xib in Resources */,
@@ -3491,6 +3551,7 @@
 				82FB79332A16FF45006644EE /* LocalStorageManager.swift in Sources */,
 				8AF8CE4D2ABF49BD00676366 /* FeaturesPremiumViewModel.swift in Sources */,
 				790E42D52B08F0060025D315 /* TextMessageTableViewCell.swift in Sources */,
+				79F5E7CC2B2E1D6D0029CFBC /* MessageListViewModel.swift in Sources */,
 				82FB79392A17E8F9006644EE /* LoginWorker.swift in Sources */,
 				8A3AD2552AC5A77500BF8358 /* RemoveCommentRequestModel.swift in Sources */,
 				79F632502ACCA8750069D8DE /* SearchingForUsersViewModel.swift in Sources */,
@@ -3616,6 +3677,7 @@
 				8A8C7E982AEC6932009265C4 /* StarsModel.swift in Sources */,
 				A2B81F292ACB0A630070BED9 /* StartSearchViewController.swift in Sources */,
 				79FA7F642ABDC72E0043B6BA /* UIColor+DesignSystem.swift in Sources */,
+				79F5E7C52B2E1D330029CFBC /* MessageListViewController.swift in Sources */,
 				825CF3B22A4DC4D700BA5DDA /* SendEmailVC.swift in Sources */,
 				79D4721E2B2A2EF900A7D17F /* ChatWorker.swift in Sources */,
 				82FB79452A1939B9006644EE /* UIButtonEx.swift in Sources */,
@@ -3659,6 +3721,7 @@
 				8A4B20F92AC8DC0B0078F4E4 /* SubscribeTarget.swift in Sources */,
 				825CF3B52A4DC4E100BA5DDA /* SendEmailViewModel.swift in Sources */,
 				A23F7A8F2B0B73D100F16EBF /* AudioMessageTableViewCell.swift in Sources */,
+				79F5E7D62B2E28FB0029CFBC /* ChatRequests.swift in Sources */,
 				825CF3902A4953F000BA5DDA /* UIImageEx.swift in Sources */,
 				82A2FC712A0BD3B500BA7BD3 /* TargetType.swift in Sources */,
 				79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */,
@@ -3670,6 +3733,7 @@
 				8292767C2A2D6133000F49E0 /* ProfileNotCompleteViewController.swift in Sources */,
 				82EDF6992A4FC89E004D8071 /* CompanySupportViewModel.swift in Sources */,
 				82D914372A102459005FAF36 /* ValidatorType.swift in Sources */,
+				79F5E7D32B2E242F0029CFBC /* MessageListItemCell.swift in Sources */,
 				79D6105C2ACC8ACB00961837 /* FilterSearchViewController.swift in Sources */,
 				793F55CD2ABF667D004635C5 /* LinkMeTarget.swift in Sources */,
 				82AB6A8D2A1219310005DEF6 /* RegisterViewModel.swift in Sources */,

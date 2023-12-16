@@ -31,6 +31,10 @@ class MainNavigator: Navigator{
         case aboutStars
         case chat
         
+        // MARK: Messages
+        
+        case messageList
+        
         //MARK: - Stories -
         case MainStory
         case MediaPreview(mediaType: MediaType, image: UIImage = UIImage(), video: URL = URL(fileURLWithPath: ""))
@@ -104,6 +108,12 @@ class MainNavigator: Navigator{
             return AboutStarsViewController(viewModel: viewModel, coordinator: coordinator)
         case .chat:
             return ChatViewController(viewModel: ChatViewModel(), coordinator: coordinator)
+            
+            // MARK: Message
+            
+        case .messageList:
+            let viewModel = MessageListViewModel()
+            return MessageListViewController(viewModel: viewModel, coordinator: coordinator)
             
             //MARK: - Stories -
             

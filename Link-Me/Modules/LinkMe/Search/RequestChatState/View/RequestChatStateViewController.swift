@@ -212,12 +212,11 @@ extension RequestChatStateViewController {
     }
     
     private func subscribeToRequestChatResponse() {
-        viewModel.bindToResponseClosure = { [weak self] in
+        viewModel.bindTosubscribeRequestClosure = { [weak self] status in
             guard let self = self else { return }
-            
-            if self.viewModel.getRequestChatResponse()?.isAccepted == 0 {
+            if status == 1 { //accpet
                 self.currentState = .acceptYourRequest(model: self.requestChatModel)
-            } else if self.viewModel.getRequestChatResponse()?.isAccepted == 1 {
+            } else if status == 0 { //ignore
                 self.currentState = .ignoreYourRequest(model: self.requestChatModel)
             }
         }

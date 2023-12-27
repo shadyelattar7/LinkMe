@@ -167,6 +167,7 @@ struct StoryElement: Codable {
     let video: String?
     let likes: Int?
     let comments: [String]?
+    let user: User?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -175,10 +176,10 @@ struct StoryElement: Codable {
         case expireAt = "expire_at"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
-        case description, video, likes, comments
+        case description, video, likes, comments, user
     }
     
     /// Initial value for example
     ///
-    static let example = StoryElement(id: nil, userID: nil, file: nil, expireAt: nil, createdAt: nil, updatedAt: nil, description: nil, video: nil, likes: nil, comments: nil)
+    static let example = StoryElement(id: nil, userID: nil, file: nil, expireAt: nil, createdAt: nil, updatedAt: nil, description: nil, video: nil, likes: nil, comments: nil, user: nil)
 }

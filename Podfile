@@ -25,5 +25,8 @@ target 'Link-Me' do
   pod 'MOLH'
   pod 'SGSegmentedProgressBarLibrary'
 
+  pod 'PusherSwift'
+
+
 
 end

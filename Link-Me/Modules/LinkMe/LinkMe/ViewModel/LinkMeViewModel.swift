@@ -15,6 +15,7 @@ class LinkMeViewModel: BaseViewModel {
 
     private let myAccountWorker: MyAccountWorkerProtocol
     private let linkMeApi: LinkMeAPIProtocol
+    private let fcmToken: FCMTokenWorkerProtocol
     private let disposeBag = DisposeBag()
 
     // MARK: Outputs
@@ -54,9 +55,10 @@ class LinkMeViewModel: BaseViewModel {
 
     // MARK: Init
 
-    init(linkMeApi: LinkMeAPIProtocol = LinkMeAPI(), myAccountWorker: MyAccountWorkerProtocol = MyAccountWorker()) {
+    init(linkMeApi: LinkMeAPIProtocol = LinkMeAPI(), myAccountWorker: MyAccountWorkerProtocol = MyAccountWorker(), fcmToken: FCMTokenWorkerProtocol) {
         self.linkMeApi = linkMeApi
         self.myAccountWorker = myAccountWorker
+        self.fcmToken = fcmToken
     }
 }
 
@@ -95,6 +97,22 @@ extension LinkMeViewModel {
             case .failure(let error):
                 let error = error.userInfo["NSLocalizedDescription"] as! String
                 self.errorMessage.onNext(error)
+            }
+        }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: Send FCM Token
+
+extension LinkMeViewModel {
+    func sendFCMToken() {
+        fcmToken.sendFCMToken().subscribe(onNext:{ [weak self] result in
+            guard let self = self else {return}
+            switch result{
+            case .success(let model):
+                print("Success send fcm token 🟢 \(model)")
+            case .failure(let error):
+                print("ERROR: \(error)")
             }
         }).disposed(by: disposeBag)
     }

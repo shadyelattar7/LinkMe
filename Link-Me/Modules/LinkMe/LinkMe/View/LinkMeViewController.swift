@@ -21,6 +21,7 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchTopUsers()
+        viewModel.sendFCMToken()
     }
     
     override func bind(viewModel: LinkMeViewModel) {
@@ -42,8 +43,8 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
     // MARK: - Actions
     
     @IBAction private func didTappedOnSearchButton(_ sender: Any) {
-        let vc = coordinator.Main.viewcontroller(for: .letsGoSearch)
-        vc.modalPresentationStyle = .fullScreen
+        let vc = coordinator.Main.viewcontroller(for: .searchType)
+      //  vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
     

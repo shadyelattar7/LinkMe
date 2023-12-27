@@ -10,6 +10,7 @@ import Foundation
 class UDKeys {
     static let appOpenedBrfore = "AppOpenedBrfore"
     static let token = "token"
+    static let fcmToken = "fcmToken"
     static let userData = "userData"
     static let isLoginOrRegister = "isLoginOrRegister"
     static let isSkip = "IsSkip"

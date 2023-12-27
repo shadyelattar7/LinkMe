@@ -26,7 +26,7 @@ protocol ProfileWorkerProtocol{
     
     func confirmUpdateEmail(model: ConfirmUpdateEmailRequestModel) -> Observable<Result<BaseResponse, NSError>>
     
-    func  getTickets(ticket_type: String) -> Observable<Result<BaseMyTickets, NSError>>
+    func getTickets(ticket_type: String) -> Observable<Result<BaseMyTickets, NSError>>
     
     func sendEmail(model: SendEmailRequestModel) -> Observable<Result<BaseResponse, NSError>>
     

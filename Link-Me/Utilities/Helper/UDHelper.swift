@@ -23,6 +23,12 @@ class UDHelper {
         
     }
     
+    static var fcmToken: String {
+        set {UDHelper.userDefaults.set(newValue, forKey: UDKeys.fcmToken)}
+        get { UDHelper.userDefaults.string(forKey: UDKeys.fcmToken) ?? "" }
+        
+    }
+    
     static var isAfterLoginOrRegister: Bool{
         set { UDHelper.userDefaults.set(newValue, forKey: UDKeys.isLoginOrRegister) }
         get { UDHelper.userDefaults.bool(forKey: UDKeys.isLoginOrRegister) }

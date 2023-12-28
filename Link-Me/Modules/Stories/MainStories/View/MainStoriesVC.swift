@@ -24,6 +24,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
         super.viewWillAppear(animated)
         viewModel.fetchStories()
         viewModel.ViewDidLoad()
+        
     }
     
     //MARK: - Bind -
@@ -31,7 +32,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
     override func bind(viewModel: MainStoriesViewModel) {
         setupView()
         setupStoriesCollV()
-        configureOthersStoriesCollectionView()
+        configureStoriesPostsCollectionView()
         subscribeToErrorMessage()
     }
     
@@ -144,16 +145,15 @@ extension MainStoriesVC: UIImagePickerControllerDelegate, UINavigationController
 // MARK: Configure others stories
 
 extension MainStoriesVC {
-    private func configureOthersStoriesCollectionView() {
+    private func configureStoriesPostsCollectionView() {
         othersStoriesCollectionView.registerNIB(StoryCollectionViewCell.self)
         othersStoriesCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        subscribeToStoriesDate()
-        didSelectOtherStories()
+        subscribeToStoriesPostsDate()
+        didSelectStoriesPosts()
     }
     
-    private func subscribeToStoriesDate() {
-        viewModel.storiesData.bind(to: othersStoriesCollectionView.rx.items(cellIdentifier: String(describing: StoryCollectionViewCell.self), cellType: StoryCollectionViewCell.self)) { (row, item, cell) in
-
+    private func subscribeToStoriesPostsDate() {
+        viewModel.storiesPost.bind(to: othersStoriesCollectionView.rx.items(cellIdentifier: String(describing: StoryCollectionViewCell.self), cellType: StoryCollectionViewCell.self)) { (row, item, cell) in
             if row != 0 {
                 cell.update(item)
             }
@@ -161,7 +161,7 @@ extension MainStoriesVC {
         }.disposed(by: disposeBag)
     }
 
-    private func didSelectOtherStories() {
+    private func didSelectStoriesPosts() {
         othersStoriesCollectionView.rx.itemSelected.subscribe { [weak self] indexPath in
             guard let self = self else {return}
 

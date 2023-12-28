@@ -9,6 +9,11 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+struct ResponseData: Codable {
+    let request_id: Int?
+    let status: Int?
+}
+
 class RequestChatStateViewModel {
     
     // MARK: Properties
@@ -16,6 +21,7 @@ class RequestChatStateViewModel {
     private var requestModel: RequestChatRequestModel?
     private var worker: LinkMeAPIProtocol
     private let disposeBag = DisposeBag()
+    private let pusherManager = PusherManager.shared
     
     func updateRequestChatRequestModel(_ model: RequestChatRequestModel) {
         self.requestModel = model
@@ -27,6 +33,14 @@ class RequestChatStateViewModel {
             bindToResponseClosure?()
         }
     }
+    
+    var bindTosubscribeRequestClosure: ((Int) -> Void)?
+    private var requestStatus: Int? = nil {
+        didSet {
+            bindTosubscribeRequestClosure?(requestStatus ?? 0)
+        }
+    }
+    
     
     func getRequestChatResponse() -> RequestChatData? {
         return requestChatModel
@@ -42,6 +56,24 @@ class RequestChatStateViewModel {
     init(worker: LinkMeAPIProtocol = LinkMeAPI()) {
         self.worker = worker
     }
+    
+    deinit {
+        PusherManager.shared.disconnect()
+    }
+    
+    //MARK: Private func
+    private func subscribeRequest(id: Int) {
+        pusherManager.subscribeToChannel(channelName: "request-\(id)", eventName: "request-updated") { event in
+            let jsonString = event.data
+            
+            if let responseData: ResponseData = PusherManager.shared.parseJSON(jsonString: jsonString, type: ResponseData.self) {
+                let requestId = responseData.request_id
+                let status = responseData.status
+                self.requestStatus = responseData.status
+                print("Request ID: \(requestId), Status: \(status)")
+            }
+        }
+    }
 }
 
 // MARK: Request chat
@@ -55,8 +87,9 @@ extension RequestChatStateViewModel {
             switch result {
             case .success(let model):
                 guard let data = model.data else { return }
-                self.requestChatModel = data
-
+               // self.requestChatModel = data
+                print("ID: \(data.id ?? 0)")
+                self.subscribeRequest(id: data.id ?? 0)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
                 self.errorMessage.onNext(errorMessage ?? "")

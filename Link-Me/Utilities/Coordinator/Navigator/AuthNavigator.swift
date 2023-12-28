@@ -32,7 +32,8 @@ class AuthNavigator: Navigator{
         switch destination{
         case .login:
             let loginRepo = LoginWorker()
-            let viewModel = LoginViewModel(login: loginRepo)
+            let fcmTokenRepo = FCMTokenWorker()
+            let viewModel = LoginViewModel(login: loginRepo, fcmToken: fcmTokenRepo)
             return LoginViewController(viewModel: viewModel, coordinator: coordinator)
         case .VerifyEmail(let source):
             let verifyEmailRepo = VerifyEmailWorker()

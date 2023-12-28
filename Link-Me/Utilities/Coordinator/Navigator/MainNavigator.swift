@@ -73,7 +73,9 @@ class MainNavigator: Navigator{
     func viewcontroller(for destination: Destination) -> UIViewController {
         switch destination{
         case .LinkMe:
-            return LinkMeViewController(viewModel: LinkMeViewModel(), coordinator: coordinator)
+            let repo = FCMTokenWorker()
+            let viewModel = LinkMeViewModel(fcmToken: repo)
+            return LinkMeViewController(viewModel: viewModel, coordinator: coordinator)
         case .userCard(let direction, let userModel):
             let viewModel = UserCardViewModel()
             return UserCardViewController(viewModel: viewModel, coordinator: coordinator, direction: direction, userModel: userModel)

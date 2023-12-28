@@ -25,10 +25,11 @@ class StoryCollectionViewCell: UICollectionViewCell {
     
     // MARK: Configuration
     
-    func update(_ item: UserStoryData) {
-        userNameLabel.text = item.name
-        guard let imageStr = item.imagePath else { return }
-        userImageView.setImage(url: URL(string: imageStr))
+    func update(_ item: StoryElement) {
+        userNameLabel.text = item.user?.name
+        guard let imageStr = item.video else { return }
+        guard let userStr = item.user?.imagePath else {return}
+        userImageView.setImage(url: URL(string: userStr))
         // TODO: - Need to set story image.
         storyImageView.setImage(url: URL(string: imageStr))
     }

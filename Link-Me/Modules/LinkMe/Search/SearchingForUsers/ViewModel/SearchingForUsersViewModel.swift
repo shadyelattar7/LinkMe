@@ -86,7 +86,35 @@ extension SearchingForUsersViewModel {
     func fetchRandomUser() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             guard let self = self else {return}
-            self.user = self.users.randomElement()
+            print("self.users: \(self.users)")
+   //         self.user = self.users.randomElement()
+            self.user = User(id: 19,
+                             name: "jfffjfk",
+                             email: "testt@gmail.com",
+                             birth_date: "1900-01-10",
+                             image: "",
+                             email_verified_at: nil,
+                             created_at: "2023-05-19T11:06:35.000000Z",
+                             country_id: nil,
+                             gander: "male",
+                             bio: nil,
+                             is_online: 0,
+                             is_following: 0,
+                             is_available: 0,
+                             user_name: "user19",
+                             imagePath: "https://www.w3schools.com/w3css/img_avatar2.png",
+                             is_profile_completed: 0,
+                             country: "",
+                             sent_tickets: 0,
+                             unread_tickets: 0,
+                             canAddStory: 1,
+                             diamonds: nil)
+            
+//            self.users.forEach { user in
+//                if user.email == "abdelrahmanssss@gmail.com"{
+//                    self.user = user
+//                }
+//            }
         }
     }
 }

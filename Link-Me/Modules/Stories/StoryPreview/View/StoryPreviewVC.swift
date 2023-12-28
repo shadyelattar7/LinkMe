@@ -75,7 +75,7 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
             guard let stories = self.myStoriesDate.value[row].stories else { return }
             
             cell.userImage.getImage(imageUrl: self.myStoriesDate.value[row].imagePath ?? "")
-            cell.usernameLabel.text = self.myStoriesDate.value[row].userName ?? ""
+            cell.usernameLabel.text = self.myStoriesDate.value[row].name ?? ""
             cell.stories.accept(stories)
             cell.storyCount = stories.count
             

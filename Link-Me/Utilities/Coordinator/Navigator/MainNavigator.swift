@@ -29,7 +29,7 @@ class MainNavigator: Navigator{
         case searchingForUsers(requestModel: SearchRequestModel?)
         case requestChatState(requestChatModel: RequestChatModel)
         case aboutStars
-        case chat
+        case chat(chatID: String)
         
         // MARK: Messages
         
@@ -108,8 +108,8 @@ class MainNavigator: Navigator{
         case .aboutStars:
             let viewModel = AboutStarsViewModel()
             return AboutStarsViewController(viewModel: viewModel, coordinator: coordinator)
-        case .chat:
-            return ChatViewController(viewModel: ChatViewModel(), coordinator: coordinator)
+        case .chat(let chatID):
+            return ChatViewController(viewModel: ChatViewModel(chatID: chatID), coordinator: coordinator)
             
             // MARK: Message
             

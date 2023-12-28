@@ -27,10 +27,10 @@
                         <rect key="frame" x="8" y="8" width="276" height="64"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22a-iu-AhR">
-                                <rect key="frame" x="14" y="0.0" width="262" height="40"/>
+                                <rect key="frame" x="78" y="0.0" width="198" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="z8n-57-2mA">
-                                        <rect key="frame" x="8" y="8" width="246" height="24"/>
+                                        <rect key="frame" x="8" y="8" width="182" height="24"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jin-fU-uSd">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -52,8 +52,8 @@
                                                     <constraint firstAttribute="width" constant="134" id="0ln-1G-elj"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4r8-Xu-tHF">
-                                                <rect key="frame" x="206" y="0.0" width="40" height="24"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4r8-Xu-tHF">
+                                                <rect key="frame" x="182" y="0.0" width="40" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="ran-0u-LVJ"/>
                                                 </constraints>

@@ -22,6 +22,7 @@ class RequestChatStateViewModel {
     private var worker: LinkMeAPIProtocol
     private let disposeBag = DisposeBag()
     private let pusherManager = PusherManager.shared
+    private var chatID: Int?
     
     func updateRequestChatRequestModel(_ model: RequestChatRequestModel) {
         self.requestModel = model
@@ -69,10 +70,15 @@ class RequestChatStateViewModel {
             if let responseData: ResponseData = PusherManager.shared.parseJSON(jsonString: jsonString, type: ResponseData.self) {
                 let requestId = responseData.request_id
                 let status = responseData.status
+                self.chatID = requestId
                 self.requestStatus = responseData.status
                 print("Request ID: \(requestId), Status: \(status)")
             }
         }
+    }
+    
+    func getChatID() -> String {
+        return "\(self.chatID ?? 0)"
     }
 }
 

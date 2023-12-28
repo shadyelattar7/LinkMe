@@ -99,7 +99,7 @@ class RequestChatStateViewController: UIViewController {
         }
         switch currentState {
         case .acceptYourRequest:
-            let vc = coordinator.Main.viewcontroller(for: .chat)
+            let vc = coordinator.Main.viewcontroller(for: .chat(chatID: viewModel.getChatID()))
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         default:

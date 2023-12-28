@@ -95,8 +95,9 @@ extension AudioMessageTableViewCell {
     
     
     @objc func playerDidFinishPlaying(note: NSNotification) {
-        print("playerDidFinishPlaying")
         audioIsPlayed = false
+        player?.seek(to: .zero)
+        activeButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
     }
     
     private func configureAudioVisualization() {

@@ -7,20 +7,26 @@
 
 import Foundation
 
+struct ChatMessagePusherModel: Codable {
+    let chat_id: Int?
+    let user_id: Int?
+    let user_name: String?
+    let user_image: String?
+    let message: String?
+    let type: String? // text, file
+    let media_type: String? // image, sound
+    let file: String? // path of image or sound
+}
 
 struct MessageModel: Codable {
-    let ReceiverID: String?
     let SenderID: String?
     let chatId: String?
     let messages: MessageContentModel?
-    let timeStamp: Int64?
 }
 
 struct MessageContentModel: Codable {
     let content: String?
-    let createdAt: String?
     let path: String?
-    let receiverId: String?
     let senderId: String?
     let type: MessageType
 }

@@ -13,7 +13,7 @@ struct RequestChatData: Codable {
     let isSpecial: Int?
     let createdAt, updatedAt: String?
     let firstUser, secondUser: User?
-    let messages: [String]?
+    let messages: [OneChatItem]?
 
     enum CodingKeys: String, CodingKey {
         case id

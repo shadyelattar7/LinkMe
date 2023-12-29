@@ -36,6 +36,7 @@ class ChatViewModel: BaseViewModel {
     init(chatID: String) {
         self.chatID = chatID
         super.init()
+        self.fetchLastMessages()
         self.fetchMessages()
     }
     
@@ -91,6 +92,7 @@ extension ChatViewModel {
     func fetchMessages() {
         pusherManager.subscribeToChannel(channelName: "chat-\(chatID)", eventName: "message-sent") { event in
             let jsonString = event.data
+            
             if let responseData: ChatMessagePusherModel = PusherManager.shared.parseJSON(jsonString: jsonString, type: ChatMessagePusherModel.self) {
                 var type: MessageType?
                 if responseData.type == "text" {
@@ -101,10 +103,11 @@ extension ChatViewModel {
                     type = .audio
                 }
                 guard let messageType = type else { return }
-                let content = MessageContentModel(content: responseData.message,
-                                                   path: responseData.file,
-                                                   senderId: "\(responseData.user_id ?? 0)",
-                                                   type: messageType)
+                let content = MessageContentModel(createdAt: responseData.created_at?.convertFullDateToTime,
+                                                  content: responseData.message,
+                                                  path: responseData.file,
+                                                  senderId: "\(responseData.user_id ?? 0)",
+                                                  type: messageType)
                 let message = MessageModel(SenderID: "\(responseData.user_id ?? 0)",
                                            chatId: "\(responseData.chat_id ?? 0)",
                                            messages: content)
@@ -156,5 +159,53 @@ extension ChatViewModel {
         }
        
         return multiPartList
+    }
+}
+
+
+// MARK: Fetch last messages
+
+extension ChatViewModel {
+    private func fetchLastMessages() {
+        let requestModel = OneChatRequestModel(chatId: chatID)
+        worker.oneChat(model: requestModel).subscribe(onNext:{ [weak self] result in
+            guard let self = self else { return }
+
+            switch result {
+            case .success(let model):
+                var items: [MessageModel] = []
+                model.data?.data?.forEach({ item in
+                    items.append(item.toDomain())
+                })
+                self.messages = items
+            case .failure(let error):
+                self.error(error.localizedDescription)
+            }
+        }).disposed(by: disposeBag)
+    }
+}
+
+extension OneChatItem {
+    func toDomain()-> MessageModel {
+        var messageType: MessageType = .text
+        if type == "text" {
+            messageType = .text
+        } else if type == "file", mediaType == "image" {
+            messageType = .image
+        } else if type == "file", mediaType == "sound" {
+            messageType = .audio
+        }
+        
+        let content = MessageContentModel(createdAt: createdAt?.convertFullDateToTime,
+                                          content: message,
+                                          path: filePath,
+                                          senderId: "\(senderID ?? 0)",
+                                          type: messageType)
+        
+        let message = MessageModel(SenderID: "\(senderID ?? 0)",
+                                   chatId: "\(chatID ?? 0)",
+                                   messages: content)
+        
+        return message
     }
 }

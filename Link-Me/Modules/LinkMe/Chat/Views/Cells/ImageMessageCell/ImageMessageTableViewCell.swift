@@ -31,6 +31,7 @@ class ImageMessageTableViewCell: UITableViewCell {
         messageImageView.image = nil
         messageImageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
         messageImageView.sd_setImage(with: URL(string: item.messages?.path ?? ""))
+        timeLabel.text = item.messages?.createdAt
         updateUI(item)
     }
     

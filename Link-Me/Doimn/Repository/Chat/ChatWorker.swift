@@ -14,6 +14,8 @@ protocol ChatWorkerProtocol {
     func sendMessage(model: ChatMessageRequestModel, fileModel: [MultiPartData]) -> Observable<Result<BaseResponseGen<SendMessageData>, NSError>>
     
     func getChatRequests() -> Observable<Result<BaseResponseGen<ChatRequestsData>, NSError>>
+    
+    func oneChat(model: OneChatRequestModel) -> Observable<Result<BaseResponseGen<OneChatDate>, NSError>>
 }
 
 
@@ -25,5 +27,9 @@ class ChatWorker: APIClient<ChatTarget>, ChatWorkerProtocol {
     
     func getChatRequests() -> Observable<Result<BaseResponseGen<ChatRequestsData>, NSError>> {
         self.performRequest(target: .chatRequests)
+    }
+    
+    func oneChat(model: OneChatRequestModel) -> Observable<Result<BaseResponseGen<OneChatDate>, NSError>> {
+        self.performRequest(target: .oneChat(Parameters: model), requestModel: model)
     }
 }

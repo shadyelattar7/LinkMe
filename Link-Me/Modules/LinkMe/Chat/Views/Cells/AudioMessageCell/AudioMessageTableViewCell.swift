@@ -39,6 +39,7 @@ class AudioMessageTableViewCell: UITableViewCell {
               let url = NSURL(string: audioPath) else { return }
         player = AVPlayer(url: url as URL)
         updateUI(item)
+        timeLabel.text = item.messages?.createdAt
     }
     
     private func updateUI(_ item: MessageModel) {

@@ -28,6 +28,7 @@ class TextMessageTableViewCell: UITableViewCell {
     
     func update(_ item: MessageModel) {
         messageTextView.text = item.messages?.content
+        timeLabel.text = item.messages?.createdAt
         updateUI(item)
     }
     

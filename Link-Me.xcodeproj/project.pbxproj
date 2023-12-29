@@ -44,6 +44,9 @@
 		79807DF02AED5D3F002192AC /* BeInTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807DEF2AED5D3F002192AC /* BeInTopViewModel.swift */; };
 		79807DF22AED6727002192AC /* buyStarsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807DF12AED6727002192AC /* buyStarsRequestModel.swift */; };
 		7983B47A2AC0D31000F34A83 /* UserCardResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983B4792AC0D31000F34A83 /* UserCardResources.swift */; };
+		79BB32872B3F521900DE8732 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BB32862B3F521900DE8732 /* String+Date.swift */; };
+		79BB32892B3F559800DE8732 /* oneChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BB32882B3F559800DE8732 /* oneChat.swift */; };
+		79BB328B2B3F55C100DE8732 /* OneChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BB328A2B3F55C100DE8732 /* OneChat.swift */; };
 		79D472162B2A2C5B00A7D17F /* SendMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D472152B2A2C5B00A7D17F /* SendMessageModel.swift */; };
 		79D472192B2A2D0D00A7D17F /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D472182B2A2D0D00A7D17F /* ChatMessage.swift */; };
 		79D4721C2B2A2E2200A7D17F /* ChatTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D4721B2B2A2E2200A7D17F /* ChatTarget.swift */; };
@@ -429,6 +432,9 @@
 		79807DEF2AED5D3F002192AC /* BeInTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeInTopViewModel.swift; sourceTree = "<group>"; };
 		79807DF12AED6727002192AC /* buyStarsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyStarsRequestModel.swift; sourceTree = "<group>"; };
 		7983B4792AC0D31000F34A83 /* UserCardResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardResources.swift; sourceTree = "<group>"; };
+		79BB32862B3F521900DE8732 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		79BB32882B3F559800DE8732 /* oneChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneChat.swift; sourceTree = "<group>"; };
+		79BB328A2B3F55C100DE8732 /* OneChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneChat.swift; sourceTree = "<group>"; };
 		79D472152B2A2C5B00A7D17F /* SendMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageModel.swift; sourceTree = "<group>"; };
 		79D472182B2A2D0D00A7D17F /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		79D4721B2B2A2E2200A7D17F /* ChatTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTarget.swift; sourceTree = "<group>"; };
@@ -1012,6 +1018,7 @@
 			children = (
 				79F5E7D52B2E28FB0029CFBC /* ChatRequests.swift */,
 				79D472152B2A2C5B00A7D17F /* SendMessageModel.swift */,
+				79BB328A2B3F55C100DE8732 /* OneChat.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1020,6 +1027,7 @@
 			isa = PBXGroup;
 			children = (
 				79D472182B2A2D0D00A7D17F /* ChatMessage.swift */,
+				79BB32882B3F559800DE8732 /* oneChat.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -2276,6 +2284,7 @@
 				79FA7F532ABB541E0043B6BA /* UIImageView+SDWebImage.swift */,
 				79FA7F552ABC66880043B6BA /* String+PathExtension.swift */,
 				A2190C572AC05F6D0031F1D6 /* UIButton+extension.swift */,
+				79BB32862B3F521900DE8732 /* String+Date.swift */,
 			);
 			path = Extenions;
 			sourceTree = "<group>";
@@ -3554,6 +3563,7 @@
 				82C0E3A02A6768B6008B72ED /* MainStoriesVC.swift in Sources */,
 				82A2FC8E2A0BEA5500BA7BD3 /* BaseWireFrame.swift in Sources */,
 				82FB791D2A169A6D006644EE /* VerifyCode.swift in Sources */,
+				79BB32892B3F559800DE8732 /* oneChat.swift in Sources */,
 				827B83912A10EC9F00E634A9 /* Date+Extensions.swift in Sources */,
 				7983B47A2AC0D31000F34A83 /* UserCardResources.swift in Sources */,
 				79D472162B2A2C5B00A7D17F /* SendMessageModel.swift in Sources */,
@@ -3626,6 +3636,7 @@
 				82A2FC812A0BDC6700BA7BD3 /* TabBarController.swift in Sources */,
 				823BDC5B2A3B2FC600171C7E /* SettingCell.swift in Sources */,
 				8A3AD2512AC59BC900BF8358 /* AddCommentRequestModel.swift in Sources */,
+				79BB328B2B3F55C100DE8732 /* OneChat.swift in Sources */,
 				790E42E52B095DE30025D315 /* AudioRecorder.swift in Sources */,
 				8255575A2A6975F800E00AA5 /* StoryPreviewCell.swift in Sources */,
 				82DB7E152A1383A800F9096B /* EmailIsVerifiedViewController.swift in Sources */,
@@ -3711,6 +3722,7 @@
 				A2190C672AC0A0CA0031F1D6 /* UIViewController+Animation.swift in Sources */,
 				82FB792D2A16C058006644EE /* User.swift in Sources */,
 				8A8C7E962AEC6884009265C4 /* Diamonds.swift in Sources */,
+				79BB32872B3F521900DE8732 /* String+Date.swift in Sources */,
 				82C94ED72A1EB7E7003FB504 /* ForgetPassword.swift in Sources */,
 				82A2FC7A2A0BD99700BA7BD3 /* Navigator.swift in Sources */,
 				82FB79202A169AA5006644EE /* VerifyCodeWorker.swift in Sources */,

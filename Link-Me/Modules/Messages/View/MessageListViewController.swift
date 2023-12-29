@@ -81,6 +81,13 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chatID = viewModel.getItemCell(indexPath: indexPath).id
+        let vc = coordinator.Main.viewcontroller(for: .chat(chatID: "\(chatID ?? 0)"))
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+    }
 }
 
 // MARK: Private Handlers

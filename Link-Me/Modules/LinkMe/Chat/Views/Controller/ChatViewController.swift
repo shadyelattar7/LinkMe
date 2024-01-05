@@ -222,7 +222,13 @@ extension ChatViewController {
     private func onReloadTableView() {
         viewModel.onReloadTableView { [weak self] in
             guard let self = self else { return }
-            self.reloadTableView()
+            if self.viewModel.numberOfCells > 0 {
+                let lastIndex = IndexPath(row: self.viewModel.numberOfCells - 1, section: 0)
+                self.chatTableView.reloadData()
+                self.chatTableView.scrollToRow(at: lastIndex, at: .bottom, animated: true)
+            } else {
+                self.reloadTableView()
+            }
         }
     }
     

@@ -23,7 +23,7 @@ class BottomListSheetViewModel {
     
     // MARK: Inputs
     
-    private let storyID: Int
+    private let itemID: Int
     var bindToReloadTableViewClosure: (() -> Void)?
     private var listItems: [ItemList] = [] {
         didSet {
@@ -33,10 +33,10 @@ class BottomListSheetViewModel {
     
     // MARK: Init
     
-    init(storiesApi: StoriesAPIProtocol = StoriesAPI(), listItems: [ItemList], storyID: Int) {
+    init(storiesApi: StoriesAPIProtocol = StoriesAPI(), listItems: [ItemList], itemID: Int) {
         self.storiesApi = storiesApi
         self.listItems = listItems
-        self.storyID = storyID
+        self.itemID = itemID
     }
     
     // MARK: Outputs
@@ -46,8 +46,8 @@ class BottomListSheetViewModel {
         return screenState.asObserver()
     }
     
-    func getStoryID() -> Int {
-        return self.storyID
+    func getItemID() -> Int {
+        return self.itemID
     }
     
     func getNumberOfCells() -> Int {

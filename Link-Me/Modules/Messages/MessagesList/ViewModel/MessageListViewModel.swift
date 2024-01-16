@@ -36,6 +36,10 @@ class MessageListViewModel: BaseViewModel {
         return data[indexPath.row]
     }
     
+    func getListOfData()-> [ChatRequestItem] {
+        return data
+    }
+    
     // MARK: Get chat requests
     
     func getChatRequests() {

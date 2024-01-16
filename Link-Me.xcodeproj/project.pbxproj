@@ -44,6 +44,9 @@
 		79807DF02AED5D3F002192AC /* BeInTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807DEF2AED5D3F002192AC /* BeInTopViewModel.swift */; };
 		79807DF22AED6727002192AC /* buyStarsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807DF12AED6727002192AC /* buyStarsRequestModel.swift */; };
 		7983B47A2AC0D31000F34A83 /* UserCardResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983B4792AC0D31000F34A83 /* UserCardResources.swift */; };
+		79A09FBF2B571A3400E03CE0 /* DeleteChatSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A09FBD2B571A3400E03CE0 /* DeleteChatSheetViewController.swift */; };
+		79A09FC02B571A3400E03CE0 /* DeleteChatSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A09FBE2B571A3400E03CE0 /* DeleteChatSheetViewController.xib */; };
+		79A09FC22B571B4500E03CE0 /* DeleteChatSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A09FC12B571B4500E03CE0 /* DeleteChatSheetViewModel.swift */; };
 		79BB32872B3F521900DE8732 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BB32862B3F521900DE8732 /* String+Date.swift */; };
 		79BB32892B3F559800DE8732 /* oneChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BB32882B3F559800DE8732 /* oneChat.swift */; };
 		79BB328B2B3F55C100DE8732 /* OneChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BB328A2B3F55C100DE8732 /* OneChat.swift */; };
@@ -432,6 +435,9 @@
 		79807DEF2AED5D3F002192AC /* BeInTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeInTopViewModel.swift; sourceTree = "<group>"; };
 		79807DF12AED6727002192AC /* buyStarsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyStarsRequestModel.swift; sourceTree = "<group>"; };
 		7983B4792AC0D31000F34A83 /* UserCardResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardResources.swift; sourceTree = "<group>"; };
+		79A09FBD2B571A3400E03CE0 /* DeleteChatSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChatSheetViewController.swift; sourceTree = "<group>"; };
+		79A09FBE2B571A3400E03CE0 /* DeleteChatSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteChatSheetViewController.xib; sourceTree = "<group>"; };
+		79A09FC12B571B4500E03CE0 /* DeleteChatSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChatSheetViewModel.swift; sourceTree = "<group>"; };
 		79BB32862B3F521900DE8732 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		79BB32882B3F559800DE8732 /* oneChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneChat.swift; sourceTree = "<group>"; };
 		79BB328A2B3F55C100DE8732 /* OneChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneChat.swift; sourceTree = "<group>"; };
@@ -1013,6 +1019,26 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		79A09FBB2B571A1700E03CE0 /* MessagesList */ = {
+			isa = PBXGroup;
+			children = (
+				79F5E7CD2B2E24080029CFBC /* Cell */,
+				79F5E7CA2B2E1D610029CFBC /* ViewModel */,
+				79F5E7C72B2E1D4C0029CFBC /* View */,
+			);
+			path = MessagesList;
+			sourceTree = "<group>";
+		};
+		79A09FBC2B571A1E00E03CE0 /* DeleteChatSheet */ = {
+			isa = PBXGroup;
+			children = (
+				79A09FC12B571B4500E03CE0 /* DeleteChatSheetViewModel.swift */,
+				79A09FBD2B571A3400E03CE0 /* DeleteChatSheetViewController.swift */,
+				79A09FBE2B571A3400E03CE0 /* DeleteChatSheetViewController.xib */,
+			);
+			path = DeleteChatSheet;
+			sourceTree = "<group>";
+		};
 		79D472142B2A2C4200A7D17F /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -1106,9 +1132,8 @@
 		79F5E7C22B2E1D0A0029CFBC /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				79F5E7CD2B2E24080029CFBC /* Cell */,
-				79F5E7CA2B2E1D610029CFBC /* ViewModel */,
-				79F5E7C72B2E1D4C0029CFBC /* View */,
+				79A09FBB2B571A1700E03CE0 /* MessagesList */,
+				79A09FBC2B571A1E00E03CE0 /* DeleteChatSheet */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -3454,6 +3479,7 @@
 				827B839A2A11146000E634A9 /* VerifyEmailViewController.xib in Resources */,
 				82D9143B2A102459005FAF36 /* README.md in Resources */,
 				825CF37F2A48A3A600BA5DDA /* ChangeEmailVC.xib in Resources */,
+				79A09FC02B571A3400E03CE0 /* DeleteChatSheetViewController.xib in Resources */,
 				793F55D32ABF701B004635C5 /* LinkMeViewController.xib in Resources */,
 				82CAF0472A3CB9EE00311600 /* CompleteProfileVC.xib in Resources */,
 				827B839F2A11211700E634A9 /* NavigationBarView.xib in Resources */,
@@ -3583,6 +3609,7 @@
 				794DC1592B01536A006DE897 /* HeaderChatView.swift in Sources */,
 				82FB793B2A17E907006644EE /* LoginWorkering.swift in Sources */,
 				8A9363FC2AED63C2001E7811 /* BuyDiamondsRequestModel.swift in Sources */,
+				79A09FC22B571B4500E03CE0 /* DeleteChatSheetViewModel.swift in Sources */,
 				82A2FC472A0B9D1600BA7BD3 /* UICollectionView+Helper.swift in Sources */,
 				8250393E2A412F1B0006EAD3 /* SettingsVC.swift in Sources */,
 				82CAF0492A3CB9F700311600 /* CompleteProfileViewModel.swift in Sources */,
@@ -3749,6 +3776,7 @@
 				8A60921B2A7DDDA200ECB1FA /* AuthNavigator.swift in Sources */,
 				822AD2D52A14113B0037D8E0 /* VerifyEmailWorker.swift in Sources */,
 				82A2FC452A0B9D1600BA7BD3 /* Extenions.swift in Sources */,
+				79A09FBF2B571A3400E03CE0 /* DeleteChatSheetViewController.swift in Sources */,
 				794DC1552B015164006DE897 /* ChatViewController.swift in Sources */,
 				827356922A59E73200634EA4 /* DeleteAccountViewModel.swift in Sources */,
 				825039472A413F570006EAD3 /* Settings.swift in Sources */,

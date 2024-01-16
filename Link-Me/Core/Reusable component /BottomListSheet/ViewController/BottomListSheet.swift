@@ -144,9 +144,12 @@ extension BottomListSheet: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch viewModel.getItems(indexPath: indexPath) {
         case .deleteStory:
-            viewModel.deleteStory(storyID: viewModel.getStoryID())
+            viewModel.deleteStory(storyID: viewModel.getItemID())
         case .report:
-            let vc = coordinator.Main.viewcontroller(for: .ReportStory(storyID: viewModel.getStoryID()))
+            let vc = coordinator.Main.viewcontroller(for: .ReportStory(storyID: viewModel.getItemID()))
+            self.present(vc, animated: true)
+        case .deleteChat:
+            let vc = coordinator.Main.viewcontroller(for: .deleteChats(chatsID:[viewModel.getItemID()]))
             self.present(vc, animated: true)
         default:
             break

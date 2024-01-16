@@ -16,6 +16,7 @@ enum ItemList {
     case blockUser
     case deleteStory
     case editStory
+    case deleteChat
     
     var title: String {
         switch self {
@@ -24,6 +25,7 @@ enum ItemList {
         case .blockUser: return "Block This User"
         case .deleteStory: return "Delete Story"
         case .editStory: return "Edit Story"
+        case .deleteChat: return "Delete This Chat"
         }
     }
     
@@ -32,7 +34,7 @@ enum ItemList {
         case .report: return UIImage(named: "report")
         case .unfriend: return UIImage(named: "addCircle")
         case .blockUser: return UIImage(named: "shieldCross")
-        case .deleteStory: return UIImage(named: "trash")
+        case .deleteStory, .deleteChat: return UIImage(named: "trash")
         case .editStory: return UIImage(named: "edit")
         }
     }
@@ -40,7 +42,7 @@ enum ItemList {
     var backgroundColor: UIColor {
         switch self {
         case .report, .unfriend, .blockUser, .editStory: return .lightGray
-        case .deleteStory: return UIColor(red: 1, green: 0.88, blue: 1, alpha: 1)
+        case .deleteStory, .deleteChat: return UIColor(red: 1, green: 0.88, blue: 1, alpha: 1)
         }
     }
 }

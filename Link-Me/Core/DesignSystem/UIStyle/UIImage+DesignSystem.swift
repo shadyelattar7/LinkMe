@@ -25,6 +25,10 @@ extension UIImage {
         return UIImage(named: "Group 62726")!
     }
     
+    static var placeholder2: UIImage {
+        return UIImage(named: "Group 63297")!
+    }
+    
     static var iconPlus: UIImage {
         return UIImage(named: "icon-plus")!
     }
@@ -35,5 +39,13 @@ extension UIImage {
     
     static var iconCheck: UIImage {
         return UIImage(named: "icon-check")!
+    }
+    
+    static var EllipseEmpty: UIImage {
+        return UIImage(named: "EllipseEmpty")!
+    }
+    
+    static var EllipseFill: UIImage {
+        return UIImage(named: "EllipseFill")!
     }
 }

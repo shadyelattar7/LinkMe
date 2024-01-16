@@ -34,13 +34,14 @@ class MainNavigator: Navigator{
         // MARK: Messages
         
         case messageList
+        case deleteChats(chatsID: [Int])
         
         //MARK: - Stories -
         case MainStory
         case MediaPreview(mediaType: MediaType, image: UIImage = UIImage(), video: URL = URL(fileURLWithPath: ""))
         case StoryPreview
         case ReportStory(storyID: Int)
-        case BottomListItem(listItems: [ItemList], storyID: Int)
+        case BottomListItem(listItems: [ItemList], itemID: Int)
         case FeaturesPremium
         case GoPremium
         case TestPremuim
@@ -117,6 +118,10 @@ class MainNavigator: Navigator{
             let viewModel = MessageListViewModel()
             return MessageListViewController(viewModel: viewModel, coordinator: coordinator)
             
+        case .deleteChats(let chatsID):
+            let viewModel = DeleteChatSheetViewModel(chatsID: chatsID)
+            return DeleteChatSheetViewController(viewModel: viewModel, coordinator: coordinator)
+            
             //MARK: - Stories -
             
         case .MainStory:
@@ -134,8 +139,8 @@ class MainNavigator: Navigator{
             let viewModel = ReportStoryViewModel(storyID: storyID)
             return ReportStoryViewController(viewModel: viewModel, coordinator: coordinator)
             
-        case .BottomListItem(let listItems, let storyID):
-            let viewModel = BottomListSheetViewModel(listItems:  listItems, storyID: storyID)
+        case .BottomListItem(let listItems, let itemID):
+            let viewModel = BottomListSheetViewModel(listItems: listItems, itemID: itemID)
             return BottomListSheet(viewModel: viewModel, coordinator: coordinator)
             
             //MARK: - Profile -

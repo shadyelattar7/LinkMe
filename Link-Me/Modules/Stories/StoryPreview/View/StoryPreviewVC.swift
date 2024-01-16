@@ -151,9 +151,9 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
         let vc: BottomListSheet
         
         if storyUserID == UDHelper.fetchUserData?.id {
-            vc = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.deleteStory, .editStory], storyID: storyID)) as! BottomListSheet
+            vc = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.deleteStory, .editStory], itemID: storyID)) as! BottomListSheet
         } else {
-            vc = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.report, .unfriend, .blockUser], storyID: storyID)) as! BottomListSheet
+            vc = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.report, .unfriend, .blockUser], itemID: storyID)) as! BottomListSheet
         }
         self.present(vc, animated: true)
     }

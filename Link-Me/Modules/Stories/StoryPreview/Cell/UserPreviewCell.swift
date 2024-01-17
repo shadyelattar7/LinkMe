@@ -41,7 +41,7 @@ class UserPreviewCell: UICollectionViewCell {
     var segmentbar: SGSegmentedProgressBar!
     var previousContentOffset: CGFloat = 0.0
     var closeBtn: (()->())?
-    var moreMenuBtn: ((Int?)->())?
+    var moreMenuBtn: ((Int?, Int?)->())?
     var muteSound: (()->())?
     var likeBtn: ((Int)->())?
     var addCommentBtn: ((Int,String)->())?
@@ -51,6 +51,7 @@ class UserPreviewCell: UICollectionViewCell {
     var storyCount: Int = 0
     var currentIndex: Int = 0
     private var storyID: Int?
+    private var userID: Int?
     var buttonState: ButtonState = .unliked
     var likeStoryID = 0
     
@@ -185,6 +186,7 @@ class UserPreviewCell: UICollectionViewCell {
             
             cell.update(item)
             self.storyID = self.stories.value[row].id
+            self.userID = self.stories.value[row].userID
             self.segmentbar.currentIndex = row
             print("Comments: \(item.comments ?? [])")
             self.comments.accept(item.comments ?? [])
@@ -294,7 +296,7 @@ class UserPreviewCell: UICollectionViewCell {
     }
     
     @IBAction func moreMeunTapped(_ sender: Any) {
-        moreMenuBtn?(storyID)
+        moreMenuBtn?(storyID, userID)
     }
     
     @IBAction func likeTapped(_ sender: Any) {

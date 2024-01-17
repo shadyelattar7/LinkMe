@@ -11,6 +11,7 @@ class ChatViewController: UIViewController {
     
     // MARK: Outlets
     
+    @IBOutlet private weak var headerChatView: HeaderChatView!
     @IBOutlet private weak var sendOptionChatView: SendOptionView!
     @IBOutlet private weak var chatTableView: UITableView!
     
@@ -38,12 +39,25 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        onClickOnBackButton()
         sendOptionChatViewOutputs()
         onChangeAudioFile()
         configureTableView()
         viewModelOutputs()
         audioRecorder.setupAudioRecorder()
     }
+}
+
+
+// MARK: Configure header chat view
+
+extension ChatViewController {
+    private func onClickOnBackButton() {
+        headerChatView.onClickBackButton { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
+        }
+    }    
 }
 
 

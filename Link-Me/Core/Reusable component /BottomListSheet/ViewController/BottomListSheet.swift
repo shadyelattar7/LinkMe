@@ -151,6 +151,8 @@ extension BottomListSheet: UITableViewDataSource, UITableViewDelegate {
         case .deleteChat:
             let vc = coordinator.Main.viewcontroller(for: .deleteChats(chatsID:[viewModel.getItemID()]))
             self.present(vc, animated: true)
+        case .blockUser(let userID):
+            viewModel.blockUser(userID: userID)
         default:
             break
         }

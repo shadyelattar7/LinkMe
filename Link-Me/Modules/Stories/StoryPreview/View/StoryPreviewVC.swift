@@ -89,10 +89,10 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
                 self.dismiss(animated: true)
             }
             
-            cell.moreMenuBtn = { [weak self] storyID in
+            cell.moreMenuBtn = { [weak self] storyID, userID in
                 guard let self = self else {return}
                 guard let id = storyID else { return }
-                self.showBottomListSheet(storyUserID: self.myStoriesDate.value[row].id ?? -1, storyID: id)
+                self.showBottomListSheet(storyUserID: self.myStoriesDate.value[row].id ?? -1, storyID: id, userID: userID ?? -1)
             }
             
             cell.muteSound = { [weak self] in
@@ -147,13 +147,13 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
     }
     
     
-    private func showBottomListSheet(storyUserID: Int, storyID: Int) {
+    private func showBottomListSheet(storyUserID: Int, storyID: Int, userID: Int) {
         let vc: BottomListSheet
         
         if storyUserID == UDHelper.fetchUserData?.id {
             vc = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.deleteStory, .editStory], itemID: storyID)) as! BottomListSheet
         } else {
-            vc = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.report, .unfriend, .blockUser], itemID: storyID)) as! BottomListSheet
+            vc = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.report, .unfriend, .blockUser(userID: userID)], itemID: storyID)) as! BottomListSheet
         }
         self.present(vc, animated: true)
     }

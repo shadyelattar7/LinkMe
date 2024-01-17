@@ -44,6 +44,7 @@
 		79807DF02AED5D3F002192AC /* BeInTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807DEF2AED5D3F002192AC /* BeInTopViewModel.swift */; };
 		79807DF22AED6727002192AC /* buyStarsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807DF12AED6727002192AC /* buyStarsRequestModel.swift */; };
 		7983B47A2AC0D31000F34A83 /* UserCardResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983B4792AC0D31000F34A83 /* UserCardResources.swift */; };
+		798890DB2B58758D002F0071 /* BlockUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798890DA2B58758D002F0071 /* BlockUser.swift */; };
 		79A09FBF2B571A3400E03CE0 /* DeleteChatSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A09FBD2B571A3400E03CE0 /* DeleteChatSheetViewController.swift */; };
 		79A09FC02B571A3400E03CE0 /* DeleteChatSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A09FBE2B571A3400E03CE0 /* DeleteChatSheetViewController.xib */; };
 		79A09FC22B571B4500E03CE0 /* DeleteChatSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A09FC12B571B4500E03CE0 /* DeleteChatSheetViewModel.swift */; };
@@ -435,6 +436,7 @@
 		79807DEF2AED5D3F002192AC /* BeInTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeInTopViewModel.swift; sourceTree = "<group>"; };
 		79807DF12AED6727002192AC /* buyStarsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyStarsRequestModel.swift; sourceTree = "<group>"; };
 		7983B4792AC0D31000F34A83 /* UserCardResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardResources.swift; sourceTree = "<group>"; };
+		798890DA2B58758D002F0071 /* BlockUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUser.swift; sourceTree = "<group>"; };
 		79A09FBD2B571A3400E03CE0 /* DeleteChatSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChatSheetViewController.swift; sourceTree = "<group>"; };
 		79A09FBE2B571A3400E03CE0 /* DeleteChatSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteChatSheetViewController.xib; sourceTree = "<group>"; };
 		79A09FC12B571B4500E03CE0 /* DeleteChatSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChatSheetViewModel.swift; sourceTree = "<group>"; };
@@ -1261,6 +1263,7 @@
 				8AF6F44D2AC23923002FB4E7 /* LikeStoryRequestModel.swift */,
 				8A3AD2502AC59BC900BF8358 /* AddCommentRequestModel.swift */,
 				8A3AD2542AC5A77500BF8358 /* RemoveCommentRequestModel.swift */,
+				798890DA2B58758D002F0071 /* BlockUser.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -3614,6 +3617,7 @@
 				8250393E2A412F1B0006EAD3 /* SettingsVC.swift in Sources */,
 				82CAF0492A3CB9F700311600 /* CompleteProfileViewModel.swift in Sources */,
 				79807DF22AED6727002192AC /* buyStarsRequestModel.swift in Sources */,
+				798890DB2B58758D002F0071 /* BlockUser.swift in Sources */,
 				82CAF0522A3E04D600311600 /* ProfileWorking.swift in Sources */,
 				82D9143D2A102459005FAF36 /* EmailValidator.swift in Sources */,
 				8A8C7EB32AED23D0009265C4 /* AboutStarsViewModel.swift in Sources */,

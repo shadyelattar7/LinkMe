@@ -45,6 +45,12 @@ protocol StoriesAPIProtocol {
     /// - Parameters:
     /// - Returns: baseResponse model.
     func removeCommentStory(model: RemoveCommentRequestModel) -> Observable<Result<BaseResponse, NSError>>
+    
+    
+    /// it is the method used to block user.
+    /// - Parameters:
+    /// - Returns: baseResponse model.
+    func blockUser(model: BlockUserRequestModel) -> Observable<Result<BaseResponse, NSError>>
 }
 
 class StoriesAPI: APIClient<StoriesTarget>, StoriesAPIProtocol {
@@ -77,4 +83,7 @@ class StoriesAPI: APIClient<StoriesTarget>, StoriesAPIProtocol {
         self.performRequest(target: .removeComment(Parameters: model), requestModel: model)
     }
    
+    func blockUser(model: BlockUserRequestModel) -> Observable<Result<BaseResponse, NSError>> {
+        self.performRequest(target: .blockUser(parameters: model), requestModel: model)
+    }
 }

@@ -26,6 +26,8 @@ class HeaderChatView: UIView {
         }
     }
     
+    private var onClick: () -> Void = { }
+    
     // MARK: - init
     
     override init(frame: CGRect) {
@@ -42,6 +44,12 @@ class HeaderChatView: UIView {
         loadViewFromNib()
         configureUI()
         configureHeaderViewType()
+    }
+    
+    // MARK: Actions
+    
+    @IBAction private func didTappedOnBackButton(_ sender: Any) {
+        onClick()
     }
 }
 
@@ -63,6 +71,10 @@ extension HeaderChatView {
     
     func setOtherPersonName(_ name: String) {
         ignoreTextLabel.text = "\(name) ignore your"
+    }
+    
+    func onClickBackButton(_ onClick: @escaping () -> Void) {
+        self.onClick = onClick
     }
 }
 

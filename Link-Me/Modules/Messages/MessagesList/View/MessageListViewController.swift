@@ -88,8 +88,9 @@ extension MessageListViewController {
         if sender.state == .began {
             let touchPoint = sender.location(in: messagesTableView)
             if let indexPath = messagesTableView.indexPathForRow(at: touchPoint) {
-                guard let chatID = viewModel.getItemCell(indexPath: indexPath).id else { return }
-                let vc: BottomListSheet = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.deleteChat, .blockUser], itemID: chatID)) as! BottomListSheet
+                guard let chatID = viewModel.getItemCell(indexPath: indexPath).id,
+                      let userID = viewModel.getItemCell(indexPath: indexPath).secondUserID else { return }
+                let vc: BottomListSheet = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.deleteChat, .blockUser(userID: userID)], itemID: chatID)) as! BottomListSheet
                 self.present(vc, animated: true)
             }
         }
@@ -161,7 +162,7 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
         if messagesTableView.allowsMultipleSelection == false {
             let chatID = viewModel.getItemCell(indexPath: indexPath).id
             let vc = coordinator.Main.viewcontroller(for: .chat(chatID: "\(chatID ?? 0)"))
-    //        vc.modalPresentationStyle = .overFullScreen
+            vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         } else {
             self.listOfSelectedChats.append(viewModel.getItemCell(indexPath: indexPath))

@@ -16,6 +16,7 @@ enum StoriesTarget {
     case likeStory(Parameters: LikeStoryRequestModel)
     case comment(Parameters: AddCommentRequestModel)
     case removeComment(Parameters: RemoveCommentRequestModel)
+    case blockUser(parameters: BlockUserRequestModel)
 }
 
 extension StoriesTarget: TargetType {
@@ -35,12 +36,14 @@ extension StoriesTarget: TargetType {
             return "/story/add-comment"
         case .removeComment:
             return "/story/delete-comment"
+        case .blockUser:
+            return "/users/block-user"
         }
     }
     
     var method: Alamofire.HTTPMethod {
         switch self {
-        case .addNewStory, .deleteStory, .reportStory:
+        case .addNewStory, .deleteStory, .reportStory, .blockUser:
             return .post
         case .fetchStories:
             return .get
@@ -69,6 +72,8 @@ extension StoriesTarget: TargetType {
             return .request(Parameters)
         case .removeComment(let Parameters):
             return .request(Parameters)
+        case .blockUser(let parameters):
+            return .request(parameters)
         }
     }
     

@@ -13,7 +13,7 @@ import UIKit
 enum ItemList {
     case report
     case unfriend
-    case blockUser
+    case blockUser(userID: Int)
     case deleteStory
     case editStory
     case deleteChat

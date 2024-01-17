@@ -12,6 +12,7 @@ enum ChatTarget: TargetType {
     case sendMessage(Parameters: ChatMessageRequestModel, fileModel: [MultiPartData])
     case chatRequests
     case oneChat(Parameters: OneChatRequestModel)
+    case deleteChat(parameters: DeleteChatRequestModel)
 }
 
 extension ChatTarget {
@@ -23,12 +24,14 @@ extension ChatTarget {
             return "/chat-requests"
         case .oneChat:
             return "/one-chat"
+        case .deleteChat:
+            return "/chats/delete"
         }
     }
     
     var method: HTTPMethod {
         switch self{
-        case .sendMessage, .chatRequests, .oneChat:
+        case .sendMessage, .chatRequests, .oneChat, .deleteChat:
             return .post
         }
     }
@@ -41,12 +44,14 @@ extension ChatTarget {
             return .requestPlain
         case .oneChat(let parameters):
             return .request(parameters)
+        case .deleteChat(let parameters):
+            return .request(parameters)
         }
     }
     
     var headers: [String : String] {
         switch self {
-        case .sendMessage, .chatRequests, .oneChat:
+        case .sendMessage, .chatRequests, .oneChat, .deleteChat:
             return ["Authorization": "Bearer \(UDHelper.token)"]
         }
     }

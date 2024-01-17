@@ -45,6 +45,7 @@
 		79807DF22AED6727002192AC /* buyStarsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79807DF12AED6727002192AC /* buyStarsRequestModel.swift */; };
 		7983B47A2AC0D31000F34A83 /* UserCardResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983B4792AC0D31000F34A83 /* UserCardResources.swift */; };
 		798890DB2B58758D002F0071 /* BlockUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798890DA2B58758D002F0071 /* BlockUser.swift */; };
+		798890DD2B587BF3002F0071 /* DeleteChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798890DC2B587BF3002F0071 /* DeleteChat.swift */; };
 		79A09FBF2B571A3400E03CE0 /* DeleteChatSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A09FBD2B571A3400E03CE0 /* DeleteChatSheetViewController.swift */; };
 		79A09FC02B571A3400E03CE0 /* DeleteChatSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A09FBE2B571A3400E03CE0 /* DeleteChatSheetViewController.xib */; };
 		79A09FC22B571B4500E03CE0 /* DeleteChatSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A09FC12B571B4500E03CE0 /* DeleteChatSheetViewModel.swift */; };
@@ -437,6 +438,7 @@
 		79807DF12AED6727002192AC /* buyStarsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyStarsRequestModel.swift; sourceTree = "<group>"; };
 		7983B4792AC0D31000F34A83 /* UserCardResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardResources.swift; sourceTree = "<group>"; };
 		798890DA2B58758D002F0071 /* BlockUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUser.swift; sourceTree = "<group>"; };
+		798890DC2B587BF3002F0071 /* DeleteChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChat.swift; sourceTree = "<group>"; };
 		79A09FBD2B571A3400E03CE0 /* DeleteChatSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChatSheetViewController.swift; sourceTree = "<group>"; };
 		79A09FBE2B571A3400E03CE0 /* DeleteChatSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteChatSheetViewController.xib; sourceTree = "<group>"; };
 		79A09FC12B571B4500E03CE0 /* DeleteChatSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteChatSheetViewModel.swift; sourceTree = "<group>"; };
@@ -1056,6 +1058,7 @@
 			children = (
 				79D472182B2A2D0D00A7D17F /* ChatMessage.swift */,
 				79BB32882B3F559800DE8732 /* oneChat.swift */,
+				798890DC2B587BF3002F0071 /* DeleteChat.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -3629,6 +3632,7 @@
 				829A79572A1281DA001A137B /* CreatePasswordViewController.swift in Sources */,
 				A2190C652AC09D6A0031F1D6 /* UIButton+Style.swift in Sources */,
 				79D610612ACC92D100961837 /* FilterSearchViewModel.swift in Sources */,
+				798890DD2B587BF3002F0071 /* DeleteChat.swift in Sources */,
 				825039412A412F250006EAD3 /* SettingsViewModel.swift in Sources */,
 				82FB79332A16FF45006644EE /* LocalStorageManager.swift in Sources */,
 				8AF8CE4D2ABF49BD00676366 /* FeaturesPremiumViewModel.swift in Sources */,

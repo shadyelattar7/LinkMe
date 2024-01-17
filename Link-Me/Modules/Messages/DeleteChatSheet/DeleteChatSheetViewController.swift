@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SuccessDeleteChatProtocol: AnyObject {
+    func reload()
+}
+
 class DeleteChatSheetViewController: BaseWireFrame<DeleteChatSheetViewModel> {
 
     // MARK: Outlets
@@ -17,20 +21,23 @@ class DeleteChatSheetViewController: BaseWireFrame<DeleteChatSheetViewModel> {
     
     // MARK: Properties
     
+    weak var delegate: SuccessDeleteChatProtocol?
     
     // MARK: Lifecycle
     
     override func bind(viewModel: DeleteChatSheetViewModel) {
         configureUI()
+        subscribeToScreenState()
     }
     
     // MARK: Actions
     
     @IBAction private func didTappedOnDeleteButton(_ sender: Any) {
-        // TODO: - Call api to delete chats
+        viewModel.deleteChats()
     }
     
     @IBAction private func didTappedOnCancelButton(_ sender: Any) {
+        self.delegate?.reload()
         dismiss(animated: true)
     }
 }
@@ -47,5 +54,28 @@ extension DeleteChatSheetViewController {
     private func configureHandViewUI() {
         handView.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1)
         handView.layer.cornerRadius = 5
+    }
+}
+
+
+// MARK: ViewModel Outputs
+
+extension DeleteChatSheetViewController {
+    private func subscribeToScreenState() {
+        viewModel.screenStateObserver.subscribe { [weak self] state in
+            guard let self = self else { return }
+            
+            switch state.element {
+            case .success:
+                self.delegate?.reload()
+                self.dismiss(animated: true)
+                
+            case .error(let errorMessage):
+                ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+            default:
+                break
+            }
+            
+        }.disposed(by: disposeBag)
     }
 }

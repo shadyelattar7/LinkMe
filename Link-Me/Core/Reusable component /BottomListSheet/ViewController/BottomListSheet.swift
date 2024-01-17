@@ -9,6 +9,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol BottomListDismissedProtocol: AnyObject {
+    func dismiss()
+}
+
 class BottomListSheet: UIViewController {
 
     // MARK: Outlets
@@ -21,6 +25,7 @@ class BottomListSheet: UIViewController {
     
     // MARK: Properties
     
+    weak var delegate: BottomListDismissedProtocol?
     private let viewModel: BottomListSheetViewModel
     private let coordinator: Coordinator
     private let disposeBag = DisposeBag()
@@ -99,6 +104,7 @@ extension BottomListSheet {
             
             switch state.element {
             case .success:
+                self.delegate?.dismiss()
                 self.dismiss(animated: true)
                 
             case .error(let errorMessage):
@@ -149,12 +155,26 @@ extension BottomListSheet: UITableViewDataSource, UITableViewDelegate {
             let vc = coordinator.Main.viewcontroller(for: .ReportStory(storyID: viewModel.getItemID()))
             self.present(vc, animated: true)
         case .deleteChat:
-            let vc = coordinator.Main.viewcontroller(for: .deleteChats(chatsID:[viewModel.getItemID()]))
+            let vc = coordinator.Main.viewcontroller(for: .deleteChats(chatsID:[viewModel.getItemID()])) as! DeleteChatSheetViewController
+            vc.delegate = self
             self.present(vc, animated: true)
         case .blockUser(let userID):
             viewModel.blockUser(userID: userID)
         default:
             break
+        }
+    }
+}
+
+
+// MARK: Delegate
+
+extension BottomListSheet: SuccessDeleteChatProtocol {
+    func reload() {
+        self.delegate?.dismiss()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
         }
     }
 }

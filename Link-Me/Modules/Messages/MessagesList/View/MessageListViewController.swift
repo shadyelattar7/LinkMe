@@ -46,21 +46,11 @@ class MessageListViewController: BaseWireFrame<MessageListViewModel> {
     @IBAction private func didTappedOnEditButton(_ sender: UIButton) {
         self.listOfSelectedChats = []
         if sender.titleLabel?.text == "Edit" {
-            messagesTableView.allowsMultipleSelectionDuringEditing = true
-            messagesTableView.allowsMultipleSelection = true
-            hiddenSelectedButton.accept(false)
-            sender.setTitle("Done", for: .normal)
-            bottomView.isHidden = false
-            self.tabBarController?.tabBar.isHidden = true
+            makeEditMood()
         } else if sender.titleLabel?.text == "Done" {
-            messagesTableView.allowsMultipleSelectionDuringEditing = false
-            messagesTableView.allowsMultipleSelection = false
-            hiddenSelectedButton.accept(true)
-            sender.setTitle("Edit", for: .normal)
-            bottomView.isHidden = true
-            self.tabBarController?.tabBar.isHidden = false
+            makeNormalMood()
         }
-        self.reloadTableViewView()
+        self.reloadTableView()
     }
     
     @IBAction private func didTappedOnDeletedButton(_ sender: Any) {
@@ -70,9 +60,32 @@ class MessageListViewController: BaseWireFrame<MessageListViewModel> {
                 guard let id = item.id else { return }
                 chatsID.append(id)
             }
-            let vc = coordinator.Main.viewcontroller(for: .deleteChats(chatsID: chatsID))
+            let vc = coordinator.Main.viewcontroller(for: .deleteChats(chatsID: chatsID)) as! DeleteChatSheetViewController
+            vc.delegate = self
             self.present(vc, animated: true)
         }
+    }
+}
+
+// MARK: Configurations
+
+extension MessageListViewController {
+    private func makeNormalMood() {
+        messagesTableView.allowsMultipleSelectionDuringEditing = false
+        messagesTableView.allowsMultipleSelection = false
+        hiddenSelectedButton.accept(true)
+        editButton.setTitle("Edit", for: .normal)
+        bottomView.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func makeEditMood() {
+        messagesTableView.allowsMultipleSelectionDuringEditing = true
+        messagesTableView.allowsMultipleSelection = true
+        hiddenSelectedButton.accept(false)
+        editButton.setTitle("Done", for: .normal)
+        bottomView.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
     }
 }
 
@@ -91,6 +104,7 @@ extension MessageListViewController {
                 guard let chatID = viewModel.getItemCell(indexPath: indexPath).id,
                       let userID = viewModel.getItemCell(indexPath: indexPath).secondUserID else { return }
                 let vc: BottomListSheet = coordinator.Main.viewcontroller(for: .BottomListItem(listItems: [.deleteChat, .blockUser(userID: userID)], itemID: chatID)) as! BottomListSheet
+                vc.delegate = self
                 self.present(vc, animated: true)
             }
         }
@@ -120,7 +134,7 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
         bindToReloadTableView()
     }
     
-    private func reloadTableViewView() {
+    private func reloadTableView() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.messagesTableView.reloadData()
@@ -130,7 +144,7 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
     private func bindToReloadTableView() {
         viewModel.onReloadTableViewClosure = { [weak self] in
             guard let self = self else { return }
-            self.reloadTableViewView()
+            self.reloadTableView()
         }
     }
     
@@ -194,5 +208,27 @@ extension MessageListViewController {
             guard let self = self else { return }
             ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
         }.disposed(by: disposeBag)
+    }
+}
+
+
+// MARK: Delegate to reload messages
+
+extension MessageListViewController: SuccessDeleteChatProtocol {
+    func reload() {
+        listOfSelectedChats = []
+        makeNormalMood()
+        viewModel.getChatRequests()
+    }
+}
+
+
+// MARK: Delegate
+
+extension MessageListViewController: BottomListDismissedProtocol {
+    func dismiss() {
+        listOfSelectedChats = []
+        makeNormalMood()
+        viewModel.getChatRequests()
     }
 }

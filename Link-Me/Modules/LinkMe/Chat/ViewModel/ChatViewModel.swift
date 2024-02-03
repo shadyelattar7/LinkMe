@@ -178,6 +178,7 @@ extension ChatViewModel {
                     items.append(item.toDomain())
                 })
                 self.messages = items
+                self.messages = self.messages.reversed()
             case .failure(let error):
                 self.error(error.localizedDescription)
             }

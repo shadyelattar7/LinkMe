@@ -1,11 +1,12 @@
 PODS:
   - Alamofire (5.8.1)
   - BEMCheckBox (1.4.1)
-  - IQKeyboardManagerSwift (6.5.16)
+  - IQKeyboardManagerSwift (7.0.1)
   - MOLH (1.4.3)
-  - PusherSwift (8.0.0):
-    - ReachabilitySwift (~> 5.0)
-    - Starscream (~> 3.1)
+  - NWWebSocket (0.5.4)
+  - PusherSwift (10.1.5):
+    - NWWebSocket (~> 0.5.4)
+    - TweetNacl (~> 1.0.0)
   - ReachabilitySwift (5.0.0)
   - RxAlamofire (6.1.1):
     - RxAlamofire/Core (= 6.1.1)
@@ -22,14 +23,15 @@ PODS:
   - RxRelay (6.6.0):
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
-  - SDWebImage (5.18.3):
-    - SDWebImage/Core (= 5.18.3)
-  - SDWebImage/Core (5.18.3)
+  - SDWebImage (5.19.0):
+    - SDWebImage/Core (= 5.19.0)
+  - SDWebImage/Core (5.19.0)
   - SGSegmentedProgressBarLibrary (0.0.5)
-  - SkeletonView (1.30.4)
   - SoundWave (0.1.4)
-  - Starscream (3.1.1)
-  - SVProgressHUD (2.2.5)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
+  - TweetNacl (1.0.2)
   - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
@@ -44,7 +46,6 @@ DEPENDENCIES:
   - RxSwift
   - SDWebImage
   - SGSegmentedProgressBarLibrary
-  - SkeletonView
   - SoundWave
   - SVProgressHUD
   - "UITextView+Placeholder"
@@ -55,6 +56,7 @@ SPEC REPOS:
     - BEMCheckBox
     - IQKeyboardManagerSwift
     - MOLH
+    - NWWebSocket
     - PusherSwift
     - ReachabilitySwift
     - RxAlamofire
@@ -64,36 +66,31 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
     - SGSegmentedProgressBarLibrary
-    - SkeletonView
     - SoundWave
-    - Starscream
     - SVProgressHUD
+    - TweetNacl
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
-  IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
+  IQKeyboardManagerSwift: 7f6b1b1d1497855d2beea7f2f10ffcc6978525b1
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
-  PusherSwift: 8f18b7beaf383e0475607ab6a3f89f477637fb21
+  NWWebSocket: 040d22f23438cc09aaeabf537beff67699c3c76d
+  PusherSwift: cad631bad86cfff4b8458dce1310a7774e469b1f
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxReachability: bfd13548bf1dac7a877082d13918a9f39bdb5c18
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
-  SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
+  SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
   SGSegmentedProgressBarLibrary: 2b7f2dc518cd19c5d7d42ae6a8e9ec5610c334f1
-  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SoundWave: d98ffaa863570b29d991da32a09b7ce1b4aaf2d4
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 8fb371852b9c333f2e1e7c69d9507709f94ce50a
-  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
+PODFILE CHECKSUM: 2eaa12e69bb7c34796af23ce640391cd667cb47a
 
-PODFILE CHECKSUM: 5a6d12a9f57f073f3fff5227582cfd5829a0d2a9
-
-COCOAPODS: 1.13.0
+COCOAPODS: 1.11.3

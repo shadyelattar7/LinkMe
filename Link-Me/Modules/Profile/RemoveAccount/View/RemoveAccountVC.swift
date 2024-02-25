@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UITextView_Placeholder
 
 class RemoveAccountVC: BaseWireFrame<RemoveAccountViewModel>, NavigationBarDelegate {
    

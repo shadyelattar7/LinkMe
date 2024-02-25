@@ -6,7 +6,6 @@
 //  Copyright © 2021 POMac. All rights reserved.
 //
 import UIKit
-import SkeletonView
 import SDWebImage
 
 extension UIView {
@@ -35,7 +34,7 @@ extension UIView {
     }
 
     func stopShimmering() {
-        self.stopSkeletonAnimation()
+//        self.stopSkeletonAnimation()
     }
 
     func addShadow(color: UIColor, alpha: CGFloat, xValue: CGFloat, yValue: CGFloat, blur: CGFloat) {

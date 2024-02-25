@@ -125,7 +125,7 @@ class UserPreviewCell: UICollectionViewCell {
                                                object: nil)
         
         comment_tf.delegate = self
-        comment_tf.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(self.doneButtonClicked))
+        comment_tf.iq.toolbar.doneBarButton.setTarget(self, action: #selector(self.doneButtonClicked))
         
         
         storyPreviewCollV.registerNIB(StoryPreviewCell.self)
@@ -140,7 +140,8 @@ class UserPreviewCell: UICollectionViewCell {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        IQKeyboardManager.shared.enable = true
+        //TODO: - Please check here.
+//        IQKeyboardManager.shared.enable = true
     }
     
     @objc func keyboardNotification(notification: NSNotification) {

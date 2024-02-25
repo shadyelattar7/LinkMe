@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable{
     
     private func setupIQKeyboardManager() {
         IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.toolbarConfiguration.placeholderConfiguration.showPlaceholder = false
         
     }
     

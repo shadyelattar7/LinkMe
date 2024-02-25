@@ -254,7 +254,7 @@ class InputView : NibLoadingView {
     }
     // MARK: - setup data Input
     func setupdataInput (isDate : Bool) {
-        inputFieldTf.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(getDate))
+        inputFieldTf.iq.toolbar.doneBarButton.setTarget(self, action: #selector(getDate))
         datePicker.datePickerMode = isDate ? .date : .time
         datePicker.preferredDatePickerStyle = .wheels
         inputFieldTf.inputView = datePicker

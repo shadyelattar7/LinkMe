@@ -35,6 +35,7 @@ class MainNavigator: Navigator{
         
         case messageList
         case deleteChats(chatsID: [Int])
+        case friends
         
         //MARK: - Stories -
         case MainStory
@@ -121,6 +122,10 @@ class MainNavigator: Navigator{
         case .deleteChats(let chatsID):
             let viewModel = DeleteChatSheetViewModel(chatsID: chatsID)
             return DeleteChatSheetViewController(viewModel: viewModel, coordinator: coordinator)
+            
+        case .friends:
+            let viewModel = FriendsViewModel()
+            return FriendsViewController(viewModel: viewModel, coordinator: coordinator)
             
             //MARK: - Stories -
             

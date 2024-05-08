@@ -18,6 +18,9 @@ protocol ChatWorkerProtocol {
     func oneChat(model: OneChatRequestModel) -> Observable<Result<BaseResponseGen<OneChatDate>, NSError>>
     
     func deleteChat(model: DeleteChatRequestModel) -> Observable<Result<BaseResponse, NSError>>
+    
+    func friends() -> Observable<Result<BaseResponseGen<OneChatDate>, NSError>>
+
 }
 
 
@@ -37,5 +40,9 @@ class ChatWorker: APIClient<ChatTarget>, ChatWorkerProtocol {
     
     func deleteChat(model: DeleteChatRequestModel) -> Observable<Result<BaseResponse, NSError>> {
         self.performRequest(target: .deleteChat(parameters: model), requestModel: model)
+    }
+    
+    func friends() -> Observable<Result<BaseResponseGen<OneChatDate>, NSError>> {
+        self.performRequest(target: .friends)
     }
 }

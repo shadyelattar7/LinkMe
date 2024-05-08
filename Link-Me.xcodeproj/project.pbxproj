@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		509ABC786A24D3146446236C /* Pods_Link_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE62B092A4E2A039DB368CC0 /* Pods_Link_Me.framework */; };
+		7908BB872B9269E600C0F4BE /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7908BB852B9269E600C0F4BE /* FriendsViewController.swift */; };
+		7908BB882B9269E600C0F4BE /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7908BB862B9269E600C0F4BE /* FriendsViewController.xib */; };
+		7908BB8A2B9269F900C0F4BE /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7908BB892B9269F900C0F4BE /* FriendsViewModel.swift */; };
+		7908BB8E2B926ABE00C0F4BE /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7908BB8C2B926ABE00C0F4BE /* FriendTableViewCell.swift */; };
+		7908BB8F2B926ABE00C0F4BE /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7908BB8D2B926ABE00C0F4BE /* FriendTableViewCell.xib */; };
 		790E42D52B08F0060025D315 /* TextMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E42D32B08F0060025D315 /* TextMessageTableViewCell.swift */; };
 		790E42D62B08F0060025D315 /* TextMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 790E42D42B08F0060025D315 /* TextMessageTableViewCell.xib */; };
 		790E42D92B08F1680025D315 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E42D82B08F1680025D315 /* MessageModel.swift */; };
@@ -401,6 +406,11 @@
 
 /* Begin PBXFileReference section */
 		2A309C640B64FBD4F99AF9D6 /* Pods-Link-Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link-Me.debug.xcconfig"; path = "Target Support Files/Pods-Link-Me/Pods-Link-Me.debug.xcconfig"; sourceTree = "<group>"; };
+		7908BB852B9269E600C0F4BE /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		7908BB862B9269E600C0F4BE /* FriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
+		7908BB892B9269F900C0F4BE /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		7908BB8C2B926ABE00C0F4BE /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		7908BB8D2B926ABE00C0F4BE /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		790E42D32B08F0060025D315 /* TextMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageTableViewCell.swift; sourceTree = "<group>"; };
 		790E42D42B08F0060025D315 /* TextMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextMessageTableViewCell.xib; sourceTree = "<group>"; };
 		790E42D82B08F1680025D315 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
@@ -831,6 +841,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7908BB842B9269CC00C0F4BE /* FriendsList */ = {
+			isa = PBXGroup;
+			children = (
+				7908BB8B2B926AAA00C0F4BE /* Cell */,
+				7908BB892B9269F900C0F4BE /* FriendsViewModel.swift */,
+				7908BB852B9269E600C0F4BE /* FriendsViewController.swift */,
+				7908BB862B9269E600C0F4BE /* FriendsViewController.xib */,
+			);
+			path = FriendsList;
+			sourceTree = "<group>";
+		};
+		7908BB8B2B926AAA00C0F4BE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7908BB8C2B926ABE00C0F4BE /* FriendTableViewCell.swift */,
+				7908BB8D2B926ABE00C0F4BE /* FriendTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		790E42D12B08EFE40025D315 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1139,6 +1169,7 @@
 			children = (
 				79A09FBB2B571A1700E03CE0 /* MessagesList */,
 				79A09FBC2B571A1E00E03CE0 /* DeleteChatSheet */,
+				7908BB842B9269CC00C0F4BE /* FriendsList */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -3498,6 +3529,7 @@
 				794B890B2ABE10B700FE5F0D /* ReportStoryViewController.xib in Resources */,
 				82A2FC5F2A0BB05D00BA7BD3 /* OnboardingViewController.xib in Resources */,
 				79D6106C2ACC9A5E00961837 /* AgeCollectionViewCell.xib in Resources */,
+				7908BB882B9269E600C0F4BE /* FriendsViewController.xib in Resources */,
 				A2190C542AC05D130031F1D6 /* ReactCardView.xib in Resources */,
 				825CF3B32A4DC4D700BA5DDA /* SendEmailVC.xib in Resources */,
 				82A2FC142A0B9A1C00BA7BD3 /* Assets.xcassets in Resources */,
@@ -3534,6 +3566,7 @@
 				822882992A0D1D4600019216 /* Poppins-BlackItalic.ttf in Resources */,
 				822882982A0D1D4600019216 /* Poppins-SemiBold.ttf in Resources */,
 				A2DA71162AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib in Resources */,
+				7908BB8F2B926ABE00C0F4BE /* FriendTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3593,6 +3626,7 @@
 				8A60921F2A7FA88100ECB1FA /* UserPreviewCell.swift in Sources */,
 				825CF3BE2A4E642C00BA5DDA /* FeedbackViewModel.swift in Sources */,
 				82C0E3A02A6768B6008B72ED /* MainStoriesVC.swift in Sources */,
+				7908BB872B9269E600C0F4BE /* FriendsViewController.swift in Sources */,
 				82A2FC8E2A0BEA5500BA7BD3 /* BaseWireFrame.swift in Sources */,
 				82FB791D2A169A6D006644EE /* VerifyCode.swift in Sources */,
 				79BB32892B3F559800DE8732 /* oneChat.swift in Sources */,
@@ -3611,6 +3645,7 @@
 				8AF8CE4A2ABF49BD00676366 /* GoPremiumViewModel.swift in Sources */,
 				825CF3842A4919C100BA5DDA /* ChangeEmailRequestModel.swift in Sources */,
 				8252A6A62A0FA8C6004989A1 /* MainButton.swift in Sources */,
+				7908BB8A2B9269F900C0F4BE /* FriendsViewModel.swift in Sources */,
 				82952B872A472B0000548634 /* MyAccountWorker.swift in Sources */,
 				794DC1592B01536A006DE897 /* HeaderChatView.swift in Sources */,
 				82FB793B2A17E907006644EE /* LoginWorkering.swift in Sources */,
@@ -3816,6 +3851,7 @@
 				8A76E2ED2B1BC89500433FF5 /* FCMToken.swift in Sources */,
 				825CF3902A4953F000BA5DDA /* UIImageEx.swift in Sources */,
 				82A2FC712A0BD3B500BA7BD3 /* TargetType.swift in Sources */,
+				7908BB8E2B926ABE00C0F4BE /* FriendTableViewCell.swift in Sources */,
 				79FA7F462ABB26300043B6BA /* UIView+extension.swift in Sources */,
 				794B890A2ABE10B700FE5F0D /* ReportStoryViewController.swift in Sources */,
 				825CF3962A49DFDA00BA5DDA /* SupportVC.swift in Sources */,

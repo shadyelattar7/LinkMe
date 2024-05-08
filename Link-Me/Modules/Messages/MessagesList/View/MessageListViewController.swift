@@ -65,6 +65,11 @@ class MessageListViewController: BaseWireFrame<MessageListViewModel> {
             self.present(vc, animated: true)
         }
     }
+    
+    @IBAction private func didTappedOnFriendsButton(_ sender: Any) {
+        let vc = coordinator.Main.viewcontroller(for: .friends)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: Configurations

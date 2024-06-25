@@ -238,11 +238,10 @@ class UserPreviewCell: UICollectionViewCell {
         self.comments.bind(to: commentTableView.rx.items(cellIdentifier: String(describing: CommentCell.self), cellType: CommentCell.self)){ (row,item,cell) in
             
             cell.userImage.getImage(imageUrl: item.user?.imagePath ?? "")
-            cell.commentLabel.text = item.comment ?? ""
+            cell.commentLabel.text = /*item.comment ??*/ "nice photo"
             let creationDate = Date.dateFromString(string: item.created_at ?? "")
             cell.datelabel.text = creationDate.timeAgoDisplay()
-            
-            
+                        
             cell.deleteTap = { [weak self] in
                 guard let self = self else {return}
                 let repoMyAcc = MyAccountWorker()

@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.8.1)
+  - Alamofire (5.9.1)
   - BEMCheckBox (1.4.1)
   - IQKeyboardManagerSwift (7.0.1)
   - MOLH (1.4.3)
@@ -7,25 +7,25 @@ PODS:
   - PusherSwift (10.1.5):
     - NWWebSocket (~> 0.5.4)
     - TweetNacl (~> 1.0.0)
-  - ReachabilitySwift (5.0.0)
+  - ReachabilitySwift (5.2.3)
   - RxAlamofire (6.1.1):
     - RxAlamofire/Core (= 6.1.1)
   - RxAlamofire/Core (6.1.1):
     - Alamofire (~> 5.4)
     - RxSwift (~> 6.0)
-  - RxCocoa (6.6.0):
-    - RxRelay (= 6.6.0)
-    - RxSwift (= 6.6.0)
+  - RxCocoa (6.7.1):
+    - RxRelay (= 6.7.1)
+    - RxSwift (= 6.7.1)
   - RxReachability (1.2.1):
     - ReachabilitySwift (< 6.0, >= 5.0)
     - RxCocoa (~> 6)
     - RxSwift (~> 6)
-  - RxRelay (6.6.0):
-    - RxSwift (= 6.6.0)
-  - RxSwift (6.6.0)
-  - SDWebImage (5.19.0):
-    - SDWebImage/Core (= 5.19.0)
-  - SDWebImage/Core (5.19.0)
+  - RxRelay (6.7.1):
+    - RxSwift (= 6.7.1)
+  - RxSwift (6.7.1)
+  - SDWebImage (5.19.2):
+    - SDWebImage/Core (= 5.19.2)
+  - SDWebImage/Core (5.19.2)
   - SGSegmentedProgressBarLibrary (0.0.5)
   - SoundWave (0.1.4)
   - SVProgressHUD (2.3.1):
@@ -72,19 +72,19 @@ SPEC REPOS:
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
-  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   IQKeyboardManagerSwift: 7f6b1b1d1497855d2beea7f2f10ffcc6978525b1
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   NWWebSocket: 040d22f23438cc09aaeabf537beff67699c3c76d
   PusherSwift: cad631bad86cfff4b8458dce1310a7774e469b1f
-  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  ReachabilitySwift: 7f151ff156cea1481a8411701195ac6a984f4979
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
-  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxCocoa: f5609cb4637587a7faa99c5d5787e3ad582b75a4
   RxReachability: bfd13548bf1dac7a877082d13918a9f39bdb5c18
-  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
-  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
-  SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
+  RxRelay: 4151ba01152436b08271e08410135e099880eae5
+  RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
+  SDWebImage: dfe95b2466a9823cf9f0c6d01217c06550d7b29a
   SGSegmentedProgressBarLibrary: 2b7f2dc518cd19c5d7d42ae6a8e9ec5610c334f1
   SoundWave: d98ffaa863570b29d991da32a09b7ce1b4aaf2d4
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
@@ -93,4 +93,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2eaa12e69bb7c34796af23ce640391cd667cb47a
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2

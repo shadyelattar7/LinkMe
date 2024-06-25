@@ -155,7 +155,7 @@ extension MainStoriesVC {
     private func subscribeToStoriesPostsDate() {
         viewModel.storiesPost.bind(to: othersStoriesCollectionView.rx.items(cellIdentifier: String(describing: StoryCollectionViewCell.self), cellType: StoryCollectionViewCell.self)) { (row, item, cell) in
             if row != 0 {
-                cell.update(item)
+  //              cell.update(item)
             }
 
         }.disposed(by: disposeBag)

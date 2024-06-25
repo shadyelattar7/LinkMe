@@ -108,7 +108,9 @@ extension SearchingForUsersViewModel {
                              sent_tickets: 0,
                              unread_tickets: 0,
                              canAddStory: 1,
-                             diamonds: nil)
+                             diamonds: nil,
+                             is_star: 0,
+                             chat_id: 0)
             
 //            self.users.forEach { user in
 //                if user.email == "abdelrahmanssss@gmail.com"{

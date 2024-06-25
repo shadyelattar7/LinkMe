@@ -8,7 +8,7 @@
 import UIKit
 
 class TopUserTableViewCell: UITableViewCell {
-
+    
     // MARK: Outlets
     
     @IBOutlet private weak var parentView: UIView!
@@ -18,6 +18,9 @@ class TopUserTableViewCell: UITableViewCell {
     @IBOutlet private weak var statusView: UIView!
     @IBOutlet private weak var badgeImageView: UIImageView!
     @IBOutlet private weak var addButton: UIButton!
+    
+    // MARK: Proprites
+    var openProfile: (()->())?
     
     // MARK: Lifecycle
     
@@ -31,6 +34,8 @@ class TopUserTableViewCell: UITableViewCell {
         descriptionLabel.text = item.bio ?? ""
         guard let imageStr = item.imagePath, let imageUrl = URL(string: imageStr) else { return }
         userImageView.setImage(url: imageUrl)
+        badgeImageView.isHidden = item.is_star == 0 ? true : false
+        statusView.isHidden = item.is_online == 0 ? true : false
     }
 }
 
@@ -41,5 +46,13 @@ extension TopUserTableViewCell {
         parentView.layer.cornerRadius = 8
         statusView.makeCircleView()
         userImageView.makeCircleView()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(userImageViewTapped))
+        userImageView.isUserInteractionEnabled = true
+        userImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func userImageViewTapped() {
+        openProfile?()
     }
 }

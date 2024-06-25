@@ -14,7 +14,7 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
     @IBOutlet private weak var headerView: HeaderView!
     @IBOutlet private weak var topYellowView: BeInTopView!
     @IBOutlet private weak var topUsersTableView: UITableView!
-    @IBOutlet private weak var heightOfTableViewConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var topUserCounterLbl: UILabel!
     
     // MARK: Lifecycle
     
@@ -30,24 +30,20 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
         didTappedOnNotificationButton()
         didTappedOnPurchasesButton()
         addTappedOnBeInTopView()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.heightOfTableViewConstraint.constant = self.topUsersTableView.contentSize.height + 120
-        }
+        didTappedOnStarsStoreButton()
     }
     
     // MARK: - Actions
     
     @IBAction private func didTappedOnSearchButton(_ sender: Any) {
         let vc = coordinator.Main.viewcontroller(for: .searchType)
-      //  vc.modalPresentationStyle = .fullScreen
+        //  vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
     
+    @IBAction func refreshTapped(_ sender: Any) {
+        viewModel.fetchTopUsers()
+    }
 }
 
 
@@ -68,6 +64,16 @@ extension LinkMeViewController {
     
     private func didTappedOnPurchasesButton() {
         headerView.clickOnPurchasesButton = { [weak self] in
+            guard let self = self else { return }
+            if UDHelper.isVistor {
+                QuickAlert.showWith(in: self, coordentor: self.coordinator)
+            }
+            self.coordinator.Main.navigate(for: .purchases)
+        }
+    }
+    
+    private func didTappedOnStarsStoreButton() {
+        headerView.clickOnStarsButton = { [weak self] in
             guard let self = self else { return }
             if UDHelper.isVistor {
                 QuickAlert.showWith(in: self, coordentor: self.coordinator)
@@ -98,41 +104,55 @@ extension LinkMeViewController {
     private func configureTableView() {
         topUsersTableView.registerNIB(cell: TopUserTableViewCell.self)
         topUsersTableView.separatorStyle = .none
-        topUsersTableView.rx.rowHeight.onNext(90)
+        topUsersTableView.rx.rowHeight.onNext(80)
         didSelectTopUserItem()
     }
     
     private func subscribeToTopUsersData() {
         viewModel.topUsersObservable.bind(to: topUsersTableView.rx.items(cellIdentifier: String(describing: TopUserTableViewCell.self), cellType: TopUserTableViewCell.self)) { [weak self] (row, item, cell) in
-
             guard let self = self else { return }
-            self.configureTableViewHeight()
             cell.update(item)
             
-        }.disposed(by: disposeBag)
-    }
-
-    private func didSelectTopUserItem() {
-        topUsersTableView.rx.itemSelected.subscribe { [weak self] indexPath in
-            guard let self = self else { return }
-
-            // TODO: - Need to handle number of [Links, Following, Likes]
-            
-            guard let row = indexPath.element?.row else { return }
-            let user = self.viewModel.getUserModel(row)
-            let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.user_name, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0)
-            
-            let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .normal, userModel: userModel))
-            self.present(vc, animated: true)
+            cell.openProfile = { [weak self] in
+                guard let self = self else { return }
+                
+                let user = self.viewModel.getUserModel(row)
+                let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.user_name, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0)
+                
+                let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .normal, userModel: userModel))
+                self.present(vc, animated: true)
+            }
             
         }.disposed(by: disposeBag)
     }
     
-    private func configureTableViewHeight() {
-        DispatchQueue.main.async { [weak self] in
+    private func didSelectTopUserItem() {
+        topUsersTableView.rx.itemSelected.subscribe { [weak self] indexPath in
             guard let self = self else { return }
-            self.heightOfTableViewConstraint.constant = self.topUsersTableView.contentSize.height + 120
-        }
+            
+            // TODO: - Need to handle number of [Links, Following, Likes]
+            
+            guard let row = indexPath.element?.row else { return }
+            let user = self.viewModel.getUserModel(row)
+            var chatID: Int = 0
+            
+            if user.chat_id == nil {
+                viewModel.requestChat(userId: user.id ?? 0)
+                chatID = viewModel.chatID ?? 0
+            } else {
+                chatID = user.chat_id ?? 0
+            }
+            
+            let vc = coordinator.Main.viewcontroller(
+                for: .chat(
+                    chatID: "\(chatID)",
+                    chatFrom: .home
+                )
+            )
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+            
+        }.disposed(by: disposeBag)
     }
 }
 

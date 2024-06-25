@@ -10,12 +10,18 @@ import Foundation
 
 struct OneChatRequestModel: Encodable {
     let chatId: String?
+    let type: String?
     
     enum CodingKeys: String, CodingKey {
         case chatId = "chat_id"
+        case type
     }
     
-    init(chatId: String?) {
+    init(
+        chatId: String?,
+        type: String?
+    ) {
         self.chatId = chatId
+        self.type = type
     }
 }

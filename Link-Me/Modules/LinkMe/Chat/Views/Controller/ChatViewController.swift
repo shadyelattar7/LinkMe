@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: BaseWireFrame<ChatViewModel> {
     
     // MARK: Outlets
     
@@ -17,29 +17,27 @@ class ChatViewController: UIViewController {
     
     // MARK: Proprites
     
-    private let viewModel: ChatViewModelType
-    private let coordinator: Coordinator
+//    private let viewModel: ChatViewModelType
+//    private let coordinator: Coordinator
     private var selectedImage: UIImage?
     private let audioRecorder = AudioRecorder()
     private var isRecording: Bool = false
     
-    // MARK: Init
+//    // MARK: Init
+//    
+//    init(viewModel: ChatViewModelType, coordinator: Coordinator) {
+//        self.viewModel = viewModel
+//        self.coordinator = coordinator
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
-    init(viewModel: ChatViewModelType, coordinator: Coordinator) {
-        self.viewModel = viewModel
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    //MARK: - Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    //MARK: - Bind
+    override func bind(viewModel: ChatViewModel) {
         onClickOnBackButton()
+        handleTimerInHeader()
         sendOptionChatViewOutputs()
         onChangeAudioFile()
         configureTableView()
@@ -52,6 +50,10 @@ class ChatViewController: UIViewController {
 // MARK: Configure header chat view
 
 extension ChatViewController {
+    private func handleTimerInHeader() {
+        headerChatView.timerStackView.isHidden = viewModel.handelTimerChatShowOrHide()
+    }
+    
     private func onClickOnBackButton() {
         headerChatView.onClickBackButton { [weak self] in
             guard let self = self else { return }

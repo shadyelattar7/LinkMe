@@ -319,6 +319,8 @@
 		82FB795C2A194877006644EE /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82FB795B2A194876006644EE /* Poppins-Medium.ttf */; };
 		82FB79662A194B6F006644EE /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FB79652A194B6F006644EE /* UITextFieldEx.swift */; };
 		8A1249652B224EBF00409D30 /* PusherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1249642B224EBF00409D30 /* PusherManager.swift */; };
+		8A2314D02C25C8A200772BA7 /* SecondHeaderChatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2314CF2C25C8A200772BA7 /* SecondHeaderChatView.xib */; };
+		8A2314D22C25C8B000772BA7 /* SecondHeaderChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2314D12C25C8B000772BA7 /* SecondHeaderChatView.swift */; };
 		8A3AD2512AC59BC900BF8358 /* AddCommentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AD2502AC59BC900BF8358 /* AddCommentRequestModel.swift */; };
 		8A3AD2552AC5A77500BF8358 /* RemoveCommentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AD2542AC5A77500BF8358 /* RemoveCommentRequestModel.swift */; };
 		8A3AD2572AC63EE300BF8358 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3AD2562AC63EE300BF8358 /* StoreKit.framework */; };
@@ -721,6 +723,8 @@
 		82FB79652A194B6F006644EE /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
 		88B6B384F98CC81D505E429E /* Pods-Link-Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Link-Me.release.xcconfig"; path = "Target Support Files/Pods-Link-Me/Pods-Link-Me.release.xcconfig"; sourceTree = "<group>"; };
 		8A1249642B224EBF00409D30 /* PusherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherManager.swift; sourceTree = "<group>"; };
+		8A2314CF2C25C8A200772BA7 /* SecondHeaderChatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondHeaderChatView.xib; sourceTree = "<group>"; };
+		8A2314D12C25C8B000772BA7 /* SecondHeaderChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHeaderChatView.swift; sourceTree = "<group>"; };
 		8A3AD2502AC59BC900BF8358 /* AddCommentRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentRequestModel.swift; sourceTree = "<group>"; };
 		8A3AD2542AC5A77500BF8358 /* RemoveCommentRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCommentRequestModel.swift; sourceTree = "<group>"; };
 		8A3AD2562AC63EE300BF8358 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -1041,6 +1045,8 @@
 				794DC15C2B015A12006DE897 /* HeaderChatResources.swift */,
 				794DC1582B01536A006DE897 /* HeaderChatView.swift */,
 				794DC15A2B015378006DE897 /* HeaderChatView.xib */,
+				8A2314D12C25C8B000772BA7 /* SecondHeaderChatView.swift */,
+				8A2314CF2C25C8A200772BA7 /* SecondHeaderChatView.xib */,
 			);
 			path = HeaderChatView;
 			sourceTree = "<group>";
@@ -3483,6 +3489,7 @@
 				8A3AD25D2AC64F3400BF8358 /* TestPremuimViewController.xib in Resources */,
 				82952B962A479F8D00548634 /* OtherSeeCell.xib in Resources */,
 				82DB7E162A1383A800F9096B /* EmailIsVerifiedViewController.xib in Resources */,
+				8A2314D02C25C8A200772BA7 /* SecondHeaderChatView.xib in Resources */,
 				A2B81F2E2ACB0A820070BED9 /* LetsSearchViewController.xib in Resources */,
 				825557342A68B7BC00E00AA5 /* StoryCell.xib in Resources */,
 				79FA7F5B2ABDC3B80043B6BA /* BottomListSheet.xib in Resources */,
@@ -3752,6 +3759,7 @@
 				79D472192B2A2D0D00A7D17F /* ChatMessage.swift in Sources */,
 				82952B8D2A4798D400548634 /* OtherSettingsViewModel.swift in Sources */,
 				A2190C582AC05F6D0031F1D6 /* UIButton+extension.swift in Sources */,
+				8A2314D22C25C8B000772BA7 /* SecondHeaderChatView.swift in Sources */,
 				79F632672ACE109C0069D8DE /* RequestChatStateResources.swift in Sources */,
 				79FA7F4D2ABB30D50043B6BA /* StoriesTarget.swift in Sources */,
 				797CF3902AEC480200771B5E /* RequestChatRequestModel.swift in Sources */,

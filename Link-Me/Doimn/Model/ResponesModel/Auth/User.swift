@@ -29,6 +29,8 @@ struct User : Codable {
     let unread_tickets : Int?
     let canAddStory: Int?
     let diamonds: Int?
+    let is_star: Int?
+    let chat_id: Int?
     
     enum CodingKeys: String, CodingKey {
         
@@ -53,6 +55,8 @@ struct User : Codable {
         case unread_tickets = "unread_tickets"
         case canAddStory = "canAddStory"
         case diamonds = "diamonds"
+        case is_star = "is_star"
+        case chat_id = "chat_id"
     }
     
 }

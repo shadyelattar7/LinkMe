@@ -17,6 +17,7 @@ class HeaderChatView: UIView {
     @IBOutlet private weak var secondButton: UIButton!
     @IBOutlet private weak var ignoreTextStackView: UIStackView!
     @IBOutlet private weak var ignoreTextLabel: UILabel!
+    @IBOutlet weak var timerStackView: UIStackView!
     
     // MARK: Proprites
     

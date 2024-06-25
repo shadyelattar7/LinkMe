@@ -12,10 +12,12 @@ struct RequestChatRequestModel: Encodable {
     let userId: Int?
     let message: String?
     let isSpecial: Int?
+    let type: String?
     
     enum CodingKeys: String, CodingKey {
         case userId = "user_id"
         case message
         case isSpecial = "is_special"
+        case type
     }
 }

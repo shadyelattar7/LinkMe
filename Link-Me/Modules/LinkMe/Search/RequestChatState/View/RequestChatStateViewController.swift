@@ -99,7 +99,12 @@ class RequestChatStateViewController: UIViewController {
         }
         switch currentState {
         case .acceptYourRequest:
-            let vc = coordinator.Main.viewcontroller(for: .chat(chatID: viewModel.getChatID()))
+            let vc = coordinator.Main.viewcontroller(
+                for: .chat(
+                    chatID: viewModel.getChatID(),
+                    chatFrom: .messages 
+                )
+            )
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         default:
@@ -120,7 +125,12 @@ extension RequestChatStateViewController {
     }
     
     private func updateRequestChatModel() {
-        let model = RequestChatRequestModel(userId: requestChatModel.userId, message: "", isSpecial: requestChatModel.isSpecialSearch)
+        let model = RequestChatRequestModel(
+            userId: requestChatModel.userId,
+            message: "",
+            isSpecial: requestChatModel.isSpecialSearch,
+            type: ""
+        )
         viewModel.updateRequestChatRequestModel(model)
     }
     

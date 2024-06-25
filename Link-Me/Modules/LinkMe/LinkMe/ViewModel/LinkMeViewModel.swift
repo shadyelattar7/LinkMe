@@ -12,11 +12,13 @@ import RxCocoa
 class LinkMeViewModel: BaseViewModel {
     
     // MARK: Properties
-
     private let myAccountWorker: MyAccountWorkerProtocol
     private let linkMeApi: LinkMeAPIProtocol
     private let fcmToken: FCMTokenWorkerProtocol
+    private let pusherManager = PusherManager.shared
     private let disposeBag = DisposeBag()
+    
+    var chatID: Int?
 
     // MARK: Outputs
 
@@ -74,7 +76,6 @@ extension LinkMeViewModel {
                 guard let data = model.data, let users = data.users else { return }
                 self.topUsersModel.accept(data)
                 self.topUsers.accept(users)
-                
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
                 self.errorMessage.onNext(errorMessage ?? "")
@@ -117,3 +118,42 @@ extension LinkMeViewModel {
         }).disposed(by: disposeBag)
     }
 }
+
+// MARK: Request chat
+extension LinkMeViewModel {
+    func requestChat(userId: Int) {
+         let model = RequestChatRequestModel(
+            userId: userId,
+            message: "",
+            isSpecial: 0,
+            type: "home"
+        )
+        linkMeApi.requestChat(model: model).subscribe(onNext:{ [weak self] result in
+            guard let self = self else {return}
+            switch result {
+            case .success(let model):
+                guard let data = model.data else { return }
+                print("ID: \(data.id ?? 0)")
+                self.subscribeRequest(id: data.id ?? 0)
+            case .failure(let error):
+                let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
+                self.errorMessage.onNext(errorMessage ?? "")
+            }
+            
+        }).disposed(by: disposeBag)
+    }
+    
+    private func subscribeRequest(id: Int) {
+        pusherManager.subscribeToChannel(channelName: "request-\(id)", eventName: "request-updated") { event in
+            let jsonString = event.data
+            
+            if let responseData: ResponseData = PusherManager.shared.parseJSON(jsonString: jsonString, type: ResponseData.self) {
+                let requestId = responseData.request_id
+                let status = responseData.status
+                self.chatID = requestId
+                print("Request ID: \(requestId), Status: \(status)")
+            }
+        }
+    }
+}
+

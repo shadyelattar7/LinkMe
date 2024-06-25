@@ -13,11 +13,13 @@ class HeaderView: UIView {
     
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var notificationBadgeButton: UILabel!
+    @IBOutlet private weak var starBadgeButton: UIButton!
     
     // MARK: - Properties
     
     var clickOnNotificationButton: ()->() = { }
     var clickOnPurchasesButton: ()->() = { }
+    var clickOnStarsButton: ()->() = { }
     
     //MARK: - init
     
@@ -45,6 +47,11 @@ class HeaderView: UIView {
     @IBAction private func didTappedOnPurchasesButton(_ sender: Any) {
         clickOnPurchasesButton()
     }
+    
+    @IBAction private func didTappedOnStarsStore(_ sender: Any) {
+        clickOnStarsButton()
+    }
+    
 }
 
 // MARK: Private Handlers

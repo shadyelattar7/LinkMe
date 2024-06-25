@@ -180,7 +180,12 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
         
         if messagesTableView.allowsMultipleSelection == false {
             let chatID = viewModel.getItemCell(indexPath: indexPath).id
-            let vc = coordinator.Main.viewcontroller(for: .chat(chatID: "\(chatID ?? 0)"))
+            let vc = coordinator.Main.viewcontroller(
+                for: .chat(
+                    chatID: "\(chatID ?? 0)",
+                    chatFrom: .messages
+                )
+            )
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         } else {

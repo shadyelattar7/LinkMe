@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="contentView" destination="lOh-XF-Om2" id="4eP-Qh-rVd"/>
                 <outlet property="notificationBadgeButton" destination="Us6-zy-rMK" id="p4k-eP-c0r"/>
+                <outlet property="starBadgeButton" destination="y0V-Km-1Tb" id="0Eb-9G-qj1"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -52,9 +53,12 @@
                     <rect key="frame" x="4" y="89" width="59" height="31"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain"/>
+                    <connections>
+                        <action selector="didTappedOnStarsStore:" destination="-1" eventType="touchUpInside" id="6gV-0B-cwf"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7B-bj-yg3">
-                    <rect key="frame" x="366" y="89" width="31" height="31"/>
+                    <rect key="frame" x="412" y="89" width="31" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="LpP-Ao-36c"/>
                         <constraint firstAttribute="width" constant="31" id="cyM-Mp-r40"/>
@@ -65,7 +69,7 @@
                         <action selector="didTappedOnPurchasesButton:" destination="-1" eventType="touchUpInside" id="xMf-9k-1Ez"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qml-SG-t1W">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qml-SG-t1W">
                     <rect key="frame" x="412" y="89" width="31" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="BYU-Tc-Ur2"/>
@@ -77,7 +81,7 @@
                         <action selector="didTappedOnNotificationButton:" destination="-1" eventType="touchUpInside" id="apc-kX-iiq"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Us6-zy-rMK">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Us6-zy-rMK">
                     <rect key="frame" x="429.66666666666669" y="84" width="15.333333333333314" height="15.666666666666671"/>
                     <color key="backgroundColor" name="errorColor"/>
                     <constraints>
@@ -98,7 +102,7 @@
                 <constraint firstItem="WaQ-m1-cEW" firstAttribute="leading" secondItem="iOG-Uj-GB9" secondAttribute="leading" constant="4" id="IxZ-pR-jzm"/>
                 <constraint firstItem="hNv-v6-JOx" firstAttribute="leading" secondItem="WaQ-m1-cEW" secondAttribute="leading" constant="8" id="MiQ-FK-jog"/>
                 <constraint firstItem="WaQ-m1-cEW" firstAttribute="top" secondItem="iOG-Uj-GB9" secondAttribute="top" constant="30" id="T1w-aG-mnL"/>
-                <constraint firstItem="Qml-SG-t1W" firstAttribute="leading" secondItem="u7B-bj-yg3" secondAttribute="trailing" constant="15" id="Ui8-Dn-h9o"/>
+                <constraint firstItem="Qml-SG-t1W" firstAttribute="leading" secondItem="u7B-bj-yg3" secondAttribute="trailing" constant="-31" id="Ui8-Dn-h9o"/>
                 <constraint firstItem="Us6-zy-rMK" firstAttribute="trailing" secondItem="Qml-SG-t1W" secondAttribute="trailing" constant="2" id="bKF-kO-MQV"/>
                 <constraint firstItem="y0V-Km-1Tb" firstAttribute="bottom" secondItem="WaQ-m1-cEW" secondAttribute="bottom" id="dag-UR-Nw0"/>
                 <constraint firstItem="y0V-Km-1Tb" firstAttribute="leading" secondItem="WaQ-m1-cEW" secondAttribute="leading" id="dn7-1h-Ch4"/>

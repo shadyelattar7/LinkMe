@@ -9,6 +9,12 @@ import Foundation
 import RxSwift
 
 
+enum ChatType: String{
+    case home = "home"
+    case search = "search"
+    case messages = "message"
+}
+
 class ChatViewModel: BaseViewModel {
     
     // MARK:  proprites
@@ -22,6 +28,7 @@ class ChatViewModel: BaseViewModel {
     private var mediaMessageType: ChatMessageMediaType?
     private var messageText: String?
     private var mediaData: Data?
+    private var chatFrom: ChatType = .messages
 
     private var onReloadTableViewClosure: (() -> Void) = { }
     private var messages: [MessageModel] = [] {
@@ -29,12 +36,16 @@ class ChatViewModel: BaseViewModel {
             onReloadTableViewClosure()
         }
     }
-    
+   
     
     // MARK: Init
     
-    init(chatID: String) {
+    init(
+        chatID: String,
+        chatFrom: ChatType
+    ) {
         self.chatID = chatID
+        self.chatFrom = chatFrom
         super.init()
         self.fetchLastMessages()
         self.fetchMessages()
@@ -62,6 +73,10 @@ extension ChatViewModel: ChatViewModelInputs {
     
     func updateMediaData(_ data: Data?) {
         mediaData = data
+    }
+    
+    func handelTimerChatShowOrHide() -> Bool {
+      return false
     }
 }
 
@@ -167,7 +182,9 @@ extension ChatViewModel {
 
 extension ChatViewModel {
     private func fetchLastMessages() {
-        let requestModel = OneChatRequestModel(chatId: chatID)
+        
+        print("chatFrom.rawValue: \(chatFrom.rawValue)")
+        let requestModel = OneChatRequestModel(chatId: chatID, type: chatFrom.rawValue)
         worker.oneChat(model: requestModel).subscribe(onNext:{ [weak self] result in
             guard let self = self else { return }
 

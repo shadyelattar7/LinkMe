@@ -63,6 +63,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             }
             
             cell.update(item)
+            print(item)
             
         }.disposed(by: disposeBag)
         
@@ -155,7 +156,8 @@ extension MainStoriesVC {
     private func subscribeToStoriesPostsDate() {
         viewModel.storiesPost.bind(to: othersStoriesCollectionView.rx.items(cellIdentifier: String(describing: StoryCollectionViewCell.self), cellType: StoryCollectionViewCell.self)) { (row, item, cell) in
             if row != 0 {
-  //              cell.update(item)
+                cell.update(item)
+                print(item)
             }
 
         }.disposed(by: disposeBag)
@@ -164,10 +166,11 @@ extension MainStoriesVC {
     private func didSelectStoriesPosts() {
         othersStoriesCollectionView.rx.itemSelected.subscribe { [weak self] indexPath in
             guard let self = self else {return}
-
+          print(indexPath.row)
             let vc = self.coordinator.Main.viewcontroller(for: .StoryPreview) as! StoryPreviewVC
             vc.indexPath = indexPath.row
             vc.myStoriesDate = self.viewModel.storiesData
+            vc.myStoriesPost = self.viewModel.storiesPost
             self.present(vc, animated: true)
 
         }.disposed(by: disposeBag)

@@ -10,11 +10,11 @@ import RxCocoa
 import RxSwift
 
 
-struct Stories{
-    var name: String
-    var image: UIImage
-    var stories: [UIImage]
-}
+//struct Stories{
+//    var name: String
+//    var image: UIImage
+//    var stories: [UIImage]
+//}
 
 //MARK: - ViewController -> ViewModel
 
@@ -80,8 +80,10 @@ extension MainStoriesViewModel {
             switch result{
             case .success(let model):
                 guard let stories = model.data?.data, let post = model.post?.data else { return }
+                
                 self.storiesData.accept(self.storiesData.value + stories)
                 self.storiesPost.accept(self.storiesPost.value + post)
+                print(storiesPost.value)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
                 self.errorMessage.onNext(errorMessage ?? "")

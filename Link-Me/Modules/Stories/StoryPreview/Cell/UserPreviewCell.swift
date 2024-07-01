@@ -37,6 +37,7 @@ class UserPreviewCell: UICollectionViewCell {
     var currentStory: Int = 0
     var disposedBag = DisposeBag()
     var stories: BehaviorRelay<[Story]> = .init(value: [])
+    var posts: BehaviorRelay<[Stories]> = .init(value: [])
     var comments: BehaviorRelay<[Comments]> = .init(value: [])
     var segmentbar: SGSegmentedProgressBar!
     var previousContentOffset: CGFloat = 0.0
@@ -49,6 +50,7 @@ class UserPreviewCell: UICollectionViewCell {
     var segmentedProgressBarFinished: ((Bool)->())?
     var isDarg: Bool = false
     var storyCount: Int = 0
+    var postCount: Int = 0
     var currentIndex: Int = 0
     private var storyID: Int?
     private var userID: Int?
@@ -193,7 +195,7 @@ class UserPreviewCell: UICollectionViewCell {
             self.comments.accept(item.comments ?? [])
             self.likeStoryID = item.id ?? 0
             
-            if item.likes == 0{
+            if item.likes == 0 {
                 self.buttonState = .unliked
             }else{
                 self.buttonState = .liked
@@ -238,7 +240,7 @@ class UserPreviewCell: UICollectionViewCell {
         self.comments.bind(to: commentTableView.rx.items(cellIdentifier: String(describing: CommentCell.self), cellType: CommentCell.self)){ (row,item,cell) in
             
             cell.userImage.getImage(imageUrl: item.user?.imagePath ?? "")
-            cell.commentLabel.text = /*item.comment ??*/ "nice photo"
+            cell.commentLabel.text = item.comment ?? ""
             let creationDate = Date.dateFromString(string: item.created_at ?? "")
             cell.datelabel.text = creationDate.timeAgoDisplay()
                         

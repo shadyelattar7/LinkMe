@@ -404,6 +404,7 @@
 		A2DA71152AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */; };
 		A2DA71162AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2DA71142AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib */; };
 		A2DA711C2AC1A790001BE903 /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA711B2AC1A790001BE903 /* UIView+Style.swift */; };
+		DECF644D2C32ECF600BCC6D2 /* StoriesModelNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF644C2C32ECF600BCC6D2 /* StoriesModelNew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -807,6 +808,7 @@
 		A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeToBeInTopCell.swift; sourceTree = "<group>"; };
 		A2DA71142AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTimeToBeInTopCell.xib; sourceTree = "<group>"; };
 		A2DA711B2AC1A790001BE903 /* UIView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Style.swift"; sourceTree = "<group>"; };
+		DECF644C2C32ECF600BCC6D2 /* StoriesModelNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesModelNew.swift; sourceTree = "<group>"; };
 		EE62B092A4E2A039DB368CC0 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1321,6 +1323,7 @@
 			isa = PBXGroup;
 			children = (
 				79FA7F512ABB4DA40043B6BA /* StoriesModel.swift */,
+				DECF644C2C32ECF600BCC6D2 /* StoriesModelNew.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -3784,6 +3787,7 @@
 				82FB79182A164168006644EE /* LoadingManager.swift in Sources */,
 				8A4B20EB2AC70EB80078F4E4 /* PurchasesCell.swift in Sources */,
 				82D9143E2A102459005FAF36 /* ConfirmEmailValidator.swift in Sources */,
+				DECF644D2C32ECF600BCC6D2 /* StoriesModelNew.swift in Sources */,
 				8252A6B42A102204004989A1 /* UIView+Extensions.swift in Sources */,
 				82CB13C42A53A82000439CD7 /* SplashVC.swift in Sources */,
 				829A795C2A1281F6001A137B /* CreatePasswordViewModel.swift in Sources */,

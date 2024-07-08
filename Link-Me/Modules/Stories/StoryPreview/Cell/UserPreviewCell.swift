@@ -194,7 +194,7 @@ class UserPreviewCell: UICollectionViewCell {
             print("Comments: \(item.comments ?? [])")
             self.comments.accept(item.comments ?? [])
             self.likeStoryID = item.id ?? 0
-            
+            print(item.is_like)
             if item.is_like == 0 {
                 self.buttonState = .unliked
             }else{
@@ -285,8 +285,6 @@ class UserPreviewCell: UICollectionViewCell {
             likeButton.tintColor = UIColor.gray
         }
     }
-    
-    
     //MARK: - Actoins -
     
     @IBAction func closeTapped(_ sender: Any) {

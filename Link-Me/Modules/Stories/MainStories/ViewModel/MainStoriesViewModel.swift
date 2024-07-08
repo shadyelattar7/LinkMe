@@ -42,7 +42,7 @@ class MainStoriesViewModel: BaseViewModel{
     
     var storiesData: BehaviorRelay<[UserStoryData]> = .init(value: [])
     var storiesPost: BehaviorRelay<[StoryElement]> = .init(value: [])
-    
+    var firstStory : Int?
     private var errorMessage = PublishSubject<String>()
     var errorMessageObservable: Observable<String> {
         return errorMessage.asObservable()
@@ -83,7 +83,7 @@ extension MainStoriesViewModel {
                 
                 self.storiesData.accept(self.storiesData.value + stories)
                 self.storiesPost.accept(self.storiesPost.value + post)
-                print(storiesPost.value)
+//                print(storiesPost.value)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
                 self.errorMessage.onNext(errorMessage ?? "")
@@ -98,7 +98,7 @@ extension MainStoriesViewModel {
             switch result{
             case .success(let model):
                 ToastManager.shared.showToast(message: model.message ?? "", view: view, postion: .top, backgroundColor: .systemGreen)
-                
+                fetchStories()
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
                 self.errorMessage.onNext(errorMessage ?? "")

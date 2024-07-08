@@ -63,7 +63,6 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             }
             
             cell.update(item)
-            print(item)
             
         }.disposed(by: disposeBag)
         
@@ -87,8 +86,8 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
                 vc.indexPath = indexPath.row
                 print(indexPath.row)
                 vc.myStoriesDate = self.viewModel.storiesData
-            //   vc.modalPresentationStyle = .overFullScreen
-            //    self.present(vc, animated: true)
+                self.present(vc, animated: true)
+              
             }
             
         }.disposed(by: disposeBag)
@@ -152,14 +151,13 @@ extension MainStoriesVC {
         othersStoriesCollectionView.registerNIB(StoryCollectionViewCell.self)
         othersStoriesCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         subscribeToStoriesPostsDate()
-     //   didSelectStoriesPosts()
+        didSelectStoriesPosts()
     }
     
     private func subscribeToStoriesPostsDate() {
         viewModel.storiesPost.bind(to: othersStoriesCollectionView.rx.items(cellIdentifier: String(describing: StoryCollectionViewCell.self), cellType: StoryCollectionViewCell.self)) { (row, item, cell) in
             if row != 0 {
                 cell.update(item)
-                print(item)
             }
 
         }.disposed(by: disposeBag)
@@ -173,7 +171,7 @@ extension MainStoriesVC {
             vc.indexPath = indexPath.row - 1
             //vc.myStoriesDate = self.viewModel.storiesData
             vc.myStoriesPost = self.viewModel.storiesPost
-            self.present(vc, animated: true)
+        //    self.present(vc, animated: true)
 
         }.disposed(by: disposeBag)
     }

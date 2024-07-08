@@ -85,8 +85,10 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
                 }
             }else{
                 vc.indexPath = indexPath.row
+                print(indexPath.row)
                 vc.myStoriesDate = self.viewModel.storiesData
-                self.present(vc, animated: true)
+            //   vc.modalPresentationStyle = .overFullScreen
+            //    self.present(vc, animated: true)
             }
             
         }.disposed(by: disposeBag)
@@ -150,7 +152,7 @@ extension MainStoriesVC {
         othersStoriesCollectionView.registerNIB(StoryCollectionViewCell.self)
         othersStoriesCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         subscribeToStoriesPostsDate()
-        didSelectStoriesPosts()
+     //   didSelectStoriesPosts()
     }
     
     private func subscribeToStoriesPostsDate() {
@@ -168,8 +170,8 @@ extension MainStoriesVC {
             guard let self = self else {return}
           print(indexPath.row)
             let vc = self.coordinator.Main.viewcontroller(for: .StoryPreview) as! StoryPreviewVC
-            vc.indexPath = indexPath.row
-            vc.myStoriesDate = self.viewModel.storiesData
+            vc.indexPath = indexPath.row - 1
+            //vc.myStoriesDate = self.viewModel.storiesData
             vc.myStoriesPost = self.viewModel.storiesPost
             self.present(vc, animated: true)
 

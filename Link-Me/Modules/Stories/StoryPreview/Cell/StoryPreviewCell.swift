@@ -53,7 +53,7 @@ class StoryPreviewCell: UICollectionViewCell {
 // MARK: Configuration
 
 extension StoryPreviewCell {
-    func update(_ item: Story) {
+    func update(_ item: Stories) {
         switch item.video?.getPathExtensionType() {
         case .video:
             configureVideoStory(item)
@@ -70,7 +70,7 @@ extension StoryPreviewCell {
 // MARK: Private Handlers
 
 extension StoryPreviewCell {
-    private func configureVideoStory(_ item: Story) {
+    private func configureVideoStory(_ item: Stories) {
         self.imageView_iv.isHidden = true
         self.videoView.isHidden = false
         guard let videoStr = item.video , let videoUrl = URL(string: videoStr) else {return}
@@ -83,7 +83,7 @@ extension StoryPreviewCell {
         player.play()
     }
     
-    private func configureImageStory(_ item: Story) {
+    private func configureImageStory(_ item: Stories) {
         self.videoView.isHidden = true
         self.imageView_iv.isHidden = false
         guard let imageStr = item.video, let imageUrl = URL(string: imageStr) else { return }

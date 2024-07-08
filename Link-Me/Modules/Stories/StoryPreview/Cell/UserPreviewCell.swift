@@ -36,7 +36,7 @@ class UserPreviewCell: UICollectionViewCell {
     
     var currentStory: Int = 0
     var disposedBag = DisposeBag()
-    var stories: BehaviorRelay<[Story]> = .init(value: [])
+    var stories: BehaviorRelay<[Stories]> = .init(value: [])
     var posts: BehaviorRelay<[Stories]> = .init(value: [])
     var comments: BehaviorRelay<[Comments]> = .init(value: [])
     var segmentbar: SGSegmentedProgressBar!
@@ -189,13 +189,13 @@ class UserPreviewCell: UICollectionViewCell {
             
             cell.update(item)
             self.storyID = self.stories.value[row].id
-            self.userID = self.stories.value[row].userID
+            self.userID = self.stories.value[row].user_id
             self.segmentbar.currentIndex = row
             print("Comments: \(item.comments ?? [])")
             self.comments.accept(item.comments ?? [])
             self.likeStoryID = item.id ?? 0
             
-            if item.likes == 0 {
+            if item.is_like == 0 {
                 self.buttonState = .unliked
             }else{
                 self.buttonState = .liked

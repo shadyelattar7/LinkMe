@@ -126,77 +126,62 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
             }
             
         }.disposed(by: disposeBag)
-        
-         
-        userPreviewCollV.rx
-            .willDisplayCell
-            .subscribe(onNext: { cell, indexPath in
-                self.currentUser = indexPath.row
-                print("122 indexPath: \(indexPath.row)")
-                self.indexpathRow = indexPath.row
-                let cell = cell as! UserPreviewCell
-                if indexPath.row < 1{
-                    self.dismiss(animated: true)
-                }else{
-                    cell.segmentbar.restartCurrentSegment()
-                }
-            }).disposed(by: disposeBag)
-        self.myStoriesPost.bind(to: userPreviewCollV.rx.items(cellIdentifier: String(describing: UserPreviewCell.self), cellType: UserPreviewCell.self)){ (row, item, cell) in
-            
-            guard let stories = self.myStoriesPost.value[row].stories else { return }
-            
-            cell.userImage.getImage(imageUrl: self.myStoriesPost.value[row].imagePath ?? "")
-            cell.usernameLabel.text = self.myStoriesPost.value[row].name ?? ""
-            cell.posts.accept(stories)
-            cell.postCount = stories.count
-            
-            let rect = CGRect(x: 10, y: 10, width: self.view.width - 20  , height: 3)
-            cell.segmentbar = SGSegmentedProgressBar(frame: rect, delegate: cell.self, dataSource: cell.self)
-            cell.contentView.addSubview(cell.segmentbar!)
-            
-            
-            cell.closeBtn = { [weak self] in
-                guard let self = self else {return}
-                self.dismiss(animated: true)
-            }
-            
-            cell.moreMenuBtn = { [weak self] storyID, userID in
-                guard let self = self else {return}
-                guard let id = storyID else { return }
-                self.showBottomListSheet(storyUserID: self.myStoriesDate.value[row].id ?? -1, storyID: id, userID: userID ?? -1)
-            }
-            
-            cell.muteSound = { [weak self] in
-                guard let self = self else {return}
-                print("muteSound")
-            }
-            
-            cell.likeBtn = { [weak self] storyID in
-                guard let self = self else {return}
-                print("storyID: \(storyID)")
-                self.viewModel.likeStore(storyId: storyID, view: self.view)
-            }
-            
-            cell.addCommentBtn = { [weak self] storyID, comment in
-                guard let self = self else {return}
-               print("Comment: \(comment), Story Id: \(storyID)")
-                self.viewModel.addComment(storyId: storyID, comment: comment, view: self.view)
-            }
-            cell.segmentedProgressBarFinished = { [weak self] isFinished in
-                guard let self = self else {return}
-                if isFinished{
-                    print("Finish all storeis: \(isFinished)")
-                    if row == self.myStoriesDate.value.count - 1 {
-                        print("End of Increase ++ End of Sotries")
-                        self.dismiss(animated: true)
-                    }else{
-                        let index = IndexPath(row: row + 1, section: 0)
-                        self.userPreviewCollV.scrollToItem(at: index, at:  .centeredHorizontally, animated: true)
-                    }
-                }
-            }
-            
-        }.disposed(by: disposeBag)
+//        self.myStoriesPost.bind(to: userPreviewCollV.rx.items(cellIdentifier: String(describing: UserPreviewCell.self), cellType: UserPreviewCell.self)){ (row, item, cell) in
+//            
+//            guard let stories = self.myStoriesPost.value[row].stories else { return }
+//            
+//            cell.userImage.getImage(imageUrl: self.myStoriesPost.value[row].imagePath ?? "")
+//            cell.usernameLabel.text = self.myStoriesPost.value[row].name ?? ""
+//            cell.posts.accept(stories)
+//            cell.postCount = stories.count
+//            
+//            let rect = CGRect(x: 10, y: 10, width: self.view.width - 20  , height: 3)
+//            cell.segmentbar = SGSegmentedProgressBar(frame: rect, delegate: cell.self, dataSource: cell.self)
+//            cell.contentView.addSubview(cell.segmentbar!)
+//            
+//            
+//            cell.closeBtn = { [weak self] in
+//                guard let self = self else {return}
+//                self.dismiss(animated: true)
+//            }
+//            
+//            cell.moreMenuBtn = { [weak self] storyID, userID in
+//                guard let self = self else {return}
+//                guard let id = storyID else { return }
+//                self.showBottomListSheet(storyUserID: self.myStoriesDate.value[row].id ?? -1, storyID: id, userID: userID ?? -1)
+//            }
+//            
+//            cell.muteSound = { [weak self] in
+//                guard let self = self else {return}
+//                print("muteSound")
+//            }
+//            
+//            cell.likeBtn = { [weak self] storyID in
+//                guard let self = self else {return}
+//                print("storyID: \(storyID)")
+//                self.viewModel.likeStore(storyId: storyID, view: self.view)
+//            }
+//            
+//            cell.addCommentBtn = { [weak self] storyID, comment in
+//                guard let self = self else {return}
+//               print("Comment: \(comment), Story Id: \(storyID)")
+//                self.viewModel.addComment(storyId: storyID, comment: comment, view: self.view)
+//            }
+//            cell.segmentedProgressBarFinished = { [weak self] isFinished in
+//                guard let self = self else {return}
+//                if isFinished{
+//                    print("Finish all storeis: \(isFinished)")
+//                    if row == self.myStoriesDate.value.count - 1 {
+//                        print("End of Increase ++ End of Sotries")
+//                        self.dismiss(animated: true)
+//                    }else{
+//                        let index = IndexPath(row: row + 1, section: 0)
+//                        self.userPreviewCollV.scrollToItem(at: index, at:  .centeredHorizontally, animated: true)
+//                    }
+//                }
+//            }
+//            
+//        }.disposed(by: disposeBag)
                  
         userPreviewCollV.rx
             .willDisplayCell
@@ -212,7 +197,6 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
                 }
             }).disposed(by: disposeBag)
     }
-    
     
     private func showBottomListSheet(storyUserID: Int, storyID: Int, userID: Int) {
         let vc: BottomListSheet

@@ -58,7 +58,7 @@ struct UserStoryData: Codable {
     let isProfileCompleted: Int?
     let country: String?
     let sentTickets, unreadTickets, canAddStory: Int?
-    let stories: [Story]?
+    let stories: [Stories]?
 
     enum CodingKeys: String, CodingKey {
         case id, name, email
@@ -104,7 +104,6 @@ struct Story: Codable {
         case comments
     }
 }
-
 // MARK: - Link
 struct Link: Codable {
     let url: String?
@@ -263,7 +262,7 @@ struct Stories : Codable {
     let is_active : Int?
     let video : String?
     let likes : Int?
-    let comments : [String]?
+    let comments : [Comments]?
     let is_like : Int?
     let is_read : Int?
     

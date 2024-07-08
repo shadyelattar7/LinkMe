@@ -62,120 +62,10 @@
             filePath = "Link-Me/Modules/Stories/MainStories/View/MainStoriesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "didSelectStoriesPosts()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CBC9C563-2062-4E4C-B803-4CC912C411D3 - 32234ace02fdd901"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Foundation.IndexPath) -&gt; () in Link_Me.MainStoriesVC.didSelectStoriesPosts() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/MainStories/View/MainStoriesVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "170"
-                  endingLineNumber = "170"
-                  offsetFromSymbolStart = "328">
-               </Location>
-               <Location
-                  uuid = "CBC9C563-2062-4E4C-B803-4CC912C411D3 - 32234ace02fdd9e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Foundation.IndexPath) -&gt; () in Link_Me.MainStoriesVC.didSelectStoriesPosts() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/MainStories/View/MainStoriesVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "396">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BBDB2266-765D-46CE-88EE-63C051C5F336"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Stories/StoryPreview/View/StoryPreviewVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "setupUserPreviewCollV()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BBDB2266-765D-46CE-88EE-63C051C5F336 - b3661455d4303f10"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.StoryPreviewVC.setupUserPreviewCollV() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/StoryPreview/View/StoryPreviewVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "588">
-               </Location>
-               <Location
-                  uuid = "BBDB2266-765D-46CE-88EE-63C051C5F336 - be573b6f0b01650c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int, Link_Me.UserStoryData, Link_Me.UserPreviewCell) -&gt; () in Link_Me.StoryPreviewVC.setupUserPreviewCollV() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/StoryPreview/View/StoryPreviewVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "716">
-               </Location>
-               <Location
-                  uuid = "BBDB2266-765D-46CE-88EE-63C051C5F336 - b3661455d4303f10"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.StoryPreviewVC.setupUserPreviewCollV() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/StoryPreview/View/StoryPreviewVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "476">
-               </Location>
-               <Location
-                  uuid = "BBDB2266-765D-46CE-88EE-63C051C5F336 - b3661455d430302b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.StoryPreviewVC.setupUserPreviewCollV() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/StoryPreview/View/StoryPreviewVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "588">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -237,6 +127,117 @@
                   startingLineNumber = "75"
                   endingLineNumber = "75"
                   offsetFromSymbolStart = "716">
+               </Location>
+               <Location
+                  uuid = "4FCB5C90-E8D3-4CAF-A357-032B618ACAAC - b3661455d4303f10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.StoryPreviewVC.setupUserPreviewCollV() -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/StoryPreview/View/StoryPreviewVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "588">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "482B852D-5C97-4626-A395-3371DC14A091"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Stories/MainStories/View/MainStoriesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "setupStoriesCollV()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "482B852D-5C97-4626-A395-3371DC14A091 - 9fd2ebf6641509aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.MainStoriesVC.setupStoriesCollV() -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/MainStories/View/MainStoriesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "2028">
+               </Location>
+               <Location
+                  uuid = "482B852D-5C97-4626-A395-3371DC14A091 - fabe40e7436afefe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RxSwift.Event&lt;Foundation.IndexPath&gt;) -&gt; () in Link_Me.MainStoriesVC.setupStoriesCollV() -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/MainStories/View/MainStoriesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "372">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3FEE1BF-6E58-487B-BE44-806E3E79A8F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Stories/MainStories/View/MainStoriesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "setupStoriesCollV()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C3FEE1BF-6E58-487B-BE44-806E3E79A8F0 - fabe40e7436afd62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RxSwift.Event&lt;Foundation.IndexPath&gt;) -&gt; () in Link_Me.MainStoriesVC.setupStoriesCollV() -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/MainStories/View/MainStoriesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "2740">
+               </Location>
+               <Location
+                  uuid = "C3FEE1BF-6E58-487B-BE44-806E3E79A8F0 - fabe40e7436afd62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (RxSwift.Event&lt;Foundation.IndexPath&gt;) -&gt; () in Link_Me.MainStoriesVC.setupStoriesCollV() -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Stories/MainStories/View/MainStoriesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "2756">
                </Location>
             </Locations>
          </BreakpointContent>

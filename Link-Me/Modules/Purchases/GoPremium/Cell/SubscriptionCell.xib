@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,19 +26,19 @@
                                 <rect key="frame" x="8" y="8" width="180" height="201"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="EN8-Kw-T3z">
-                                        <rect key="frame" x="8" y="72.333333333333329" width="164" height="56.333333333333329"/>
+                                        <rect key="frame" x="8" y="74" width="164" height="53"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XTZ-5c-xBi">
-                                                <rect key="frame" x="0.0" y="0.0" width="164" height="26.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piL-aZ-SZ5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82" height="26.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="82" height="23"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRV-mm-pmL">
-                                                        <rect key="frame" x="82" y="0.0" width="82" height="26.333333333333332"/>
+                                                        <rect key="frame" x="82" y="0.0" width="82" height="23"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -46,13 +46,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Billed monthly " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDf-aO-SUF">
-                                                <rect key="frame" x="0.0" y="38.333333333333343" width="164" height="18"/>
+                                                <rect key="frame" x="0.0" y="35" width="164" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYA-dc-Yfj">
-                                                <rect key="frame" x="0.0" y="56.333333333333329" width="164" height="30"/>
+                                                <rect key="frame" x="0.0" y="53" width="164" height="30"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpQ-BS-NBz">
                                                         <rect key="frame" x="8" y="0.0" width="148" height="30"/>

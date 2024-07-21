@@ -18,6 +18,7 @@ class StoryPreviewCell: UICollectionViewCell {
     var nextStory: (()->())?
     var previousStory: (()->())?
     var isScrolled: Bool = false
+    var player = AVPlayer()
    
     
     override func awakeFromNib() {
@@ -74,7 +75,7 @@ extension StoryPreviewCell {
         self.imageView_iv.isHidden = true
         self.videoView.isHidden = false
         guard let videoStr = item.video , let videoUrl = URL(string: videoStr) else {return}
-        let player = AVPlayer(url: videoUrl)
+         player = AVPlayer(url: videoUrl)
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.videoView.bounds
         playerLayer.videoGravity = .resizeAspectFill

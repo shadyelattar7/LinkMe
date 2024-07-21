@@ -41,7 +41,7 @@ class MainStoriesViewModel: BaseViewModel{
     // MARK: Outputs
     
     var storiesData: BehaviorRelay<[UserStoryData]> = .init(value: [])
-    var storiesPost: BehaviorRelay<[StoryElement]> = .init(value: [])
+    var storiesPost: BehaviorRelay<[UserStoryData]> = .init(value: [])
     
     private var errorMessage = PublishSubject<String>()
     var errorMessageObservable: Observable<String> {
@@ -72,7 +72,7 @@ extension MainStoriesViewModel {
         // Why add first item as dummy data ?
         // -> because handle first item to add new story cell.
         self.storiesData.accept([UserStoryData.example])
-        self.storiesPost.accept([StoryElement.example])
+        self.storiesPost.accept([UserStoryData.example])
         
         storiesApi.fetchStories().subscribe(onNext:{ [weak self] result in
             guard let self = self else {return}
@@ -82,6 +82,11 @@ extension MainStoriesViewModel {
                 guard let stories = model.data?.data, let post = model.post?.data else { return }
                 self.storiesData.accept(self.storiesData.value + stories)
                 self.storiesPost.accept(self.storiesPost.value + post)
+                
+                
+                
+                print("88: \(post)")
+                
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
                 self.errorMessage.onNext(errorMessage ?? "")
@@ -135,7 +140,7 @@ extension MainStoriesViewModel {
         }).disposed(by: disposedBag)
     }
     
-    private func getMyAccountData(){
+     func getMyAccountData(){
         myAccount.myAccount().subscribe(onNext:{ [weak self] result in
             guard let self = self else {return}
             switch result{

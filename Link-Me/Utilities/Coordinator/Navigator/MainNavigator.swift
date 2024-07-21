@@ -135,7 +135,8 @@ class MainNavigator: Navigator{
             let viewModel = MainStoriesViewModel(myAccount: myAccountRepo)
             return MainStoriesVC(viewModel: viewModel, coordinator: coordinator)
         case .MediaPreview(let mediaType, let image, let video):
-            let viewModel = MediaPreviewViewModel(mediaType: mediaType, image: image, video: video)
+            let myAccountRepo = MyAccountWorker()
+            let viewModel = MediaPreviewViewModel(mediaType: mediaType, image: image, video: video, myAccount: myAccountRepo)
             return MediaPreviewVC(viewModel: viewModel, coordinator: coordinator)
         case .StoryPreview:
             let repoMyAcc = MyAccountWorker()

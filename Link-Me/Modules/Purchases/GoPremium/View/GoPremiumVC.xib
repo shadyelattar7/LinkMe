@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PiS-Fw-Izd">
-                    <rect key="frame" x="28" y="30" width="143.5" height="59.5"/>
+                    <rect key="frame" x="28" y="40" width="143.5" height="59.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level up. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRZ-jq-2Rf">
                             <rect key="frame" x="0.0" y="0.0" width="143.5" height="25.5"/>
@@ -36,7 +36,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjv-7F-dTk">
-                    <rect key="frame" x="317" y="30" width="30" height="30"/>
+                    <rect key="frame" x="317" y="40" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="FNu-HO-EyR"/>
                         <constraint firstAttribute="height" constant="30" id="blU-Df-9eY"/>
@@ -48,10 +48,10 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uaM-fP-d2C">
-                    <rect key="frame" x="20" y="109.5" width="335" height="200"/>
+                    <rect key="frame" x="20" y="119.5" width="335" height="165"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="Mhb-TG-8WM"/>
+                        <constraint firstAttribute="height" constant="165" id="Mhb-TG-8WM"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="q9f-QK-UTJ">
                         <size key="itemSize" width="128" height="128"/>
@@ -61,13 +61,13 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2b-Ka-gf2">
-                    <rect key="frame" x="20" y="329.5" width="72.5" height="21.5"/>
+                    <rect key="frame" x="20" y="299.5" width="72.5" height="21.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JH1-EX-Anm">
-                    <rect key="frame" x="20" y="361" width="335" height="226"/>
+                    <rect key="frame" x="20" y="331" width="335" height="226"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="MZ6-S0-v9z">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="19.5"/>
@@ -228,7 +228,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DZ0-YP-e8l" secondAttribute="trailing" constant="20" id="0eU-XJ-8ab"/>
                 <constraint firstItem="PiS-Fw-Izd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="8rF-Mc-QrE"/>
-                <constraint firstItem="PiS-Fw-Izd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="DUU-dr-fIl"/>
+                <constraint firstItem="PiS-Fw-Izd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="DUU-dr-fIl"/>
                 <constraint firstItem="JH1-EX-Anm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Fge-IU-m8d"/>
                 <constraint firstItem="j2b-Ka-gf2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ica-8l-Nz5"/>
                 <constraint firstItem="uaM-fP-d2C" firstAttribute="top" secondItem="PiS-Fw-Izd" secondAttribute="bottom" constant="20" id="Qay-1N-7vQ"/>
@@ -236,7 +236,7 @@
                 <constraint firstItem="uaM-fP-d2C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UWw-XT-Biv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fjv-7F-dTk" secondAttribute="trailing" constant="28" id="Zkh-4M-xpQ"/>
                 <constraint firstItem="JH1-EX-Anm" firstAttribute="top" secondItem="j2b-Ka-gf2" secondAttribute="bottom" constant="10" id="cGG-n8-QfZ"/>
-                <constraint firstItem="j2b-Ka-gf2" firstAttribute="top" secondItem="uaM-fP-d2C" secondAttribute="bottom" constant="20" id="fJ4-L5-Nb2"/>
+                <constraint firstItem="j2b-Ka-gf2" firstAttribute="top" secondItem="uaM-fP-d2C" secondAttribute="bottom" constant="15" id="fJ4-L5-Nb2"/>
                 <constraint firstItem="Fjv-7F-dTk" firstAttribute="top" secondItem="PiS-Fw-Izd" secondAttribute="top" id="kV2-w4-Lx7"/>
                 <constraint firstItem="DZ0-YP-e8l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="m8o-Bs-okM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DZ0-YP-e8l" secondAttribute="bottom" constant="14" id="r5L-IK-pKS"/>
@@ -248,7 +248,7 @@
     <resources>
         <image name="Group 63327" width="143.5" height="34"/>
         <image name="close-circle" width="28" height="28"/>
-        <image name="tick-circle" width="18.5" height="18.5"/>
+        <image name="tick-circle" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

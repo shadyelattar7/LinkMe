@@ -27,7 +27,7 @@ protocol MediaPreviewViewModelInputs{
 
 //MARK: - ViewController <- ViewModel
 protocol MediaPreviewViewModelOutputs{
-//    var myAccountStatus: PublishSubject<BaseResponseGen<User>> {get set}
+    var myAccountStatus: PublishSubject<BaseResponseGen<User>> {get set}
 
 }
 
@@ -37,6 +37,7 @@ class MediaPreviewViewModel: BaseViewModel, MediaPreviewViewModelInputs, MediaPr
     
     private let storiesApi: StoriesAPIProtocol
     private let disposedBag = DisposeBag()
+    let myAccount: MyAccountWorkerProtocol
     let mediaType: MediaType
     var image: UIImage?
     var video: URL?
@@ -48,13 +49,16 @@ class MediaPreviewViewModel: BaseViewModel, MediaPreviewViewModelInputs, MediaPr
         return mediaPreviewState
     }
     
+    var myAccountStatus: PublishSubject<BaseResponseGen<User>> = .init()
+    
     // MARK: Init
     
-    init(storiesApi: StoriesAPIProtocol = StoriesAPI(), mediaType: MediaType,image: UIImage,video: URL) {
+    init(storiesApi: StoriesAPIProtocol = StoriesAPI(), mediaType: MediaType,image: UIImage,video: URL, myAccount: MyAccountWorkerProtocol) {
         self.storiesApi = storiesApi
         self.mediaType = mediaType
         self.image = image
         self.video = video
+        self.myAccount = myAccount
     }
 }
 
@@ -100,5 +104,22 @@ extension MediaPreviewViewModel {
         }
         
         return resultOfMultiPart
+    }
+}
+
+
+extension MediaPreviewViewModel {
+    private func getMyAccountData(){
+        myAccount.myAccount().subscribe(onNext:{ [weak self] result in
+            guard let self = self else {return}
+            switch result{
+            case .success(let model):
+                UDHelper.saveUserData(obj: model.data)
+                self.myAccountStatus.onNext(model)
+            case .failure(let error):
+                _ = error.userInfo["NSLocalizedDescription"] as! String
+                print("ERROR IN MY ACCOUNT ❌❌❌: \(error)")
+            }
+        }).disposed(by: disposedBag)
     }
 }

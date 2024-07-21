@@ -13,36 +13,51 @@ class ChatViewController: BaseWireFrame<ChatViewModel> {
     
     @IBOutlet private weak var headerChatView: HeaderChatView!
     @IBOutlet private weak var sendOptionChatView: SendOptionView!
+    @IBOutlet private weak var secondHeaderChatView: SecondHeaderChatView!
     @IBOutlet private weak var chatTableView: UITableView!
+    @IBOutlet weak var heightOfHeader: NSLayoutConstraint!
     
     // MARK: Proprites
     
-//    private let viewModel: ChatViewModelType
-//    private let coordinator: Coordinator
+    //    private let viewModel: ChatViewModelType
+    //    private let coordinator: Coordinator
     private var selectedImage: UIImage?
     private let audioRecorder = AudioRecorder()
     private var isRecording: Bool = false
     
-//    // MARK: Init
-//    
-//    init(viewModel: ChatViewModelType, coordinator: Coordinator) {
-//        self.viewModel = viewModel
-//        self.coordinator = coordinator
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    //    // MARK: Init
+    //
+    //    init(viewModel: ChatViewModelType, coordinator: Coordinator) {
+    //        self.viewModel = viewModel
+    //        self.coordinator = coordinator
+    //        super.init(nibName: nil, bundle: nil)
+    //    }
+    //    required init?(coder: NSCoder) {
+    //        fatalError("init(coder:) has not been implemented")
+    //    }
+    
+    //MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     //MARK: - Bind
     override func bind(viewModel: ChatViewModel) {
         onClickOnBackButton()
-        handleTimerInHeader()
+        handleHeader()
         sendOptionChatViewOutputs()
         onChangeAudioFile()
         configureTableView()
         viewModelOutputs()
         audioRecorder.setupAudioRecorder()
+        onClickOnBackButton2()
+        onClickOnMenuButton()
     }
 }
 
@@ -50,8 +65,62 @@ class ChatViewController: BaseWireFrame<ChatViewModel> {
 // MARK: Configure header chat view
 
 extension ChatViewController {
-    private func handleTimerInHeader() {
-        headerChatView.timerStackView.isHidden = viewModel.handelTimerChatShowOrHide()
+    private func handleHeader() {
+        switch viewModel.chatFrom {
+        case .home:
+            print("Home")
+            headerChatView.timerStackView.isHidden = true
+            secondHeaderChatView.isHidden = true
+            heightOfHeader.constant = 190
+            headerChatView.setOtherPersonName("shady")
+        case .search:
+            print("search")
+            headerChatView.timerStackView.isHidden = false
+            secondHeaderChatView.isHidden = true
+            heightOfHeader.constant = 210
+        case .messages:
+            print("messages")
+            headerChatView.timerStackView.isHidden = true
+            headerChatView.isHidden = true
+            secondHeaderChatView.isHidden = false
+        }
+        
+        configureHeaderViewType(.ignoreAddRequest)
+    }
+    
+    
+    private func configureHeaderViewType(_ type: HeaderViewType) {
+        headerChatView.setType(type)
+        
+        switch type {
+        case .beforeSendAddRequest:
+            headerChatView.onFirstButtonAction { [weak self] in
+                guard let self = self else { return }
+                print("ADD")
+            }
+            headerChatView.onSecondButtonAction { [weak self] in
+                guard let self = self else { return }
+                print("End chat")
+            }
+        case .acceptOrIgnoreAddRequest:
+            headerChatView.onFirstButtonAction { [weak self] in
+                guard let self = self else { return }
+                print("accpet")
+            }
+            
+            headerChatView.onSecondButtonAction { [weak self] in
+                guard let self = self else { return }
+                print("Ignore")
+            }
+            
+        case .ignoreAddRequest:
+            headerChatView.onSecondButtonAction { [weak self] in
+                guard let self = self else { return }
+                print("end chat")
+            }
+        default:
+            break
+        }
     }
     
     private func onClickOnBackButton() {
@@ -59,7 +128,24 @@ extension ChatViewController {
             guard let self = self else { return }
             self.dismiss(animated: true)
         }
-    }    
+    }
+    
+    
+    ///Second Header
+    private func onClickOnBackButton2() {
+        secondHeaderChatView.onBackClick = { [weak self] in
+            guard let self = self else { return }
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    private func onClickOnMenuButton() {
+        secondHeaderChatView.onMenuClick = { [weak self] in
+            guard let self = self else { return }
+            print("open Menu")
+        }
+    }
+    
 }
 
 
@@ -110,7 +196,7 @@ extension ChatViewController {
                 self.audioRecorder.stopRecording()
                 self.sendOptionChatView.stopRecored()
                 self.isRecording = false
-        
+                
             } else {
                 self.audioRecorder.startRecording()
                 self.sendOptionChatView.startRecored()
@@ -225,7 +311,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
 }
- 
+
 
 // MARK: ViewModel outputs
 

@@ -28,9 +28,9 @@ extension String {
 extension String {
     func getPathExtensionType() -> PathExtensionType {
         switch self.getPathExtension() {
-        case "mp4":
+        case "mp4", "mov", "HEVC":
             return .video
-        case "jpeg":
+        case "jpeg", "png", "jpg":
             return .image
         default:
             return .unowned

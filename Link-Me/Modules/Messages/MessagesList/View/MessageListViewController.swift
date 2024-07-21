@@ -179,15 +179,8 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.cellForRow(at: indexPath) as! MessageListItemCell
         
         if messagesTableView.allowsMultipleSelection == false {
-            let chatID = viewModel.getItemCell(indexPath: indexPath).id
-            let vc = coordinator.Main.viewcontroller(
-                for: .chat(
-                    chatID: "\(chatID ?? 0)",
-                    chatFrom: .messages
-                )
-            )
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true)
+            let chatID = viewModel.getItemCell(indexPath: indexPath).id            
+            self.coordinator.Main.navigate(for: .chat(chatID: "\(chatID ?? 0)", chatFrom: .messages))
         } else {
             self.listOfSelectedChats.append(viewModel.getItemCell(indexPath: indexPath))
             cell.updateSelectedCell(isSelected: true)

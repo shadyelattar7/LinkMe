@@ -28,7 +28,8 @@ class ChatViewModel: BaseViewModel {
     private var mediaMessageType: ChatMessageMediaType?
     private var messageText: String?
     private var mediaData: Data?
-    private var chatFrom: ChatType = .messages
+    
+    var chatFrom: ChatType = .messages
 
     private var onReloadTableViewClosure: (() -> Void) = { }
     private var messages: [MessageModel] = [] {
@@ -182,7 +183,6 @@ extension ChatViewModel {
 
 extension ChatViewModel {
     private func fetchLastMessages() {
-        
         print("chatFrom.rawValue: \(chatFrom.rawValue)")
         let requestModel = OneChatRequestModel(chatId: chatID, type: chatFrom.rawValue)
         worker.oneChat(model: requestModel).subscribe(onNext:{ [weak self] result in

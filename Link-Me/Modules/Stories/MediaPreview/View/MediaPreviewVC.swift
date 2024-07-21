@@ -8,8 +8,6 @@
 import UIKit
 import AVKit
 
-
-
 class MediaPreviewVC: BaseWireFrame<MediaPreviewViewModel> {
     
     //MARK: - @IBOutlet -

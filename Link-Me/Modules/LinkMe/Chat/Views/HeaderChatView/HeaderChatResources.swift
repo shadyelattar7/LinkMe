@@ -64,6 +64,31 @@ enum HeaderChatButtonType {
         default: return nil
         }
     }
+    
+    var action: (() -> Void)? {
+        switch self {
+        case .add:
+            return {
+                print("Add button tapped")
+            }
+        case .send:
+            return {
+                print("Send button tapped")
+            }
+        case .accept:
+            return {
+                print("Accept button tapped")
+            }
+        case .ignore:
+            return {
+                print("Ignore button tapped")
+            }
+        case .endChat:
+            return {
+                print("End chat button tapped")
+            }
+        }
+    }
 }
 
 

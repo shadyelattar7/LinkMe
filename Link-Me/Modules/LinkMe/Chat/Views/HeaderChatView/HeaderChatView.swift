@@ -27,7 +27,9 @@ class HeaderChatView: UIView {
         }
     }
     
-    private var onClick: () -> Void = { }
+    private var onClickBackButtonClosure: () -> Void = { }
+     private var onFirstButtonActionClosure: (() -> Void)?
+     private var onSecondButtonActionClosure: (() -> Void)?
     
     // MARK: - init
     
@@ -49,8 +51,16 @@ class HeaderChatView: UIView {
     
     // MARK: Actions
     
+    @IBAction func didTappedOnFirstButton(_ sender: Any) {
+        onFirstButtonActionClosure?()
+    }
+    
+    @IBAction func didTappedOnSecondButton(_ sender: Any) {
+        onSecondButtonActionClosure?()
+    }
+    
     @IBAction private func didTappedOnBackButton(_ sender: Any) {
-        onClick()
+        onClickBackButtonClosure()
     }
 }
 
@@ -75,8 +85,16 @@ extension HeaderChatView {
     }
     
     func onClickBackButton(_ onClick: @escaping () -> Void) {
-        self.onClick = onClick
-    }
+         self.onClickBackButtonClosure = onClick
+     }
+     
+     func onFirstButtonAction(_ action: @escaping () -> Void) {
+         self.onFirstButtonActionClosure = action
+     }
+     
+     func onSecondButtonAction(_ action: @escaping () -> Void) {
+         self.onSecondButtonActionClosure = action
+     }
 }
 
 

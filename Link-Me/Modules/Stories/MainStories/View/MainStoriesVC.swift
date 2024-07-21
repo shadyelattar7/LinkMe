@@ -24,7 +24,6 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
         super.viewWillAppear(animated)
         viewModel.fetchStories()
         viewModel.ViewDidLoad()
-        
     }
     
     //MARK: - Bind -
@@ -57,13 +56,12 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             if row == 0{
                 cell.add_btn.isHidden = false
                 cell.circleView.backgroundColor = .white
+                cell.userName_lbl.text = "Add"
             }else{
                 cell.add_btn.isHidden = true
                 cell.circleView.backgroundColor = .clear
+                cell.update(item)
             }
-            
-            cell.update(item)
-            
         }.disposed(by: disposeBag)
         
         storiesCollView.rx.itemSelected.subscribe { [weak self] indexPath in
@@ -85,6 +83,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             }else{
                 vc.indexPath = indexPath.row
                 vc.myStoriesDate = self.viewModel.storiesData
+                vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true)
             }
             
@@ -98,19 +97,14 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
         imagePicker.mediaTypes = ["public.image", "public.movie"]
         self.present(imagePicker, animated: true, completion: nil)
     }
-    
-    //MARK: - Actions -
-    
-    
 }
-
 
 extension MainStoriesVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == storiesCollView {
             return CGSize(width: 66, height: 88)
         } else {
-            return indexPath.row == 0 ? CGSize(width: self.view.frame.width, height: 0) : CGSize(width: 110, height: 180)
+            return indexPath.row == 0 ? CGSize(width: self.view.frame.width, height: 0) : CGSize(width: (collectionView.frame.width / 2) - 10, height: 180)
         }
     }
 }
@@ -157,17 +151,16 @@ extension MainStoriesVC {
             if row != 0 {
                 cell.update(item)
             }
-
         }.disposed(by: disposeBag)
     }
 
     private func didSelectStoriesPosts() {
         othersStoriesCollectionView.rx.itemSelected.subscribe { [weak self] indexPath in
             guard let self = self else {return}
-
             let vc = self.coordinator.Main.viewcontroller(for: .StoryPreview) as! StoryPreviewVC
             vc.indexPath = indexPath.row
-            vc.myStoriesDate = self.viewModel.storiesData
+            vc.myStoriesDate = self.viewModel.storiesPost
+            vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
 
         }.disposed(by: disposeBag)

@@ -86,7 +86,9 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
             
             cell.closeBtn = { [weak self] in
                 guard let self = self else {return}
-                self.dismiss(animated: true)
+                self.dismiss(animated: true) {
+                    self.viewModel.getMyAccountData()
+                }
             }
             
             cell.moreMenuBtn = { [weak self] storyID, userID in

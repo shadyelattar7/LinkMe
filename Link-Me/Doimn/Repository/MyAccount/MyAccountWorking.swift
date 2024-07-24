@@ -42,7 +42,7 @@ class MyBlockWorker: APIClient<BlockNetworking>, MyBlockWorkerProtocol{
         self.performRequest(target: .blockUser)
     }
     func setUnBlockUser(model: Int) -> Observable<Result<BaseResponse, NSError>> {
-        self.performRequest(target: .unBlockUser(userId: model),requestModel: model)
+        self.performRequest(target: .unBlockUser(userId: model))
     }
 }
 struct blockUserModel :Codable {

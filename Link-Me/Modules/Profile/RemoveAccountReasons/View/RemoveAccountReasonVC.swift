@@ -33,7 +33,7 @@ class RemoveAccountReasonVC: BaseWireFrame<RemoveAccountReasonViewModel>, Naviga
         
         tableView.registerNIB(cell: RemoveReasonCell.self)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
-        
+        tableView.rx.rowHeight.onNext(80)
         viewModel.reasons.bind(to: tableView.rx.items(cellIdentifier: String(describing: RemoveReasonCell.self), cellType: RemoveReasonCell.self)){ (row,item,cell) in
             cell.title_lbl.text = item.title_en
         }.disposed(by: disposeBag)

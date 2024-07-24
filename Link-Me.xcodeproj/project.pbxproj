@@ -404,6 +404,9 @@
 		A2DA71152AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */; };
 		A2DA71162AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2DA71142AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib */; };
 		A2DA711C2AC1A790001BE903 /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA711B2AC1A790001BE903 /* UIView+Style.swift */; };
+		DE1305B72C5176ED004AC515 /* UnBlockerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1305B52C5176ED004AC515 /* UnBlockerAlert.swift */; };
+		DE1305B82C5176ED004AC515 /* UnBlockerAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1305B62C5176ED004AC515 /* UnBlockerAlert.xib */; };
+		DE1305BB2C517735004AC515 /* UnBlockerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1305BA2C517735004AC515 /* UnBlockerViewModel.swift */; };
 		E0950F232C50393E0082580F /* BlockUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F212C50393E0082580F /* BlockUserVC.swift */; };
 		E0950F242C50393E0082580F /* BlockUserVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0950F222C50393E0082580F /* BlockUserVC.xib */; };
 		E0950F272C5039830082580F /* BlockUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F262C5039830082580F /* BlockUserViewModel.swift */; };
@@ -812,6 +815,9 @@
 		A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeToBeInTopCell.swift; sourceTree = "<group>"; };
 		A2DA71142AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTimeToBeInTopCell.xib; sourceTree = "<group>"; };
 		A2DA711B2AC1A790001BE903 /* UIView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Style.swift"; sourceTree = "<group>"; };
+		DE1305B52C5176ED004AC515 /* UnBlockerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnBlockerAlert.swift; sourceTree = "<group>"; };
+		DE1305B62C5176ED004AC515 /* UnBlockerAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnBlockerAlert.xib; sourceTree = "<group>"; };
+		DE1305BA2C517735004AC515 /* UnBlockerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnBlockerViewModel.swift; sourceTree = "<group>"; };
 		E0950F212C50393E0082580F /* BlockUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserVC.swift; sourceTree = "<group>"; };
 		E0950F222C50393E0082580F /* BlockUserVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockUserVC.xib; sourceTree = "<group>"; };
 		E0950F262C5039830082580F /* BlockUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewModel.swift; sourceTree = "<group>"; };
@@ -1943,6 +1949,7 @@
 		827ED73B2A3A20920056EE37 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DE1305B32C5176A1004AC515 /* UnBlockAlert */,
 				E0950F202C5038D50082580F /* BlockUser */,
 				82952B882A47980800548634 /* MainProfile */,
 				82CAF0412A3CB99800311600 /* CompleteProfile */,
@@ -3394,6 +3401,32 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		DE1305B32C5176A1004AC515 /* UnBlockAlert */ = {
+			isa = PBXGroup;
+			children = (
+				DE1305B92C517714004AC515 /* ViewModel */,
+				DE1305B42C5176C2004AC515 /* View */,
+			);
+			path = UnBlockAlert;
+			sourceTree = "<group>";
+		};
+		DE1305B42C5176C2004AC515 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE1305B52C5176ED004AC515 /* UnBlockerAlert.swift */,
+				DE1305B62C5176ED004AC515 /* UnBlockerAlert.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE1305B92C517714004AC515 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DE1305BA2C517735004AC515 /* UnBlockerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E0950F202C5038D50082580F /* BlockUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -3570,6 +3603,7 @@
 				8255575B2A6975F800E00AA5 /* StoryPreviewCell.xib in Resources */,
 				827B839A2A11146000E634A9 /* VerifyEmailViewController.xib in Resources */,
 				82D9143B2A102459005FAF36 /* README.md in Resources */,
+				DE1305B82C5176ED004AC515 /* UnBlockerAlert.xib in Resources */,
 				825CF37F2A48A3A600BA5DDA /* ChangeEmailVC.xib in Resources */,
 				79A09FC02B571A3400E03CE0 /* DeleteChatSheetViewController.xib in Resources */,
 				793F55D32ABF701B004635C5 /* LinkMeViewController.xib in Resources */,
@@ -3880,6 +3914,7 @@
 				79A09FBF2B571A3400E03CE0 /* DeleteChatSheetViewController.swift in Sources */,
 				794DC1552B015164006DE897 /* ChatViewController.swift in Sources */,
 				827356922A59E73200634EA4 /* DeleteAccountViewModel.swift in Sources */,
+				DE1305BB2C517735004AC515 /* UnBlockerViewModel.swift in Sources */,
 				825039472A413F570006EAD3 /* Settings.swift in Sources */,
 				793F55D22ABF701B004635C5 /* LinkMeViewController.swift in Sources */,
 				794DC1522B015141006DE897 /* ChatViewModel.swift in Sources */,
@@ -3887,6 +3922,7 @@
 				82CB13BF2A511A9B00439CD7 /* SendEmailRequestModel.swift in Sources */,
 				79FA7F4F2ABB30E70043B6BA /* StoriesAPI.swift in Sources */,
 				79FA7F672ABDD3270043B6BA /* BottomListSheet+Resources.swift in Sources */,
+				DE1305B72C5176ED004AC515 /* UnBlockerAlert.swift in Sources */,
 				A2DA71152AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift in Sources */,
 				82C94EDC2A1EB8F0003FB504 /* ForgetPasswordWorking.swift in Sources */,
 				8AF8CE4C2ABF49BD00676366 /* GoPremiumVC.swift in Sources */,

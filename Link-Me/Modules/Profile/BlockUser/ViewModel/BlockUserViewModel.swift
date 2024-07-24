@@ -56,6 +56,8 @@ class BlockUserViewModel: BaseViewModel,BlockUserInputs,BlockUserOutputs{
                guard let self = self else { return }
                switch result {
                case .success(let model):
+                   print(model)
+                   getBlockUser()
                    ToastManager.shared.showToast(message: model.message ?? "", view: view, postion: .top, backgroundColor: .LinkMeUIColor.strongGreen)
                case .failure(let error):
                    let errorMessage = error.userInfo["NSLocalizedDescription"] as? String ?? "Unknown error"

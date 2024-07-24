@@ -50,6 +50,7 @@ class ChangePasswordViewModel: BaseViewModel, ChangePasswordInputs, ChangePasswo
             switch result{
             case .success(let model):
                 self.ChangePasswordStatus.onNext(model)
+                ToastManager.shared.showToast(message: model.message ?? "", view: view, postion: .top , backgroundColor: .LinkMeUIColor.strongGreen)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as! String
                 ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)

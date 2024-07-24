@@ -57,8 +57,8 @@ extension BlockNetworking{
         switch self {
         case .blockUser:
             return "/users/blocks"
-        case .unBlockUser:
-            return "/users/blocks/delete"
+        case .unBlockUser(let user_id):
+            return "/users/blocks/delete?user_id=" + "\(user_id)"
         }
     }
     

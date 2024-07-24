@@ -20,7 +20,7 @@ class BlockUserVC: BaseWireFrame<BlockUserViewModel>,NavigationBarDelegate {
     
     
     //MARK: - Variables -
-    
+    var user: UnblockUserModel = UnblockUserModel(id: 0, image: "", name: "", description: "")
     
     //MARK: - Life Cycle -
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +38,11 @@ class BlockUserVC: BaseWireFrame<BlockUserViewModel>,NavigationBarDelegate {
     private func setupView(){
         navigationView.configure(with: NavigationBarViewModel(navBarTitle:"BlockUser".localized), and: self)
     }
-    
+    func navigate(user: UnblockUserModel){
+        let vc = coordinator.Main.viewcontroller(for: .unblockUser(parameter: user ))
+        self.present(vc, animated: true)
+    }
+   
 }
 extension BlockUserVC {
     private func configureTableView() {
@@ -55,7 +59,8 @@ extension BlockUserVC {
             cell.unblockUser = {[weak self] in
                 guard let self else {return}
                 print(item)
-                viewModel.setUnBlockUser(userId:item.id ?? 0,view: self.view)
+//                viewModel.setUnBlockUser(userId:item.id ?? 0,view: self.view)
+                navigate(user:UnblockUserModel(id: item.id ?? 0 , image: item.imagePath ?? "" , name: item.name ?? "", description: item.bio ?? ""))
             }
         }.disposed(by: disposeBag)
     }

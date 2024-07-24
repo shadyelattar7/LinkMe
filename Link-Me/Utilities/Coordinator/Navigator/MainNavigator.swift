@@ -64,6 +64,7 @@ class MainNavigator: Navigator{
         case RemoveAccount(reason: String)
         case DeleteAccount(reason: String)
         case blockUser
+        case unblockUser(parameter:UnblockUserModel)
         
         
     }
@@ -224,6 +225,15 @@ class MainNavigator: Navigator{
             let blockUserApi = MyBlockWorker()
             let viewModel = BlockUserViewModel(myBlockUser: blockUserApi)
             return BlockUserVC(viewModel: viewModel, coordinator: coordinator)
+        case .unblockUser(parameter: let parameter):
+            let viewModel = UnBlockerViewModel()
+            return UnBlockerAlert(viewModel: viewModel, coordinator: coordinator)
         }
     }
+}
+struct UnblockUserModel {
+    var id: Int
+    var image: String
+    var name: String
+    var description: String
 }

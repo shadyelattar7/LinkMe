@@ -199,6 +199,7 @@ class InputView : NibLoadingView {
                 self.trailingButton.isHidden = !self.isSecureTextEntry
             }
             let image = isSecureTextEntry ? #imageLiteral(resourceName: "Show") : #imageLiteral(resourceName: "Show")
+            print(image)
             trailingButton.setImage(image, for: .normal)
         }
     }

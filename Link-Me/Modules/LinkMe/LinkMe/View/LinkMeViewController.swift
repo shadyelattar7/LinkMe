@@ -68,7 +68,7 @@ extension LinkMeViewController {
             if UDHelper.isVistor {
                 QuickAlert.showWith(in: self, coordentor: self.coordinator)
             }
-            self.coordinator.Main.navigate(for: .purchases)
+            self.coordinator.Main.navigate(for: .notificationList)
         }
     }
     

@@ -23,8 +23,15 @@
 "Complete Your Profile" = "أكمل ملفك الشخصي";
 "Links" = "الروابط";
 "Followers" = "المتابعون";
-"Likes" = "الإعجاب";
-
+"Friends" = "الاصدقاء";
+"Likes" = "الاعجابات";
+"No Result Found" = "لا توجد نتائج";
+"English" = "الانجليزيه";
+"Arabic" = "العربيه";
+"Choose Your App Language" = "اختر لغة التطبيق";
+"Language" = "اللغة";
+"Support" = "الدعم";
+"BlockUser" = "قائمه الحظر";
 //MARK: - Complete Your Profile -
 
 "Complete Your Profile" = "أكمل ملفك الشخصي";

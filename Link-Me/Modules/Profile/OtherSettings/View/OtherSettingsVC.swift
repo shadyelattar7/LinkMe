@@ -37,10 +37,16 @@ class OtherSettingsVC: BaseWireFrame<OtherSettingsViewModel>,NavigationBarDelega
             guard let self = self else {return}
            
             cell.title_lbl.text = item.title
-            
-            
             cell.toggleOptions = { [weak self] toggle in
                 guard let self = self else {return}
+                switch row {
+                case 2:
+                    cell.optionsToggle.setOn(UDHelper.fetchUserData?.is_link == 1 ? true : false, animated: true)
+                    print(UDHelper.fetchUserData?.is_link )
+                    viewModel.changeLink(view:self.view)
+                default:
+                    print("")
+                }
                print("Toggle: \(toggle)")
             }
             

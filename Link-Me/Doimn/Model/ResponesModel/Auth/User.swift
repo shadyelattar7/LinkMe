@@ -31,7 +31,12 @@ struct User : Codable {
     let diamonds: Int?
     let is_star: Int?
     let chat_id: Int?
-    
+    let is_blocked: Int?
+    let links: Int?
+    let likes: Int?
+    var is_link: Int?
+    var last_availablity: String?
+    var blocks_number: Int?
     enum CodingKeys: String, CodingKey {
         
         case id = "id"
@@ -57,6 +62,12 @@ struct User : Codable {
         case diamonds = "diamonds"
         case is_star = "is_star"
         case chat_id = "chat_id"
+        case links = "links"
+        case likes = "likes"
+        case is_blocked = "is_blocked"
+        case is_link = "is_link"
+        case last_availablity = "last_availablity"
+        case blocks_number = "blocks_number"
     }
     
 }

@@ -54,6 +54,7 @@ class SettingsVC: BaseWireFrame<SettingsViewModel>, UIScrollViewDelegate,Navigat
             case .success(let response):
                 self.sections = response.data
                 print("Data: \(self.sections)")
+                print(self.sections.first?.options.first?.isToggle)
                 self.settingTableView.reloadData()
             case .failure(let error):
                 print("ERROR: \(error)")
@@ -68,6 +69,7 @@ class SettingsVC: BaseWireFrame<SettingsViewModel>, UIScrollViewDelegate,Navigat
             print("PREMIUM SETTINGS")
             switch row{
             case 2:
+                self.coordinator.Main.navigate(for: .blockUser)
                 print("Blocked Users")
             case 3:
                 print("Other Settings")
@@ -87,6 +89,7 @@ class SettingsVC: BaseWireFrame<SettingsViewModel>, UIScrollViewDelegate,Navigat
                 self.coordinator.Main.navigate(for: .changeEmail)
             case 2:
                 print("Language")
+                
                 self.coordinator.Main.navigate(for: .changeLanguage)
             default:
                 print("ERROR IN SECTION GENERAL SETTINGS")
@@ -214,7 +217,8 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
             if sections[indexPath.section].type == 0{
                 switch indexPath.row {
                 case 0:
-                    cell.title_lbl.text = "lang".localized == "en" ? "English" : "Arabic"
+                    cell.title_lbl.text = "lang".localized == "en" ? "English".localized : "Arabic".localized
+               
                 default:
                     print("N/A")
                 }
@@ -224,10 +228,30 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
             if sections[indexPath.section].type == 1{
                 switch indexPath.row {
                 case 2:
-                    cell.title_lbl.text = "lang".localized == "en" ? "English" : "Arabic"
+                    cell.title_lbl.text = "lang".localized == "en" ? "English".localized : "Arabic".localized
                 default:
                     print("N/A")
                 }
+            }
+        }
+        if sections[indexPath.section].type == 0{
+            switch indexPath.row {
+            case 0 :
+                cell.toggle = { [weak self] _ in
+                    guard let self else {return}
+                    viewModel.changeOnline(view: self.view)
+                }
+                cell.onOffSwitch.setOn(UDHelper.fetchUserData?.is_online == 1 ? true : false, animated: true)
+            case 1 :
+                cell.toggle = { [weak self] _ in
+                    guard let self else {return}
+                    viewModel.changeAvailable(view: self.view)
+                }
+                cell.onOffSwitch.setOn(UDHelper.fetchUserData?.is_available == 1 ? true : false, animated: true)
+            case 2 :
+                cell.title_lbl.text = "\(UDHelper.fetchUserData?.blocks_number ?? 0)"
+            default:
+                print("")
             }
         }
         return cell

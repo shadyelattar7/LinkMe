@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -140,8 +140,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wpq-fn-4eb">
                                             <rect key="frame" x="0.0" y="70" width="345" height="67"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ht3-YJ-tLN">
-                                                    <rect key="frame" x="15" y="17" width="315" height="33"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ht3-YJ-tLN">
+                                                    <rect key="frame" x="20" y="17" width="305" height="33"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-2g-oAM">
                                                             <rect key="frame" x="0.0" y="0.0" width="76" height="33"/>
@@ -184,7 +184,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ypw-Qv-oJT">
-                                                            <rect key="frame" x="106" y="0.0" width="98" height="33"/>
+                                                            <rect key="frame" x="96" y="0.0" width="98" height="33"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 62715" translatesAutoresizingMaskIntoConstraints="NO" id="Vsf-5X-7dO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
@@ -215,7 +215,7 @@
                                                                             <color key="textColor" name="strongGray"/>
                                                                             <nil key="highlightedColor"/>
                                                                             <userDefinedRuntimeAttributes>
-                                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Followers"/>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Friends"/>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                     </subviews>
@@ -223,7 +223,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hir-1r-yR0">
-                                                            <rect key="frame" x="234" y="0.0" width="81" height="33"/>
+                                                            <rect key="frame" x="214" y="0.0" width="91" height="33"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 62716" translatesAutoresizingMaskIntoConstraints="NO" id="7De-m1-da2">
                                                                     <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
@@ -233,7 +233,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="De4-X3-ksw">
-                                                                    <rect key="frame" x="41" y="0.0" width="40" height="33"/>
+                                                                    <rect key="frame" x="41" y="0.0" width="50" height="33"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGl-P4-PLR">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="19.5"/>
@@ -245,9 +245,9 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9h-z3-3mq">
-                                                                            <rect key="frame" x="0.0" y="24.5" width="40" height="8.5"/>
+                                                                            <rect key="frame" x="0.0" y="24.5" width="50" height="8.5"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="40" id="TG9-AL-8tX"/>
+                                                                                <constraint firstAttribute="width" constant="50" id="TG9-AL-8tX"/>
                                                                                 <constraint firstAttribute="height" constant="8.5" id="dWe-qI-CrJ"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
@@ -343,22 +343,22 @@
         </view>
     </objects>
     <resources>
-        <image name="Arrow---Right-2" width="9" height="16"/>
+        <image name="Arrow---Right-2" width="8.5" height="16"/>
         <image name="Group 62714" width="33" height="33"/>
         <image name="Group 62715" width="33" height="33"/>
         <image name="Group 62716" width="33" height="33"/>
         <image name="Group 62725" width="35" height="36"/>
         <namedColor name="DarkBlue">
-            <color red="0.035000000149011612" green="0.25099998712539673" blue="0.40400001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.031372549019607843" green="0.25098039215686274" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="lightPurple">
-            <color red="0.9100000262260437" green="0.88200002908706665" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.90980392156862744" green="0.8784313725490196" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mainColor">
-            <color red="0.46299999952316284" green="0.3059999942779541" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.46274509803921571" green="0.30588235294117649" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="strongGray">
-            <color red="0.37299999594688416" green="0.42399999499320984" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.37254901960784315" green="0.42352941176470588" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

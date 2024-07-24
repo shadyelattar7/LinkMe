@@ -404,6 +404,11 @@
 		A2DA71152AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */; };
 		A2DA71162AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2DA71142AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib */; };
 		A2DA711C2AC1A790001BE903 /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA711B2AC1A790001BE903 /* UIView+Style.swift */; };
+		E0950F232C50393E0082580F /* BlockUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F212C50393E0082580F /* BlockUserVC.swift */; };
+		E0950F242C50393E0082580F /* BlockUserVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0950F222C50393E0082580F /* BlockUserVC.xib */; };
+		E0950F272C5039830082580F /* BlockUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F262C5039830082580F /* BlockUserViewModel.swift */; };
+		E0950F2C2C503B120082580F /* BlockUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F2A2C503B120082580F /* BlockUserCell.swift */; };
+		E0950F2D2C503B120082580F /* BlockUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0950F2B2C503B120082580F /* BlockUserCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -807,6 +812,11 @@
 		A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeToBeInTopCell.swift; sourceTree = "<group>"; };
 		A2DA71142AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTimeToBeInTopCell.xib; sourceTree = "<group>"; };
 		A2DA711B2AC1A790001BE903 /* UIView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Style.swift"; sourceTree = "<group>"; };
+		E0950F212C50393E0082580F /* BlockUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserVC.swift; sourceTree = "<group>"; };
+		E0950F222C50393E0082580F /* BlockUserVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockUserVC.xib; sourceTree = "<group>"; };
+		E0950F262C5039830082580F /* BlockUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewModel.swift; sourceTree = "<group>"; };
+		E0950F2A2C503B120082580F /* BlockUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserCell.swift; sourceTree = "<group>"; };
+		E0950F2B2C503B120082580F /* BlockUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockUserCell.xib; sourceTree = "<group>"; };
 		EE62B092A4E2A039DB368CC0 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1933,6 +1943,7 @@
 		827ED73B2A3A20920056EE37 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				E0950F202C5038D50082580F /* BlockUser */,
 				82952B882A47980800548634 /* MainProfile */,
 				82CAF0412A3CB99800311600 /* CompleteProfile */,
 				82CAF05F2A3FC53300311600 /* EditProfile */,
@@ -3383,6 +3394,42 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		E0950F202C5038D50082580F /* BlockUser */ = {
+			isa = PBXGroup;
+			children = (
+				E0950F292C503AF20082580F /* Cell */,
+				E0950F282C5039890082580F /* ViewModel */,
+				E0950F252C5039660082580F /* View */,
+			);
+			path = BlockUser;
+			sourceTree = "<group>";
+		};
+		E0950F252C5039660082580F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0950F212C50393E0082580F /* BlockUserVC.swift */,
+				E0950F222C50393E0082580F /* BlockUserVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E0950F282C5039890082580F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0950F262C5039830082580F /* BlockUserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0950F292C503AF20082580F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E0950F2A2C503B120082580F /* BlockUserCell.swift */,
+				E0950F2B2C503B120082580F /* BlockUserCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3482,6 +3529,7 @@
 				82FB79522A19475B006644EE /* Madani Arabic SemiBold 400.ttf in Resources */,
 				8228829D2A0D1D4600019216 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				822882902A0D1D4600019216 /* Poppins-Italic.ttf in Resources */,
+				E0950F242C50393E0082580F /* BlockUserVC.xib in Resources */,
 				A2DA71112AC1957B001BE903 /* BeInTopViewController.xib in Resources */,
 				8A3E179A2AAFDB26007D6FE2 /* MediaPreviewVC.xib in Resources */,
 				A2D1DA142AC997FE0057D61D /* PurchaseStoreViewController.xib in Resources */,
@@ -3574,6 +3622,7 @@
 				822882982A0D1D4600019216 /* Poppins-SemiBold.ttf in Resources */,
 				A2DA71162AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib in Resources */,
 				7908BB8F2B926ABE00C0F4BE /* FriendTableViewCell.xib in Resources */,
+				E0950F2D2C503B120082580F /* BlockUserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3648,6 +3697,7 @@
 				82AB6A812A115B380005DEF6 /* EnterCodeViewController.swift in Sources */,
 				82C94EDA2A1EB8E1003FB504 /* ForgetPasswordWorker.swift in Sources */,
 				825CF3992A49DFE800BA5DDA /* SupportViewModel.swift in Sources */,
+				E0950F2C2C503B120082580F /* BlockUserCell.swift in Sources */,
 				8A3AD25C2AC64F3400BF8358 /* TestPremuimViewController.swift in Sources */,
 				8AF8CE4A2ABF49BD00676366 /* GoPremiumViewModel.swift in Sources */,
 				825CF3842A4919C100BA5DDA /* ChangeEmailRequestModel.swift in Sources */,
@@ -3849,6 +3899,7 @@
 				82469AAC2A19912900A47C5F /* Fonts.swift in Sources */,
 				825CF3A92A4D01EF00BA5DDA /* SupportCell.swift in Sources */,
 				794B89122ABE228B00FE5F0D /* ReportStoryRequestModel.swift in Sources */,
+				E0950F272C5039830082580F /* BlockUserViewModel.swift in Sources */,
 				A2190C6B2AC0A8570031F1D6 /* NotificationListViewController.swift in Sources */,
 				82952B852A472AF500548634 /* MyAccountWorking.swift in Sources */,
 				827356752A59C65500634EA4 /* RemoveAccReason.swift in Sources */,
@@ -3871,6 +3922,7 @@
 				8A76E2F22B1BC90600433FF5 /* FCMTokenWorkering.swift in Sources */,
 				82D914372A102459005FAF36 /* ValidatorType.swift in Sources */,
 				79F5E7D32B2E242F0029CFBC /* MessageListItemCell.swift in Sources */,
+				E0950F232C50393E0082580F /* BlockUserVC.swift in Sources */,
 				79D6105C2ACC8ACB00961837 /* FilterSearchViewController.swift in Sources */,
 				793F55CD2ABF667D004635C5 /* LinkMeTarget.swift in Sources */,
 				82AB6A8D2A1219310005DEF6 /* RegisterViewModel.swift in Sources */,

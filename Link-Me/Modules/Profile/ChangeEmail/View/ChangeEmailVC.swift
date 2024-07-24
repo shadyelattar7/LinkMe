@@ -37,6 +37,7 @@ class ChangeEmailVC: BaseWireFrame<ChangeEmailViewModel>, NavigationBarDelegate{
     private func setupView(){
         navBar.configure(with: NavigationBarViewModel(navBarTitle: "Change Email"), and: self)
         save_btn.MainBtn.addTarget(self, action: #selector(saveChangesTapped), for: .touchUpInside)
+        email_TF.text = UDHelper.fetchUserData?.email ?? ""
     }
     
     private func subscriptions(){

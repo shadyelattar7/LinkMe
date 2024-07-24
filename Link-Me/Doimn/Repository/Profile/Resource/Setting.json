@@ -129,15 +129,6 @@
                     "isArrow": true,
                     "isNotificationLabel": false
                 },
-                {
-                    "name": "Share The App",
-                    "name_ar": "مشاركة التطبيق",
-                    "icon": "Share The App",
-                    "isToggle": false,
-                    "isLabel": false,
-                    "isArrow": false,
-                    "isNotificationLabel": false
-                }
             ]
         },
         {

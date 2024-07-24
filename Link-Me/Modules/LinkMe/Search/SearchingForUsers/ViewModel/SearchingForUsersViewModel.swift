@@ -110,7 +110,11 @@ extension SearchingForUsersViewModel {
                              canAddStory: 1,
                              diamonds: nil,
                              is_star: 0,
-                             chat_id: 0)
+                             chat_id: 0,
+                             is_blocked:0,
+                             links: 0,
+                             likes:0,
+                             is_link: 0)
             
 //            self.users.forEach { user in
 //                if user.email == "abdelrahmanssss@gmail.com"{

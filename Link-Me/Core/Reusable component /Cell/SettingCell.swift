@@ -29,26 +29,26 @@ class SettingCell: UITableViewCell {
     @IBOutlet weak var SpretorLineView: UIView!
     @IBOutlet weak var baseView: UIView!
     
-    var toggle: ((Bool)->())?
+    var toggle: ((Bool) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        onOffSwitch.addTarget(self, action: #selector(switchTapped(_:)), for: .valueChanged)
     }
 
     func configure(data: SettingOptions){
+        print(data)
         arrowIcon_img.isHidden = !(data.isArrow ?? false)
         title_lbl.isHidden = !(data.isLabel ?? false)
         numberOfNotifiaction_lbl.isHidden = !(data.isNotificationLabel ?? false)
         onOffSwitch.isHidden = !(data.isToggle ?? false)
-        
-        
         icon_img.image = UIImage(named: data.icon ?? "")
         name_lbl.text = "lang".localized == "en" ? data.name ?? "" : data.name_ar ?? ""
     }
-    
-    @IBAction func switchTapped(_ sender: UISwitch) {
-        print("BLA 123")
+    @objc func switchTapped(_ sender: UISwitch) {
+        print("Switch toggled: \(sender.isOn)")
         toggle?(sender.isOn)
     }
+//    @IBAction func switchTap(_ sender: Any) {
+//    }
 }

@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+protocol ReloadAfterDismiss {
+    func reloadAfter()
+}
 class UnBlockerAlert: BaseWireFrame<UnBlockerViewModel> {
     @IBOutlet var userPhoto: UIImageView!
     @IBOutlet var nameUser: UILabel!
@@ -14,19 +16,29 @@ class UnBlockerAlert: BaseWireFrame<UnBlockerViewModel> {
     @IBOutlet weak var confirmDeletion_btn: MainButton!
     @IBOutlet var viewContainer: UIView!
     @IBOutlet weak var cancel_btn: UIButton!
+    var reloadAfterDismiss: ReloadAfterDismiss?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     override func bind(viewModel: UnBlockerViewModel) {
         setupView()
+        if let user = viewModel.user {
+            config(blookUser: user)
+        }
     }
     //MARK: - Private func -
     
     private func setupView(){
         confirmDeletion_btn.MainBtn.addTarget(self, action: #selector(confirmDeletionTapped), for: .touchUpInside)
     }
-    
+    func config(blookUser:UnblockUserModel){
+        if let imagurl = URL(string: blookUser.image){
+            userPhoto.setImage(url: imagurl)
+        }
+        nameUser.text = blookUser.name
+        descriptionUser.text = blookUser.description
+    }
     
     //MARK: - Actions -
     
@@ -36,7 +48,10 @@ class UnBlockerAlert: BaseWireFrame<UnBlockerViewModel> {
     
     
     @objc func confirmDeletionTapped(){
-        
+        viewModel.setUnBlockUser(view: self.view)
+        if viewModel.dismiss {
+            reloadAfterDismiss?.reloadAfter()
+        }
         print("button tapped")
     }
     @IBAction func cancelTapped(_ sender: Any) {

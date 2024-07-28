@@ -8,10 +8,16 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Madani Arabic Regular 400.ttf">
+            <string>MadaniArabic-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlockUserVC" customModule="Link_Me" customModuleProvider="target">
             <connections>
                 <outlet property="blockUserTableView" destination="olD-ZR-Ntg" id="Fyv-xp-gIq"/>
+                <outlet property="emptyView" destination="Q1n-KF-yZ8" id="FlT-Qm-Vis"/>
                 <outlet property="navigationView" destination="lSb-XH-d1v" id="SIP-9n-X1s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,28 +28,56 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSb-XH-d1v" customClass="NavigationBarView" customModule="Link_Me" customModuleProvider="target">
-                    <rect key="frame" x="12" y="79" width="393" height="40"/>
+                    <rect key="frame" x="0.0" y="79" width="393" height="40"/>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="bNW-j8-PTc"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLarge" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="olD-ZR-Ntg">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sfd-Fa-BIv">
                     <rect key="frame" x="12" y="131" width="369" height="709"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="olD-ZR-Ntg">
+                            <rect key="frame" x="0.0" y="0.0" width="369" height="354.66666666666669"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1n-KF-yZ8">
+                            <rect key="frame" x="0.0" y="354.66666666666674" width="369" height="354.33333333333326"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Result Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejC-dg-XXR">
+                                    <rect key="frame" x="12" y="168.66666666666669" width="345" height="17"/>
+                                    <fontDescription key="fontDescription" name="MadaniArabic-Regular" family="MadaniArabic-Regular" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="No Result Found"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ejC-dg-XXR" secondAttribute="trailing" constant="12" id="8SO-kT-1cy"/>
+                                <constraint firstItem="ejC-dg-XXR" firstAttribute="centerY" secondItem="Q1n-KF-yZ8" secondAttribute="centerY" id="PyG-GL-ku8"/>
+                                <constraint firstItem="ejC-dg-XXR" firstAttribute="centerX" secondItem="Q1n-KF-yZ8" secondAttribute="centerX" id="g0E-lX-Awv"/>
+                                <constraint firstItem="ejC-dg-XXR" firstAttribute="leading" secondItem="Q1n-KF-yZ8" secondAttribute="leading" constant="12" id="i6H-yN-do5"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="olD-ZR-Ntg" secondAttribute="bottom" constant="12" id="6Pt-Tw-ZuV"/>
-                <constraint firstItem="olD-ZR-Ntg" firstAttribute="top" secondItem="lSb-XH-d1v" secondAttribute="bottom" constant="12" id="OB8-eI-cY4"/>
-                <constraint firstAttribute="trailing" secondItem="olD-ZR-Ntg" secondAttribute="trailing" constant="12" id="Ted-qJ-SCg"/>
-                <constraint firstItem="olD-ZR-Ntg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="U6Q-xE-0OD"/>
-                <constraint firstItem="lSb-XH-d1v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="hKQ-eM-ujN"/>
-                <constraint firstAttribute="trailing" secondItem="lSb-XH-d1v" secondAttribute="trailing" constant="-12" id="kAO-YW-Maa"/>
-                <constraint firstItem="olD-ZR-Ntg" firstAttribute="top" secondItem="lSb-XH-d1v" secondAttribute="bottom" constant="12" id="lM0-5a-0Mk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sfd-Fa-BIv" secondAttribute="trailing" constant="12" id="Bjd-VN-Ik9"/>
+                <constraint firstAttribute="bottom" secondItem="Sfd-Fa-BIv" secondAttribute="bottom" constant="12" id="D09-Oy-1zv"/>
+                <constraint firstItem="Sfd-Fa-BIv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="L9O-ZE-X5n"/>
+                <constraint firstItem="lSb-XH-d1v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hKQ-eM-ujN"/>
+                <constraint firstAttribute="trailing" secondItem="lSb-XH-d1v" secondAttribute="trailing" id="kAO-YW-Maa"/>
                 <constraint firstItem="lSb-XH-d1v" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="mpK-Zf-bmh"/>
+                <constraint firstItem="Sfd-Fa-BIv" firstAttribute="top" secondItem="lSb-XH-d1v" secondAttribute="bottom" constant="12" id="sRe-H8-aYS"/>
             </constraints>
             <point key="canvasLocation" x="58" y="21"/>
         </view>

@@ -109,10 +109,11 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
                 }
                 self.coordinator.Main.navigate(for: .EditProfile)
             case 2: //Share App
-                if UDHelper.isVistor {
-                    QuickAlert.showWith(in: self, coordentor: self.coordinator)
-                }
-                self.coordinator.Main.navigate(for: .EditProfile)
+//                if UDHelper.isVistor {
+//                    QuickAlert.showWith(in: self, coordentor: self.coordinator)
+//                }
+//                self.coordinator.Main.navigate(for: .EditProfile)
+                 shareLink(shareLink: "https://www.youtube.com")
             case 3: //Get All Feature
                 if UDHelper.isVistor {
                     QuickAlert.showWith(in: self, coordentor: self.coordinator)
@@ -130,5 +131,13 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
     @IBAction func completeProfileTapped(_ sender: Any) {
         self.coordinator.Main.navigate(for: .CompleteProfile,navigtorTypes: .present())
     }
+    private func shareLink(shareLink: String) {
+            let activityViewController = UIActivityViewController(activityItems: [shareLink], applicationActivities: nil)
+            
+            // Present the activity view controller
+            if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+                rootViewController.present(activityViewController, animated: true, completion: nil)
+            }
+        }
     
 }

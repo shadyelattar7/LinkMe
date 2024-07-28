@@ -76,6 +76,14 @@
                     "isLabel": true,
                     "isArrow": true,
                     "isNotificationLabel": false
+                },{
+                    "name": "Anonymous Requests",
+                    "name_ar": "طلب مجهول",
+                    "icon": "Anonymous",
+                    "isToggle": true,
+                    "isLabel": false,
+                    "isArrow": false,
+                    "isNotificationLabel": false
                 }
             ]
         },

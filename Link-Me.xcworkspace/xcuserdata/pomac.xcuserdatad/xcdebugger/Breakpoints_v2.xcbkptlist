@@ -385,5 +385,179 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAE22B85-26E9-41BC-8521-98A10EA6D3F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Profile/UnBlockAlert/ViewModel/UnBlockerViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "setUnBlockUser(view:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EAE22B85-26E9-41BC-8521-98A10EA6D3F1 - a39b3d4d52c52cce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Link_Me.BaseResponse, __C.NSError&gt;) -&gt; () in Link_Me.UnBlockerViewModel.setUnBlockUser(view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Profile/UnBlockAlert/ViewModel/UnBlockerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "EAE22B85-26E9-41BC-8521-98A10EA6D3F1 - e3ff88e62a9f6ee7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.UnBlockerViewModel.setUnBlockUser(view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Profile/UnBlockAlert/ViewModel/UnBlockerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "EAE22B85-26E9-41BC-8521-98A10EA6D3F1 - a39b3d4d52c52cce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Link_Me.BaseResponse, __C.NSError&gt;) -&gt; () in Link_Me.UnBlockerViewModel.setUnBlockUser(view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Profile/UnBlockAlert/ViewModel/UnBlockerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6CA87D5-15E5-44E2-B662-58B7B5ED8738"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Profile/UnBlockAlert/ViewModel/UnBlockerViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "setUnBlockUser(view:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F6CA87D5-15E5-44E2-B662-58B7B5ED8738 - e3ff88e62a9f6e06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.UnBlockerViewModel.setUnBlockUser(view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Profile/UnBlockAlert/ViewModel/UnBlockerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "F6CA87D5-15E5-44E2-B662-58B7B5ED8738 - a39b3d4d52c52c2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Link_Me.BaseResponse, __C.NSError&gt;) -&gt; () in Link_Me.UnBlockerViewModel.setUnBlockUser(view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Profile/UnBlockAlert/ViewModel/UnBlockerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "F6CA87D5-15E5-44E2-B662-58B7B5ED8738 - e3ff88e62a9f6e06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.UnBlockerViewModel.setUnBlockUser(view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Profile/UnBlockAlert/ViewModel/UnBlockerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "170A0427-F812-4123-8C1D-6216A071C67F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Profile/UnBlockAlert/View/UnBlockerAlert.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "confirmDeletionTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "170A0427-F812-4123-8C1D-6216A071C67F - 8c6b7e421f79393e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.UnBlockerAlert.confirmDeletionTapped() -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Profile/UnBlockAlert/View/UnBlockerAlert.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "170A0427-F812-4123-8C1D-6216A071C67F - 8c6b7e421f793978"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.UnBlockerAlert.confirmDeletionTapped() -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pomac/Desktop/Untitled/Link-Me/Modules/Profile/UnBlockAlert/View/UnBlockerAlert.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "672">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

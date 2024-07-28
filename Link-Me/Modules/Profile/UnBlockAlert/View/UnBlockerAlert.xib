@@ -34,22 +34,16 @@
                     <rect key="frame" x="0.0" y="409" width="393" height="450"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="2Ra-jA-KoO">
-                            <rect key="frame" x="127.33333333333333" y="34" width="138.66666666666669" height="136.66666666666666"/>
+                            <rect key="frame" x="12" y="119.00000000000001" width="369" height="56.666666666666671"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 63312" translatesAutoresizingMaskIntoConstraints="NO" id="m2C-kK-Dl8">
-                                    <rect key="frame" x="0.0" y="0.0" width="138.66666666666666" height="66"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="66" id="ETE-O9-IDb"/>
-                                    </constraints>
-                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQy-aV-XUV">
-                                    <rect key="frame" x="0.0" y="80" width="138.66666666666666" height="23"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="369" height="23"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM5-Eb-bJu">
-                                    <rect key="frame" x="0.0" y="117" width="138.66666666666666" height="19.666666666666657"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Delete Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM5-Eb-bJu">
+                                    <rect key="frame" x="0.0" y="37" width="369" height="19.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins Light" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -57,11 +51,11 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bec-jv-fCK">
-                            <rect key="frame" x="179" y="11" width="35" height="3"/>
+                            <rect key="frame" x="171.66666666666666" y="11" width="50" height="8"/>
                             <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="35" id="C47-ZB-Fb7"/>
-                                <constraint firstAttribute="height" constant="3" id="CkX-H6-8j1"/>
+                                <constraint firstAttribute="width" constant="50" id="C47-ZB-Fb7"/>
+                                <constraint firstAttribute="height" constant="8" id="CkX-H6-8j1"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -109,17 +103,34 @@
                                 </button>
                             </subviews>
                         </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 63312" translatesAutoresizingMaskIntoConstraints="NO" id="m2C-kK-Dl8">
+                            <rect key="frame" x="163.66666666666666" y="39" width="66" height="66"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="66" id="ETE-O9-IDb"/>
+                                <constraint firstAttribute="width" constant="66" id="XZo-sA-6E0"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="33"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="2Ra-jA-KoO" firstAttribute="top" secondItem="Bec-jv-fCK" secondAttribute="bottom" constant="20" id="10K-db-abc"/>
+                        <constraint firstItem="m2C-kK-Dl8" firstAttribute="top" secondItem="Bec-jv-fCK" secondAttribute="bottom" constant="20" id="5Cd-ce-VKN"/>
                         <constraint firstAttribute="trailing" secondItem="2t0-0D-Dgb" secondAttribute="trailing" constant="20" id="AhK-qs-JSE"/>
                         <constraint firstItem="Bec-jv-fCK" firstAttribute="centerX" secondItem="s6P-fP-nZd" secondAttribute="centerX" id="IaI-Sy-zvR"/>
                         <constraint firstAttribute="bottom" secondItem="2t0-0D-Dgb" secondAttribute="bottom" constant="54" id="N1Q-Ra-nNK"/>
+                        <constraint firstItem="m2C-kK-Dl8" firstAttribute="centerX" secondItem="s6P-fP-nZd" secondAttribute="centerX" id="TVv-lZ-sVu"/>
+                        <constraint firstItem="2Ra-jA-KoO" firstAttribute="top" secondItem="m2C-kK-Dl8" secondAttribute="bottom" constant="14" id="VFP-am-hDi"/>
                         <constraint firstItem="2Ra-jA-KoO" firstAttribute="centerX" secondItem="s6P-fP-nZd" secondAttribute="centerX" id="bAO-To-w2H"/>
                         <constraint firstAttribute="height" constant="450" id="cst-jc-LFH"/>
+                        <constraint firstItem="2Ra-jA-KoO" firstAttribute="leading" secondItem="s6P-fP-nZd" secondAttribute="leading" constant="12" id="f5s-to-C99"/>
                         <constraint firstItem="2t0-0D-Dgb" firstAttribute="leading" secondItem="s6P-fP-nZd" secondAttribute="leading" constant="20" id="fCe-s4-vjZ"/>
+                        <constraint firstItem="2t0-0D-Dgb" firstAttribute="top" secondItem="2Ra-jA-KoO" secondAttribute="bottom" constant="90.329999999999998" id="khb-tQ-X5j"/>
                         <constraint firstItem="Bec-jv-fCK" firstAttribute="top" secondItem="s6P-fP-nZd" secondAttribute="top" constant="11" id="n8V-HV-NPF"/>
+                        <constraint firstAttribute="trailing" secondItem="2Ra-jA-KoO" secondAttribute="trailing" constant="12" id="xa4-Jb-A9f"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

@@ -17,16 +17,22 @@ class BlockUserVC: BaseWireFrame<BlockUserViewModel>,NavigationBarDelegate {
     //MARK: - @IBOutlet
     @IBOutlet private weak var navigationView: NavigationBarView!
     @IBOutlet private weak var blockUserTableView: UITableView!
-    
+    @IBOutlet weak var emptyView: UIView!
     
     //MARK: - Variables -
     var user: UnblockUserModel = UnblockUserModel(id: 0, image: "", name: "", description: "")
     
     //MARK: - Life Cycle -
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidLoad() {
+        navigationView.configure(with: NavigationBarViewModel(navBarTitle:"BlockUser".localized), and: self)
         viewModel.ViewDidLoad()
+        configureTableView()
+        viewModel.blockUsersObservable.asObservable()
+                   .subscribe(onNext: { [weak self] blockUsers in
+                       self?.updateView(for: blockUsers)
+                   })
+                   .disposed(by: disposeBag)
     }
-    
     
     //MARK: - Bind
     override func bind(viewModel: BlockUserViewModel) {
@@ -42,6 +48,15 @@ class BlockUserVC: BaseWireFrame<BlockUserViewModel>,NavigationBarDelegate {
         let vc = coordinator.Main.viewcontroller(for: .unblockUser(parameter: user ))
         self.present(vc, animated: true)
     }
+    func updateView(for tickets: [User]) {
+            if tickets.isEmpty {
+                emptyView.isHidden = false
+                blockUserTableView.isHidden = true
+            } else {
+                emptyView.isHidden = true
+                blockUserTableView.isHidden = false
+            }
+        }
    
 }
 extension BlockUserVC {

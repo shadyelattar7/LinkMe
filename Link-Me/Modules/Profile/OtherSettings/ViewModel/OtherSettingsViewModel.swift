@@ -35,8 +35,8 @@ class OtherSettingsViewModel: BaseViewModel,OtherSettingsInputs,OtherSettingsOut
     var settingData: BehaviorRelay<[OtherCanSee]> = .init(value: [
         OtherCanSee(title: "Followers".localized),
         OtherCanSee(title: "Likes".localized),
-        OtherCanSee(title: "Links".localized),
-        OtherCanSee(title: "Chats".localized)
+        OtherCanSee(title: "Links".localized)
+     //   ,OtherCanSee(title: "Chats".localized)
     ])
     // MARK: - API Call
      func changeLink(view: UIView) {

@@ -198,22 +198,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "952E1F75-228A-444C-AE4F-EB1C6871A1A8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Core/Reusable component /InputView/InputView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "InputView"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "73D76B89-E50F-48C1-820D-43AA4179134B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -435,22 +419,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "381C6234-F760-4AA7-A59D-B17775C7859D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Profile/BlockUser/View/BlockUserVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "subscribeToProducts()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "98D87647-A708-4819-9C58-5E99B7897059"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -478,6 +446,38 @@
             endingLineNumber = "62"
             landmarkName = "setUnBlockUser(userId:view:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2AAA5468-0DDC-4E72-8B62-4182BF5B09F1 - 71d8c6af55ea0f17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Link_Me.BaseResponse, __C.NSError&gt;) -&gt; () in Link_Me.BlockUserViewModel.setUnBlockUser(userId: Swift.Int, view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/BlockUser/ViewModel/BlockUserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "950">
+               </Location>
+               <Location
+                  uuid = "2AAA5468-0DDC-4E72-8B62-4182BF5B09F1 - 71d8c6af55ea0f17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Link_Me.BaseResponse, __C.NSError&gt;) -&gt; () in Link_Me.BlockUserViewModel.setUnBlockUser(userId: Swift.Int, view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/BlockUser/ViewModel/BlockUserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "955">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -28,7 +28,7 @@ class UnBlockerViewModel: BaseViewModel, UnBlockerInputs, UnBlockerOutputs{
     
     let myBlockUser: MyBlockWorkerProtocol
     var user: UnblockUserModel?
-    var dismiss: Bool = false
+    let dismissSubject = PublishSubject<Bool>()
     var userId:Int?
     init(user: UnblockUserModel , BlockUser: MyBlockWorkerProtocol = MyBlockWorker()) {
         self.myBlockUser = BlockUser
@@ -46,7 +46,7 @@ class UnBlockerViewModel: BaseViewModel, UnBlockerInputs, UnBlockerOutputs{
                    switch result {
                    case .success(let model):
                        print(model)
-                       dismiss = true
+                       self.dismissSubject.onNext(true)
                        ToastManager.shared.showToast(message: model.message ?? "", view: view, postion: .top, backgroundColor: .LinkMeUIColor.strongGreen)
                    case .failure(let error):
                        let errorMessage = error.userInfo["NSLocalizedDescription"] as? String ?? "Unknown error"

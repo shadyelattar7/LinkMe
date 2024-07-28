@@ -54,7 +54,7 @@ class ProfileViewModel: BaseViewModel,ProfileInputs,ProfileOutputs{
     
     //MARK: - API Call -
     
-   private func getMyAccountData(){
+    func getMyAccountData(){
         myAccount.myAccount().subscribe(onNext:{ [weak self] result in
             guard let self = self else {return}
             switch result{

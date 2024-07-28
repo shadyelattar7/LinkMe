@@ -46,6 +46,9 @@ class BlockUserVC: BaseWireFrame<BlockUserViewModel>,NavigationBarDelegate {
     }
     func navigate(user: UnblockUserModel){
         let vc = coordinator.Main.viewcontroller(for: .unblockUser(parameter: user ))
+        if let unblockerAlertVC = vc as? UnBlockerAlert {
+               unblockerAlertVC.reloadAfterDismiss = self
+           }
         self.present(vc, animated: true)
     }
     func updateView(for tickets: [User]) {
@@ -87,5 +90,12 @@ extension BlockUserVC {
             print("didSelectTableViewItem", item)
         }).disposed(by: disposeBag)
     }
+}
+extension BlockUserVC: ReloadAfterDismiss {
+    func reloadAfter() {
+        viewModel.getBlockUser()
+    }
+    
+    
 }
 

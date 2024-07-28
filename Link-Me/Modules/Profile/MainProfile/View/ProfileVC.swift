@@ -129,7 +129,11 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
     //MARK: - Actions
     
     @IBAction func completeProfileTapped(_ sender: Any) {
-        self.coordinator.Main.navigate(for: .CompleteProfile,navigtorTypes: .present())
+     //   self.coordinator.Main.navigate(for: .CompleteProfile,navigtorTypes: .present())
+        if let vc = coordinator.Main.viewcontroller(for: .CompleteProfile) as? CompleteProfileVC {
+               vc.reloadAfterDismiss = self
+               present(vc, animated: true)
+           }
     }
     private func shareLink(shareLink: String) {
             let activityViewController = UIActivityViewController(activityItems: [shareLink], applicationActivities: nil)
@@ -139,5 +143,12 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
                 rootViewController.present(activityViewController, animated: true, completion: nil)
             }
         }
+    
+}
+extension ProfileVC : ReloadAfterDismiss {
+    func reloadAfter() {
+        viewModel.getMyAccountData()
+    }
+    
     
 }

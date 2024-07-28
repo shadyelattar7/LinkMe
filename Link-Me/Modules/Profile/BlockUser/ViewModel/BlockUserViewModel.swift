@@ -66,7 +66,7 @@ class BlockUserViewModel: BaseViewModel,BlockUserInputs,BlockUserOutputs{
                }
            }).disposed(by: disposedBag)
        }
-    private func getBlockUser(){
+     func getBlockUser(){
         myBlockUser.getBlockUsers().subscribe(onNext:{ [weak self] result in
              guard let self = self else {return}
              switch result{

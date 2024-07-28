@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 protocol ReloadAfterDismiss {
     func reloadAfter()
 }
@@ -31,6 +32,16 @@ class UnBlockerAlert: BaseWireFrame<UnBlockerViewModel> {
     
     private func setupView(){
         confirmDeletion_btn.MainBtn.addTarget(self, action: #selector(confirmDeletionTapped), for: .touchUpInside)
+        viewModel.dismissSubject.observe(on: MainScheduler.instance)
+                    .subscribe(onNext: { [weak self] dismiss in
+                        guard let self = self else { return }
+                        if dismiss {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                            self.reloadAfterDismiss?.reloadAfter()
+                        }
+                    }).disposed(by: disposeBag)
     }
     func config(blookUser:UnblockUserModel){
         if let imagurl = URL(string: blookUser.image){
@@ -49,9 +60,6 @@ class UnBlockerAlert: BaseWireFrame<UnBlockerViewModel> {
     
     @objc func confirmDeletionTapped(){
         viewModel.setUnBlockUser(view: self.view)
-        if viewModel.dismiss {
-            reloadAfterDismiss?.reloadAfter()
-        }
         print("button tapped")
     }
     @IBAction func cancelTapped(_ sender: Any) {

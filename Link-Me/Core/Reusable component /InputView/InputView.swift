@@ -198,9 +198,11 @@ class InputView : NibLoadingView {
                 guard let self = self else { return }
                 self.trailingButton.isHidden = !self.isSecureTextEntry
             }
-            let image = isSecureTextEntry ? #imageLiteral(resourceName: "Show") : #imageLiteral(resourceName: "Show")
+         //   let image = isSecureTextEntry ? #imageLiteral(resourceName: "Show") : #imageLiteral(resourceName: "Show")
+            let image = isSecureTextEntry ? UIImage(systemName: "eye.fill") : UIImage(systemName: "eye.slash.fill")
             print(image)
             trailingButton.setImage(image, for: .normal)
+            trailingButton.tintColor = .gray
         }
     }
     
@@ -314,7 +316,9 @@ class InputView : NibLoadingView {
     @IBAction func trailingActionButton(_ sender: Any) {
         if isSecureTextEntry {
             inputFieldTf.isSecureTextEntry.toggle()
-            trailingButton.setImage(inputFieldTf.isSecureTextEntry ? #imageLiteral(resourceName: "Show") : #imageLiteral(resourceName: "Show"), for: .normal)
+            trailingButton.setImage(inputFieldTf.isSecureTextEntry ? UIImage(systemName: "eye.fill") : UIImage(systemName: "eye.slash.fill"), for: .normal)
+            trailingButton.tintColor = .gray
+                //eye.fill ,eye.slash.fill
         }else{
             trailingButtonDeleget?.TrailingButtonAction(sender: self)
         }

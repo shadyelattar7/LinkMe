@@ -11,7 +11,9 @@ import UIKit
 class ReactCardView: UIView {
     
     // MARK: Outlets
-    
+    @IBOutlet weak var likesView: UIStackView!
+    @IBOutlet weak var followerView: UIStackView!
+    @IBOutlet weak var linkView: UIStackView!
     @IBOutlet private weak var numberOfLinksLabel: UILabel!
     @IBOutlet private weak var numberOfFollowingLabel: UILabel!
     @IBOutlet private weak var numberOfLikesLabel: UILabel!
@@ -56,5 +58,15 @@ extension ReactCardView {
     
     func setNumberOfLikes(_ number: Int?) {
         numberOfLikesLabel.text = "\(String(describing: number ?? 0))K"
+    }
+    func showAndHide(like: Int?,link: Int?,followers: Int?) {
+        likesView.isHidden = like == 0 ? true : false
+        followerView.isHidden = followers == 0 ? true : false
+        linkView.isHidden = link == 0 ? true : false
+        if like == 0 && link == 0 && followers == 0 {
+            parentView.isHidden = true
+        } else {
+            parentView.isHidden = false
+        }
     }
 }

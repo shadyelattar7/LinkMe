@@ -56,7 +56,9 @@ class SupportVC: BaseWireFrame<SupportViewModel>, NavigationBarDelegate, UIScrol
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         viewModel.tickets.bind(to: tableView.rx.items(cellIdentifier: String(describing: SupportCell.self), cellType: SupportCell.self)){ (row,item,cell) in
+            print(item)
             cell.configure(data: item, source: self.source)
+            
         }.disposed(by: disposeBag)
         
         

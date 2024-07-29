@@ -113,7 +113,8 @@ extension Date {
     
     func timeAgoDisplay()->String{
         let secondsAgo = Int(Date().timeIntervalSince(self))
-
+        print("Current Date: \(Date())")
+               print("Seconds Ago: \(secondsAgo)")
         let minute = 60
         let hour = 60 * minute
         let day = 24 * hour
@@ -193,4 +194,13 @@ extension Date {
         print("ISO TIME: " + string)
         return date
     }
+    static func dateFromString2(string: String) -> Date? {
+            let dateFormatter = ISO8601DateFormatter()
+            dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0) // Set to UTC
+            if let date = dateFormatter.date(from: string) {
+                return date
+            }
+        return nil
+        }
 }

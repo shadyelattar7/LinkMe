@@ -101,5 +101,6 @@ extension UserCardViewController {
         reactCardView.setNumberOfLinks(userModel.numberOfLinks)
         reactCardView.setNumberOfFollowing(userModel.numberOfFollowing)
         reactCardView.setNumberOfLikes(userModel.numberOfLikes)
+        reactCardView.showAndHide(like: 0, link: 0, followers: 0)
     }
 }

@@ -45,8 +45,8 @@ class SupportCell: UITableViewCell {
             
             statusView.isHidden = true
             
-            let creationDate = Date.dateFromString(string: data.created_at ?? "")
-            date_lbl.text = creationDate.timeAgoDisplay()
+            let creationDate = Date.dateFromString2(string: data.created_at ?? "")
+            date_lbl.text = creationDate?.timeAgoDisplay()
             
             subTitle_lbl.text = data.title ?? ""
             descripation_tv.text = data.description ?? ""
@@ -59,8 +59,8 @@ class SupportCell: UITableViewCell {
             title_lbl.text = "Sent"
             
             
-            let creationDate = Date.dateFromString(string: data.created_at ?? "")
-            date_lbl.text = creationDate.timeAgoDisplay()
+            let creationDate = Date.dateFromString2(string: data.created_at ?? "")
+            date_lbl.text = creationDate?.timeAgoDisplay()
             
             subTitle_lbl.text = data.title ?? ""
             descripation_tv.text = data.description ?? ""
@@ -79,7 +79,5 @@ class SupportCell: UITableViewCell {
         }
         
     }
-    
-  
     
 }

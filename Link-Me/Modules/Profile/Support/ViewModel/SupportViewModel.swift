@@ -12,6 +12,7 @@ import RxCocoa
 enum SupportEnum: String{
     case box = "box"
     case sent = "sent"
+  //  case suggestion = "suggestion"
 }
 
 //MARK: - ViewController -> ViewModel
@@ -51,6 +52,7 @@ class SupportViewModel: BaseViewModel, SupportlInputs, SupportOutputs{
             switch result{
             case .success(let model):
                 self.tickets.accept(model.dats?.data ?? [])
+                print( self.tickets.value)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as! String
                 ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)

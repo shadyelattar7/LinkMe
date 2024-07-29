@@ -37,6 +37,9 @@ struct User : Codable {
     var is_link: Int?
     var last_availablity: String?
     var blocks_number: Int?
+    var can_see_links: Int?
+    var can_see_followers: Int?
+    var can_see_likes: Int?
     enum CodingKeys: String, CodingKey {
         
         case id = "id"
@@ -68,6 +71,9 @@ struct User : Codable {
         case is_link = "is_link"
         case last_availablity = "last_availablity"
         case blocks_number = "blocks_number"
+        case can_see_likes = "can_see_likes"
+        case can_see_followers = "can_see_followers"
+        case can_see_links = "can_see_links"
     }
     
 }

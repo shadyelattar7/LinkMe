@@ -171,8 +171,8 @@ class MainNavigator: Navigator{
             let viewModel = SettingsViewModel(changeOnlineWorker: settingRepo)
             return SettingsVC(viewModel: viewModel, coordinator: coordinator)
         case .OtherSettings:
-            let otherSettings = ProfileWorker()
-            let viewModel = OtherSettingsViewModel(changeOnlineWorker: otherSettings)
+            let otherSettings = MyBlockWorker()
+            let viewModel = OtherSettingsViewModel(blockNetworking: otherSettings)
             return OtherSettingsVC(viewModel: viewModel, coordinator: coordinator)
         case .changePassword:
             let completeProfileRepo = ProfileWorker()

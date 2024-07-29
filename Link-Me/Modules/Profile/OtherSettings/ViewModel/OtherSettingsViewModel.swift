@@ -28,9 +28,9 @@ class OtherSettingsViewModel: BaseViewModel,OtherSettingsInputs,OtherSettingsOut
     
     //MARK: - Properties -
     let disposeBag = DisposeBag()
-    let changeOnlineWorker: ProfileWorkerProtocol
-    init(changeOnlineWorker: ProfileWorkerProtocol) {
-        self.changeOnlineWorker = changeOnlineWorker
+    let blockNetworking: MyBlockWorker
+    init(blockNetworking: MyBlockWorker) {
+        self.blockNetworking = blockNetworking
     }
     var settingData: BehaviorRelay<[OtherCanSee]> = .init(value: [
         OtherCanSee(title: "Followers".localized),
@@ -39,12 +39,12 @@ class OtherSettingsViewModel: BaseViewModel,OtherSettingsInputs,OtherSettingsOut
      //   ,OtherCanSee(title: "Chats".localized)
     ])
     // MARK: - API Call
-     func changeLink(view: UIView) {
-        changeOnlineWorker.changelink().subscribe(onNext: { [weak self] result in
+    func showAndHid(type:String,view: UIView) {
+         blockNetworking.showAndHid(model: type).subscribe(onNext: { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let model):
-                ToastManager.shared.showToast(message: model.message ?? "", view: view, postion: .top, backgroundColor: .LinkMeUIColor.strongGreen)
+                UDHelper.saveUserData(obj: model.data)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String ?? "Unknown error"
                 ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top, backgroundColor: .LinkMeUIColor.errorColor)

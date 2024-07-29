@@ -37,13 +37,25 @@ class OtherSettingsVC: BaseWireFrame<OtherSettingsViewModel>,NavigationBarDelega
             guard let self = self else {return}
            
             cell.title_lbl.text = item.title
+            switch row {
+            case 0:
+                cell.optionsToggle.setOn(UDHelper.fetchUserData?.can_see_followers == 1 ? true : false, animated: true)
+            case 1:
+                cell.optionsToggle.setOn(UDHelper.fetchUserData?.can_see_likes == 1 ? true : false, animated: true)
+            case 2:
+                cell.optionsToggle.setOn(UDHelper.fetchUserData?.can_see_links == 1 ? true : false, animated: true)
+            default:
+                print("")
+            }
             cell.toggleOptions = { [weak self] toggle in
                 guard let self = self else {return}
                 switch row {
+                case 0:
+                    viewModel.showAndHid(type: "followers", view:self.view)
+                case 1:
+                    viewModel.showAndHid(type: "likes", view:self.view)
                 case 2:
-                    cell.optionsToggle.setOn(UDHelper.fetchUserData?.is_link == 1 ? true : false, animated: true)
-                    print(UDHelper.fetchUserData?.is_link )
-                    viewModel.changeLink(view:self.view)
+                    viewModel.showAndHid(type: "links", view:self.view)
                 default:
                     print("")
                 }

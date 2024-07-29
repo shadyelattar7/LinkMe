@@ -412,6 +412,8 @@
 		E0950F272C5039830082580F /* BlockUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F262C5039830082580F /* BlockUserViewModel.swift */; };
 		E0950F2C2C503B120082580F /* BlockUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F2A2C503B120082580F /* BlockUserCell.swift */; };
 		E0950F2D2C503B120082580F /* BlockUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0950F2B2C503B120082580F /* BlockUserCell.xib */; };
+		E0B3252D2C56F1D40019EF90 /* MyBlockWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3252C2C56F1D40019EF90 /* MyBlockWorker.swift */; };
+		E0B3252F2C56F20E0019EF90 /* MyBlockWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3252E2C56F20E0019EF90 /* MyBlockWorking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -823,6 +825,8 @@
 		E0950F262C5039830082580F /* BlockUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewModel.swift; sourceTree = "<group>"; };
 		E0950F2A2C503B120082580F /* BlockUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserCell.swift; sourceTree = "<group>"; };
 		E0950F2B2C503B120082580F /* BlockUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockUserCell.xib; sourceTree = "<group>"; };
+		E0B3252C2C56F1D40019EF90 /* MyBlockWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlockWorker.swift; sourceTree = "<group>"; };
+		E0B3252E2C56F20E0019EF90 /* MyBlockWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlockWorking.swift; sourceTree = "<group>"; };
 		EE62B092A4E2A039DB368CC0 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -2194,6 +2198,7 @@
 		82A2FC202A0B9AF100BA7BD3 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				E0B325292C56F1170019EF90 /* BlockUser */,
 				82952B832A472ADA00548634 /* MyAccount */,
 				822AD2CF2A1410CE0037D8E0 /* Auth */,
 				82CAF04D2A3E042F00311600 /* Profile */,
@@ -3463,6 +3468,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		E0B325292C56F1170019EF90 /* BlockUser */ = {
+			isa = PBXGroup;
+			children = (
+				E0B3252C2C56F1D40019EF90 /* MyBlockWorker.swift */,
+				E0B3252E2C56F20E0019EF90 /* MyBlockWorking.swift */,
+			);
+			path = BlockUser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3753,6 +3767,7 @@
 				794DC15D2B015A12006DE897 /* HeaderChatResources.swift in Sources */,
 				8AF6F44E2AC23923002FB4E7 /* LikeStoryRequestModel.swift in Sources */,
 				82A2FC7C2A0BDA2D00BA7BD3 /* MainNavigator.swift in Sources */,
+				E0B3252F2C56F20E0019EF90 /* MyBlockWorking.swift in Sources */,
 				79D610662ACC992B00961837 /* AgeView.swift in Sources */,
 				827B83932A10ECA500E634A9 /* String+Extension.swift in Sources */,
 				829A79572A1281DA001A137B /* CreatePasswordViewController.swift in Sources */,
@@ -3782,6 +3797,7 @@
 				A2DA71102AC1957B001BE903 /* BeInTopViewController.swift in Sources */,
 				824E60622A48962400D6FCCD /* ChangePasswordRequestModel.swift in Sources */,
 				8A1249652B224EBF00409D30 /* PusherManager.swift in Sources */,
+				E0B3252D2C56F1D40019EF90 /* MyBlockWorker.swift in Sources */,
 				827356732A59C38C00634EA4 /* RemoveAccountReasonViewModel.swift in Sources */,
 				A2D1DA132AC997FE0057D61D /* PurchaseStoreViewController.swift in Sources */,
 				82D9143A2A102459005FAF36 /* ValidationError.swift in Sources */,

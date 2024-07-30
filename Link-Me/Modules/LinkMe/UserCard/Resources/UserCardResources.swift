@@ -19,4 +19,7 @@ struct UserCardModel {
     let numberOfLinks: Int?
     let numberOfFollowing: Int?
     let numberOfLikes: Int?
+    let can_see_links: Int?
+    let can_see_followers: Int?
+    let can_see_likes: Int?
 }

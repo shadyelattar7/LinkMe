@@ -112,12 +112,12 @@ extension LinkMeViewController {
         viewModel.topUsersObservable.bind(to: topUsersTableView.rx.items(cellIdentifier: String(describing: TopUserTableViewCell.self), cellType: TopUserTableViewCell.self)) { [weak self] (row, item, cell) in
             guard let self = self else { return }
             cell.update(item)
-            
+            print(item)
             cell.openProfile = { [weak self] in
                 guard let self = self else { return }
                 
                 let user = self.viewModel.getUserModel(row)
-                let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.user_name, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0)
+                let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.user_name, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0,can_see_links: user.can_see_links,can_see_followers:user.can_see_followers, can_see_likes:user.can_see_likes)
                 
                 let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .normal, userModel: userModel))
                 self.present(vc, animated: true)

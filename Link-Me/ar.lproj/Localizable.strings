@@ -15,7 +15,8 @@
 "Stories" = "قصص";
 "Message" = "الرسالة";
 "Profile" = "الملف الشخصي";
-
+"box" = "الوارد";
+"sent" = "المرسل";
 //MARK: - Profile -
 
 "Profile" = "الملف الشخصي";

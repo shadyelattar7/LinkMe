@@ -27,6 +27,8 @@ class SupportVC: BaseWireFrame<SupportViewModel>, NavigationBarDelegate, UIScrol
         self.viewModel.viewDidLoad(ticketType: source, view: self.view)
         setupView()
         SupportTableViewSetup()
+        segmentControler.setTitle("box".localized, forSegmentAt: 0)
+        segmentControler.setTitle("sent".localized, forSegmentAt: 1)
     }
     
     //MARK: - Private func

@@ -51,7 +51,17 @@ class OtherSettingsVC: BaseWireFrame<OtherSettingsViewModel>,NavigationBarDelega
                 guard let self = self else {return}
                 switch row {
                 case 0:
-                    viewModel.showAndHid(type: "followers", view:self.view)
+                    if UDHelper.fetchUserData?.can_see_followers == 0 {
+                        viewModel.showAndHid(type: "followers", view:self.view)
+                           
+                    } else {
+                        if UDHelper.isVistor {
+                            viewModel.showAndHid(type: "followers", view:self.view)
+                        }else {
+                            self.coordinator.Main.navigate(for: .FeaturesPremium,navigtorTypes: .present())
+                           
+                        }
+                    }
                 case 1:
                     viewModel.showAndHid(type: "likes", view:self.view)
                 case 2:

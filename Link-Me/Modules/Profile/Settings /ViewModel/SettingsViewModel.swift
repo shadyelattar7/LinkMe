@@ -64,4 +64,18 @@ class SettingsViewModel: BaseViewModel,SettingsOutputs,SettingsInputs {
             }
         }).disposed(by: disposeBag)
     }
+    func changeLink(view: UIView) {
+       changeOnlineWorker.changelink().subscribe(onNext: { [weak self] result in
+           guard let self = self else { return }
+           switch result {
+           case .success(let model):
+               self.onlineAvailable.accept(model.status ?? false)
+               ToastManager.shared.showToast(message: model.message ?? "", view: view, postion: .top, backgroundColor: .LinkMeUIColor.strongGreen)
+           case .failure(let error):
+               let errorMessage = error.userInfo["NSLocalizedDescription"] as? String ?? "Unknown error"
+               ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top, backgroundColor: .LinkMeUIColor.errorColor)
+               print("ERROR: \(errorMessage)")
+           }
+       }).disposed(by: disposeBag)
+   }
 }

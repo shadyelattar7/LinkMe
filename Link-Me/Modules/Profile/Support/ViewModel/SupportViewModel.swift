@@ -51,6 +51,7 @@ class SupportViewModel: BaseViewModel, SupportlInputs, SupportOutputs{
             guard let self = self else {return}
             switch result{
             case .success(let model):
+                self.tickets.accept([])
                 self.tickets.accept(model.dats?.data ?? [])
                 print( self.tickets.value)
             case .failure(let error):

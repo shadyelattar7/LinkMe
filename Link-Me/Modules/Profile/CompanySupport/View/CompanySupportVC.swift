@@ -10,7 +10,7 @@ import WebKit
 
 
 
-class CompanySupportVC: BaseWireFrame<CompanySupportViewModel>, NavigationBarDelegate {
+class CompanySupportVC: BaseWireFrame<CompanySupportViewModel>, NavigationBarDelegate,WKNavigationDelegate {
 
     //MARK: - @IBOutlet -
     
@@ -60,10 +60,17 @@ class CompanySupportVC: BaseWireFrame<CompanySupportViewModel>, NavigationBarDel
         
         navBar.configure(with: NavigationBarViewModel(navBarTitle: navBartitle), and: self)
         self.webView!.isOpaque = false
-        self.webView!.backgroundColor = UIColor.clear
-        self.webView!.scrollView.backgroundColor = UIColor.clear
+        self.webView!.backgroundColor = UIColor.white
+        self.webView!.scrollView.backgroundColor = UIColor.white
+        webView.navigationDelegate = self
         webView.load(URLRequest(url: url))
     }
+    //MARK: - WKNavigationDelegate -
+       
+       func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+           let jsString = "document.body.style.backgroundColor = 'white';"
+           webView.evaluateJavaScript(jsString, completionHandler: nil)
+       }
 
     //MARK: - Action -
     

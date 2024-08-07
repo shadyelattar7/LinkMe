@@ -99,7 +99,7 @@
                     "isToggle": false,
                     "isLabel": false,
                     "isArrow": true,
-                    "isNotificationLabel": true
+                    "isNotificationLabel": false
                 },
                 {
                     "name": "Feedback",

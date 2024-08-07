@@ -47,9 +47,10 @@ class SupportCell: UITableViewCell {
             
             let creationDate = Date.dateFromString2(string: data.created_at ?? "")
             date_lbl.text = creationDate?.timeAgoDisplay()
-            
-            subTitle_lbl.text = data.title ?? ""
-            descripation_tv.text = data.description ?? ""
+            userImage.image = UIImage(named: "Group 62757")
+            title_lbl.text = "Support".localized
+            subTitle_lbl.text = data.email ?? ""
+            descripation_tv.text = data.replies?.first?.reply ?? ""
             
         case .sent:
             print("sent")

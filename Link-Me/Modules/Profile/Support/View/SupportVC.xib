@@ -66,7 +66,7 @@
                         <action selector="supportSegment:" destination="-1" eventType="valueChanged" id="z9M-oW-1r0"/>
                     </connections>
                 </segmentedControl>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no2-3M-Ffq">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no2-3M-Ffq">
                     <rect key="frame" x="145" y="152.66666666666666" width="16.666666666666657" height="16.666666666666657"/>
                     <color key="backgroundColor" name="errorColor"/>
                     <constraints>

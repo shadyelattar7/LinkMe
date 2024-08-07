@@ -91,6 +91,8 @@ class SettingsVC: BaseWireFrame<SettingsViewModel>, UIScrollViewDelegate,Navigat
                 print("Language")
                 
                 self.coordinator.Main.navigate(for: .changeLanguage)
+            case 3:
+                print("anymous")
             default:
                 print("ERROR IN SECTION GENERAL SETTINGS")
             }
@@ -253,6 +255,19 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
             default:
                 print("")
             }
+        }
+            if sections[indexPath.section].type == 1{
+                switch indexPath.row {
+                case 3 :
+                    cell.toggle = { [weak self] _ in
+                        guard let self else {return}
+                        viewModel.changeLink(view: self.view)
+                        print("changeAvailable")
+                    }
+                    cell.onOffSwitch.setOn(UDHelper.fetchUserData?.is_link == 1 ? true : false, animated: true)
+                default:
+                    print("")
+                }
         }
         return cell
     }

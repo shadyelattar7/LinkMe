@@ -55,6 +55,8 @@ class OnboardingViewController: BaseWireFrame<OnboardingViewModel>, UIScrollView
         
         viewModel.onboardingItem.bind(to: onboardingCollectionView.rx.items(cellIdentifier: String(describing: OnboardingCell.self), cellType: OnboardingCell.self)){ (row,item,cell) in
             cell.configure(item: item)
+            print(item)
+            cell.pageControl.currentPage = self.currentPage
         }.disposed(by: disposeBag)
     }
     
@@ -70,6 +72,7 @@ class OnboardingViewController: BaseWireFrame<OnboardingViewModel>, UIScrollView
             print("indexPath: \(indexPath)")
             if let cell = onboardingCollectionView.cellForItem(at: indexPath) as? OnboardingCell{
                 cell.pageControl.currentPage = currentPage
+                print(currentPage)
             }
             onboardingCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -64,12 +64,18 @@
                                                                             <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                                                             <color key="textColor" name="mainColor"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Advanced search."/>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="use your diamond" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-yI-oul">
                                                                             <rect key="frame" x="154" y="0.0" width="199" height="22.666666666666668"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                                                             <color key="textColor" name="DarkBlue"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="use your diamond"/>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
@@ -78,6 +84,9 @@
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                                     <color key="textColor" name="DarkBlue"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="to find best match"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
@@ -88,7 +97,10 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="Start Searching" image="diamond"/>
+                                                            <state key="normal" title="  Start Searching" image="diamond"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="  Start Searching"/>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="didTappedOnAdvancedSearchButton:" destination="-1" eventType="touchUpInside" id="xwv-BD-mkd"/>
                                                             </connections>
@@ -103,6 +115,9 @@
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                             <color key="textColor" name="DarkBlue"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Nomal search. we will show you a random users"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hh-4D-4gX">
                                                             <rect key="frame" x="0.0" y="57" width="353" height="56"/>
@@ -111,7 +126,10 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="Start Searching"/>
+                                                            <state key="normal" title="  Start Searching"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="  Start Searching"/>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="didTappedOnNormalSearchButton:" destination="-1" eventType="touchUpInside" id="eWZ-Ms-nro"/>
                                                             </connections>
@@ -128,6 +146,9 @@
                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="14"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="Cancel"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Cancel"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="didTappedOnCancelButton:" destination="-1" eventType="touchUpInside" id="0lC-Tc-7Ob"/>
                                             </connections>
@@ -159,7 +180,7 @@
     <resources>
         <image name="diamond" width="32" height="30"/>
         <namedColor name="DarkBlue">
-            <color red="0.035000000149011612" green="0.25099998712539673" blue="0.40400001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.031372549019607843" green="0.25098039215686274" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mainColor">
             <color red="0.46274509803921571" green="0.30588235294117649" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

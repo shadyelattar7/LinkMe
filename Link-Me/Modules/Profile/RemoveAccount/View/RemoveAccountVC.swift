@@ -24,9 +24,9 @@ class RemoveAccountVC: BaseWireFrame<RemoveAccountViewModel>, NavigationBarDeleg
     //MARK: - Private func -
     
     private func setupView(){
-        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Remove Account"), and: self)
+        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Remove Account".localized), and: self)
         save_btn.MainBtn.addTarget(self, action: #selector(ContinueTapped), for: .touchUpInside)
-        reason_tv.placeholder = "Your Explanation Is Entirely Optional..."
+        reason_tv.placeholder = "Your Explanation Is Entirely Optional...".localized
     }
 
     //MARK: - Actions -

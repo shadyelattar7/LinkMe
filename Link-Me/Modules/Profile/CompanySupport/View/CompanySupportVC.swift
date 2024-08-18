@@ -43,15 +43,15 @@ class CompanySupportVC: BaseWireFrame<CompanySupportViewModel>, NavigationBarDel
         case .AboutUs:
             print("AboutUs")
             aboutUsView.isHidden = false
-            navBartitle = "About Us"
+            navBartitle = "About Us".localized
              url = URL(string: "http://link-me.live/about")
         case .TermsOfServices:
             print("TermsOfServices")
-            navBartitle = "Terms Of Services"
+            navBartitle = "Terms Of Services".localized
             url = URL(string: "http://link-me.live/terms")
         case .PrivacyPolicy:
             print("PrivacyPolicy")
-            navBartitle = "Privacy Policy"
+            navBartitle = "Privacy Policy".localized
             url = URL(string: "http://link-me.live/privacy")
         default:
             print("ERROR IN Company Support Enum")

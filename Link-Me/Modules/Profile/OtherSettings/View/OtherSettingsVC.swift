@@ -51,21 +51,30 @@ class OtherSettingsVC: BaseWireFrame<OtherSettingsViewModel>,NavigationBarDelega
                 guard let self = self else {return}
                 switch row {
                 case 0:
-                    if UDHelper.fetchUserData?.can_see_followers == 0 {
-                        viewModel.showAndHid(type: "followers", view:self.view)
-                           
-                    } else {
-                        if UDHelper.isVistor {
+                    if UDHelper.fetchUserData?.is_subscribed == 1 {
                             viewModel.showAndHid(type: "followers", view:self.view)
-                        }else {
-                            self.coordinator.Main.navigate(for: .FeaturesPremium,navigtorTypes: .present())
-                           
+                    } else if  UDHelper.fetchUserData?.can_see_followers == 0 {
+                        viewModel.showAndHid(type: "followers", view:self.view)
+                    } else {
+                        self.coordinator.Main.navigate(for: .purchases)
                         }
-                    }
+                    
                 case 1:
-                    viewModel.showAndHid(type: "likes", view:self.view)
+                    if UDHelper.fetchUserData?.is_subscribed == 1 {
+                            viewModel.showAndHid(type: "likes", view:self.view)
+                    } else if  UDHelper.fetchUserData?.can_see_likes == 0 {
+                        viewModel.showAndHid(type: "likes", view:self.view)
+                    } else {
+                        self.coordinator.Main.navigate(for: .purchases)
+                        }
                 case 2:
-                    viewModel.showAndHid(type: "links", view:self.view)
+                    if UDHelper.fetchUserData?.is_subscribed == 1 {
+                            viewModel.showAndHid(type: "links", view:self.view)
+                    } else if  UDHelper.fetchUserData?.can_see_links == 0 {
+                        viewModel.showAndHid(type: "links", view:self.view)
+                    } else {
+                        self.coordinator.Main.navigate(for: .purchases)
+                        }
                 default:
                     print("")
                 }

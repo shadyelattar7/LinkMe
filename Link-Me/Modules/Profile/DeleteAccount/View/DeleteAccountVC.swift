@@ -30,6 +30,7 @@ class DeleteAccountVC: BaseWireFrame<DeleteAccountViewModel> {
     
     private func setupView(){
         confirmDeletion_btn.MainBtn.addTarget(self, action: #selector(confirmDeletionTapped), for: .touchUpInside)
+        password_tf.placeholder = "Your Password".localized
     }
     
     private func subscriptions(){

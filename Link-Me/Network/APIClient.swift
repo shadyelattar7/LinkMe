@@ -44,7 +44,7 @@ class APIClient<T: TargetType> {
             
             AF.request(self.baseURL+target.path, method: method, parameters: params, encoder: JSONParameterEncoder.default, headers: headers)
                 .responseDecodable (decoder: JSONDecoder()) { (response: DataResponse<X, AFError>) in
-//                    PrintHelper.debugPrint(response)
+   //                 PrintHelper.debugPrint(response)
                     self.hideLoading()
 
                     if let data = response.data{

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSi-wb-o4m" customClass="NavigationBarView" customModule="Link_Me" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="20" width="375" height="49"/>
+                    <rect key="frame" x="0.0" y="40" width="375" height="49"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="h75-Gv-2Kr"/>
@@ -40,7 +40,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1C1-Bt-UAD">
-                    <rect key="frame" x="0.0" y="69" width="375" height="598"/>
+                    <rect key="frame" x="0.0" y="89" width="375" height="578"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVV-jj-PnL">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
@@ -56,6 +56,9 @@
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" name="DarkBlue"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Title"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58z-Vx-kwR" customClass="InputView" customModule="Link_Me" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="27" width="335" height="79"/>
@@ -74,12 +77,16 @@
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" name="DarkBlue"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Email"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3y-93-VBv" customClass="InputView" customModule="Link_Me" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="27" width="335" height="62"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Email"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -92,6 +99,9 @@
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" name="DarkBlue"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Type"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sIb-6G-fwr">
                                                     <rect key="frame" x="0.0" y="27" width="335" height="56"/>
@@ -107,6 +117,9 @@
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="strongGray"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Suggestion"/>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
@@ -146,6 +159,9 @@
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="strongGray"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Complaint"/>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
@@ -186,6 +202,9 @@
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" name="DarkBlue"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Description"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ydf-hG-HvI">
                                                     <rect key="frame" x="0.0" y="27" width="335" height="133"/>
@@ -220,6 +239,7 @@
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="textTitle" value="Send"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Send"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
@@ -260,13 +280,13 @@
     </objects>
     <resources>
         <namedColor name="DarkBlue">
-            <color red="0.035000000149011612" green="0.25099998712539673" blue="0.40400001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.031372549019607843" green="0.25098039215686274" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="strongGray">
-            <color red="0.37299999594688416" green="0.42399999499320984" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.37254901960784315" green="0.42352941176470588" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

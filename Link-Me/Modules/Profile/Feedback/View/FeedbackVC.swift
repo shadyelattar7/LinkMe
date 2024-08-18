@@ -39,8 +39,10 @@ class FeedbackVC: BaseWireFrame<FeedbackViewModel>, NavigationBarDelegate {
     //MARK: - Private func -
     
     private func setupView(){
-        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Feedback"), and: self)
-        description_tv.placeholder = "How We Can Help You!"
+        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Feedback".localized), and: self)
+        description_tv.placeholder = "How We Can Help You!".localized
+        title_tf.placeholder = "Write Tittle".localized
+        email_tf.placeholder = "Email".localized
         selectSuggestion()
         save_btn.MainBtn.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
     }

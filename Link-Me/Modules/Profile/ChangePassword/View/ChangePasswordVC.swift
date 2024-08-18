@@ -30,8 +30,12 @@ class ChangePasswordVC: BaseWireFrame<ChangePasswordViewModel>, NavigationBarDel
     //MARK: - Private func
     
     private func setupView(){
-        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Change Password"), and: self)
+        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Change Password".localized), and: self)
         save_btn.MainBtn.addTarget(self, action: #selector(saveChangesTapped), for: .touchUpInside)
+        correctPassword_TF.placeholder = "Password".localized
+        newPassword_TF.placeholder = "New Password".localized
+        confrimNewPassword_TF.placeholder = "Confirm New Password".localized
+
     }
     
     private func subscriptions(){

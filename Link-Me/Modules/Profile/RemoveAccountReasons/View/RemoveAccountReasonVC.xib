@@ -31,30 +31,32 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLarge" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3p-Uu-D7O">
-                    <rect key="frame" x="20" y="107" width="260.5" height="36"/>
-                    <string key="text">Please Select The Right Reason Why 
-You're Deleting Your Account</string>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uPE-ek-PPk">
+                    <rect key="frame" x="20" y="157" width="335" height="490"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select The Right Reason Why  You're Deleting Your Account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwC-DJ-6GG">
+                    <rect key="frame" x="20" y="101" width="335" height="36"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Please Select The Right Reason Why  You're Deleting Your Account"/>
+                    </userDefinedRuntimeAttributes>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uPE-ek-PPk">
-                    <rect key="frame" x="20" y="167" width="335" height="480"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uPE-ek-PPk" secondAttribute="bottom" constant="20" id="9HK-rm-Uf3"/>
-                <constraint firstItem="b3p-Uu-D7O" firstAttribute="top" secondItem="maS-QC-4aj" secondAttribute="bottom" constant="18" id="9MU-By-RyZ"/>
                 <constraint firstItem="maS-QC-4aj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="A7a-NI-pDw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uPE-ek-PPk" secondAttribute="trailing" constant="20" id="ApH-WM-FK8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="maS-QC-4aj" secondAttribute="trailing" id="CbX-KV-1P4"/>
+                <constraint firstItem="PwC-DJ-6GG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="TaW-Le-47y"/>
                 <constraint firstItem="uPE-ek-PPk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="U9r-gN-MfF"/>
-                <constraint firstItem="b3p-Uu-D7O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Va9-3R-Tee"/>
-                <constraint firstItem="uPE-ek-PPk" firstAttribute="top" secondItem="b3p-Uu-D7O" secondAttribute="bottom" constant="24" id="ZJC-lh-WKg"/>
+                <constraint firstItem="uPE-ek-PPk" firstAttribute="top" secondItem="PwC-DJ-6GG" secondAttribute="bottom" constant="20" id="aql-xv-JKr"/>
+                <constraint firstItem="PwC-DJ-6GG" firstAttribute="top" secondItem="maS-QC-4aj" secondAttribute="bottom" constant="12" id="h5p-Mz-Knt"/>
+                <constraint firstAttribute="trailing" secondItem="PwC-DJ-6GG" secondAttribute="trailing" constant="20" id="hsW-xH-8hT"/>
                 <constraint firstItem="maS-QC-4aj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xAp-uv-oQE"/>
             </constraints>
             <point key="canvasLocation" x="129" y="20"/>

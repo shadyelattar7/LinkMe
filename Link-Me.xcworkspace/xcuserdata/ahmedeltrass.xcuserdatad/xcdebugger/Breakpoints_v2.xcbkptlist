@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "289F2719-5A41-42DF-B83B-D3401891958D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "didTappedOnPurchasesButton()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E3DBB158-837E-4A7F-AD28-AAA60A8567AC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -453,117 +437,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "55F666CB-6E1D-42E5-B3B0-474DADDBC108"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "setupTableView()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "55F666CB-6E1D-42E5-B3B0-474DADDBC108 - 97157f059108fe3d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "2851">
-               </Location>
-               <Location
-                  uuid = "55F666CB-6E1D-42E5-B3B0-474DADDBC108 - 97157f059108fdda"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "2335">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7583E54E-5EEA-42BB-9CEB-E92782F8565E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "setupTableView()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7583E54E-5EEA-42BB-9CEB-E92782F8565E - 97157f059108fc90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "737">
-               </Location>
-               <Location
-                  uuid = "7583E54E-5EEA-42BB-9CEB-E92782F8565E - 97157f059108fc90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "719">
-               </Location>
-               <Location
-                  uuid = "7583E54E-5EEA-42BB-9CEB-E92782F8565E - 97157f059108fcf3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "1151">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4BB04836-74B1-4F8D-A074-60042B51CC19"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -692,111 +565,111 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6A0231BB-4AA0-4782-A411-C30AF7EF3787"
+            uuid = "EAD4FD19-6662-4866-9450-3E775D9A6867"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
+            filePath = "Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "setupTableView()"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "changeEmail(email:view:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "054D694E-8F5D-4311-8FF0-30DDEA9DDE3E"
+            uuid = "178AA31B-C90B-4594-8B16-B31F453D7026"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
+            filePath = "Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "setupTableView()"
+            landmarkName = "changeEmail(email:view:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "054D694E-8F5D-4311-8FF0-30DDEA9DDE3E - 97157f059108fcb1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "698">
-               </Location>
-               <Location
-                  uuid = "054D694E-8F5D-4311-8FF0-30DDEA9DDE3E - 97157f059108fcb1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "707">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "11A0535D-5DB1-49CC-B74A-B543B9649CF2"
+            uuid = "4FA26BC5-DDF9-4E3A-AAD2-1024031BD158"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
+            filePath = "Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "setupTableView()"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "changeEmail(email:view:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB2B8810-1DC4-4EDE-8184-CB9F15966065"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Doimn/Repository/Profile/ProfileWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "task"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9498FD58-7E64-4A1A-A364-E4D710C24AE1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Doimn/Repository/Profile/ProfileWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "task"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "11A0535D-5DB1-49CC-B74A-B543B9649CF2 - 97157f059108fd56"
+                  uuid = "9498FD58-7E64-4A1A-A364-E4D710C24AE1 - a1bc1a0bad30c707"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
+                  symbolName = "Link_Me.ProfileNetworking.task.getter : Link_Me.Task"
                   moduleName = "Link-Me"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Doimn/Repository/Profile/ProfileWorker.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "2261">
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "3534">
                </Location>
                <Location
-                  uuid = "11A0535D-5DB1-49CC-B74A-B543B9649CF2 - 97157f059108fdb9"
+                  uuid = "9498FD58-7E64-4A1A-A364-E4D710C24AE1 - a1bc1a0bad30c707"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
+                  symbolName = "Link_Me.ProfileNetworking.task.getter : Link_Me.Task"
                   moduleName = "Link-Me"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Doimn/Repository/Profile/ProfileWorker.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "2242">
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "3576">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -804,7 +677,118 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C1597809-D0C4-434A-9F70-4B454D526E46"
+            uuid = "FB5F2EC3-472F-48A6-BC07-2C3DA0418415"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "changeEmail(email:view:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FB5F2EC3-472F-48A6-BC07-2C3DA0418415 - ce83102594b98953"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Link_Me.BaseResponse, __C.NSError&gt;) -&gt; () in Link_Me.ChangeEmailViewModel.changeEmail(email: Swift.String, view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "297">
+               </Location>
+               <Location
+                  uuid = "FB5F2EC3-472F-48A6-BC07-2C3DA0418415 - ce83102594b98953"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Link_Me.BaseResponse, __C.NSError&gt;) -&gt; () in Link_Me.ChangeEmailViewModel.changeEmail(email: Swift.String, view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "323">
+               </Location>
+               <Location
+                  uuid = "FB5F2EC3-472F-48A6-BC07-2C3DA0418415 - ce83102594b98953"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Link_Me.BaseResponse, __C.NSError&gt;) -&gt; () in Link_Me.ChangeEmailViewModel.changeEmail(email: Swift.String, view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "481">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "451E758A-149B-4C16-B2D1-0EE3F683196D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "changeEmail(email:view:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "451E758A-149B-4C16-B2D1-0EE3F683196D - 333594e7e9267749"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.ChangeEmailViewModel.changeEmail(email: Swift.String, view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "147">
+               </Location>
+               <Location
+                  uuid = "451E758A-149B-4C16-B2D1-0EE3F683196D - ce83102594b98ece"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Link_Me.BaseResponse, __C.NSError&gt;) -&gt; () in Link_Me.ChangeEmailViewModel.changeEmail(email: Swift.String, view: __C.UIView) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/ChangeEmail/ViewModel/ChangeEmailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE394538-6DB3-4651-A2B9-5B90F0A055B7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -815,36 +799,84 @@
             endingLineNumber = "59"
             landmarkName = "setupTableView()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "867B0497-0B3A-49AF-B58B-3644E97367D0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "setupTableView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E6ECC2C-53CB-424C-A6D2-3F4EB31AA696"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "setupTableView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA6FA442-5AE0-4E93-BF16-E99C2571C210"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/Onboarding/View/OnboardingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "letsGOTapped()"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C1597809-D0C4-434A-9F70-4B454D526E46 - 97157f059108fd35"
+                  uuid = "CA6FA442-5AE0-4E93-BF16-E99C2571C210 - a4f116c3afd12464"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
+                  symbolName = "Link_Me.OnboardingViewController.letsGOTapped() -&gt; ()"
                   moduleName = "Link-Me"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Onboarding/View/OnboardingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "1214">
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "2575">
                </Location>
                <Location
-                  uuid = "C1597809-D0C4-434A-9F70-4B454D526E46 - 97157f059108fd35"
+                  uuid = "CA6FA442-5AE0-4E93-BF16-E99C2571C210 - a4f116c3afd12464"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Int, Link_Me.OtherCanSee, Link_Me.OtherSeeCell) -&gt; () in Link_Me.OtherSettingsVC.setupTableView() -&gt; ()"
+                  symbolName = "Link_Me.OnboardingViewController.letsGOTapped() -&gt; ()"
                   moduleName = "Link-Me"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/OtherSettings/View/OtherSettingsVC.swift"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Onboarding/View/OnboardingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "1223">
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "2622">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -107,7 +107,7 @@ extension BeInTopViewController {
     private func setCardData() {
         let url = URL(string: UDHelper.fetchUserData?.imagePath ?? "")
         self.userImageView.setImage(url: url)
-        self.numberOfUsersLabel.text = "\(cardModel.numberOfUsers ?? 0) user"
+        self.numberOfUsersLabel.text = "\(cardModel.numberOfUsers ?? 0) " + "user".localized
     }
     
     private func subscribes() {

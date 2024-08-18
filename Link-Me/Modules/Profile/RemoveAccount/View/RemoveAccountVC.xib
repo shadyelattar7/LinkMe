@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lr-Ew-Mac" customClass="NavigationBarView" customModule="Link_Me" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="20" width="375" height="49"/>
+                    <rect key="frame" x="0.0" y="40" width="375" height="49"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="czL-KT-hhw"/>
@@ -33,18 +33,21 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92o-hQ-BMd">
-                    <rect key="frame" x="20" y="87" width="335" height="90"/>
-                    <string key="text">Can You Please Share To Us What Was 
-Not Working ? We Are Fixing Bugs As Soon 
-As We Spot Them. If Somthingg Slipped 
-Though Our Ringers. Wed Be So Grateful 
-To Be Aware Of It And Fix It</string>
+                    <rect key="frame" x="20" y="107" width="335" height="90"/>
+                    <string key="text">Can You Please Share To Us What Was Not Working ? We Are Fixing Bugs As Soon
+As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To Be Aware Of It And Fix It</string>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey">
+                            <string key="value">Can You Please Share To Us What Was Not Working ? We Are Fixing Bugs As Soon
+As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To Be Aware Of It And Fix It</string>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUC-y1-SeQ">
-                    <rect key="frame" x="20" y="199" width="335" height="170"/>
+                    <rect key="frame" x="20" y="219" width="335" height="170"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ICC-Tf-tNr">
                             <rect key="frame" x="5" y="5" width="325" height="160"/>
@@ -76,6 +79,7 @@ To Be Aware Of It And Fix It</string>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="textTitle" value="Continue"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Continue"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
@@ -100,7 +104,7 @@ To Be Aware Of It And Fix It</string>
     </objects>
     <resources>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

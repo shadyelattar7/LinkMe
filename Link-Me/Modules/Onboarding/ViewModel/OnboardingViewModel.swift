@@ -19,9 +19,9 @@ struct onboardingitems{
 class OnboardingViewModel: BaseViewModel{
     
     var onboardingItem: BehaviorRelay<[onboardingitems]> = .init(value: [
-        onboardingitems.init(image: UIImage(named: "Group 62704"), title: "Title Here", subTitle: "Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy",stepImg: UIImage(named: "step1")),
-        onboardingitems.init(image: UIImage(named: "Group 62703"), title: "Title Here", subTitle: "Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy",stepImg: UIImage(named: "step2")),
-        onboardingitems.init(image: UIImage(named: "Group 62700"), title: "Title Here", subTitle: "Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy",stepImg: UIImage(named: "step3"))
+        onboardingitems.init(image: UIImage(named: "Group1"), title: "Hello!".localized, subTitle: "Hello! Welcome to the Link Me app! Discover new worlds of social interaction with just one tap.".localized,stepImg: UIImage(named: "step1")),
+        onboardingitems.init(image: UIImage(named: "Group2"), title: "New World".localized, subTitle: "Welcome to the new world of social networking! Let Link Me guide you to unforgettable friendships and interactions.".localized,stepImg: UIImage(named: "step2")),
+        onboardingitems.init(image: UIImage(named: "Group3"), title: "a unique way".localized, subTitle: "We’re excited to see you here! Enjoy your journey in the Link Me app, where randomness meets social networking in a unique way.".localized,stepImg: UIImage(named: "step3"))
     ])
     
     

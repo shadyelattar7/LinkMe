@@ -31,8 +31,8 @@ class ChooseTimeToBeInTopCell: UITableViewCell {
     }
 
     func update(_ item: StarModel) {
-        timeLabel.text = item.titleEn
-        numberOfDiamondLabel.text = "\(item.diamonds ?? 0) Diamond"
+        timeLabel.text = "lang".localized == "en" ? item.titleEn : item.titleAr
+        numberOfDiamondLabel.text = "\(item.diamonds ?? 0)" + "Diamond".localized
         checkIfAvailableChooseIt(item.isAvailableToChoose ?? false)
     }
 }
@@ -43,13 +43,13 @@ extension ChooseTimeToBeInTopCell {
     private func checkIfAvailableChooseIt(_ isAvailable: Bool) {
         switch isAvailable {
         case true:
-            activeButton.setTitle("Choose", for: .normal)
+            activeButton.setTitle("Choose".localized, for: .normal)
             type = .choose
             activeButton.applyDefaultStyle(cornerRadius: 10, backgroundColor: .yellow, textColor: .white)
             parentView.backgroundColor = .lightYellow
             parentView.applyBorderStyle(borderColor: .yellow, borderWidth: 1, cornerRadius: 10, textColor: .white)
         case false:
-            activeButton.setTitle("Buy", for: .normal)
+            activeButton.setTitle("Buy".localized, for: .normal)
             type = .buy
             activeButton.applyBorderStyle(borderColor: .yellow, borderWidth: 1, cornerRadius: 10, textColor: .yellow)
             parentView.backgroundColor = .lightGray

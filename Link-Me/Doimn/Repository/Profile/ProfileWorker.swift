@@ -104,6 +104,7 @@ extension ProfileNetworking{
         case .changePassword(let Parameters):
             return .request(Parameters)
         case .changeEmail(let Parameters):
+            print(Parameters)
             return .request(Parameters)
         case .confirmUpdateEmail(let Parameters):
             return .request(Parameters)
@@ -144,6 +145,7 @@ extension ProfileNetworking{
                 .link,
                 .available:
             return ["Authorization": "Bearer \(UDHelper.token)"]
+            print(UDHelper.token)
         }
         
     }

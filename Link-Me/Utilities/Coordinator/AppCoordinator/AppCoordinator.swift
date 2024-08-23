@@ -83,8 +83,6 @@ class AppCoordinator: Coordinator{
             window.makeKeyAndVisible()
         }
     }
-    
-    
     var rootViewController: UIViewController{
         if UDHelper.isAppOpenedBefor{
             if UDHelper.token != "" || UDHelper.isSkip == true || UDHelper.isCompleteProfile == true  {

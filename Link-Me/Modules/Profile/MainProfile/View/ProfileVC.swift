@@ -50,7 +50,7 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
         name_lbl.text =  UDHelper.fetchUserData?.name ?? ""
         mail_lbl.text = UDHelper.fetchUserData?.email ?? ""
         bio_lbl.text = UDHelper.fetchUserData?.bio ?? "No Bio"
-        followers_lbl.text = "\(UDHelper.fetchUserData?.is_following ?? 0)"
+        followers_lbl.text = "\(UDHelper.fetchUserData?.followers ?? 0)"
         like_lbl.text = "\(UDHelper.fetchUserData?.likes ?? 0)"
         links_lbl.text = "\(UDHelper.fetchUserData?.links ?? 0)"
         if UDHelper.fetchUserData?.is_profile_completed == 0{

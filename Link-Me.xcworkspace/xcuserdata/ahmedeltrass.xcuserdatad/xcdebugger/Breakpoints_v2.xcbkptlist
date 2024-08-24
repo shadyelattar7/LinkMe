@@ -23,102 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E3DBB158-837E-4A7F-AD28-AAA60A8567AC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Profile/Settings /View/SettingsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "setting(section:row:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E3DBB158-837E-4A7F-AD28-AAA60A8567AC - 7553b1930727b05d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.SettingsVC.setting(section: Swift.Int, row: Swift.Int) -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/Settings%20/View/SettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "1009">
-               </Location>
-               <Location
-                  uuid = "E3DBB158-837E-4A7F-AD28-AAA60A8567AC - 7553b1930727b07a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.SettingsVC.setting(section: Swift.Int, row: Swift.Int) -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/Settings%20/View/SettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "1362">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "39B23289-C7F3-4AD9-B274-BD6557AE015D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Profile/Settings /View/SettingsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "setting(section:row:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "39B23289-C7F3-4AD9-B274-BD6557AE015D - 7553b1930727b713"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.SettingsVC.setting(section: Swift.Int, row: Swift.Int) -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/Settings%20/View/SettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "2009">
-               </Location>
-               <Location
-                  uuid = "39B23289-C7F3-4AD9-B274-BD6557AE015D - 7553b1930727b0d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.SettingsVC.setting(section: Swift.Int, row: Swift.Int) -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/Settings%20/View/SettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "2430">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "73D76B89-E50F-48C1-820D-43AA4179134B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -142,76 +46,13 @@
             filePath = "Link-Me/Modules/Profile/Settings /View/SettingsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "79425C40-5CA5-4925-8620-2A1AE994A80C - 934e25013b3271d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.SettingsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/Settings%20/View/SettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
-                  offsetFromSymbolStart = "7486">
-               </Location>
-               <Location
-                  uuid = "79425C40-5CA5-4925-8620-2A1AE994A80C - 15165c24cfeac7d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Link_Me.SettingsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/Settings%20/View/SettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
-                  offsetFromSymbolStart = "181">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F662F8CB-D3B2-440E-AD14-2B089C3BF76E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/Profile/Settings /View/SettingsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F662F8CB-D3B2-440E-AD14-2B089C3BF76E - 934e25013b32467"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.SettingsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/Settings%20/View/SettingsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "250"
-                  endingLineNumber = "250"
-                  offsetFromSymbolStart = "8278">
-               </Location>
-               <Location
-                  uuid = "F662F8CB-D3B2-440E-AD14-2B089C3BF76E - 3aca0afa864daaa4"
+                  uuid = "79425C40-5CA5-4925-8620-2A1AE994A80C - 3aca0afa864daac5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -221,9 +62,24 @@
                   urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/Settings%20/View/SettingsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "250"
-                  endingLineNumber = "250"
-                  offsetFromSymbolStart = "181">
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "523">
+               </Location>
+               <Location
+                  uuid = "79425C40-5CA5-4925-8620-2A1AE994A80C - 15165c24cfeac4c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Link_Me.SettingsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/Profile/Settings%20/View/SettingsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "2496">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -396,10 +252,10 @@
             filePath = "Link-Me/Utilities/Extenions/Date+Extensions.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "Date"
-            landmarkType = "21">
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "dateFromString(string:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "4BB04836-74B1-4F8D-A074-60042B51CC19 - de1015a5970745e"
@@ -783,6 +639,22 @@
             endingLineNumber = "55"
             landmarkName = "setupTableView()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E5EBFEF-2C4B-4607-B99F-740C47AAEA9E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Doimn/Model/ResponesModel/Auth/User.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "User"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

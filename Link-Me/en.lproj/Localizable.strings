@@ -57,3 +57,22 @@
 Can See";
 "Other Settings" = "Other Settings";
 "Chats" = "Chats";
+
+"second" = "second";
+"seconds" = "seconds";
+"minute" = "minute";
+"minutes" = "minutes";
+"hour" = "hour";
+"hours" = "hours";
+"day" = "day";
+"days" = "days";
+"week" = "week";
+"weeks" = "weeks";
+"month" = "month";
+"months" = "months";
+"ago" = "ago";
+"Just now" = "Just now";
+"%d min ago" = "%d min ago";
+"%d hrs ago" = "%d hrs ago";
+"%d days ago" = "%d days ago";
+"%d weeks ago" = "%d weeks ago";

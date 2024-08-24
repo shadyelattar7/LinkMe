@@ -34,6 +34,7 @@ struct User : Codable {
     let is_blocked: Int?
     let links: Int?
     let likes: Int?
+    let followers: Int?
     var is_link: Int?
     var last_availablity: String?
     var blocks_number: Int?
@@ -68,6 +69,7 @@ struct User : Codable {
         case chat_id = "chat_id"
         case links = "links"
         case likes = "likes"
+        case followers = "followers"
         case is_blocked = "is_blocked"
         case is_link = "is_link"
         case last_availablity = "last_availablity"

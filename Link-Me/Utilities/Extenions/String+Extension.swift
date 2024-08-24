@@ -15,6 +15,7 @@ enum DateFormate: String {
     case dayMonthYearWihoutHour = "dd-MM-yyyy"
     case dayMonth = "dd MMM"
     case hourMinute = "hh:mm a"
+    case hourMinuteAgo = "HH:mm"
     case nameDayMonthYear = "E, dd MMMM yyyy"
     case yearMonthDayWithoutHour = "yyyy-MM-dd"
     case day = "E"

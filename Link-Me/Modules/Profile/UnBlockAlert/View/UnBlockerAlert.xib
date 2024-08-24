@@ -77,6 +77,7 @@
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="textTitle" value="Unblock"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Unblock"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGT-zy-fYc">
@@ -99,6 +100,7 @@
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="12"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Cancel"/>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="CV5-Ns-BG8"/>

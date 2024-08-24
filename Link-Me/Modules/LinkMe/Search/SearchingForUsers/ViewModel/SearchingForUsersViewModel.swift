@@ -114,7 +114,9 @@ extension SearchingForUsersViewModel {
                              is_blocked:0,
                              links: 0,
                              likes:0,
-                             is_link: 0)
+                             followers: 0,
+                             is_link: 0,
+                             can_see_likes:0)
             
 //            self.users.forEach { user in
 //                if user.email == "abdelrahmanssss@gmail.com"{

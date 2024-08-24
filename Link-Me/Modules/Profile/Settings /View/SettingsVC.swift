@@ -241,13 +241,25 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
             case 0 :
                 cell.toggle = { [weak self] _ in
                     guard let self else {return}
-                    viewModel.changeOnline(view: self.view)
+                    if UDHelper.fetchUserData?.is_subscribed == 1 {
+                        viewModel.changeOnline(view: self.view)
+                    } else if  UDHelper.fetchUserData?.is_online == 0 {
+                        viewModel.changeOnline(view: self.view)
+                    } else {
+                        self.coordinator.Main.navigate(for: .purchases)
+                        }
                 }
                 cell.onOffSwitch.setOn(UDHelper.fetchUserData?.is_online == 1 ? true : false, animated: true)
             case 1 :
                 cell.toggle = { [weak self] _ in
                     guard let self else {return}
-                    viewModel.changeAvailable(view: self.view)
+                    if UDHelper.fetchUserData?.is_subscribed == 1 {
+                        viewModel.changeAvailable(view: self.view)
+                    } else if  UDHelper.fetchUserData?.is_available == 0 {
+                        viewModel.changeAvailable(view: self.view)
+                    } else {
+                        self.coordinator.Main.navigate(for: .purchases)
+                        }
                 }
                 cell.onOffSwitch.setOn(UDHelper.fetchUserData?.is_available == 1 ? true : false, animated: true)
             case 2 :

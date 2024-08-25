@@ -75,7 +75,7 @@ class SupportCell: UITableViewCell {
                 titleStatus_lbl.textColor = UIColor.LinkMeUIColor.strongRepliedGreen
             }
             
-            titleStatus_lbl.text = data.status
+            titleStatus_lbl.text = data.status?.localized
             
         }
         

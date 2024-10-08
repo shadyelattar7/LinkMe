@@ -11,6 +11,7 @@ import Alamofire
 
 enum MyAccountNetworking: TargetType{
     case myAccount
+    
 }
 
 extension MyAccountNetworking{
@@ -18,6 +19,7 @@ extension MyAccountNetworking{
         switch self {
         case .myAccount:
             return "/myaccount"
+       
         }
     }
     
@@ -25,6 +27,7 @@ extension MyAccountNetworking{
         switch self{
         case .myAccount:
             return .get
+       
         }
     }
     
@@ -32,6 +35,7 @@ extension MyAccountNetworking{
         switch self{
         case .myAccount:
             return .requestPlain
+        
         }
     }
     

@@ -50,7 +50,7 @@ class RemoveAccountReasonViewModel: BaseViewModel, RemoveAccountReasonInputs, Re
                 self.reasons.accept(model.data ?? [])
                 
                 var update = self.reasons.value
-                update.insert(RemoveAccReason(id: 0, title_ar: "Other", title_en: "Other", created_at: "", updated_at: "", lang: "Other"), at: self.reasons.value.count)
+                update.insert(RemoveAccReason(id: 0, title_ar: "اخر", title_en: "Other", created_at: "", updated_at: "", lang: "Other"), at: self.reasons.value.count)
                 self.reasons.accept(update)
                 
             case .failure(let error):

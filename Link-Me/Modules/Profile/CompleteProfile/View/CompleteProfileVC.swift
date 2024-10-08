@@ -7,6 +7,7 @@
 
 import UIKit
 import UITextView_Placeholder
+import RxSwift
 
 class CompleteProfileVC: BaseWireFrame<CompleteProfileViewModel> {
     
@@ -24,7 +25,7 @@ class CompleteProfileVC: BaseWireFrame<CompleteProfileViewModel> {
     @IBOutlet weak var famale_lbl: UILabel!
     @IBOutlet weak var bio_TV: UITextView!
     @IBOutlet weak var save_btn: MainButton!
-    
+    var reloadAfterDismiss: ReloadAfterDismiss?
     
     //MARK: - Variables
     let countryPicker = UIPickerView()
@@ -37,7 +38,16 @@ class CompleteProfileVC: BaseWireFrame<CompleteProfileViewModel> {
     override func bind(viewModel: CompleteProfileViewModel) {
         setupView()
         subscriptions()
-        
+        viewModel.dismissSubject.observe(on: MainScheduler.instance)
+                    .subscribe(onNext: { [weak self] dismiss in
+                        guard let self = self else { return }
+                        if dismiss {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                            self.reloadAfterDismiss?.reloadAfter()
+                        }
+                    }).disposed(by: disposeBag)
     }
     //MARK: - Private func
     

@@ -21,6 +21,9 @@ enum ProfileNetworking: TargetType{
     case feedback(Parameters: FeedbackRequestModel)
     case reasonRemoveAcc
     case DeleteAccount(Parameters: DeleteAccountRequestModel)
+    case online
+    case available
+    case link
 }
 
 extension ProfileNetworking{
@@ -48,6 +51,12 @@ extension ProfileNetworking{
             return "/delete-reasons"
         case .DeleteAccount:
             return "/delete-account"
+        case .online:
+            return "/toggle-online"
+        case .available:
+            return "/toggle-available"
+        case .link:
+            return "/toggle-link"
         }
     }
     
@@ -75,6 +84,12 @@ extension ProfileNetworking{
             return .get
         case .DeleteAccount:
             return .post
+        case .online:
+            return .post
+        case .available:
+            return .post
+        case .link:
+            return .post
         }
     }
     
@@ -89,6 +104,7 @@ extension ProfileNetworking{
         case .changePassword(let Parameters):
             return .request(Parameters)
         case .changeEmail(let Parameters):
+            print(Parameters)
             return .request(Parameters)
         case .confirmUpdateEmail(let Parameters):
             return .request(Parameters)
@@ -102,6 +118,12 @@ extension ProfileNetworking{
             return .requestPlain
         case .DeleteAccount(let Parameters):
             return .request(Parameters)
+        case .online:
+            return .requestPlain
+        case .available:
+            return .requestPlain
+        case .link:
+            return .requestPlain
         }
     }
     
@@ -118,8 +140,12 @@ extension ProfileNetworking{
                 .sendEmail,
                 .feedback,
                 .reasonRemoveAcc,
-                .DeleteAccount:
+                .DeleteAccount,
+                .online,
+                .link,
+                .available:
             return ["Authorization": "Bearer \(UDHelper.token)"]
+            print(UDHelper.token)
         }
         
     }

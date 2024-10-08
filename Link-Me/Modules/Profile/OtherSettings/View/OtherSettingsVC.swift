@@ -37,10 +37,47 @@ class OtherSettingsVC: BaseWireFrame<OtherSettingsViewModel>,NavigationBarDelega
             guard let self = self else {return}
            
             cell.title_lbl.text = item.title
-            
-            
+            switch row {
+            case 0:
+                cell.optionsToggle.setOn(UDHelper.fetchUserData?.can_see_followers == 1 ? true : false, animated: true)
+            case 1:
+                cell.optionsToggle.setOn(UDHelper.fetchUserData?.can_see_likes == 1 ? true : false, animated: true)
+            case 2:
+                cell.optionsToggle.setOn(UDHelper.fetchUserData?.can_see_links == 1 ? true : false, animated: true)
+            default:
+                print("")
+            }
             cell.toggleOptions = { [weak self] toggle in
                 guard let self = self else {return}
+                switch row {
+                case 0:
+                    if UDHelper.fetchUserData?.is_subscribed == 1 {
+                            viewModel.showAndHid(type: "followers", view:self.view)
+                    } else if  UDHelper.fetchUserData?.can_see_followers == 0 {
+                        viewModel.showAndHid(type: "followers", view:self.view)
+                    } else {
+                        self.coordinator.Main.navigate(for: .purchases)
+                        }
+                    
+                case 1:
+                    if UDHelper.fetchUserData?.is_subscribed == 1 {
+                            viewModel.showAndHid(type: "likes", view:self.view)
+                    } else if  UDHelper.fetchUserData?.can_see_likes == 0 {
+                        viewModel.showAndHid(type: "likes", view:self.view)
+                    } else {
+                        self.coordinator.Main.navigate(for: .purchases)
+                        }
+                case 2:
+                    if UDHelper.fetchUserData?.is_subscribed == 1 {
+                            viewModel.showAndHid(type: "links", view:self.view)
+                    } else if  UDHelper.fetchUserData?.can_see_links == 0 {
+                        viewModel.showAndHid(type: "links", view:self.view)
+                    } else {
+                        self.coordinator.Main.navigate(for: .purchases)
+                        }
+                default:
+                    print("")
+                }
                print("Toggle: \(toggle)")
             }
             

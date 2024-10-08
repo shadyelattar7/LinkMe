@@ -15,7 +15,16 @@
 "Stories" = "قصص";
 "Message" = "الرسالة";
 "Profile" = "الملف الشخصي";
-
+"box" = "الوارد";
+"sent" = "المرسل";
+//MARK: - Onboarding -
+"Hello!" = "مرحباً!";
+"Hello! Welcome to the Link Me app! Discover new worlds of social interaction with just one tap." = "مرحباً! مرحباً بك في تطبيق Link Me! اكتشف عوالم جديدة من التواصل الاجتماعي بلمسة زر واحدة";
+"New World" = "عالم جديد";
+"Welcome to the new world of social networking! Let Link Me guide you to unforgettable friendships and interactions." = "مرحباً بك في عالم التواصل الاجتماعي الجديد! دع Link Me يرشدك إلى لقاءات جديدة وصداقات لا تُنسى";
+"a unique way" = "طريقة فريدة";
+"We’re excited to see you here! Enjoy your journey in the Link Me app, where randomness meets social networking in a unique way." = "نحن متحمسون لرؤيتك هنا! استمتع برحلتك في تطبيق Link Me، حيث يجمع بين البحث العشوائي والتواصل الاجتماعي بطريقة فريدة.";
+"Let's go" = "هيا بنا";
 //MARK: - Profile -
 
 "Profile" = "الملف الشخصي";
@@ -23,8 +32,15 @@
 "Complete Your Profile" = "أكمل ملفك الشخصي";
 "Links" = "الروابط";
 "Followers" = "المتابعون";
-"Likes" = "الإعجاب";
-
+"Friends" = "الاصدقاء";
+"Likes" = "الاعجابات";
+"No Result Found" = "لا توجد نتائج";
+"English" = "الانجليزيه";
+"Arabic" = "العربيه";
+"Choose Your App Language" = "اختر لغة التطبيق";
+"Language" = "اللغة";
+"Support" = "الدعم";
+"BlockUser" = "قائمه الحظر";
 //MARK: - Complete Your Profile -
 
 "Complete Your Profile" = "أكمل ملفك الشخصي";
@@ -50,9 +66,93 @@
 //MARK: - Settings -
 
 "Settings" = "إعدادات";
-
+"Privacy Policy" = "سياسة الخصوصية";
+"Terms Of Services" = "شروط الخدمة";
+"Privacy Policy" = "سياسة الخصوصية";
 //MARK: - Other Setting -
 
 "OtherCanSee" = "تمكين أو تعطيل ما يمكن أن يراه الآخرون";
 "Other Settings" = "إعدادات أخرى";
 "Chats" = "الدردشات";
+//MARK: - delete Account -
+"You're Deleting Your Account" = "أنت تقوم بحذف حسابك";
+"Please Select The Right Reason Why  You're Deleting Your Account" = "يرجى اختيار السبب الصحيح لحذف حسابك";
+"Remove Account" = "حذف الحساب";
+"Can You Please Share To Us What Was Not Working ? We Are Fixing Bugs As Soon
+As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To Be Aware Of It And Fix It" = "هل يمكنك من فضلك إخبارنا بما لم يكن يعمل؟ نحن نصلح الأخطاء بمجرد أن نلاحظها. إذا فاتنا شيء، سنكون ممتنين جدًا لمعرفة ذلك وإصلاحه.";
+"Your Explanation Is Entirely Optional..." ="توضيحك اختياري تمامًا...";
+"Continue" = "استمرار";
+"Delete Account" = "حذف الحساب";
+"Your Password" = "كلمة المرور الخاصة بك";
+"Confirm Deletion" = "تأكيد الحذف";
+"Cancel" = "إلغاء";
+//MARK: - feed Back -
+"Complaint" = "شكوى";
+"Suggestion" = "اقتراح";
+"Type" = "النوع";
+"Title" = "العنوان";
+"Email" = "البريد الإلكتروني";
+"Description" = "الوصف";
+"Send" = "إرسال";
+"How We Can Help You!" = "كيف يمكننا مساعدتك!";
+"Feedback" = "التقييم";
+"Write Tittle" = "اكتب العنوان";
+"Send Email" = "إرسال البريد الإلكتروني";
+"Subject" = "الموضوع";
+"Description" = "الوصف";
+"Email Subject" = "موضوع البريد الإلكتروني";
+"Email address" = "عنوان البريد الإلكتروني";
+"Create New Password" = "إنشاء كلمة مرور جديدة";
+"Correct Password" = "كلمة المرور الصحيحة";
+"Change Password" = "تغيير كلمة المرور";
+"Password" = "كلمة المرور";
+"New Password" = "كلمة مرور جديدة";
+"Confirm New Password" = "تأكيد كلمة المرور الجديدة";
+"Correct Email" = "البريد الإلكتروني الصحيح";
+"Add New Email" = "إضافة بريد إلكتروني جديد";
+"New Email" = "البريد الإلكتروني الجديد";
+"Confirm New Email" = "تأكيد البريد الإلكتروني الجديد";
+"Change Email" = "تغيير البريد الإلكتروني";
+"Confirm" = "تأكيد";
+//MARK: - Link Me -
+ "   Update the page" = "تحديث الصفحه  ";
+"Top 50 Users" = "أفضل 50 مستخدمًا";
+"Be In The Top" = "كن في القمة";
+"Diamond" = "الماس";
+"Choose" = "اختر";
+"Buy" = "شراء";
+//MARK: - Searching -
+"Advanced search." = "بحث متقدم.";
+"use your diamond" = "استخدم الماس الخاص بك";
+"to find best match" = "للعثور على أفضل تطابق";
+"Nomal search. we will show you a random users" = "بحث عادي. سنعرض لك مستخدمين عشوائيين";
+"  Start Searching" = "ابدأ البحث  ";
+"Searching For User..." = "جارٍ البحث عن مستخدم...";
+"Be patient we will find the best match for you" = "تحلَّ بالصبر، سنجد لك أفضل تطابق";
+"Stop searching" = "إيقاف البحث";
+"  Request Chat" = "طلب محادثة  ";
+"  Search Again" = "ابحث مرة أخرى  ";
+"  Send Link" = "إرسال الرابط  ";
+"Users on the list" = "المستخدمون في القائمة";
+"user" = "مستخدم";
+"Your turn after" = "دورك بعد";
+"Be In The Top" = "كن في القمة";
+"seconds" = "ثوانٍ";
+"minute" = "دقيقة";
+"minutes" = "دقائق";
+"hour" = "ساعة";
+"hours" = "ساعات";
+"day" = "يوم";
+"days" = "أيام";
+"week" = "أسبوع";
+"weeks" = "أسابيع";
+"month" = "شهر";
+"months" = "شهور";
+"ago" = "منذ";
+"Unblock" = "إلغاء الحظر";
+"Just now" = "الآن";
+" min ago" = "منذ دقيقة";
+" hrs ago" = "منذ ساعة";
+" days ago" = "منذ يوم";
+" weeks ago" = "منذ أسبوع";
+"pending" = "قيد الانتظار";

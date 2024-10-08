@@ -65,6 +65,8 @@ class MainNavigator: Navigator{
         case RemoveAccountReason
         case RemoveAccount(reason: String)
         case DeleteAccount(reason: String)
+        case blockUser
+        case unblockUser(parameter: UnblockUserModel)
         
         
     }
@@ -177,10 +179,12 @@ class MainNavigator: Navigator{
             let viewModel = EditProfileViewModel(editProfile: completeProfileRepo)
             return EditProfileVC(viewModel: viewModel, coordinator: coordinator)
         case .Settings:
-            let viewModel = SettingsViewModel()
+            let settingRepo = ProfileWorker()
+            let viewModel = SettingsViewModel(changeOnlineWorker: settingRepo)
             return SettingsVC(viewModel: viewModel, coordinator: coordinator)
         case .OtherSettings:
-            let viewModel = OtherSettingsViewModel()
+            let otherSettings = MyBlockWorker()
+            let viewModel = OtherSettingsViewModel(blockNetworking: otherSettings)
             return OtherSettingsVC(viewModel: viewModel, coordinator: coordinator)
         case .changePassword:
             let completeProfileRepo = ProfileWorker()
@@ -229,6 +233,19 @@ class MainNavigator: Navigator{
             let subscribeApi = SubscribeAPI()
             let viewModel = GoPremiumViewModel(subscribeApi: subscribeApi)
             return GoPremiumVC(viewModel: viewModel, coordinator: coordinator)
+        case .blockUser:
+            let blockUserApi = MyBlockWorker()
+            let viewModel = BlockUserViewModel(myBlockUser: blockUserApi)
+            return BlockUserVC(viewModel: viewModel, coordinator: coordinator)
+        case .unblockUser(parameter: let parameter):
+            let viewModel = UnBlockerViewModel(user: parameter)
+            return UnBlockerAlert(viewModel: viewModel, coordinator: coordinator)
         }
     }
+}
+struct UnblockUserModel {
+    var id: Int
+    var image: String
+    var name: String
+    var description: String
 }

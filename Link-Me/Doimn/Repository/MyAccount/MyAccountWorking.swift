@@ -15,7 +15,7 @@ protocol MyAccountWorkerProtocol{
     ///   - params: the user image and store page url
     /// - Returns: merchant model
     func myAccount() -> Observable<Result<BaseResponseGen<User>, NSError>>
-    
+   
 }
 
 
@@ -24,3 +24,4 @@ class MyAccountWorker: APIClient<MyAccountNetworking>, MyAccountWorkerProtocol{
         self.performRequest(target: .myAccount)
     }
 }
+

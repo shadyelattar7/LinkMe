@@ -22,7 +22,7 @@ class LanguageVC: BaseWireFrame<LanguageViewModel>, NavigationBarDelegate {
     }
 
     private func setupView(){
-        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Language"), and: self)
+        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Language".localized), and: self)
         
         if "lang".localized == "en"{
             engIcon_iv.image = UIImage(named: "tick-circle 2")

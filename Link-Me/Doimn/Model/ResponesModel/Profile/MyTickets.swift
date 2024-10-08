@@ -34,6 +34,7 @@ struct Dats : Codable {
     let prev_page_url : String?
     let to : Int?
     let total : Int?
+  
 
     enum CodingKeys: String, CodingKey {
 
@@ -52,7 +53,16 @@ struct Dats : Codable {
         case total = "total"
     }
 }
-
+struct Replies: Codable{
+    
+    var id : Int?
+    var replaibale_type: String?
+    var replaibale_id: Int?
+    var reply :String?
+    var ticket_id: Int?
+    var created_at: String?
+    var updated_at: String?
+}
 
 struct TicketsData : Codable {
     let id : Int?
@@ -65,6 +75,7 @@ struct TicketsData : Codable {
     let updated_at : String?
     let type : String?
     let is_read : Int?
+    let replies: [Replies]?
 
     enum CodingKeys: String, CodingKey {
 
@@ -78,6 +89,7 @@ struct TicketsData : Codable {
         case updated_at = "updated_at"
         case type = "type"
         case is_read = "is_read"
+        case replies = "replies"
     }
 }
 

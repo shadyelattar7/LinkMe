@@ -7,25 +7,24 @@
 
 import UIKit
 
+
 class OtherSeeCell: UITableViewCell {
 
     @IBOutlet weak var title_lbl: UILabel!
     @IBOutlet weak var optionsToggle: UISwitch!
     
-    var toggleOptions: ((Bool)->())?
+    var toggleOptions: ((Bool) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        optionsToggle.addTarget(self, action: #selector(toggleTapped(_:)), for: .valueChanged)
     }
-    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-    
-    @IBAction func toggleTapped(_ sender: UISwitch) {
+ @objc func toggleTapped(_ sender: UISwitch) {
         print("toggleTapped 123")
         toggleOptions?(sender.isOn)
     }

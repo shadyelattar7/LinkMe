@@ -40,7 +40,9 @@ class SendEmailVC: BaseWireFrame<SendEmailViewModel> {
     //MARK: - Private func -
     
     private func setupView(){
-        descripation_tv.placeholder = "How We Can Help You!"
+        descripation_tv.placeholder = "How We Can Help You!".localized
+        email_tf.placeholder = "Email address".localized
+        subject_tf.placeholder = "Email Subject".localized
         save_btn.MainBtn.addTarget(self, action: #selector(SendTapped), for: .touchUpInside)
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))

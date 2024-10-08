@@ -90,62 +90,70 @@ extension Date {
     }
     
    
-//    func timeAgoDisplay() -> String {
-//        let secondsAgo = Int(Date().timeIntervalSince(self))
+    func timeAgoDisplay() -> String {
+           let secondsAgo = Int(Date().timeIntervalSince(self))
+
+           let minute = 60
+           let hour = 60 * minute
+           let day = 24 * hour
+           let week = 7 * day
+    let lang =   LocalizationManager.shared.getLangauage()
+        print(lang?.rawValue ?? "")
+        var isArabic = lang?.rawValue == "ar" ? true : false
+
+           if secondsAgo < minute {
+               return isArabic ? "الآن" : "Just now"
+           } else if secondsAgo < hour {
+               let minutes = secondsAgo / minute
+               return isArabic ? "\(minutes) دقيقة مضت" : "\(minutes) min ago"
+           } else if secondsAgo < day {
+               let hours = secondsAgo / hour
+               return isArabic ? "\(hours) ساعة مضت" : "\(hours) hrs ago"
+           } else if secondsAgo < week {
+               let days = secondsAgo / day
+               return isArabic ? "\(days) يوم مضى" : "\(days) days ago"
+           } else {
+               let weeks = secondsAgo / week
+               return isArabic ? "\(weeks) أسبوع مضى" : "\(weeks) weeks ago"
+           }
+       }
 //
+//    func timeAgoDisplay()->String{
+//        let secondsAgo = Int(Date().timeIntervalSince(self))
+//        print("Current Date: \(Date())")
+//               print("Seconds Ago: \(secondsAgo)")
 //        let minute = 60
 //        let hour = 60 * minute
 //        let day = 24 * hour
 //        let week = 7 * day
+//        let month = 4 * week
+//
+//
+//        let quotient: Int
+//        let unit: String
 //
 //        if secondsAgo < minute {
-//            return "Just Now".localized
-//        } else if secondsAgo < hour {
-//            return "\(secondsAgo / minute)"+" min ago".localized
-//        } else if secondsAgo < day {
-//            return "\(secondsAgo / hour)"+" hrs ago".localized
-//        } else if secondsAgo < week {
-//            return "\(secondsAgo / day)"+" days ago".localized
+//            quotient = secondsAgo
+//            unit = "second".localized
+//        }else if secondsAgo < hour {
+//            quotient = secondsAgo / minute
+//            unit = "min".localized
+//        }else if secondsAgo < day {
+//            quotient = secondsAgo / hour
+//            unit = "hour".localized
+//        }else if secondsAgo < week {
+//            quotient = secondsAgo / day
+//            unit = "day".localized
+//        }else if secondsAgo < month {
+//            quotient = secondsAgo / week
+//            unit = "week".localized
+//        }else {
+//            quotient = secondsAgo / month
+//            unit = "month".localized
 //        }
 //
-//        return "\(secondsAgo / week)"+" weeks ago".localized
+//        return "\(quotient) \(unit)\(quotient == 1 ? "" : "s") ago "
 //    }
-    
-    func timeAgoDisplay()->String{
-        let secondsAgo = Int(Date().timeIntervalSince(self))
-
-        let minute = 60
-        let hour = 60 * minute
-        let day = 24 * hour
-        let week = 7 * day
-        let month = 4 * week
-
-
-        let quotient: Int
-        let unit: String
-
-        if secondsAgo < minute {
-            quotient = secondsAgo
-            unit = "second"
-        }else if secondsAgo < hour {
-            quotient = secondsAgo / minute
-            unit = "min"
-        }else if secondsAgo < day {
-            quotient = secondsAgo / hour
-            unit = "hour"
-        }else if secondsAgo < week {
-            quotient = secondsAgo / day
-            unit = "day"
-        }else if secondsAgo < month {
-            quotient = secondsAgo / week
-            unit = "week"
-        }else {
-            quotient = secondsAgo / month
-            unit = "month"
-        }
-
-        return "\(quotient) \(unit)\(quotient == 1 ? "" : "s") ago "
-    }
 
 }
 
@@ -193,4 +201,13 @@ extension Date {
         print("ISO TIME: " + string)
         return date
     }
+    static func dateFromString2(string: String) -> Date? {
+            let dateFormatter = ISO8601DateFormatter()
+            dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0) // Set to UTC
+            if let date = dateFormatter.date(from: string) {
+                return date
+            }
+        return nil
+        }
 }

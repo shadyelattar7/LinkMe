@@ -11,6 +11,7 @@ class SupportVC: BaseWireFrame<SupportViewModel>, NavigationBarDelegate, UIScrol
     
     //MARK: - @IBOutlet -
     
+    @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var segmentControler: UISegmentedControl!
     @IBOutlet weak var navBar: NavigationBarView!
     @IBOutlet weak var tableView: UITableView!
@@ -26,21 +27,40 @@ class SupportVC: BaseWireFrame<SupportViewModel>, NavigationBarDelegate, UIScrol
         self.viewModel.viewDidLoad(ticketType: source, view: self.view)
         setupView()
         SupportTableViewSetup()
+        segmentControler.setTitle("box".localized, forSegmentAt: 0)
+        segmentControler.setTitle("sent".localized, forSegmentAt: 1)
     }
     
     //MARK: - Private func
     
     private func setupView(){
-        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Support"), and: self)
+        navBar.configure(with: NavigationBarViewModel(navBarTitle: "Support".localized), and: self)
+        viewModel.tickets.asObservable()
+                   .subscribe(onNext: { [weak self] tickets in
+                       self?.updateView(for: tickets)
+                   })
+                   .disposed(by: disposeBag)
+       
     }
     
+    func updateView(for tickets: [TicketsData]) {
+            if tickets.isEmpty {
+                emptyView.isHidden = false
+                tableView.isHidden = true
+            } else {
+                emptyView.isHidden = true
+                tableView.isHidden = false
+            }
+        }
     private func SupportTableViewSetup(){
         tableView.registerNIB(cell: SupportCell.self)
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         viewModel.tickets.bind(to: tableView.rx.items(cellIdentifier: String(describing: SupportCell.self), cellType: SupportCell.self)){ (row,item,cell) in
+            print(item)
             cell.configure(data: item, source: self.source)
+            
         }.disposed(by: disposeBag)
         
         

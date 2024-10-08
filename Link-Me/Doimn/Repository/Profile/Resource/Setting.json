@@ -76,6 +76,14 @@
                     "isLabel": true,
                     "isArrow": true,
                     "isNotificationLabel": false
+                },{
+                    "name": "Anonymous Requests",
+                    "name_ar": "طلب مجهول",
+                    "icon": "Anonymous",
+                    "isToggle": true,
+                    "isLabel": false,
+                    "isArrow": false,
+                    "isNotificationLabel": false
                 }
             ]
         },
@@ -91,7 +99,7 @@
                     "isToggle": false,
                     "isLabel": false,
                     "isArrow": true,
-                    "isNotificationLabel": true
+                    "isNotificationLabel": false
                 },
                 {
                     "name": "Feedback",
@@ -129,15 +137,6 @@
                     "isArrow": true,
                     "isNotificationLabel": false
                 },
-                {
-                    "name": "Share The App",
-                    "name_ar": "مشاركة التطبيق",
-                    "icon": "Share The App",
-                    "isToggle": false,
-                    "isLabel": false,
-                    "isArrow": false,
-                    "isNotificationLabel": false
-                }
             ]
         },
         {

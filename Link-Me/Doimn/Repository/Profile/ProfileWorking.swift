@@ -35,10 +35,25 @@ protocol ProfileWorkerProtocol{
     func getRemoveAccReason() -> Observable<Result<BaseResponseGen<[RemoveAccReason]>, NSError>>
     
     func deleteAccount(model: DeleteAccountRequestModel) -> Observable<Result<BaseResponse, NSError>>
+    func changeOnline() -> Observable<Result<BaseResponseGen<Bool>, NSError>>
+    func changelink() -> Observable<Result<BaseResponseGen<Bool>, NSError>>
+    func changeAvailable() -> Observable<Result<BaseResponseGen<Bool>, NSError>>
 }
 
 
 class ProfileWorker: APIClient<ProfileNetworking>, ProfileWorkerProtocol{
+    func changeOnline() -> Observable<Result<BaseResponseGen<Bool>, NSError>> {
+        self.performRequest(target: .online)
+    }
+    
+    func changelink() -> Observable<Result<BaseResponseGen<Bool>, NSError>> {
+        self.performRequest(target: .link)
+    }
+    
+    func changeAvailable() -> Observable<Result<BaseResponseGen<Bool>, NSError>> {
+        self.performRequest(target: .available)
+    }
+    
   
     func getCountries() -> Observable<Result<BaseResponseGen<[Countries]>, NSError>> {
         self.performRequest(target: .getCountries)

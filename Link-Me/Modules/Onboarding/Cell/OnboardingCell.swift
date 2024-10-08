@@ -23,8 +23,8 @@ class OnboardingCell: UICollectionViewCell {
     
     func configure(item: onboardingitems){
         onboardingImage_iv.image = item.image
-        title_lbl.text = item.title
-        contant_lbl.text = item.subTitle
+        title_lbl.text = item.title.localized
+        contant_lbl.text = item.subTitle.localized
     }
     
     

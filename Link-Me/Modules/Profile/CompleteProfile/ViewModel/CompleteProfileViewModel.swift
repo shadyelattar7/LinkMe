@@ -29,7 +29,7 @@ class CompleteProfileViewModel: BaseViewModel, CompleteProfileInputs, CompletePr
     let completeProfile: ProfileWorkerProtocol
     let disposedBag = DisposeBag()
     var Countries: BehaviorRelay<[Countries]> = .init(value: [])
-    
+    let dismissSubject = PublishSubject<Bool>()
     init(completeProfile: ProfileWorkerProtocol) {
         self.completeProfile = completeProfile
  
@@ -75,6 +75,7 @@ class CompleteProfileViewModel: BaseViewModel, CompleteProfileInputs, CompletePr
             case .success(let model):
                 UDHelper.saveUserData(obj: model.data)
                 self.completeProfileStatus.onNext(model)
+                self.dismissSubject.onNext(true)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as! String
                 ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)

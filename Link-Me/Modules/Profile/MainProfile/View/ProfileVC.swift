@@ -50,9 +50,9 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
         name_lbl.text =  UDHelper.fetchUserData?.name ?? ""
         mail_lbl.text = UDHelper.fetchUserData?.email ?? ""
         bio_lbl.text = UDHelper.fetchUserData?.bio ?? "No Bio"
-        
-        
-        
+        followers_lbl.text = "\(UDHelper.fetchUserData?.followers ?? 0)"
+        like_lbl.text = "\(UDHelper.fetchUserData?.likes ?? 0)"
+        links_lbl.text = "\(UDHelper.fetchUserData?.links ?? 0)"
         if UDHelper.fetchUserData?.is_profile_completed == 0{
             if UDHelper.isVistor {
                 profileIsCompleteView.isHidden = true
@@ -109,15 +109,16 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
                 }
                 self.coordinator.Main.navigate(for: .EditProfile)
             case 2: //Share App
-                if UDHelper.isVistor {
-                    QuickAlert.showWith(in: self, coordentor: self.coordinator)
-                }
-                self.coordinator.Main.navigate(for: .EditProfile)
+//                if UDHelper.isVistor {
+//                    QuickAlert.showWith(in: self, coordentor: self.coordinator)
+//                }
+//                self.coordinator.Main.navigate(for: .EditProfile)
+                 shareLink(shareLink: "https://www.youtube.com")
             case 3: //Get All Feature
                 if UDHelper.isVistor {
                     QuickAlert.showWith(in: self, coordentor: self.coordinator)
                 }
-                self.coordinator.Main.navigate(for: .EditProfile)
+                self.coordinator.Main.navigate(for: .purchases)
             default:
                 self.coordinator.Main.navigate(for: .EditProfile)
             }
@@ -128,7 +129,26 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
     //MARK: - Actions
     
     @IBAction func completeProfileTapped(_ sender: Any) {
-        self.coordinator.Main.navigate(for: .CompleteProfile,navigtorTypes: .present())
+     //   self.coordinator.Main.navigate(for: .CompleteProfile,navigtorTypes: .present())
+        if let vc = coordinator.Main.viewcontroller(for: .CompleteProfile) as? CompleteProfileVC {
+               vc.reloadAfterDismiss = self
+               present(vc, animated: true)
+           }
     }
+    private func shareLink(shareLink: String) {
+            let activityViewController = UIActivityViewController(activityItems: [shareLink], applicationActivities: nil)
+            
+            // Present the activity view controller
+            if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+                rootViewController.present(activityViewController, animated: true, completion: nil)
+            }
+        }
+    
+}
+extension ProfileVC : ReloadAfterDismiss {
+    func reloadAfter() {
+        viewModel.getMyAccountData()
+    }
+    
     
 }

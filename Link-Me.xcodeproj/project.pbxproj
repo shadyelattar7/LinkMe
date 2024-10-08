@@ -414,6 +414,16 @@
 		A2DA71152AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */; };
 		A2DA71162AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2DA71142AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib */; };
 		A2DA711C2AC1A790001BE903 /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DA711B2AC1A790001BE903 /* UIView+Style.swift */; };
+		DE1305B72C5176ED004AC515 /* UnBlockerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1305B52C5176ED004AC515 /* UnBlockerAlert.swift */; };
+		DE1305B82C5176ED004AC515 /* UnBlockerAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1305B62C5176ED004AC515 /* UnBlockerAlert.xib */; };
+		DE1305BB2C517735004AC515 /* UnBlockerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1305BA2C517735004AC515 /* UnBlockerViewModel.swift */; };
+		E0950F232C50393E0082580F /* BlockUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F212C50393E0082580F /* BlockUserVC.swift */; };
+		E0950F242C50393E0082580F /* BlockUserVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0950F222C50393E0082580F /* BlockUserVC.xib */; };
+		E0950F272C5039830082580F /* BlockUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F262C5039830082580F /* BlockUserViewModel.swift */; };
+		E0950F2C2C503B120082580F /* BlockUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0950F2A2C503B120082580F /* BlockUserCell.swift */; };
+		E0950F2D2C503B120082580F /* BlockUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0950F2B2C503B120082580F /* BlockUserCell.xib */; };
+		E0B3252D2C56F1D40019EF90 /* MyBlockWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3252C2C56F1D40019EF90 /* MyBlockWorker.swift */; };
+		E0B3252F2C56F20E0019EF90 /* MyBlockWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3252E2C56F20E0019EF90 /* MyBlockWorking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -827,6 +837,16 @@
 		A2DA71132AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeToBeInTopCell.swift; sourceTree = "<group>"; };
 		A2DA71142AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTimeToBeInTopCell.xib; sourceTree = "<group>"; };
 		A2DA711B2AC1A790001BE903 /* UIView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Style.swift"; sourceTree = "<group>"; };
+		DE1305B52C5176ED004AC515 /* UnBlockerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnBlockerAlert.swift; sourceTree = "<group>"; };
+		DE1305B62C5176ED004AC515 /* UnBlockerAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnBlockerAlert.xib; sourceTree = "<group>"; };
+		DE1305BA2C517735004AC515 /* UnBlockerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnBlockerViewModel.swift; sourceTree = "<group>"; };
+		E0950F212C50393E0082580F /* BlockUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserVC.swift; sourceTree = "<group>"; };
+		E0950F222C50393E0082580F /* BlockUserVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockUserVC.xib; sourceTree = "<group>"; };
+		E0950F262C5039830082580F /* BlockUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewModel.swift; sourceTree = "<group>"; };
+		E0950F2A2C503B120082580F /* BlockUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserCell.swift; sourceTree = "<group>"; };
+		E0950F2B2C503B120082580F /* BlockUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockUserCell.xib; sourceTree = "<group>"; };
+		E0B3252C2C56F1D40019EF90 /* MyBlockWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlockWorker.swift; sourceTree = "<group>"; };
+		E0B3252E2C56F20E0019EF90 /* MyBlockWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlockWorking.swift; sourceTree = "<group>"; };
 		EE62B092A4E2A039DB368CC0 /* Pods_Link_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Link_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1952,6 +1972,8 @@
 		827ED73B2A3A20920056EE37 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DE1305B32C5176A1004AC515 /* UnBlockAlert */,
+				E0950F202C5038D50082580F /* BlockUser */,
 				82952B882A47980800548634 /* MainProfile */,
 				82CAF0412A3CB99800311600 /* CompleteProfile */,
 				82CAF05F2A3FC53300311600 /* EditProfile */,
@@ -2195,6 +2217,7 @@
 		82A2FC202A0B9AF100BA7BD3 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				E0B325292C56F1170019EF90 /* BlockUser */,
 				82952B832A472ADA00548634 /* MyAccount */,
 				822AD2CF2A1410CE0037D8E0 /* Auth */,
 				82CAF04D2A3E042F00311600 /* Profile */,
@@ -3461,6 +3484,77 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		DE1305B32C5176A1004AC515 /* UnBlockAlert */ = {
+			isa = PBXGroup;
+			children = (
+				DE1305B92C517714004AC515 /* ViewModel */,
+				DE1305B42C5176C2004AC515 /* View */,
+			);
+			path = UnBlockAlert;
+			sourceTree = "<group>";
+		};
+		DE1305B42C5176C2004AC515 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE1305B52C5176ED004AC515 /* UnBlockerAlert.swift */,
+				DE1305B62C5176ED004AC515 /* UnBlockerAlert.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE1305B92C517714004AC515 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DE1305BA2C517735004AC515 /* UnBlockerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0950F202C5038D50082580F /* BlockUser */ = {
+			isa = PBXGroup;
+			children = (
+				E0950F292C503AF20082580F /* Cell */,
+				E0950F282C5039890082580F /* ViewModel */,
+				E0950F252C5039660082580F /* View */,
+			);
+			path = BlockUser;
+			sourceTree = "<group>";
+		};
+		E0950F252C5039660082580F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0950F212C50393E0082580F /* BlockUserVC.swift */,
+				E0950F222C50393E0082580F /* BlockUserVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E0950F282C5039890082580F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0950F262C5039830082580F /* BlockUserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0950F292C503AF20082580F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E0950F2A2C503B120082580F /* BlockUserCell.swift */,
+				E0950F2B2C503B120082580F /* BlockUserCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E0B325292C56F1170019EF90 /* BlockUser */ = {
+			isa = PBXGroup;
+			children = (
+				E0B3252C2C56F1D40019EF90 /* MyBlockWorker.swift */,
+				E0B3252E2C56F20E0019EF90 /* MyBlockWorking.swift */,
+			);
+			path = BlockUser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3560,6 +3654,7 @@
 				82FB79522A19475B006644EE /* Madani Arabic SemiBold 400.ttf in Resources */,
 				8228829D2A0D1D4600019216 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				822882902A0D1D4600019216 /* Poppins-Italic.ttf in Resources */,
+				E0950F242C50393E0082580F /* BlockUserVC.xib in Resources */,
 				A2DA71112AC1957B001BE903 /* BeInTopViewController.xib in Resources */,
 				8A3E179A2AAFDB26007D6FE2 /* MediaPreviewVC.xib in Resources */,
 				A2D1DA142AC997FE0057D61D /* PurchaseStoreViewController.xib in Resources */,
@@ -3601,6 +3696,7 @@
 				8255575B2A6975F800E00AA5 /* StoryPreviewCell.xib in Resources */,
 				827B839A2A11146000E634A9 /* VerifyEmailViewController.xib in Resources */,
 				82D9143B2A102459005FAF36 /* README.md in Resources */,
+				DE1305B82C5176ED004AC515 /* UnBlockerAlert.xib in Resources */,
 				825CF37F2A48A3A600BA5DDA /* ChangeEmailVC.xib in Resources */,
 				79A09FC02B571A3400E03CE0 /* DeleteChatSheetViewController.xib in Resources */,
 				793F55D32ABF701B004635C5 /* LinkMeViewController.xib in Resources */,
@@ -3654,6 +3750,7 @@
 				822882982A0D1D4600019216 /* Poppins-SemiBold.ttf in Resources */,
 				A2DA71162AC1A369001BE903 /* ChooseTimeToBeInTopCell.xib in Resources */,
 				7908BB8F2B926ABE00C0F4BE /* FriendTableViewCell.xib in Resources */,
+				E0950F2D2C503B120082580F /* BlockUserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3728,6 +3825,7 @@
 				82AB6A812A115B380005DEF6 /* EnterCodeViewController.swift in Sources */,
 				82C94EDA2A1EB8E1003FB504 /* ForgetPasswordWorker.swift in Sources */,
 				825CF3992A49DFE800BA5DDA /* SupportViewModel.swift in Sources */,
+				E0950F2C2C503B120082580F /* BlockUserCell.swift in Sources */,
 				8A3AD25C2AC64F3400BF8358 /* TestPremuimViewController.swift in Sources */,
 				8AF8CE4A2ABF49BD00676366 /* GoPremiumViewModel.swift in Sources */,
 				825CF3842A4919C100BA5DDA /* ChangeEmailRequestModel.swift in Sources */,
@@ -3749,6 +3847,7 @@
 				794DC15D2B015A12006DE897 /* HeaderChatResources.swift in Sources */,
 				8AF6F44E2AC23923002FB4E7 /* LikeStoryRequestModel.swift in Sources */,
 				82A2FC7C2A0BDA2D00BA7BD3 /* MainNavigator.swift in Sources */,
+				E0B3252F2C56F20E0019EF90 /* MyBlockWorking.swift in Sources */,
 				79D610662ACC992B00961837 /* AgeView.swift in Sources */,
 				827B83932A10ECA500E634A9 /* String+Extension.swift in Sources */,
 				829A79572A1281DA001A137B /* CreatePasswordViewController.swift in Sources */,
@@ -3779,6 +3878,7 @@
 				A2DA71102AC1957B001BE903 /* BeInTopViewController.swift in Sources */,
 				824E60622A48962400D6FCCD /* ChangePasswordRequestModel.swift in Sources */,
 				8A1249652B224EBF00409D30 /* PusherManager.swift in Sources */,
+				E0B3252D2C56F1D40019EF90 /* MyBlockWorker.swift in Sources */,
 				827356732A59C38C00634EA4 /* RemoveAccountReasonViewModel.swift in Sources */,
 				A2D1DA132AC997FE0057D61D /* PurchaseStoreViewController.swift in Sources */,
 				82D9143A2A102459005FAF36 /* ValidationError.swift in Sources */,
@@ -3915,6 +4015,7 @@
 				79A09FBF2B571A3400E03CE0 /* DeleteChatSheetViewController.swift in Sources */,
 				794DC1552B015164006DE897 /* ChatViewController.swift in Sources */,
 				827356922A59E73200634EA4 /* DeleteAccountViewModel.swift in Sources */,
+				DE1305BB2C517735004AC515 /* UnBlockerViewModel.swift in Sources */,
 				825039472A413F570006EAD3 /* Settings.swift in Sources */,
 				793F55D22ABF701B004635C5 /* LinkMeViewController.swift in Sources */,
 				794DC1522B015141006DE897 /* ChatViewModel.swift in Sources */,
@@ -3922,6 +4023,7 @@
 				82CB13BF2A511A9B00439CD7 /* SendEmailRequestModel.swift in Sources */,
 				79FA7F4F2ABB30E70043B6BA /* StoriesAPI.swift in Sources */,
 				79FA7F672ABDD3270043B6BA /* BottomListSheet+Resources.swift in Sources */,
+				DE1305B72C5176ED004AC515 /* UnBlockerAlert.swift in Sources */,
 				A2DA71152AC1A369001BE903 /* ChooseTimeToBeInTopCell.swift in Sources */,
 				82C94EDC2A1EB8F0003FB504 /* ForgetPasswordWorking.swift in Sources */,
 				8AF8CE4C2ABF49BD00676366 /* GoPremiumVC.swift in Sources */,
@@ -3934,6 +4036,7 @@
 				82469AAC2A19912900A47C5F /* Fonts.swift in Sources */,
 				825CF3A92A4D01EF00BA5DDA /* SupportCell.swift in Sources */,
 				794B89122ABE228B00FE5F0D /* ReportStoryRequestModel.swift in Sources */,
+				E0950F272C5039830082580F /* BlockUserViewModel.swift in Sources */,
 				A2190C6B2AC0A8570031F1D6 /* NotificationListViewController.swift in Sources */,
 				82952B852A472AF500548634 /* MyAccountWorking.swift in Sources */,
 				827356752A59C65500634EA4 /* RemoveAccReason.swift in Sources */,
@@ -3957,6 +4060,7 @@
 				8A76E2F22B1BC90600433FF5 /* FCMTokenWorkering.swift in Sources */,
 				82D914372A102459005FAF36 /* ValidatorType.swift in Sources */,
 				79F5E7D32B2E242F0029CFBC /* MessageListItemCell.swift in Sources */,
+				E0950F232C50393E0082580F /* BlockUserVC.swift in Sources */,
 				79D6105C2ACC8ACB00961837 /* FilterSearchViewController.swift in Sources */,
 				793F55CD2ABF667D004635C5 /* LinkMeTarget.swift in Sources */,
 				82AB6A8D2A1219310005DEF6 /* RegisterViewModel.swift in Sources */,

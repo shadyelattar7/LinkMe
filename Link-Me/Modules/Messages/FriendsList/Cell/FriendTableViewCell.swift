@@ -7,29 +7,27 @@
 
 import UIKit
 
-struct FriendModel {
-    var id: Int
-    var imagePath: String?
-    var name: String?
-    var status: String?
-}
+
 class FriendTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet weak var statusView: UIView!
     @IBOutlet private weak var statusLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         userImageView.makeCircleView()
+        statusView.makeCircleView()
     }
     
     // MARK: Updates
     
-    func update(_ item: FriendModel) {
-        userImageView.setImage(url: URL(string: item.imagePath ?? ""), placeholder: .placeholder)
-        nameLabel.text = item.name
-        statusLabel.text = item.status
+    func update(_ item: Friendship) {
+        userImageView.setImage(url: URL(string: item.friendObj.imagePath ?? ""), placeholder: .placeholder)
+        nameLabel.text = item.friendObj.name
+        statusLabel.text = item.friendObj.lastSeen
+        statusView.backgroundColor = item.friendObj.is_online == 0 ? UIColor(hex: "#A8B9B3") : UIColor(hex: "#1ED597")
+
     }
 }

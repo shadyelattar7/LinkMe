@@ -279,5 +279,17 @@ struct StoryElement: Codable {
     
     /// Initial value for example
     ///
-    static let example = StoryElement(id: nil, userID: nil, file: nil, expireAt: nil, createdAt: nil, updatedAt: nil, description: nil, video: nil, likes: nil, comments: nil, user: nil)
+    static let example = StoryElement(
+        id: nil,
+        userID: nil,
+        file: nil,
+        expireAt: nil,
+        createdAt: nil,
+        updatedAt: nil,
+        description: nil,
+        video: nil,
+        likes: nil,
+        comments: nil,
+        user: nil
+    )
 }

@@ -159,6 +159,7 @@ extension MainStoriesVC {
             guard let self = self else {return}
             let vc = self.coordinator.Main.viewcontroller(for: .StoryPreview) as! StoryPreviewVC
             vc.indexPath = indexPath.row
+            print("self.viewModel.storiesPost: \(self.viewModel.storiesPost)")
             vc.myStoriesDate = self.viewModel.storiesPost
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)

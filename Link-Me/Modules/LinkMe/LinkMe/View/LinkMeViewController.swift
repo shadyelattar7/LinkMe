@@ -53,6 +53,7 @@ extension LinkMeViewController {
     private func subscribe() {
         subscribeToTopUsersData()
         subscribeToErrorMessage()
+        subscribeChatID()
     }
     
     private func didTappedOnNotificationButton() {
@@ -115,14 +116,16 @@ extension LinkMeViewController {
             
             cell.openProfile = { [weak self] in
                 guard let self = self else { return }
-                
-                let user = self.viewModel.getUserModel(row)
-                let userModel = UserCardModel(id: user.id, imagePath: user.imagePath, name: user.name, username: user.user_name, bio: user.bio, numberOfLinks: 0, numberOfFollowing: 0, numberOfLikes: 0)
-                
-                let vc = self.coordinator.Main.viewcontroller(for: .userCard(direction: .normal, userModel: userModel))
-                self.present(vc, animated: true)
+                self.coordinator.Main.navigate(for: .userCard(userID: item.id ?? 0, chatID: 0, direction: .profile), navigtorTypes: .presentNavgation)
             }
             
+        }.disposed(by: disposeBag)
+    }
+    
+    private func subscribeChatID() {
+        viewModel.chatID.subscribe { [weak self] chatID in
+            guard let self = self else { return }
+            self.presentChatViewController(for: chatID)
         }.disposed(by: disposeBag)
     }
     
@@ -134,25 +137,26 @@ extension LinkMeViewController {
             
             guard let row = indexPath.element?.row else { return }
             let user = self.viewModel.getUserModel(row)
-            var chatID: Int = 0
-            
+        
             if user.chat_id == nil {
                 viewModel.requestChat(userId: user.id ?? 0)
-                chatID = viewModel.chatID ?? 0
             } else {
-                chatID = user.chat_id ?? 0
+                presentChatViewController(for: user.chat_id ?? 0)
             }
             
-            let vc = coordinator.Main.viewcontroller(
-                for: .chat(
-                    chatID: "\(chatID)",
-                    chatFrom: .home
-                )
-            )
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true)
-            
         }.disposed(by: disposeBag)
+    }
+    
+    private func presentChatViewController(for chatID: Int) {
+        let vc = coordinator.Main.viewcontroller(
+                for: .chat(
+                chatID: "\(chatID)",
+                chatFrom: .home
+            )
+        )
+        
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
     }
 }
 

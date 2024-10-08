@@ -30,12 +30,46 @@ class ProfileViewModel: BaseViewModel,ProfileInputs,ProfileOutputs{
     
     let myAccount: MyAccountWorkerProtocol
     let disposedBag = DisposeBag()
-    var settingData: BehaviorRelay<[SettingOptions]> = .init(value: [
-        SettingOptions(name: "Settings", name_ar: "الإعدادات", icon: "Settings", isToggle: false, isLabel: false, isArrow: true, isNotificationLabel: false),
-        SettingOptions(name: "Edit Profile", name_ar: "تحرير الملف الشخصي", icon: "Edit Profile", isToggle: false, isLabel: false, isArrow: true, isNotificationLabel: false),
-        SettingOptions(name: "Share Profile", name_ar: "مشاركة الملف الشخصي", icon: "Share Profile", isToggle: false, isLabel: false, isArrow: true, isNotificationLabel: false),
-        SettingOptions(name: "Get All Features", name_ar: "الحصول على جميع الميزات", icon: "Get All Features", isToggle: false, isLabel: false, isArrow: true, isNotificationLabel: false),
-    ])
+    var settingData: BehaviorRelay<[SettingOptions]> = .init(
+        value: [
+            SettingOptions(
+                name: "Settings",
+                name_ar: "الإعدادات",
+                icon: "Settings",
+                isToggle: false,
+                isLabel: false,
+                isArrow: true,
+                isNotificationLabel: false
+            ),
+            SettingOptions(
+                name: "Edit Profile",
+                name_ar: "تحرير الملف الشخصي",
+                icon: "Edit Profile",
+                isToggle: false,
+                isLabel: false,
+                isArrow: true,
+                isNotificationLabel: false
+            ),
+            SettingOptions(
+                name: "Share Profile",
+                name_ar: "مشاركة الملف الشخصي",
+                icon: "Share Profile",
+                isToggle: false,
+                isLabel: false,
+                isArrow: true,
+                isNotificationLabel: false
+            ),
+            SettingOptions(
+                name: "Get All Features",
+                name_ar: "الحصول على جميع الميزات",
+                icon: "Get All Features",
+                isToggle: false,
+                isLabel: false,
+                isArrow: true,
+                isNotificationLabel: false
+            ),
+        ]
+    )
 
     init(myAccount: MyAccountWorkerProtocol) {
         self.myAccount = myAccount

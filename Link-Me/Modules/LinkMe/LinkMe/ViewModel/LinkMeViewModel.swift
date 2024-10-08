@@ -18,7 +18,7 @@ class LinkMeViewModel: BaseViewModel {
     private let pusherManager = PusherManager.shared
     private let disposeBag = DisposeBag()
     
-    var chatID: Int?
+    var chatID = PublishSubject<Int>()
 
     // MARK: Outputs
 
@@ -62,6 +62,10 @@ class LinkMeViewModel: BaseViewModel {
         self.myAccountWorker = myAccountWorker
         self.fcmToken = fcmToken
     }
+    
+//    deinit {
+//        PusherManager.shared.disconnect()
+//    }
 }
 
 // MARK: Fetch top users
@@ -128,12 +132,12 @@ extension LinkMeViewModel {
             isSpecial: 0,
             type: "home"
         )
+        
         linkMeApi.requestChat(model: model).subscribe(onNext:{ [weak self] result in
             guard let self = self else {return}
             switch result {
             case .success(let model):
                 guard let data = model.data else { return }
-                print("ID: \(data.id ?? 0)")
                 self.subscribeRequest(id: data.id ?? 0)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String
@@ -146,12 +150,10 @@ extension LinkMeViewModel {
     private func subscribeRequest(id: Int) {
         pusherManager.subscribeToChannel(channelName: "request-\(id)", eventName: "request-updated") { event in
             let jsonString = event.data
-            
             if let responseData: ResponseData = PusherManager.shared.parseJSON(jsonString: jsonString, type: ResponseData.self) {
                 let requestId = responseData.request_id
                 let status = responseData.status
-                self.chatID = requestId
-                print("Request ID: \(requestId), Status: \(status)")
+                self.chatID.onNext(requestId ?? 0)
             }
         }
     }

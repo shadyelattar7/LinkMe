@@ -34,6 +34,11 @@ protocol LinkMeAPIProtocol {
     /// - Parameters:
     /// - Returns: .
     func buyStars(model: buyStarsRequestModel) -> Observable<Result<BaseResponse, NSError>>
+    
+    /// it is the method used to buy starts
+    /// - Parameters:
+    /// - Returns: .
+    func fetchOneUser(userID: Int) -> Observable<Result<BaseResponseGen<User>, NSError>>
 }
 
 class LinkMeAPI: APIClient<LinkMeTarget>, LinkMeAPIProtocol {
@@ -55,5 +60,9 @@ class LinkMeAPI: APIClient<LinkMeTarget>, LinkMeAPIProtocol {
     
     func buyStars(model: buyStarsRequestModel) -> Observable<Result<BaseResponse, NSError>> {
         self.performRequest(target: .buyStarts(Parameters: model), requestModel: model)
+    }
+    
+    func fetchOneUser(userID: Int) -> Observable<Result<BaseResponseGen<User>, NSError>> {
+        self.performRequest(target: .oneUser(userID: userID))
     }
 }

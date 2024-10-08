@@ -102,7 +102,7 @@ class RequestChatStateViewController: UIViewController {
             let vc = coordinator.Main.viewcontroller(
                 for: .chat(
                     chatID: viewModel.getChatID(),
-                    chatFrom: .messages 
+                    chatFrom: .search
                 )
             )
             vc.modalPresentationStyle = .overFullScreen
@@ -129,8 +129,9 @@ extension RequestChatStateViewController {
             userId: requestChatModel.userId,
             message: "",
             isSpecial: requestChatModel.isSpecialSearch,
-            type: ""
+            type: "request"
         )
+        print("Model: \(model)")
         viewModel.updateRequestChatRequestModel(model)
     }
     
@@ -233,7 +234,7 @@ extension RequestChatStateViewController {
             guard let self = self else { return }
             if status == 1 { //accpet
                 self.currentState = .acceptYourRequest(model: self.requestChatModel)
-            } else if status == 0 { //ignore
+            } else if status == 2 { //ignore
                 self.currentState = .ignoreYourRequest(model: self.requestChatModel)
             }
         }

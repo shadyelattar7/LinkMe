@@ -10,7 +10,7 @@ import RxSwift
 import RxRelay
 
 class MessageListViewController: BaseWireFrame<MessageListViewModel> {
-
+    
     // MARK: Outlets
     
     @IBOutlet private weak var editButton: UIButton!
@@ -28,7 +28,7 @@ class MessageListViewController: BaseWireFrame<MessageListViewModel> {
     private var listOfSelectedChats: [ChatRequestItem] = []
     
     // MARK: Lifecycle
-        
+    
     override func bind(viewModel: MessageListViewModel) {
         configureUI()
         configureTableView()
@@ -38,7 +38,7 @@ class MessageListViewController: BaseWireFrame<MessageListViewModel> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getChatRequests()
+        viewModel.getChatRequests(name: "")
     }
     
     // MARK: Actions
@@ -67,6 +67,11 @@ class MessageListViewController: BaseWireFrame<MessageListViewModel> {
     }
     
     @IBAction private func didTappedOnFriendsButton(_ sender: Any) {
+        let vc = coordinator.Main.viewcontroller(for: .friends)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func AddFriendsTapped(_ sender: Any) {
         let vc = coordinator.Main.viewcontroller(for: .friends)
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -125,6 +130,7 @@ extension MessageListViewController {
         countLabel.makeCircleView()
         searchBar.barTintColor = UIColor.white
         searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+        searchBar.delegate = self
     }
 }
 
@@ -179,7 +185,7 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.cellForRow(at: indexPath) as! MessageListItemCell
         
         if messagesTableView.allowsMultipleSelection == false {
-            let chatID = viewModel.getItemCell(indexPath: indexPath).id            
+            let chatID = viewModel.getItemCell(indexPath: indexPath).id
             self.coordinator.Main.navigate(for: .chat(chatID: "\(chatID ?? 0)", chatFrom: .messages))
         } else {
             self.listOfSelectedChats.append(viewModel.getItemCell(indexPath: indexPath))
@@ -221,7 +227,7 @@ extension MessageListViewController: SuccessDeleteChatProtocol {
     func reload() {
         listOfSelectedChats = []
         makeNormalMood()
-        viewModel.getChatRequests()
+        viewModel.getChatRequests(name: "")
     }
 }
 
@@ -232,6 +238,18 @@ extension MessageListViewController: BottomListDismissedProtocol {
     func dismiss() {
         listOfSelectedChats = []
         makeNormalMood()
-        viewModel.getChatRequests()
+        viewModel.getChatRequests(name: "")
+    }
+}
+
+// MARK: UISearchBarDelegate
+extension MessageListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Call the view model to get chat requests with the search query
+        viewModel.getChatRequests(name: searchText)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder() // Hide the keyboard when the search button is pressed
     }
 }

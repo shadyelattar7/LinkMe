@@ -17,6 +17,7 @@ enum StoriesTarget {
     case comment(Parameters: AddCommentRequestModel)
     case removeComment(Parameters: RemoveCommentRequestModel)
     case blockUser(parameters: BlockUserRequestModel)
+    case reportUser(parameters: ReportUserRequestModel)
 }
 
 extension StoriesTarget: TargetType {
@@ -38,6 +39,8 @@ extension StoriesTarget: TargetType {
             return "/story/delete-comment"
         case .blockUser:
             return "/users/block-user"
+        case .reportUser:
+            return "/users/report-user"
         }
     }
     
@@ -52,6 +55,8 @@ extension StoriesTarget: TargetType {
         case .comment:
             return .post
         case .removeComment:
+            return .post
+        case .reportUser:
             return .post
         }
     }
@@ -73,6 +78,8 @@ extension StoriesTarget: TargetType {
         case .removeComment(let Parameters):
             return .request(Parameters)
         case .blockUser(let parameters):
+            return .request(parameters)
+        case .reportUser(let parameters):
             return .request(parameters)
         }
     }

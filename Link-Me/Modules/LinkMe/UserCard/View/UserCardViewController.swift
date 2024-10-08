@@ -7,15 +7,7 @@
 
 import UIKit
 
-
-/// Type of user card .
-///
-enum UserCardDirection {
-    case normal
-    case whenSendAddRequest
-}
-
-class UserCardViewController: UIViewController {
+class UserCardViewController: BaseWireFrame<UserCardViewModel> {
 
     // MARK: - Outlets
     
@@ -26,47 +18,37 @@ class UserCardViewController: UIViewController {
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var reactCardView: ReactCardView!
+    @IBOutlet weak var youLinkLbl: UILabel!
     @IBOutlet private weak var youLinkWithStackView: UIStackView!
     @IBOutlet private weak var activeButton: UIButton!
     @IBOutlet private weak var unlikeButton: UIButton!
-    
-    // MARK: - Properties
-    
-    private let viewModel: UserCardViewModel
-    private let coordinator: Coordinator
-    private let direction: UserCardDirection
-    private let userModel: UserCardModel
-    
-    // MARK: - Init
-    
-    init(viewModel: UserCardViewModel, coordinator: Coordinator,
-         direction: UserCardDirection, userModel: UserCardModel) {
-        self.viewModel = viewModel
-        self.coordinator = coordinator
-        self.direction = direction
-        self.userModel = userModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+ 
     // MARK: - Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func bind(viewModel: UserCardViewModel) {
         configureUI()
+        viewModel.viewDidLoad()
+        subscriptions()
+        subscriptionAcceptChat()
+        subscriptionRefuseChat()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handleTypeOfUserCard()
-        fillUserData()
     }
+    
+    //MARK: - Actions
+    @IBAction func seyHelloTapped(_ sender: Any) {
+        self.viewModel.acceptChatRequest()
+    }
+    
+    @IBAction func unlinkTapped(_ sender: Any) {
+        self.viewModel.refuseChatRequest()
+    }
+    
 }
 
 // MARK: - private Handlers
-
 extension UserCardViewController {
     private func configureUI() {
         parentView.layer.cornerRadius = 12
@@ -77,29 +59,54 @@ extension UserCardViewController {
     }
     
     private func handleTypeOfUserCard() {
-        switch direction {
-        case .normal:
+        switch viewModel.direction {
+        case .profile:
             configureNormalState()
-        default:
+        case .profileWithRequestChat:
             break
         }
     }
     
     private func configureNormalState() {
-        activeButton.setTitle("Send Link", for: .normal)
-        activeButton.setImage(UIImage(named: "link"), for: .normal)
+        activeButton.setTitle("Let's Talk", for: .normal)
+        activeButton.setImage(UIImage(named: "Chat"), for: .normal)
         unlikeButton.isHidden = true
         youLinkWithStackView.isHidden = true
         heightOfParentViewConstraint.constant = 450
     }
     
-    private func fillUserData() {
-        nameLabel.text = userModel.name
-        usernameLabel.text = "@\(String(describing: userModel.username ?? ""))"
-        descriptionLabel.text = userModel.bio
-        userImageView.setImage(url: URL(string: userModel.imagePath ?? ""))
-        reactCardView.setNumberOfLinks(userModel.numberOfLinks)
-        reactCardView.setNumberOfFollowing(userModel.numberOfFollowing)
-        reactCardView.setNumberOfLikes(userModel.numberOfLikes)
+    private func subscriptions() {
+        viewModel.oneUsersModel.subscribe { [weak self] userModel in
+            guard let self = self, let userModel = userModel.element else {return}
+            nameLabel.text = userModel.name
+            youLinkLbl.text = "You linked with \(userModel.name ?? "")"
+            usernameLabel.text = "@\(String(describing: userModel.user_name ?? ""))"
+            descriptionLabel.text = userModel.bio
+            userImageView.setImage(url: URL(string: userModel.imagePath ?? ""))
+            reactCardView.setNumberOfLinks(userModel.links)
+            reactCardView.setNumberOfFollowing(userModel.followers)
+            reactCardView.setNumberOfLikes(userModel.likes)
+        }.disposed(by: disposeBag)
+    }
+    
+    private func subscriptionAcceptChat() {
+        viewModel.acceptChat.subscribe { [weak self] response in
+            guard let self = self, let response = response.element else { return }
+            UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: { [weak self] in
+                // Get Top Controller With Extension
+                let topController = UIApplication.topViewController()
+                // Pressent New Controller over top controller
+                guard let vc = self?.coordinator.Main.viewcontroller(for: .chat(chatID: "\(self?.viewModel.chatID ?? 0)", chatFrom: .search)) else { return }
+                vc.modalPresentationStyle = .overFullScreen
+                topController?.present(vc, animated: true, completion: nil)
+            })
+        }.disposed(by: disposeBag)
+    }
+    
+    private func subscriptionRefuseChat() {
+        viewModel.refuseChat.subscribe { [weak self] response in
+            guard let self = self, let response = response.element else { return }
+            self.dismiss(animated: true)
+        }.disposed(by: disposeBag)
     }
 }

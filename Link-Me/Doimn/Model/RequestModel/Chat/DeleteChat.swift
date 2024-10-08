@@ -15,3 +15,19 @@ struct DeleteChatRequestModel: Encodable {
         case chatId = "chat_id"
     }
 }
+
+struct DeleteChatForMeRequestModel: Encodable {
+    let messageID: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case messageID = "message_id"
+    }
+}
+
+struct DeleteChatForEveryoneMeRequestModel: Encodable {
+    let messageID: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case messageID = "message_id"
+    }
+}

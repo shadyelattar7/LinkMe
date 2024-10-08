@@ -17,8 +17,8 @@ class MainNavigator: Navigator{
         //MARK: - LinkMe -
         
         case LinkMe
-        case userCard(direction: UserCardDirection, userModel: UserCardModel)
-        case newLink
+        case userCard(userID: Int, chatID: Int, direction: UserCardDirection)
+        case newLink(userID: Int, chatID: Int)
         case notificationList
         case purchases
         case beInTheTop(viewModel: BeInTopViewModel, cardModel: BeInTopModel)
@@ -30,6 +30,8 @@ class MainNavigator: Navigator{
         case requestChatState(requestChatModel: RequestChatModel)
         case aboutStars
         case chat(chatID: String, chatFrom: ChatType)
+        case ImagePreview(viewModel: ChatViewModel)
+        case RequestChatView(chatID: String)
         
         // MARK: Messages
         
@@ -41,7 +43,7 @@ class MainNavigator: Navigator{
         case MainStory
         case MediaPreview(mediaType: MediaType, image: UIImage = UIImage(), video: URL = URL(fileURLWithPath: ""))
         case StoryPreview
-        case ReportStory(storyID: Int)
+        case ReportStory(storyID: Int = 0, friendID: Int = 0, reportFrom: ReportFrom)
         case BottomListItem(listItems: [ItemList], itemID: Int)
         case FeaturesPremium
         case GoPremium
@@ -78,11 +80,16 @@ class MainNavigator: Navigator{
             let repo = FCMTokenWorker()
             let viewModel = LinkMeViewModel(fcmToken: repo)
             return LinkMeViewController(viewModel: viewModel, coordinator: coordinator)
-        case .userCard(let direction, let userModel):
-            let viewModel = UserCardViewModel()
-            return UserCardViewController(viewModel: viewModel, coordinator: coordinator, direction: direction, userModel: userModel)
-        case .newLink:
-            return NewLinkCardViewController(coordinator: self.coordinator)
+        case .userCard(let userID, let chatID, let direction):
+            let repo = LinkMeAPI()
+            let chatRepo = ChatWorker()
+            let viewModel = UserCardViewModel(linkMeApi: repo, chatApi: chatRepo, userID: userID, chatID: chatID, direction: direction)
+            return UserCardViewController(viewModel: viewModel, coordinator: coordinator)
+        case .newLink(let userID, let chatID):
+            let repo = LinkMeAPI()
+            let chatRepo = ChatWorker()
+            let viewModel = NewLinkCardViewModel(linkMeApi: repo, chatApi: chatRepo, userID: userID, chatID: chatID)
+            return NewLinkCardViewController(viewModel: viewModel, coordinator: coordinator)
         case .notificationList:
             return NotificationListViewController()
         case .purchases:
@@ -113,6 +120,11 @@ class MainNavigator: Navigator{
         case .chat(let chatID, let chatFrom):
             let viewModel = ChatViewModel(chatID: chatID, chatFrom: chatFrom)
             return ChatViewController(viewModel: viewModel, coordinator: coordinator)
+        case .ImagePreview(let viewModel):
+            return ImagePreviewVC(viewModel: viewModel, coordinator: coordinator)
+        case .RequestChatView(let chatID):
+            let viewModel = RequestChatViewModel(chatID: chatID)
+            return RequestChatViewController(viewModel: viewModel, coordinator: coordinator)
             
             // MARK: Message
             
@@ -142,8 +154,8 @@ class MainNavigator: Navigator{
             let repoMyAcc = MyAccountWorker()
             let viewModel = MainStoriesViewModel(myAccount: repoMyAcc)
             return StoryPreviewVC(viewModel: viewModel, coordinator: coordinator)
-        case .ReportStory(let storyID):
-            let viewModel = ReportStoryViewModel(storyID: storyID)
+        case .ReportStory(let storyID, let friendID, let reportFrom):
+            let viewModel = ReportStoryViewModel(storyID: storyID, friendID: friendID, reportFrom: reportFrom)
             return ReportStoryViewController(viewModel: viewModel, coordinator: coordinator)
             
         case .BottomListItem(let listItems, let itemID):

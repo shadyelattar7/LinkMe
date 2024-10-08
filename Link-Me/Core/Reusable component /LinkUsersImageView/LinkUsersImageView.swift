@@ -59,6 +59,14 @@ extension LinkUsersImageView {
         leftImageView.image = image
     }
     
+    func setRightImageFromURL(_ imageUrl: String) {
+        rightImageView.getImage(imageUrl: imageUrl)
+    }
+    
+    func setLeftImageFromURL(_ imageUrl: String) {
+        leftImageView.getImage(imageUrl: imageUrl)
+    }
+    
     func setSizeOfRightImage(_ size: CGFloat) {
         heightOfRightImageConstraint.constant = size
         widthOfRightImageConstraint.constant = size

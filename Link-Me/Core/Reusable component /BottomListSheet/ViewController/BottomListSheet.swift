@@ -9,12 +9,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol BottomListDismissedProtocol: AnyObject {
-    func dismiss()
+@objc protocol BottomListDismissedProtocol: AnyObject {
+    func dismiss() // Required method
+    
+    // Optional methods
+    @objc optional func deleteForEveryone(messageID: Int)
+    @objc optional func deleteForMe(messageID: Int)
+    @objc optional func unfriend()
+    @objc optional func addFriend()
+    @objc optional func reportUser()
+    @objc optional func blockUserInChat()
 }
 
 class BottomListSheet: UIViewController {
-
+    
     // MARK: Outlets
     
     @IBOutlet private weak var contentView: UIView!
@@ -152,13 +160,31 @@ extension BottomListSheet: UITableViewDataSource, UITableViewDelegate {
         case .deleteStory:
             viewModel.deleteStory(storyID: viewModel.getItemID())
         case .report:
-            let vc = coordinator.Main.viewcontroller(for: .ReportStory(storyID: viewModel.getItemID()))
+            let vc = coordinator.Main.viewcontroller(
+                for: .ReportStory(
+                    storyID: viewModel.getItemID(),
+                    reportFrom: .story
+                )
+            )
             self.present(vc, animated: true)
         case .deleteChat:
             let vc = coordinator.Main.viewcontroller(for: .deleteChats(chatsID:[viewModel.getItemID()])) as! DeleteChatSheetViewController
             vc.delegate = self
             self.present(vc, animated: true)
         case .blockUser(let userID):
+            viewModel.blockUser(userID: userID)
+        case .deleteForEveryone(let messageID):
+            self.delegate?.deleteForEveryone?(messageID: messageID)
+        case .deleteForMe(let messageID):
+            self.delegate?.deleteForMe?(messageID: messageID)
+        case .addFriend:
+            self.delegate?.addFriend?()
+        case .unfriend:
+            self.delegate?.unfriend?()
+        case .reportUser:
+            self.delegate?.reportUser?()
+        case .blockUserInChat(let userID):
+            self.delegate?.blockUserInChat?()
             viewModel.blockUser(userID: userID)
         default:
             break
@@ -168,7 +194,6 @@ extension BottomListSheet: UITableViewDataSource, UITableViewDelegate {
 
 
 // MARK: Delegate
-
 extension BottomListSheet: SuccessDeleteChatProtocol {
     func reload() {
         self.delegate?.dismiss()

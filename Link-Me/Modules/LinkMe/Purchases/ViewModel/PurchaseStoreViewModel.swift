@@ -70,6 +70,7 @@ extension PurchaseStoreViewModel {
             guard let self = self else {return}
             switch result{
             case .success(let model):
+                print("Model: \(model)")
                 self.stars.accept(model.data ?? [])
                 self.starsStatus.onNext(model.status ?? false)
             case .failure(let error):

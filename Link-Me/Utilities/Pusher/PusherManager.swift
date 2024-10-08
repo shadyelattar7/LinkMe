@@ -27,6 +27,10 @@ class PusherManager {
     func subscribeToChannel(channelName: String, eventName: String, eventCallback: @escaping (PusherEvent) -> Void) {
         let channel = pusher.subscribe(channelName)
         let _ = channel.bind(eventName: eventName, eventCallback: eventCallback)
+        
+        channel.bind(eventName: "pusher:subscription_error") { event in
+              print("Failed to subscribe to channel: \(channelName). Error: \(event.data ?? "No error information available.")")
+          }
     }
     
     // Add other functions as needed

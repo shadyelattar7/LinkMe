@@ -16,7 +16,7 @@ extension UIView {
         layer.borderColor = color.cgColor
         layer.borderWidth = borderWidth
     }
-
+    
     func roundCorners(corners: CACornerMask, radius: CGFloat) {
         layer.cornerRadius = radius
         layer.maskedCorners = corners
@@ -25,18 +25,18 @@ extension UIView {
     func roundCorners(radius: CGFloat) {
         layer.cornerRadius = radius
     }
-
+    
     func startShimmering() {
-//        let direction: GradientDirection = LanguageHandler.isArabic ? .rightLeft:.leftRight
-//        let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: direction )
-//        self.showAnimatedGradientSkeleton(animation: animation)
-
+        //        let direction: GradientDirection = LanguageHandler.isArabic ? .rightLeft:.leftRight
+        //        let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: direction )
+        //        self.showAnimatedGradientSkeleton(animation: animation)
+        
     }
-
+    
     func stopShimmering() {
-//        self.stopSkeletonAnimation()
+        //        self.stopSkeletonAnimation()
     }
-
+    
     func addShadow(color: UIColor, alpha: CGFloat, xValue: CGFloat, yValue: CGFloat, blur: CGFloat) {
         self.layer.masksToBounds = false
         self.layer.shadowColor = color.cgColor
@@ -44,7 +44,7 @@ extension UIView {
         self.layer.shadowOffset = CGSize(width: xValue, height: yValue)
         self.layer.shadowRadius = blur/2
     }
-
+    
     func addViewWithAnimation(animationDuration: TimeInterval = 0.3) {
         self.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         self.alpha = 0
@@ -53,7 +53,7 @@ extension UIView {
             self.transform = CGAffineTransform(scaleX: 1, y: 1)
         })
     }
-
+    
     func removeViewWithAnimation(animationDuration: TimeInterval = 0.3) {
         UIView.animate(withDuration: animationDuration, animations: {
             self.alpha = 0
@@ -63,8 +63,8 @@ extension UIView {
         })
     }
     class func fromNib<T: UIView>() -> T {
-           return Bundle(for: T.self).loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
-       }
+        return Bundle(for: T.self).loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
+    }
     
     // MARK: - Nib Identifier
     // Note: The Nib Assigned name must match it's class ViewModel
@@ -74,7 +74,7 @@ extension UIView {
 }
 
 extension UIView {
-
+    
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -84,7 +84,7 @@ extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
-
+    
     @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
@@ -93,7 +93,7 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
-
+    
     @IBInspectable var borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
@@ -102,7 +102,7 @@ extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
-
+    
 }
 
 extension UIImageView {
@@ -121,7 +121,7 @@ extension UINavigationController {
         self.popViewController(animated: animated)
         CATransaction.commit()
     }
-
+    
     func pushViewController(viewController: UIViewController, animated:Bool = true,  completion: @escaping ()->()) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(completion)
@@ -182,4 +182,35 @@ extension UIView {
         }
         return frame.height
     }
+}
+
+extension UIView {
+    static func performUIUpdates(
+        with updates: () -> Void,
+        then handle : @escaping () -> Void
+    ) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock {
+            handle()
+        }
+        updates()
+        CATransaction.commit()
+    }
+}
+
+extension UIApplication {
+class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+    if let navigationController = controller as? UINavigationController {
+        return topViewController(controller: navigationController.visibleViewController)
+    }
+    if let tabController = controller as? UITabBarController {
+        if let selected = tabController.selectedViewController {
+            return topViewController(controller: selected)
+        }
+    }
+    if let presented = controller?.presentedViewController {
+        return topViewController(controller: presented)
+    }
+    return controller
+}
 }

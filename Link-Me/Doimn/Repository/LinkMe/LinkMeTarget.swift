@@ -14,6 +14,7 @@ enum LinkMeTarget {
     case requestChat(Parameters: RequestChatRequestModel)
     case topUsersRemaining
     case buyStarts(Parameters: buyStarsRequestModel)
+    case oneUser(userID: Int)
 }
 
 extension LinkMeTarget: TargetType {
@@ -29,6 +30,8 @@ extension LinkMeTarget: TargetType {
             return "/top-users/remaining"
         case .buyStarts:
             return "/supscription/buy-stars"
+        case .oneUser(let userID):
+            return "/one-user?user_id=\(userID)"
         }
     }
     
@@ -38,12 +41,14 @@ extension LinkMeTarget: TargetType {
             return .get
         case .searchingForUsers, .requestChat, .buyStarts:
             return .post
+        case .oneUser:
+            return .get
         }
     }
     
     var task: Task {
         switch self {
-        case .topUsers, .topUsersRemaining:
+        case .topUsers, .topUsersRemaining, .oneUser:
             return .requestPlain
         case .searchingForUsers(let Parameters):
             return .request(Parameters)

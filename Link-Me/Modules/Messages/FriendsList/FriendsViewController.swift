@@ -57,10 +57,10 @@ extension FriendsViewController {
     }
     
     private func didSelectTableViewItem() {
-        Observable.zip(friendsTableView.rx.itemSelected, friendsTableView.rx.modelSelected(FriendModel.self)).subscribe(onNext:{ [weak self] (indexPath, item) in
+        Observable.zip(friendsTableView.rx.itemSelected, friendsTableView.rx.modelSelected(Friendship.self)).subscribe(onNext:{ [weak self] (indexPath, item) in
             
             guard let self = self else { return }
-            print("didSelectTableViewItem", item)
+            coordinator.Main.navigate(for: .chat(chatID: String(item.chatID), chatFrom: .messages))
         }).disposed(by: disposeBag)
     }
 }

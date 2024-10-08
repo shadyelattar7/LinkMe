@@ -42,7 +42,6 @@ class RequestChatStateViewModel {
         }
     }
     
-    
     func getRequestChatResponse() -> RequestChatData? {
         return requestChatModel
     }
@@ -72,7 +71,7 @@ class RequestChatStateViewModel {
                 let status = responseData.status
                 self.chatID = requestId
                 self.requestStatus = responseData.status
-                print("Request ID: \(requestId), Status: \(status)")
+                print("responseData: \(responseData)")
             }
         }
     }
@@ -94,7 +93,6 @@ extension RequestChatStateViewModel {
             case .success(let model):
                 guard let data = model.data else { return }
                // self.requestChatModel = data
-                print("ID: \(data.id ?? 0)")
                 self.subscribeRequest(id: data.id ?? 0)
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as? String

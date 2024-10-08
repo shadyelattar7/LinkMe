@@ -27,5 +27,5 @@ protocol ChatViewModelOutputs {
     func onReloadTableView(reload: @escaping () -> Void)
     func onChangeError(error: @escaping (String) -> Void)
     func fetchMessages()
-    func sendMessage()
+    func sendMessage(completion: @escaping ((Bool) -> Void))
 }

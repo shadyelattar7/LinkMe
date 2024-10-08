@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondHeaderChatView" customModule="Link_Me" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="xCS-Ws-9WU" id="uqB-EH-8ko"/>
                 <outlet property="menuButton" destination="aas-rD-wd0" id="Qbx-I2-Kzb"/>
-                <outlet property="statusIcon" destination="3NX-Ry-VtO" id="Kyu-wG-bOn"/>
-                <outlet property="statusTitle" destination="TPL-e4-bqE" id="Pvu-om-Dbk"/>
+                <outlet property="statusIcon" destination="Deh-dM-pet" id="g8B-Gw-hYy"/>
+                <outlet property="statusTitle" destination="9ie-yQ-nIC" id="QQJ-KC-0Ll"/>
                 <outlet property="userImage" destination="aNF-3y-hl8" id="DyC-af-ZfH"/>
                 <outlet property="userName" destination="6F0-Bd-Wej" id="MKw-ic-QPR"/>
             </connections>
@@ -24,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5yT-mz-2If">
-                    <rect key="frame" x="20" y="61" width="140.33333333333334" height="50"/>
+                    <rect key="frame" x="20" y="61" width="144" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCS-Ws-9WU">
                             <rect key="frame" x="0.0" y="8" width="30" height="34.333333333333336"/>
@@ -37,7 +43,7 @@
                                 <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="4MI-Fk-5cR"/>
                             </connections>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmrDiab 2" translatesAutoresizingMaskIntoConstraints="NO" id="aNF-3y-hl8" customClass="CircleImageView" customModule="Link_Me" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 62726" translatesAutoresizingMaskIntoConstraints="NO" id="aNF-3y-hl8" customClass="CircleImageView" customModule="Link_Me" customModuleProvider="target">
                             <rect key="frame" x="38" y="0.0" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="2Pd-If-6Sm"/>
@@ -45,31 +51,32 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="nLq-Up-5Gk">
-                            <rect key="frame" x="96" y="9.6666666666666714" width="44.333333333333343" height="31"/>
+                            <rect key="frame" x="96" y="9.6666666666666714" width="48" height="31"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F0-Bd-Wej">
-                                    <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="18"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="18"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qf1-h1-IsV">
-                                    <rect key="frame" x="0.0" y="21" width="44.333333333333336" height="10"/>
+                                    <rect key="frame" x="0.0" y="21" width="48" height="10"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IKE-B9-rCu">
-                                            <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="10"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mCS-X7-Tky">
+                                            <rect key="frame" x="0.0" y="0.0" width="48" height="10"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 366" translatesAutoresizingMaskIntoConstraints="NO" id="3NX-Ry-VtO">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Deh-dM-pet">
                                                     <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="10" id="oBs-Oe-8hr"/>
-                                                        <constraint firstAttribute="width" constant="10" id="qj2-ip-4gn"/>
+                                                        <constraint firstAttribute="height" constant="10" id="k0H-Cb-Hry"/>
+                                                        <constraint firstAttribute="width" constant="10" id="ttZ-OU-cT0"/>
                                                     </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPL-e4-bqE">
-                                                    <rect key="frame" x="18" y="0.0" width="26.333333333333329" height="10"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" red="0.37254901960784315" green="0.42352941176470588" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ie-yQ-nIC">
+                                                    <rect key="frame" x="16" y="0.0" width="32" height="10"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                                    <color key="textColor" red="0.37254901959999998" green="0.42352941179999998" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -105,9 +112,11 @@
         </view>
     </objects>
     <resources>
-        <image name="AmrDiab 2" width="600" height="900"/>
-        <image name="Ellipse 366" width="10" height="10"/>
+        <image name="Group 62726" width="104.66666412353516" height="104.66666412353516"/>
         <image name="Group 63270" width="4" height="18"/>
-        <image name="Stroke-1" width="11" height="20.333333969116211"/>
+        <image name="Stroke-1" width="11.333333015441895" height="20.333333969116211"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,6 +33,7 @@
                 <outlet property="userImageView" destination="VIr-VQ-ql3" id="tbE-To-g1l"/>
                 <outlet property="usernameLabel" destination="sh1-Tw-aHA" id="p6q-el-DV2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="youLinkLbl" destination="5Op-3K-iVc" id="S5Q-CM-GTp"/>
                 <outlet property="youLinkWithStackView" destination="hHk-uL-AYm" id="XwM-dN-bcQ"/>
             </connections>
         </placeholder>
@@ -131,6 +132,9 @@ Sadipscing Elitr, Sed Diam </string>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="Say Hello" image="yellowHand"/>
+                                            <connections>
+                                                <action selector="seyHelloTapped:" destination="-1" eventType="touchUpInside" id="ykP-cT-47E"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nT-Op-ep0">
                                             <rect key="frame" x="0.0" y="76" width="353" height="56"/>
@@ -140,6 +144,9 @@ Sadipscing Elitr, Sed Diam </string>
                                             <state key="normal" title="Unlink">
                                                 <color key="titleColor" name="strongPink"/>
                                             </state>
+                                            <connections>
+                                                <action selector="unlinkTapped:" destination="-1" eventType="touchUpInside" id="fA3-Qy-oNI"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>

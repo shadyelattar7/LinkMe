@@ -33,7 +33,11 @@ class BottomListSheetViewModel {
     
     // MARK: Init
     
-    init(storiesApi: StoriesAPIProtocol = StoriesAPI(), listItems: [ItemList], itemID: Int) {
+    init(
+        storiesApi: StoriesAPIProtocol = StoriesAPI(),
+        listItems: [ItemList],
+        itemID: Int
+    ) {
         self.storiesApi = storiesApi
         self.listItems = listItems
         self.itemID = itemID

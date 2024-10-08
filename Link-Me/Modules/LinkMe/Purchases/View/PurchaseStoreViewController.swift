@@ -177,6 +177,10 @@ class PurchaseStoreViewController: BaseWireFrame<PurchaseStoreViewModel>, SKProd
     
     //MARK: - Actions
     
+    @IBAction func subscriptionButtonTapped(_ sender: Any) {
+        self.coordinator.Main.navigate(for: .FeaturesPremium,navigtorTypes: .present())
+    }
+    
     @IBAction func howItWorkTapped(_ sender: Any) {
         self.coordinator.Main.navigate(for: .aboutStars, navigtorTypes: .present())
     }
@@ -229,6 +233,7 @@ extension PurchaseStoreViewController: UICollectionViewDataSource, UICollectionV
             let cell = collectionView.dequeue(cell: CardStoreCollectionViewCell.self, for: indexPath)
          //   let diamondsData = viewModel.diamonds.value[indexPath.row]
             cell.countLabel.text = "\(models[indexPath.row].localizedTitle)"
+            cell.hintLabel.text = "Diamond  \(models[indexPath.row].localizedDescription)"
             cell.subLabel.text = "$ \(models[indexPath.row].price)"
             return cell
             
@@ -256,7 +261,7 @@ extension PurchaseStoreViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width / 2) - 10, height: 80)
+        return CGSize(width: (collectionView.frame.width / 2) - 10, height: 130)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

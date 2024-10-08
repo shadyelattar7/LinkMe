@@ -12,7 +12,8 @@ struct DiamondsModel: Codable {
     let type, titleAr, titleEn: String?
     let number: Int?
     let price: Double?
-    let description, appleID, createdAt, updatedAt: String?
+    let appleID: Int?
+    let description, createdAt, updatedAt: String?
     let lang: String?
     
     enum CodingKeys: String, CodingKey {

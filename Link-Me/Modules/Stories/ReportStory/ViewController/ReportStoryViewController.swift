@@ -83,7 +83,13 @@ extension ReportStoryViewController {
     private func subscribeToSendReportButton() {
         sendReportButton.rx.tap.throttle(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance).subscribe { [weak self] _ in
             guard let self = self else {return}
-            self.viewModel.reportStory()
+            switch viewModel.reportFrom {
+            case .story:
+                self.viewModel.reportStory()
+            case .chat:
+                self.viewModel.reportUser()
+            }
+           
         }.disposed(by: disposeBag)
     }
 }

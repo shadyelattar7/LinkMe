@@ -37,6 +37,10 @@ class MessageListItemCell: UITableViewCell {
         let url = URL(string: cellItem?.imagePath ?? "")
         userImageView.setImage(url: url, placeholder: .placeholder2)
         nameLabel.text = cellItem?.name
+        // Assuming countLabel is a UILabel
+        countLabel.isHidden = (item.unread == nil || item.unread == 0)
+        countLabel.text = item.unread != nil && item.unread! > 0 ? "\(item.unread!)" : nil
+
     }
     
     func updateHiddenSelectedImageView(isHidden: Bool) {

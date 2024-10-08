@@ -23,17 +23,28 @@ struct User : Codable {
     let is_available : Int?
     let user_name : String?
     let imagePath : String?
+    let lastSeen: String?
     let is_profile_completed : Int?
     let country : String?
     let sent_tickets : Int?
     let unread_tickets : Int?
     let canAddStory: Int?
+    let followers: Int?
     let diamonds: Int?
     let is_star: Int?
     let chat_id: Int?
+    let is_blocked: Int?
+    let links: Int?
+    let likes: Int?
+    let is_link: Int?
+    let last_availablity: String?
+    let blocks_number: Int?
+    let can_see_links: Int?
+    let can_see_followers: Int?
+    let can_see_likes: Int?
+    let is_subscribed: Int?
     
     enum CodingKeys: String, CodingKey {
-        
         case id = "id"
         case name = "name"
         case email = "email"
@@ -49,14 +60,26 @@ struct User : Codable {
         case is_available = "is_available"
         case user_name = "user_name"
         case imagePath = "imagePath"
+        case lastSeen = "lastSeen"
         case is_profile_completed = "is_profile_completed"
         case country = "country"
         case sent_tickets = "sent_tickets"
         case unread_tickets = "unread_tickets"
         case canAddStory = "canAddStory"
+        case followers = "followers"
         case diamonds = "diamonds"
         case is_star = "is_star"
         case chat_id = "chat_id"
+        case links = "links"
+        case likes = "likes"
+        case is_blocked = "is_blocked"
+        case is_link = "is_link"
+        case last_availablity = "last_availablity"
+        case blocks_number = "blocks_number"
+        case can_see_likes = "can_see_likes"
+        case can_see_followers = "can_see_followers"
+        case can_see_links = "can_see_links"
+        case is_subscribed = "is_subscribed"
     }
     
 }

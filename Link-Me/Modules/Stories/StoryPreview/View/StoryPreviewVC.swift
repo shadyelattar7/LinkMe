@@ -72,7 +72,9 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
         userPreviewCollV.rx.setDelegate(self).disposed(by: disposeBag)
         self.myStoriesDate.bind(to: userPreviewCollV.rx.items(cellIdentifier: String(describing: UserPreviewCell.self), cellType: UserPreviewCell.self)){ (row, item, cell) in
             
-            guard let stories = self.myStoriesDate.value[row].stories else { return }
+            print("indexPath: \(self.indexPath)")
+            
+            guard let stories = self.myStoriesDate.value[self.indexPath].stories else { return }
             
             cell.userImage.getImage(imageUrl: self.myStoriesDate.value[row].imagePath ?? "")
             cell.usernameLabel.text = self.myStoriesDate.value[row].name ?? ""
@@ -140,7 +142,7 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
                 print("122 indexPath: \(indexPath.row)")
                 self.indexpathRow = indexPath.row
                 let cell = cell as! UserPreviewCell
-                if indexPath.row < 1{
+                if self.indexPath < 1{
                     self.dismiss(animated: true)
                 }else{
                     cell.segmentbar.restartCurrentSegment()

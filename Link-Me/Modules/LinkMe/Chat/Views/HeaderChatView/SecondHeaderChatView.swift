@@ -14,8 +14,8 @@ class SecondHeaderChatView: UIView {
     @IBOutlet weak var userImage: CircleImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var statusTitle: UILabel!
-    @IBOutlet weak var statusIcon: UIImageView!
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var statusIcon: UIView!
     
     var onBackClick: (() -> Void) = {}
     var onMenuClick: (() -> Void) = {}
@@ -34,6 +34,7 @@ class SecondHeaderChatView: UIView {
     
     private func initView() {
         loadViewFromNib()
+        statusIcon.makeCircleView()
     }
     
     // MARK: Actions

@@ -16,13 +16,12 @@ import UserNotifications
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable{
     
-    // var  coordinator: AppCoordinator!
-    var  window: UIWindow?
+    // var coordinator: AppCoordinator!
+    var window: UIWindow?
     var pusherManager = PusherManager.shared
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //        coordinator = AppCoordinator(window: window!)
-        //        coordinator.start()
+        //  coordinator = AppCoordinator(window: window!)
         
         LocalizationManager.shared.delegate = self
         LocalizationManager.shared.setAppInnitLangauge()
@@ -40,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable{
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         application.registerForRemoteNotifications()
-      let notifaction = UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             // Handle user's response
             if granted {
                 DispatchQueue.main.async {
@@ -97,53 +96,92 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
         print("userInfo: \(userInfo)")
-        if let type = userInfo[AnyHashable("type")] as? String {
-            print("Notification Type: \(type)")
+        
+        var shouldShowNotification = true
+        
+        // Access the "aps" dictionary, which contains the custom fields
+        if let aps = userInfo["aps"] as? [String: Any],
+           let typeString = aps["type"] as? String {
+            
+            if typeString == "request" {
+                shouldShowNotification = false
+                
+                // Extract the sender_id and chat_id from the "aps" dictionary
+                if let senderID = aps["sender_id"] as? Int,
+                   let chatID = aps["chat_id"] as? Int {
+                    presentFriendRequestViewController(userID: senderID, chatID: chatID)
+                }
+            } else if typeString == "friend_request" || typeString == "chat_accepted" {
+                shouldShowNotification = false
+                
+                if let chatID = aps["chat_id"] as? Int {
+                    if let _ = ActiveViewControllerManager.shared.currentViewController as? ChatViewController {
+                        NotificationCenter.default.post(name: .didReceiveFriendRequest, object: nil, userInfo: userInfo)
+                    } else {
+                        presentRequestChatViewController(chatID: String(chatID))
+                    }
+                }
+            }
         }
-        completionHandler([.banner, .sound, .badge])
+        
+        if shouldShowNotification {
+            completionHandler([.banner, .sound, .badge])
+        } else {
+            completionHandler([])
+        }
     }
+
+    
     
     // Handle tapped notifications
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-//        if let type = response.notification.request.content.userInfo[AnyHashable("type")] as? String {
-//            print("Notification Type: \(type)")
-//
-//            // Customize actions based on the notification type
-//            let acceptAction = UNNotificationAction(
-//                identifier: "ACCEPT_ACTION",
-//                title: "Accept",
-//                options: [.foreground]
-//            )
-//
-//            let rejectAction = UNNotificationAction(
-//                identifier: "REJECT_ACTION",
-//                title: "Reject",
-//                options: [.destructive]
-//            )
-//
-//            let categoryIdentifier: String
-//            var actions: [UNNotificationAction]
-//
-//            if type == "request" {
-//                // Display both accept and reject buttons for the "request" type
-//                categoryIdentifier = "REQUEST_CATEGORY"
-//                actions = [acceptAction, rejectAction]
-//            } else {
-//                // For other types, you can customize accordingly
-//                categoryIdentifier = "DEFAULT_CATEGORY"
-//                actions = []
-//            }
-//
-//            let category = UNNotificationCategory(
-//                identifier: "REQUEST_CATEGORY",
-//                actions: actions,
-//                intentIdentifiers: [],
-//                options: []
-//            )
-//
-//            UNUserNotificationCenter.current().setNotificationCategories([category])
-//        }
+        let userInfo = response.notification.request.content.userInfo
+        print("userInfo: \(userInfo)")
+
+        // Access the "aps" dictionary, which contains the custom fields
+        if let aps = userInfo["aps"] as? [String: Any],
+           let typeString = aps["type"] as? String, typeString == "request" {
+            
+            // Extract the sender_id and chat_id from the "aps" dictionary
+            if let senderIDString = aps["sender_id"] as? String,
+               let chatIDString = aps["chat_id"] as? String,
+               let chatID = Int(chatIDString) {
+                let userID = Int(senderIDString) ?? 0
+                presentFriendRequestViewController(userID: userID, chatID: chatID)
+            }
+        }
+        
         completionHandler()
+    }
+
+    
+    func presentFriendRequestViewController(userID: Int, chatID: Int) {
+        DispatchQueue.main.async {
+            if let topController = UIApplication.shared.keyWindow?.rootViewController {
+                let friendRequestVC = NewLinkCardViewController(
+                    viewModel: NewLinkCardViewModel(
+                        userID: userID,
+                        chatID: chatID
+                    ),
+                    coordinator: AppCoordinator()
+                )
+                topController.present(friendRequestVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func presentRequestChatViewController(chatID: String) {
+        DispatchQueue.main.async {
+            if let topController = UIApplication.shared.keyWindow?.rootViewController {
+                let friendRequestVC = RequestChatViewController(
+                    viewModel: RequestChatViewModel(
+                        chatID: chatID
+                    ),
+                    coordinator: AppCoordinator()
+                )
+                topController.present(friendRequestVC, animated: true, completion: nil)
+            }
+        }
     }
 }
 

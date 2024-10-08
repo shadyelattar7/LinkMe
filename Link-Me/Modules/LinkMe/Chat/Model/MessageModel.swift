@@ -17,6 +17,8 @@ struct ChatMessagePusherModel: Codable {
     let media_type: String? // image, sound
     let file: String? // path of image or sound
     let created_at: String? // "2023-12-29T19:09:02.000000Z\"
+    let one_time: Int?
+    let message_id: Int?
 }
 
 struct MessageModel: Codable {
@@ -31,10 +33,13 @@ struct MessageContentModel: Codable {
     let path: String?
     let senderId: String?
     let type: MessageType
+    let one_time: Int?
+    let message_id: Int?
 }
 
 enum MessageType: Codable {
     case text
     case image
     case audio
+    case video
 }

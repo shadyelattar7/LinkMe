@@ -42,8 +42,8 @@ class MessageListViewModel: BaseViewModel {
     
     // MARK: Get chat requests
     
-    func getChatRequests() {
-        worker.getChatRequests().subscribe(onNext:{ [weak self] result in
+    func getChatRequests(name: String) {
+        worker.getChatRequests(name: name).subscribe(onNext:{ [weak self] result in
             guard let self = self else { return }
             
             switch result {

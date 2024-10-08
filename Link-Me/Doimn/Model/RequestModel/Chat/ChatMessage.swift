@@ -15,6 +15,7 @@ enum ChatMessageType: String, Encodable {
 enum ChatMessageMediaType: String, Encodable {
     case sound
     case image
+    case video
 }
 
 struct ChatMessageRequestModel: Encodable {
@@ -22,17 +23,20 @@ struct ChatMessageRequestModel: Encodable {
     let message: String?
     let type: String?
     let mediaType: String?
+    let oneTime: String?
     
     enum CodingKeys: String, CodingKey {
         case chatId = "chat_id"
         case message, type
         case mediaType = "media_type"
+        case oneTime = "one_time"
     }
     
-    init(chatId: String?, message: String?, type: String?, mediaType: String?) {
+    init(chatId: String?, message: String?, type: String?, mediaType: String?, oneTime: String?) {
         self.chatId = chatId
         self.message = message
         self.type = type
         self.mediaType = mediaType
+        self.oneTime = oneTime
     }
 }

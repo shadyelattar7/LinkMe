@@ -17,7 +17,7 @@ class FriendsViewModel: BaseViewModel {
     private let worker: ChatWorkerProtocol
     private let disposedBag = DisposeBag()
     
-    var friends = BehaviorRelay<[FriendModel]>(value: [])
+    var friends = BehaviorRelay<[Friendship]>(value: [])
     
     private var errorMessage = PublishSubject<String>()
     var errorMessageObservable: Observable<String> {
@@ -34,26 +34,16 @@ class FriendsViewModel: BaseViewModel {
 }
 
 extension FriendsViewModel {
-    private func fetchFriends() {
-        let list = [FriendModel(id: 0, imagePath: "", name: "Ahmed", status: "Available Now"),
-                    FriendModel(id: 0, imagePath: "", name: "Ahmed", status: "Available Now"),
-                    FriendModel(id: 0, imagePath: "", name: "Ahmed", status: "Available Now"),
-                    FriendModel(id: 0, imagePath: "", name: "Ahmed", status: "Available Now")]
-        
-        friends.accept(list)
-        
-        
-//        worker.friends().subscribe { [weak self] result in
-//            guard let self = self else { return }
-//            
-//            switch result {
-//            case .success(let model):
-//                break
-////                self.data = model.data?.data ?? []
-//
-//            case .failure(let error):
-//                self.errorMessage.onNext(error.localizedDescription)
-//            }
-//        }.disposed(by: disposedBag)
+    private func fetchFriends() {  
+        worker.friends().subscribe { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let model):
+                friends.accept(model.data?.data ?? [])
+            case .failure(let error):
+                self.errorMessage.onNext(error.localizedDescription)
+            }
+        }.disposed(by: disposedBag)
     }
 }

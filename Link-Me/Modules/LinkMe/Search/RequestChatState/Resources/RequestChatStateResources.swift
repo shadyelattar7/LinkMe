@@ -98,11 +98,11 @@ enum RequestChatState {
         case .beforeSendRequest:
             return nil
         case .waitingForResponse:
-            return "its Nancy turn now she will accept your request or ignore it"
+            return "its \(userName) turn now, will accept your request or ignore it"
         case .ignoreYourRequest:
-            return "Opps!! Nancy ignore your request"
+            return "Opps!! \(userName) ignore your request"
         case .acceptYourRequest:
-            return "Wow!! Nancy accept your request start chat now!"
+            return "Wow!! \(userName) accept your request start chat now!"
         }
     }
     

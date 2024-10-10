@@ -158,7 +158,8 @@ class SettingsVC: BaseWireFrame<SettingsViewModel>, UIScrollViewDelegate,Navigat
             case 2:
                 print("Privacy Policy")
                 self.coordinator.Main.navigate(for: .CompanySupport(source: .PrivacyPolicy))
-                
+            case 3:
+                shareLink(shareLink: "https://www.youtube.com")
             default:
                 print("ERROR IN SECTION COMPANY SUPPORT")
             }

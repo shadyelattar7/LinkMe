@@ -37,9 +37,7 @@
                         <constraint firstAttribute="height" constant="56" id="q6i-24-ciy"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="textTitle" value="Let's go"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBoarder" value="NO"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Let's go"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>

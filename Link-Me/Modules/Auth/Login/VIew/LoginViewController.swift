@@ -34,7 +34,10 @@ class LoginViewController: BaseWireFrame<LoginViewModel> {
         skip_btn.underline()
         login_btn.MainBtn.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         create_btn.MainBtn.addTarget(self, action: #selector(createTapped), for: .touchUpInside)
-
+        forget_btn.setTitle("Forget password!".localized, for: .normal)
+        email_tf.placeholder = "Email Address".localized
+        login_btn.textTitle = "Login".localized
+        create_btn.textTitle = "Create New".localized
         skip_btn.isHidden = UDHelper.isVistor
     }
     

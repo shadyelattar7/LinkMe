@@ -19,6 +19,7 @@ class EnterCodeViewController: BaseWireFrame<EnterCodeViewModel>, NavigationBarD
     
     //MARK: - @IBOutlet
     
+    @IBOutlet weak var sendNewCodeLbl: UILabel!
     @IBOutlet weak var navBar: NavigationBarView!
     @IBOutlet weak var subtitle_lbl: UILabel!
     @IBOutlet private weak var verificationCode: UITextField!
@@ -28,11 +29,12 @@ class EnterCodeViewController: BaseWireFrame<EnterCodeViewModel>, NavigationBarD
     @IBOutlet weak var verifyEmail_btn: MainButton!
     @IBOutlet weak var title_lbl: UILabel!
     
+    @IBOutlet weak var weSendVeriftionLbl: UILabel!
     //MARK: - Variables
     
     private var timer = Timer()
     private var count = 120
-    private var resentStr = "resend"
+    private var resentStr = "resend".localized
     //2
     weak var delegate: VerifyEmailData!
     
@@ -57,7 +59,8 @@ class EnterCodeViewController: BaseWireFrame<EnterCodeViewModel>, NavigationBarD
     
     private func setupView(){
         self.navBar.configure(with: NavigationBarViewModel(navBarTitle: ""), and: self)
-        
+        sendNewCodeLbl.text =  "Send New Code".localized
+        weSendVeriftionLbl.text  =  "we send you a verification code on \nthis email abc*****@gmail.com".localized
         verificationCode.inputAccessoryView = UIView()
         verificationCode.becomeFirstResponder()
         verificationCode.keyboardType = .asciiCapableNumberPad

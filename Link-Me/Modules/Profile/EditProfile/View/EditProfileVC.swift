@@ -28,6 +28,7 @@ class EditProfileVC: BaseWireFrame<EditProfileViewModel>, NavigationBarDelegate 
     @IBOutlet weak var femaleIcon_iv: UIImageView!
     @IBOutlet weak var femaleTitle_lbl: UILabel!
     
+    @IBOutlet weak var bioTitle: UILabel!
     @IBOutlet weak var bio_TV: UITextView!
     @IBOutlet weak var save_btn: MainButton!
     

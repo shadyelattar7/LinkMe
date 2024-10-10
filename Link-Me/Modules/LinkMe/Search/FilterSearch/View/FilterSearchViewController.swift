@@ -185,7 +185,7 @@ extension FilterSearchViewController {
          // Go to market (to buy diamonds to continue advanced search)
          */
         
-        self.activeButton.setTitle("Start Searching", for: .normal)
+        self.activeButton.setTitle("Start Searching".localized, for: .normal)
     }
     
     private func addActionToActiveButton() {

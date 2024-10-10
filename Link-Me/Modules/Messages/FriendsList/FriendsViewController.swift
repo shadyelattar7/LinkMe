@@ -30,7 +30,7 @@ class FriendsViewController: BaseWireFrame<FriendsViewModel> {
 
 extension FriendsViewController: NavigationBarDelegate {
     private func configureUI() {
-        navigationView.configure(with: NavigationBarViewModel(navBarTitle: "Friends"), and: self)
+        navigationView.configure(with: NavigationBarViewModel(navBarTitle: "Friends".localized), and: self)
     }
     
     func backButtonPressed() {

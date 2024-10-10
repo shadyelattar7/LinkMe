@@ -35,11 +35,11 @@ class VerifyEmailViewController: BaseWireFrame<VerifyEmailViewModel>, Navigation
         
         switch viewModel.source{
         case .signUp:
-            title_lbl.text = "Create New \nAccount"
+            title_lbl.text = "Create New \nAccount".localized
         case .resetPassword:
-            title_lbl.text = "Reset \nPassword"
+            title_lbl.text = "Reset \nPassword".localized
         case .changeEmail:
-            title_lbl.text = "Create New \nAccount"
+            title_lbl.text = "Create New \nAccount".localized
         case .none:
             print("ERROR")
         

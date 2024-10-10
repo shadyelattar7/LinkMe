@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -70,6 +70,9 @@
                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
                                             <color key="textColor" name="strongGray"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Available diamonds "/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7X-7N-upQ">
                                             <rect key="frame" x="0.0" y="30" width="353" height="80"/>
@@ -110,6 +113,9 @@
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                     <color key="textColor" name="strongGray"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Diamond"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
@@ -136,6 +142,9 @@
                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
                                             <color key="textColor" name="strongGray"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="My subscription"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cmj-JF-fvy">
                                             <rect key="frame" x="0.0" y="30.000000000000014" width="353" height="205.33333333333337"/>
@@ -176,12 +185,18 @@
                                                                                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="19"/>
                                                                                     <color key="textColor" name="mainColor"/>
                                                                                     <nil key="highlightedColor"/>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Premium"/>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20/Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS6-LD-1fa">
                                                                                     <rect key="frame" x="106.66666666666666" y="0.0" width="84.666666666666657" height="34"/>
                                                                                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="15"/>
                                                                                     <color key="textColor" name="strongPurple"/>
                                                                                     <nil key="highlightedColor"/>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="$20/Month"/>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
@@ -190,6 +205,9 @@
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="11"/>
                                                                             <color key="textColor" name="strongGray"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Expired On 2 March 2023"/>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
@@ -214,12 +232,18 @@
                                                             <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins Light" pointSize="16"/>
                                                             <color key="textColor" name="strongGray"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Your LinkMe subscription expired on"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 October " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnP-mk-Wyf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 October" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnP-mk-Wyf">
                                                             <rect key="frame" x="0.0" y="22.666666666666686" width="353" height="22.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins Light" pointSize="16"/>
                                                             <color key="textColor" name="strongGray"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="15 October"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
@@ -234,6 +258,9 @@
                                                     <state key="normal" title="Subscription Now">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Subscription Now"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="subscriptionButtonTapped:" destination="-1" eventType="touchUpInside" id="uZA-RT-7HT"/>
                                                     </connections>
@@ -251,6 +278,9 @@
                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
                                             <color key="textColor" name="strongGray"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Diamonds Store"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mBI-35-LMW">
                                             <rect key="frame" x="0.0" y="31" width="353" height="128"/>
@@ -278,6 +308,9 @@
                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="15"/>
                                                     <color key="textColor" name="strongGray"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Stars Store"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dk-nf-Jfo">
                                                     <rect key="frame" x="263" y="0.0" width="90" height="33"/>
@@ -286,6 +319,9 @@
                                                     <state key="normal" title="How it work!">
                                                         <color key="titleColor" name="DarkBlue"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="How it work!"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="howItWorkTapped:" destination="-1" eventType="touchUpInside" id="tAY-Hy-YKY"/>
                                                     </connections>
@@ -314,6 +350,9 @@
                                     <state key="normal" title="Privacy Policy &amp; terms of use">
                                         <color key="titleColor" name="DarkBlue"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Privacy Policy &amp; terms of use"/>
+                                    </userDefinedRuntimeAttributes>
                                 </button>
                             </subviews>
                         </stackView>

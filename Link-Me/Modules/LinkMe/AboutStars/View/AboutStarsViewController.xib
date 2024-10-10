@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -32,10 +32,31 @@
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                     <color key="textColor" name="DarkBlue"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="How it work!"/>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJf-XP-VJw">
                     <rect key="frame" x="20" y="218" width="353" height="233"/>
-                    <mutableString key="text">Lorem Ipsum Dolor Sit Amet, Consetetur 
+                    <string key="text">Lorem Ipsum Dolor Sit Amet, Consetetur 
+Sadipscing Elitr, Sed Diam Nonumy Eirmod 
+Tempor Invidunt Ut Labore Et Dolore Magna 
+Aliquyam Erat, Sed Diam Voluptua. 
+At Vero Eos Et Accusam Et Justo Duo Dolores Et 
+Ea Rebum. Stet Clita Kasd Gubergren, No Sea 
+Takimata Sanctus Est Lorem Ipsum Dolor Sit 
+Amet. Lorem Ipsum Dolor Sit Amet, Consetetur 
+Sadipscing Elitr, Sed Diam Nonumy Eirmod 
+Tempor Invidunt Ut Labore Et Dolore Magna 
+Aliquyam Erat, Sed Diam Voluptua.
+ At Vero Eos Et Accusam Et Justo Duo Dolores Et 
+Ea Rebum. Stet Clita Kasd.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey">
+                            <mutableString key="value">Lorem Ipsum Dolor Sit Amet, Consetetur 
 Sadipscing Elitr, Sed Diam Nonumy Eirmod 
 Tempor Invidunt Ut Labore Et Dolore Magna 
 Aliquyam Erat, Sed Diam Voluptua. 
@@ -48,9 +69,8 @@ Tempor Invidunt Ut Labore Et Dolore Magna
 Aliquyam Erat, Sed Diam Voluptua.
  At Vero Eos Et Accusam Et Justo Duo Dolores Et 
 Ea Rebum. Stet Clita Kasd.</mutableString>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -71,7 +91,7 @@ Ea Rebum. Stet Clita Kasd.</mutableString>
     <resources>
         <image name="Group 63267" width="71" height="71"/>
         <namedColor name="DarkBlue">
-            <color red="0.035000000149011612" green="0.25099998712539673" blue="0.40400001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.031372549019607843" green="0.25098039215686274" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

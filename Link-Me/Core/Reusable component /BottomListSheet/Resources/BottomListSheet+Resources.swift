@@ -25,17 +25,17 @@ enum ItemList {
     
     var title: String {
         switch self {
-        case .report: return "Report"
-        case .unfriend: return "Unfriend"
-        case .blockUser: return "Block This User"
-        case .deleteStory: return "Delete Story"
-        case .editStory: return "Edit Story"
-        case .deleteChat: return "Delete This Chat"
-        case .addFriend: return "Add friend"
-        case .reportUser: return "Report this User"
-        case .deleteForEveryone: return "Delete For Everyone"
-        case .deleteForMe: return "Delete For Me"
-        case .blockUserInChat: return "Block This User"
+        case .report: return "Report".localized
+        case .unfriend: return "Unfriend".localized
+        case .blockUser: return "Block This User".localized
+        case .deleteStory: return "Delete Story".localized
+        case .editStory: return "Edit Story".localized
+        case .deleteChat: return "Delete This Chat".localized
+        case .addFriend: return "Add friend".localized
+        case .reportUser: return "Report this User".localized
+        case .deleteForEveryone: return "Delete For Everyone".localized
+        case .deleteForMe: return "Delete For Me".localized
+        case .blockUserInChat: return "Block This User".localized
         }
     }
     

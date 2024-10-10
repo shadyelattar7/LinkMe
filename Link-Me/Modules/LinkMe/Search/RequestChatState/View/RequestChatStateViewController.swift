@@ -122,6 +122,7 @@ extension RequestChatStateViewController {
         stateView.makeCircleView()
         configureLinkUsersView()
         configureButtonUI()
+        activeButton.setTitle("Cancel".localized, for: .normal)
     }
     
     private func updateRequestChatModel() {

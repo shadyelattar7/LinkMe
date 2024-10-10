@@ -1,5 +1,4 @@
 {
-  "originHash" : "83cb2f0acbd643c9264ee9ec197c01d03ccbadffc6e6fa9c70892a890f4b4ff5",
   "pins" : [
     {
       "identity" : "abseil-cpp-swiftpm",
@@ -128,5 +127,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

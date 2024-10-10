@@ -191,7 +191,7 @@ class PurchaseStoreViewController: BaseWireFrame<PurchaseStoreViewModel>, SKProd
 
 extension PurchaseStoreViewController: NavigationBarDelegate {
     private func configureUI() {
-        headerView.configure(with: NavigationBarViewModel(navBarTitle: "Purchases"), and: self)
+        headerView.configure(with: NavigationBarViewModel(navBarTitle: "Purchases".localized), and: self)
         availableDiamondsView.layer.cornerRadius = 8
         diamondView.makeCircleView()
         mySubscriptionStackView.layer.cornerRadius = 8
@@ -231,18 +231,18 @@ extension PurchaseStoreViewController: UICollectionViewDataSource, UICollectionV
         switch collectionView {
         case diamondsStoreCollectionView:
             let cell = collectionView.dequeue(cell: CardStoreCollectionViewCell.self, for: indexPath)
-         //   let diamondsData = viewModel.diamonds.value[indexPath.row]
+            //   let diamondsData = viewModel.diamonds.value[indexPath.row]
             cell.countLabel.text = "\(models[indexPath.row].localizedTitle)"
-            cell.hintLabel.text = "Diamond  \(models[indexPath.row].localizedDescription)"
-            cell.subLabel.text = "$ \(models[indexPath.row].price)"
+            cell.hintLabel.text = "Diamond".localized + " \(models[indexPath.row].localizedDescription)"
+            cell.subLabel.text = "$" + " \(models[indexPath.row].price)"
             return cell
             
         default:
             let cell = collectionView.dequeue(cell: CardStoreCollectionViewCell.self, for: indexPath)
             cell.applyStarsStore()
             let starsData = viewModel.stars.value[indexPath.row]
-            cell.countLabel.text = "\(starsData.hours ?? 0) Hour"
-            cell.subLabel.text = "\(starsData.diamonds ?? 0) Diamond"
+            cell.countLabel.text = "\(starsData.hours ?? 0) " + "Hour".localized
+            cell.subLabel.text = "\(starsData.diamonds ?? 0) " + "Diamond".localized
             return cell
         }
     }

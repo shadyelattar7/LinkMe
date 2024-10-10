@@ -48,7 +48,7 @@ class DeleteChatSheetViewController: BaseWireFrame<DeleteChatSheetViewModel> {
 extension DeleteChatSheetViewController {
     private func configureUI() {
         itemsParentView.layer.cornerRadius = 12
-        subtitleLabel.text = "Delete \(viewModel.getNumberOfChats()) chat"
+        subtitleLabel.text = "Delete".localized + " \(viewModel.getNumberOfChats()) " + "chat".localized
         configureHandViewUI()
     }
     private func configureHandViewUI() {

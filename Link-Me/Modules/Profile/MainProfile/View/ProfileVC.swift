@@ -135,20 +135,17 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
                present(vc, animated: true)
            }
     }
-    private func shareLink(shareLink: String) {
-            let activityViewController = UIActivityViewController(activityItems: [shareLink], applicationActivities: nil)
-            
-            // Present the activity view controller
-            if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
-                rootViewController.present(activityViewController, animated: true, completion: nil)
-            }
-        }
-    
 }
 extension ProfileVC : ReloadAfterDismiss {
     func reloadAfter() {
         viewModel.getMyAccountData()
     }
-    
-    
 }
+public func shareLink(shareLink: String) {
+        let activityViewController = UIActivityViewController(activityItems: [shareLink], applicationActivities: nil)
+        
+        // Present the activity view controller
+        if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+            rootViewController.present(activityViewController, animated: true, completion: nil)
+        }
+    }

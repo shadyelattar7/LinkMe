@@ -16,11 +16,11 @@ enum HeaderChatButtonType {
     
     var buttonTitle: String {
         switch self {
-        case .add: return "add"
-        case .send: return "send"
-        case .accept: return "Accept"
-        case .ignore: return "ignore"
-        case .endChat: return "end chat"
+        case .add: return "add".localized
+        case .send: return "send".localized
+        case .accept: return "Accept".localized
+        case .ignore: return "ignore".localized
+        case .endChat: return "end chat".localized
         }
     }
     

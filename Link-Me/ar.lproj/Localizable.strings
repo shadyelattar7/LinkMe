@@ -62,6 +62,7 @@
 "Wrirte Your Name" = "اكتب اسمك";
 "Wrirte Your Username" = "اكتب اسم المستخدم الخاص بك";
 "Wrirte Your Age" = "اكتب عمرك";
+"Bio" = "السيرة الذاتية";
 
 //MARK: - Settings -
 
@@ -156,3 +157,107 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 " days ago" = "منذ يوم";
 " weeks ago" = "منذ أسبوع";
 "pending" = "قيد الانتظار";
+"Exit" = "خروج";
+"Buy More" = "اشتر المزيد";
+"Age" = "العمر";
+"Start Searching" = "ابدأ البحث";
+"Link Me Search" = "ربط ني بالبحث";
+"Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam" = "لوريم إيبسوم دولور سيت أميت، كونستيتتور ساديبسينغ إليتر، سيد ديام";
+"Country" = "البلد";
+//MARK: - Messages -
+"Edit" = "تعديل";
+"Search messages" = "البحث في الرسائل";
+"Friends" = "الأصدقاء";
+"Done" = "تم";
+"Selected" = "محدد";
+"Delete" = "حذف";
+"chat" = "دردشة";
+"ignore your" = "تجاهل";
+"request" = "الطلب";
+"This Chat Will End In" = "ستنتهي هذه الدردشة خلال";
+"00 min 00 sec" = "00 دقيقة 00 ثانية";
+"Report" = "إبلاغ";
+"Unfriend" = "إلغاء الصداقة";
+"Block This User" = "حظر هذا المستخدم";
+"Delete Story" = "حذف القصة";
+"Edit Story" = "تعديل القصة";
+"Delete This Chat" = "حذف هذه الدردشة";
+"Add friend" = "إضافة صديق";
+"Report this User" = "الإبلاغ عن هذا المستخدم";
+"Delete For Everyone" = "حذف للجميع";
+"Delete For Me" = "حذف بالنسبة لي";
+"Block This User" = "حظر هذا المستخدم";
+"0 Selected" = "محدد 0";
+"Please write the right reason why you report this story" = "يرجى كتابة السبب الصحيح الذي يجعلك تبلغ عن هذه القصة";
+"Send report" = "إرسال التقرير";
+"Report" = "إبلاغ";
+"add" = "إضافة";
+"send" = "إرسال";
+"Accept" = "قبول";
+"ignore" = "تجاهل";
+"end chat" = "إنهاء الدردشة";
+"Request Chat" = "طلب دردشة";
+"Search Again" = "ابحث مرة أخرى";
+"Choose time" = "اختر الوقت";
+"Let's Talk" = "دعنا نتحدث";
+"You linked with" = "لقد ربطت مع";
+
+//MARK: - Purchases -
+
+"Purchases" = "المشتريات";
+"Available diamonds " = "الألماس المتوفر";
+"My subscription" = "اشتراكي";
+"Subscription Now" = "اشترك الآن";
+"Diamonds Store" = "متجر الألماس";
+"Stars Store" = "متجر النجوم";
+"How it work!" = "كيف يعمل!";
+"Privacy Policy & terms of use" = "سياسة الخصوصية وشروط الاستخدام";
+"15 October" = "15 أكتوبر";
+"Your LinkMe subscription expired on" = "انتهت صلاحية اشتراكك في LinkMe في";
+"Expired On 2 March 2023" = "انتهت الصلاحية في 2 مارس 2023";
+"$20/Month" = "$20/شهرياً";
+"Premium" = "مميز";
+"Hour" = "ساعة";
+
+//MARK: -  Stories -
+"Stories" = "القصص";
+"Friends stories" = "قصص الأصدقاء";
+"Others stories" = "قصص الآخرين";
+//MARK: -  Auth -
+"Hey!
+Login Now" = "مرحباً!
+ سجل الدخول الآن";
+"Skip now" = "تجاوز الآن";
+"Login" = "تسجيل الدخول";
+"Create New" = "إنشاء جديد";
+"Email Address" = "عنوان البريد الإلكتروني";
+"Forget password!" = "نسيت كلمة المرور!";
+"we will use this email to send you the verification code" = "سنستخدم هذا البريد الإلكتروني
+لإرسال رمز التحقق إليك";
+"Already Have Account! /" = "هل لديك حساب بالفعل! /";
+"Create New Account" = "إنشاء حساب جديد";
+"Ops! This Code Is Wrong" = "عذرًا! هذا الرمز خاطئ";
+"resend" = "إعادة إرسال";
+"we send you a verification code on \nthis email abc*****@gmail.com" = "أرسلنا لك رمز التحقق على \nهذا البريد الإلكتروني abc*****@gmail.com";
+"Verify email" = "تحقق من البريد الإلكتروني";
+"Your Email Is Verified" = "تم التحقق من بريدك الإلكتروني";
+"click continue to finish setup your account" = "انقر على متابعة لإنهاء إعداد حسابك";
+"continue" = "متابعة";
+"Your Age" = "عمرك";
+"Create Password" = "إنشاء كلمة المرور";
+"Agree to the terms and conditions" = "موافقة على الشروط والأحكام";
+"Wrirte Your Name" = "اكتب اسمك";
+"Dd Mm yyy" = "يوم شهر سنة";
+"Password" = "كلمة المرور";
+"Confrim Password" = "تأكيد كلمة المرور";
+"Done" = "تم";
+"Create New \nAccount" = "إنشاء \nحساب جديد";
+"Reset \nPassword" = "إعادة تعيين \nكلمة المرور";
+"Enter \nThe Code" = "أدخل \nالرمز";
+"Send New Code" = "إرسال رمز جديد";
+"Please Complete Your Profile To Get Access To All Futures" = "يرجى إكمال ملفك الشخصي للحصول على إمكانية الوصول إلى جميع الميزات";
+"Complete Your Profile" = "أكمل ملفك الشخصي";
+"Later" = "لاحقًا";
+"Create A New \nPassword" = "أنشئ كلمة مرور \nجديدة";
+"Save changing" = "حفظ التغييرات";
+"Next" = "التالي";

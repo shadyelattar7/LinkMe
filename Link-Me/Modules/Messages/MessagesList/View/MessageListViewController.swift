@@ -45,9 +45,9 @@ class MessageListViewController: BaseWireFrame<MessageListViewModel> {
     
     @IBAction private func didTappedOnEditButton(_ sender: UIButton) {
         self.listOfSelectedChats = []
-        if sender.titleLabel?.text == "Edit" {
+        if sender.titleLabel?.text == "Edit".localized {
             makeEditMood()
-        } else if sender.titleLabel?.text == "Done" {
+        } else if sender.titleLabel?.text == "Done".localized {
             makeNormalMood()
         }
         self.reloadTableView()
@@ -84,7 +84,7 @@ extension MessageListViewController {
         messagesTableView.allowsMultipleSelectionDuringEditing = false
         messagesTableView.allowsMultipleSelection = false
         hiddenSelectedButton.accept(true)
-        editButton.setTitle("Edit", for: .normal)
+        editButton.setTitle("Edit".localized, for: .normal)
         bottomView.isHidden = true
         self.tabBarController?.tabBar.isHidden = false
     }
@@ -93,7 +93,7 @@ extension MessageListViewController {
         messagesTableView.allowsMultipleSelectionDuringEditing = true
         messagesTableView.allowsMultipleSelection = true
         hiddenSelectedButton.accept(false)
-        editButton.setTitle("Done", for: .normal)
+        editButton.setTitle("Done".localized, for: .normal)
         bottomView.isHidden = false
         self.tabBarController?.tabBar.isHidden = true
     }
@@ -128,6 +128,7 @@ extension MessageListViewController {
         bottomView.isHidden = true
         editButton.layer.cornerRadius = 18
         countLabel.makeCircleView()
+        searchBar.placeholder = "Search messages".localized
         searchBar.barTintColor = UIColor.white
         searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
         searchBar.delegate = self
@@ -192,7 +193,7 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
             cell.updateSelectedCell(isSelected: true)
         }
         
-        itemSelectedLabel.text = "\(listOfSelectedChats.count) Selected"
+        itemSelectedLabel.text = "\(listOfSelectedChats.count) " + "Selected".localized
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -205,7 +206,7 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
             }
         }
         
-        itemSelectedLabel.text = "\(listOfSelectedChats.count) Selected"
+        itemSelectedLabel.text = "\(listOfSelectedChats.count) " + "Selected".localized
     }
 }
 

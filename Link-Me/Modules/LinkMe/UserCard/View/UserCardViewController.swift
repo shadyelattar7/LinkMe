@@ -68,7 +68,7 @@ extension UserCardViewController {
     }
     
     private func configureNormalState() {
-        activeButton.setTitle("Let's Talk", for: .normal)
+        activeButton.setTitle("Let's Talk".localized, for: .normal)
         activeButton.setImage(UIImage(named: "Chat"), for: .normal)
         unlikeButton.isHidden = true
         youLinkWithStackView.isHidden = true
@@ -79,7 +79,7 @@ extension UserCardViewController {
         viewModel.oneUsersModel.subscribe { [weak self] userModel in
             guard let self = self, let userModel = userModel.element else {return}
             nameLabel.text = userModel.name
-            youLinkLbl.text = "You linked with \(userModel.name ?? "")"
+            youLinkLbl.text = "You linked with".localized + " \(userModel.name ?? "")"
             usernameLabel.text = "@\(String(describing: userModel.user_name ?? ""))"
             descriptionLabel.text = userModel.bio
             userImageView.setImage(url: URL(string: userModel.imagePath ?? ""))

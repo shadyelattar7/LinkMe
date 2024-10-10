@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,6 +33,7 @@
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="textTitle" value="Complete Your Profile"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Complete Your Profile"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIV-Nd-Lyc">
@@ -42,6 +43,9 @@
                             <state key="normal" title="Later">
                                 <color key="titleColor" name="strongGray"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Later"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="laterTapped:" destination="-1" eventType="touchUpInside" id="BlU-XL-kcp"/>
                             </connections>
@@ -49,14 +53,14 @@
                     </subviews>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 63273" translatesAutoresizingMaskIntoConstraints="NO" id="Kr4-e4-vrH">
-                    <rect key="frame" x="67.5" y="50" width="240" height="240"/>
+                    <rect key="frame" x="67.5" y="70" width="240" height="240"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="240" id="Uck-Md-KJG"/>
                         <constraint firstAttribute="width" constant="240" id="at6-Rg-vCJ"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHA-SI-pYJ" customClass="UserPhotoProfileView" customModule="Link_Me" customModuleProvider="target">
-                    <rect key="frame" x="152.5" y="135" width="70" height="70"/>
+                    <rect key="frame" x="152.5" y="155" width="70" height="70"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="JsM-p4-bKR"/>
@@ -64,21 +68,25 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8rf-xE-IMd">
-                    <rect key="frame" x="66.5" y="321" width="242" height="64"/>
+                    <rect key="frame" x="-4.5" y="341" width="384" height="47.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Your Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzB-FU-AMa">
-                            <rect key="frame" x="0.0" y="0.0" width="242" height="20.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Complete Your Profile"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-Vp-KdO">
-                            <rect key="frame" x="0.0" y="30.5" width="242" height="33.5"/>
-                            <string key="text">Please Complete Your Profile To Get 
-Access To All Futures</string>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Complete Your Profile To Get Access To All Futures" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-Vp-KdO">
+                            <rect key="frame" x="0.0" y="30.5" width="384" height="17"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Please Complete Your Profile To Get Access To All Futures"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                 </stackView>
@@ -102,7 +110,7 @@ Access To All Futures</string>
     <resources>
         <image name="Group 63273" width="272" height="272"/>
         <namedColor name="strongGray">
-            <color red="0.37299999594688416" green="0.42399999499320984" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.37254901960784315" green="0.42352941176470588" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

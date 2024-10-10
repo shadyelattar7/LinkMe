@@ -87,7 +87,7 @@ extension HeaderChatView {
     }
     
     func setOtherPersonName(_ name: String) {
-        ignoreTextLabel.text = "\(name) ignore your"
+        ignoreTextLabel.text = "\(name)" + "ignore your".localized
     }
     
     func onClickBackButton(_ onClick: @escaping () -> Void) {
@@ -195,7 +195,7 @@ extension HeaderChatView {
         
         if remainingTime <= 0 {
             countdownTimer?.invalidate()
-            timerLabel.text = "00 min 00 sec"
+            timerLabel.text = "00 min 00 sec".localized
             timerEnded()
         } else {
             let minutes = Int(remainingTime) % 3600 / 60

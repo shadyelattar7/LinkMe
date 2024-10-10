@@ -72,7 +72,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             if indexPath.row == 0{
                 print("Add Store")
                 
-                if UDHelper.fetchUserData?.canAddStory == 0{
+                if UDHelper.fetchUserData?.canAddStory == 10{
                     self.coordinator.Main.navigate(for: .FeaturesPremium,navigtorTypes: .present())
                 }else{
                     if UDHelper.isVistor {
@@ -83,7 +83,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             }else{
                 vc.indexPath = indexPath.row
                 vc.myStoriesDate = self.viewModel.storiesData
-                vc.modalPresentationStyle = .overFullScreen
+               // vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true)
             }
             
@@ -161,7 +161,7 @@ extension MainStoriesVC {
             vc.indexPath = indexPath.row
             print("self.viewModel.storiesPost: \(self.viewModel.storiesPost)")
             vc.myStoriesDate = self.viewModel.storiesPost
-            vc.modalPresentationStyle = .overFullScreen
+         //   vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
 
         }.disposed(by: disposeBag)

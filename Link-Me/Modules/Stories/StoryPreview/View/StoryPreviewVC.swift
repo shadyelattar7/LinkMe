@@ -74,14 +74,14 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
             
             print("indexPath: \(self.indexPath)")
             
-            guard let stories = self.myStoriesDate.value[self.indexPath].stories else { return }
+            guard let stories = self.myStoriesDate.value[row].stories else { return }
             
             cell.userImage.getImage(imageUrl: self.myStoriesDate.value[row].imagePath ?? "")
             cell.usernameLabel.text = self.myStoriesDate.value[row].name ?? ""
             cell.stories.accept(stories)
             cell.storyCount = stories.count
             
-            let rect = CGRect(x: 10, y: 10, width: self.view.width - 20  , height: 3)
+            let rect = CGRect(x: 10, y: 40, width: self.view.width - 20  , height: 3)
             cell.segmentbar = SGSegmentedProgressBar(frame: rect, delegate: cell.self, dataSource: cell.self)
             cell.contentView.addSubview(cell.segmentbar!)
             
@@ -112,11 +112,16 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
             
             cell.addCommentBtn = { [weak self] storyID, comment in
                 guard let self = self else {return}
-               print("Comment: \(comment), Story Id: \(storyID)")
+                print("Comment: \(comment), Story Id: \(storyID)")
                 self.viewModel.addComment(storyId: storyID, comment: comment, view: self.view)
             }
             
-            
+            cell.chatBtn = { [weak self]  in
+                guard let self = self else {return}
+                dismiss(animated: true) {
+                   // self.coordinator.Main.navigate(for: .chat(chatID: "", chatFrom: .messages))
+                }
+            }
             
             cell.segmentedProgressBarFinished = { [weak self] isFinished in
                 guard let self = self else {return}
@@ -142,7 +147,7 @@ class StoryPreviewVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate 
                 print("122 indexPath: \(indexPath.row)")
                 self.indexpathRow = indexPath.row
                 let cell = cell as! UserPreviewCell
-                if self.indexPath < 1{
+                if indexPath.row < 1{
                     self.dismiss(animated: true)
                 }else{
                     cell.segmentbar.restartCurrentSegment()

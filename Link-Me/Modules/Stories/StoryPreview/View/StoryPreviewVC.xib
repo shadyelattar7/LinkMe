@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rl4-Oq-Slc">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TCr-gf-R6T">
                         <size key="itemSize" width="128" height="128"/>
@@ -32,19 +31,14 @@
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rl4-Oq-Slc" secondAttribute="trailing" id="F9r-s5-yDP"/>
-                <constraint firstItem="rl4-Oq-Slc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LUJ-Fe-lfn"/>
+                <constraint firstItem="rl4-Oq-Slc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-44" id="LUJ-Fe-lfn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rl4-Oq-Slc" secondAttribute="bottom" constant="-34" id="NcL-El-gQP"/>
                 <constraint firstItem="rl4-Oq-Slc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UYx-TG-sbd"/>
             </constraints>
             <point key="canvasLocation" x="139.13043478260872" y="19.419642857142858"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

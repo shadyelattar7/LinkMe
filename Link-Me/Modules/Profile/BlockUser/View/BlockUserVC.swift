@@ -84,7 +84,7 @@ extension BlockUserVC {
     }
     
     private func didSelectTableViewItem() {
-        Observable.zip(blockUserTableView.rx.itemSelected, blockUserTableView.rx.modelSelected(FriendModel.self)).subscribe(onNext:{ [weak self] (indexPath, item) in
+        Observable.zip(blockUserTableView.rx.itemSelected, blockUserTableView.rx.modelSelected(Friendship.self)).subscribe(onNext:{ [weak self] (indexPath, item) in
             
             guard let self = self else { return }
             print("didSelectTableViewItem", item)

@@ -370,7 +370,7 @@ extension UserPreviewCell: SGSegmentedProgressBarDelegate, SGSegmentedProgressBa
     }
     
     var progressColor: UIColor {
-        return UIColor.gray
+        return UIColor.white
     }
     
     var roundCornerType: SGSegmentedProgressBarLibrary.SGCornerType {

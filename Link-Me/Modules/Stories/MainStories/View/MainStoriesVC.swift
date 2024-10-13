@@ -72,7 +72,7 @@ class MainStoriesVC: BaseWireFrame<MainStoriesViewModel>, UIScrollViewDelegate, 
             if indexPath.row == 0{
                 print("Add Store")
                 
-                if UDHelper.fetchUserData?.canAddStory == 10{
+                if UDHelper.fetchUserData?.canAddStory == 0{
                     self.coordinator.Main.navigate(for: .FeaturesPremium,navigtorTypes: .present())
                 }else{
                     if UDHelper.isVistor {

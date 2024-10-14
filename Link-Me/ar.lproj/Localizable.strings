@@ -63,7 +63,7 @@
 "Wrirte Your Username" = "اكتب اسم المستخدم الخاص بك";
 "Wrirte Your Age" = "اكتب عمرك";
 "Bio" = "السيرة الذاتية";
-
+"About Us" = "معلومات عنا";
 //MARK: - Settings -
 
 "Settings" = "إعدادات";
@@ -261,3 +261,4 @@ Login Now" = "مرحباً!
 "Create A New \nPassword" = "أنشئ كلمة مرور \nجديدة";
 "Save changing" = "حفظ التغييرات";
 "Next" = "التالي";
+

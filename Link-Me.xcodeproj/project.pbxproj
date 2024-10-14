@@ -4251,7 +4251,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Link-Me/Link-Me.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = KQHYATWG2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";
@@ -4288,7 +4288,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Link-Me/Link-Me.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = KQHYATWG2S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Link-Me/Configuration/Info.plist";

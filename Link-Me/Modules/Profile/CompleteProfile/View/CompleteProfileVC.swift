@@ -122,13 +122,14 @@ class CompleteProfileVC: BaseWireFrame<CompleteProfileViewModel> {
     
     //MARK: - Actions
     
-    @objc func saveTapped(){
-        viewModel.completeProfile(country_id: countryID, bio: bio_TV.text, gander: gender, view: self.view)
-        if viewModel.fromAuth {
-            //   dismiss(animated: true)
-            UDHelper.isCompleteProfile = true
-            
-            self.coordinator.start()
+    @objc func saveTapped() {
+        viewModel.completeProfile(country_id: countryID, bio: bio_TV.text, gander: gender, view: self.view) {  success in
+            if success {
+                if self.viewModel.fromAuth {
+                    UDHelper.isCompleteProfile = false
+                    self.coordinator.start()
+                }
+            }
         }
     }
     

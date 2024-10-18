@@ -69,8 +69,8 @@ class CompleteProfileViewModel: BaseViewModel, CompleteProfileInputs, CompletePr
     }
 
     
-    func completeProfile(country_id: Int, bio: String,gander: String,view: UIView){
-        print(country_id,bio,gander)
+    func completeProfile(country_id: Int, bio: String, gander: String, view: UIView, completion: @escaping (Bool) -> Void) {
+        var errorMessage: String = ""
         guard country_id != 0, !bio.isEmpty, !gander.isEmpty else {
             var errorMessage = ""
              if country_id == 0 {
@@ -83,19 +83,25 @@ class CompleteProfileViewModel: BaseViewModel, CompleteProfileInputs, CompletePr
                 errorMessage = "Bio is empty".localized
               }
             ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
-             return // Exit the function early
-         }
-        completeProfile.completeProfile(model: CompleteProfileRequestModel(country_id: country_id, bio: bio, gander: gander)).subscribe(onNext:{ [weak self] result in
-            guard let self = self else {return}
-            switch result{
+            completion(false) // Call completion with failure
+            return
+        }
+        
+        completeProfile.completeProfile(model: CompleteProfileRequestModel(country_id: country_id, bio: bio, gander: gander)).subscribe(onNext: { [weak self] result in
+            guard let self = self else { return }
+            switch result {
             case .success(let model):
                 UDHelper.saveUserData(obj: model.data)
                 self.completeProfileStatus.onNext(model)
                 self.dismissSubject.onNext(true)
+                if fromAuth {
+                    completion(true) // Call completion with success
+                }
             case .failure(let error):
                 let errorMessage = error.userInfo["NSLocalizedDescription"] as! String
                 ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
                 print("ERROR: \(error)")
+                completion(false) // Call completion with failure
             }
         }).disposed(by: disposedBag)
     }

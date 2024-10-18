@@ -44,6 +44,7 @@ class ProfileNotCompleteViewController: BaseWireFrame<ProfileNotCompleteViewMode
     
     
     @IBAction func laterTapped(_ sender: Any) {
+        UDHelper.isCompleteProfile = false
         self.coordinator.start()
     }
 }

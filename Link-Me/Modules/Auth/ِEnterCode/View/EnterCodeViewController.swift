@@ -60,7 +60,7 @@ class EnterCodeViewController: BaseWireFrame<EnterCodeViewModel>, NavigationBarD
     private func setupView(){
         self.navBar.configure(with: NavigationBarViewModel(navBarTitle: ""), and: self)
         sendNewCodeLbl.text =  "Send New Code".localized
-        weSendVeriftionLbl.text  =  "we send you a verification code on \nthis email abc*****@gmail.com".localized
+        weSendVeriftionLbl.text  =  "we send you a verification code on this email".localized + " " + (viewModel.email ?? "")
         verificationCode.inputAccessoryView = UIView()
         verificationCode.becomeFirstResponder()
         verificationCode.keyboardType = .asciiCapableNumberPad

@@ -16,10 +16,7 @@ class TabBarController: UITabBarController {
     init(coordinator: Coordinator){
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
-        UDHelper.isAfterLoginOrRegister = false
-        if UDHelper.isCompleteProfile{
-            self.selectedIndex = 3
-        }
+       
     }
     
     required init?(coder: NSCoder) {
@@ -37,8 +34,18 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         setupTabBarItems()
         setupTabBarUI()
+        self.selectedIndex = 0
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        setupTabBarItems()
+        setupTabBarUI()
+        UDHelper.isAfterLoginOrRegister = false
+        if UDHelper.isCompleteProfile{
+            self.selectedIndex = 3
+        } else {
+            self.selectedIndex = 0
+        }
+    }
     private func setupTabBarUI(){
         tabBar.tintColor = UIColor.LinkMeUIColor.mainColor
         tabBar.unselectedItemTintColor = .none

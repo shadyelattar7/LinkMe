@@ -11,12 +11,12 @@
 
 //MARK: - TabBar -
 
-"Link Me" = "ربط لي";
-"Stories" = "قصص";
-"Message" = "الرسالة";
+"Link Me" = "الوصلات";
+"Stories" = "القصص";
+"Message" = "الرسائل";
 "Profile" = "الملف الشخصي";
 "box" = "الوارد";
-"sent" = "المرسل";
+"sent" = "المُرسل";
 //MARK: - Onboarding -
 "Hello!" = "مرحباً!";
 "Hello! Welcome to the Link Me app! Discover new worlds of social interaction with just one tap." = "مرحباً! مرحباً بك في تطبيق Link Me! اكتشف عوالم جديدة من التواصل الاجتماعي بلمسة زر واحدة";
@@ -30,13 +30,13 @@
 "Profile" = "الملف الشخصي";
 "SETTINGS AND MORE" = "الإعدادات والمزيد";
 "Complete Your Profile" = "أكمل ملفك الشخصي";
-"Links" = "الروابط";
-"Followers" = "المتابعون";
+"Links" = "الوصلات";
+"Followers" = "الاصدقاء";
 "Friends" = "الاصدقاء";
 "Likes" = "الاعجابات";
 "No Result Found" = "لا توجد نتائج";
 "English" = "الانجليزيه";
-"Arabic" = "العربيه";
+"Arabic" = "العربية";
 "Choose Your App Language" = "اختر لغة التطبيق";
 "Language" = "اللغة";
 "Support" = "الدعم";
@@ -45,12 +45,15 @@
 
 "Complete Your Profile" = "أكمل ملفك الشخصي";
 "Your County" = " الدولة";
-"Gender" = "نوع الجنس";
-"Bio" = "Bio";
+"Gender" = "الجنس";
+"Bio" = "النبذة الشخصية";
 "Mal" = "ذكر";
 "Femal" = "أنثى";
 "Save" = "حفظ";
 "Tell Something About You" = "أخبر شيئا عنك";
+"You should choose a Country" = "يجب عليك اختيار دولة";
+"You should choose a Gender" = "يجب عليك اختيار النوع";
+"Bio is empty" = "السيرة الذاتية فارغة";
 
 //MARK: - Edit Profile -
 
@@ -62,11 +65,11 @@
 "Wrirte Your Name" = "اكتب اسمك";
 "Wrirte Your Username" = "اكتب اسم المستخدم الخاص بك";
 "Wrirte Your Age" = "اكتب عمرك";
-"Bio" = "السيرة الذاتية";
-"About Us" = "معلومات عنا";
+"Bio" = "النبذة الشخصية";
+
 //MARK: - Settings -
 
-"Settings" = "إعدادات";
+"Settings" = "الإعدادات";
 "Privacy Policy" = "سياسة الخصوصية";
 "Terms Of Services" = "شروط الخدمة";
 "Privacy Policy" = "سياسة الخصوصية";
@@ -81,7 +84,7 @@
 "Remove Account" = "حذف الحساب";
 "Can You Please Share To Us What Was Not Working ? We Are Fixing Bugs As Soon
 As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To Be Aware Of It And Fix It" = "هل يمكنك من فضلك إخبارنا بما لم يكن يعمل؟ نحن نصلح الأخطاء بمجرد أن نلاحظها. إذا فاتنا شيء، سنكون ممتنين جدًا لمعرفة ذلك وإصلاحه.";
-"Your Explanation Is Entirely Optional..." ="توضيحك اختياري تمامًا...";
+"Your Explanation Is Entirely Optional..." = "توضيحك اختياري بالكامل";
 "Continue" = "استمرار";
 "Delete Account" = "حذف الحساب";
 "Your Password" = "كلمة المرور الخاصة بك";
@@ -96,20 +99,20 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "Description" = "الوصف";
 "Send" = "إرسال";
 "How We Can Help You!" = "كيف يمكننا مساعدتك!";
-"Feedback" = "التقييم";
+"Feedback" = "ردود الفعل";
 "Write Tittle" = "اكتب العنوان";
-"Send Email" = "إرسال البريد الإلكتروني";
+"Send Email" = "إنشاء رسالة دعم جديدة";
 "Subject" = "الموضوع";
 "Description" = "الوصف";
 "Email Subject" = "موضوع البريد الإلكتروني";
 "Email address" = "عنوان البريد الإلكتروني";
 "Create New Password" = "إنشاء كلمة مرور جديدة";
-"Correct Password" = "كلمة المرور الصحيحة";
+"Correct Password" = "كلمة المرور الحالية";
 "Change Password" = "تغيير كلمة المرور";
 "Password" = "كلمة المرور";
-"New Password" = "كلمة مرور جديدة";
+"New Password" = "كلمة المرور الجديدة";
 "Confirm New Password" = "تأكيد كلمة المرور الجديدة";
-"Correct Email" = "البريد الإلكتروني الصحيح";
+"Correct Email" = "البريد الإلكتروني الحالي";
 "Add New Email" = "إضافة بريد إلكتروني جديد";
 "New Email" = "البريد الإلكتروني الجديد";
 "Confirm New Email" = "تأكيد البريد الإلكتروني الجديد";
@@ -117,14 +120,14 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "Confirm" = "تأكيد";
 //MARK: - Link Me -
  "   Update the page" = "تحديث الصفحه  ";
-"Top 50 Users" = "أفضل 50 مستخدمًا";
-"Be In The Top" = "كن في القمة";
-"Diamond" = "الماس";
+"Top 50 Users" = "أفضل 50 مشترك";
+"Be In The Top" = "تصدّر قائمة المستخدمين";
+"Diamond" = "الجواهر";
 "Choose" = "اختر";
 "Buy" = "شراء";
 //MARK: - Searching -
 "Advanced search." = "بحث متقدم.";
-"use your diamond" = "استخدم الماس الخاص بك";
+"use your diamond" = "استخدم الجواهر الخاصة بك";
 "to find best match" = "للعثور على أفضل تطابق";
 "Nomal search. we will show you a random users" = "بحث عادي. سنعرض لك مستخدمين عشوائيين";
 "  Start Searching" = "ابدأ البحث  ";
@@ -162,8 +165,8 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "Age" = "العمر";
 "Start Searching" = "ابدأ البحث";
 "Link Me Search" = "ربط ني بالبحث";
-"Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam" = "لوريم إيبسوم دولور سيت أميت، كونستيتتور ساديبسينغ إليتر، سيد ديام";
-"Country" = "البلد";
+"Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam" = "البحث المخصص يوفر لك نتائج دقيقة";
+"Country" = "الدولة";
 //MARK: - Messages -
 "Edit" = "تعديل";
 "Search messages" = "البحث في الرسائل";
@@ -188,7 +191,7 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "Delete For Me" = "حذف بالنسبة لي";
 "Block This User" = "حظر هذا المستخدم";
 "0 Selected" = "محدد 0";
-"Please write the right reason why you report this story" = "يرجى كتابة السبب الصحيح الذي يجعلك تبلغ عن هذه القصة";
+"Please write the right reason why you report this story" = "يرجى كتابة السبب الصحيح الذي يجعلك تقوم بهذا الإبلاغ";
 "Send report" = "إرسال التقرير";
 "Report" = "إبلاغ";
 "add" = "إضافة";
@@ -199,16 +202,16 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "Request Chat" = "طلب دردشة";
 "Search Again" = "ابحث مرة أخرى";
 "Choose time" = "اختر الوقت";
-"Let's Talk" = "دعنا نتحدث";
-"You linked with" = "لقد ربطت مع";
+"   Let's Talk" = "دعنا نتحدث";
+"You linked with" = "تم وصلك مع";
 
 //MARK: - Purchases -
 
 "Purchases" = "المشتريات";
-"Available diamonds " = "الألماس المتوفر";
+"Available diamonds " = "الجواهر المتوفرة";
 "My subscription" = "اشتراكي";
 "Subscription Now" = "اشترك الآن";
-"Diamonds Store" = "متجر الألماس";
+"Diamonds Store" = "متجر الجواهر";
 "Stars Store" = "متجر النجوم";
 "How it work!" = "كيف يعمل!";
 "Privacy Policy & terms of use" = "سياسة الخصوصية وشروط الاستخدام";
@@ -227,7 +230,7 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "Hey!
 Login Now" = "مرحباً!
  سجل الدخول الآن";
-"Skip now" = "تجاوز الآن";
+"Skip now" = "الدخول كضيف";
 "Login" = "تسجيل الدخول";
 "Create New" = "إنشاء جديد";
 "Email Address" = "عنوان البريد الإلكتروني";
@@ -238,7 +241,7 @@ Login Now" = "مرحباً!
 "Create New Account" = "إنشاء حساب جديد";
 "Ops! This Code Is Wrong" = "عذرًا! هذا الرمز خاطئ";
 "resend" = "إعادة إرسال";
-"we send you a verification code on \nthis email abc*****@gmail.com" = "أرسلنا لك رمز التحقق على \nهذا البريد الإلكتروني abc*****@gmail.com";
+"we send you a verification code on this email" = "أرسلنا لك رمز التحقق على \nهذا البريد الإلكتروني";
 "Verify email" = "تحقق من البريد الإلكتروني";
 "Your Email Is Verified" = "تم التحقق من بريدك الإلكتروني";
 "click continue to finish setup your account" = "انقر على متابعة لإنهاء إعداد حسابك";
@@ -253,12 +256,11 @@ Login Now" = "مرحباً!
 "Done" = "تم";
 "Create New \nAccount" = "إنشاء \nحساب جديد";
 "Reset \nPassword" = "إعادة تعيين \nكلمة المرور";
-"Enter \nThe Code" = "أدخل \nالرمز";
+"Enter \nThe Code" = "أدخل الرمز";
 "Send New Code" = "إرسال رمز جديد";
-"Please Complete Your Profile To Get Access To All Futures" = "يرجى إكمال ملفك الشخصي للحصول على إمكانية الوصول إلى جميع الميزات";
-"Complete Your Profile" = "أكمل ملفك الشخصي";
+"Please Complete Your Profile To Get Access To All Futures" = "يرجى إكمال ملفك الشخصي للحصول على \nإمكانية الوصول إلى جميع الميزات";
+"Complete Your Profile" = "إكمال الملف الشخصي";
 "Later" = "لاحقًا";
 "Create A New \nPassword" = "أنشئ كلمة مرور \nجديدة";
 "Save changing" = "حفظ التغييرات";
 "Next" = "التالي";
-

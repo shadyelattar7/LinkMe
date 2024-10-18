@@ -53,11 +53,11 @@ extension ReactCardView {
     }
     
     func setNumberOfFollowing(_ number: Int?) {
-        numberOfFollowingLabel.text = "\(String(describing: number ?? 0))K"
+        numberOfFollowingLabel.text = "\(String(describing: number ?? 0))"
     }
     
     func setNumberOfLikes(_ number: Int?) {
-        numberOfLikesLabel.text = "\(String(describing: number ?? 0))K"
+        numberOfLikesLabel.text = "\(String(describing: number ?? 0))"
     }
     func showAndHide(like: Int?,link: Int?,followers: Int?) {
         likesView.isHidden = like == 0 ? true : false

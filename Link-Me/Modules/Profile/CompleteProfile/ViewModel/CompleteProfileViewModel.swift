@@ -27,12 +27,13 @@ class CompleteProfileViewModel: BaseViewModel, CompleteProfileInputs, CompletePr
     
     
     let completeProfile: ProfileWorkerProtocol
+    let fromAuth: Bool
     let disposedBag = DisposeBag()
     var Countries: BehaviorRelay<[Countries]> = .init(value: [])
     let dismissSubject = PublishSubject<Bool>()
-    init(completeProfile: ProfileWorkerProtocol) {
+    init(completeProfile: ProfileWorkerProtocol,fromAuth: Bool) {
         self.completeProfile = completeProfile
- 
+        self.fromAuth = fromAuth
     }
         
     
@@ -69,6 +70,21 @@ class CompleteProfileViewModel: BaseViewModel, CompleteProfileInputs, CompletePr
 
     
     func completeProfile(country_id: Int, bio: String,gander: String,view: UIView){
+        print(country_id,bio,gander)
+        guard country_id != 0, !bio.isEmpty, !gander.isEmpty else {
+            var errorMessage = ""
+             if country_id == 0 {
+                 errorMessage = "You should choose a Country".localized
+             }
+           else  if gander.isEmpty {
+               errorMessage = "You should choose a Gender".localized
+             }
+            else  if bio.isEmpty {
+                errorMessage = "Bio is empty".localized
+              }
+            ToastManager.shared.showToast(message: errorMessage, view: view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
+             return // Exit the function early
+         }
         completeProfile.completeProfile(model: CompleteProfileRequestModel(country_id: country_id, bio: bio, gander: gander)).subscribe(onNext:{ [weak self] result in
             guard let self = self else {return}
             switch result{

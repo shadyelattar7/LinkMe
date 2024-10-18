@@ -36,7 +36,10 @@ class ProfileNotCompleteViewController: BaseWireFrame<ProfileNotCompleteViewMode
     @objc func completeProfileTapped(){
         UDHelper.isCompleteProfile = true
         UDHelper.isAfterLoginOrRegister = true
-        self.coordinator.start()
+     //   self.coordinator.start()
+        if let vc = coordinator.Main.viewcontroller(for: .CompleteProfile(fromAuth: true)) as? CompleteProfileVC {
+               present(vc, animated: true)
+           }
     }
     
     

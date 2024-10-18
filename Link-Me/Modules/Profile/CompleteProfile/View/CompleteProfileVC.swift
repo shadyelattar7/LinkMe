@@ -15,6 +15,7 @@ class CompleteProfileVC: BaseWireFrame<CompleteProfileViewModel> {
     //MARK: - @IBOutlet
     @IBOutlet weak var userImage_iv: UserPhotoProfileView!
     @IBOutlet weak var country_TF: UITextField!
+    @IBOutlet weak var setFullHeight: NSLayoutConstraint!
     @IBOutlet weak var male_Btn: UIButton!
     @IBOutlet weak var maleView: UIView!
     @IBOutlet weak var maleIcon_iv: UIImageView!
@@ -123,6 +124,12 @@ class CompleteProfileVC: BaseWireFrame<CompleteProfileViewModel> {
     
     @objc func saveTapped(){
         viewModel.completeProfile(country_id: countryID, bio: bio_TV.text, gander: gender, view: self.view)
+        if viewModel.fromAuth {
+            //   dismiss(animated: true)
+            UDHelper.isCompleteProfile = true
+            
+            self.coordinator.start()
+        }
     }
     
     @IBAction func maleTapped(_ sender: Any) {

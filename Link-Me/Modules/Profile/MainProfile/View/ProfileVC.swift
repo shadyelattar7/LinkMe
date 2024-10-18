@@ -130,7 +130,7 @@ class ProfileVC: BaseWireFrame<ProfileViewModel>, UIScrollViewDelegate {
     
     @IBAction func completeProfileTapped(_ sender: Any) {
      //   self.coordinator.Main.navigate(for: .CompleteProfile,navigtorTypes: .present())
-        if let vc = coordinator.Main.viewcontroller(for: .CompleteProfile) as? CompleteProfileVC {
+        if let vc = coordinator.Main.viewcontroller(for: .CompleteProfile(fromAuth: false)) as? CompleteProfileVC {
                vc.reloadAfterDismiss = self
                present(vc, animated: true)
            }

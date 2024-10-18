@@ -232,9 +232,11 @@ extension PurchaseStoreViewController: UICollectionViewDataSource, UICollectionV
         case diamondsStoreCollectionView:
             let cell = collectionView.dequeue(cell: CardStoreCollectionViewCell.self, for: indexPath)
             //   let diamondsData = viewModel.diamonds.value[indexPath.row]
-            cell.countLabel.text = "\(models[indexPath.row].localizedTitle)"
-            cell.hintLabel.text = "Diamond".localized + " \(models[indexPath.row].localizedDescription)"
-            cell.subLabel.text = "$" + " \(models[indexPath.row].price)"
+            if !models.isEmpty {
+                cell.countLabel.text = "\(models[indexPath.row].localizedTitle)"
+                cell.hintLabel.text = "Diamond".localized + " \(models[indexPath.row].localizedDescription)"
+                cell.subLabel.text = "$" + " \(models[indexPath.row].price)"
+            }
             return cell
             
         default:

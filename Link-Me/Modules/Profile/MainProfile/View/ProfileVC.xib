@@ -141,7 +141,7 @@
                                             <rect key="frame" x="0.0" y="70" width="345" height="67"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ht3-YJ-tLN">
-                                                    <rect key="frame" x="20" y="17" width="305" height="33"/>
+                                                    <rect key="frame" x="26" y="17" width="293.5" height="33"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-2g-oAM">
                                                             <rect key="frame" x="0.0" y="0.0" width="76" height="33"/>
@@ -167,10 +167,9 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Links" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WO-V0-u8f">
-                                                                            <rect key="frame" x="0.0" y="24.5" width="35" height="8.5"/>
+                                                                            <rect key="frame" x="0.0" y="24.5" width="30.5" height="8.5"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="8.5" id="9bk-u3-dLn"/>
-                                                                                <constraint firstAttribute="width" constant="35" id="Nw6-DL-etZ"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                                             <color key="textColor" name="strongGray"/>
@@ -184,7 +183,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ypw-Qv-oJT">
-                                                            <rect key="frame" x="96" y="0.0" width="98" height="33"/>
+                                                            <rect key="frame" x="96" y="0.0" width="96.5" height="33"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 62715" translatesAutoresizingMaskIntoConstraints="NO" id="Vsf-5X-7dO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
@@ -194,7 +193,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ne7-ex-bpg">
-                                                                    <rect key="frame" x="41" y="0.0" width="57" height="33"/>
+                                                                    <rect key="frame" x="41" y="0.0" width="55.5" height="33"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3u-J1-RxC">
                                                                             <rect key="frame" x="0.0" y="0.0" width="55.5" height="19.5"/>
@@ -206,9 +205,8 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHb-BZ-f83">
-                                                                            <rect key="frame" x="0.0" y="24.5" width="57" height="8.5"/>
+                                                                            <rect key="frame" x="0.0" y="24.5" width="55.5" height="8.5"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="57" id="Ja4-7e-IrD"/>
                                                                                 <constraint firstAttribute="height" constant="8.5" id="Yal-F4-HNf"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
@@ -223,7 +221,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hir-1r-yR0">
-                                                            <rect key="frame" x="214" y="0.0" width="91" height="33"/>
+                                                            <rect key="frame" x="212.5" y="0.0" width="81" height="33"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 62716" translatesAutoresizingMaskIntoConstraints="NO" id="7De-m1-da2">
                                                                     <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
@@ -233,7 +231,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="De4-X3-ksw">
-                                                                    <rect key="frame" x="41" y="0.0" width="50" height="33"/>
+                                                                    <rect key="frame" x="41" y="0.0" width="40" height="33"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGl-P4-PLR">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="19.5"/>
@@ -245,9 +243,8 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9h-z3-3mq">
-                                                                            <rect key="frame" x="0.0" y="24.5" width="50" height="8.5"/>
+                                                                            <rect key="frame" x="0.0" y="24.5" width="30" height="8.5"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="50" id="TG9-AL-8tX"/>
                                                                                 <constraint firstAttribute="height" constant="8.5" id="dWe-qI-CrJ"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>

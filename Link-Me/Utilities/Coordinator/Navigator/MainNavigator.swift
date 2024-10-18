@@ -51,7 +51,7 @@ class MainNavigator: Navigator{
         
         //MARK: - Profile -
         case Profile
-        case CompleteProfile
+        case CompleteProfile(fromAuth:Bool)
         case EditProfile
         case Settings
         case OtherSettings
@@ -170,9 +170,9 @@ class MainNavigator: Navigator{
             let myAccountRepo = MyAccountWorker()
             let viewModel = ProfileViewModel(myAccount: myAccountRepo)
             return ProfileVC(viewModel:viewModel , coordinator: coordinator)
-        case .CompleteProfile:
+        case .CompleteProfile(let fromAuth):
             let completeProfileRepo = ProfileWorker()
-            let viewModel = CompleteProfileViewModel(completeProfile: completeProfileRepo)
+            let viewModel = CompleteProfileViewModel(completeProfile: completeProfileRepo,fromAuth: fromAuth)
             return CompleteProfileVC(viewModel: viewModel, coordinator: coordinator)
         case .EditProfile:
             let completeProfileRepo = ProfileWorker()

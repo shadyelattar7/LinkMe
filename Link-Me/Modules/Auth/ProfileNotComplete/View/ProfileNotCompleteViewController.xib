@@ -68,10 +68,10 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8rf-xE-IMd">
-                    <rect key="frame" x="-4.5" y="341" width="384" height="47.5"/>
+                    <rect key="frame" x="16" y="341" width="343" height="64"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Your Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzB-FU-AMa">
-                            <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Complete Your Profile To Get Access To All Futures" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-Vp-KdO">
-                            <rect key="frame" x="0.0" y="30.5" width="384" height="17"/>
+                            <rect key="frame" x="0.0" y="30.5" width="343" height="33.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -98,7 +98,9 @@
                 <constraint firstItem="mHA-SI-pYJ" firstAttribute="centerY" secondItem="Kr4-e4-vrH" secondAttribute="centerY" id="8la-4N-Btb"/>
                 <constraint firstItem="Kr4-e4-vrH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="CqR-hb-DJX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tNx-el-QD8" secondAttribute="bottom" constant="20" id="Ho4-IB-qS2"/>
+                <constraint firstAttribute="trailing" secondItem="8rf-xE-IMd" secondAttribute="trailing" constant="16" id="Tti-Sb-izU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tNx-el-QD8" secondAttribute="trailing" constant="20" id="Y9p-vN-s6b"/>
+                <constraint firstItem="8rf-xE-IMd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="YJs-MB-MYH"/>
                 <constraint firstItem="8rf-xE-IMd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="glK-M0-I4w"/>
                 <constraint firstItem="tNx-el-QD8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="hns-1f-efL"/>
                 <constraint firstItem="Kr4-e4-vrH" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="qg0-ZR-foC"/>

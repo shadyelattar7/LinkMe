@@ -60,6 +60,7 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBoarder" value="NO"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="textTitle" value="continue"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="continue"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>

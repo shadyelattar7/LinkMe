@@ -68,7 +68,7 @@ extension UserCardViewController {
     }
     
     private func configureNormalState() {
-        activeButton.setTitle("Let's Talk".localized, for: .normal)
+        activeButton.setTitle("   Let's Talk".localized, for: .normal)
         activeButton.setImage(UIImage(named: "Chat"), for: .normal)
         unlikeButton.isHidden = true
         youLinkWithStackView.isHidden = true

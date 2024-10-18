@@ -73,7 +73,7 @@ class LoginViewModel: BaseViewModel, LoginVInputs,LoginOutputs {
             case .success(let model):
                 UDHelper.token = model.token ?? ""
                 UDHelper.saveUserData(obj: model.data)
-                UDHelper.isAfterLoginOrRegister = true
+                UDHelper.isAfterLoginOrRegister = false
                 UDHelper.isSkip = false
                 UDHelper.isVistor = true
                 self.loginAsVistorStatus.onNext(model)

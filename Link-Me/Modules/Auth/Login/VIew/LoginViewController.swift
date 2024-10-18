@@ -38,7 +38,7 @@ class LoginViewController: BaseWireFrame<LoginViewModel> {
         email_tf.placeholder = "Email Address".localized
         login_btn.textTitle = "Login".localized
         create_btn.textTitle = "Create New".localized
-        skip_btn.isHidden = UDHelper.isVistor
+       // skip_btn.isHidden = UDHelper.isVistor
     }
     
     private func subscriptions(){

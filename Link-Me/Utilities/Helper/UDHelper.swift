@@ -40,6 +40,10 @@ class UDHelper {
         set { UDHelper.userDefaults.set(newValue, forKey: UDKeys.isSkip) }
         get { UDHelper.userDefaults.bool(forKey: UDKeys.isSkip) }
     }
+    static var navigateLogin: Bool{
+        set { UDHelper.userDefaults.set(newValue, forKey: UDKeys.isLogin) }
+        get { UDHelper.userDefaults.bool(forKey: UDKeys.isLogin) }
+    }
     
     static var isChangeLang: Bool{
         set { UDHelper.userDefaults.set(newValue, forKey: UDKeys.isChangeLang) }

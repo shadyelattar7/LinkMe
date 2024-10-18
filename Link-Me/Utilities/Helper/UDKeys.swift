@@ -14,6 +14,7 @@ class UDKeys {
     static let userData = "userData"
     static let isLoginOrRegister = "isLoginOrRegister"
     static let isSkip = "IsSkip"
+    static let isLogin = "isLogin"
     static let isChangeLang = "changeLang"
     static let isCompleteProfile = "isCompleteProfile"
     static let isDrag = "isDrag"

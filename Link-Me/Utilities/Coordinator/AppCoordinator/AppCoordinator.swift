@@ -69,8 +69,8 @@ class AppCoordinator: Coordinator{
         vc.window = window
         window.rootViewController = vc
         let options: UIView.AnimationOptions = .transitionCrossDissolve
-        let duration: TimeInterval  = 0.3
-        UIView.transition(with: window, duration: duration,options: options, animations: nil)
+        let duration: TimeInterval = 0.3
+        UIView.transition(with: window, duration: duration, options: options, animations: nil)
     }
     
     func start(){
@@ -84,19 +84,25 @@ class AppCoordinator: Coordinator{
         }
     }
     var rootViewController: UIViewController{
-        if UDHelper.isAppOpenedBefor{
-            if UDHelper.token != "" || UDHelper.isSkip == true || UDHelper.isCompleteProfile == true  {
-                return tabbar
-            }else{
-                let loginVC = self.Auth.viewcontroller(for: .login)
-                let nav = UINavigationController(rootViewController: loginVC)
+        if UDHelper.navigateLogin {
+            let loginVC = self.Auth.viewcontroller(for: .login)
+            let nav = UINavigationController(rootViewController: loginVC)
+            UDHelper.navigateLogin = false
+            return nav
+        } else {
+            if UDHelper.isAppOpenedBefor{
+                if UDHelper.token != "" || UDHelper.isSkip == true || UDHelper.isCompleteProfile == true {
+                    return tabbar
+                }else{
+                    let loginVC = self.Auth.viewcontroller(for: .login)
+                    let nav = UINavigationController(rootViewController: loginVC)
+                    return nav
+                }
+            }else{ // open onboarding
+                let onboadingVC = self.Onboarding.viewcontroller(for: .onboarding)
+                let nav = UINavigationController(rootViewController: onboadingVC)
                 return nav
             }
-        }else{ // open onboarding
-            let onboadingVC = self.Onboarding.viewcontroller(for: .onboarding)
-            let nav = UINavigationController(rootViewController: onboadingVC)
-            return nav
         }
     }
 }
-

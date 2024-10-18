@@ -170,8 +170,9 @@ class SettingsVC: BaseWireFrame<SettingsViewModel>, UIScrollViewDelegate,Navigat
             switch row{
             case 0:
                 print("Log in")
-                UDHelper.isVistorLoggedIn = true
-                coordinator.Auth.navigate(for: .login, navigtorTypes: .presentNavgation)
+            //    UDHelper.isVistorLoggedIn = true
+                UDHelper.navigateLogin = true
+                self.coordinator.start()
             default:
                 print("ERROR IN SECTION LOG OUT")
             }

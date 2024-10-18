@@ -58,6 +58,7 @@ Account</string>
                                         <userDefinedRuntimeAttribute type="string" keyPath="textTitle" value="Email Address"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email Address "/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Email Address"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isEmailTextEntry" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yjs-ct-YgI">
@@ -93,10 +94,10 @@ Account</string>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-4o-OZd">
-                                    <rect key="frame" x="20" y="483.5" width="238" height="32"/>
+                                    <rect key="frame" x="20" y="483.5" width="212.5" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Have Account! /" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF1-Qw-Omy">
-                                            <rect key="frame" x="0.0" y="0.0" width="168.5" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="168.5" height="30"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                             <color key="textColor" name="strongGray"/>
                                             <nil key="highlightedColor"/>
@@ -104,13 +105,13 @@ Account</string>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Already Have Account! /"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suA-Be-LeK">
-                                            <rect key="frame" x="173.5" y="0.0" width="64.5" height="32"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Login">
-                                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                                                <color key="baseForegroundColor" name="mainColor"/>
-                                            </buttonConfiguration>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suA-Be-LeK">
+                                            <rect key="frame" x="173.5" y="0.0" width="39" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Login">
+                                                <color key="titleColor" name="mainColor"/>
+                                            </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Login"/>
                                             </userDefinedRuntimeAttributes>

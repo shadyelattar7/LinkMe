@@ -21,7 +21,8 @@ class TopUserTableViewCell: UITableViewCell {
     
     // MARK: Proprites
     var openProfile: (()->())?
-    
+    var openChat: (()->())?
+
     // MARK: Lifecycle
     
     override func awakeFromNib() {
@@ -36,6 +37,10 @@ class TopUserTableViewCell: UITableViewCell {
         userImageView.setImage(url: imageUrl)
         badgeImageView.isHidden = item.is_star == 0 ? true : false
         statusView.isHidden = item.is_online == 0 ? true : false
+    }
+    
+    @IBAction func addBtnAction(_ sender: Any) {
+        openChat?()
     }
 }
 

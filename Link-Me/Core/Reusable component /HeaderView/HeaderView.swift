@@ -13,6 +13,7 @@ class HeaderView: UIView {
     
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var notificationBadgeButton: UILabel!
+    @IBOutlet weak var numberOfDaimons: UILabel!
     @IBOutlet private weak var starBadgeButton: UIButton!
     
     // MARK: - Properties
@@ -36,6 +37,8 @@ class HeaderView: UIView {
     private func initView() {
         loadViewFromNib()
         configureUI()
+        print(UDHelper.fetchUserData?.diamonds)
+        numberOfDaimons.text = "\(UDHelper.fetchUserData?.diamonds ?? 0 )"
     }
     
     // MARK: - Actions

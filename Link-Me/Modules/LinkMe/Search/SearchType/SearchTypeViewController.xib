@@ -56,11 +56,8 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ljP-vm-SdK">
                                                                     <rect key="frame" x="0.0" y="0.0" width="353" height="22.666666666666668"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advanced search." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmp-pP-8Rk">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="22.666666666666668"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="150" id="VFU-HC-ahQ"/>
-                                                                            </constraints>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Advanced search." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmp-pP-8Rk">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="149.66666666666666" height="22.666666666666668"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                                                             <color key="textColor" name="mainColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -68,8 +65,8 @@
                                                                                 <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Advanced search."/>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="use your diamond" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-yI-oul">
-                                                                            <rect key="frame" x="154" y="0.0" width="199" height="22.666666666666668"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="use your diamond" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-yI-oul">
+                                                                            <rect key="frame" x="153.66666666666663" y="0.0" width="199.33333333333337" height="22.666666666666668"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                                                             <color key="textColor" name="DarkBlue"/>
                                                                             <nil key="highlightedColor"/>

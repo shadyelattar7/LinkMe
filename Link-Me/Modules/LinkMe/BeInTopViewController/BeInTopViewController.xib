@@ -54,7 +54,7 @@
                             <rect key="frame" x="20" y="0.0" width="353" height="640"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qr9-UO-oX1">
-                                    <rect key="frame" x="0.0" y="0.0" width="353" height="761.66666666666663"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="631.66666666666663"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulq-4X-I1P">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="116"/>
@@ -161,9 +161,9 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eZh-5f-ns5">
-                                            <rect key="frame" x="0.0" y="352.66666666666663" width="353" height="279"/>
+                                            <rect key="frame" x="0.0" y="352.66666666666663" width="353" height="149"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWi-JQ-RJB">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWi-JQ-RJB">
                                                     <rect key="frame" x="0.0" y="0.0" width="353" height="100"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-lQ-csd">
@@ -255,7 +255,7 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4uI-lS-UYc">
-                                                    <rect key="frame" x="0.0" y="130" width="353" height="149"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="149"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHL-XE-hSW">
                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="21"/>
@@ -278,7 +278,7 @@
                                             </subviews>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDj-qY-nRx">
-                                            <rect key="frame" x="0.0" y="641.66666666666663" width="353" height="120"/>
+                                            <rect key="frame" x="0.0" y="511.66666666666663" width="353" height="120"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-BY-YZ2">
                                                     <rect key="frame" x="0.0" y="32" width="353" height="56"/>

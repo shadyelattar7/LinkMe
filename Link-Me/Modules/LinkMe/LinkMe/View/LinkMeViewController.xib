@@ -30,21 +30,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4N-N0-TOC" customClass="HeaderView" customModule="Link_Me" customModuleProvider="target">
-                    <rect key="frame" x="20" y="69" width="353" height="80"/>
+                    <rect key="frame" x="20" y="50" width="353" height="80"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="v8Z-22-Pp3"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mh2-Aq-AlZ" customClass="BeInTopView" customModule="Link_Me" customModuleProvider="target">
-                    <rect key="frame" x="20" y="159" width="353" height="54"/>
+                    <rect key="frame" x="20" y="130" width="353" height="70"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="54" id="AKy-1i-4wi"/>
+                        <constraint firstAttribute="height" constant="70" id="AKy-1i-4wi"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Vd-7i-kGZ">
-                    <rect key="frame" x="20" y="233" width="353" height="565"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Vd-7i-kGZ">
+                    <rect key="frame" x="20" y="210" width="353" height="588"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top 50 Users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-8u-xsR">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="21"/>
@@ -56,7 +56,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8ui-NS-lxy">
-                            <rect key="frame" x="0.0" y="41" width="353" height="524"/>
+                            <rect key="frame" x="0.0" y="31" width="353" height="557"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
@@ -74,20 +74,20 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tu-k3-ALE">
-                    <rect key="frame" x="133.66666666666666" y="769" width="125.99999999999997" height="19"/>
+                    <rect key="frame" x="126.66666666666669" y="758" width="140" height="30"/>
                     <color key="backgroundColor" red="0.53333333329999999" green="0.25490196079999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="126" id="Ifk-8t-qal"/>
-                        <constraint firstAttribute="height" constant="19" id="fMi-wf-9Dj"/>
+                        <constraint firstAttribute="width" constant="140" id="Ifk-8t-qal"/>
+                        <constraint firstAttribute="height" constant="30" id="fMi-wf-9Dj"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="   Update the page" image="arrows-rotate-solid">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="8"/>
+                            <real key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="   Update the page"/>
                     </userDefinedRuntimeAttributes>
@@ -101,7 +101,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cGp-qa-f55" secondAttribute="trailing" constant="20" id="1oe-ie-hfw"/>
                 <constraint firstItem="J4N-N0-TOC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EkQ-Sl-nLR"/>
-                <constraint firstItem="Mh2-Aq-AlZ" firstAttribute="top" secondItem="J4N-N0-TOC" secondAttribute="bottom" constant="10" id="I1z-5m-2zM"/>
+                <constraint firstItem="Mh2-Aq-AlZ" firstAttribute="top" secondItem="J4N-N0-TOC" secondAttribute="bottom" id="I1z-5m-2zM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J4N-N0-TOC" secondAttribute="trailing" constant="20" id="KJ8-xC-j7o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Vd-7i-kGZ" secondAttribute="trailing" constant="20" id="Lo2-IK-ySF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9Vd-7i-kGZ" secondAttribute="bottom" constant="20" id="XwF-IG-4Zs"/>
@@ -111,8 +111,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mh2-Aq-AlZ" secondAttribute="trailing" constant="20" id="o5L-hs-kXZ"/>
                 <constraint firstItem="Mh2-Aq-AlZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rQq-iG-HmY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cGp-qa-f55" secondAttribute="bottom" constant="40" id="rhb-mr-kbG"/>
-                <constraint firstItem="J4N-N0-TOC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="ult-35-fRq"/>
-                <constraint firstItem="9Vd-7i-kGZ" firstAttribute="top" secondItem="Mh2-Aq-AlZ" secondAttribute="bottom" constant="20" id="ver-dI-hCR"/>
+                <constraint firstItem="J4N-N0-TOC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="ult-35-fRq"/>
+                <constraint firstItem="9Vd-7i-kGZ" firstAttribute="top" secondItem="Mh2-Aq-AlZ" secondAttribute="bottom" constant="10" id="ver-dI-hCR"/>
             </constraints>
             <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
         </view>

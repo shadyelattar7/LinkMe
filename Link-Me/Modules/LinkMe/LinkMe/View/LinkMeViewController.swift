@@ -118,6 +118,15 @@ extension LinkMeViewController {
                 guard let self = self else { return }
                 self.coordinator.Main.navigate(for: .userCard(userID: item.id ?? 0, chatID: 0, direction: .profile), navigtorTypes: .presentNavgation)
             }
+            cell.openChat =  { [weak self] in
+                guard let self = self else { return }
+                let user = self.viewModel.getUserModel(row)
+                if user.chat_id == nil {
+                    viewModel.requestChat(userId: user.id ?? 0)
+                } else {
+                    presentChatViewController(for: user.chat_id ?? 0)
+                }
+            }
             
         }.disposed(by: disposeBag)
     }

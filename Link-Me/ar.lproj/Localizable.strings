@@ -125,6 +125,8 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "Diamond" = "الجواهر";
 "Choose" = "اختر";
 "Buy" = "شراء";
+"Promote your account and top the user list!" = "قم بترقية حسابك وتصدر قائمة المستخدمين!";
+
 //MARK: - Searching -
 "Advanced search." = "بحث متقدم.";
 "use your diamond" = "استخدم الجواهر الخاصة بك";
@@ -140,7 +142,7 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "Users on the list" = "المستخدمون في القائمة";
 "user" = "مستخدم";
 "Your turn after" = "دورك بعد";
-"Be In The Top" = "كن في القمة";
+//"Be In The Top" = "كن في القمة";
 "seconds" = "ثوانٍ";
 "minute" = "دقيقة";
 "minutes" = "دقائق";

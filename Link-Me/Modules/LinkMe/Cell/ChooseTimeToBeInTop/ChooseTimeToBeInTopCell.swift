@@ -32,7 +32,7 @@ class ChooseTimeToBeInTopCell: UITableViewCell {
 
     func update(_ item: StarModel) {
         timeLabel.text = "lang".localized == "en" ? item.titleEn : item.titleAr
-        numberOfDiamondLabel.text = "\(item.diamonds ?? 0)" + "Diamond".localized
+        numberOfDiamondLabel.text = "\(item.diamonds ?? 0) " + "Diamond".localized
         checkIfAvailableChooseIt(item.isAvailableToChoose ?? false)
     }
 }

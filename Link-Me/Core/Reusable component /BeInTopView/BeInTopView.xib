@@ -29,51 +29,65 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYk-lZ-Hce">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-JT-k2i">
-                            <rect key="frame" x="12" y="8" width="369" height="32"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-JT-k2i">
+                            <rect key="frame" x="12" y="7.6666666666666679" width="369" height="45"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-fI-iZD">
-                                    <rect key="frame" x="0.0" y="0.0" width="159.33333333333334" height="32"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-fI-iZD">
+                                    <rect key="frame" x="0.0" y="0.0" width="301.33333333333331" height="45"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoj-R2-kBb">
-                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Ld5-LO-g1b">
-                                                    <rect key="frame" x="7.6666666666666679" y="7.6666666666666643" width="17" height="17"/>
+                                                    <rect key="frame" x="13.666666666666668" y="14" width="18" height="17"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="17" id="ObP-de-7tQ"/>
                                                         <constraint firstAttribute="height" constant="17" id="R6h-tS-4qJ"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstItem="Ld5-LO-g1b" firstAttribute="centerX" secondItem="uoj-R2-kBb" secondAttribute="centerX" id="C5W-lG-AGx"/>
-                                                <constraint firstAttribute="height" constant="32" id="Iah-iw-Xsr"/>
-                                                <constraint firstAttribute="width" constant="32" id="VwK-Bm-d4g"/>
+                                                <constraint firstAttribute="height" constant="45" id="UDN-Px-H9r"/>
                                                 <constraint firstItem="Ld5-LO-g1b" firstAttribute="centerY" secondItem="uoj-R2-kBb" secondAttribute="centerY" id="cfs-Mj-mse"/>
+                                                <constraint firstItem="Ld5-LO-g1b" firstAttribute="centerX" secondItem="uoj-R2-kBb" secondAttribute="centerX" id="fz4-sO-UFB"/>
+                                                <constraint firstAttribute="width" constant="45" id="lS2-ml-nkQ"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be In The Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dib-Nz-Jwa">
-                                            <rect key="frame" x="45.999999999999993" y="0.0" width="113.33333333333331" height="32"/>
-                                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Be In The Top"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="18g-XK-kIM">
+                                            <rect key="frame" x="59.000000000000014" y="0.0" width="242.33333333333337" height="45"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be In The Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dib-Nz-Jwa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="242.33333333333334" height="22.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Be In The Top"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Promote your account and top the user list!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhb-X6-U9H">
+                                                    <rect key="frame" x="0.0" y="22.333333333333329" width="242.33333333333334" height="22.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins SemiBold" pointSize="11"/>
+                                                    <color key="textColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="Translationkey" value="Promote your account and top the user list!"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDc-So-kgw">
-                                    <rect key="frame" x="354" y="0.0" width="15" height="32"/>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDc-So-kgw">
+                                    <rect key="frame" x="354" y="0.0" width="15" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="15" id="uuc-3K-wC4"/>
                                     </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="ArrowRight"/>
+                                    <state key="normal" image="Arrow-white"/>
                                 </button>
                             </subviews>
                         </stackView>
@@ -84,7 +98,7 @@
                         <constraint firstItem="j4Y-JT-k2i" firstAttribute="leading" secondItem="VYk-lZ-Hce" secondAttribute="leading" constant="12" id="bNR-T0-LPo"/>
                         <constraint firstItem="j4Y-JT-k2i" firstAttribute="centerX" secondItem="VYk-lZ-Hce" secondAttribute="centerX" id="fd5-fF-Pdf"/>
                         <constraint firstAttribute="trailing" secondItem="j4Y-JT-k2i" secondAttribute="trailing" constant="12" id="tv9-Y7-KzY"/>
-                        <constraint firstAttribute="height" constant="48" id="y3x-N3-fWQ"/>
+                        <constraint firstAttribute="height" constant="60" id="y3x-N3-fWQ"/>
                     </constraints>
                 </view>
             </subviews>
@@ -100,7 +114,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ArrowRight" width="9" height="16"/>
+        <image name="Arrow-white" width="9" height="16"/>
         <image name="star" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -108,7 +108,7 @@ class RequestChatStateViewController: UIViewController {
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         default:
-            break
+            dismiss(animated: true)
         }
     }
 }

@@ -23,38 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0C62C626-C7EF-4479-A1B2-68DF84459734"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/LinkMe/Search/RequestChatState/View/RequestChatStateViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "didTappedActiveButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8ABADE60-C312-47F2-A425-E14A3932975E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/LinkMe/Search/RequestChatState/View/RequestChatStateViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "didTappedActiveButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "09C5312B-F04A-40C6-BBF1-879D59EDB11C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -62,8 +30,8 @@
             filePath = "Link-Me/Modules/LinkMe/Search/FilterSearch/View/FilterSearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "didTappedOnActiveButton()"
             landmarkType = "7">
          </BreakpointContent>
@@ -343,38 +311,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CE5567BF-437A-4D79-9F09-93F4F5C7EE98"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/LinkMe/Purchases/View/PurchaseStoreViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "101C9D52-5908-4B88-BE3C-03C2E4350DDA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/LinkMe/Purchases/View/PurchaseStoreViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "35E02FF8-B117-47AA-BC7B-DB3BD0D1C59D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -446,8 +382,8 @@
             filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "subscribeToTopUsersData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,42 +398,10 @@
             filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "didSelectTopUserItem()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2EEB27EA-E420-42BD-B387-41C4E1D2E103 - cce7d4d475a6e9ac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.LinkMeViewController.presentChatViewController(for: Swift.Int) -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "151"
-                  endingLineNumber = "151"
-                  offsetFromSymbolStart = "111">
-               </Location>
-               <Location
-                  uuid = "2EEB27EA-E420-42BD-B387-41C4E1D2E103 - 114a54c624d11a28"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RxSwift.Event&lt;Foundation.IndexPath&gt;) -&gt; () in Link_Me.LinkMeViewController.didSelectTopUserItem() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "151"
-                  endingLineNumber = "151"
-                  offsetFromSymbolStart = "1030">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -510,80 +414,16 @@
             filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "didSelectTopUserItem()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "51AF5F17-F90F-4033-935D-5AE82C1CBA80 - cce7d4d475a6e9ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Link_Me.LinkMeViewController.presentChatViewController(for: Swift.Int) -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "153"
-                  endingLineNumber = "153"
-                  offsetFromSymbolStart = "536">
-               </Location>
-               <Location
-                  uuid = "51AF5F17-F90F-4033-935D-5AE82C1CBA80 - 114a54c624d11a6e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RxSwift.Event&lt;Foundation.IndexPath&gt;) -&gt; () in Link_Me.LinkMeViewController.didSelectTopUserItem() -&gt; ()"
-                  moduleName = "Link-Me"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "153"
-                  endingLineNumber = "153"
-                  offsetFromSymbolStart = "1306">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "21AD415F-3EB9-42E6-BDAB-142A36B269B1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "subscribeToTopUsersData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EF4203F7-A33D-4DAD-AE73-16380DD3E291"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "subscribeToTopUsersData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "47B5CE8A-46BA-4426-8DBE-6B94880CEE1F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -599,6 +439,38 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "EF4203F7-A33D-4DAD-AE73-16380DD3E291"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "subscribeToTopUsersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47B5CE8A-46BA-4426-8DBE-6B94880CEE1F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "subscribeToTopUsersData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "6EFB6F27-D2C9-4C9C-B770-B353127371F5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -606,9 +478,296 @@
             filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "didSelectTopUserItem()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "544ED92A-4D24-4816-BAB1-2971A710CCBC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/Cell/TopUserTableViewCell/TopUserTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "addBtnAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7706E502-CED3-4B6D-A59B-9BA9F1C3B64B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/UserCard/View/UserCardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "seyHelloTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "51BABC91-28BE-405F-ADB5-73847BB3F2C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/UserCard/View/UserCardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "unlinkTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C74EE55D-4684-40C4-9BE0-E3CDCBB6608E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/UserCard/ViewModel/UserCardViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "acceptChatRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47093ECD-8EB4-44AC-9E6C-AE61DDFE5E16"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/UserCard/ViewModel/UserCardViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "acceptChatRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31981106-31A7-432E-AC11-86537879C77F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/UserCard/ViewModel/UserCardViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "init(linkMeApi:chatApi:userID:chatID:direction:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A7C5FD0-18A7-4DCC-8187-F25BDC8C93E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/LinkMe/ViewModel/LinkMeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "requestChat(userId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6FD7248-2E7D-4456-AEE6-5493AFAF320D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/Purchases/View/PurchaseStoreViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "howItWorkTapped(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C6FD7248-2E7D-4456-AEE6-5493AFAF320D - da82842205320a70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.PurchaseStoreViewController.howItWorkTapped(Any) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/LinkMe/Purchases/View/PurchaseStoreViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "671">
+               </Location>
+               <Location
+                  uuid = "C6FD7248-2E7D-4456-AEE6-5493AFAF320D - da82842205320a53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.PurchaseStoreViewController.howItWorkTapped(Any) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/LinkMe/Purchases/View/PurchaseStoreViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193"
+                  offsetFromSymbolStart = "663">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "068AFCF5-E9F5-419B-AAE6-4F787D2352F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/Purchases/View/PurchaseStoreViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "subscriptionButtonTapped(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "068AFCF5-E9F5-419B-AAE6-4F787D2352F2 - da8284220532096b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.PurchaseStoreViewController.howItWorkTapped(Any) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/LinkMe/Purchases/View/PurchaseStoreViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "068AFCF5-E9F5-419B-AAE6-4F787D2352F2 - a321bc4b9ffee297"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.PurchaseStoreViewController.subscriptionButtonTapped(Any) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/LinkMe/Purchases/View/PurchaseStoreViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "671">
+               </Location>
+               <Location
+                  uuid = "068AFCF5-E9F5-419B-AAE6-4F787D2352F2 - a321bc4b9ffee2b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Link_Me.PurchaseStoreViewController.subscriptionButtonTapped(Any) -&gt; ()"
+                  moduleName = "Link-Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedeltrass/Documents/GitHub/LinkMe/Link-Me/Modules/LinkMe/Purchases/View/PurchaseStoreViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "671">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96E748AD-98A0-4DD6-A114-87AF1DA187F7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/Search/RequestChatState/Resources/RequestChatStateResources.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "activeButtonTitle"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0EB918EB-280A-4140-8D02-B8E6A130DC02"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/Search/RequestChatState/Resources/RequestChatStateResources.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "activeButtonTitle"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48D1C517-475E-4E10-8106-3C7B6AC0BF68"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/Search/RequestChatState/Resources/RequestChatStateResources.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "activeButtonTitle"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06DE810A-7071-4534-80B8-29FB7DD60577"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Link-Me/Modules/LinkMe/LinkMe/View/LinkMeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -51,6 +51,12 @@ class FilterSearchViewController: BaseWireFrame<FilterSearchViewModel> {
     }
     
     // MARK: Actions
+    @IBAction func buyMoreBtn(_ sender: Any) {
+
+        let vc = coordinator.Main.viewcontroller(for: .purchases(hideNav: true))
+        vc.modalPresentationStyle = .pageSheet
+        self.present(vc, animated: true)
+    }
     
     @IBAction private func didTappedOnExitButton(_ sender: Any) {
         dismiss(animated: true)

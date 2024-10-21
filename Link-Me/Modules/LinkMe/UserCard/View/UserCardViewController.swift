@@ -37,6 +37,9 @@ class UserCardViewController: BaseWireFrame<UserCardViewModel> {
         handleTypeOfUserCard()
     }
     
+    @IBAction func dismissBtn(_ sender: Any) {
+        dismiss(animated: true)
+    }
     //MARK: - Actions
     @IBAction func seyHelloTapped(_ sender: Any) {
         self.viewModel.acceptChatRequest()

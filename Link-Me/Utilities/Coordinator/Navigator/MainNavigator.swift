@@ -20,7 +20,7 @@ class MainNavigator: Navigator{
         case userCard(userID: Int, chatID: Int, direction: UserCardDirection)
         case newLink(userID: Int, chatID: Int)
         case notificationList
-        case purchases
+        case purchases(hideNav: Bool? = false)
         case beInTheTop(viewModel: BeInTopViewModel, cardModel: BeInTopModel)
         case letsGoSearch
         case startSearch
@@ -94,10 +94,10 @@ class MainNavigator: Navigator{
             return NewLinkCardViewController(viewModel: viewModel, coordinator: coordinator)
         case .notificationList:
             return NotificationListViewController()
-        case .purchases:
+        case .purchases(let hideNav):
             let myAccountRepo = MyAccountWorker()
             let purchaseStoreRepo = PurchaseStoreAPI()
-            let viewModel = PurchaseStoreViewModel(PurchaseStore: purchaseStoreRepo, myAccount: myAccountRepo)
+            let viewModel = PurchaseStoreViewModel(PurchaseStore: purchaseStoreRepo, myAccount: myAccountRepo,hideNav: hideNav)
             return PurchaseStoreViewController(viewModel: viewModel, coordinator: coordinator)
         case .beInTheTop(let viewModel, let cardModel):
             return BeInTopViewController(viewModel: viewModel, coordinator: coordinator, cardModel: cardModel)

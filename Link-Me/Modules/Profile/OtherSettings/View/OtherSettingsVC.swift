@@ -56,7 +56,7 @@ class OtherSettingsVC: BaseWireFrame<OtherSettingsViewModel>,NavigationBarDelega
                     } else if  UDHelper.fetchUserData?.can_see_followers == 0 {
                         viewModel.showAndHid(type: "followers", view:self.view)
                     } else {
-                        self.coordinator.Main.navigate(for: .purchases)
+                        self.coordinator.Main.navigate(for: .purchases())
                         }
                     
                 case 1:
@@ -65,7 +65,7 @@ class OtherSettingsVC: BaseWireFrame<OtherSettingsViewModel>,NavigationBarDelega
                     } else if  UDHelper.fetchUserData?.can_see_likes == 0 {
                         viewModel.showAndHid(type: "likes", view:self.view)
                     } else {
-                        self.coordinator.Main.navigate(for: .purchases)
+                        self.coordinator.Main.navigate(for: .purchases())
                         }
                 case 2:
                     if UDHelper.fetchUserData?.is_subscribed == 1 {
@@ -73,7 +73,7 @@ class OtherSettingsVC: BaseWireFrame<OtherSettingsViewModel>,NavigationBarDelega
                     } else if  UDHelper.fetchUserData?.can_see_links == 0 {
                         viewModel.showAndHid(type: "links", view:self.view)
                     } else {
-                        self.coordinator.Main.navigate(for: .purchases)
+                        self.coordinator.Main.navigate(for: .purchases())
                         }
                 default:
                     print("")

@@ -183,7 +183,7 @@ extension BeInTopViewController: UITableViewDataSource, UITableViewDelegate {
             case .buy:
                 self.dismiss(animated: true) { [weak self] in
                     guard let self = self else { return }
-                    self.coordinator.Main.navigate(for: .purchases)
+                    self.coordinator.Main.navigate(for: .purchases())
                 }
             }
         }

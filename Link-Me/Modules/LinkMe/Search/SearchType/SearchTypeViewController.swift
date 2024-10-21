@@ -53,8 +53,8 @@ class SearchTypeViewController: UIViewController {
     }
     
     @IBAction private func didTappedOnCancelButton(_ sender: Any) {
-        coordinator.start()
-//        dismiss(animated: true)
+     //   coordinator.start()
+        dismiss(animated: true)
     }
 }
 

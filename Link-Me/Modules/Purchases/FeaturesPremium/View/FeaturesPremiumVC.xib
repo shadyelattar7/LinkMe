@@ -251,7 +251,7 @@
     <resources>
         <image name="Group 62821" width="127.33333587646484" height="41"/>
         <image name="Rectangle 2037" width="319" height="95"/>
-        <image name="tick-circle" width="18.333333969116211" height="18.333333969116211"/>
+        <image name="tick-circle" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

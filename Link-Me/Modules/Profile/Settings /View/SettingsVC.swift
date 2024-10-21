@@ -248,7 +248,7 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
                     } else if  UDHelper.fetchUserData?.is_online == 0 {
                         viewModel.changeOnline(view: self.view)
                     } else {
-                        self.coordinator.Main.navigate(for: .purchases)
+                        self.coordinator.Main.navigate(for: .purchases())
                         }
                 }
                 cell.onOffSwitch.setOn(UDHelper.fetchUserData?.is_online == 1 ? true : false, animated: true)
@@ -260,7 +260,7 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource{
                     } else if  UDHelper.fetchUserData?.is_available == 0 {
                         viewModel.changeAvailable(view: self.view)
                     } else {
-                        self.coordinator.Main.navigate(for: .purchases)
+                        self.coordinator.Main.navigate(for: .purchases())
                         }
                 }
                 cell.onOffSwitch.setOn(UDHelper.fetchUserData?.is_available == 1 ? true : false, animated: true)

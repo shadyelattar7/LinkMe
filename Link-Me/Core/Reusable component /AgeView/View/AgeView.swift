@@ -16,7 +16,7 @@ enum AgeType {
         switch self {
         case .first: return "16-24"
         case .middle: return "25-30"
-        case .last: return "30-+"
+        case .last: return "30+"
         }
     }
     

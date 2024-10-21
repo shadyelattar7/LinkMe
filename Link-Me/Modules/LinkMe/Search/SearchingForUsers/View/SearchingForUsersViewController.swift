@@ -40,6 +40,10 @@ class SearchingForUsersViewController: UIViewController {
         configureUI()
         subscribe()
     }
+    
+    @IBAction func stopSearchBtn(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
 
 // MARK: - Private handlers

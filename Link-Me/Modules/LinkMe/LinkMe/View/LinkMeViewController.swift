@@ -15,7 +15,8 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
     @IBOutlet private weak var topYellowView: BeInTopView!
     @IBOutlet private weak var topUsersTableView: UITableView!
     @IBOutlet private weak var topUserCounterLbl: UILabel!
-    
+    private var lastContentOffset: CGFloat = 0
+
     // MARK: Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +32,7 @@ class LinkMeViewController: BaseWireFrame<LinkMeViewModel> {
         didTappedOnPurchasesButton()
         addTappedOnBeInTopView()
         didTappedOnStarsStoreButton()
+        topUsersTableView.delegate = self
     }
     
     // MARK: - Actions
@@ -69,7 +71,7 @@ extension LinkMeViewController {
             if UDHelper.isVistor {
                 QuickAlert.showWith(in: self, coordentor: self.coordinator)
             }
-            self.coordinator.Main.navigate(for: .purchases)
+            self.coordinator.Main.navigate(for: .purchases())
         }
     }
     
@@ -79,7 +81,7 @@ extension LinkMeViewController {
             if UDHelper.isVistor {
                 QuickAlert.showWith(in: self, coordentor: self.coordinator)
             }
-            self.coordinator.Main.navigate(for: .purchases)
+            self.coordinator.Main.navigate(for: .purchases())
         }
     }
     
@@ -105,7 +107,7 @@ extension LinkMeViewController {
     private func configureTableView() {
         topUsersTableView.registerNIB(cell: TopUserTableViewCell.self)
         topUsersTableView.separatorStyle = .none
-        topUsersTableView.rx.rowHeight.onNext(80)
+        topUsersTableView.rx.rowHeight.onNext(70)
         didSelectTopUserItem()
     }
     
@@ -116,7 +118,7 @@ extension LinkMeViewController {
             
             cell.openProfile = { [weak self] in
                 guard let self = self else { return }
-                self.coordinator.Main.navigate(for: .userCard(userID: item.id ?? 0, chatID: 0, direction: .profile), navigtorTypes: .presentNavgation)
+                self.coordinator.Main.navigate(for: .userCard(userID: item.id ?? 0, chatID:item.chat_id ?? 0 , direction: .profile), navigtorTypes: .presentNavgation)
             }
             cell.openChat =  { [weak self] in
                 guard let self = self else { return }
@@ -130,7 +132,6 @@ extension LinkMeViewController {
             
         }.disposed(by: disposeBag)
     }
-    
     private func subscribeChatID() {
         viewModel.chatID.subscribe { [weak self] chatID in
             guard let self = self else { return }
@@ -178,4 +179,23 @@ extension LinkMeViewController {
             ToastManager.shared.showToast(message: errorMessage, view: self.view, postion: .top , backgroundColor: .LinkMeUIColor.errorColor)
         }.disposed(by: disposeBag)
     }
+}
+extension LinkMeViewController: UITableViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+           // Detect scrolling direction
+           let currentOffset = scrollView.contentOffset.y
+           
+           // Check if scrolling up and scrolled up by more than 100 points
+        if lastContentOffset <= -80 {
+               print("Scrolled up by 100 points")
+               
+               // Call fetchTopUsers when scrolled up by 100 points
+               viewModel.fetchTopUsers()
+           }
+           
+           // Update the last content offset
+           lastContentOffset = currentOffset
+        print(lastContentOffset)
+       }
 }

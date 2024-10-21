@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -161,13 +161,25 @@ Sadipscing Elitr, Sed Diam </string>
                         <constraint firstItem="M7W-Go-RFI" firstAttribute="top" secondItem="7kq-xU-61k" secondAttribute="top" constant="20" id="hUQ-L0-Tgm"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkA-TI-9wU">
+                    <rect key="frame" x="0.0" y="59" width="393" height="213"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="dismissBtn:" destination="-1" eventType="touchUpInside" id="dzw-hF-tib"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tkA-TI-9wU" secondAttribute="trailing" id="2Na-sD-EQl"/>
+                <constraint firstItem="tkA-TI-9wU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="82N-MD-guB"/>
                 <constraint firstItem="7kq-xU-61k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XnO-Bg-b0g"/>
                 <constraint firstAttribute="bottom" secondItem="7kq-xU-61k" secondAttribute="bottom" id="mPy-6J-2c5"/>
+                <constraint firstItem="7kq-xU-61k" firstAttribute="top" secondItem="tkA-TI-9wU" secondAttribute="bottom" id="nmS-tl-x7m"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7kq-xU-61k" secondAttribute="trailing" id="ocG-Xi-Bfl"/>
+                <constraint firstItem="tkA-TI-9wU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rB5-b3-Zp6"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
         </view>

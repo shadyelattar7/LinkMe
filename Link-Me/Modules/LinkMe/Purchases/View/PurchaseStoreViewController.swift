@@ -62,7 +62,8 @@ class PurchaseStoreViewController: BaseWireFrame<PurchaseStoreViewModel>, SKProd
         viewModel.getStars(view: self.view)
         viewModel.getDiamonds(view: self.view)
         viewModel.getMyAccountData()
-        
+        headerView.isHidden = viewModel.hideNav ?? false
+        headerView.back_btn.isHidden = viewModel.hideNav ?? false
         SKPaymentQueue.default().add(self)
         
         fetchProducts()
@@ -178,11 +179,17 @@ class PurchaseStoreViewController: BaseWireFrame<PurchaseStoreViewModel>, SKProd
     //MARK: - Actions
     
     @IBAction func subscriptionButtonTapped(_ sender: Any) {
-        self.coordinator.Main.navigate(for: .FeaturesPremium,navigtorTypes: .present())
+        let vc = coordinator.Main.viewcontroller(for: .FeaturesPremium)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    //    self.coordinator.Main.navigate(for: .FeaturesPremium,navigtorTypes: .present())
     }
     
     @IBAction func howItWorkTapped(_ sender: Any) {
-        self.coordinator.Main.navigate(for: .aboutStars, navigtorTypes: .present())
+        let vc = coordinator.Main.viewcontroller(for: .aboutStars)
+        vc.modalPresentationStyle = .pageSheet
+        self.present(vc, animated: true)
+        //self.coordinator.Main.navigate(for: .aboutStars, navigtorTypes: .present())
     }
     
 }

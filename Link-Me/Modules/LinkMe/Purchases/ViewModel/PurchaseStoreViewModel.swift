@@ -33,10 +33,11 @@ class PurchaseStoreViewModel: BaseViewModel, PurchasesVInputs,PurchasesOutputs{
     var stars: BehaviorRelay<[StarsModel]> = .init(value: [])
     var diamondsStatus: PublishSubject<Bool> = .init()
     var starsStatus: PublishSubject<Bool> = .init()
-    
-    init(PurchaseStore: PurchaseStoreAPIProtocol,myAccount: MyAccountWorkerProtocol) {
+    var hideNav: Bool?
+    init(PurchaseStore: PurchaseStoreAPIProtocol,myAccount: MyAccountWorkerProtocol,hideNav: Bool? = false ) {
         self.PurchaseStore = PurchaseStore
         self.myAccount = myAccount
+        self.hideNav = hideNav 
     }
     
     //MARK: - Output

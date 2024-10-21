@@ -132,16 +132,28 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "use your diamond" = "استخدم الجواهر الخاصة بك";
 "to find best match" = "للعثور على أفضل تطابق";
 "Nomal search. we will show you a random users" = "بحث عادي. سنعرض لك مستخدمين عشوائيين";
-"  Start Searching" = "ابدأ البحث  ";
+"    Start Searching" = "ابدأ البحث  ";
 "Searching For User..." = "جارٍ البحث عن مستخدم...";
 "Be patient we will find the best match for you" = "تحلَّ بالصبر، سنجد لك أفضل تطابق";
 "Stop searching" = "إيقاف البحث";
-"  Request Chat" = "طلب محادثة  ";
-"  Search Again" = "ابحث مرة أخرى  ";
+"   Request Chat" = "طلب محادثة  ";
+"   Search Again" = "ابحث مرة أخرى  ";
 "  Send Link" = "إرسال الرابط  ";
 "Users on the list" = "المستخدمون في القائمة";
 "user" = "مستخدم";
 "Your turn after" = "دورك بعد";
+"Custom search provides you with accurate results" = "البحث المخصص يوفر لك نتائج دقيقة";
+"turn now, will accept your request or ignore it" = "حان دورك الآن، هل ستقبل طلبك أو تتجاهله";
+
+"ignore your request" = "تجاهل طلبك";
+"accept your request start chat now!" = "قبل طلبك، ابدأ المحادثة الآن!";
+"its" = "إنه";
+"Opps!!" = "عذرًا!!";
+"Wow!!" = "واو!!";
+"See Profile" = "عرض الملف الشخصي";
+"Say Hi!" = "قل مرحباً!";
+"Congratulation" = "تهانينا";
+"It's New" = "إنه جديد";
 //"Be In The Top" = "كن في القمة";
 "seconds" = "ثوانٍ";
 "minute" = "دقيقة";
@@ -162,7 +174,7 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 " days ago" = "منذ يوم";
 " weeks ago" = "منذ أسبوع";
 "pending" = "قيد الانتظار";
-"Exit" = "خروج";
+" Exit" = "خروج ";
 "Buy More" = "اشتر المزيد";
 "Age" = "العمر";
 "Start Searching" = "ابدأ البحث";
@@ -206,7 +218,8 @@ As We Spot Them. If Somthingg Slipped Though Our Ringers. Wed Be So Grateful To 
 "Choose time" = "اختر الوقت";
 "   Let's Talk" = "دعنا نتحدث";
 "You linked with" = "تم وصلك مع";
-
+"Start Chat" = "ابدأ المحادثة";
+"Waiting Approval " = "بانتظار الموافقة";
 //MARK: - Purchases -
 
 "Purchases" = "المشتريات";

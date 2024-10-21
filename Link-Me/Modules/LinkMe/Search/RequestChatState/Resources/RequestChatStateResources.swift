@@ -98,11 +98,11 @@ enum RequestChatState {
         case .beforeSendRequest:
             return nil
         case .waitingForResponse:
-            return "its \(userName) turn now, will accept your request or ignore it"
+            return "its".localized + " \(userName) " + "turn now, will accept your request or ignore it".localized
         case .ignoreYourRequest:
-            return "Opps!! \(userName) ignore your request"
+            return "Opps!!".localized + " \(userName) " + "ignore your request".localized
         case .acceptYourRequest:
-            return "Wow!! \(userName) accept your request start chat now!"
+            return "Wow!!".localized + " \(userName) " + "accept your request start chat now!".localized
         }
     }
     
@@ -117,9 +117,9 @@ enum RequestChatState {
     
     var activeButtonTitle: String {
         switch self {
-        case .beforeSendRequest, .ignoreYourRequest: return "Cancel"
-        case .waitingForResponse: return "Waiting Approval "
-        case .acceptYourRequest: return "Start Chat"
+        case .beforeSendRequest, .ignoreYourRequest: return "Cancel".localized
+        case .waitingForResponse: return "Waiting Approval ".localized
+        case .acceptYourRequest: return "Start Chat".localized
         }
     }
     
